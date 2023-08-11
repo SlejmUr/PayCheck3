@@ -1,0 +1,34 @@
+[
+  {
+    "Weapon Level": 1,
+    "Weapon Points": 0
+  },
+  {
+    "Weapon Level": 2,
+    "Weapon Points": 250
+  },
+  {
+    "Weapon Level": 3,
+    "Weapon Points": 750
+  },
+  {
+    "Weapon Level": 4,
+    "Weapon Points": 1500
+  },
+  {
+    "Weapon Level": 5,
+    "Weapon Points": 2500
+  },
+  {
+    "Weapon Level": 6,
+    "Weapon Points": 3500
+  },
+  {
+    "Weapon Level": 7,
+    "Weapon Points": 4500
+  },
+  {
+    "Weapon Level": 8,
+    "Weapon Points": 5500
+  }
+]

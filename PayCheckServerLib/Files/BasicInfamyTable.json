@@ -1,0 +1,147 @@
+[
+  {
+    "Infamy Level": 1,
+    "Infamy Points": 0,
+    "Infamy Rewards": [
+      {
+        "Content Given Type": "Skill Point",
+        "Content Given Value": 1
+      }
+    ]
+  },
+  {
+    "Infamy Level": 2,
+    "Infamy Points": 100,
+    "Infamy Rewards": [
+      {
+        "Content Given Type": "Skill Point",
+        "Content Given Value": 1
+      }
+    ]
+  },
+  {
+    "Infamy Level": 3,
+    "Infamy Points": 200,
+    "Infamy Rewards": []
+  },
+  {
+    "Infamy Level": 4,
+    "Infamy Points": 300,
+    "Infamy Rewards": []
+  },
+  {
+    "Infamy Level": 5,
+    "Infamy Points": 450,
+    "Infamy Rewards": [
+      {
+        "Content Given Type": "Skill Point",
+        "Content Given Value": 1
+      }
+    ]
+  },
+  {
+    "Infamy Level": 6,
+    "Infamy Points": 600,
+    "Infamy Rewards": []
+  },
+  {
+    "Infamy Level": 7,
+    "Infamy Points": 800,
+    "Infamy Rewards": []
+  },
+  {
+    "Infamy Level": 8,
+    "Infamy Points": 1000,
+    "Infamy Rewards": [
+      {
+        "Content Given Type": "Skill Point",
+        "Content Given Value": 1
+      }
+    ]
+  },
+  {
+    "Infamy Level": 9,
+    "Infamy Points": 1200,
+    "Infamy Rewards": []
+  },
+  {
+    "Infamy Level": 10,
+    "Infamy Points": 1400,
+    "Infamy Rewards": []
+  },
+  {
+    "Infamy Level": 11,
+    "Infamy Points": 1700,
+    "Infamy Rewards": [
+      {
+        "Content Given Type": "Skill Point",
+        "Content Given Value": 1
+      }
+    ]
+  },
+  {
+    "Infamy Level": 12,
+    "Infamy Points": 2000,
+    "Infamy Rewards": []
+  },
+  {
+    "Infamy Level": 13,
+    "Infamy Points": 2300,
+    "Infamy Rewards": []
+  },
+  {
+    "Infamy Level": 14,
+    "Infamy Points": 2600,
+    "Infamy Rewards": []
+  },
+  {
+    "Infamy Level": 15,
+    "Infamy Points": 2900,
+    "Infamy Rewards": []
+  },
+  {
+    "Infamy Level": 16,
+    "Infamy Points": 3200,
+    "Infamy Rewards": [
+      {
+        "Content Given Type": "Skill Point",
+        "Content Given Value": 1
+      }
+    ]
+  },
+  {
+    "Infamy Level": 17,
+    "Infamy Points": 3500,
+    "Infamy Rewards": []
+  },
+  {
+    "Infamy Level": 18,
+    "Infamy Points": 3800,
+    "Infamy Rewards": []
+  },
+  {
+    "Infamy Level": 19,
+    "Infamy Points": 4100,
+    "Infamy Rewards": [
+      {
+        "Content Given Type": "Skill Point",
+        "Content Given Value": 1
+      }
+    ]
+  },
+  {
+    "Infamy Level": 20,
+    "Infamy Points": 4400,
+    "Infamy Rewards": []
+  },
+  {
+    "Infamy Level": 21,
+    "Infamy Points": 4700,
+    "Infamy Rewards": []
+  },
+  {
+    "Infamy Level": 22,
+    "Infamy Points": 5000,
+    "Infamy Rewards": []
+  }
+]
