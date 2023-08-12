@@ -1,11 +1,6 @@
 ﻿using NetCoreServer;
 using Newtonsoft.Json;
 using PayCheckServerLib.Jsons;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PayCheckServerLib.Responses
 {
@@ -20,7 +15,7 @@ namespace PayCheckServerLib.Responses
             return true;
         }
 
-        [HTTP("GET", "/challenge/v1/public/namespaces/pd3beta/users/me/records")]
+        [HTTP("GET", "/challenge/v1/public/namespaces/pd3beta/users/me/records?limit=2147483647&offset=0")]
         public static bool ChallengeRecords(HttpRequest request, PC3Server.PC3Session session)
         {
             ResponseCreator creator = new ResponseCreator();

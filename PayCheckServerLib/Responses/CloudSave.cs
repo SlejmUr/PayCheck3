@@ -27,6 +27,15 @@ namespace PayCheckServerLib.Responses
             return true;
         }
 
+        [HTTP("GET", "/cloudsave/v1/namespaces/pd3beta/records/news-feed")]
+        public static bool NewsFeed(HttpRequest request, PC3Server.PC3Session session)
+        {
+            ResponseCreator response = new ResponseCreator();
+            response.SetBody(File.ReadAllText("./Files/NewsFeed.json"));
+            session.SendResponse(response.GetResponse());
+            return true;
+        }
+
         [HTTP("GET", "/cloudsave/v1/namespaces/pd3beta/records/infamy-translation-table")]
         public static bool infamytranslationtable(HttpRequest request, PC3Server.PC3Session session)
         {
@@ -139,7 +148,9 @@ namespace PayCheckServerLib.Responses
         {
             var userID = session.HttpParam["userId"];
             File.WriteAllText(userID + "save.json", request.Body);
+            
             var now = DateTime.Now.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ssZ");
+            File.WriteAllText(userID + "save_" + DateTime.Now.ToString("s").Replace(":","-") +  ".json", request.Body);
             var save = JsonConvert.DeserializeObject<ProgressionSave>(request.Body);
             ProgressionSaveRSP saveRSP = new()
             { 
