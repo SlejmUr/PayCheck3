@@ -11,7 +11,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Remove="files\BasicWeaponsTable.json" />
+    <None Remove="files\Entitlements.json" />
     <None Remove="files\FirmRotation.json" />
+    <None Remove="files\Items.json" />
     <None Remove="files\MetaEvents.json" />
     <None Remove="files\NewsFeed.json" />
     <Content Include="messages.txt">
