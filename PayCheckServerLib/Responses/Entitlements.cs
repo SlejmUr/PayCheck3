@@ -6,7 +6,7 @@ namespace PayCheckServerLib.Responses
 {
 	public class Entitlements 
 	{
-		[HTTP("GET", "/platform/public/namespaces/pd3beta/users/{userId}/entitlements?limit=1000")]
+		[HTTP("GET", "/platform/public/namespaces/pd3beta/users/{userId}/entitlements?limit={limit}")]
 		public static bool GetUserEntitlements(HttpRequest request, PC3Server.PC3Session session) 
 		{
 			var responsecreator = new ResponseCreator();
