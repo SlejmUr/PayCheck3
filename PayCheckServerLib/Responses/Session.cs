@@ -90,26 +90,17 @@ namespace PayCheckServerLib.Responses
             session.SendResponse(response.GetResponse());
             return true;
         }
-
+        /*
         [HTTP("POST", "/session/v1/public/namespaces/pd3beta/party")]
         public static bool SessionsPartyPOST(HttpRequest request, PC3Server.PC3Session session)
         {
             ResponseCreator response = new ResponseCreator();
             response.SetHeader("Content-Type", "application/json");
-            Challenges challenges = new()
-            {
-                Paging = new()
-                {
-                    First = "",
-                    Last = "",
-                    Previous = "",
-                    Next = ""
-                },
-                Data = new()
-            };
+
             response.SetBody(JsonConvert.SerializeObject(challenges));
             session.SendResponse(response.GetResponse());
             return true;
         }
+        */
     }
 }
