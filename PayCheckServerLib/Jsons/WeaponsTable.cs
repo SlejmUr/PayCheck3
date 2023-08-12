@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace PayCheckServerLib.Responses
+namespace PayCheckServerLib.Jsons
 {
     public class WeaponsTableREQ
     {

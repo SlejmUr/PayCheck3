@@ -1,19 +1,16 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace PayCheckServerLib.Jsons {
-	public class EntitlementsData {
+namespace PayCheckServerLib.Jsons 
+{
+	public class EntitlementsData 
+	{
 		[JsonProperty("id")]
 		public string Id { get; set; }
 
 		[JsonProperty("namespace")]
 		public string Namespace { get; set; }
 
-		// is clazz a typo?
+		// is clazz a typo?	-- No because class in C# code can be used to make a class so yeah
 		[JsonProperty("clazz")]
 		public string Clazz { get; set; }
 
@@ -57,9 +54,10 @@ namespace PayCheckServerLib.Jsons {
 		[JsonProperty("updatedAt")]
 		public string UpdatedAt { get; set; }
 	}
-	public class EntitlementPayloadJson {
+	public class EntitlementPayloadJson 
+	{
 		[JsonProperty("data")]
-		public EntitlementsData[] Data { get; set; }
+		public List<EntitlementsData> Data { get; set; }
 
 		[JsonProperty("paging")]
 		public object Paging { get; set; }

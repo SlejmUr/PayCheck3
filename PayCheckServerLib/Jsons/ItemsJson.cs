@@ -1,13 +1,9 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
 
-namespace PayCheckServerLib.Jsons {
-	public class ItemDefinitionJsonRegionData {
+namespace PayCheckServerLib.Jsons 
+{
+	public class ItemDefinitionJsonRegionData 
+	{
 		[JsonProperty("price")]
 		public int Price { get; set; }
 
@@ -36,7 +32,8 @@ namespace PayCheckServerLib.Jsons {
 		public string DiscountPurchaseAt { get; set; }
 	}
 	
-	public class ItemDefinitionJson {
+	public class ItemDefinitionJson 
+	{
 		[JsonProperty("title")]
 		public string Title { get; set; }
 
@@ -80,13 +77,13 @@ namespace PayCheckServerLib.Jsons {
 		public string TargetCurrencyCode { get; set; }
 
 		[JsonProperty("regionData")]
-		public ItemDefinitionJsonRegionData[] RegionData { get; set; }
+		public List<ItemDefinitionJsonRegionData> RegionData { get; set; }
 
 		[JsonProperty("tags")]
-		public string[] Tags { get; set; }
+		public List<string> Tags { get; set; }
 
 		[JsonProperty("features")]
-		public string[] Features { get; set; }
+		public List<string> Features { get; set; }
 
 		[JsonProperty("maxCountPerUser")]
 		public int MaxCountPerUser { get; set; }
@@ -106,9 +103,10 @@ namespace PayCheckServerLib.Jsons {
 		[JsonProperty("updatedAt")]
 		public string UpdatedAt { get; set; }
 	}
-	public class ItemsJson {
+	public class ItemsJson 
+	{
 		[JsonProperty("data")]
-		public ItemDefinitionJson[] Data { get; set; }
+		public List<ItemDefinitionJson> Data { get; set; }
 
 		[JsonProperty("paging")]
 		public object Paging { get; set; }

@@ -1,8 +1,9 @@
-﻿using System;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
-namespace PayCheckServerLib.Jsons {
-	public class GetUserStatItemsData {
+namespace PayCheckServerLib.Jsons 
+{
+	public class GetUserStatItemsData 
+	{
 		[JsonProperty("createdAt")]
 		public string CreatedAt { get; set; }
 
@@ -23,8 +24,12 @@ namespace PayCheckServerLib.Jsons {
 
 		[JsonProperty("value")]
 		public float Value { get; set; }
+
+        [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> Tags { get; set; }
 	}
-	public class GetUserStatItems {
+	public class GetUserStatItems 
+	{
 		[JsonProperty("data")]
 		public GetUserStatItemsData[] Data { get; set; }
 

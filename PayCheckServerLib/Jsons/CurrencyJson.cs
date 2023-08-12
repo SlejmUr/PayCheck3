@@ -1,12 +1,9 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace PayCheckServerLib.Jsons {
-	public class WalletInfo {
+namespace PayCheckServerLib.Jsons 
+{
+	public class WalletInfo 
+	{
 		[JsonProperty("balance")]
 		public int Balance { get; set; }
 
@@ -32,7 +29,7 @@ namespace PayCheckServerLib.Jsons {
 		public string Status { get; set; }
 
 		[JsonProperty("timeLimitedBalances")]
-		public object[] TimeLimitedBalances { get; set; }
+		public List<object> TimeLimitedBalances { get; set; }
 
 		[JsonProperty("totalPermanentBalance")]
 		public int TotalPermanentBalance { get; set; }
@@ -46,7 +43,8 @@ namespace PayCheckServerLib.Jsons {
 		[JsonProperty("userId")]
 		public string UserId { get; set; }
 	}
-	public class CurrencyJson {
+	public class CurrencyJson 
+	{
 		[JsonProperty("balance")]
 		public int Balance { get; set; }
 
@@ -69,7 +67,7 @@ namespace PayCheckServerLib.Jsons {
 		public string UserId { get; set; }
 
 		[JsonProperty("walletInfos")]
-		public WalletInfo[] WalletInfos { get; set; }
+		public List<WalletInfo> WalletInfos { get; set; }
 
 		[JsonProperty("walletStatus")]
 		public string WalletStatus { get; set; }
