@@ -1,6 +1,7 @@
 ﻿using NetCoreServer;
 using Newtonsoft.Json;
 using PayCheckServerLib.Jsons;
+using System;
 
 namespace PayCheckServerLib.Responses
 {
@@ -115,11 +116,11 @@ namespace PayCheckServerLib.Responses
         {
             var userID = session.HttpParam["userId"];
             var response = new ResponseCreator();
-            if (File.Exists(userID + "save.json"))
+            if (SaveHandler.IsUserExist(userID))
             {
                 Console.WriteLine("SAVEFILE EXIST!");
                 var now = DateTime.Now.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ssZ");
-                var save = JsonConvert.DeserializeObject<ProgressionSave>(File.ReadAllText(userID + "save.json"));
+                var save = JsonConvert.DeserializeObject<ProgressionSave>(SaveHandler.ReadUserSTR(userID));
                 ProgressionSaveRSP saveRSP = new()
                 {
                     CreatedAt = now,
@@ -147,10 +148,8 @@ namespace PayCheckServerLib.Responses
         public static bool progressionsavegamePOST(HttpRequest request, PC3Server.PC3Session session)
         {
             var userID = session.HttpParam["userId"];
-            File.WriteAllText(userID + "save.json", request.Body);
-            
+            SaveHandler.SaveUser(userID, request.BodyBytes);
             var now = DateTime.Now.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ssZ");
-            File.WriteAllText(userID + "save_" + DateTime.Now.ToString("s").Replace(":","-") +  ".json", request.Body);
             var save = JsonConvert.DeserializeObject<ProgressionSave>(request.Body);
             ProgressionSaveRSP saveRSP = new()
             { 

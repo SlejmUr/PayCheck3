@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
@@ -10,12 +10,6 @@
     <Content Include="Files\**">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <None Remove="files\BasicWeaponsTable.json" />
-    <None Remove="files\Entitlements.json" />
-    <None Remove="files\FirmRotation.json" />
-    <None Remove="files\Items.json" />
-    <None Remove="files\MetaEvents.json" />
-    <None Remove="files\NewsFeed.json" />
     <Content Include="messages.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

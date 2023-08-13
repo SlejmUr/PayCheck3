@@ -12,7 +12,9 @@ namespace PayCheckServerLib.WSController
             Console.WriteLine(BitConverter.ToString(buffer));
             if (buffer.Length != 0)
             {
-                var str = Encoding.UTF8.GetString(buffer);
+                if (!Directory.Exists("Chat")) { Directory.CreateDirectory("Chat"); }
+                File.WriteAllBytes("Chat/" + DateTime.Now.ToString("s").Replace(":", "-") + ".bytes", buffer);
+                var str = Encoding.UTF8.GetString(buffer);  
                 var chatbase = JsonConvert.DeserializeObject<Chats.ChatBase>(str);
                 switch (chatbase.Method)                
                 {
