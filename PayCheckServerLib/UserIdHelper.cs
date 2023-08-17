@@ -36,5 +36,31 @@ namespace PayCheckServerLib
                 sb.Append(hash[i].ToString("x2"));
             return sb.ToString();
         }
+
+        public static string GetSteamID()
+        {
+            var id = File.ReadAllLines("Files/steamid.txt")[0];
+            if (id.Contains("\n"))
+            {
+                id.Replace("\n","");
+            }
+            if (id.Contains("\r"))
+            {
+                id.Replace("\r", "");
+            }
+            if (id.Contains(" "))
+            {
+                id.Replace(" ", "");
+            }
+            return id;
+        }
+
+        public static string GetSteamIdFromAUTH(string AUTH)
+        {
+            var hex = Convert.FromHexString(AUTH);
+            var sid = BitConverter.ToUInt64(hex[12..(12 + 8)]);
+
+            return sid.ToString();
+        }
     }
 }
