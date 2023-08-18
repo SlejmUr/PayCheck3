@@ -20,7 +20,7 @@ namespace PayCheckServerLib
             Device
         }
 
-        public static Token GenerateNewToken(string Name = "DefaultUser", TokenPlatform platform, bool IsAccessToken = true)
+        public static Token GenerateNewToken(string Name = "DefaultUser", TokenPlatform platform = TokenPlatform.Steam, bool IsAccessToken = true)
         { 
             Token token = new()
             { 
