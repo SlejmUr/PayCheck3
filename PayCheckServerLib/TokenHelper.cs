@@ -21,8 +21,8 @@ namespace PayCheckServerLib
         }
 
         public static Token GenerateNewToken(string Name = "DefaultUser", TokenPlatform platform = TokenPlatform.Steam, bool IsAccessToken = true)
-        { 
-            Token token = new()
+        {
+            return new()
             { 
                 Name = Name,
                 PlatformId = UserIdHelper.GetSteamID(),
@@ -30,8 +30,18 @@ namespace PayCheckServerLib
                 PlatformType = platform,
                 IsAccessToken = IsAccessToken
             };
-            StoreToken(token);
-            return token;
+        }
+
+        public static Token GenerateFromSteamToken(string platform_token, string Name = "DefaultUser", bool IsAccessToken = true)
+        {
+            return new()
+            {
+                Name = Name,
+                PlatformId = UserIdHelper.GetSteamIdFromAUTH(platform_token),
+                UserId = UserIdHelper.CreateNewID(),
+                PlatformType = TokenPlatform.Steam,
+                IsAccessToken = IsAccessToken
+            };
         }
 
         public static byte[] TokenToBArray(Token token)
@@ -127,6 +137,9 @@ namespace PayCheckServerLib
                 IsAccessToken = iAcc
             };
         }
+
+
+        //todo read base64 token!
 
     }
 
