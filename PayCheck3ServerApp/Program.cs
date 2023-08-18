@@ -10,11 +10,16 @@ namespace PayCheck3ServerApp
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, World!");
-
-            var token = TokenHelper.GenerateNewToken();
-            Console.WriteLine(token.ToBase64());
-
             /*
+            var token = TokenHelper.GenerateNewToken();
+            Console.WriteLine(token.ToPrint());
+            Console.WriteLine(token.ToBase64());
+            token.PlatformType = TokenHelper.TokenPlatform.Device;
+            token.PlatformId = UserIdHelper.CreateNewID();
+            TokenHelper.StoreToken(token);
+            var tok = TokenHelper.ReadToken(token.UserId);
+            Console.WriteLine(tok.ToPrint());
+            */
             PC3Server.Start("127.0.0.1",443);
             var gSTATICServer = new GSTATICServer.GSServer("127.0.0.1",80);
             PD3UDPServer pd3udp = new PD3UDPServer("127.0.0.1",6969);
@@ -24,7 +29,7 @@ namespace PayCheck3ServerApp
             PC3Server.Stop();
             gSTATICServer.Stop();
             pd3udp.Stop();
-            */
+            
         }
     }
 }

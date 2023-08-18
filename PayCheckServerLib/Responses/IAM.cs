@@ -9,6 +9,19 @@ namespace PayCheckServerLib.Responses
         [HTTP("POST", "/iam/v3/oauth/platforms/steam/token")]
         public static bool SteamToken(HttpRequest request, PC3Server.PC3Session session)
         {
+            var splitted = request.Body.Split("&");
+            Dictionary<string, string> bodyTokens = new();
+            foreach (var item in splitted)
+            {
+                var it = item.Split("=");
+                bodyTokens.Add(it[0], it[1]);
+            }
+
+            var platform_token = bodyTokens["platform_token"];
+
+            //TokenHelper.
+
+
             ResponseCreator response = new ResponseCreator();
             response.SetHeader("Content-Type", "application/json");
             response.SetHeader("Connection", "keep-alive");
@@ -51,6 +64,16 @@ namespace PayCheckServerLib.Responses
         [HTTP("POST", "/iam/v3/oauth/platforms/device/token")]
         public static bool DeviceToken(HttpRequest request, PC3Server.PC3Session session)
         {
+            var splitted = request.Body.Split("&");
+            Dictionary<string, string> bodyTokens = new();
+            foreach (var item in splitted)
+            {
+                var it = item.Split("=");
+                bodyTokens.Add(it[0], it[1]);
+            }
+
+
+
             ResponseCreator response = new ResponseCreator();
             response.SetHeader("Content-Type", "application/json");
             response.SetHeader("Connection", "keep-alive");

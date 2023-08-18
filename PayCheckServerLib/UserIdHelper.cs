@@ -59,7 +59,6 @@ namespace PayCheckServerLib
         {
             var hex = Convert.FromHexString(AUTH);
             var sid = BitConverter.ToUInt64(hex[12..(12 + 8)]);
-
             return sid.ToString();
         }
     }
