@@ -20,6 +20,11 @@ namespace PayCheckServerLib
             Device
         }
 
+        public static bool IsUserIdExist(string UserId)
+        {
+            return (File.Exists($"Tokens/{UserId}_AccessToken") || File.Exists($"Tokens/{UserId}_RefreshToken"));
+        }
+
         public static Token GenerateNewToken(string Name = "DefaultUser", TokenPlatform platform = TokenPlatform.Steam, bool IsAccessToken = true)
         {
             return new()
@@ -88,17 +93,20 @@ namespace PayCheckServerLib
             File.WriteAllText("Tokens/" + token.UserId + "_" + acctoken, token.ToBase64());
         }
 
-        public static Token ReadToken(string UserId, bool IsAccessToken = true)
+        public static Token ReadTokenFile(string UserId, bool IsAccessToken = true)
         {
             string acctoken = IsAccessToken ? "AccessToken" : "RefreshToken";
             var text = File.ReadAllText($"Tokens/{UserId}_{acctoken}");
+            return ReadToken(text);
+        }
 
-            var b64 = Convert.FromBase64String(text);
-            //
+        public static Token ReadToken(string base64)
+        {
+            var b64 = Convert.FromBase64String(base64);
 
             var bname_l = BitConverter.ToInt32(b64[0..4]);
 
-            var name = System.Text.Encoding.UTF8.GetString(b64[4..(4+bname_l)]);
+            var name = System.Text.Encoding.UTF8.GetString(b64[4..(4 + bname_l)]);
 
             var platType = (TokenPlatform)BitConverter.ToInt32(b64[(4 + bname_l)..(8 + bname_l)]);
 
@@ -108,8 +116,8 @@ namespace PayCheckServerLib
             switch (platType)
             {
                 case TokenPlatform.Unknow:
-                    int uleng = BitConverter.ToInt32(b64[lastPost..(lastPost+4)]);
-                    PlatformId = System.Text.Encoding.UTF8.GetString(b64[(lastPost+4)..(4 + lastPost + uleng)]);
+                    int uleng = BitConverter.ToInt32(b64[lastPost..(lastPost + 4)]);
+                    PlatformId = System.Text.Encoding.UTF8.GetString(b64[(lastPost + 4)..(4 + lastPost + uleng)]);
                     lastPost = 4 + lastPost + uleng;
                     break;
                 case TokenPlatform.Steam:
@@ -124,12 +132,12 @@ namespace PayCheckServerLib
                 default:
                     break;
             }
-            var buid_l = BitConverter.ToInt32(b64[lastPost..(4+ lastPost)]);
-            var buid = System.Text.Encoding.UTF8.GetString(b64[(4+ lastPost)..(4+ lastPost + buid_l)]);
+            var buid_l = BitConverter.ToInt32(b64[lastPost..(4 + lastPost)]);
+            var buid = System.Text.Encoding.UTF8.GetString(b64[(4 + lastPost)..(4 + lastPost + buid_l)]);
             var iAcc = BitConverter.ToBoolean(b64[(4 + lastPost + buid_l)..]);
 
             return new()
-            { 
+            {
                 Name = name,
                 PlatformId = PlatformId,
                 UserId = buid,
@@ -139,7 +147,6 @@ namespace PayCheckServerLib
         }
 
 
-        //todo read base64 token!
 
     }
 

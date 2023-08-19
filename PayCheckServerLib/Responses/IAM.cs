@@ -111,6 +111,7 @@ namespace PayCheckServerLib.Responses
         public static bool UsersMe(HttpRequest request, PC3Server.PC3Session session)
         {
             var auth = session.Headers["authorization"].Replace("Bearer ", "");
+            var token = TokenHelper.ReadToken(auth);
             ResponseCreator response = new ResponseCreator();
             response.SetHeader("Content-Type", "application/json");
             response.SetHeader("Connection", "keep-alive");
@@ -120,16 +121,16 @@ namespace PayCheckServerLib.Responses
                 DeletionStatus = false,
                 Bans = new(),
                 Country = "HU",
-                DisplayName = "Yeet",
-                EmailAddress = "yeet@yeet.com",
+                DisplayName = token.Name,
+                EmailAddress = $"{token.Name}@pd3beta_emu.com",
                 EmailVerified = true,
                 Enabled = true,
                 Namespace = "pd3beta",
-                OldEmailAddress = "yeet@yeet.com",
+                OldEmailAddress = $"{token.Name}@pd3beta_emu.com",
                 PhoneVerified = true,
                 Permissions = new(),
-                UserId = "29475976933497845197035744456968",
-                UserName = "Yeet",
+                UserId = token.UserId,
+                UserName = token.Name,
                 NamespaceRoles = new()
                 {
                     new NamespaceRole()
@@ -148,7 +149,8 @@ namespace PayCheckServerLib.Responses
         [HTTP("POST", "/iam/v3/public/namespaces/pd3beta/users/bulk/basic")]
         public static bool BulkBasic(HttpRequest request, PC3Server.PC3Session session)
         {
-            Console.WriteLine(request.Body);
+            var req = JsonConvert.DeserializeObject<BulkReq>(request.Body);
+
             ResponseCreator response = new ResponseCreator();
             response.SetHeader("Content-Type", "application/json");
             response.SetHeader("Connection", "keep-alive");
@@ -156,6 +158,7 @@ namespace PayCheckServerLib.Responses
             { 
                 Data = new()
                 { 
+                    /*
                     new()
                     { 
                         AvatarUrl = "",
@@ -165,10 +168,43 @@ namespace PayCheckServerLib.Responses
                         {
                             { "steam", "76561199227922074" }                        
                         }
-                    
-                    }
+                    }*/
                 }
             };
+
+            foreach (var item in req.UserIds)
+            {
+                if (TokenHelper.IsUserIdExist(item))
+                {
+                    var token = TokenHelper.ReadTokenFile(item);
+                    Bulk.CData data = new()
+                    { 
+                        AvatarUrl = "",
+                        DisplayName = token.Name,
+                        UserId = item,
+                        PlatformUserIds = new()
+                        { 
+                        
+                        }
+                    };
+                    switch (token.PlatformType)
+                    {
+                        case TokenHelper.TokenPlatform.Steam:
+                            data.PlatformUserIds.Add("steam", token.PlatformId);
+                            break;
+                        case TokenHelper.TokenPlatform.Device:
+                        default:
+                            data.PlatformUserIds.Add("device", token.PlatformId);
+                            break;
+                    }
+                    bulk.Data.Add(data);
+                }
+                else
+                {
+                    Debugger.PrintWarn($"UserId ({item}) not exist in Tokens!");
+                }
+            }
+
             response.SetBody(JsonConvert.SerializeObject(bulk));
             session.SendResponse(response.GetResponse());
             return true;
