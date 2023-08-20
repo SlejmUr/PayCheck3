@@ -19,14 +19,14 @@ namespace PayCheckServerLib.Responses
         public static bool ChallengeRecords(HttpRequest request, PC3Server.PC3Session session)
         {
             ResponseCreator creator = new ResponseCreator();
-            var challanges = JsonConvert.DeserializeObject<Challenges>(File.ReadAllText("Files/ChallangeRecords.json"));
+            var challenges = JsonConvert.DeserializeObject<Challenges>(File.ReadAllText("Files/ChallengeRecords.json"));
 
-            foreach (var item in challanges.Data)
+            foreach (var item in challenges.Data)
             {
                 item.UserId = "29475976933497845197035744456968";
             }
 
-            creator.SetBody(JsonConvert.SerializeObject(challanges));
+            creator.SetBody(JsonConvert.SerializeObject(challenges));
             session.SendResponse(creator.GetResponse());
             return true;
         }
