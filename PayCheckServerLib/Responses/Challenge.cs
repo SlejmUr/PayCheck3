@@ -18,12 +18,14 @@ namespace PayCheckServerLib.Responses
         [HTTP("GET", "/challenge/v1/public/namespaces/pd3beta/users/me/records?limit=2147483647&offset=0")]
         public static bool ChallengeRecords(HttpRequest request, PC3Server.PC3Session session)
         {
+            var auth = session.Headers["authorization"].Replace("Bearer ", "");
+            var token = TokenHelper.ReadToken(auth);
             ResponseCreator creator = new ResponseCreator();
             var challanges = JsonConvert.DeserializeObject<Challenges>(File.ReadAllText("Files/ChallangeRecords.json"));
 
             foreach (var item in challanges.Data)
             {
-                item.UserId = "29475976933497845197035744456968";
+                item.UserId = token.UserId;
             }
 
             creator.SetBody(JsonConvert.SerializeObject(challanges));

@@ -72,7 +72,7 @@ namespace PayCheckServerLib.Responses
         {
             ResponseCreator response = new ResponseCreator();
             response.SetHeader("Content-Type", "application/json");
-            response.SetBody(File.ReadAllBytes("messages.txt"));
+            response.SetBody(File.ReadAllBytes("Files/messages.json"));
             session.SendResponse(response.GetResponse());
             return true;
         }

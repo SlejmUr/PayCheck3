@@ -1,0 +1,14 @@
+{
+  "Saves": {
+    "Extension": "save",
+    "SaveRequest": true
+  },
+  "Hosting": {
+    "Server": true,
+    "UDP": true,
+    "GSTATIC": true
+  },
+  "InDevFeatures": {
+    "Enable_PartySession": false
+  }
+}
