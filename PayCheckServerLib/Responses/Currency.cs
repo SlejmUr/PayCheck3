@@ -16,7 +16,7 @@ namespace PayCheckServerLib.Responses
 			ResponseCreator response = new ResponseCreator();
 			CurrencyJson currencyReponse = new() 
 			{
-				Balance = 100000,
+				Balance = 10000000,
 				CurrencyCode = currencyType,
 				CurrencySymbol = currencyType,
 				Id = String.Format("pd3beta_{0}_{1}", userID, currencyType),
