@@ -1,5 +1,7 @@
 ﻿using Newtonsoft.Json;
 using PayCheckServerLib;
+using System.Net.Security;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
 namespace PayCheck3ServerApp
@@ -12,7 +14,7 @@ namespace PayCheck3ServerApp
             Console.WriteLine("Hello, World!");
             /*
             var token = TokenHelper.GenerateNewToken();
-            Console.WriteLine(token.ToPrint());
+            Console.WriteLine(token.ToPrint());oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
             Console.WriteLine(token.ToBase64());
             token.PlatformType = TokenHelper.TokenPlatform.Device;
             token.PlatformId = UserIdHelper.CreateNewID();
@@ -35,5 +37,6 @@ namespace PayCheck3ServerApp
             pd3udp.Stop();*/
 
         }
+        
     }
 }

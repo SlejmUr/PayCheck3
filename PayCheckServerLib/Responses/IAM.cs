@@ -18,12 +18,14 @@ namespace PayCheckServerLib.Responses
             }
 
             var platform_token = bodyTokens["platform_token"];
-            var access_token = TokenHelper.GenerateFromSteamToken(platform_token);
+            var steamId = UserIdHelper.GetSteamIdFromAUTH(platform_token);
+            Debugger.PrintInfo(steamId);
+            var access_token = TokenHelper.GetTokenFromPlatform(steamId, TokenHelper.TokenPlatform.Steam);
             TokenHelper.StoreToken(access_token);
-            var refresh_token = TokenHelper.GenerateFromSteamToken(platform_token,"DefaultUser", false);
+            var refresh_token = TokenHelper.GenerateFromSteamToken(platform_token, access_token.Name, false);
             refresh_token.UserId = access_token.UserId;
             TokenHelper.StoreToken(refresh_token);
-
+            Debugger.PrintInfo("token set and generated");
 
             ResponseCreator response = new ResponseCreator();
             response.SetHeader("Content-Type", "application/json");
@@ -35,7 +37,7 @@ namespace PayCheckServerLib.Responses
                 AccessToken = access_token.ToBase64(),
                 Scope = "account commerce social publishing analytics",
                 Bans = new() { },
-                DisplayName = "Yeet",
+                DisplayName = access_token.Name,
                 ExpiresIn = 360000,
                 IsComply = true,
                 Jflgs = 1,

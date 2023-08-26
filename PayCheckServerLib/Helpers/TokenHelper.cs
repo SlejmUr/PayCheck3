@@ -20,8 +20,26 @@ namespace PayCheckServerLib
             Device
         }
 
+        public static Token GetTokenFromPlatform(string platformId, TokenPlatform platformType)
+        {
+            if (!Directory.Exists("Tokens")) { Directory.CreateDirectory("Tokens"); }
+            var files = Directory.GetFiles("Tokens");
+            foreach (var file in files)
+            {
+                var token = ReadToken(File.ReadAllText(file));
+
+                if (token.PlatformType == platformType && token.PlatformId == platformId && token.IsAccessToken)
+                    return token;
+            }
+            var newtoken = GenerateNewToken();
+            newtoken.PlatformType = platformType;
+            newtoken.PlatformId = platformId;
+            return newtoken;
+        }
+
         public static bool IsUserIdExist(string UserId)
         {
+            if (!Directory.Exists("Tokens")) { Directory.CreateDirectory("Tokens"); }
             return (File.Exists($"Tokens/{UserId}_AccessToken") || File.Exists($"Tokens/{UserId}_RefreshToken"));
         }
 
