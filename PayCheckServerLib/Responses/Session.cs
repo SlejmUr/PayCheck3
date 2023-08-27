@@ -9,21 +9,23 @@ namespace PayCheckServerLib.Responses
         [HTTP("GET", "/session/v1/public/namespaces/pd3beta/users/me/attributes")]
         public static bool GETSessionAttributes(HttpRequest request, PC3Server.PC3Session session)
         {
+            var auth = session.Headers["authorization"].Replace("Bearer ", "");
+            var token = TokenHelper.ReadToken(auth);
             ResponseCreator response = new ResponseCreator();
             AttribSuccess success = new()
             {
                 CrossplayEnabled = true,
-                CurrentPlatform = "STEAM",
+                CurrentPlatform = token.PlatformType.ToString().ToUpper(),
                 Namespace = "pd3beta",
                 Platforms = new()
                 {
                     new()
                     { 
-                        Name = "STEAM",
-                        UserId = "76561199227922074"
+                        Name = token.PlatformType.ToString().ToUpper(),
+                        UserId = token.PlatformId
                     }
                 },
-                UserId = "29475976933497845197035744456968"
+                UserId = token.UserId
             };
             response.SetBody(JsonConvert.SerializeObject(success));
             session.SendResponse(response.GetResponse());
@@ -33,6 +35,8 @@ namespace PayCheckServerLib.Responses
         [HTTP("POST", "/session/v1/public/namespaces/pd3beta/users/me/attributes")]
         public static bool POSTSessionAttributes(HttpRequest request, PC3Server.PC3Session session)
         {
+            var auth = session.Headers["authorization"].Replace("Bearer ", "");
+            var token = TokenHelper.ReadToken(auth);
             var req = JsonConvert.DeserializeObject<AttribRequest>(request.Body);
             ResponseCreator response = new ResponseCreator();
             response.SetHeader("Content-Type", "application/json");
@@ -42,7 +46,7 @@ namespace PayCheckServerLib.Responses
                 CurrentPlatform = req.CurrentPlatform,
                 Namespace = "pd3beta",
                 Platforms = req.Platforms,
-                UserId = "29475976933497845197035744456968"
+                UserId = token.UserId
             };
             response.SetBody(JsonConvert.SerializeObject(success));
             session.SendResponse(response.GetResponse());

@@ -8,17 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="29475976933497845197035744456968save.json" />
-    <None Remove="Save\29475976933497845197035744456968.save" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="29475976933497845197035744456968save.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Save\29475976933497845197035744456968.save">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <PackageReference Include="RestSharp" Version="109.0.0" />
   </ItemGroup>
 
   <ItemGroup>

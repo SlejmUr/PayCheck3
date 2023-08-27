@@ -20,9 +20,32 @@ namespace PayCheckServerLib
             Device
         }
 
+        public static Token GetTokenFromPlatform(string platformId, TokenPlatform platformType)
+        {
+            if (!Directory.Exists("Tokens")) { Directory.CreateDirectory("Tokens"); }
+            var files = Directory.GetFiles("Tokens");
+            foreach (var file in files)
+            {
+                var token = ReadToken(File.ReadAllText(file));
+
+                if (token.PlatformType == platformType && token.PlatformId == platformId && token.IsAccessToken)
+                    return token;
+            }
+            var newtoken = GenerateNewToken();
+            newtoken.PlatformType = platformType;
+            newtoken.PlatformId = platformId;
+            return newtoken;
+        }
+
+        public static bool IsUserIdExist(string UserId)
+        {
+            if (!Directory.Exists("Tokens")) { Directory.CreateDirectory("Tokens"); }
+            return (File.Exists($"Tokens/{UserId}_AccessToken") || File.Exists($"Tokens/{UserId}_RefreshToken"));
+        }
+
         public static Token GenerateNewToken(string Name = "DefaultUser", TokenPlatform platform = TokenPlatform.Steam, bool IsAccessToken = true)
-        { 
-            Token token = new()
+        {
+            return new()
             { 
                 Name = Name,
                 PlatformId = UserIdHelper.GetSteamID(),
@@ -30,8 +53,18 @@ namespace PayCheckServerLib
                 PlatformType = platform,
                 IsAccessToken = IsAccessToken
             };
-            StoreToken(token);
-            return token;
+        }
+
+        public static Token GenerateFromSteamToken(string platform_token, string Name = "DefaultUser", bool IsAccessToken = true)
+        {
+            return new()
+            {
+                Name = Name,
+                PlatformId = UserIdHelper.GetSteamIdFromAUTH(platform_token),
+                UserId = UserIdHelper.CreateNewID(),
+                PlatformType = TokenPlatform.Steam,
+                IsAccessToken = IsAccessToken
+            };
         }
 
         public static byte[] TokenToBArray(Token token)
@@ -78,17 +111,20 @@ namespace PayCheckServerLib
             File.WriteAllText("Tokens/" + token.UserId + "_" + acctoken, token.ToBase64());
         }
 
-        public static Token ReadToken(string UserId, bool IsAccessToken = true)
+        public static Token ReadTokenFile(string UserId, bool IsAccessToken = true)
         {
             string acctoken = IsAccessToken ? "AccessToken" : "RefreshToken";
             var text = File.ReadAllText($"Tokens/{UserId}_{acctoken}");
+            return ReadToken(text);
+        }
 
-            var b64 = Convert.FromBase64String(text);
-            //
+        public static Token ReadToken(string base64)
+        {
+            var b64 = Convert.FromBase64String(base64);
 
             var bname_l = BitConverter.ToInt32(b64[0..4]);
 
-            var name = System.Text.Encoding.UTF8.GetString(b64[4..(4+bname_l)]);
+            var name = System.Text.Encoding.UTF8.GetString(b64[4..(4 + bname_l)]);
 
             var platType = (TokenPlatform)BitConverter.ToInt32(b64[(4 + bname_l)..(8 + bname_l)]);
 
@@ -98,8 +134,8 @@ namespace PayCheckServerLib
             switch (platType)
             {
                 case TokenPlatform.Unknow:
-                    int uleng = BitConverter.ToInt32(b64[lastPost..(lastPost+4)]);
-                    PlatformId = System.Text.Encoding.UTF8.GetString(b64[(lastPost+4)..(4 + lastPost + uleng)]);
+                    int uleng = BitConverter.ToInt32(b64[lastPost..(lastPost + 4)]);
+                    PlatformId = System.Text.Encoding.UTF8.GetString(b64[(lastPost + 4)..(4 + lastPost + uleng)]);
                     lastPost = 4 + lastPost + uleng;
                     break;
                 case TokenPlatform.Steam:
@@ -114,12 +150,12 @@ namespace PayCheckServerLib
                 default:
                     break;
             }
-            var buid_l = BitConverter.ToInt32(b64[lastPost..(4+ lastPost)]);
-            var buid = System.Text.Encoding.UTF8.GetString(b64[(4+ lastPost)..(4+ lastPost + buid_l)]);
+            var buid_l = BitConverter.ToInt32(b64[lastPost..(4 + lastPost)]);
+            var buid = System.Text.Encoding.UTF8.GetString(b64[(4 + lastPost)..(4 + lastPost + buid_l)]);
             var iAcc = BitConverter.ToBoolean(b64[(4 + lastPost + buid_l)..]);
 
             return new()
-            { 
+            {
                 Name = name,
                 PlatformId = PlatformId,
                 UserId = buid,
@@ -127,6 +163,8 @@ namespace PayCheckServerLib
                 IsAccessToken = iAcc
             };
         }
+
+
 
     }
 

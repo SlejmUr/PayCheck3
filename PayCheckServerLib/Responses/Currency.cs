@@ -11,14 +11,15 @@ namespace PayCheckServerLib.Responses
 		{
 			var userID = session.HttpParam["userId"];
 			var currencyType = session.HttpParam["currency"];
-			// return fake data for now
-			Debugger.PrintDebug(String.Format("pd3beta_{0}_{1}", userID, currencyType));
+			var currencySymbol = currencyType == "CRED" ? "CREDITS" : currencyType;
+            // return fake data for now
+            Debugger.PrintDebug(String.Format("pd3beta_{0}_{1}", userID, currencyType));
 			ResponseCreator response = new ResponseCreator();
 			CurrencyJson currencyReponse = new() 
 			{
 				Balance = 10000000,
 				CurrencyCode = currencyType,
-				CurrencySymbol = currencyType,
+				CurrencySymbol = currencySymbol,
 				Id = String.Format("pd3beta_{0}_{1}", userID, currencyType),
 				Namespace = "pd3beta",
 				Status = "ACTIVE",
@@ -31,7 +32,7 @@ namespace PayCheckServerLib.Responses
 						BalanceOrigin = "System",
 						CreatedAt = "2023-08-05T03:23:16.598Z",
 						CurrencyCode = currencyType,
-						CurrencySymbol = currencyType,
+						CurrencySymbol = currencySymbol,
 						Id = "8ab9cfab89c2807f0189c3b882f659c6",
 						Namespace = "pd3beta",
 						Status = "ACTIVE",

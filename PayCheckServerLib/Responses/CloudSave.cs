@@ -1,5 +1,6 @@
 ﻿using NetCoreServer;
 using Newtonsoft.Json;
+using PayCheckServerLib.Helpers;
 using PayCheckServerLib.Jsons;
 using System;
 
@@ -149,6 +150,8 @@ namespace PayCheckServerLib.Responses
         {
             var userID = session.HttpParam["userId"];
             SaveHandler.SaveUser(userID, request.BodyBytes);
+            if (ConfigHelper.ServerConfig.Saves.SaveRequest)
+                SaveHandler.SaveUser_Request(userID, request.Body);
             var now = DateTime.Now.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ssZ");
             var save = JsonConvert.DeserializeObject<ProgressionSave>(request.Body);
             ProgressionSaveRSP saveRSP = new()

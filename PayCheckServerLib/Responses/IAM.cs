@@ -18,21 +18,26 @@ namespace PayCheckServerLib.Responses
             }
 
             var platform_token = bodyTokens["platform_token"];
-
-            //TokenHelper.
-
+            var steamId = UserIdHelper.GetSteamIdFromAUTH(platform_token);
+            Debugger.PrintInfo(steamId);
+            var access_token = TokenHelper.GetTokenFromPlatform(steamId, TokenHelper.TokenPlatform.Steam);
+            TokenHelper.StoreToken(access_token);
+            var refresh_token = TokenHelper.GenerateFromSteamToken(platform_token, access_token.Name, false);
+            refresh_token.UserId = access_token.UserId;
+            TokenHelper.StoreToken(refresh_token);
+            Debugger.PrintInfo("token set and generated");
 
             ResponseCreator response = new ResponseCreator();
             response.SetHeader("Content-Type", "application/json");
             response.SetHeader("Connection", "keep-alive");
-            response.SetCookie("refresh_token", "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
-            response.SetCookie("access_token", "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB");
-            LoginToken token = new()
+            response.SetCookie("refresh_token", refresh_token.ToBase64());
+            response.SetCookie("access_token", access_token.ToBase64());
+            LoginToken LoginToken = new()
             {
-                AccessToken = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB",
+                AccessToken = access_token.ToBase64(),
                 Scope = "account commerce social publishing analytics",
                 Bans = new() { },
-                DisplayName = "Yeet",
+                DisplayName = access_token.Name,
                 ExpiresIn = 360000,
                 IsComply = true,
                 Jflgs = 1,
@@ -48,14 +53,14 @@ namespace PayCheckServerLib.Responses
                 },
                 Permissions = new() { },
                 PlatformId = "steam",
-                PlatformUserId = "76561199227922074",
+                PlatformUserId = access_token.PlatformId,
                 RefreshExpiresIn = 86400,
-                RefreshToken = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                RefreshToken = refresh_token.ToBase64(),
                 Roles = new() { "2251438839e948d783ec0e5281daf05" },
                 TokenType = "Bearer",
-                UserId = "29475976933497845197035744456968"
+                UserId = access_token.UserId
             };
-            response.SetBody(JsonConvert.SerializeObject(token));
+            response.SetBody(JsonConvert.SerializeObject(LoginToken));
             session.SendResponse(response.GetResponse());
             Debugger.PrintDebug("Sent Response!");
             return true;
@@ -64,15 +69,8 @@ namespace PayCheckServerLib.Responses
         [HTTP("POST", "/iam/v3/oauth/platforms/device/token")]
         public static bool DeviceToken(HttpRequest request, PC3Server.PC3Session session)
         {
-            var splitted = request.Body.Split("&");
-            Dictionary<string, string> bodyTokens = new();
-            foreach (var item in splitted)
-            {
-                var it = item.Split("=");
-                bodyTokens.Add(it[0], it[1]);
-            }
-
-
+            //todo deviceid is in cookie!
+            var cookie = session.Headers["cookie"];
 
             ResponseCreator response = new ResponseCreator();
             response.SetHeader("Content-Type", "application/json");
@@ -114,6 +112,8 @@ namespace PayCheckServerLib.Responses
         [HTTP("GET", "/iam/v3/public/users/me")]
         public static bool UsersMe(HttpRequest request, PC3Server.PC3Session session)
         {
+            var auth = session.Headers["authorization"].Replace("Bearer ", "");
+            var token = TokenHelper.ReadToken(auth);
             ResponseCreator response = new ResponseCreator();
             response.SetHeader("Content-Type", "application/json");
             response.SetHeader("Connection", "keep-alive");
@@ -123,16 +123,16 @@ namespace PayCheckServerLib.Responses
                 DeletionStatus = false,
                 Bans = new(),
                 Country = "HU",
-                DisplayName = "Yeet",
-                EmailAddress = "yeet@yeet.com",
+                DisplayName = token.Name,
+                EmailAddress = $"{token.Name}@pd3beta_emu.com",
                 EmailVerified = true,
                 Enabled = true,
                 Namespace = "pd3beta",
-                OldEmailAddress = "yeet@yeet.com",
+                OldEmailAddress = $"{token.Name}@pd3beta_emu.com",
                 PhoneVerified = true,
                 Permissions = new(),
-                UserId = "29475976933497845197035744456968",
-                UserName = "Yeet",
+                UserId = token.UserId,
+                UserName = token.Name,
                 NamespaceRoles = new()
                 {
                     new NamespaceRole()
@@ -151,7 +151,8 @@ namespace PayCheckServerLib.Responses
         [HTTP("POST", "/iam/v3/public/namespaces/pd3beta/users/bulk/basic")]
         public static bool BulkBasic(HttpRequest request, PC3Server.PC3Session session)
         {
-            Console.WriteLine(request.Body);
+            var req = JsonConvert.DeserializeObject<BulkReq>(request.Body);
+
             ResponseCreator response = new ResponseCreator();
             response.SetHeader("Content-Type", "application/json");
             response.SetHeader("Connection", "keep-alive");
@@ -159,6 +160,7 @@ namespace PayCheckServerLib.Responses
             { 
                 Data = new()
                 { 
+                    /*
                     new()
                     { 
                         AvatarUrl = "",
@@ -168,10 +170,43 @@ namespace PayCheckServerLib.Responses
                         {
                             { "steam", "76561199227922074" }                        
                         }
-                    
-                    }
+                    }*/
                 }
             };
+
+            foreach (var item in req.UserIds)
+            {
+                if (TokenHelper.IsUserIdExist(item))
+                {
+                    var token = TokenHelper.ReadTokenFile(item);
+                    Bulk.CData data = new()
+                    { 
+                        AvatarUrl = "",
+                        DisplayName = token.Name,
+                        UserId = item,
+                        PlatformUserIds = new()
+                        { 
+                        
+                        }
+                    };
+                    switch (token.PlatformType)
+                    {
+                        case TokenHelper.TokenPlatform.Steam:
+                            data.PlatformUserIds.Add("steam", token.PlatformId);
+                            break;
+                        case TokenHelper.TokenPlatform.Device:
+                        default:
+                            data.PlatformUserIds.Add("device", token.PlatformId);
+                            break;
+                    }
+                    bulk.Data.Add(data);
+                }
+                else
+                {
+                    Debugger.PrintWarn($"UserId ({item}) not exist in Tokens!");
+                }
+            }
+
             response.SetBody(JsonConvert.SerializeObject(bulk));
             session.SendResponse(response.GetResponse());
             return true;
