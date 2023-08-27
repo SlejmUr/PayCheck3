@@ -13,7 +13,7 @@ namespace PayCheckServerLib.Responses
             response.SetHeader("Content-Type", "application/json");
             //  No friends for now
             FriendsPlatfrom friendsPlatfrom = new FriendsPlatfrom()
-            { 
+            {
                 Data = new()
             };
             response.SetBody(JsonConvert.SerializeObject(friendsPlatfrom));

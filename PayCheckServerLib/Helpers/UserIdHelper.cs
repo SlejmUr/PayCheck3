@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography;
+﻿using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace PayCheckServerLib
 {
@@ -42,7 +38,7 @@ namespace PayCheckServerLib
             var id = File.ReadAllLines("Files/steamid.txt")[0];
             if (id.Contains("\n"))
             {
-                id.Replace("\n","");
+                id.Replace("\n", "");
             }
             if (id.Contains("\r"))
             {

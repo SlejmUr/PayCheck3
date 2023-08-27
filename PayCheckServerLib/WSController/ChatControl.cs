@@ -14,9 +14,9 @@ namespace PayCheckServerLib.WSController
             {
                 if (!Directory.Exists("Chat")) { Directory.CreateDirectory("Chat"); }
                 File.WriteAllBytes("Chat/" + DateTime.Now.ToString("s").Replace(":", "-") + ".bytes", buffer);
-                var str = Encoding.UTF8.GetString(buffer);  
+                var str = Encoding.UTF8.GetString(buffer);
                 var chatbase = JsonConvert.DeserializeObject<Chats.ChatBase>(str);
-                switch (chatbase.Method)                
+                switch (chatbase.Method)
                 {
                     case "actionQueryTopic":
                         {
@@ -26,7 +26,7 @@ namespace PayCheckServerLib.WSController
                                 Jsonrpc = chatbase.Jsonrpc,
                                 Method = chatbase.Method,
                                 Params = new()
-                                { 
+                                {
                                     Processed = "1691204630"
                                 }
                             };
@@ -38,7 +38,7 @@ namespace PayCheckServerLib.WSController
                     default:
                         Console.WriteLine("ChatControl: " + chatbase.Method);
                         return;
-                
+
                 }
 
 

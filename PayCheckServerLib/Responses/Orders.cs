@@ -1,89 +1,95 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NetCoreServer;
+﻿using NetCoreServer;
 using Newtonsoft.Json;
 using PayCheckServerLib.Jsons;
 
-namespace PayCheckServerLib.Responses {
-	public class Orders {
-		public static string GenOrderNumber() {
-			var rand = new Random();
-			string ret = "";
-			for(int i = 0; i < 19; i++) {
-				ret += rand.Next(0,9);
-			}
-			return "O" + ret;
-		}
+namespace PayCheckServerLib.Responses
+{
+    public class Orders
+    {
+        public static string GenOrderNumber()
+        {
+            var rand = new Random();
+            string ret = "";
+            for (int i = 0; i < 19; i++)
+            {
+                ret += rand.Next(0, 9);
+            }
+            return "O" + ret;
+        }
 
-		public static ItemDefinitionJson GetItemFromId(string id) {
-			var items = JsonConvert.DeserializeObject<ItemsJson>(File.ReadAllText("Files/Items.json")).Data;
-			foreach (var item in items) {
-				if (item.ItemId == id) {
-					return item;
-				}
-			}
-			return null;
-		}
-		[HTTP("POST", "/platform/public/namespaces/pd3beta/users/{userid}/orders")]
-		public static bool UserOrders(HttpRequest request, PC3Server.PC3Session session) {
-			//ResponseCreator response = new ResponseCreator();
-			//OrdersJsonPayload payload = new() {
-			//	Data = { },
-			//	Paging = { }
-			//};
-			//response.SetBody(JsonConvert.SerializeObject(payload));
-			//session.SendResponse(response.GetResponse());
+        public static ItemDefinitionJson GetItemFromId(string id)
+        {
+            var items = JsonConvert.DeserializeObject<ItemsJson>(File.ReadAllText("Files/Items.json")).Data;
+            foreach (var item in items)
+            {
+                if (item.ItemId == id)
+                {
+                    return item;
+                }
+            }
+            return null;
+        }
 
-			OrderPostBody body = JsonConvert.DeserializeObject<OrderPostBody>(request.Body);
+        [HTTP("POST", "/platform/public/namespaces/pd3beta/users/{userid}/orders")]
+        public static bool UserOrders(HttpRequest request, PC3Server.PC3Session session)
+        {
+            //ResponseCreator response = new ResponseCreator();
+            //OrdersJsonPayload payload = new() {
+            //	Data = { },
+            //	Paging = { }
+            //};
+            //response.SetBody(JsonConvert.SerializeObject(payload));
+            //session.SendResponse(response.GetResponse());
 
-			ResponseCreator response = new ResponseCreator();
+            OrderPostBody body = JsonConvert.DeserializeObject<OrderPostBody>(request.Body);
 
-			ItemDefinitionJson item = GetItemFromId(body.ItemId);
+            ResponseCreator response = new ResponseCreator();
 
-			Order order = new() {
-				OrderNo = GenOrderNumber(),
-				Namespace = "pd3beta",
-				UserId = session.HttpParam["userid"],
-				ItemId = item.ItemId,
-				Sandbox = false,
-				Quantity = body.Quantity,
-				Price = body.Price,
-				DiscountedPrice = body.DiscountedPrice,
-				Tax = 0,
-				Vat = 0,
-				SalesTax = 0,
-				PaymentProviderFee = 0,
-				PaymentMethodFee = 0,
-				Currency = new() {
-					CurrencyCode = body.CurrencyCode,
-					CurrencySymbol = body.CurrencyCode,
-					// CASH = Cash, GOLD = CStacks
-					CurrencyType = (body.CurrencyCode == "CASH" || body.CurrencyCode == "GOLD") ? "VIRTUAL" : "REAL",
-					Namespace = "pd3beta",
-					Decimals = 0
-				},
-				// will be like this until i can confirm they are the same type ~HW12Dev
-				ItemSnapshot = JsonConvert.DeserializeObject<Order.ItemSnapshotJson>(JsonConvert.SerializeObject(item)),
-				Region = body.Region,
-				Language = body.Language,
-				Status = "FULFILLED",
-				CreatedTime = DateTime.Now.ToUniversalTime().ToString("o"),
-				ChargedTime = DateTime.Now.ToUniversalTime().ToString("o"),
-				FulfilledTime = DateTime.Now.ToUniversalTime().ToString("o"),
-				ExpireTime = DateTime.Now.ToUniversalTime().ToString("o"),
-				PaymentRemainSeconds = 0,
-				TotalTax = 0,
-				TotalPrice = body.Price,
-				SubtotalPrice = body.Price,
-				CreatedAt = DateTime.Now.ToUniversalTime().ToString("o"),
-				UpdatedAt = DateTime.Now.ToUniversalTime().ToString("o")
-			};
-			response.SetBody(JsonConvert.SerializeObject(order));
-			session.SendResponse(response.GetResponse());
-			return true;
-		}
-	}
+            ItemDefinitionJson item = GetItemFromId(body.ItemId);
+
+            Order order = new()
+            {
+                OrderNo = GenOrderNumber(),
+                Namespace = "pd3beta",
+                UserId = session.HttpParam["userid"],
+                ItemId = item.ItemId,
+                Sandbox = false,
+                Quantity = body.Quantity,
+                Price = body.Price,
+                DiscountedPrice = body.DiscountedPrice,
+                Tax = 0,
+                Vat = 0,
+                SalesTax = 0,
+                PaymentProviderFee = 0,
+                PaymentMethodFee = 0,
+                Currency = new()
+                {
+                    CurrencyCode = body.CurrencyCode,
+                    CurrencySymbol = body.CurrencyCode,
+                    // CASH = Cash, GOLD = CStacks
+                    CurrencyType = (body.CurrencyCode == "CASH" || body.CurrencyCode == "GOLD") ? "VIRTUAL" : "REAL",
+                    Namespace = "pd3beta",
+                    Decimals = 0
+                },
+                // will be like this until i can confirm they are the same type ~HW12Dev
+                ItemSnapshot = JsonConvert.DeserializeObject<Order.ItemSnapshotJson>(JsonConvert.SerializeObject(item)),
+                Region = body.Region,
+                Language = body.Language,
+                Status = "FULFILLED",
+                CreatedTime = DateTime.Now.ToUniversalTime().ToString("o"),
+                ChargedTime = DateTime.Now.ToUniversalTime().ToString("o"),
+                FulfilledTime = DateTime.Now.ToUniversalTime().ToString("o"),
+                ExpireTime = DateTime.Now.ToUniversalTime().ToString("o"),
+                PaymentRemainSeconds = 0,
+                TotalTax = 0,
+                TotalPrice = body.Price,
+                SubtotalPrice = body.Price,
+                CreatedAt = DateTime.Now.ToUniversalTime().ToString("o"),
+                UpdatedAt = DateTime.Now.ToUniversalTime().ToString("o")
+            };
+            response.SetBody(JsonConvert.SerializeObject(order));
+            session.SendResponse(response.GetResponse());
+            return true;
+        }
+    }
 }

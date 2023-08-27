@@ -67,7 +67,7 @@ namespace PayCheckServerLib
 
         public HttpResponse GetResponse()
         {
-            Debugger.logger.Debug("response:\n"+ response);
+            Debugger.logger.Debug("response:\n" + response);
             return response;
         }
 

@@ -4,7 +4,7 @@ namespace PayCheckServerLib
 {
     public class SaveHandler
     {
-        static SaveHandler() 
+        static SaveHandler()
         {
             if (!Directory.Exists("Save")) { Directory.CreateDirectory("Save"); }
         }

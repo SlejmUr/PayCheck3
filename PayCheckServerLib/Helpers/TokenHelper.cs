@@ -1,6 +1,4 @@
-﻿using static PayCheckServerLib.TokenHelper;
-
-namespace PayCheckServerLib
+﻿namespace PayCheckServerLib
 {
     public class TokenHelper
     {
@@ -46,7 +44,7 @@ namespace PayCheckServerLib
         public static Token GenerateNewToken(string Name = "DefaultUser", TokenPlatform platform = TokenPlatform.Steam, bool IsAccessToken = true)
         {
             return new()
-            { 
+            {
                 Name = Name,
                 PlatformId = UserIdHelper.GetSteamID(),
                 UserId = UserIdHelper.CreateNewID(),
@@ -176,7 +174,7 @@ namespace PayCheckServerLib
         }
 
         public static byte[] ToBytes(this TokenHelper.Token token)
-        { 
+        {
             return TokenHelper.TokenToBArray(token);
         }
 

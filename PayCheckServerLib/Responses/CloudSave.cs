@@ -2,7 +2,6 @@
 using Newtonsoft.Json;
 using PayCheckServerLib.Helpers;
 using PayCheckServerLib.Jsons;
-using System;
 
 namespace PayCheckServerLib.Responses
 {
@@ -43,12 +42,12 @@ namespace PayCheckServerLib.Responses
         {
             ResponseCreator response = new ResponseCreator();
             InfamyTranslationTable.Basic table = new()
-            { 
+            {
                 Value = new()
-                { 
+                {
                     InfamyTranslationTable = new()
-                    { 
-                    }              
+                    {
+                    }
                 }
             };
             var infamylist = JsonConvert.DeserializeObject<List<InfamyTranslationTable.CInfamyTranslationTable>>(File.ReadAllText("Files/BasicInfamyTable.json"));
@@ -65,17 +64,17 @@ namespace PayCheckServerLib.Responses
             ResponseCreator response = new ResponseCreator();
 
             WeaponsTable weaponsTable = new()
-            { 
+            {
                 Data = new()
             };
             var weaponTranslationTables = JsonConvert.DeserializeObject<List<WeaponsTable.WeaponTranslationTable>>(File.ReadAllText("Files/BasicWeaponsTable.json"));
             foreach (var item in req.Keys)
             {
                 weaponsTable.Data.Add(new WeaponsTable.CData()
-                { 
+                {
                     Key = item,
-                    Value = new()                 
-                    { 
+                    Value = new()
+                    {
                         WeaponTranslationTable = weaponTranslationTables
                     }
                 });
@@ -136,7 +135,7 @@ namespace PayCheckServerLib.Responses
             }
             response = new ResponseCreator(404);
             ErrorMSG error = new()
-            { 
+            {
                 ErrorCode = 18022,
                 ErrorMessage = $"unable to get_player_record: player record not found, user ID: {userID}, key: progressionsavegame"
             };
@@ -155,7 +154,7 @@ namespace PayCheckServerLib.Responses
             var now = DateTime.Now.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ssZ");
             var save = JsonConvert.DeserializeObject<ProgressionSave>(request.Body);
             ProgressionSaveRSP saveRSP = new()
-            { 
+            {
                 CreatedAt = now,
                 UpdatedAt = now,
                 UserId = userID,

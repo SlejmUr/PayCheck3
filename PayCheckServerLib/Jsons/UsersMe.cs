@@ -66,6 +66,6 @@ namespace PayCheckServerLib.Jsons
 
         [JsonProperty("avatarUrl")]
         public Uri AvatarUrl { get; set; }
-        
+
     }
 }

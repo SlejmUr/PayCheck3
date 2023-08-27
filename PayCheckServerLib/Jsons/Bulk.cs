@@ -16,7 +16,7 @@ namespace PayCheckServerLib.Jsons
             public string DisplayName { get; set; }
 
             [JsonProperty("platformUserIds")]
-            public Dictionary<string,string> PlatformUserIds { get; set; }
+            public Dictionary<string, string> PlatformUserIds { get; set; }
 
             [JsonProperty("userId")]
             public string UserId { get; set; }

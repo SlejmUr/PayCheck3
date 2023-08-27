@@ -118,7 +118,7 @@ namespace PayCheckServerLib.Responses
             response.SetHeader("Content-Type", "application/json");
             response.SetHeader("Connection", "keep-alive");
             Me me = new()
-            { 
+            {
                 AvatarUrl = new("https://nebula.starbreeze.com/static/media/903924fd9d443f43e7b121d085062fbdd2064f25_full.e7d46514.jpg"),
                 DeletionStatus = false,
                 Bans = new(),
@@ -157,9 +157,9 @@ namespace PayCheckServerLib.Responses
             response.SetHeader("Content-Type", "application/json");
             response.SetHeader("Connection", "keep-alive");
             Bulk bulk = new()
-            { 
+            {
                 Data = new()
-                { 
+                {
                     /*
                     new()
                     { 
@@ -180,13 +180,13 @@ namespace PayCheckServerLib.Responses
                 {
                     var token = TokenHelper.ReadTokenFile(item);
                     Bulk.CData data = new()
-                    { 
+                    {
                         AvatarUrl = "",
                         DisplayName = token.Name,
                         UserId = item,
                         PlatformUserIds = new()
-                        { 
-                        
+                        {
+
                         }
                     };
                     switch (token.PlatformType)

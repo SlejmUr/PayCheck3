@@ -20,6 +20,6 @@ namespace PayCheckServerLib.Jsons
         public string UpdatedAt { get; set; }
 
         [JsonProperty("value")]
-        public Dictionary<string,string> Value { get; set; }
+        public Dictionary<string, string> Value { get; set; }
     }
 }

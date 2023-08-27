@@ -13,11 +13,11 @@ namespace PayCheckServerLib.Responses
             response.SetHeader("Content-Type", "application/json");
             response.SetHeader("Connection", "keep-alive");
             var rsp = new JsonServers()
-            { 
+            {
                 Servers = new()
                 {
                     new()
-                    { 
+                    {
                         Alias = "eu-central-1",
                         Region = "eu-central-1",
                         Status = "ACTIVE",
@@ -65,7 +65,7 @@ namespace PayCheckServerLib.Responses
             return true;
         }
 
-       
+
 
         [HTTP("GET", "/lobby/v1/messages")]
         public static bool LobbyMessages(HttpRequest request, PC3Server.PC3Session session)

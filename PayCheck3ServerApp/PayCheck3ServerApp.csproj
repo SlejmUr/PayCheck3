@@ -8,10 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="RestSharp" Version="109.0.0" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\PayCheckServerLib\PayCheckServerLib.csproj" />
   </ItemGroup>
 

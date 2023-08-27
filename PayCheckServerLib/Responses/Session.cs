@@ -20,7 +20,7 @@ namespace PayCheckServerLib.Responses
                 Platforms = new()
                 {
                     new()
-                    { 
+                    {
                         Name = token.PlatformType.ToString().ToUpper(),
                         UserId = token.PlatformId
                     }
@@ -41,7 +41,7 @@ namespace PayCheckServerLib.Responses
             ResponseCreator response = new ResponseCreator();
             response.SetHeader("Content-Type", "application/json");
             AttribSuccess success = new()
-            { 
+            {
                 CrossplayEnabled = req.CrossplayEnabled,
                 CurrentPlatform = req.CurrentPlatform,
                 Namespace = "pd3beta",
@@ -59,9 +59,9 @@ namespace PayCheckServerLib.Responses
             ResponseCreator response = new ResponseCreator();
             response.SetHeader("Content-Type", "application/json");
             Challenges challenges = new()
-            { 
+            {
                 Paging = new()
-                { 
+                {
                     First = "",
                     Last = "",
                     Previous = "",

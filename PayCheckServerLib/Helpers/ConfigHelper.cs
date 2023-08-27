@@ -1,5 +1,5 @@
-﻿using PayCheckServerLib.Jsons;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
+using PayCheckServerLib.Jsons;
 
 namespace PayCheckServerLib.Helpers
 {
@@ -17,20 +17,20 @@ namespace PayCheckServerLib.Helpers
             else
             {
                 ServerConfig = new()
-                { 
+                {
                     Hosting = new()
-                    { 
+                    {
                         Server = true,
                         Gstatic = true,
                         Udp = true
                     },
                     Saves = new()
-                    { 
+                    {
                         Extension = "save",
                         SaveRequest = true,
                     },
                     InDevFeatures = new()
-                    { 
+                    {
                         EnablePartySession = false
                     }
                 };

@@ -1,6 +1,5 @@
 ﻿using NetCoreServer;
 using PayCheckServerLib.WSController;
-using System;
 using System.Collections.Concurrent;
 using System.Net.Sockets;
 using System.Reflection;
@@ -49,7 +48,7 @@ namespace PayCheckServerLib
 
         }
 
-        
+
 
         public class PC3Session : WssSession
         {
@@ -107,7 +106,7 @@ namespace PayCheckServerLib
                     case WSEnum.IDK:
                     default:
                         return;
-                   
+
                 }
             }
 
@@ -127,7 +126,7 @@ namespace PayCheckServerLib
                     base.OnReceivedRequest(request);
                     return;
                 }
-                    
+
                 Debugger.PrintDebug(url);
 
                 _request = request;
