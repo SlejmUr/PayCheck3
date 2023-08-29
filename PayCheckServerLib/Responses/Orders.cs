@@ -76,16 +76,16 @@ namespace PayCheckServerLib.Responses
                 Region = body.Region,
                 Language = body.Language,
                 Status = "FULFILLED",
-                CreatedTime = DateTime.Now.ToUniversalTime().ToString("o"),
-                ChargedTime = DateTime.Now.ToUniversalTime().ToString("o"),
-                FulfilledTime = DateTime.Now.ToUniversalTime().ToString("o"),
-                ExpireTime = DateTime.Now.ToUniversalTime().ToString("o"),
+                CreatedTime = DateTime.UtcNow.ToString("o"),
+                ChargedTime = DateTime.UtcNow.ToString("o"),
+                FulfilledTime = DateTime.UtcNow.ToString("o"),
+                ExpireTime = DateTime.UtcNow.ToString("o"),
                 PaymentRemainSeconds = 0,
                 TotalTax = 0,
                 TotalPrice = body.Price,
                 SubtotalPrice = body.Price,
-                CreatedAt = DateTime.Now.ToUniversalTime().ToString("o"),
-                UpdatedAt = DateTime.Now.ToUniversalTime().ToString("o")
+                CreatedAt = DateTime.UtcNow.ToString("o"),
+                UpdatedAt = DateTime.UtcNow.ToString("o")
             };
             response.SetBody(JsonConvert.SerializeObject(order));
             session.SendResponse(response.GetResponse());

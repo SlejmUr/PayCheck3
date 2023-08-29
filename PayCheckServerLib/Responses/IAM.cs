@@ -156,7 +156,7 @@ namespace PayCheckServerLib.Responses
             ResponseCreator response = new ResponseCreator();
             response.SetHeader("Content-Type", "application/json");
             response.SetHeader("Connection", "keep-alive");
-            Bulk bulk = new()
+            UserBulk bulk = new()
             {
                 Data = new()
                 {
@@ -179,7 +179,7 @@ namespace PayCheckServerLib.Responses
                 if (TokenHelper.IsUserIdExist(item))
                 {
                     var token = TokenHelper.ReadTokenFile(item);
-                    Bulk.CData data = new()
+                    UserBulk.UserBulkData data = new()
                     {
                         AvatarUrl = "",
                         DisplayName = token.Name,

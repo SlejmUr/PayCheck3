@@ -2,7 +2,12 @@
 
 namespace PayCheckServerLib.Jsons
 {
-    internal class FriendsPlatfrom
+    public class FriendAdd
+    {
+        [JsonProperty("friendIds")]
+        public string[] FriendIds { get; set; }
+    }
+    public class FriendsPlatfrom
     {
         [JsonProperty("data")]
         public List<FriendsPlatfromData> Data { get; set; }

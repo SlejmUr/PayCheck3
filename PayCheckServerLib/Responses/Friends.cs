@@ -20,5 +20,20 @@ namespace PayCheckServerLib.Responses
             session.SendResponse(response.GetResponse());
             return true;
         }
+
+        [HTTP("POST", "/friends/namespaces/pd3beta/users/{userId}/add/bulk")]
+        public static bool FriendAddBulk(HttpRequest request, PC3Server.PC3Session session)
+        {
+
+            var friends = JsonConvert.DeserializeObject<FriendAdd>(request.Body).FriendIds;
+
+            //  Add func to UserC. for adding and checking friends infomation.
+
+
+
+            ResponseCreator response = new ResponseCreator(204);
+            session.SendResponse(response.GetResponse());
+            return true;
+        }
     }
 }
