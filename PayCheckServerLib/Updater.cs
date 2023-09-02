@@ -26,10 +26,17 @@ namespace PayCheckServerLib
             Dictionary<string, string> Files = new();
 			if (FilesUrl.StartsWith("http"))
 			{
-				HttpClient client = new HttpClient();
-				var FilesData = await client.GetStringAsync(FilesUrl);
-                Files = JsonConvert.DeserializeObject<Dictionary<string, string>>(FilesData);
-            } else
+				try
+				{
+					HttpClient client = new HttpClient();
+					var FilesData = await client.GetStringAsync(FilesUrl);
+					Files = JsonConvert.DeserializeObject<Dictionary<string, string>>(FilesData);
+				} catch(Exception e)
+				{
+					Debugger.PrintWarn("Unable to fetch hash list for updates", "Updater");
+					return;
+				}
+				} else
 			{
 				Files = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(Path.Join(FilesUrl, "Hashes.json")));
 			}

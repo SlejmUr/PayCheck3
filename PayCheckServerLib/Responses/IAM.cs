@@ -70,19 +70,24 @@ namespace PayCheckServerLib.Responses
         public static bool DeviceToken(HttpRequest request, PC3Server.PC3Session session)
         {
             //todo deviceid is in cookie!
-            var cookie = session.Headers["cookie"];
+            //var cookie = session.Headers["cookie"];
+
+            var deviceid = request.Body.Split('=')[1];
 
             ResponseCreator response = new ResponseCreator();
+            var access_token = TokenHelper.GetTokenFromPlatform(deviceid, TokenHelper.TokenPlatform.Device);
+            TokenHelper.StoreToken(access_token);
+
             response.SetHeader("Content-Type", "application/json");
             response.SetHeader("Connection", "keep-alive");
-            response.SetCookie("refresh_token", "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
-            response.SetCookie("access_token", "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB");
+            response.SetCookie("refresh_token", access_token.ToBase64());
+            response.SetCookie("access_token", access_token.ToBase64());
             LoginToken token = new()
             {
-                AccessToken = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB",
+                AccessToken = access_token.ToBase64(),
                 Scope = "account commerce social publishing analytics",
                 Bans = new() { },
-                DisplayName = "Yeet",
+                DisplayName = access_token.Name,
                 ExpiresIn = 360000,
                 IsComply = true,
                 Jflgs = 4,
@@ -99,7 +104,7 @@ namespace PayCheckServerLib.Responses
                 PlatformId = "device",
                 PlatformUserId = "c704fc89a13c956e58715e102d08ee6e",
                 RefreshExpiresIn = 86400,
-                RefreshToken = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                RefreshToken = access_token.ToBase64(),
                 Roles = new() { "2251438839e948d783ec0e5281daf05" },
                 TokenType = "Bearer",
                 UserId = "29475976933497845197035744456968"
