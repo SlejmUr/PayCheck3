@@ -8,6 +8,8 @@ namespace PayCheckServerLib
         static PD3UDPServer UDPServer;
         public static void Start()
         {
+            //if (ConfigHelper.ServerConfig.EnableAutoUpdate)
+            Updater.CheckForJsonUpdates();
             if (ConfigHelper.ServerConfig.Hosting.Server)
                 PC3Server.Start("127.0.0.1", 443);
             if (ConfigHelper.ServerConfig.Hosting.Gstatic)

@@ -32,7 +32,8 @@ namespace PayCheckServerLib.Helpers
                     InDevFeatures = new()
                     {
                         EnablePartySession = false
-                    }
+                    },
+                    EnableAutoUpdate = true
                 };
                 Debugger.PrintInfo("New ServerConfig created!", "ConfigHelper");
             }
