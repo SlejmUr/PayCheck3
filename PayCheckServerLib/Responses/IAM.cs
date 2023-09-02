@@ -1,5 +1,6 @@
 ﻿using NetCoreServer;
 using Newtonsoft.Json;
+using PayCheckServerLib.Helpers;
 using PayCheckServerLib.Jsons;
 
 namespace PayCheckServerLib.Responses
@@ -20,12 +21,8 @@ namespace PayCheckServerLib.Responses
             var platform_token = bodyTokens["platform_token"];
             var steamId = UserIdHelper.GetSteamIdFromAUTH(platform_token);
             Debugger.PrintInfo(steamId);
-            var access_token = TokenHelper.GetTokenFromPlatform(steamId, TokenHelper.TokenPlatform.Steam);
-            TokenHelper.StoreToken(access_token);
-            var refresh_token = TokenHelper.GenerateFromSteamToken(platform_token, access_token.Name, false);
-            refresh_token.UserId = access_token.UserId;
-            TokenHelper.StoreToken(refresh_token);
-            Debugger.PrintInfo("token set and generated");
+
+            var (access_token, refresh_token) = UserController.LoginUser(steamId, TokenHelper.TokenPlatform.Steam);
 
             ResponseCreator response = new ResponseCreator();
             response.SetHeader("Content-Type", "application/json");
@@ -69,20 +66,21 @@ namespace PayCheckServerLib.Responses
         [HTTP("POST", "/iam/v3/oauth/platforms/device/token")]
         public static bool DeviceToken(HttpRequest request, PC3Server.PC3Session session)
         {
-            //todo deviceid is in cookie!
-            var cookie = session.Headers["cookie"];
+            var deviceid = request.Body.Split('=')[1];
+            Debugger.PrintDebug(deviceid);
+            var (access_token, refresh_token) = UserController.LoginUser(deviceid, TokenHelper.TokenPlatform.Device);
 
             ResponseCreator response = new ResponseCreator();
             response.SetHeader("Content-Type", "application/json");
             response.SetHeader("Connection", "keep-alive");
-            response.SetCookie("refresh_token", "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
-            response.SetCookie("access_token", "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB");
+            response.SetCookie("refresh_token", refresh_token.ToBase64());
+            response.SetCookie("access_token", access_token.ToBase64());
             LoginToken token = new()
             {
-                AccessToken = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB",
+                AccessToken = access_token.ToBase64(),
                 Scope = "account commerce social publishing analytics",
                 Bans = new() { },
-                DisplayName = "Yeet",
+                DisplayName = access_token.Name,
                 ExpiresIn = 360000,
                 IsComply = true,
                 Jflgs = 4,
@@ -97,12 +95,12 @@ namespace PayCheckServerLib.Responses
                 },
                 Permissions = new() { },
                 PlatformId = "device",
-                PlatformUserId = "c704fc89a13c956e58715e102d08ee6e",
+                PlatformUserId = deviceid,
                 RefreshExpiresIn = 86400,
-                RefreshToken = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                RefreshToken = refresh_token.ToBase64(),
                 Roles = new() { "2251438839e948d783ec0e5281daf05" },
                 TokenType = "Bearer",
-                UserId = "29475976933497845197035744456968"
+                UserId = access_token.UserId
             };
             response.SetBody(JsonConvert.SerializeObject(token));
             session.SendResponse(response.GetResponse());
@@ -160,54 +158,68 @@ namespace PayCheckServerLib.Responses
             {
                 Data = new()
                 {
-                    /*
-                    new()
-                    { 
-                        AvatarUrl = "",
-                        DisplayName = "Yeet",
-                        UserId = "29475976933497845197035744456968",
-                        PlatformUserIds = new()
-                        {
-                            { "steam", "76561199227922074" }                        
-                        }
-                    }*/
                 }
             };
 
             foreach (var item in req.UserIds)
             {
-                if (TokenHelper.IsUserIdExist(item))
+                //  using UserController here to populate BulkData
+                var user = UserController.GetUser(item);
+                if (user == null)
                 {
-                    var token = TokenHelper.ReadTokenFile(item);
-                    UserBulk.UserBulkData data = new()
-                    {
-                        AvatarUrl = "",
-                        DisplayName = token.Name,
-                        UserId = item,
-                        PlatformUserIds = new()
-                        {
-
-                        }
-                    };
-                    switch (token.PlatformType)
-                    {
-                        case TokenHelper.TokenPlatform.Steam:
-                            data.PlatformUserIds.Add("steam", token.PlatformId);
-                            break;
-                        case TokenHelper.TokenPlatform.Device:
-                        default:
-                            data.PlatformUserIds.Add("device", token.PlatformId);
-                            break;
-                    }
-                    bulk.Data.Add(data);
+                    Debugger.PrintWarn($"User ({item}) not exist in UserController!");
                 }
                 else
                 {
-                    Debugger.PrintWarn($"UserId ({item}) not exist in Tokens!");
+                    bulk.Data.Add(user.UserData);
                 }
             }
 
             response.SetBody(JsonConvert.SerializeObject(bulk));
+            session.SendResponse(response.GetResponse());
+            return true;
+        }
+
+        [HTTP("GET", "/iam/v3/public/namespaces/pd3beta/users?query={uname}&by=displayName&limit=100&offset=0")]
+        public static bool UsersQuery(HttpRequest request, PC3Server.PC3Session session)
+        {
+            //Idk what is this but works
+            var username = session.HttpParam["uname"];
+            username = username.Split("&")[0].Split("=")[1];
+            Debugger.PrintDebug("UserName to search: " + username);
+            ResponseCreator response = new ResponseCreator();
+            response.SetHeader("Content-Type", "application/json");
+            response.SetHeader("Connection", "keep-alive");
+            DataPaging<FriendsSearch> dataSearch = new()
+            { 
+                Data = new(),
+                Paging = new()
+                { 
+                    First = "",
+                    Last = "",
+                    Next = "",
+                    Previous = ""
+                }
+            };
+
+            foreach (var item in UserController.GetUsers())
+            {
+                if (item.UserData.DisplayName.Contains(username))
+                {
+                    Debugger.PrintDebug("User found: " + item.UserData.DisplayName);
+
+                    dataSearch.Data.Add(new()
+                    {
+                        createdAt = DateTime.UtcNow.ToString("o"),
+                        DisplayName = item.UserData.DisplayName,
+                        Namespace = "pd3beta",
+                        UserId = item.UserData.UserId,
+                        UserName = item.UserData.DisplayName
+                    });
+                }
+            }
+
+            response.SetBody(JsonConvert.SerializeObject(dataSearch));
             session.SendResponse(response.GetResponse());
             return true;
         }

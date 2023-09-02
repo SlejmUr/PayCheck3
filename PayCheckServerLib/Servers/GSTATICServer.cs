@@ -23,8 +23,7 @@ namespace PayCheckServerLib
                 {
                     // Show HTTP request content
                     Console.WriteLine(request.Url);
-                    ResponseCreator response = new ResponseCreator(204);
-                    SendResponse(response.GetResponse());
+                    SendResponse(this.Response.MakeOkResponse(204));
                 }
 
                 protected override void OnReceivedRequestError(HttpRequest request, string error)

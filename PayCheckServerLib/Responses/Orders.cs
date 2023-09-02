@@ -42,6 +42,8 @@ namespace PayCheckServerLib.Responses
             //session.SendResponse(response.GetResponse());
 
             OrderPostBody body = JsonConvert.DeserializeObject<OrderPostBody>(request.Body);
+            if (!Directory.Exists("Orders")) { Directory.CreateDirectory("Orders"); }
+            File.WriteAllText($"Orders/{session.HttpParam["userid"]}_{body.ItemId}", request.Body);
 
             ResponseCreator response = new ResponseCreator();
 

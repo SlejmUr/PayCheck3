@@ -1,4 +1,6 @@
-﻿namespace PayCheckServerLib
+﻿using PayCheckServerLib.Jsons;
+
+namespace PayCheckServerLib
 {
     public class TokenHelper
     {
@@ -40,6 +42,19 @@
             if (!Directory.Exists("Tokens")) { Directory.CreateDirectory("Tokens"); }
             return (File.Exists($"Tokens/{UserId}_AccessToken") || File.Exists($"Tokens/{UserId}_RefreshToken"));
         }
+
+        public static Token GenerateNewTokenFromUser(User User, TokenPlatform platform = TokenPlatform.Steam, bool IsAccessToken = true)
+        {
+            return new()
+            {
+                Name = User.UserData.DisplayName,
+                PlatformId = User.UserData.PlatformUserIds[platform.ToString().ToLower()],
+                UserId = User.UserData.UserId,
+                PlatformType = platform,
+                IsAccessToken = IsAccessToken
+            };
+        }
+
 
         public static Token GenerateNewToken(string Name = "DefaultUser", TokenPlatform platform = TokenPlatform.Steam, bool IsAccessToken = true)
         {
