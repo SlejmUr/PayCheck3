@@ -2,12 +2,12 @@
 
 namespace PayCheckServerLib.Jsons
 {
-    public class Bulk
+    public class UserBulk
     {
         [JsonProperty("data")]
-        public List<CData> Data { get; set; }
+        public List<UserBulkData> Data { get; set; }
 
-        public partial class CData
+        public partial class UserBulkData
         {
             [JsonProperty("avatarUrl")]
             public string AvatarUrl { get; set; }

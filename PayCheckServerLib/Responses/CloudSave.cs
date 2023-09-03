@@ -119,7 +119,7 @@ namespace PayCheckServerLib.Responses
             if (SaveHandler.IsUserExist(userID))
             {
                 Console.WriteLine("SAVEFILE EXIST!");
-                var now = DateTime.Now.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ssZ");
+                var now = DateTime.UtcNow.ToString("o");
                 var save = JsonConvert.DeserializeObject<ProgressionSave>(SaveHandler.ReadUserSTR(userID));
                 ProgressionSaveRSP saveRSP = new()
                 {
@@ -151,7 +151,7 @@ namespace PayCheckServerLib.Responses
             SaveHandler.SaveUser(userID, request.BodyBytes);
             if (ConfigHelper.ServerConfig.Saves.SaveRequest)
                 SaveHandler.SaveUser_Request(userID, request.Body);
-            var now = DateTime.Now.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ssZ");
+            var now = DateTime.UtcNow.ToString("o");
             var save = JsonConvert.DeserializeObject<ProgressionSave>(request.Body);
             ProgressionSaveRSP saveRSP = new()
             {
