@@ -19,8 +19,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        runs-on: [macos-latest, ubuntu-latest, windows-latest]
-        configuration: [Release, Debug]
+        runs-on: [windows-latest]
+        configuration: [Release]
     steps:
     - uses: actions/checkout@v3
     - name: Setup .NET
@@ -29,15 +29,16 @@ jobs:
         dotnet-version: 7.0.x
     - name: Restore dependencies
       run: dotnet restore
-    - name: Build
-      run: dotnet build --no-restore
     - name: Publish
       run: dotnet publish -c ${{ matrix.configuration }} -o artifacts
 
+    - name: Tar files
+      run: tar -cvf artifacts.tar artifacts
+
     - name: Upload artifact
       uses: actions/upload-artifact@v3
-      if: matrix.configuration == 'Release' && matrix.runs-on == 'windows-latest'
+      #if: matrix.configuration == 'Release' && matrix.runs-on == 'windows-latest'
       with:
         name: PayCheck3-artifact
-        path: artifacts
+        path: artifacts.tar
         if-no-files-found: error
