@@ -6,5 +6,3 @@ implement:
 /session/v1/public/namespaces/pd3beta/parties/USERID
 /session/v1/public/namespaces/pd3beta/gameserssions/USERID
 /session/v1/public/namespaces/pd3beta/party
-/friends/namespaces/pd3beta/me/platforms
-/friends/namespaces/pd3beta/users/USERID/add/bulk
