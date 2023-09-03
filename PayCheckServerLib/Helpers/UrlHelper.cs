@@ -55,7 +55,7 @@
                 }
             }
 
-            return null;
+            return string.Empty;
         }
         #endregion
     }

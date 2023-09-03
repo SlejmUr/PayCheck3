@@ -1,6 +1,5 @@
 ﻿using NetCoreServer;
 using PayCheckServerLib.WSController;
-using System.Collections.Concurrent;
 using System.Net.Sockets;
 using System.Reflection;
 using System.Security.Authentication;
@@ -34,6 +33,8 @@ namespace PayCheckServerLib
                 if (method == null)
                     continue;
                 var httpAttr = method.GetCustomAttribute<HTTPAttribute>();
+                if (httpAttr == null)
+                    continue;
                 Debugger.PrintDebug(method.Name + $" ({httpAttr.url}) ({httpAttr.method}) is added as an URL", "HTTPServer");
                 HttpServerThingy.Add((httpAttr.url, httpAttr.method), method);
             }
@@ -57,7 +58,7 @@ namespace PayCheckServerLib
             {
                 return _request;
             }
-            public WSEnum WhatTheHell = WSEnum.IDK;
+            public WSEnum WS_ID = WSEnum.IDK;
             public enum WSEnum
             {
                 IDK = -1,
@@ -73,13 +74,13 @@ namespace PayCheckServerLib
             {
                 if (request.Url == "/lobby/")
                 {
-                    WhatTheHell = WSEnum.Lobby;
+                    WS_ID = WSEnum.Lobby;
                     var x = "type: connectNotif\r\nloginType: NewRegister\r\nreconnectFromCode: 5000\r\nlobbySessionID: ee62822a8428424d9a408f6385484ae5";
                     SendBinaryAsync(Encoding.UTF8.GetBytes(x));
                 }
                 if (request.Url == "/chat/")
                 {
-                    WhatTheHell = WSEnum.Chat;
+                    WS_ID = WSEnum.Chat;
                     var x = "CaSr{\"jsonrpc\":\"2.0\",\"method\":\"eventConnected\",\"params\":{\"sessionId\":\"9f51a15b940b4c538cc48281950de549\"}}CaEd";
                     SendBinaryAsync(Encoding.UTF8.GetBytes(x));
                 }
@@ -94,8 +95,8 @@ namespace PayCheckServerLib
             public override void OnWsReceived(byte[] buffer, long offset, long size)
             {
                 var buf = buffer[..(int)size];
-                Debugger.PrintInfo("OnWsReceived:" + WhatTheHell.ToString());
-                switch (WhatTheHell)
+                Debugger.PrintInfo("OnWsReceived:" + WS_ID.ToString());
+                switch (WS_ID)
                 {
                     case WSEnum.Lobby:
                         LobbyControl.Control(buf, this);
@@ -165,11 +166,13 @@ namespace PayCheckServerLib
 
         public class PC3HTTPServer : WssServer
         {
-            public ConcurrentDictionary<Guid, PC3Session> Sessions = new();
+            //public ConcurrentDictionary<Guid, PC3Session> PC3Sessions = new();
 
             public PC3HTTPServer(SslContext context, string address, int port) : base(context, address, port)
             {
+
             }
+
             PC3Session? session;
 
             public PC3Session? GetSession()

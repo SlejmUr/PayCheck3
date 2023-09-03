@@ -8,12 +8,12 @@ namespace PayCheckServerLib.Responses
     public class Friends
     {
         [HTTP("GET", "/friends/namespaces/pd3beta/me/platforms")]
-        public static bool MePlatforms(HttpRequest request, PC3Server.PC3Session session)
+        public static bool MePlatforms(HttpRequest _, PC3Server.PC3Session session)
         {
             var auth = session.Headers["authorization"].Replace("Bearer ", "");
             var token = TokenHelper.ReadToken(auth);
-            var MainUser = UserController.GetUser(token.UserId);
-            ResponseCreator response = new ResponseCreator();
+            var MainUser = UserController.GetUser(token.UserId) ?? throw new Exception("MainUser is null!");
+            ResponseCreator response = new();
             response.SetHeader("Content-Type", "application/json");
             response.SetBody(JsonConvert.SerializeObject(MainUser.Friends));
             session.SendResponse(response.GetResponse());
@@ -25,8 +25,8 @@ namespace PayCheckServerLib.Responses
         {
             var auth = session.Headers["authorization"].Replace("Bearer ", "");
             var token = TokenHelper.ReadToken(auth);
-            var MainUser = UserController.GetUser(token.UserId);
-            var friends = JsonConvert.DeserializeObject<FriendAdd>(request.Body).FriendIds;
+            var MainUser = UserController.GetUser(token.UserId) ?? throw new Exception("MainUser is null!");
+            var friends = JsonConvert.DeserializeObject<FriendAdd>(request.Body)!.FriendIds;
 
             //  Add func to UserC. for adding and checking friends infomation.
             foreach (var item in friends)
@@ -65,7 +65,7 @@ namespace PayCheckServerLib.Responses
             
 
 
-            ResponseCreator response = new ResponseCreator(204);
+            ResponseCreator response = new(204);
             session.SendResponse(response.GetResponse());
             return true;
         }

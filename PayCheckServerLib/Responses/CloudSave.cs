@@ -8,9 +8,9 @@ namespace PayCheckServerLib.Responses
     public class CloudSave
     {
         [HTTP("GET", "/cloudsave/v1/namespaces/pd3beta/records/title-data")]
-        public static bool TitleData(HttpRequest request, PC3Server.PC3Session session)
+        public static bool TitleData(HttpRequest _, PC3Server.PC3Session session)
         {
-            ResponseCreator response = new ResponseCreator();
+            ResponseCreator response = new();
             TitleData title = new()
             {
                 SetBy = "SERVER",
@@ -29,18 +29,18 @@ namespace PayCheckServerLib.Responses
         }
 
         [HTTP("GET", "/cloudsave/v1/namespaces/pd3beta/records/news-feed")]
-        public static bool NewsFeed(HttpRequest request, PC3Server.PC3Session session)
+        public static bool NewsFeed(HttpRequest _, PC3Server.PC3Session session)
         {
-            ResponseCreator response = new ResponseCreator();
+            ResponseCreator response = new();
             response.SetBody(File.ReadAllText("./Files/NewsFeed.json"));
             session.SendResponse(response.GetResponse());
             return true;
         }
 
         [HTTP("GET", "/cloudsave/v1/namespaces/pd3beta/records/infamy-translation-table")]
-        public static bool infamytranslationtable(HttpRequest request, PC3Server.PC3Session session)
+        public static bool InfamyTranslationTable(HttpRequest _, PC3Server.PC3Session session)
         {
-            ResponseCreator response = new ResponseCreator();
+            ResponseCreator response = new();
             InfamyTranslationTable.Basic table = new()
             {
                 Value = new()
@@ -50,7 +50,7 @@ namespace PayCheckServerLib.Responses
                     }
                 }
             };
-            var infamylist = JsonConvert.DeserializeObject<List<InfamyTranslationTable.CInfamyTranslationTable>>(File.ReadAllText("Files/BasicInfamyTable.json"));
+            var infamylist = JsonConvert.DeserializeObject<List<InfamyTranslationTable.CInfamyTranslationTable>>(File.ReadAllText("Files/BasicInfamyTable.json")) ?? throw new Exception("BasicInfamyTable is null!");
             table.Value.InfamyTranslationTable = infamylist;
             response.SetBody(JsonConvert.SerializeObject(table));
             session.SendResponse(response.GetResponse());
@@ -60,14 +60,14 @@ namespace PayCheckServerLib.Responses
         [HTTP("POST", "/cloudsave/v1/namespaces/pd3beta/records/bulk")]
         public static bool RecordsBulk(HttpRequest request, PC3Server.PC3Session session)
         {
-            var req = JsonConvert.DeserializeObject<WeaponsTableREQ>(request.Body);
-            ResponseCreator response = new ResponseCreator();
+            var req = JsonConvert.DeserializeObject<WeaponsTableREQ>(request.Body) ?? throw new Exception("WeaponsTableREQ is null!");
+            ResponseCreator response = new();
 
             WeaponsTable weaponsTable = new()
             {
                 Data = new()
             };
-            var weaponTranslationTables = JsonConvert.DeserializeObject<List<WeaponsTable.WeaponTranslationTable>>(File.ReadAllText("Files/BasicWeaponsTable.json"));
+            var weaponTranslationTables = JsonConvert.DeserializeObject<List<WeaponsTable.WeaponTranslationTable>>(File.ReadAllText("Files/BasicWeaponsTable.json")) ?? throw new Exception("BasicWeaponsTable is null!");
             foreach (var item in req.Keys)
             {
                 weaponsTable.Data.Add(new WeaponsTable.CData()
@@ -85,34 +85,34 @@ namespace PayCheckServerLib.Responses
         }
 
         [HTTP("GET", "/cloudsave/v1/namespaces/pd3beta/records/meta-events")]
-        public static bool MetaEvents(HttpRequest request, PC3Server.PC3Session session)
+        public static bool MetaEvents(HttpRequest _, PC3Server.PC3Session session)
         {
-            ResponseCreator response = new ResponseCreator();
+            ResponseCreator response = new();
             response.SetBody(File.ReadAllText("Files/MetaEvents.json"));
             session.SendResponse(response.GetResponse());
             return true;
         }
 
         [HTTP("GET", "/cloudsave/v1/namespaces/pd3beta/records/security-firm-rotation")]
-        public static bool securityfirmrotation(HttpRequest request, PC3Server.PC3Session session)
+        public static bool SecurityFirmRotation(HttpRequest _, PC3Server.PC3Session session)
         {
-            ResponseCreator response = new ResponseCreator();
+            ResponseCreator response = new();
             response.SetBody(File.ReadAllText("Files/FirmRotation.json"));
             session.SendResponse(response.GetResponse());
             return true;
         }
 
         [HTTP("GET", "/cloudsave/v1/namespaces/pd3beta/users/{userId}/records/PlatformBlockedPlayerData")]
-        public static bool PlatformBlockedPlayerData(HttpRequest request, PC3Server.PC3Session session)
+        public static bool PlatformBlockedPlayerData(HttpRequest _, PC3Server.PC3Session session)
         {
-            ResponseCreator response = new ResponseCreator(404);
+            ResponseCreator response = new(404);
             session.SendResponse(response.GetResponse());
             return true;
         }
 
 
         [HTTP("GET", "/cloudsave/v1/namespaces/pd3beta/users/{userId}/records/progressionsavegame")]
-        public static bool progressionsavegameGET(HttpRequest request, PC3Server.PC3Session session)
+        public static bool ProgressionsavegameGET(HttpRequest _, PC3Server.PC3Session session)
         {
             var userID = session.HttpParam["userId"];
             var response = new ResponseCreator();
@@ -120,7 +120,7 @@ namespace PayCheckServerLib.Responses
             {
                 Console.WriteLine("SAVEFILE EXIST!");
                 var now = DateTime.UtcNow.ToString("o");
-                var save = JsonConvert.DeserializeObject<ProgressionSave>(SaveHandler.ReadUserSTR(userID));
+                var save = JsonConvert.DeserializeObject<ProgressionSave>(SaveHandler.ReadUserSTR(userID)) ?? throw new Exception("save is null!");
                 ProgressionSaveRSP saveRSP = new()
                 {
                     CreatedAt = now,
@@ -145,14 +145,14 @@ namespace PayCheckServerLib.Responses
         }
 
         [HTTP("POST", "/cloudsave/v1/namespaces/pd3beta/users/{userId}/records/progressionsavegame")]
-        public static bool progressionsavegamePOST(HttpRequest request, PC3Server.PC3Session session)
+        public static bool ProgressionsavegamePOST(HttpRequest request, PC3Server.PC3Session session)
         {
             var userID = session.HttpParam["userId"];
             SaveHandler.SaveUser(userID, request.BodyBytes);
             if (ConfigHelper.ServerConfig.Saves.SaveRequest)
                 SaveHandler.SaveUser_Request(userID, request.Body);
             var now = DateTime.UtcNow.ToString("o");
-            var save = JsonConvert.DeserializeObject<ProgressionSave>(request.Body);
+            var save = JsonConvert.DeserializeObject<ProgressionSave>(request.Body) ?? throw new Exception("save is null!");
             ProgressionSaveRSP saveRSP = new()
             {
                 CreatedAt = now,
@@ -160,7 +160,7 @@ namespace PayCheckServerLib.Responses
                 UserId = userID,
                 Value = save
             };
-            ResponseCreator response = new ResponseCreator();
+            ResponseCreator response = new();
             response.SetBody(JsonConvert.SerializeObject(saveRSP));
             session.SendResponse(response.GetResponse());
             return true;

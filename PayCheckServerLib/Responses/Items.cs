@@ -7,9 +7,9 @@ namespace PayCheckServerLib.Responses
     public class Items
     {
         [HTTP("GET", "/platform/public/namespaces/pd3beta/items/byCriteria?limit=1000&includeSubCategoryItem=false")]
-        public static bool GetItemsByCriteria(HttpRequest request, PC3Server.PC3Session session)
+        public static bool GetItemsByCriteria(HttpRequest _, PC3Server.PC3Session session)
         {
-            ResponseCreator creator = new ResponseCreator();
+            ResponseCreator creator = new();
 
             creator.SetBody(File.ReadAllText("./Files/Items.json"));
             session.SendResponse(creator.GetResponse());
@@ -17,10 +17,10 @@ namespace PayCheckServerLib.Responses
         }
 
         [HTTP("GET", "/platform/public/namespaces/pd3beta/items/byCriteria?tags=WeaponPart&limit=1000&includeSubCategoryItem=false")]
-        public static bool GetItemsByCriteriaWeaponPart(HttpRequest request, PC3Server.PC3Session session)
+        public static bool GetItemsByCriteriaWeaponPart(HttpRequest _, PC3Server.PC3Session session)
         {
-            ResponseCreator creator = new ResponseCreator();
-            var items = JsonConvert.DeserializeObject<ItemsJson>(File.ReadAllText("./Files/Items.json"));
+            ResponseCreator creator = new();
+            var items = JsonConvert.DeserializeObject<ItemsJson>(File.ReadAllText("./Files/Items.json")) ?? throw new Exception("Items is null!");
             var finalitems = new List<ItemDefinitionJson>();
             foreach (var item in items.Data)
             {

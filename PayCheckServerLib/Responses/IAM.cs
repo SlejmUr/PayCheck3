@@ -24,7 +24,7 @@ namespace PayCheckServerLib.Responses
 
             var (access_token, refresh_token) = UserController.LoginUser(steamId, TokenHelper.TokenPlatform.Steam);
 
-            ResponseCreator response = new ResponseCreator();
+            ResponseCreator response = new();
             response.SetHeader("Content-Type", "application/json");
             response.SetHeader("Connection", "keep-alive");
             response.SetCookie("refresh_token", refresh_token.ToBase64());
@@ -70,7 +70,7 @@ namespace PayCheckServerLib.Responses
             Debugger.PrintDebug(deviceid);
             var (access_token, refresh_token) = UserController.LoginUser(deviceid, TokenHelper.TokenPlatform.Device);
 
-            ResponseCreator response = new ResponseCreator();
+            ResponseCreator response = new();
             response.SetHeader("Content-Type", "application/json");
             response.SetHeader("Connection", "keep-alive");
             response.SetCookie("refresh_token", refresh_token.ToBase64());
@@ -108,11 +108,11 @@ namespace PayCheckServerLib.Responses
         }
 
         [HTTP("GET", "/iam/v3/public/users/me")]
-        public static bool UsersMe(HttpRequest request, PC3Server.PC3Session session)
+        public static bool UsersMe(HttpRequest _, PC3Server.PC3Session session)
         {
             var auth = session.Headers["authorization"].Replace("Bearer ", "");
             var token = TokenHelper.ReadToken(auth);
-            ResponseCreator response = new ResponseCreator();
+            ResponseCreator response = new();
             response.SetHeader("Content-Type", "application/json");
             response.SetHeader("Connection", "keep-alive");
             Me me = new()
@@ -149,9 +149,8 @@ namespace PayCheckServerLib.Responses
         [HTTP("POST", "/iam/v3/public/namespaces/pd3beta/users/bulk/basic")]
         public static bool BulkBasic(HttpRequest request, PC3Server.PC3Session session)
         {
-            var req = JsonConvert.DeserializeObject<BulkReq>(request.Body);
-
-            ResponseCreator response = new ResponseCreator();
+            var req = JsonConvert.DeserializeObject<BulkReq>(request.Body) ?? throw new Exception("BulkBasic is null!");
+            ResponseCreator response = new();
             response.SetHeader("Content-Type", "application/json");
             response.SetHeader("Connection", "keep-alive");
             UserBulk bulk = new()
@@ -181,14 +180,14 @@ namespace PayCheckServerLib.Responses
         }
 
         [HTTP("GET", "/iam/v3/public/namespaces/pd3beta/users?query={uname}&by=displayName&limit=100&offset=0")]
-        public static bool UsersQuery(HttpRequest request, PC3Server.PC3Session session)
+        public static bool UsersQuery(HttpRequest _, PC3Server.PC3Session session)
         {
             //Idk what is this but works
             var username = session.HttpParam["uname"];
             username = username.Split("&")[0].Split("=")[1];
             //magix shit end
             Debugger.PrintDebug("UserName to search: " + username);
-            ResponseCreator response = new ResponseCreator();
+            ResponseCreator response = new();
             response.SetHeader("Content-Type", "application/json");
             response.SetHeader("Connection", "keep-alive");
             DataPaging<FriendsSearch> dataSearch = new()

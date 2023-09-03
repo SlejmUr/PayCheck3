@@ -12,7 +12,7 @@ namespace PayCheckServerLib
 {
 	public class Updater
 	{
-		static string FilesUrl = @"https://github.com/MoolahModding/PayCheck3Files/raw/main/";
+		static readonly string FilesUrl = @"https://github.com/MoolahModding/PayCheck3Files/raw/main/";
 
         public static async void CheckForJsonUpdates()
 		{
@@ -28,17 +28,19 @@ namespace PayCheckServerLib
 			{
 				try
 				{
-					HttpClient client = new HttpClient();
+					HttpClient client = new();
 					var FilesData = await client.GetStringAsync(FilesUrl);
-					Files = JsonConvert.DeserializeObject<Dictionary<string, string>>(FilesData);
-				} catch(Exception e)
+					Files = JsonConvert.DeserializeObject<Dictionary<string, string>>(FilesData)!;
+				} 
+				catch
 				{
 					Debugger.PrintWarn("Unable to fetch hash list for updates", "Updater");
 					return;
 				}
-				} else
+			} 
+			else
 			{
-				Files = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(Path.Join(FilesUrl, "Hashes.json")));
+				Files = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(Path.Join(FilesUrl, "Hashes.json")))!;
 			}
 
 			foreach(var KeyPair in Files)
@@ -50,7 +52,9 @@ namespace PayCheckServerLib
 						Debugger.PrintInfo(KeyPair.Key + " is out of date", "Updater");
 					}
 				}
-				catch (Exception e) { }
+				catch
+				{ 
+				}
 			}
 		}
 	}

@@ -91,11 +91,11 @@ namespace PayCheckServerLib.Helpers
 
         public static List<User> GetUsers()
         { 
-            List<User> users = new List<User>();
+            List<User> users = new();
             if (!Directory.Exists("Users")) { Directory.CreateDirectory("Users"); }
             foreach (var item in Directory.GetFiles("Users"))
             {
-                users.Add(JsonConvert.DeserializeObject<User>(File.ReadAllText(item)));
+                users.Add(JsonConvert.DeserializeObject<User>(File.ReadAllText(item))!);
             }
             return users;
         }

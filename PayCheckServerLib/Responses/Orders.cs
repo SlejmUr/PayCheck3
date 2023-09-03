@@ -17,9 +17,9 @@ namespace PayCheckServerLib.Responses
             return "O" + ret;
         }
 
-        public static ItemDefinitionJson GetItemFromId(string id)
+        public static ItemDefinitionJson? GetItemFromId(string id)
         {
-            var items = JsonConvert.DeserializeObject<ItemsJson>(File.ReadAllText("Files/Items.json")).Data;
+            var items = JsonConvert.DeserializeObject<ItemsJson>(File.ReadAllText("Files/Items.json"))!.Data;
             foreach (var item in items)
             {
                 if (item.ItemId == id)
@@ -41,14 +41,13 @@ namespace PayCheckServerLib.Responses
             //response.SetBody(JsonConvert.SerializeObject(payload));
             //session.SendResponse(response.GetResponse());
 
-            OrderPostBody body = JsonConvert.DeserializeObject<OrderPostBody>(request.Body);
+            var body = JsonConvert.DeserializeObject<OrderPostBody>(request.Body) ?? throw new Exception("UserOrders -> body is null!");
             if (!Directory.Exists("Orders")) { Directory.CreateDirectory("Orders"); }
             File.WriteAllText($"Orders/{session.HttpParam["userid"]}_{body.ItemId}", request.Body);
 
-            ResponseCreator response = new ResponseCreator();
+            ResponseCreator response = new();
 
-            ItemDefinitionJson item = GetItemFromId(body.ItemId);
-
+            ItemDefinitionJson? item = GetItemFromId(body.ItemId) ?? throw new Exception("GetItemFromId -> Item is null!");
             Order order = new()
             {
                 OrderNo = GenOrderNumber(),
@@ -74,7 +73,7 @@ namespace PayCheckServerLib.Responses
                     Decimals = 0
                 },
                 // will be like this until i can confirm they are the same type ~HW12Dev
-                ItemSnapshot = JsonConvert.DeserializeObject<Order.ItemSnapshotJson>(JsonConvert.SerializeObject(item)),
+                ItemSnapshot = JsonConvert.DeserializeObject<Order.ItemSnapshotJson>(JsonConvert.SerializeObject(item))!,
                 Region = body.Region,
                 Language = body.Language,
                 Status = "FULFILLED",

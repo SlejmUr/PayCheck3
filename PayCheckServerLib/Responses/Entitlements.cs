@@ -7,10 +7,10 @@ namespace PayCheckServerLib.Responses
     public class Entitlements
     {
         [HTTP("GET", "/platform/public/namespaces/pd3beta/users/{userId}/entitlements?limit={limit}")]
-        public static bool GetUserEntitlements(HttpRequest request, PC3Server.PC3Session session)
+        public static bool GetUserEntitlements(HttpRequest _, PC3Server.PC3Session session)
         {
             var responsecreator = new ResponseCreator();
-            var entitlements = JsonConvert.DeserializeObject<EntitlementPayloadJson>(File.ReadAllText("./Files/Entitlements.json"));
+            var entitlements = JsonConvert.DeserializeObject<EntitlementPayloadJson>(File.ReadAllText("./Files/Entitlements.json")) ?? throw new Exception("Entitlements is null!");
             var newentitlements = new List<EntitlementsData>();
             foreach (var entitlement in entitlements.Data)
             {

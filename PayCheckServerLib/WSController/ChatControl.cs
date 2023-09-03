@@ -15,7 +15,7 @@ namespace PayCheckServerLib.WSController
                 if (!Directory.Exists("Chat")) { Directory.CreateDirectory("Chat"); }
                 File.WriteAllBytes("Chat/" + DateTime.Now.ToString("s").Replace(":", "-") + ".bytes", buffer);
                 var str = Encoding.UTF8.GetString(buffer);
-                var chatbase = JsonConvert.DeserializeObject<Chats.ChatBase>(str);
+                var chatbase = JsonConvert.DeserializeObject<Chats.ChatBase>(str) ?? throw new Exception("chatbase is null!");
                 switch (chatbase.Method)
                 {
                     case "actionQueryTopic":
