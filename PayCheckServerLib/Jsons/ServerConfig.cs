@@ -13,6 +13,9 @@ namespace PayCheckServerLib.Jsons
         [JsonProperty("InDevFeatures")]
         public CInDevFeatures InDevFeatures { get; set; }
 
+        [JsonProperty("EnableAutoUpdate")]
+        public bool EnableAutoUpdate { get; set; }
+
         public partial class CHosting
         {
             [JsonProperty("Server")]

@@ -186,6 +186,7 @@ namespace PayCheckServerLib.Responses
             //Idk what is this but works
             var username = session.HttpParam["uname"];
             username = username.Split("&")[0].Split("=")[1];
+            //magix shit end
             Debugger.PrintDebug("UserName to search: " + username);
             ResponseCreator response = new ResponseCreator();
             response.SetHeader("Content-Type", "application/json");
