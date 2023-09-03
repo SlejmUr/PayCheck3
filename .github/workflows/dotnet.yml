@@ -1,0 +1,45 @@
+name: .NET Build
+
+on:
+  push:
+      paths-ignore:
+      - '.github/*'
+      - '.github/*_TEMPLATE/**'
+      - '*.md'
+  pull_request:
+      paths-ignore:
+      - '.github/*'
+      - '.github/*_TEMPLATE/**'
+      - '*.md'
+
+jobs:
+  build:
+    name: .NET on ${{ matrix.runs-on }} (${{ matrix.configuration }})
+    runs-on: ${{ matrix.runs-on }}
+    strategy:
+      fail-fast: false
+      matrix:
+        runs-on: [windows-latest]
+        configuration: [Release]
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 7.0.x
+    - name: Restore dependencies
+      run: dotnet restore
+      
+    - name: Publish
+      run: dotnet publish -c ${{ matrix.configuration }} --property:PublishDir=../artifacts
+
+#    - name: Tar files
+#      run: tar -cvf artifacts.tar artifacts
+
+    - name: Upload artifact
+      uses: actions/upload-artifact@v3
+      #if: matrix.configuration == 'Release' && matrix.runs-on == 'windows-latest'
+      with:
+        name: PayCheck3-artifact
+        path: artifacts
+        if-no-files-found: error
