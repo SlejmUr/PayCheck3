@@ -29,8 +29,9 @@ jobs:
         dotnet-version: 7.0.x
     - name: Restore dependencies
       run: dotnet restore
+      
     - name: Publish
-      run: dotnet publish -c ${{ matrix.configuration }} -o artifacts
+      run: dotnet publish -c ${{ matrix.configuration }} --property:PublishDir=artifacts
 
     - name: Tar files
       run: tar -cvf artifacts.tar artifacts
