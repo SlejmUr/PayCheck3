@@ -19,7 +19,7 @@ namespace PayCheckServerLib.Responses
             }
 
             var platform_token = bodyTokens["platform_token"];
-            var steamId = UserIdHelper.GetSteamIdFromAUTH(platform_token);
+            var steamId = UserIdHelper.GetSteamIDFromAUTH(platform_token);
             Debugger.PrintInfo(steamId);
 
             var (access_token, refresh_token) = UserController.LoginUser(steamId, TokenHelper.TokenPlatform.Steam);
@@ -191,10 +191,10 @@ namespace PayCheckServerLib.Responses
             response.SetHeader("Content-Type", "application/json");
             response.SetHeader("Connection", "keep-alive");
             DataPaging<FriendsSearch> dataSearch = new()
-            { 
+            {
                 Data = new(),
                 Paging = new()
-                { 
+                {
                     First = "",
                     Last = "",
                     Next = "",

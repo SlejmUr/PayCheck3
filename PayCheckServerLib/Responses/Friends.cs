@@ -54,7 +54,7 @@ namespace PayCheckServerLib.Responses
                 foreach (var pids in user.UserData.PlatformUserIds)
                 {
                     data.PlatformInfos.Add(new()
-                    { 
+                    {
                         PlatformDisplayName = user.UserData.DisplayName,
                         PlatformName = pids.Key,
                         PlatformUserId = pids.Value
@@ -62,7 +62,7 @@ namespace PayCheckServerLib.Responses
                 }
                 MainUser.Friends.Add(data);
             }
-            
+
 
 
             ResponseCreator response = new(204);

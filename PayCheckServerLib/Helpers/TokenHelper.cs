@@ -73,7 +73,7 @@ namespace PayCheckServerLib
             return new()
             {
                 Name = Name,
-                PlatformId = UserIdHelper.GetSteamIdFromAUTH(platform_token),
+                PlatformId = UserIdHelper.GetSteamIDFromAUTH(platform_token),
                 UserId = UserIdHelper.CreateNewID(),
                 PlatformType = TokenPlatform.Steam,
                 IsAccessToken = IsAccessToken

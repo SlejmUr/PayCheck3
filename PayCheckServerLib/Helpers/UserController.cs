@@ -8,12 +8,19 @@ namespace PayCheckServerLib.Helpers
     /// </summary>
     public class UserController
     {
+        /// <summary>
+        /// Register a user based on Parameters
+        /// </summary>
+        /// <param name="PlatformId">SteamId or DeviceId</param>
+        /// <param name="platform">Steam or Device</param>
+        /// <param name="UserName">Unique username</param>
+        /// <returns>The new User</returns>
         public static User RegisterUser(string PlatformId, TokenHelper.TokenPlatform platform, string UserName)
         {
             User user = new()
-            { 
+            {
                 Friends = new(),
-                UserData = new() 
+                UserData = new()
                 {
                     AvatarUrl = "",
                     DisplayName = UserName,
@@ -29,6 +36,12 @@ namespace PayCheckServerLib.Helpers
             return user;
         }
 
+        /// <summary>
+        /// Check if User Exist by Parameters
+        /// </summary>
+        /// <param name="PlaformId">SteamId or DeviceId</param>
+        /// <param name="platform">Steam or Device</param>
+        /// <returns>True or False</returns>
         public static bool CheckUser(string PlaformId, TokenHelper.TokenPlatform platform)
         {
             foreach (User item in GetUsers())
@@ -43,6 +56,12 @@ namespace PayCheckServerLib.Helpers
             return true;
         }
 
+        /// <summary>
+        /// Get User by Parameters
+        /// </summary>
+        /// <param name="PlaformId">SteamId or DeviceId</param>
+        /// <param name="platform">Steam or Device</param>
+        /// <returns>User object or null</returns>
         public static User? GetUser(string PlaformId, TokenHelper.TokenPlatform platform)
         {
             foreach (User item in GetUsers())
@@ -57,40 +76,58 @@ namespace PayCheckServerLib.Helpers
             return null;
         }
 
+        /// <summary>
+        /// Login User with Parameters, If not exist it will create one!
+        /// </summary>
+        /// <param name="PlaformId">SteamId or DeviceId</param>
+        /// <param name="platform">Steam or Device</param>
+        /// <returns>AccessToken and RefleshToken</returns>
         public static (TokenHelper.Token AccessToken, TokenHelper.Token RefleshToken) LoginUser(string PlaformId, TokenHelper.TokenPlatform platform)
         {
             var user = GetUser(PlaformId, platform);
             if (user == null)
             {
-                Debugger.PrintWarn("User Is not Registered! Continue generating DefaultUser...","USERCONTROLLER.WARN");
+                Debugger.PrintWarn("User Is not Registered! Continue generating DefaultUser...", "USERCONTROLLER.WARN");
                 user = RegisterUser(PlaformId, platform, "DefaultUser");
             }
             var token = TokenHelper.GenerateNewTokenFromUser(user, platform);
-            TokenHelper.StoreToken(token); 
+            TokenHelper.StoreToken(token);
             var tokenRef = TokenHelper.GenerateNewTokenFromUser(user, platform, false);
             TokenHelper.StoreToken(tokenRef);
             return (token, tokenRef);
         }
 
 
-
+        /// <summary>
+        /// Save the user to disk
+        /// </summary>
+        /// <param name="user">User Object</param>
         public static void SaveUser(User user)
         {
             if (!Directory.Exists("Users")) { Directory.CreateDirectory("Users"); }
             File.WriteAllText($"Users/{user.UserData.UserId}.json", JsonConvert.SerializeObject(user));
         }
 
+        /// <summary>
+        /// Get user from disk
+        /// </summary>
+        /// <param name="UserId">UserId</param>
+        /// <returns>User object if Exist or null</returns>
         public static User? GetUser(string UserId)
         {
             if (File.Exists($"Users/{UserId}.json"))
             {
                 return JsonConvert.DeserializeObject<User>(File.ReadAllText($"Users/{UserId}.json"));
             }
-            return null;        
+            return null;
         }
 
+        /// <summary>
+        /// Get All Users from the disk
+        /// </summary>
+        /// <returns>List of Users</returns>
         public static List<User> GetUsers()
-        { 
+        {
             List<User> users = new();
             if (!Directory.Exists("Users")) { Directory.CreateDirectory("Users"); }
             foreach (var item in Directory.GetFiles("Users"))
