@@ -31,7 +31,7 @@ jobs:
       run: dotnet restore
       
     - name: Publish
-      run: dotnet publish -c ${{ matrix.configuration }} --property:PublishDir=artifacts
+      run: dotnet publish -c ${{ matrix.configuration }} --property:PublishDir=../artifacts
 
     - name: Tar files
       run: tar -cvf artifacts.tar artifacts
