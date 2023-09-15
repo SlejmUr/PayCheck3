@@ -53,28 +53,9 @@ namespace PayCheckServerLib.Responses
         [HTTP("GET", "/basic/v1/public/misc/time")]
         public static bool Time(HttpRequest request, PC3Server.PC3Session session)
         {
-            /*
-            string outp = "";
-            foreach (var item in session.Headers)
-            {
-                outp += item.Key + "=" + item.Value + "\n";
-            }
-
-            Debugger.PrintDebug(outp);
-            /*
-            var cookie = session.Headers["cookie"];
-            var x = cookie.Split(";");
-            Dictionary<string, string> Cookies = new();
-            foreach (var item in x)
-            {
-                var kv = item.Split("=");
-                Cookies.Add(kv[0].ToLower(), kv[1]);
-            }
-
-            var access_token = Cookies["access_token"];
-            var token = TokenHelper.ReadToken(access_token);
-            Debugger.PrintDebug($"{token.UserId}({token.Name}) Is still in the server!");
-            */
+            var tokens = TokenHelper.ReadFromHeader(session.Headers);
+            Debugger.PrintDebug($"{tokens.AccessToken.UserId}({tokens.AccessToken.Name}) Is still in the server!");
+            
             //todo send friendstatus online in WSS
 
 

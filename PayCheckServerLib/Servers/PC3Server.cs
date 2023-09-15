@@ -66,24 +66,72 @@ namespace PayCheckServerLib
                 Chat
             }
 
+            public Dictionary<string, PC3Session> WSS_Stuff = new();
+
+            public PC3Session GetWSLobby(string UserId)
+            {
+                return WSS_Stuff[UserId + "_lobby"];
+            }
+
+            public PC3Session GetWSChat(string UserId)
+            {
+                return WSS_Stuff[UserId + "_chat"];
+            }
+
+            public string WSUserId = "";
+
             public PC3Session(WssServer server) : base(server) { }
             public Dictionary<string, string> Headers = new();
             public Dictionary<string, string> HttpParam = new();
 
             public override void OnWsConnected(HttpRequest request)
             {
+                Headers.Clear();
+                for (int i = 0; i < request.Headers; i++)
+                {
+                    var headerpart = request.Header(i);
+                    Headers.Add(headerpart.Item1.ToLower(), headerpart.Item2);
+                }
+                string id = "";
+                //There is a bug where this LobbySession empty and it contains the bearer token :)
+                if (Headers.ContainsKey("x-ab-lobbysessionid"))
+                {
+                    id = Headers["x-ab-lobbysessionid"].Replace("Authorization: Bearer ", "");
+                }
+                else
+                {
+                    id = Headers["authorization"].Replace("Bearer ", "");
+                }
+                var token =  TokenHelper.ReadToken(id);
                 if (request.Url == "/lobby/")
                 {
                     WS_ID = WSEnum.Lobby;
+                    WSUserId = token.UserId;
+                    if (WSS_Stuff.ContainsKey(token.UserId + "_" + WS_ID.ToString().ToLower()))
+                    {
+                        Debugger.PrintWarn("The fuck? This User now wants to to join to WS again! " + WS_ID);
+                    }
+                    WSS_Stuff.Add(token.UserId + "_" + WS_ID.ToString().ToLower(), this);
                     var x = "type: connectNotif\r\nloginType: NewRegister\r\nreconnectFromCode: 5000\r\nlobbySessionID: ee62822a8428424d9a408f6385484ae5";
                     SendBinaryAsync(Encoding.UTF8.GetBytes(x));
                 }
                 if (request.Url == "/chat/")
                 {
                     WS_ID = WSEnum.Chat;
+                    WSUserId = token.UserId;
+                    if (WSS_Stuff.ContainsKey(token.UserId + "_" + WS_ID.ToString().ToLower()))
+                    {
+                        Debugger.PrintWarn("The fuck? This User now wants to to join to WS again! " + WS_ID);
+                    }
+                    WSS_Stuff.Add(token.UserId + "_" + WS_ID.ToString().ToLower(), this);
                     var x = "CaSr{\"jsonrpc\":\"2.0\",\"method\":\"eventConnected\",\"params\":{\"sessionId\":\"9f51a15b940b4c538cc48281950de549\"}}CaEd";
                     SendBinaryAsync(Encoding.UTF8.GetBytes(x));
                 }
+            }
+
+            public override void OnWsDisconnecting()
+            {
+                Console.WriteLine(WS_ID + " quit");
             }
 
             public override void OnWsError(string error)
@@ -95,17 +143,18 @@ namespace PayCheckServerLib
             public override void OnWsReceived(byte[] buffer, long offset, long size)
             {
                 var buf = buffer[..(int)size];
-                Debugger.PrintInfo("OnWsReceived:" + WS_ID.ToString());
+                //Debugger.PrintInfo("OnWsReceived:" + WS_ID.ToString());
                 switch (WS_ID)
                 {
                     case WSEnum.Lobby:
-                        LobbyControl.Control(buf, this);
+                        LobbyControl.Control(buffer, offset, size, this);
                         return;
                     case WSEnum.Chat:
-                        ChatControl.Control(buf, this);
+                        ChatControl.Control(buffer, offset, size, this);
                         return;
                     case WSEnum.IDK:
                     default:
+                        Debugger.PrintInfo("We received WS Stuff but we dont know which!");
                         return;
 
                 }
@@ -136,6 +185,7 @@ namespace PayCheckServerLib
                 {
                     if ((UrlHelper.Match(url, item.Key.url, out HttpParam) || item.Key.url == url) && request.Method == item.Key.method)
                     {
+                        Debugger.logger.Debug(url + "\n" + request);
                         Debugger.PrintInfo("Url Called function: " + item.Value.Name);
                         item.Value.Invoke(this, new object[] { request, this });
                         Sent = true;

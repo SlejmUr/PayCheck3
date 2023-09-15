@@ -32,6 +32,9 @@ namespace PayCheckServerLib.Jsons
         {
             [JsonProperty("Enable_PartySession")]
             public bool EnablePartySession { get; set; }
+
+            [JsonProperty("UsePWInsteadSteamToken")]
+            public bool UsePWInsteadSteamToken { get; set; }
         }
 
         public partial class CSaves

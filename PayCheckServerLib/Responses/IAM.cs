@@ -11,6 +11,26 @@ namespace PayCheckServerLib.Responses
         [HTTP("POST", "/iam/v3/oauth/platforms/steam/token")]
         public static bool SteamToken(HttpRequest request, PC3Server.PC3Session session)
         {
+            ResponseCreator response = new();
+            if (ConfigHelper.ServerConfig.InDevFeatures.UsePWInsteadSteamToken)
+            {
+
+                /*
+                return status code 401 with
+                 {
+                        "clientId": "uuidv4",
+                        "error": "platform_not_linked",
+                        "linkingToken": "uuidv4",
+                        "platformId": "steam"
+                    }
+                 to get game to allow email + password auth
+                 */
+                response.SetBody(JsonConvert.SerializeObject(new IAM_SteamError()));
+                session.SendResponse(response.GetResponse());
+                return true;
+            }
+
+
             var splitted = request.Body.Split("&");
             Dictionary<string, string> bodyTokens = new();
             foreach (var item in splitted)
@@ -25,11 +45,14 @@ namespace PayCheckServerLib.Responses
 
             var (access_token, refresh_token) = UserController.LoginUser(steamId, TokenHelper.TokenPlatform.Steam);
 
-            ResponseCreator response = new();
             response.SetHeader("Content-Type", "application/json");
             response.SetHeader("Connection", "keep-alive");
-            response.SetCookie("refresh_token", refresh_token.ToBase64());
-            response.SetCookie("access_token", access_token.ToBase64());
+            /*
+            response.SetHeader("cache-control", "no-cache, no-store, max-age=0, must-revalidate");
+            response.SetHeader("expires", "Fri, 01 Jan 1990 00:00:00 GMT");
+            response.SetHeader("pragma", "no-cache");*/
+            response.SetHeader("Set-Cookie", "refresh_token=" + refresh_token.ToBase64() + "; Path=/; HttpOnly; Secure; SameSite=None");
+            response.SetHeader("Set-Cookie", "access_token=" + access_token.ToBase64() + "; Path=/; HttpOnly; Secure; SameSite=None");
             LoginToken LoginToken = new()
             {
                 AccessToken = access_token.ToBase64(),
@@ -52,7 +75,7 @@ namespace PayCheckServerLib.Responses
                 Permissions = new() { },
                 PlatformId = "steam",
                 PlatformUserId = access_token.PlatformId,
-                RefreshExpiresIn = 86400,
+                RefreshExpiresIn = 8400000,
                 RefreshToken = refresh_token.ToBase64(),
                 Roles = new() { "2251438839e948d783ec0e5281daf05" },
                 TokenType = "Bearer",
@@ -62,17 +85,6 @@ namespace PayCheckServerLib.Responses
             session.SendResponse(response.GetResponse());
             Debugger.PrintDebug("Sent Response!");
             return true;
-
-			/***
-             * return status code 401 with
-             * {
-                    "clientId": "uuidv4",
-                    "error": "platform_not_linked",
-                    "linkingToken": "uuidv4",
-                    "platformId": "steam"
-                }
-             * to get game to allow email + password auth
-             */
 		}
 
 		[HTTP("POST", "/iam/v3/oauth/platforms/device/token")]
@@ -85,8 +97,8 @@ namespace PayCheckServerLib.Responses
             ResponseCreator response = new();
             response.SetHeader("Content-Type", "application/json");
             response.SetHeader("Connection", "keep-alive");
-            response.SetCookie("refresh_token", refresh_token.ToBase64());
-            response.SetCookie("access_token", access_token.ToBase64());
+            response.SetHeader("Set-Cookie", "refresh_token=" + refresh_token.ToBase64() + "; Path=/; HttpOnly; Secure; SameSite=None");
+            response.SetHeader("Set-Cookie", "access_token=" + access_token.ToBase64() + "; Path=/; HttpOnly; Secure; SameSite=None");
             LoginToken token = new()
             {
                 AccessToken = access_token.ToBase64(),
@@ -132,14 +144,14 @@ namespace PayCheckServerLib.Responses
             var client_id = param["client_id"];
 
             // request does not have a device id, client_id will do for now
-			var (access_token, refresh_token) = UserController.LoginUser(client_id, TokenHelper.TokenPlatform.Device);
+			var (access_token, refresh_token) = UserController.LoginUser(client_id!, TokenHelper.TokenPlatform.Device);
 
 			ResponseCreator response = new();
 			response.SetHeader("Content-Type", "application/json");
 			response.SetHeader("Connection", "keep-alive");
-			response.SetCookie("refresh_token", refresh_token.ToBase64());
-			response.SetCookie("access_token", access_token.ToBase64());
-			LoginToken token = new()
+            response.SetHeader("Set-Cookie", "refresh_token=" + refresh_token.ToBase64() + "; Path=/; HttpOnly; Secure; SameSite=None");
+            response.SetHeader("Set-Cookie", "access_token=" + access_token.ToBase64() + "; Path=/; HttpOnly; Secure; SameSite=None");
+            LoginToken token = new()
 			{
 				AccessToken = access_token.ToBase64(),
 				Scope = "account commerce social publishing analytics",

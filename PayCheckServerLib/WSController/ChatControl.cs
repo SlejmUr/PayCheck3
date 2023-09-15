@@ -7,41 +7,37 @@ namespace PayCheckServerLib.WSController
 {
     public class ChatControl
     {
-        public static void Control(byte[] buffer, PC3Session session)
+        public static void Control(byte[] buffer, long offset, long size, PC3Session session)
         {
-            Console.WriteLine(BitConverter.ToString(buffer));
-            if (buffer.Length != 0)
+            if (size == 0)
+                return;
+            buffer = buffer.Take((int)size).ToArray();
+            if (!Directory.Exists("Chat")) { Directory.CreateDirectory("Chat"); }
+            File.WriteAllBytes("Chat/" + DateTime.Now.ToString("s").Replace(":", "-") + ".bytes", buffer);
+            var str = Encoding.UTF8.GetString(buffer);
+            var chatbase = JsonConvert.DeserializeObject<Chats.ChatBase>(str) ?? throw new Exception("chatbase is null!");
+            switch (chatbase.Method)
             {
-                if (!Directory.Exists("Chat")) { Directory.CreateDirectory("Chat"); }
-                File.WriteAllBytes("Chat/" + DateTime.Now.ToString("s").Replace(":", "-") + ".bytes", buffer);
-                var str = Encoding.UTF8.GetString(buffer);
-                var chatbase = JsonConvert.DeserializeObject<Chats.ChatBase>(str) ?? throw new Exception("chatbase is null!");
-                switch (chatbase.Method)
-                {
-                    case "actionQueryTopic":
+                case "actionQueryTopic":
+                    {
+                        Chats.actionQueryTopicRSP rsp = new()
                         {
-                            Chats.actionQueryTopicRSP rsp = new()
+                            Id = chatbase.Id,
+                            Jsonrpc = chatbase.Jsonrpc,
+                            Method = chatbase.Method,
+                            Params = new()
                             {
-                                Id = chatbase.Id,
-                                Jsonrpc = chatbase.Jsonrpc,
-                                Method = chatbase.Method,
-                                Params = new()
-                                {
-                                    Processed = "1691204630"
-                                }
-                            };
-                            var resp = "CaSr" + JsonConvert.SerializeObject(rsp) + "CaEd";
-                            Console.WriteLine("Sending back: " + resp);
-                            session.SendTextAsync(resp);
-                        }
-                        return;
-                    default:
-                        Console.WriteLine("ChatControl: " + chatbase.Method);
-                        return;
-
-                }
-
-
+                                Processed = DateTime.Now.Second.ToString()
+                            }
+                        };
+                        var resp = "CaSr" + JsonConvert.SerializeObject(rsp) + "CaEd";
+                        Console.WriteLine("Sending back: " + resp);
+                        session.SendTextAsync(resp);
+                    }
+                    return;
+                default:
+                    Debugger.PrintWebsocket("ChatControl: " + chatbase.Method);
+                    return;
             }
         }
     }

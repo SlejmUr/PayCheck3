@@ -1,4 +1,5 @@
 ﻿using PayCheckServerLib.Jsons;
+using PayCheckServerLib.Responses;
 
 namespace PayCheckServerLib
 {
@@ -130,6 +131,27 @@ namespace PayCheckServerLib
             var text = File.ReadAllText($"Tokens/{UserId}_{acctoken}");
             return ReadToken(text);
         }
+
+        public static (Token AccessToken, Token RefleshToken) ReadFromHeader(Dictionary<string, string> kv)
+        {
+            try
+            {
+                if (!kv.ContainsKey("cookie"))
+                {
+                    Debugger.PrintError("No cookie in header!");
+                }
+                var cookieSplit = kv["cookie"].Split("; ");
+                var AccessToken = cookieSplit[0].Split("access_token=")[1];
+                var RefleshToken = cookieSplit[1].Split("refresh_token=")[1];
+                return (ReadToken(AccessToken), ReadToken(RefleshToken));
+            }
+            catch (Exception ex)
+            {
+                Debugger.PrintError(ex.ToString());
+            }
+            return (new Token(), new Token());
+        }
+
 
         public static Token ReadToken(string base64)
         {

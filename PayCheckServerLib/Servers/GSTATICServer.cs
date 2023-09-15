@@ -22,7 +22,7 @@ namespace PayCheckServerLib
                 protected override void OnReceivedRequest(HttpRequest request)
                 {
                     // Show HTTP request content
-                    Console.WriteLine(request.Url);
+                    Console.WriteLine("GS Sent!");
                     SendResponse(this.Response.MakeOkResponse(204));
                 }
 

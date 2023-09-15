@@ -5,23 +5,39 @@ namespace PayCheckServerLib.WSController
 {
     public class LobbyControl
     {
-        public static void Control(byte[] buffer, PC3Session session)
+        public static void Control(byte[] buffer, long offset, long size, PC3Session session)
         {
-            if (buffer.Length != 0)
+            if (size == 0)
+                return;
+            buffer = buffer.Take((int)size).ToArray();
+            if (!Directory.Exists("Lobby")) { Directory.CreateDirectory("Lobby"); }
+            var time = DateTime.Now.ToString("s").Replace(":", "-");
+            File.WriteAllBytes("Lobby/" + time + ".bytes", buffer);
+            var str = Encoding.UTF8.GetString(buffer);
+            Dictionary<string, string> kv = new();
+            var strArray = str.Split("\n");
+            Debugger.PrintWebsocket(strArray.Count().ToString());
+            foreach (var item in strArray)
             {
-                if (!Directory.Exists("Lobby")) { Directory.CreateDirectory("Lobby"); }
-                File.WriteAllBytes("Lobby/" + DateTime.Now.ToString("s").Replace(":", "-") + ".bytes", buffer);
+                var kv2 = item.Split(": ");
+                Console.WriteLine(kv2[0]);
+                kv.Add(kv2[0], kv2[1]);
             }
+            Debugger.PrintWebsocket("KVs done!");
 
-            Debugger.logger.Debug("LobbyControl.BYTES:\n" + BitConverter.ToString(buffer));
-            try
+            //Now doing some magic here for stuff.
+        }
+
+        public static void SendToLobby(Dictionary<string, string> kv, PC3Session session)
+        {
+            var str = "";
+            foreach (var item in kv)
             {
-                var str = Encoding.UTF8.GetString(buffer);
-                Debugger.logger.Debug("LobbyControl.TEXT:\n" + str);
+                str = item.Key + ": " + item.Value + "\n";
             }
-            catch
-            {
-            }
+            str = str[..-2];
+            Debugger.PrintWebsocket(str);
+            session.SendBinaryAsync(str);
         }
     }
 }

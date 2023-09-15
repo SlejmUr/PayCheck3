@@ -31,7 +31,8 @@ namespace PayCheckServerLib.Helpers
                     },
                     InDevFeatures = new()
                     {
-                        EnablePartySession = false
+                        EnablePartySession = false,
+                        UsePWInsteadSteamToken = false
                     },
                     EnableAutoUpdate = true
                 };

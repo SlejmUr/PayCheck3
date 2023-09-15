@@ -45,7 +45,7 @@ namespace PayCheckServerLib
             response.SetHeader(key, value);
         }
 
-        public void SetCookie(string name, string value, int maxAge = 86400, string path = "", string domain = "", bool secure = true, bool strict = true, bool httpOnly = true)
+        public void SetCookie(string name, string value, int maxAge = 86400000, string path = "", string domain = "", bool secure = true, bool strict = false, bool httpOnly = true)
         {
             response.SetCookie(name, value, maxAge, path, domain, secure, strict, httpOnly);
         }
