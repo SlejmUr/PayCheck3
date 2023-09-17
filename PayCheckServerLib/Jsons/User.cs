@@ -4,6 +4,15 @@
     {
         public UserBulk.UserBulkData UserData;
         public List<FriendsPlatfrom.FriendsPlatfromData> Friends;
+        public FStatus Status;
 
+        public class FStatus
+        {
+            public bool IsOnWSs;
+            public string availability;
+            public string activity;
+            public string platform;
+            public string lastSeenAt;
+        }
     }
 }

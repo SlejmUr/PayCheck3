@@ -10,14 +10,14 @@ namespace PayCheckServerLib.Responses
         public static bool GetUserEntitlements(HttpRequest _, PC3Server.PC3Session session)
         {
             var responsecreator = new ResponseCreator();
-            var entitlements = JsonConvert.DeserializeObject<EntitlementPayloadJson>(File.ReadAllText("./Files/Entitlements.json")) ?? throw new Exception("Entitlements is null!");
+            var entitlements = JsonConvert.DeserializeObject<DataPaging<EntitlementsData>>(File.ReadAllText("./Files/Entitlements.json")) ?? throw new Exception("Entitlements is null!");
             var newentitlements = new List<EntitlementsData>();
             foreach (var entitlement in entitlements.Data)
             {
                 entitlement.UserId = session.HttpParam["userId"];
                 newentitlements.Add(entitlement);
             }
-            var payload = new EntitlementPayloadJson()
+            DataPaging<EntitlementsData> payload = new()
             {
                 Data = newentitlements,
                 Paging = { }

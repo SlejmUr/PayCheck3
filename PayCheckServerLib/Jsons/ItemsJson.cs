@@ -103,12 +103,4 @@ namespace PayCheckServerLib.Jsons
         [JsonProperty("updatedAt")]
         public string UpdatedAt { get; set; }
     }
-    public class ItemsJson
-    {
-        [JsonProperty("data")]
-        public List<ItemDefinitionJson> Data { get; set; }
-
-        [JsonProperty("paging")]
-        public object Paging { get; set; }
-    }
 }

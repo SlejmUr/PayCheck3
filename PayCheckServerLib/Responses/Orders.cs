@@ -19,7 +19,7 @@ namespace PayCheckServerLib.Responses
 
         public static ItemDefinitionJson? GetItemFromId(string id)
         {
-            var items = JsonConvert.DeserializeObject<ItemsJson>(File.ReadAllText("Files/Items.json"))!.Data;
+            var items = JsonConvert.DeserializeObject<DataPaging<ItemDefinitionJson>>(File.ReadAllText("Files/Items.json"))!.Data;
             foreach (var item in items)
             {
                 if (item.ItemId == id)

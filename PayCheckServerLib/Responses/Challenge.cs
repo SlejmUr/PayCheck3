@@ -21,7 +21,7 @@ namespace PayCheckServerLib.Responses
             var auth = session.Headers["authorization"].Replace("Bearer ", "");
             var token = TokenHelper.ReadToken(auth);
             ResponseCreator creator = new();
-            var challenges = JsonConvert.DeserializeObject<Challenges>(File.ReadAllText("Files/ChallengeRecords.json")) ?? throw new Exception("ChallengeRecords is null!");
+            var challenges = JsonConvert.DeserializeObject<DataPaging<ChallengesData>>(File.ReadAllText("Files/ChallengeRecords.json")) ?? throw new Exception("ChallengeRecords is null!");
             foreach (var item in challenges.Data)
             {
                 item.UserId = token.UserId;

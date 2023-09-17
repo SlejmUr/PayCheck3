@@ -56,7 +56,8 @@ namespace PayCheckServerLib.Responses
             var tokens = TokenHelper.ReadFromHeader(session.Headers);
             Debugger.PrintDebug($"{tokens.AccessToken.UserId}({tokens.AccessToken.Name}) Is still in the server!");
             
-            //todo send friendstatus online in WSS
+            //todo send friendstatus online in WSS -NOT
+            //save the state if still active if not active then X sec then send offline into wss.
 
 
             ResponseCreator response = new ResponseCreator();

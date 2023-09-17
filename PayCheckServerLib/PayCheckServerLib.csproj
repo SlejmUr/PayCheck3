@@ -4,6 +4,13 @@
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <PackageProjectUrl>https://github.com/SlejmUr/PayCheck3</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/SlejmUr/PayCheck3</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <Copyright>SlejmUr</Copyright>
+    <Description>PayDay3 Server Lib</Description>
+    <Company>$(Authors)</Company>
+    <Authors>SlejmUr,HW12Dev</Authors>
   </PropertyGroup>
 
   <ItemGroup>
@@ -23,10 +30,39 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Properties\BuildDate.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="JWT" Version="10.0.3" />
     <PackageReference Include="L" Version="5.0.0" />
     <PackageReference Include="NetCoreServer" Version="7.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+	
+	<Target Name="SetSourceRevisionId" BeforeTargets="InitializeSourceControlInformation">
+		<Exec Command="git describe --long --always --exclude=* --abbrev=8" ConsoleToMSBuild="True" IgnoreExitCode="False">
+			<Output PropertyName="SourceRevisionId" TaskParameter="ConsoleOutput" />
+		</Exec>
+	</Target>
+	
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="git.exe branch --show-current &gt; &quot;$(ProjectDir)\Properties\BuildDate.txt&quot;&#xD;&#xA;echo %25date%25 %25time%25 &gt;&gt; &quot;$(ProjectDir)\Properties\BuildDate.txt&quot;&#xD;&#xA;git rev-parse --short HEAD &gt;&gt; &quot;$(ProjectDir)\Properties\BuildDate.txt&quot;&#xD;&#xA;echo done" />
+  </Target>
 
 </Project>

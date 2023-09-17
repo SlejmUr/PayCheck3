@@ -29,6 +29,14 @@ namespace PayCheckServerLib.Helpers
                     {
                         {  platform.ToString().ToLower(), PlatformId }
                     }
+                },
+                Status = new()
+                { 
+                    IsOnWSs = false,
+                    availability = "offline",
+                    activity = "nil",
+                    platform = "nil",
+                    lastSeenAt = "2023-09-08T12:00:00Z"
                 }
             };
             SaveUser(user);

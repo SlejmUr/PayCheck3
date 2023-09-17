@@ -28,12 +28,4 @@ namespace PayCheckServerLib.Jsons
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Tags { get; set; }
     }
-    public class GetUserStatItems
-    {
-        [JsonProperty("data")]
-        public GetUserStatItemsData[] Data { get; set; }
-
-        [JsonProperty("paging")]
-        public object Paging { get; set; }
-    }
 }

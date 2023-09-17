@@ -20,7 +20,7 @@ namespace PayCheckServerLib.Responses
         public static bool GetItemsByCriteriaWeaponPart(HttpRequest _, PC3Server.PC3Session session)
         {
             ResponseCreator creator = new();
-            var items = JsonConvert.DeserializeObject<ItemsJson>(File.ReadAllText("./Files/Items.json")) ?? throw new Exception("Items is null!");
+            var items = JsonConvert.DeserializeObject<DataPaging<ItemDefinitionJson>>(File.ReadAllText("./Files/Items.json")) ?? throw new Exception("Items is null!");
             var finalitems = new List<ItemDefinitionJson>();
             foreach (var item in items.Data)
             {
@@ -32,7 +32,7 @@ namespace PayCheckServerLib.Responses
                     }
                 }
             }
-            var tosend = new ItemsJson()
+            DataPaging<ItemDefinitionJson> tosend = new()
             {
                 Data = finalitems,
                 Paging = { }

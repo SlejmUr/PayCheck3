@@ -1,5 +1,7 @@
 ﻿using NetCoreServer;
+using PayCheckServerLib.Jsons;
 using PayCheckServerLib.WSController;
+using System.Collections.Generic;
 using System.Net.Sockets;
 using System.Reflection;
 using System.Security.Authentication;
@@ -17,13 +19,13 @@ namespace PayCheckServerLib
             return cert;
         }
 
-        static PC3HTTPServer? server = null;
+        static PC3WSSServer? server = null;
         static Dictionary<(string url, string method), MethodInfo> HttpServerThingy = new();
         public static void Start(string IP, int Port)
         {
             HttpServerThingy.Clear();
             var context = new SslContext(SslProtocols.Tls12, GetCert());
-            server = new PC3HTTPServer(context, IP, Port);
+            server = new PC3WSSServer(context, IP, Port);
             Console.WriteLine("[HTTPS] Server Started on https://" + IP + ":" + Port);
             server.Start();
             var methods = Assembly.GetExecutingAssembly().GetTypes().SelectMany(x => x.GetMethods()).ToArray();
@@ -68,15 +70,11 @@ namespace PayCheckServerLib
 
             public Dictionary<string, PC3Session> WSS_Stuff = new();
 
-            public PC3Session GetWSLobby(string UserId)
-            {
-                return WSS_Stuff[UserId + "_lobby"];
-            }
+            public PC3Session GetWSLobby(string UserId) => WSS_Stuff[UserId + "_lobby"];
 
-            public PC3Session GetWSChat(string UserId)
-            {
-                return WSS_Stuff[UserId + "_chat"];
-            }
+            public PC3Session GetWSChat(string UserId) => WSS_Stuff[UserId + "_chat"];
+
+            public PC3WSSServer WSSServer() => (PC3WSSServer)Server;
 
             public string WSUserId = "";
 
@@ -107,6 +105,8 @@ namespace PayCheckServerLib
                 {
                     WS_ID = WSEnum.Lobby;
                     WSUserId = token.UserId;
+                    var serv = (PC3WSSServer)this.Server;
+                    serv.WSUserIds.Add(WSUserId);
                     if (WSS_Stuff.ContainsKey(token.UserId + "_" + WS_ID.ToString().ToLower()))
                     {
                         Debugger.PrintWarn("The fuck? This User now wants to to join to WS again! " + WS_ID);
@@ -132,6 +132,9 @@ namespace PayCheckServerLib
             public override void OnWsDisconnecting()
             {
                 Console.WriteLine(WS_ID + " quit");
+                WSS_Stuff.Remove(WS_ID + "_" + WS_ID.ToString().ToLower());
+                var serv = (PC3WSSServer)this.Server;
+                serv.WSUserIds.Remove(WSUserId);
             }
 
             public override void OnWsError(string error)
@@ -214,13 +217,12 @@ namespace PayCheckServerLib
             }
         }
 
-        public class PC3HTTPServer : WssServer
+        public class PC3WSSServer : WssServer
         {
-            //public ConcurrentDictionary<Guid, PC3Session> PC3Sessions = new();
-
-            public PC3HTTPServer(SslContext context, string address, int port) : base(context, address, port)
+            public List<string> WSUserIds;
+            public PC3WSSServer(SslContext context, string address, int port) : base(context, address, port)
             {
-
+                WSUserIds = new();
             }
 
             PC3Session? session;

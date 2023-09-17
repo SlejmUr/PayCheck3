@@ -58,7 +58,7 @@ namespace PayCheckServerLib.Responses
         {
             ResponseCreator response = new();
             response.SetHeader("Content-Type", "application/json");
-            Challenges challenges = new()
+            DataPaging<object> gamesessions = new()
             {
                 Paging = new()
                 {
@@ -69,7 +69,7 @@ namespace PayCheckServerLib.Responses
                 },
                 Data = new()
             };
-            response.SetBody(JsonConvert.SerializeObject(challenges));
+            response.SetBody(JsonConvert.SerializeObject(gamesessions));
             session.SendResponse(response.GetResponse());
             return true;
         }
@@ -79,7 +79,7 @@ namespace PayCheckServerLib.Responses
         {
             ResponseCreator response = new();
             response.SetHeader("Content-Type", "application/json");
-            Challenges challenges = new()
+            DataPaging<object> gamesessions = new()
             {
                 Paging = new()
                 {
@@ -90,7 +90,7 @@ namespace PayCheckServerLib.Responses
                 },
                 Data = new()
             };
-            response.SetBody(JsonConvert.SerializeObject(challenges));
+            response.SetBody(JsonConvert.SerializeObject(gamesessions));
             session.SendResponse(response.GetResponse());
             return true;
         }

@@ -8,9 +8,10 @@ namespace PayCheckServerLib
         static PD3UDPServer UDPServer;
         public static void Start()
         {
-            //if (ConfigHelper.ServerConfig.EnableAutoUpdate)
-            Updater.CheckForJsonUpdates();
-            if (ConfigHelper.ServerConfig.Hosting.Server)
+            Debugger.logger.Info("Lib Info: " + BranchHelper.GetBranch() + " - " + BranchHelper.GetBuildDate() + " " + BranchHelper.GetCommitId());
+            if (ConfigHelper.ServerConfig.EnableAutoUpdate)
+                Updater.CheckForJsonUpdates();
+            if (ConfigHelper.ServerConfig.Hosting.WSS)
                 PC3Server.Start("127.0.0.1", 443);
             if (ConfigHelper.ServerConfig.Hosting.Gstatic)
             {
@@ -19,23 +20,19 @@ namespace PayCheckServerLib
             }
             if (ConfigHelper.ServerConfig.Hosting.Udp)
             {
-                UDPServer = new PD3UDPServer("127.0.0.1", 6969);
+                UDPServer = new PD3UDPServer("127.0.0.1", ConfigHelper.ServerConfig.Hosting.UDP_PORT);
                 UDPServer.Start();
             }
         }
 
         public static void Stop()
         {
-            if (ConfigHelper.ServerConfig.Hosting.Server)
+            if (ConfigHelper.ServerConfig.Hosting.WSS)
                 PC3Server.Stop();
             if (ConfigHelper.ServerConfig.Hosting.Gstatic)
-            {
                 STATICServer.Stop();
-            }
             if (ConfigHelper.ServerConfig.Hosting.Udp)
-            {
                 UDPServer.Stop();
-            }
         }
     }
 }

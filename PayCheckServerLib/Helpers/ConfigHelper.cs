@@ -20,14 +20,15 @@ namespace PayCheckServerLib.Helpers
                 {
                     Hosting = new()
                     {
-                        Server = true,
+                        WSS = true,
                         Gstatic = true,
-                        Udp = true
+                        Udp = true,
+                        UDP_PORT = 6969
                     },
                     Saves = new()
                     {
                         Extension = "save",
-                        SaveRequest = true,
+                        SaveRequest = false,
                     },
                     InDevFeatures = new()
                     {

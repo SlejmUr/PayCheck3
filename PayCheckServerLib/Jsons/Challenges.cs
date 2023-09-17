@@ -2,14 +2,6 @@
 
 namespace PayCheckServerLib.Jsons
 {
-    public class Challenges
-    {
-        [JsonProperty("data")]
-        public List<ChallengesData> Data { get; set; }
-
-        [JsonProperty("paging")]
-        public Paging Paging { get; set; }
-    }
     public partial class ChallengesData
     {
         [JsonProperty("challenge")]

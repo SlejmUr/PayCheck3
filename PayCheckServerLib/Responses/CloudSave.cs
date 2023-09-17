@@ -118,9 +118,8 @@ namespace PayCheckServerLib.Responses
             var response = new ResponseCreator();
             if (SaveHandler.IsUserExist(userID))
             {
-                Console.WriteLine("SAVEFILE EXIST!");
                 var now = DateTime.UtcNow.ToString("o");
-                var save = JsonConvert.DeserializeObject<ProgressionSave>(SaveHandler.ReadUserSTR(userID)) ?? throw new Exception("save is null!");
+                var save = JsonConvert.DeserializeObject<object>(SaveHandler.ReadUserSTR(userID)) ?? throw new Exception("save is null!");
                 ProgressionSaveRSP saveRSP = new()
                 {
                     CreatedAt = now,
@@ -130,7 +129,6 @@ namespace PayCheckServerLib.Responses
                 };
                 response.SetBody(JsonConvert.SerializeObject(saveRSP));
                 session.SendResponse(response.GetResponse());
-                Console.WriteLine("sent rsp with success!");
                 return true;
             }
             response = new ResponseCreator(404);
@@ -152,7 +150,7 @@ namespace PayCheckServerLib.Responses
             if (ConfigHelper.ServerConfig.Saves.SaveRequest)
                 SaveHandler.SaveUser_Request(userID, request.Body);
             var now = DateTime.UtcNow.ToString("o");
-            var save = JsonConvert.DeserializeObject<ProgressionSave>(request.Body) ?? throw new Exception("save is null!");
+            var save = JsonConvert.DeserializeObject<object>(request.Body) ?? throw new Exception("save is null!");
             ProgressionSaveRSP saveRSP = new()
             {
                 CreatedAt = now,

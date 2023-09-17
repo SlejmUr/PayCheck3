@@ -19,13 +19,16 @@ namespace PayCheckServerLib.Jsons
         public partial class CHosting
         {
             [JsonProperty("Server")]
-            public bool Server { get; set; }
+            public bool WSS { get; set; }
 
             [JsonProperty("UDP")]
             public bool Udp { get; set; }
 
             [JsonProperty("GSTATIC")]
             public bool Gstatic { get; set; }
+
+            [JsonProperty("UDP_PORT")]
+            public int UDP_PORT { get; set; }
         }
 
         public partial class CInDevFeatures

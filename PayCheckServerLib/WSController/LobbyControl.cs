@@ -1,4 +1,7 @@
-﻿using System.Text;
+﻿using Newtonsoft.Json;
+using PayCheckServerLib.Helpers;
+using PayCheckServerLib.Jsons;
+using System.Text;
 using static PayCheckServerLib.PC3Server;
 
 namespace PayCheckServerLib.WSController
@@ -24,9 +27,103 @@ namespace PayCheckServerLib.WSController
                 kv.Add(kv2[0], kv2[1]);
             }
             Debugger.PrintWebsocket("KVs done!");
-
+            SwitchingType(kv, session);
             //Now doing some magic here for stuff.
         }
+
+        static void SwitchingType(Dictionary<string, string> kv, PC3Session session)
+        {
+            User? user;
+            Dictionary<string, string> rsp = new();
+            switch (kv["type"])
+            {
+                case "setUserStatusRequest":
+                    rsp.Add("type", "setUserStatusResponse");
+                    rsp.Add("id", kv["id"]);
+                    rsp.Add("code", "0");
+                    user = UserController.GetUser(session.WSUserId);
+                    user.Status.activity = rsp["activity"];
+                    user.Status.availability = rsp["availability"];
+                    user.Status.platform = rsp["platform"];
+                    user.Status.lastSeenAt = DateTime.UtcNow.ToString("O");
+                    UserController.SaveUser(user);
+                    SendToLobby(rsp, session);
+                    rsp.Remove("type");
+                    rsp.Remove("code");
+                    rsp.Add("type", "userStatusNotif");
+                    rsp.Add("userID", session.WSUserId);
+                    rsp.Add("activity", rsp["activity"]);
+                    rsp.Add("availability", rsp["availability"]); 
+                    rsp.Add("platform", rsp["platform"]);
+                    rsp.Add("lastSeenAt", DateTime.UtcNow.ToString("O"));
+                    session.WSSServer().WSUserIds.ForEach(x => SendToLobby(rsp, session.GetWSLobby(x)));
+                    break;
+                case "joinDefaultChannelRequest":
+                    rsp.Add("type", "joinDefaultChannelResponse");
+                    rsp.Add("id", kv["id"]);
+                    rsp.Add("channelSlug", "default-channel");
+                    rsp.Add("code", "0");
+                    SendToLobby(rsp, session);
+                    break;
+                case "listIncomingFriendsRequest":
+                    rsp.Add("type", "listIncomingFriendsResponse");
+                    rsp.Add("id", kv["id"]);
+                    rsp.Add("code", "0");
+                    rsp.Add("friendsId", "[]");
+                    SendToLobby(rsp, session);
+                    break;
+                case "listOutgoingFriendsRequest":
+                    rsp.Add("type", "listOutgoingFriendsResponse");
+                    rsp.Add("id", kv["id"]);
+                    rsp.Add("code", "0");
+                    rsp.Add("friendsId", "[]");
+                    SendToLobby(rsp, session);
+                    break;
+                case "friendsStatusRequest":
+                    rsp.Add("type", "friendsStatusResponse");
+                    rsp.Add("id", kv["id"]);
+                    rsp.Add("code", "0");
+                    user = UserController.GetUser(session.WSUserId);
+                    List<string> friendsId = new();
+                    List<string> availability = new();
+                    List<string> activity = new();
+                    List<string> platform = new();
+                    List<string> lastSeenAt = new();
+                    foreach (var fr in user.Friends)
+                    {
+                        var fud = fr.UserId;
+                        friendsId.Add(fud);
+
+                        var fuser = UserController.GetUser(fud);
+
+                        availability.Add(fuser.Status.availability);
+                        activity.Add(fuser.Status.activity);
+                        platform.Add(fuser.Status.platform);
+                        lastSeenAt.Add(fuser.Status.lastSeenAt);
+                    }
+
+                    rsp.Add("friendsId", ListToStr(friendsId));
+                    rsp.Add("availability", ListToStr(availability));
+                    rsp.Add("activity", ListToStr(activity));
+                    rsp.Add("platform", ListToStr(platform));
+                    rsp.Add("lastSeenAt", ListToStr(lastSeenAt));
+                    SendToLobby(rsp, session);
+                    break;
+                default:
+                    Debugger.PrintWebsocket("Not sending back anything: " + kv["type"]);
+                    break;
+            }
+        
+        }
+
+        public static string ListToStr<T>(List<T> list) where T : class
+        {
+            var str = JsonConvert.SerializeObject(list);
+            str = str.Replace("\"]",",]");
+            str = str.Replace("\"","");
+            return str;
+        }
+
 
         public static void SendToLobby(Dictionary<string, string> kv, PC3Session session)
         {

@@ -29,9 +29,9 @@ namespace PayCheckServerLib.Responses
         public static bool GetUserStatItems(HttpRequest request, PC3Server.PC3Session session)
         {
             ResponseCreator response = new ResponseCreator();
-            GetUserStatItems responsedata = new()
+            DataPaging<GetUserStatItemsData> responsedata = new()
             {
-                Data = new GetUserStatItemsData[]
+                Data = new()
                 {
                     new GetUserStatItemsData()
                     {
@@ -55,9 +55,9 @@ namespace PayCheckServerLib.Responses
         public static bool GetUserStatItemsInfamy(HttpRequest request, PC3Server.PC3Session session)
         {
             ResponseCreator response = new ResponseCreator();
-            GetUserStatItems responsedata = new()
+            DataPaging<GetUserStatItemsData> responsedata = new()
             {
-                Data = new GetUserStatItemsData[]
+                Data = new()
                 {
                     new GetUserStatItemsData()
                     {

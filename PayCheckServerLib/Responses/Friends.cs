@@ -15,7 +15,11 @@ namespace PayCheckServerLib.Responses
             var MainUser = UserController.GetUser(token.UserId) ?? throw new Exception("MainUser is null!");
             ResponseCreator response = new();
             response.SetHeader("Content-Type", "application/json");
-            response.SetBody(JsonConvert.SerializeObject(MainUser.Friends));
+            FriendsPlatfrom friends = new FriendsPlatfrom()
+            {
+                Data = MainUser.Friends
+            };
+            response.SetBody(JsonConvert.SerializeObject(friends));
             session.SendResponse(response.GetResponse());
             return true;
         }
