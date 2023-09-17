@@ -8,7 +8,6 @@
 
         public class FStatus
         {
-            public bool IsOnWSs;
             public string availability;
             public string activity;
             public string platform;

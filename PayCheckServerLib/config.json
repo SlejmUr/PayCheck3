@@ -1,14 +1,17 @@
 {
   "Saves": {
     "Extension": "save",
-    "SaveRequest": true
+    "SaveRequest": false
   },
   "Hosting": {
     "Server": true,
     "UDP": true,
-    "GSTATIC": true
+    "GSTATIC": true,
+    "UDP_PORT": 6969
   },
   "InDevFeatures": {
-    "Enable_PartySession": false
-  }
+    "Enable_PartySession": false,
+    "UsePWInsteadSteamToken": false
+  },
+  "EnableAutoUpdate": true
 }

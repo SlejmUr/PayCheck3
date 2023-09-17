@@ -28,8 +28,8 @@ Extension: It basicly a json but with a funny extension
 ### Hosting
 WSS: Can enable/disable to run the HTTPS/WSS Server\
 UDP: Can enable/disable to run the UDP Server (GameServer?) [NOT USED]\
-GSTATIC: Can enable/disable to run the GSTATIC server (Enable you to play without internet)
-UDP_PORT: Can Set 
+GSTATIC: Can enable/disable to run the GSTATIC server (Enable you to play without internet)\
+UDP_PORT: Can set Port for UDP connection
 
 ### InDevFeatures
 Can enable/disable certain features that could land you something now work perfectly.

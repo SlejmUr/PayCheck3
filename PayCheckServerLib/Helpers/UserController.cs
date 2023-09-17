@@ -31,8 +31,7 @@ namespace PayCheckServerLib.Helpers
                     }
                 },
                 Status = new()
-                { 
-                    IsOnWSs = false,
+                {
                     availability = "offline",
                     activity = "nil",
                     platform = "nil",

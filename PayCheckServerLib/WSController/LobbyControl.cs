@@ -42,6 +42,12 @@ namespace PayCheckServerLib.WSController
                     rsp.Add("id", kv["id"]);
                     rsp.Add("code", "0");
                     user = UserController.GetUser(session.WSUserId);
+                    if (user == null)
+                    {
+                        Debugger.PrintWarn($"User not found! ({session.WSUserId}) WSS Cannot continue");
+                        new Exception("UserId is null");
+                        break;
+                    }
                     user.Status.activity = rsp["activity"];
                     user.Status.availability = rsp["availability"];
                     user.Status.platform = rsp["platform"];
@@ -84,6 +90,12 @@ namespace PayCheckServerLib.WSController
                     rsp.Add("id", kv["id"]);
                     rsp.Add("code", "0");
                     user = UserController.GetUser(session.WSUserId);
+                    if (user == null)
+                    {
+                        Debugger.PrintWarn($"User not found! ({session.WSUserId}) WSS Cannot continue");
+                        new Exception("UserId is null");
+                        break;
+                    }
                     List<string> friendsId = new();
                     List<string> availability = new();
                     List<string> activity = new();
@@ -95,7 +107,12 @@ namespace PayCheckServerLib.WSController
                         friendsId.Add(fud);
 
                         var fuser = UserController.GetUser(fud);
-
+                        if (fuser == null)
+                        {
+                            Debugger.PrintWarn($"User not found! ({session.WSUserId}) WSS Cannot continue");
+                            new Exception("UserId is null");
+                            break;
+                        }
                         availability.Add(fuser.Status.availability);
                         activity.Add(fuser.Status.activity);
                         platform.Add(fuser.Status.platform);

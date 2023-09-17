@@ -1,7 +1,6 @@
 ﻿using NetCoreServer;
-using PayCheckServerLib.Jsons;
+using PayCheckServerLib.Helpers;
 using PayCheckServerLib.WSController;
-using System.Collections.Generic;
 using System.Net.Sockets;
 using System.Reflection;
 using System.Security.Authentication;
@@ -131,10 +130,35 @@ namespace PayCheckServerLib
 
             public override void OnWsDisconnecting()
             {
-                Console.WriteLine(WS_ID + " quit");
+                Console.WriteLine(WSUserId + " " + WS_ID + " quit");
+                if (WS_ID == WSEnum.Lobby)
+                {
+                    var user = UserController.GetUser(WSUserId);
+                    if (user == null)
+                    {
+                        Debugger.PrintWarn($"User not found! ({WSUserId}) WSS Cannot continue");
+                        new Exception("UserId is null");
+                    }
+                    user.Status.activity = "nil";
+                    user.Status.availability = "offline";
+                    user.Status.platform = "nil";
+                    user.Status.lastSeenAt = DateTime.UtcNow.ToString("O");
+                    UserController.SaveUser(user);
+                    Dictionary<string, string> rsp = new()
+                    {
+                        { "type", "userStatusNotif" },
+                        { "userID", WSUserId },
+                        { "availability", "offline" },
+                        { "activity", "nil" },
+                        { "platform", "nil" },
+                        { "lastSeenAt", user.Status.lastSeenAt },
+                    };
+                    WSSServer().WSUserIds.ForEach(x => LobbyControl.SendToLobby(rsp, GetWSLobby(x)));
+                }
                 WSS_Stuff.Remove(WS_ID + "_" + WS_ID.ToString().ToLower());
-                var serv = (PC3WSSServer)this.Server;
+                var serv = (PC3WSSServer)Server;
                 serv.WSUserIds.Remove(WSUserId);
+                WSUserId = "";
             }
 
             public override void OnWsError(string error)

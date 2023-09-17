@@ -9,7 +9,11 @@ namespace PayCheckServerLib.Helpers
 
         static ConfigHelper()
         {
-            var conf = JsonConvert.DeserializeObject<ServerConfig>(File.ReadAllText("config.json"));
+            ServerConfig? conf = null;
+            if (File.Exists("config.json"))
+            {
+                conf = JsonConvert.DeserializeObject<ServerConfig>(File.ReadAllText("config.json"));
+            }
             if (conf != null)
             {
                 ServerConfig = conf;
@@ -37,6 +41,7 @@ namespace PayCheckServerLib.Helpers
                     },
                     EnableAutoUpdate = true
                 };
+                File.WriteAllText("config.json", JsonConvert.SerializeObject(ServerConfig, Formatting.Indented));
                 Debugger.PrintInfo("New ServerConfig created!", "ConfigHelper");
             }
         }
