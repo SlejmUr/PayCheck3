@@ -137,7 +137,7 @@ namespace PayCheckServerLib
                     if (user == null)
                     {
                         Debugger.PrintWarn($"User not found! ({WSUserId}) WSS Cannot continue");
-                        new Exception("UserId is null");
+                        throw new Exception("UserId is null");
                     }
                     user.Status.activity = "nil";
                     user.Status.availability = "offline";

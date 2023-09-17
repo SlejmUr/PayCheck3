@@ -93,8 +93,7 @@ namespace PayCheckServerLib.WSController
                     if (user == null)
                     {
                         Debugger.PrintWarn($"User not found! ({session.WSUserId}) WSS Cannot continue");
-                        new Exception("UserId is null");
-                        break;
+                        throw new Exception("UserId is null");
                     }
                     List<string> friendsId = new();
                     List<string> availability = new();
@@ -110,8 +109,7 @@ namespace PayCheckServerLib.WSController
                         if (fuser == null)
                         {
                             Debugger.PrintWarn($"User not found! ({session.WSUserId}) WSS Cannot continue");
-                            new Exception("UserId is null");
-                            break;
+                            throw new Exception("UserId is null");
                         }
                         availability.Add(fuser.Status.availability);
                         activity.Add(fuser.Status.activity);
