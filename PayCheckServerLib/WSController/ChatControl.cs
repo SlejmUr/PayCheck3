@@ -27,7 +27,7 @@ namespace PayCheckServerLib.WSController
                             Method = chatbase.Method,
                             Params = new()
                             {
-                                Processed = DateTime.Now.Second.ToString()
+                                Processed = DateTimeOffset.UtcNow.ToUnixTimeSeconds().ToString()
                             }
                         };
                         var resp = "CaSr" + JsonConvert.SerializeObject(rsp) + "CaEd";

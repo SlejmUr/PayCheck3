@@ -10,7 +10,6 @@ namespace PayCheckServerLib.Jsons
         [JsonProperty("namespace")]
         public string Namespace { get; set; }
 
-        // is clazz a typo?	-- No because class in C# code can be used to make a class so yeah
         [JsonProperty("clazz")]
         public string Clazz { get; set; }
 
@@ -20,7 +19,7 @@ namespace PayCheckServerLib.Jsons
         [JsonProperty("status")]
         public string Status { get; set; }
 
-        [JsonProperty("sku")]
+        [JsonProperty("sku", NullValueHandling = NullValueHandling.Ignore)]
         public string Sku { get; set; }
 
         [JsonProperty("userId")]
@@ -35,16 +34,9 @@ namespace PayCheckServerLib.Jsons
         [JsonProperty("name")]
         public string Name { get; set; }
 
-        [JsonProperty("useCount")]
-        public int UseCount { get; set; }
-
         [JsonProperty("source")]
         public string Source { get; set; }
 
-        [JsonProperty("stackable")]
-        public bool Stackable { get; set; }
-
-        // ISO8601 string
         [JsonProperty("grantedAt")]
         public string GrantedAt { get; set; }
 
@@ -53,5 +45,14 @@ namespace PayCheckServerLib.Jsons
 
         [JsonProperty("updatedAt")]
         public string UpdatedAt { get; set; }
+
+        [JsonProperty("features", NullValueHandling = NullValueHandling.Ignore)]
+        public object[] Features { get; set; }
+
+        [JsonProperty("useCount", NullValueHandling = NullValueHandling.Ignore)]
+        public long? UseCount { get; set; }
+
+        [JsonProperty("stackable", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? Stackable { get; set; }
     }
 }

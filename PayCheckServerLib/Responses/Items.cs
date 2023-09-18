@@ -6,17 +6,21 @@ namespace PayCheckServerLib.Responses
 {
     public class Items
     {
-        [HTTP("GET", "/platform/public/namespaces/pd3/items/byCriteria?limit=1000&includeSubCategoryItem=false")]
+        [HTTP("GET", "/platform/public/namespaces/pd3/items/byCriteria?limit={limit}&includeSubCategoryItem=false")]
         public static bool GetItemsByCriteria(HttpRequest _, PC3Server.PC3Session session)
         {
             ResponseCreator creator = new();
-
-            creator.SetBody(File.ReadAllText("./Files/Items.json"));
+            var items = JsonConvert.DeserializeObject<DataPaging<ItemDefinitionJson>>(File.ReadAllText("./Files/Items.json"));
+            foreach (var item in items.Data)
+            {
+                item.UpdatedAt = DateTime.UtcNow.ToString("o");
+            }
+            creator.SetBody(JsonConvert.SerializeObject(items));
             session.SendResponse(creator.GetResponse());
             return true;
         }
 
-        [HTTP("GET", "/platform/public/namespaces/pd3/items/byCriteria?tags=WeaponPart&limit=1000&includeSubCategoryItem=false")]
+        [HTTP("GET", "/platform/public/namespaces/pd3/items/byCriteria?tags=WeaponPart&limit={limit}&includeSubCategoryItem=false")]
         public static bool GetItemsByCriteriaWeaponPart(HttpRequest _, PC3Server.PC3Session session)
         {
             ResponseCreator creator = new();
@@ -24,6 +28,7 @@ namespace PayCheckServerLib.Responses
             var finalitems = new List<ItemDefinitionJson>();
             foreach (var item in items.Data)
             {
+                item.UpdatedAt = DateTime.UtcNow.ToString("o");
                 if (item.Tags != null)
                 {
                     if (item.Tags.Contains("WeaponPart"))

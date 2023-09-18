@@ -123,9 +123,10 @@ namespace PayCheckServerLib
                         Debugger.PrintWarn("The fuck? This User now wants to to join to WS again! " + WS_ID);
                     }
                     WSS_Stuff.Add(token.UserId + "_" + WS_ID.ToString().ToLower(), this);
-                    var x = "CaSr{\"jsonrpc\":\"2.0\",\"method\":\"eventConnected\",\"params\":{\"sessionId\":\"9f51a15b940b4c538cc48281950de549\"}}CaEd";
+                    var x = "y{\"jsonrpc\":\"2.0\",\"method\":\"eventConnected\",\"params\":{\"sessionId\":\"9f51a15b940b4c538cc48281950de549\"}}CaEd";
                     SendBinaryAsync(Encoding.UTF8.GetBytes(x));
                 }
+                Debugger.PrintInfo(WSUserId + " joined to " + WS_ID);
             }
 
             public override void OnWsDisconnecting()
@@ -170,7 +171,15 @@ namespace PayCheckServerLib
             public override void OnWsReceived(byte[] buffer, long offset, long size)
             {
                 var buf = buffer[..(int)size];
-                //Debugger.PrintInfo("OnWsReceived:" + WS_ID.ToString());
+                var buf2 = buffer.Take((int)size).ToArray();
+                if (size == 0)
+                {
+                    Debugger.PrintInfo("Nothing was sent to WSS");
+                    return;
+                }
+                Debugger.PrintInfo(WSUserId + " on " + WS_ID + " WSS Recieved!");
+                Debugger.logger.Debug(offset + " " + size);
+                Debugger.logger.Debug(BitConverter.ToString(buffer));
                 switch (WS_ID)
                 {
                     case WSEnum.Lobby:
@@ -214,7 +223,7 @@ namespace PayCheckServerLib
                     {
                         Debugger.logger.Debug(url + "\n" + request);
                         Debugger.PrintInfo("Url Called function: " + item.Value.Name);
-                        bool ret = (bool)item.Value.Invoke(this, new object[] { request, this });
+                        bool ret = (bool)item.Value.Invoke(this, new object[] { request, this })!;
                         Sent = ret;
                         break;
                     }

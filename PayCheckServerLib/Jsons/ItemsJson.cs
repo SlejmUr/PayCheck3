@@ -2,36 +2,6 @@
 
 namespace PayCheckServerLib.Jsons
 {
-    public class ItemDefinitionJsonRegionData
-    {
-        [JsonProperty("price")]
-        public int Price { get; set; }
-
-        [JsonProperty("discountPercentage")]
-        public int DiscountPercentage { get; set; }
-
-        [JsonProperty("discountAmount")]
-        public int DiscountAmout { get; set; }
-
-        [JsonProperty("discountedPrice")]
-        public int DiscountedPrice { get; set; }
-
-        [JsonProperty("currencyCode")]
-        public string CurrencyCode { get; set; }
-
-        [JsonProperty("currencyType")]
-        public string CurrencyType { get; set; }
-
-        [JsonProperty("currencyNamespace")]
-        public string CurrencyNamespace { get; set; }
-
-        [JsonProperty("purchaseAt")]
-        public string PurchaseAt { get; set; }
-
-        [JsonProperty("discountPurchaseAt")]
-        public string DiscountPurchaseAt { get; set; }
-    }
-
     public class ItemDefinitionJson
     {
         [JsonProperty("title")]
@@ -40,7 +10,7 @@ namespace PayCheckServerLib.Jsons
         [JsonProperty("itemId")]
         public string ItemId { get; set; }
 
-        [JsonProperty("sku")]
+        [JsonProperty("sku", NullValueHandling = NullValueHandling.Ignore)]
         public string Sku { get; set; }
 
         [JsonProperty("namespace")]
@@ -52,11 +22,11 @@ namespace PayCheckServerLib.Jsons
         [JsonProperty("entitlementType")]
         public string EntitlementType { get; set; }
 
-        [JsonProperty("useCount")]
-        public int UseCount { get; set; }
+        [JsonProperty("useCount", NullValueHandling = NullValueHandling.Ignore)]
+        public long? UseCount { get; set; }
 
-        [JsonProperty("stackable")]
-        public bool Stackable { get; set; }
+        [JsonProperty("stackable", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? Stackable { get; set; }
 
         [JsonProperty("categoryPath")]
         public string CategoryPath { get; set; }
@@ -73,23 +43,23 @@ namespace PayCheckServerLib.Jsons
         [JsonProperty("itemType")]
         public string ItemType { get; set; }
 
-        [JsonProperty("targetCurrencyCode")]
-        public string TargetCurrencyCode { get; set; }
+        [JsonProperty("targetCurrencyCode", NullValueHandling = NullValueHandling.Ignore)]
+        public string? TargetCurrencyCode { get; set; }
 
         [JsonProperty("regionData")]
-        public List<ItemDefinitionJsonRegionData> RegionData { get; set; }
+        public List<RegionDatum> RegionData { get; set; }
 
-        [JsonProperty("tags")]
+        [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Tags { get; set; }
 
-        [JsonProperty("features")]
+        [JsonProperty("features", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Features { get; set; }
 
         [JsonProperty("maxCountPerUser")]
-        public int MaxCountPerUser { get; set; }
+        public long MaxCountPerUser { get; set; }
 
         [JsonProperty("maxCount")]
-        public int MaxCount { get; set; }
+        public long MaxCount { get; set; }
 
         [JsonProperty("region")]
         public string Region { get; set; }
@@ -102,5 +72,77 @@ namespace PayCheckServerLib.Jsons
 
         [JsonProperty("updatedAt")]
         public string UpdatedAt { get; set; }
+
+        [JsonProperty("baseAppId", NullValueHandling = NullValueHandling.Ignore)]
+        public string BaseAppId { get; set; }
+
+        [JsonProperty("longDescription", NullValueHandling = NullValueHandling.Ignore)]
+        public string LongDescription { get; set; }
+
+        [JsonProperty("boundItemIds", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> BoundItemIds { get; set; }
+
+        [JsonProperty("itemIds", NullValueHandling = NullValueHandling.Ignore)]
+        public List<string> ItemIds { get; set; }
+
+        [JsonProperty("itemQty", NullValueHandling = NullValueHandling.Ignore)]
+        public Dictionary<string, long> ItemQty { get; set; }
+
+        [JsonProperty("displayOrder", NullValueHandling = NullValueHandling.Ignore)]
+        public long? DisplayOrder { get; set; }
+
+        [JsonProperty("images", NullValueHandling = NullValueHandling.Ignore)]
+        public List<Image> Images { get; set; }
+    }
+
+    public partial class Image
+    {
+        [JsonProperty("as")]
+        public string As { get; set; }
+
+        [JsonProperty("caption")]
+        public string Caption { get; set; }
+
+        [JsonProperty("height")]
+        public long Height { get; set; }
+
+        [JsonProperty("width")]
+        public long Width { get; set; }
+
+        [JsonProperty("imageUrl")]
+        public Uri ImageUrl { get; set; }
+
+        [JsonProperty("smallImageUrl")]
+        public Uri SmallImageUrl { get; set; }
+    }
+
+    public partial class RegionDatum
+    {
+        [JsonProperty("price")]
+        public long Price { get; set; }
+
+        [JsonProperty("discountPercentage")]
+        public long DiscountPercentage { get; set; }
+
+        [JsonProperty("discountAmount")]
+        public long DiscountAmount { get; set; }
+
+        [JsonProperty("discountedPrice")]
+        public long DiscountedPrice { get; set; }
+
+        [JsonProperty("currencyCode")]
+        public string CurrencyCode { get; set; }
+
+        [JsonProperty("currencyType")]
+        public string CurrencyType { get; set; }
+
+        [JsonProperty("currencyNamespace")]
+        public string CurrencyNamespace { get; set; }
+
+        [JsonProperty("purchaseAt", NullValueHandling = NullValueHandling.Ignore)]
+        public string? PurchaseAt { get; set; }
+
+        [JsonProperty("discountPurchaseAt", NullValueHandling = NullValueHandling.Ignore)]
+        public string? DiscountPurchaseAt { get; set; }
     }
 }
