@@ -214,9 +214,9 @@ namespace PayCheckServerLib
                     {
                         Debugger.logger.Debug(url + "\n" + request);
                         Debugger.PrintInfo("Url Called function: " + item.Value.Name);
-                        item.Value.Invoke(this, new object[] { request, this });
-                        Sent = true;
-                        return;
+                        bool ret = (bool)item.Value.Invoke(this, new object[] { request, this });
+                        Sent = ret;
+                        break;
                     }
 
                 }
@@ -225,8 +225,12 @@ namespace PayCheckServerLib
                 {
                     File.AppendAllText("REQUESTED.txt", url + "\n" + request.Method + "\n" + request.Body + "\n");
                     Debugger.logger.Debug(url + "\n" + request);
+                    Console.WriteLine("something isnt good");
                 }
-                Console.WriteLine("something isnt good");
+                else
+                { 
+                    //Everything went fine!
+                }
                 //SendResponse(Response.MakeOkResponse());
             }
 

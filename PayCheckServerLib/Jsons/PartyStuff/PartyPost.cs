@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace PayCheckServerLib.Jsons
+namespace PayCheckServerLib.Jsons.PartyStuff
 {
     public class PartyPost
     {
