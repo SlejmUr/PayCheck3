@@ -20,8 +20,11 @@ namespace PayCheckServerLib.Responses
         [HTTP("PUT", "/platform/public/namespaces/pd3/users/{UserId}/dlc/steam/sync")]
         public static bool PUT_DLC_SteamSync(HttpRequest request, PC3Server.PC3Session session)
         {
-            var body = JsonConvert.DeserializeObject<PutDLC>(request.Body);
-            return false;
+            //var body = JsonConvert.DeserializeObject<PutDLC>(request.Body);
+            ResponseCreator response = new ResponseCreator(204);
+            response.SetHeader("Content-Type", "application/json");
+            session.SendResponse(response.GetResponse());
+            return true;
         }
     }
 }
