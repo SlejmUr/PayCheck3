@@ -13,7 +13,7 @@ namespace PayCheckServerLib.Jsons
             public string Key { get; set; } = "infamy-translation-table";
 
             [JsonProperty("namespace")]
-            public string Namespace { get; set; } = "pd3beta";
+            public string Namespace { get; set; } = "pd3";
 
             [JsonProperty("set_by")]
             public string SetBy { get; set; } = "SERVER";

@@ -19,7 +19,7 @@ namespace PayCheckServerLib.Responses
             public int queueTime { get; set; }
         }
 
-        [HTTP("POST", "/match2/v1/namespaces/pd3beta/match-tickets")]
+        [HTTP("POST", "/match2/v1/namespaces/pd3/match-tickets")]
         public static bool Tickets(HttpRequest request, PC3Server.PC3Session session)
         {
             var ticket = JsonConvert.DeserializeObject<TicketReqJson>(request.Body);

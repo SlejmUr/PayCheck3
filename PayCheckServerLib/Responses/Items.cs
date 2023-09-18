@@ -6,7 +6,7 @@ namespace PayCheckServerLib.Responses
 {
     public class Items
     {
-        [HTTP("GET", "/platform/public/namespaces/pd3beta/items/byCriteria?limit=1000&includeSubCategoryItem=false")]
+        [HTTP("GET", "/platform/public/namespaces/pd3/items/byCriteria?limit=1000&includeSubCategoryItem=false")]
         public static bool GetItemsByCriteria(HttpRequest _, PC3Server.PC3Session session)
         {
             ResponseCreator creator = new();
@@ -16,7 +16,7 @@ namespace PayCheckServerLib.Responses
             return true;
         }
 
-        [HTTP("GET", "/platform/public/namespaces/pd3beta/items/byCriteria?tags=WeaponPart&limit=1000&includeSubCategoryItem=false")]
+        [HTTP("GET", "/platform/public/namespaces/pd3/items/byCriteria?tags=WeaponPart&limit=1000&includeSubCategoryItem=false")]
         public static bool GetItemsByCriteriaWeaponPart(HttpRequest _, PC3Server.PC3Session session)
         {
             ResponseCreator creator = new();

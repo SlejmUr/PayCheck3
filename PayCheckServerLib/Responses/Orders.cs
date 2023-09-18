@@ -30,7 +30,7 @@ namespace PayCheckServerLib.Responses
             return null;
         }
 
-        [HTTP("POST", "/platform/public/namespaces/pd3beta/users/{userid}/orders")]
+        [HTTP("POST", "/platform/public/namespaces/pd3/users/{userid}/orders")]
         public static bool UserOrders(HttpRequest request, PC3Server.PC3Session session)
         {
             //ResponseCreator response = new ResponseCreator();
@@ -51,7 +51,7 @@ namespace PayCheckServerLib.Responses
             Order order = new()
             {
                 OrderNo = GenOrderNumber(),
-                Namespace = "pd3beta",
+                Namespace = "pd3",
                 UserId = session.HttpParam["userid"],
                 ItemId = item.ItemId,
                 Sandbox = false,
@@ -69,7 +69,7 @@ namespace PayCheckServerLib.Responses
                     CurrencySymbol = body.CurrencyCode,
                     // CASH = Cash, GOLD = CStacks
                     CurrencyType = (body.CurrencyCode == "CASH" || body.CurrencyCode == "GOLD") ? "VIRTUAL" : "REAL",
-                    Namespace = "pd3beta",
+                    Namespace = "pd3",
                     Decimals = 0
                 },
                 // will be like this until i can confirm they are the same type ~HW12Dev

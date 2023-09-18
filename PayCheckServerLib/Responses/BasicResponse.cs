@@ -83,5 +83,15 @@ namespace PayCheckServerLib.Responses
             session.SendResponse(response.GetResponse());
             return true;
         }
+
+        [HTTP("GET", "/iam/v3/location/country")]
+        public static bool Country(HttpRequest request, PC3Server.PC3Session session)
+        {
+            ResponseCreator response = new ResponseCreator();
+            response.SetHeader("Content-Type", "application/json");
+            response.SetBody(File.ReadAllBytes("Files/Country.json"));
+            session.SendResponse(response.GetResponse());
+            return true;
+        }
     }
 }

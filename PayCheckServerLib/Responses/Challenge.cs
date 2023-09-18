@@ -6,7 +6,7 @@ namespace PayCheckServerLib.Responses
 {
     internal class Challenge
     {
-        [HTTP("GET", "/challenge/v1/public/namespaces/pd3beta/users/{userId}/eligibility")]
+        [HTTP("GET", "/challenge/v1/public/namespaces/pd3/users/{userId}/eligibility")]
         public static bool ChallengeEligibility(HttpRequest _, PC3Server.PC3Session session)
         {
             ResponseCreator creator = new();
@@ -15,7 +15,7 @@ namespace PayCheckServerLib.Responses
             return true;
         }
 
-        [HTTP("GET", "/challenge/v1/public/namespaces/pd3beta/users/me/records?limit=2147483647&offset=0")]
+        [HTTP("GET", "/challenge/v1/public/namespaces/pd3/users/me/records?limit=2147483647&offset=0")]
         public static bool ChallengeRecords(HttpRequest _, PC3Server.PC3Session session)
         {
             var auth = session.Headers["authorization"].Replace("Bearer ", "");

@@ -62,7 +62,7 @@ namespace PayCheckServerLib.Responses
                 ExpiresIn = 360000,
                 IsComply = true,
                 Jflgs = 1,
-                Namespace = "pd3beta",
+                Namespace = "pd3",
                 NamespaceRoles = new()
                 {
                     new NamespaceRole()
@@ -108,7 +108,7 @@ namespace PayCheckServerLib.Responses
                 ExpiresIn = 360000,
                 IsComply = true,
                 Jflgs = 4,
-                Namespace = "pd3beta",
+                Namespace = "pd3",
                 NamespaceRoles = new()
                 {
                     new NamespaceRole()
@@ -161,7 +161,7 @@ namespace PayCheckServerLib.Responses
 				IsComply = true,
                 // Jflgs is 1 for this request
 				Jflgs = 1,
-				Namespace = "pd3beta",
+				Namespace = "pd3",
 				NamespaceRoles = new()
 				{
 					new NamespaceRole()
@@ -200,11 +200,11 @@ namespace PayCheckServerLib.Responses
                 Bans = new(),
                 Country = "HU",
                 DisplayName = token.Name,
-                EmailAddress = $"{token.Name}@pd3beta_emu.com",
+                EmailAddress = $"{token.Name}@pd3_emu.com",
                 EmailVerified = true,
                 Enabled = true,
-                Namespace = "pd3beta",
-                OldEmailAddress = $"{token.Name}@pd3beta_emu.com",
+                Namespace = "pd3",
+                OldEmailAddress = $"{token.Name}@pd3_emu.com",
                 PhoneVerified = true,
                 Permissions = new(),
                 UserId = token.UserId,
@@ -224,7 +224,7 @@ namespace PayCheckServerLib.Responses
             return true;
         }
 
-        [HTTP("POST", "/iam/v3/public/namespaces/pd3beta/users/bulk/basic")]
+        [HTTP("POST", "/iam/v3/public/namespaces/pd3/users/bulk/basic")]
         public static bool BulkBasic(HttpRequest request, PC3Server.PC3Session session)
         {
             var req = JsonConvert.DeserializeObject<BulkReq>(request.Body) ?? throw new Exception("BulkBasic is null!");
@@ -257,7 +257,7 @@ namespace PayCheckServerLib.Responses
             return true;
         }
 
-        [HTTP("GET", "/iam/v3/public/namespaces/pd3beta/users?query={uname}&by=displayName&limit=100&offset=0")]
+        [HTTP("GET", "/iam/v3/public/namespaces/pd3/users?query={uname}&by=displayName&limit=100&offset=0")]
         public static bool UsersQuery(HttpRequest _, PC3Server.PC3Session session)
         {
             //Idk what is this but works
@@ -290,7 +290,7 @@ namespace PayCheckServerLib.Responses
                     {
                         createdAt = DateTime.UtcNow.ToString("o"),
                         DisplayName = item.UserData.DisplayName,
-                        Namespace = "pd3beta",
+                        Namespace = "pd3",
                         UserId = item.UserData.UserId,
                         UserName = item.UserData.DisplayName
                     });

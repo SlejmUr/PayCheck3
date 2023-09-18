@@ -6,7 +6,7 @@ namespace PayCheckServerLib.Responses
 {
     public class Social
     {
-        [HTTP("PUT", "/social/v1/public/namespaces/pd3beta/users/{userId}/statitems/value/bulk")]
+        [HTTP("PUT", "/social/v1/public/namespaces/pd3/users/{userId}/statitems/value/bulk")]
         public static bool PutStatItemsBulk(HttpRequest request, PC3Server.PC3Session session)
         {
             ResponseCreator responsecreator = new ResponseCreator();
@@ -25,7 +25,7 @@ namespace PayCheckServerLib.Responses
             return true;
         }
 
-        [HTTP("GET", "/social/v1/public/namespaces/pd3beta/users/{userId}/statitems?limit=1000&offset=0")]
+        [HTTP("GET", "/social/v1/public/namespaces/pd3/users/{userId}/statitems?limit=1000&offset=0")]
         public static bool GetUserStatItems(HttpRequest request, PC3Server.PC3Session session)
         {
             ResponseCreator response = new ResponseCreator();
@@ -36,7 +36,7 @@ namespace PayCheckServerLib.Responses
                     new GetUserStatItemsData()
                     {
                         CreatedAt = "2023-08-05T03:03:55.595Z",
-                        Namespace = "pd3beta",
+                        Namespace = "pd3",
                         StatCode = "game-started",
                         StatName = "Game Started",
                         UpdatedAt = "2023-08-05T03:03:55.598Z",
@@ -51,7 +51,7 @@ namespace PayCheckServerLib.Responses
             return true;
         }
 
-        [HTTP("GET", "/social/v1/public/namespaces/pd3beta/users/{userId}/statitems?statCodes=infamy-point&limit=20&offset=0")]
+        [HTTP("GET", "/social/v1/public/namespaces/pd3/users/{userId}/statitems?statCodes=infamy-point&limit=20&offset=0")]
         public static bool GetUserStatItemsInfamy(HttpRequest request, PC3Server.PC3Session session)
         {
             ResponseCreator response = new ResponseCreator();
@@ -62,7 +62,7 @@ namespace PayCheckServerLib.Responses
                     new GetUserStatItemsData()
                     {
                         CreatedAt = "2023-08-05T03:03:55.595Z",
-                        Namespace = "pd3beta",
+                        Namespace = "pd3",
                         StatCode = "infamy-point",
                         StatName = "Infamy Points",
                         UpdatedAt = "2023-08-05T03:03:55.598Z",

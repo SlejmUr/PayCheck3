@@ -14,7 +14,7 @@ namespace PayCheckServerLib.Jsons
         public string Key { get; set; } = "progressionsavegame";
 
         [JsonProperty("namespace")]
-        public string Namespace { get; set; } = "pd3beta";
+        public string Namespace { get; set; } = "pd3";
 
         [JsonProperty("set_by")]
         public string SetBy { get; set; } = "CLIENT";

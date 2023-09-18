@@ -6,7 +6,7 @@ namespace PayCheckServerLib.Responses
 {
     public class Parties
     {
-        [HTTP("PATCH", "/session/v1/public/namespaces/pd3beta/parties/{partyid}")]
+        [HTTP("PATCH", "/session/v1/public/namespaces/pd3/parties/{partyid}")]
         public static bool PATCH_Parties(HttpRequest request, PC3Server.PC3Session session)
         {
             /*
@@ -19,7 +19,7 @@ namespace PayCheckServerLib.Responses
         }
 
 
-        [HTTP("DELETE", "/session/v1/public/namespaces/pd3beta/parties/{partyid}/users/me/leave")]
+        [HTTP("DELETE", "/session/v1/public/namespaces/pd3/parties/{partyid}/users/me/leave")]
         public static bool LeaveParties(HttpRequest request, PC3Server.PC3Session session)
         {
             /*
@@ -32,7 +32,7 @@ namespace PayCheckServerLib.Responses
         }
 
 
-        [HTTP("POST", "/session/v1/public/namespaces/pd3beta/parties/{partyid}/users/me/join")]
+        [HTTP("POST", "/session/v1/public/namespaces/pd3/parties/{partyid}/users/me/join")]
         public static bool JoinParties(HttpRequest request, PC3Server.PC3Session session)
         {
             /*
@@ -44,7 +44,7 @@ namespace PayCheckServerLib.Responses
             return false;
         }
 
-        [HTTP("POST", "/session/v1/public/namespaces/pd3beta/parties/{partyid}/users/me/reject")]
+        [HTTP("POST", "/session/v1/public/namespaces/pd3/parties/{partyid}/users/me/reject")]
         public static bool RejectParties(HttpRequest request, PC3Server.PC3Session session)
         {
             /*
@@ -56,7 +56,7 @@ namespace PayCheckServerLib.Responses
             return false;
         }
 
-        [HTTP("POST", "/session/v1/public/namespaces/pd3beta/parties/users/me/join/code")]
+        [HTTP("POST", "/session/v1/public/namespaces/pd3/parties/users/me/join/code")]
         public static bool JoinPartyByCode(HttpRequest request, PC3Server.PC3Session session)
         {
             /*
@@ -68,7 +68,7 @@ namespace PayCheckServerLib.Responses
             return false;
         }
 
-        [HTTP("POST", "/session/v1/public/namespaces/pd3beta/parties/{partyid}/invite")]
+        [HTTP("POST", "/session/v1/public/namespaces/pd3/parties/{partyid}/invite")]
         public static bool InviteOtherPlayer(HttpRequest request, PC3Server.PC3Session session)
         {
             /*

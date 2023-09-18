@@ -6,7 +6,7 @@ namespace PayCheckServerLib.Responses
 {
     public class Session
     {
-        [HTTP("GET", "/session/v1/public/namespaces/pd3beta/users/me/attributes")]
+        [HTTP("GET", "/session/v1/public/namespaces/pd3/users/me/attributes")]
         public static bool GETSessionAttributes(HttpRequest _, PC3Server.PC3Session session)
         {
             var auth = session.Headers["authorization"].Replace("Bearer ", "");
@@ -16,7 +16,7 @@ namespace PayCheckServerLib.Responses
             {
                 CrossplayEnabled = true,
                 CurrentPlatform = token.PlatformType.ToString().ToUpper(),
-                Namespace = "pd3beta",
+                Namespace = "pd3",
                 Platforms = new()
                 {
                     new()
@@ -32,7 +32,7 @@ namespace PayCheckServerLib.Responses
             return true;
         }
 
-        [HTTP("POST", "/session/v1/public/namespaces/pd3beta/users/me/attributes")]
+        [HTTP("POST", "/session/v1/public/namespaces/pd3/users/me/attributes")]
         public static bool POSTSessionAttributes(HttpRequest request, PC3Server.PC3Session session)
         {
             var auth = session.Headers["authorization"].Replace("Bearer ", "");
@@ -44,7 +44,7 @@ namespace PayCheckServerLib.Responses
             {
                 CrossplayEnabled = req.CrossplayEnabled,
                 CurrentPlatform = req.CurrentPlatform,
-                Namespace = "pd3beta",
+                Namespace = "pd3",
                 Platforms = req.Platforms,
                 UserId = token.UserId
             };
@@ -53,7 +53,7 @@ namespace PayCheckServerLib.Responses
             return true;
         }
 
-        [HTTP("GET", "/session/v1/public/namespaces/pd3beta/users/me/parties")]
+        [HTTP("GET", "/session/v1/public/namespaces/pd3/users/me/parties")]
         public static bool SessionsParties(HttpRequest _, PC3Server.PC3Session session)
         {
             ResponseCreator response = new();
@@ -74,7 +74,7 @@ namespace PayCheckServerLib.Responses
             return true;
         }
 
-        [HTTP("GET", "/session/v1/public/namespaces/pd3beta/users/me/gamesessions")]
+        [HTTP("GET", "/session/v1/public/namespaces/pd3/users/me/gamesessions")]
         public static bool Sessionsgamesessions(HttpRequest _, PC3Server.PC3Session session)
         {
             ResponseCreator response = new();
@@ -96,7 +96,7 @@ namespace PayCheckServerLib.Responses
         }
 
         /*
-        [HTTP("POST", "/session/v1/public/namespaces/pd3beta/party")]
+        [HTTP("POST", "/session/v1/public/namespaces/pd3/party")]
         public static bool SessionsPartyPOST(HttpRequest request, PC3Server.PC3Session session)
         {
             ResponseCreator response = new ResponseCreator();
@@ -123,7 +123,7 @@ namespace PayCheckServerLib.Responses
                 IsActive = true,
                 IsFull = false,
                 LeaderId = "29475976933497845197035744456968",
-                Namespace = "pd3beta",
+                Namespace = "pd3",
                 UpdatedAt = DateTime.Now.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'FFFZ"),
                 Version = 1,
                 Members = new()
@@ -192,7 +192,7 @@ namespace PayCheckServerLib.Responses
             return true;
         }
 
-        [HTTP("PATCH", "/session/v1/public/namespaces/pd3beta/parties/{partyId}")]
+        [HTTP("PATCH", "/session/v1/public/namespaces/pd3/parties/{partyId}")]
         public static bool SessionsPartiesPATCH(HttpRequest request, PC3Server.PC3Session session)
         {
             ResponseCreator response = new ResponseCreator();
@@ -211,7 +211,7 @@ namespace PayCheckServerLib.Responses
                 IsActive = true,
                 IsFull = false,
                 LeaderId = "29475976933497845197035744456968",
-                Namespace = "pd3beta",
+                Namespace = "pd3",
                 UpdatedAt = DateTime.Now.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'FFFZ"),
                 Version = 1,
                 Members = new()

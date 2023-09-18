@@ -22,6 +22,8 @@ namespace PayCheckServerLib.WSController
             Debugger.PrintWebsocket(strArray.Count().ToString());
             foreach (var item in strArray)
             {
+                if (string.IsNullOrEmpty(item) || item == "\n")
+                    continue;
                 var kv2 = item.Split(": ");
                 Console.WriteLine(kv2[0]);
                 kv.Add(kv2[0], kv2[1]);
@@ -147,7 +149,7 @@ namespace PayCheckServerLib.WSController
             {
                 str = item.Key + ": " + item.Value + "\n";
             }
-            str = str[..-2];
+            str = str.Remove(-2);
             Debugger.PrintWebsocket(str);
             session.SendBinaryAsync(str);
         }

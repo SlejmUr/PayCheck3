@@ -7,7 +7,7 @@ namespace PayCheckServerLib.Responses
 {
     public class Friends
     {
-        [HTTP("GET", "/friends/namespaces/pd3beta/me/platforms")]
+        [HTTP("GET", "/friends/namespaces/pd3/me/platforms")]
         public static bool MePlatforms(HttpRequest _, PC3Server.PC3Session session)
         {
             var auth = session.Headers["authorization"].Replace("Bearer ", "");
@@ -24,7 +24,7 @@ namespace PayCheckServerLib.Responses
             return true;
         }
 
-        [HTTP("POST", "/friends/namespaces/pd3beta/users/{userId}/add/bulk")]
+        [HTTP("POST", "/friends/namespaces/pd3/users/{userId}/add/bulk")]
         public static bool FriendAddBulk(HttpRequest request, PC3Server.PC3Session session)
         {
             var auth = session.Headers["authorization"].Replace("Bearer ", "");

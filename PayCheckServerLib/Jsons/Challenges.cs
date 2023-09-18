@@ -11,7 +11,7 @@ namespace PayCheckServerLib.Jsons
         public bool IsActive { get; set; }
 
         [JsonProperty("namespace")]
-        public string Namespace { get; set; } = "pd3beta";
+        public string Namespace { get; set; } = "pd3";
 
         [JsonProperty("progress")]
         public Progress Progress { get; set; }

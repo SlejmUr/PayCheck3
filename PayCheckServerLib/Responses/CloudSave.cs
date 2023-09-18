@@ -7,7 +7,7 @@ namespace PayCheckServerLib.Responses
 {
     public class CloudSave
     {
-        [HTTP("GET", "/cloudsave/v1/namespaces/pd3beta/records/title-data")]
+        [HTTP("GET", "/cloudsave/v1/namespaces/pd3/records/title-data")]
         public static bool TitleData(HttpRequest _, PC3Server.PC3Session session)
         {
             ResponseCreator response = new();
@@ -17,7 +17,7 @@ namespace PayCheckServerLib.Responses
                 CreatedAt = "2023-06-23T07:21:11.604Z",
                 UpdatedAt = "2023-06-23T07:21:11.604Z",
                 Key = "title-data",
-                Namespace = "pd3beta",
+                Namespace = "pd3",
                 Value = new()
                 {
                     { "TitleData", "My Fancy Title Data" }
@@ -28,7 +28,7 @@ namespace PayCheckServerLib.Responses
             return true;
         }
 
-        [HTTP("GET", "/cloudsave/v1/namespaces/pd3beta/records/news-feed")]
+        [HTTP("GET", "/cloudsave/v1/namespaces/pd3/records/news-feed")]
         public static bool NewsFeed(HttpRequest _, PC3Server.PC3Session session)
         {
             ResponseCreator response = new();
@@ -37,7 +37,7 @@ namespace PayCheckServerLib.Responses
             return true;
         }
 
-        [HTTP("GET", "/cloudsave/v1/namespaces/pd3beta/records/infamy-translation-table")]
+        [HTTP("GET", "/cloudsave/v1/namespaces/pd3/records/infamy-translation-table")]
         public static bool InfamyTranslationTable(HttpRequest _, PC3Server.PC3Session session)
         {
             ResponseCreator response = new();
@@ -57,7 +57,7 @@ namespace PayCheckServerLib.Responses
             return true;
         }
 
-        [HTTP("POST", "/cloudsave/v1/namespaces/pd3beta/records/bulk")]
+        [HTTP("POST", "/cloudsave/v1/namespaces/pd3/records/bulk")]
         public static bool RecordsBulk(HttpRequest request, PC3Server.PC3Session session)
         {
             var req = JsonConvert.DeserializeObject<WeaponsTableREQ>(request.Body) ?? throw new Exception("WeaponsTableREQ is null!");
@@ -84,7 +84,7 @@ namespace PayCheckServerLib.Responses
             return true;
         }
 
-        [HTTP("GET", "/cloudsave/v1/namespaces/pd3beta/records/meta-events")]
+        [HTTP("GET", "/cloudsave/v1/namespaces/pd3/records/meta-events")]
         public static bool MetaEvents(HttpRequest _, PC3Server.PC3Session session)
         {
             ResponseCreator response = new();
@@ -93,7 +93,7 @@ namespace PayCheckServerLib.Responses
             return true;
         }
 
-        [HTTP("GET", "/cloudsave/v1/namespaces/pd3beta/records/security-firm-rotation")]
+        [HTTP("GET", "/cloudsave/v1/namespaces/pd3/records/security-firm-rotation")]
         public static bool SecurityFirmRotation(HttpRequest _, PC3Server.PC3Session session)
         {
             ResponseCreator response = new();
@@ -102,7 +102,7 @@ namespace PayCheckServerLib.Responses
             return true;
         }
 
-        [HTTP("GET", "/cloudsave/v1/namespaces/pd3beta/users/{userId}/records/PlatformBlockedPlayerData")]
+        [HTTP("GET", "/cloudsave/v1/namespaces/pd3/users/{userId}/records/PlatformBlockedPlayerData")]
         public static bool PlatformBlockedPlayerData(HttpRequest _, PC3Server.PC3Session session)
         {
             ResponseCreator response = new(404);
@@ -111,7 +111,7 @@ namespace PayCheckServerLib.Responses
         }
 
 
-        [HTTP("GET", "/cloudsave/v1/namespaces/pd3beta/users/{userId}/records/progressionsavegame")]
+        [HTTP("GET", "/cloudsave/v1/namespaces/pd3/users/{userId}/records/progressionsavegame")]
         public static bool ProgressionsavegameGET(HttpRequest _, PC3Server.PC3Session session)
         {
             var userID = session.HttpParam["userId"];
@@ -142,7 +142,7 @@ namespace PayCheckServerLib.Responses
             return true;
         }
 
-        [HTTP("POST", "/cloudsave/v1/namespaces/pd3beta/users/{userId}/records/progressionsavegame")]
+        [HTTP("POST", "/cloudsave/v1/namespaces/pd3/users/{userId}/records/progressionsavegame")]
         public static bool ProgressionsavegamePOST(HttpRequest request, PC3Server.PC3Session session)
         {
             var userID = session.HttpParam["userId"];
