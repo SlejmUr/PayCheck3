@@ -11,9 +11,10 @@ namespace PayCheckServerLib.Responses
         {
             ResponseCreator creator = new();
             var items = JsonConvert.DeserializeObject<DataPaging<ItemDefinitionJson>>(File.ReadAllText("./Files/Items.json"));
+            var timeMrFreeman = DateTime.UtcNow.ToString("o");
             foreach (var item in items.Data)
             {
-                item.UpdatedAt = DateTime.UtcNow.ToString("o");
+                item.UpdatedAt = timeMrFreeman;
             }
             creator.SetBody(JsonConvert.SerializeObject(items));
             session.SendResponse(creator.GetResponse());
@@ -26,9 +27,10 @@ namespace PayCheckServerLib.Responses
             ResponseCreator creator = new();
             var items = JsonConvert.DeserializeObject<DataPaging<ItemDefinitionJson>>(File.ReadAllText("./Files/Items.json")) ?? throw new Exception("Items is null!");
             var finalitems = new List<ItemDefinitionJson>();
+            var timeMrFreeman = DateTime.UtcNow.ToString("o");
             foreach (var item in items.Data)
             {
-                item.UpdatedAt = DateTime.UtcNow.ToString("o");
+                item.UpdatedAt = timeMrFreeman;
                 if (item.Tags != null)
                 {
                     if (item.Tags.Contains("WeaponPart"))

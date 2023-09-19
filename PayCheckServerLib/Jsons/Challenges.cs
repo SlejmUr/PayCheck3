@@ -4,29 +4,29 @@ namespace PayCheckServerLib.Jsons
 {
     public partial class ChallengesData
     {
-        [JsonProperty("challenge")]
-        public Challenge Challenge { get; set; }
-
-        [JsonProperty("isActive")]
-        public bool IsActive { get; set; }
+        [JsonProperty("recordId")]
+        public string RecordId { get; set; }
 
         [JsonProperty("namespace")]
-        public string Namespace { get; set; } = "pd3";
+        public string Namespace { get; set; }
+
+        [JsonProperty("userId")]
+        public string UserId { get; set; }
+
+        [JsonProperty("challenge")]
+        public Challenge Challenge { get; set; }
 
         [JsonProperty("progress")]
         public Progress Progress { get; set; }
 
-        [JsonProperty("recordId")]
-        public string RecordId { get; set; }
+        [JsonProperty("updatedAt")]
+        public string UpdatedAt { get; set; }
 
         [JsonProperty("status")]
         public string Status { get; set; }
 
-        [JsonProperty("updatedAt")]
-        public string UpdatedAt { get; set; }
-
-        [JsonProperty("userId")]
-        public string UserId { get; set; }
+        [JsonProperty("isActive")]
+        public bool IsActive { get; set; }
     }
 
     public partial class Challenge
@@ -34,29 +34,20 @@ namespace PayCheckServerLib.Jsons
         [JsonProperty("challengeId")]
         public string ChallengeId { get; set; }
 
-        [JsonProperty("createdAt")]
-        public string CreatedAt { get; set; }
-
-        [JsonProperty("description")]
-        public string Description { get; set; }
-
-        [JsonProperty("isActive")]
-        public bool IsActive { get; set; }
+        [JsonProperty("namespace")]
+        public string Namespace { get; set; }
 
         [JsonProperty("name")]
         public string Name { get; set; }
 
-        [JsonProperty("namespace")]
-        public string Namespace { get; set; }
-
-        [JsonProperty("objective")]
-        public ChallengeObjective Objective { get; set; }
-
-        [JsonProperty("orderNo")]
-        public long OrderNo { get; set; }
+        [JsonProperty("description")]
+        public string Description { get; set; }
 
         [JsonProperty("prerequisite")]
         public ChallengePrerequisite Prerequisite { get; set; }
+
+        [JsonProperty("objective")]
+        public ChallengeObjective Objective { get; set; }
 
         [JsonProperty("reward")]
         public Reward Reward { get; set; }
@@ -64,14 +55,23 @@ namespace PayCheckServerLib.Jsons
         [JsonProperty("tags")]
         public List<string> Tags { get; set; }
 
+        [JsonProperty("orderNo")]
+        public long OrderNo { get; set; }
+
+        [JsonProperty("createdAt")]
+        public string CreatedAt { get; set; }
+
         [JsonProperty("updatedAt")]
         public string UpdatedAt { get; set; }
+
+        [JsonProperty("isActive")]
+        public bool IsActive { get; set; }
     }
 
     public partial class ChallengeObjective
     {
         [JsonProperty("stats")]
-        public List<RewardStat> Stats { get; set; }
+        public RewardStat[] Stats { get; set; }
     }
 
     public partial class RewardStat
@@ -85,47 +85,47 @@ namespace PayCheckServerLib.Jsons
 
     public partial class ChallengePrerequisite
     {
-        [JsonProperty("completedChallengeIds")]
-        public List<string> CompletedChallengeIds { get; set; }
+        [JsonProperty("stats")]
+        public List<object> Stats { get; set; }
 
         [JsonProperty("items")]
         public List<object> Items { get; set; }
 
-        [JsonProperty("stats")]
-        public List<object> Stats { get; set; }
+        [JsonProperty("completedChallengeIds")]
+        public List<string> CompletedChallengeIds { get; set; }
     }
 
     public partial class Reward
     {
-        [JsonProperty("items")]
-        public List<Item> Items { get; set; }
-
         [JsonProperty("rewardId")]
         public string RewardId { get; set; }
 
         [JsonProperty("stats")]
         public List<RewardStat> Stats { get; set; }
+
+        [JsonProperty("items")]
+        public List<Item> Items { get; set; }
     }
 
     public partial class Item
     {
-        [JsonProperty("isActive")]
-        public bool IsActive { get; set; }
-
         [JsonProperty("itemId")]
         public string ItemId { get; set; }
 
         [JsonProperty("quantity")]
         public long Quantity { get; set; }
+
+        [JsonProperty("isActive")]
+        public bool IsActive { get; set; }
     }
 
     public partial class Progress
     {
-        [JsonProperty("objective")]
-        public ProgressObjective Objective { get; set; }
-
         [JsonProperty("prerequisite")]
         public ProgressPrerequisite Prerequisite { get; set; }
+
+        [JsonProperty("objective")]
+        public ProgressObjective Objective { get; set; }
     }
 
     public partial class ProgressObjective
@@ -136,11 +136,11 @@ namespace PayCheckServerLib.Jsons
 
     public partial class PurpleStat
     {
-        [JsonProperty("currentValue")]
-        public double CurrentValue { get; set; }
-
         [JsonProperty("statCode")]
         public string StatCode { get; set; }
+
+        [JsonProperty("currentValue")]
+        public long CurrentValue { get; set; }
 
         [JsonProperty("targetValue")]
         public long TargetValue { get; set; }
@@ -148,14 +148,14 @@ namespace PayCheckServerLib.Jsons
 
     public partial class ProgressPrerequisite
     {
-        [JsonProperty("completedChallengeIds")]
-        public List<CompletedChallengeId> CompletedChallengeIds { get; set; }
+        [JsonProperty("stats")]
+        public List<object> Stats { get; set; }
 
         [JsonProperty("items")]
         public List<object> Items { get; set; }
 
-        [JsonProperty("stats")]
-        public List<object> Stats { get; set; }
+        [JsonProperty("completedChallengeIds")]
+        public List<CompletedChallengeId> CompletedChallengeIds { get; set; }
     }
 
     public partial class CompletedChallengeId
@@ -167,18 +167,5 @@ namespace PayCheckServerLib.Jsons
         public bool IsCompleted { get; set; }
     }
 
-    public partial class Paging
-    {
-        [JsonProperty("first")]
-        public string First { get; set; }
 
-        [JsonProperty("last")]
-        public string Last { get; set; }
-
-        [JsonProperty("next")]
-        public string Next { get; set; }
-
-        [JsonProperty("previous")]
-        public string Previous { get; set; }
-    }
 }

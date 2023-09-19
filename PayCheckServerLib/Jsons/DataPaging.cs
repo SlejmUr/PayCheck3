@@ -10,4 +10,18 @@ namespace PayCheckServerLib.Jsons
         [JsonProperty("paging")]
         public Paging Paging { get; set; }
     }
+    public partial class Paging
+    {
+        [JsonProperty("first")]
+        public string First { get; set; }
+
+        [JsonProperty("last")]
+        public string Last { get; set; }
+
+        [JsonProperty("next")]
+        public string Next { get; set; }
+
+        [JsonProperty("previous")]
+        public string Previous { get; set; }
+    }
 }
