@@ -1,5 +1,6 @@
 ﻿using NetCoreServer;
 using PayCheckServerLib.Helpers;
+using PayCheckServerLib.Responses;
 using PayCheckServerLib.WSController;
 using System.Net.Sockets;
 using System.Reflection;
@@ -153,8 +154,13 @@ namespace PayCheckServerLib
                         { "activity", "nil" },
                         { "platform", "nil" },
                         { "lastSeenAt", user.Status.lastSeenAt },
-                    };
-                    WSSServer().WSUserIds.ForEach(x => LobbyControl.SendToLobby(rsp, GetWSLobby(x)));
+                    }; 
+                    foreach (var id in WSSServer().WSUserIds)
+                    {
+                        if (id == WSUserId)
+                            continue;
+                        LobbyControl.SendToLobby(rsp, GetWSLobby(id));
+                    }
                 }
                 WSS_Stuff.Remove(WS_ID + "_" + WS_ID.ToString().ToLower());
                 var serv = (PC3WSSServer)Server;

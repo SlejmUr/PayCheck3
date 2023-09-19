@@ -163,7 +163,7 @@ namespace PayCheckServerLib.WSController
             {
                 str += item.Key + ": " + item.Value + "\n";
             }
-            str = str.Remove(str.Length -2);
+            str = str.Remove(str.Length - 1);
             Debugger.PrintWebsocket(str);
             session.SendBinaryAsync(str);
         }

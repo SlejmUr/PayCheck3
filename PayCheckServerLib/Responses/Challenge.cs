@@ -16,23 +16,6 @@ namespace PayCheckServerLib.Responses
             return true;
         }
 
-        [HTTP("GET", "/challenge/v1/public/namespaces/pd3/users/me/records?limit=2147483647&offset=0")]
-        public static bool ChallengeRecordsAll(HttpRequest _, PC3Server.PC3Session session)
-        {
-            var auth = session.Headers["authorization"].Replace("Bearer ", "");
-            var token = TokenHelper.ReadToken(auth);
-            ResponseCreator creator = new();
-            var challenges = JsonConvert.DeserializeObject<DataPaging<ChallengesData>>(File.ReadAllText("Files/ChallengeRecords.json")) ?? throw new Exception("ChallengeRecords is null!");
-            foreach (var item in challenges.Data)
-            {
-                item.UserId = token.UserId;
-            }
-
-            creator.SetBody(JsonConvert.SerializeObject(challenges));
-            session.SendResponse(creator.GetResponse());
-            return true;
-        }
-
         [HTTP("GET", "/challenge/v1/public/namespaces/pd3/users/me/records?limit={limit}&offset={offset}")]
         public static bool ChallengeRecordsSplit(HttpRequest _, PC3Server.PC3Session session)
         {
