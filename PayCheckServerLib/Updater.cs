@@ -8,7 +8,7 @@ namespace PayCheckServerLib
         // that or https://raw.githubusercontent.com/MoolahModding/PayCheck3Files/main
         static readonly string FilesUrl = @"https://github.com/MoolahModding/PayCheck3Files/raw/main/";
 
-        public static async void CheckForJsonUpdates(bool UIHandleUpdate = false)
+        public static void CheckForJsonUpdates(bool UIHandleUpdate = false)
         {
             Dictionary<string, string> LocalFiles = new();
             foreach (var file in Directory.GetFiles("./Files"))
@@ -22,8 +22,9 @@ namespace PayCheckServerLib
             {
                 try
                 {
+
                     HttpClient client = new();
-                    var FilesData = await client.GetStringAsync(FilesUrl + "Hashes.json");
+                    var FilesData = client.GetStringAsync(FilesUrl + "Hashes.json").Result;
                     Files = JsonConvert.DeserializeObject<Dictionary<string, string>>(FilesData)!;
                 }
                 catch
@@ -36,7 +37,9 @@ namespace PayCheckServerLib
             {
                 Files = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(Path.Join(FilesUrl, "Hashes.json")))!;
             }
-
+            //Remove 2 Jsons to not cause error!
+            Files.Remove("UpdatedAtTimes.json");
+            Files.Remove("WeaponTables.json");
             foreach (var KeyPair in Files)
             {
                 try
@@ -55,23 +58,23 @@ namespace PayCheckServerLib
 
                             var inp = Console.ReadLine();
 
-                            if (inp == null || string.IsNullOrEmpty(inp))
+                            if (string.IsNullOrEmpty(inp))
                             {
-                                Console.WriteLine("Your input was wrong, skipping");
+                                //Console.WriteLine("Your input was wrong, skipping");
                                 continue;
                             }
 
                             inp = inp.ToLower();
                             if (inp == "y")
                             {
-                                Console.WriteLine("Updating started!");
+                                Debugger.PrintInfo("Updating started!");
                                 HttpClient client = new();
-                                var FilesData = await client.GetStringAsync(FilesUrl + KeyPair.Key);
+                                var FilesData = client.GetStringAsync(FilesUrl + KeyPair.Key).Result;
                                 File.WriteAllText(KeyPair.Key, FilesData);
                             }
                             else
                             {
-                                Console.WriteLine("Not want to update, Skipping");
+                                //Debugger.PrintInfo("Not want to update, Skipping");
                                 continue;
                             }
 
@@ -79,11 +82,13 @@ namespace PayCheckServerLib
                         }
                     }
                 }
-                catch
+                catch (Exception ex)
                 {
+                    Debugger.PrintWarn(ex.ToString());
                     Debugger.PrintWarn("Unable to fetch get file to update", "Updater");
                 }
             }
+            Debugger.PrintInfo("Update Finished!");
         }
 
         public static event EventHandler<string> UpdateWithUI;

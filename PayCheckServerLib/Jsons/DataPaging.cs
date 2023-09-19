@@ -8,9 +8,10 @@ namespace PayCheckServerLib.Jsons
         public List<T> Data { get; set; }
 
         [JsonProperty("paging")]
-        public Paging Paging { get; set; }
+        public PagingClass Paging { get; set; }
     }
-    public partial class Paging
+
+    public class PagingClass
     {
         [JsonProperty("first")]
         public string First { get; set; }

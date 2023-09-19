@@ -47,12 +47,12 @@ namespace PayCheckServerLib.Jsons
         public string UpdatedAt { get; set; }
 
         [JsonProperty("features", NullValueHandling = NullValueHandling.Ignore)]
-        public object[] Features { get; set; }
+        public List<object> Features { get; set; }
 
         [JsonProperty("useCount", NullValueHandling = NullValueHandling.Ignore)]
-        public long? UseCount { get; set; }
+        public long UseCount { get; set; }
 
         [JsonProperty("stackable", NullValueHandling = NullValueHandling.Ignore)]
-        public bool? Stackable { get; set; }
+        public bool Stackable { get; set; }
     }
 }

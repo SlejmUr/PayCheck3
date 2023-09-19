@@ -24,7 +24,7 @@ namespace PayCheckServerLib.Jsons
 
         public class actionQueryTopicRSP : ChatBase
         {
-            [JsonProperty("params")]
+            [JsonProperty("result")]
             public actionQueryTopicRSPResult Params { get; set; }
         }
 

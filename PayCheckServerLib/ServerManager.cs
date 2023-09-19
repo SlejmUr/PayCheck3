@@ -6,11 +6,20 @@ namespace PayCheckServerLib
     {
         static GSTATICServer.GSServer STATICServer;
         static PD3UDPServer UDPServer;
-        public static void Start()
+        /// <summary>
+        /// Use this to check if update finished (Either Cancelled or Success)
+        /// </summary>
+        public static event EventHandler<bool> UpdateFinished;
+        public static void Pre()
         {
             Debugger.logger.Info("Lib Info: " + BranchHelper.GetBranch() + " - " + BranchHelper.GetBuildDate() + " " + BranchHelper.GetCommitId());
             if (ConfigHelper.ServerConfig.EnableAutoUpdate)
                 Updater.CheckForJsonUpdates();
+            UpdateFinished?.Invoke(null, true);
+        }
+
+        public static void Start()
+        {
             if (ConfigHelper.ServerConfig.Hosting.WSS)
                 PC3Server.Start("127.0.0.1", 443);
             if (ConfigHelper.ServerConfig.Hosting.Gstatic)

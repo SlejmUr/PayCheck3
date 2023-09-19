@@ -22,6 +22,12 @@ namespace PayCheckServerLib.Jsons
 
     public partial class AttribSuccess
     {
+        [JsonProperty("createdAt")]
+        public string createdAt { get; set; } = "0001-01-01T00:00:00Z";
+
+        [JsonProperty("deletedAt")]
+        public string deletedAt { get; set; } = "0001-01-01T00:00:00Z";
+
         [JsonProperty("crossplayEnabled")]
         public bool CrossplayEnabled { get; set; }
 

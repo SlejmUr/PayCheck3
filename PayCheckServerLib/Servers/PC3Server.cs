@@ -123,7 +123,7 @@ namespace PayCheckServerLib
                         Debugger.PrintWarn("The fuck? This User now wants to to join to WS again! " + WS_ID);
                     }
                     WSS_Stuff.Add(token.UserId + "_" + WS_ID.ToString().ToLower(), this);
-                    var x = "y{\"jsonrpc\":\"2.0\",\"method\":\"eventConnected\",\"params\":{\"sessionId\":\"9f51a15b940b4c538cc48281950de549\"}}CaEd";
+                    var x = "CaSr{\"jsonrpc\":\"2.0\",\"method\":\"eventConnected\",\"params\":{\"sessionId\":\"9f51a15b940b4c538cc48281950de549\"}}CaEd";
                     SendBinaryAsync(Encoding.UTF8.GetBytes(x));
                 }
                 Debugger.PrintInfo(WSUserId + " joined to " + WS_ID);

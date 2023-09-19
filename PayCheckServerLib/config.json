@@ -13,5 +13,5 @@
     "Enable_PartySession": false,
     "UsePWInsteadSteamToken": false
   },
-  "EnableAutoUpdate": true
+  "EnableAutoUpdate": false
 }

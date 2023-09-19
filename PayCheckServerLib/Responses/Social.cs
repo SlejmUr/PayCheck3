@@ -25,7 +25,7 @@ namespace PayCheckServerLib.Responses
             return true;
         }
 
-        [HTTP("GET", "/social/v1/public/namespaces/pd3/users/{userId}/statitems?limit=1000&offset=0")]
+        [HTTP("GET", "/social/v1/public/namespaces/pd3/users/{userId}/statitems?limit={limit}&offset=0")]
         public static bool GetUserStatItems(HttpRequest request, PC3Server.PC3Session session)
         {
             ResponseCreator response = new ResponseCreator();
