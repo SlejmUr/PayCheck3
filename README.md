@@ -1,9 +1,10 @@
 # PayCheck3
-PayDay 3 (Beta Branch) Server emulator
+PayDay 3 (Live/Master Branch) Server emulator
 
 Left to do (& Working on it):
 - WSS Response
 - Party and GameSessions
+- New Responses
 
 Need more Interogation:\
 UDP Connection
