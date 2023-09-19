@@ -4,20 +4,17 @@ namespace PayCheckServerLib.Jsons.PartyStuff
 {
     public class PartyPostReq
     {
-        public partial class Basic
-        {
-            [JsonProperty("members")]
-            public List<Member> Members { get; set; }
+        [JsonProperty("members")]
+        public List<Member> Members { get; set; }
 
-            [JsonProperty("attributes")]
-            public Dictionary<string, object> Attributes { get; set; }
+        [JsonProperty("attributes")]
+        public Dictionary<string, object> Attributes { get; set; }
 
-            [JsonProperty("configurationName")]
-            public string ConfigurationName { get; set; }
+        [JsonProperty("configurationName")]
+        public string ConfigurationName { get; set; }
 
-            [JsonProperty("textChat")]
-            public bool TextChat { get; set; }
-        }
+        [JsonProperty("textChat")]
+        public bool TextChat { get; set; }
 
         public partial class Member
         {

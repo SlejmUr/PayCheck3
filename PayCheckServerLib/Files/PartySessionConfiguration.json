@@ -1,0 +1,49 @@
+﻿{
+  "PSNBaseURL": "https://s2s.np.playstation.net",
+  "autoJoin": false,
+  "clientVersion": "0",
+  "deployment": "",
+  "dsSource": "",
+  "fallbackClaimKeys": [],
+  "inactiveTimeout": 300,
+  "inviteTimeout": 60,
+  "joinability": "INVITE_ONLY",
+  "maxPlayers": 4,
+  "minPlayers": 1,
+  "name": "PartySession",
+  "nativeSessionSetting": {
+    "PSNServiceLabel": 0,
+    "PSNSupportedPlatforms": [],
+    "SessionTitle": "PAYDAY 3 Party",
+    "ShouldSync": true,
+    "XboxServiceConfigID": "00000000-0000-0000-0000-00006056e5d6",
+    "XboxSessionTemplateName": "Payday3",
+    "localizedSessionName": {
+      "defaultLanguage": "en-US",
+      "localizedText": {
+        "de-DE": "GRUPPE PAYDAY 3",
+        "en-US": "PAYDAY 3 Party",
+        "es-419": "GRUPO PAYDAY 3",
+        "es-ES": "GRUPO PAYDAY 3",
+        "fr-FR": "GROUPE PAYDAY 3",
+        "it-IT": "SQUADRA PAYDAY 3",
+        "ja-JP": "PAYDAY 3 パーティー",
+        "ko-KR": "PAYDAY 3 파티",
+        "pl-PL": "ZESPÓŁ PAYDAY 3",
+        "pt-BR": "GRUPO PAYDAY 3",
+        "ru-RU": "КОМАНДА PAYDAY 3",
+        "tr-TR": "PAYDAY 3 GRUP",
+        "zh-Hans": "PAYDAY 3 参加者",
+        "zh-Hant": "PAYDAY 3 隊伍"
+      }
+    }
+  },
+  "persistent": false,
+  "preferredClaimKeys": [],
+  "requestedRegions": [
+    "eu-central-1"
+  ],
+  "textChat": true,
+  "tieTeamsSessionLifetime": false,
+  "type": "NONE"
+}

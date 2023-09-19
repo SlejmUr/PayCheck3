@@ -8,6 +8,11 @@ namespace PayCheckServerLib.WSController
 {
     public class LobbyControl
     {
+        public static string Base64Encode(string plainText)
+        {
+            var plainTextBytes = Encoding.UTF8.GetBytes(plainText);
+            return Convert.ToBase64String(plainTextBytes);
+        }
         public static void Control(byte[] buffer, long offset, long size, PC3Session session)
         {
             if (size == 0)

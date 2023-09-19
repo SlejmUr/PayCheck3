@@ -4,7 +4,7 @@ namespace PayCheckServerLib.Jsons.PartyStuff
 {
     public class PartyPost
     {
-        public partial class Basic
+        public partial class Response
         {
             [JsonProperty("attributes")]
             public Dictionary<string, object> Attributes { get; set; }

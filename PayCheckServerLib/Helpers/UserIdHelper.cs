@@ -29,6 +29,22 @@ namespace PayCheckServerLib
             return md5_str;
         }
 
+        public static string CreateCode()
+        {
+            Random rand = new();
+            int stringlen = 7;
+            int randValue;
+            string str = "";
+            char letter;
+            for (int i = 0; i < stringlen; i++)
+            {
+                randValue = rand.Next(0, 26);
+                letter = Convert.ToChar(randValue + 65);
+                str = str + letter;
+            }
+            return str;
+        }
+
         /// <summary>
         /// Creating String from MD5
         /// </summary>

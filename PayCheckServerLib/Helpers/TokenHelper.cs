@@ -18,7 +18,12 @@ namespace PayCheckServerLib
         {
             Unknow,
             Steam,
-            Device
+            Device,
+            EOS,
+            EpicGames,
+            PS4,
+            PS5,
+            XBOX
         }
 
         public static Token GetTokenFromPlatform(string platformId, TokenPlatform platformType)
