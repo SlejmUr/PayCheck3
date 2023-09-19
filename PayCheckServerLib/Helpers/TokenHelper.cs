@@ -23,7 +23,8 @@ namespace PayCheckServerLib
             EpicGames,
             PS4,
             PS5,
-            XBOX
+            XBOX,
+            Live
         }
 
         public static Token GetTokenFromPlatform(string platformId, TokenPlatform platformType)

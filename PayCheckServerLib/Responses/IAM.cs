@@ -131,8 +131,63 @@ namespace PayCheckServerLib.Responses
             return true;
 		}
 
-		// Logging in with email + password, also links steam to nebula account on official servers
-		[HTTP("POST", "/iam/v3/authenticateWithLink")]
+
+        [HTTP("POST", "/iam/v3/oauth/platforms/live/token")]
+        public static bool LiveToken(HttpRequest request, PC3Server.PC3Session session)
+        {
+            var splitted = request.Body.Split("&");
+            Dictionary<string, string> bodyTokens = new();
+            foreach (var item in splitted)
+            {
+                var it = item.Split("=");
+                bodyTokens.Add(it[0], it[1]);
+            }
+
+            var platform_token = bodyTokens["platform_token"];
+            Debugger.PrintDebug(platform_token);
+            platform_token = platform_token.Replace("XBL3.0%20x%3D","");
+            platform_token = platform_token.Split(";")[0];
+            var (access_token, refresh_token) = UserController.LoginUser(platform_token, TokenHelper.TokenPlatform.Live);
+
+            ResponseCreator response = new();
+            response.SetHeader("Content-Type", "application/json");
+            response.SetHeader("Connection", "keep-alive");
+            response.SetHeader("Set-Cookie", "refresh_token=" + refresh_token.ToBase64() + "; Path=/; HttpOnly; Secure; SameSite=None");
+            response.SetHeader("Set-Cookie", "access_token=" + access_token.ToBase64() + "; Path=/; HttpOnly; Secure; SameSite=None");
+            LoginToken token = new()
+            {
+                AccessToken = access_token.ToBase64(),
+                Scope = "account commerce social publishing analytics",
+                Bans = new() { },
+                DisplayName = access_token.Name,
+                ExpiresIn = 360000,
+                IsComply = true,
+                Jflgs = 4,
+                Namespace = "pd3",
+                NamespaceRoles = new()
+                {
+                    new NamespaceRole()
+                    {
+                        Namespace = "*",
+                        RoleId = "2251438839e948d783ec0e5281daf05"
+                    }
+                },
+                Permissions = new() { },
+                PlatformId = "live",
+                PlatformUserId = "",
+                RefreshExpiresIn = 86400,
+                RefreshToken = refresh_token.ToBase64(),
+                Roles = new() { "2251438839e948d783ec0e5281daf05" },
+                TokenType = "Bearer",
+                UserId = access_token.UserId
+            };
+            response.SetBody(JsonConvert.SerializeObject(token));
+            session.SendResponse(response.GetResponse());
+            return true;
+        }
+
+        // Logging in with email + password, also links steam to nebula account on official servers
+        [HTTP("POST", "/iam/v3/authenticateWithLink")]
 		public static bool AuthenticateWithLink(HttpRequest request, PC3Server.PC3Session session)
         {
             var param = HttpUtility.ParseQueryString(request.Body);
