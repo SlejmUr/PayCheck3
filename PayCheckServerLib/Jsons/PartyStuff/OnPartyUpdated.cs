@@ -2,7 +2,7 @@
 
 namespace PayCheckServerLib.Jsons.PartyStuff
 {
-    internal class OnPartyUpdated
+    public class OnPartyUpdated
     {
         [JsonProperty("ID")]
         public string Id { get; set; }

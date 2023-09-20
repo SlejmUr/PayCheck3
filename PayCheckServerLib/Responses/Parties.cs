@@ -91,8 +91,6 @@ namespace PayCheckServerLib.Responses
                 }
             }
 
-            //if (rsp.Attributes.ContainsValue(""))
-
             return true;
         }
 
