@@ -14,8 +14,8 @@ namespace PayCheckServerLib
     {
         public static X509Certificate GetCert()
         {
-
-            X509Certificate2 cert = new(File.ReadAllBytes($"cert.pfx"));
+            //read the cert.pfx
+            X509Certificate2 cert = new(File.ReadAllBytes($"cert.pfx"), "cert");
             return cert;
         }
 

@@ -174,7 +174,7 @@ namespace PayCheckServerLib.Responses
                 },
                 Permissions = new() { },
                 PlatformId = "live",
-                PlatformUserId = "",
+                PlatformUserId = "",    //todo, how the fuck you got the userid from jwt
                 RefreshExpiresIn = 86400,
                 RefreshToken = refresh_token.ToBase64(),
                 Roles = new() { "2251438839e948d783ec0e5281daf05" },
