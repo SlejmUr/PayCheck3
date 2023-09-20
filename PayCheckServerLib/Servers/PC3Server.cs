@@ -2,6 +2,7 @@
 using PayCheckServerLib.Helpers;
 using PayCheckServerLib.Responses;
 using PayCheckServerLib.WSController;
+using System.Diagnostics;
 using System.Net.Sockets;
 using System.Reflection;
 using System.Security.Authentication;
@@ -257,7 +258,20 @@ namespace PayCheckServerLib
             protected override void OnError(SocketError error)
             {
                 Debugger.PrintDebug($"HTTP session caught an error: {error}");
+                StackTrace st = new StackTrace(true);
+                for (int i = 0; i < st.FrameCount; i++)
+                {
+                    var sf = st.GetFrame(i);
+                    if (sf == null)
+                        continue;
+                    Debugger.PrintDebug("");
+                    Debugger.PrintDebug($"Method: " + sf.GetMethod());
+                    Debugger.PrintDebug($"File: " + sf.GetFileName());
+                    Debugger.PrintDebug($"Line Number: " + sf.GetFileLineNumber());
+                    Debugger.PrintDebug("");
+                }
             }
+
         }
 
         public class PC3WSSServer : WssServer
