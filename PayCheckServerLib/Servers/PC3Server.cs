@@ -257,7 +257,7 @@ namespace PayCheckServerLib
 
             protected override void OnError(SocketError error)
             {
-                Debugger.PrintDebug($"HTTP session caught an error: {error}");
+                Debugger.PrintDebug($"HTTPS session caught an error: {error}");
                 StackTrace st = new StackTrace(true);
                 for (int i = 0; i < st.FrameCount; i++)
                 {
@@ -295,7 +295,39 @@ namespace PayCheckServerLib
                 return session;
             }
 
-            protected override void OnError(SocketError error) => Debugger.PrintDebug($"HTTP session caught an error: {error}");
+            protected override void OnDisconnecting(SslSession session)
+            {
+                //Maybe???
+                StackTrace st = new StackTrace(true);
+                for (int i = 0; i < st.FrameCount; i++)
+                {
+                    var sf = st.GetFrame(i);
+                    if (sf == null)
+                        continue;
+                    Debugger.PrintDebug("");
+                    Debugger.PrintDebug($"Method: " + sf.GetMethod());
+                    Debugger.PrintDebug($"File: " + sf.GetFileName());
+                    Debugger.PrintDebug($"Line Number: " + sf.GetFileLineNumber());
+                    Debugger.PrintDebug("");
+                }
+            }
+
+            protected override void OnError(SocketError error) 
+            {
+                Debugger.PrintDebug($"Server reported error: {error}");
+                StackTrace st = new StackTrace(true);
+                for (int i = 0; i < st.FrameCount; i++)
+                {
+                    var sf = st.GetFrame(i);
+                    if (sf == null)
+                        continue;
+                    Debugger.PrintDebug("");
+                    Debugger.PrintDebug($"Method: " + sf.GetMethod());
+                    Debugger.PrintDebug($"File: " + sf.GetFileName());
+                    Debugger.PrintDebug($"Line Number: " + sf.GetFileLineNumber());
+                    Debugger.PrintDebug("");
+                }
+            } 
         }
     }
 }

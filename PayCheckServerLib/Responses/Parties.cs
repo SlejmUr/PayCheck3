@@ -90,6 +90,9 @@ namespace PayCheckServerLib.Responses
                     LobbyControl.SendToLobby(resp, session.GetWSLobby(id));
                 }
             }
+
+            //if (rsp.Attributes.ContainsValue(""))
+
             return true;
         }
 
