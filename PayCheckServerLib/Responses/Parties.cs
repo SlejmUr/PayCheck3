@@ -39,7 +39,7 @@ namespace PayCheckServerLib.Responses
         [HTTP("PATCH", "/session/v1/public/namespaces/pd3/parties/{partyid}")]
         public static bool PATCH_Parties(HttpRequest request, PC3Server.PC3Session session)
         {
-            var body = JsonConvert.DeserializeObject<dynamic>(request.Body);
+            var body = JsonConvert.DeserializeObject<PartyPatch>(request.Body);
             PartyPost.Response rsp = PartyController.UpdateParty(session.HttpParam["partyid"],body);
             ResponseCreator response = new();
             response.SetBody(JsonConvert.SerializeObject(rsp));
@@ -98,9 +98,11 @@ namespace PayCheckServerLib.Responses
         [HTTP("DELETE", "/session/v1/public/namespaces/pd3/parties/{partyid}/users/me/leave")]
         public static bool LeaveParties(HttpRequest request, PC3Server.PC3Session session)
         {
+            //This response sadly KILLING THE GAME (Even without emu)
+            //  SBZ PLEASE FIX!
             ResponseCreator response = new(204);
             session.SendResponse(response.GetResponse());
-            return false;
+            return true;
         }
 
 

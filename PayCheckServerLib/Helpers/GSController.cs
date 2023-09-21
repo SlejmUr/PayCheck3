@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace PayCheckServerLib.Helpers
 {
-    public class SessionController
+    //AKA GameSessionController
+    public class GSController
     {
+        public static void Make()
+        { }
     }
 }

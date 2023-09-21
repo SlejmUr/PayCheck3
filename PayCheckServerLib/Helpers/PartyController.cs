@@ -119,7 +119,7 @@ namespace PayCheckServerLib.Helpers
 
 
 
-        public static PartyPost.Response UpdateParty(string PartyId, dynamic body)
+        public static PartyPost.Response UpdateParty(string PartyId, PartyPatch body)
         {
             var party = PartySaves.Where(x=>x.Value.Id == PartyId).FirstOrDefault().Value;
             if (party == null)
@@ -129,8 +129,8 @@ namespace PayCheckServerLib.Helpers
             }
 
             party.UpdatedAt = DateTime.UtcNow.ToString("o");
-            party.Attributes = body.attributes;
-            party.version = body.version + 1;
+            party.Attributes = body.Attributes;
+            party.version = body.Version + 1;
 
             return ParsePartyToRSP(party);
         }
