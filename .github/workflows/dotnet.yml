@@ -19,7 +19,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        runs-on: [windows-latest]
+        runs-on: [windows-latest,ubuntu-latest]
         configuration: [Release]
     steps:
     - uses: actions/checkout@v3
@@ -31,15 +31,20 @@ jobs:
       run: dotnet restore
       
     - name: Publish
-      run: dotnet publish -c ${{ matrix.configuration }} --property:PublishDir=../artifacts
+      run: dotnet publish -c ${{ matrix.configuration }} --property:PublishDir=../artifacts-${{ runs-on }}
 
-#    - name: Tar files
-#      run: tar -cvf artifacts.tar artifacts
-
-    - name: Upload artifact
+    - name: Upload artifact (Lin)
       uses: actions/upload-artifact@v3
-      #if: matrix.configuration == 'Release' && matrix.runs-on == 'windows-latest'
+      if: matrix.runs-on == 'ubuntu-latest'
       with:
-        name: PayCheck3-artifact
-        path: artifacts
+        name: PayCheck3-Linux
+        path: artifacts-${{ runs-on }
+        if-no-files-found: error
+
+    - name: Upload artifact (Win)
+      uses: actions/upload-artifact@v3
+      if: matrix.runs-on == 'windows-latest'
+      with:
+        name: PayCheck3-Windows
+        path: artifacts-${{ runs-on }
         if-no-files-found: error

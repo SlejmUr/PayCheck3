@@ -14,7 +14,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="Files\**">
+    <Content Include="Files/**">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
@@ -30,7 +30,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Properties\BuildDate.txt" />
+    <Content Include="Properties/BuildDate.txt" />
   </ItemGroup>
 
   <ItemGroup>
@@ -41,7 +41,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Properties\Resources.Designer.cs">
+    <Compile Update="Properties/Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
@@ -49,7 +49,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Properties\Resources.resx">
+    <EmbeddedResource Update="Properties/Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
@@ -62,7 +62,7 @@
 	</Target>
 	
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
-    <Exec Command="git.exe branch --show-current &gt; &quot;$(ProjectDir)\Properties\BuildDate.txt&quot;&#xD;&#xA;echo %25date%25 %25time%25&gt;&gt; &quot;$(ProjectDir)\Properties\BuildDate.txt&quot;&#xD;&#xA;git rev-parse --short HEAD &gt;&gt; &quot;$(ProjectDir)\Properties\BuildDate.txt&quot;&#xD;&#xA;" />
+	  <Exec Command="git branch --show-current &gt; &quot;$(ProjectDir)/Properties/BuildDate.txt&quot;&#xD;&#xA;echo $([System.DateTime]::UtcNow.ToString(&quot;s&quot;))&gt;&gt; &quot;$(ProjectDir)/Properties/BuildDate.txt&quot;&#xD;&#xA;git rev-parse --short HEAD &gt;&gt; &quot;$(ProjectDir)/Properties/BuildDate.txt&quot;&#xD;&#xA;" />
   </Target>
 
 </Project>
