@@ -74,11 +74,11 @@ namespace PayCheckServerLib.Jsons.GS
     }
     public class DSInformation
     {
-        [JsonProperty("RequestedAt")]
+        [JsonProperty("RequestedAt", NullValueHandling = NullValueHandling.Ignore)]
         public string RequestedAt { get; set; }
 
         [JsonProperty("Server")]
-        public DSInformationServer Server { get; set; }
+        public DSInformationServer? Server { get; set; }
 
         [JsonProperty("Status")]
         public string Status { get; set; }

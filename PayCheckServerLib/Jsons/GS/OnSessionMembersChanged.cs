@@ -2,7 +2,31 @@
 
 namespace PayCheckServerLib.Jsons.GS
 {
-    public class OnGameSessionUpdated
+    public class OnSessionMembersChanged
+    {
+        [JsonProperty("JoinerID")]
+        public string JoinerID { get; set; }
+
+        [JsonProperty("LeaderID")]
+        public string LeaderID { get; set; }
+
+        [JsonProperty("Members")]
+        public List<PartyStuff.PartyPost.Memberv2> Members { get; set; }
+
+        [JsonProperty("SessionID")]
+        public string SessionID { get; set; }
+
+        [JsonProperty("Teams")]
+        public List<Team> Teams { get; set; }
+
+        [JsonProperty("TextChat")]
+        public bool TextChat { get; set; }
+
+        [JsonProperty("Session")]
+        public Session Session { get; set; }
+    }
+
+    public class Session
     {
         [JsonProperty("ID")]
         public string ID { get; set; }
@@ -29,7 +53,7 @@ namespace PayCheckServerLib.Jsons.GS
         public int Version { get; set; }
 
         [JsonProperty("Configuration")]
-        public Dictionary<string, object> Configuration { get; set; }
+        public Dictionary<string,object> Configuration { get; set; }
 
         [JsonProperty("ConfigurationName")]
         public string ConfigurationName { get; set; }
@@ -47,7 +71,7 @@ namespace PayCheckServerLib.Jsons.GS
         public List<Team> Teams { get; set; }
 
         [JsonProperty("DSInformation")]
-        public OnDSStatusChanged.DSInformation DSInformation { get; set; }
+        public DSInformation DSInformation { get; set; }
 
         [JsonProperty("MatchPool")]
         public string MatchPool { get; set; }
@@ -58,4 +82,5 @@ namespace PayCheckServerLib.Jsons.GS
         [JsonProperty("GameMode")]
         public string GameMode { get; set; }
     }
+
 }

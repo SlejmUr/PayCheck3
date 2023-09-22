@@ -1,0 +1,14 @@
+{
+  "Name": "pveheist",
+  "Joinability": "OPEN",
+  "MinPlayers": 1,
+  "MaxPlayers": 4,
+  "Deployment": "pveheistv2",
+  "ClientVersion": "624677",
+  "RequestedRegions": [
+    "eu-central-1"
+  ],
+  "Type": "DS",
+  "InviteTimeout": 60,
+  "InactiveTimeout": 300
+}

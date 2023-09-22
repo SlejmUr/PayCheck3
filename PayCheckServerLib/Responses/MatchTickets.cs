@@ -1,7 +1,9 @@
 ﻿using NetCoreServer;
 using Newtonsoft.Json;
+using PayCheckServerLib.Helpers;
 using PayCheckServerLib.WSController;
 using System.Security.Cryptography;
+using static PayCheckServerLib.Jsons.GS.OnMatchFound;
 
 namespace PayCheckServerLib.Responses
 {
@@ -61,6 +63,7 @@ namespace PayCheckServerLib.Responses
             };
             resp.Add("payload", LobbyControl.Base64Encode(JsonConvert.SerializeObject(onMatchmakingStarted)));
             LobbyControl.SendToLobby(resp, session.GetWSLobby(session.WSUserId));
+            GSController.Make(ticket,session);
             /*
              * Need to check what happens at this stage.
              * Do we need to send everyone its token or something?

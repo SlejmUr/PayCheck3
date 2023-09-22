@@ -159,5 +159,26 @@ namespace PayCheckServerLib.Jsons.PartyStuff
             [JsonProperty("updatedAt")]
             public string UpdatedAt { get; set; }
         }
+
+        public partial class Memberv2
+        {
+            [JsonProperty("ID")]
+            public string ID { get; set; }
+
+            [JsonProperty("Status")]
+            public string Status { get; set; }
+
+            [JsonProperty("StatusV2")]
+            public string StatusV2 { get; set; }
+
+            [JsonProperty("UpdatedAt")]
+            public DateTime UpdatedAt { get; set; }
+
+            [JsonProperty("PlatformID")]
+            public string PlatformID { get; set; }
+
+            [JsonProperty("PlatformUserID")]
+            public string PlatformUserID { get; set; }
+        }
     }
 }
