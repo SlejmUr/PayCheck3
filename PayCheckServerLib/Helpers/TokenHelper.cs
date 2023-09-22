@@ -21,8 +21,7 @@ namespace PayCheckServerLib
             Device,
             EOS,
             EpicGames,
-            PS4,
-            PS5,
+            PSN,
             XBOX,
             Live
         }
@@ -38,9 +37,7 @@ namespace PayCheckServerLib
                 if (token.PlatformType == platformType && token.PlatformId == platformId && token.IsAccessToken)
                     return token;
             }
-            var newtoken = GenerateNewToken();
-            newtoken.PlatformType = platformType;
-            newtoken.PlatformId = platformId;
+            var newtoken = GenerateNewToken(platformId,"DefaultUser", platformType);
             return newtoken;
         }
 
@@ -63,12 +60,12 @@ namespace PayCheckServerLib
         }
 
 
-        public static Token GenerateNewToken(string Name = "DefaultUser", TokenPlatform platform = TokenPlatform.Steam, bool IsAccessToken = true)
+        public static Token GenerateNewToken(string PlatformId, string Name = "DefaultUser", TokenPlatform platform = TokenPlatform.Steam, bool IsAccessToken = true)
         {
             return new()
             {
                 Name = Name,
-                PlatformId = UserIdHelper.GetSteamID(),
+                PlatformId = PlatformId,
                 UserId = UserIdHelper.CreateNewID(),
                 PlatformType = platform,
                 IsAccessToken = IsAccessToken

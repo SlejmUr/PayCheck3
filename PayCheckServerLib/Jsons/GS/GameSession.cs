@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace PayCheckServerLib.Jsons
+namespace PayCheckServerLib.Jsons.GS
 {
     public class GameSession
     {
@@ -8,7 +8,7 @@ namespace PayCheckServerLib.Jsons
         public DSInformation DSInformation { get; set; }
 
         [JsonProperty("attributes")]
-        public Dictionary<string,object> Attributes { get; set; }
+        public Dictionary<string, object> Attributes { get; set; }
 
         [JsonProperty("backfillTicketID")]
         public string BackfillTicketID { get; set; }

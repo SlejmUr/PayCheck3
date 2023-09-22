@@ -1,6 +1,5 @@
 ﻿using NetCoreServer;
 using PayCheckServerLib.Helpers;
-using PayCheckServerLib.Responses;
 using PayCheckServerLib.WSController;
 using System.Diagnostics;
 using System.Net.Sockets;
@@ -71,7 +70,17 @@ namespace PayCheckServerLib
 
             public Dictionary<string, PC3Session> WSS_Stuff = new();
 
-            public PC3Session GetWSLobby(string UserId) => WSS_Stuff[UserId + "_lobby"];
+            public PC3Session GetWSLobby(string UserId)
+            {
+                if (UserId == null)
+                    throw new Exception("UserId is null! (Parameter)");
+
+                if (WSS_Stuff.TryGetValue(UserId + "_lobby", out var value))
+                {
+                    return value;
+                }
+                throw new Exception("User(Lobby) not found in WSS_Stuff!");
+            }
 
             public PC3Session GetWSChat(string UserId) => WSS_Stuff[UserId + "_chat"];
 

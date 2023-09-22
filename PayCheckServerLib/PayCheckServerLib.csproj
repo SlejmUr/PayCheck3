@@ -21,8 +21,6 @@
 
   <ItemGroup>
     <None Remove="config.json" />
-    <None Remove="files\Country.json" />
-    <None Remove="files\PartySessionConfiguration.json" />
   </ItemGroup>
 
   <ItemGroup>

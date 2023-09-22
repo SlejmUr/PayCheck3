@@ -1,15 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using PayCheckServerLib.Responses;
 
 namespace PayCheckServerLib.Helpers
 {
     //AKA GameSessionController
     public class GSController
     {
-        public static void Make()
-        { }
+        public static void Make(MatchTickets.TicketReqJson ticketReq, PC3Server.PC3Session session)
+        {
+            //
+
+        }
     }
 }

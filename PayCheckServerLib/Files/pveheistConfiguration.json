@@ -1,0 +1,37 @@
+﻿{
+    "PSNBaseURL": "https://s2s.prod-qa.playstation.net",
+    "autoJoin": false,
+    "clientVersion": "624677",
+    "deployment": "pveheistv2",
+    "dsSource": "",
+    "fallbackClaimKeys": [],
+    "inactiveTimeout": 300,
+    "inviteTimeout": 60,
+    "joinability": "OPEN",
+    "maxActiveSession": -1,
+    "maxPlayers": 4,
+    "minPlayers": 1,
+    "name": "pveheist",
+    "nativeSessionSetting": {
+        "PSNServiceLabel": 0,
+        "PSNSupportedPlatforms": [],
+        "SessionTitle": "",
+        "ShouldSync": false,
+        "XboxServiceConfigID": "",
+        "XboxSessionTemplateName": "",
+        "localizedSessionName": {
+            "defaultLanguage": "en-US",
+            "localizedText": {
+                "en-US": "pveheist"
+            }
+        }
+    },
+    "persistent": false,
+    "preferredClaimKeys": [],
+    "requestedRegions": [
+        "eu-central-1"
+    ],
+    "textChat": false,
+    "tieTeamsSessionLifetime": false,
+    "type": "DS"
+}

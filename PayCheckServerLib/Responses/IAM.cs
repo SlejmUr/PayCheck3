@@ -48,7 +48,7 @@ namespace PayCheckServerLib.Responses
                 return true;
             }
             var steamId = UserIdHelper.GetSteamIDFromAUTH(platform_token);
-            Debugger.PrintInfo(steamId);
+            Debugger.PrintInfo("User with SteamID try to log in: "+ steamId);
 
             var (access_token, refresh_token) = UserController.LoginUser(steamId, TokenHelper.TokenPlatform.Steam);
 

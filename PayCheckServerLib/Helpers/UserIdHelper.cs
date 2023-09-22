@@ -29,6 +29,11 @@ namespace PayCheckServerLib
             return md5_str;
         }
 
+
+        /// <summary>
+        /// Gemerating Code for Party
+        /// </summary>
+        /// <returns></returns>
         public static string CreateCode()
         {
             Random rand = new();
@@ -61,27 +66,6 @@ namespace PayCheckServerLib
             return sb.ToString();
         }
 
-        /// <summary>
-        /// Getting SteamID from the .txt file
-        /// </summary>
-        /// <returns>SteamID</returns>
-        public static string GetSteamID()
-        {
-            var id = File.ReadAllLines("Files/steamid.txt")[0];
-            if (id.Contains("\n"))
-            {
-                id.Replace("\n", "");
-            }
-            if (id.Contains("\r"))
-            {
-                id.Replace("\r", "");
-            }
-            if (id.Contains(" "))
-            {
-                id.Replace(" ", "");
-            }
-            return id;
-        }
 
         public static string getsai(string str)
         {
