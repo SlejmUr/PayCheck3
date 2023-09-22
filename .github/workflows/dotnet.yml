@@ -31,14 +31,14 @@ jobs:
       run: dotnet restore
       
     - name: Publish
-      run: dotnet publish -c ${{ matrix.configuration }} --property:PublishDir=../artifacts-${{ runs-on }}
+      run: dotnet publish -c ${{ matrix.configuration }} --property:PublishDir=../artifacts-${{ matrix.runs-on }}
 
     - name: Upload artifact (Lin)
       uses: actions/upload-artifact@v3
       if: matrix.runs-on == 'ubuntu-latest'
       with:
         name: PayCheck3-Linux
-        path: artifacts-${{ runs-on }
+        path: artifacts-${{ matrix.runs-on }
         if-no-files-found: error
 
     - name: Upload artifact (Win)
@@ -46,5 +46,5 @@ jobs:
       if: matrix.runs-on == 'windows-latest'
       with:
         name: PayCheck3-Windows
-        path: artifacts-${{ runs-on }
+        path: artifacts-${{ matrix.runs-on }
         if-no-files-found: error
