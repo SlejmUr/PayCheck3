@@ -40,6 +40,13 @@ namespace PayCheckServerLib.Responses
             }
 
             var platform_token = bodyTokens["platform_token"];
+            var sai = UserIdHelper.getsai(platform_token);
+            Debugger.PrintInfo(sai);
+            if (sai != "1272080")
+            {
+                Debugger.PrintError("Unable to auth incorrectly");
+                return true;
+            }
             var steamId = UserIdHelper.GetSteamIDFromAUTH(platform_token);
             Debugger.PrintInfo(steamId);
 

@@ -83,6 +83,11 @@ namespace PayCheckServerLib
             return id;
         }
 
+        public static string getsai(string str)
+        {
+            return BitConverter.ToUInt32(Convert.FromHexString(str)[72..(72 + 4)]).ToString();
+		}
+
         /// <summary>
         /// Getting the SteamID from IAM Login body
         /// </summary>

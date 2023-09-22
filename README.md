@@ -1,6 +1,14 @@
 # PayCheck3
 PayDay 3 (Live/Master Branch) Server emulator
 
+## Disclaimer
+ - You must own a legitimate copy of PAYDAY 3 to use this software, which can be purchased
+at https://www.paydaythegame.com/payday3/#buy
+ - The contributors of PayCheck3 in no way support piracy, and actively ensure that PayCheck3
+does not work with an illegitimate copy. We're sorry to have caused any confusion that
+this could be used for piracy.
+ - This project is in no way affliated or endorsed by Starbreeze Entertainment.
+
 Left to do (& Working on it):
 - WSS Response
 - Party and GameSessions
