@@ -38,7 +38,7 @@ jobs:
       if: matrix.runs-on == 'ubuntu-latest'
       with:
         name: PayCheck3-Linux
-        path: artifacts-${{ matrix.runs-on }
+        path: artifacts-${{ matrix.runs-on }}
         if-no-files-found: error
 
     - name: Upload artifact (Win)
@@ -46,5 +46,5 @@ jobs:
       if: matrix.runs-on == 'windows-latest'
       with:
         name: PayCheck3-Windows
-        path: artifacts-${{ matrix.runs-on }
+        path: artifacts-${{ matrix.runs-on }}
         if-no-files-found: error
