@@ -9,6 +9,7 @@ does not work with an illegitimate copy. We're sorry to have caused any confusio
 this could be used for piracy.
  - This project is in no way affliated or endorsed by Starbreeze Entertainment.
 
+## Current State
 Left to do (& Working on it):
 - WSS Response
 - Party and GameSessions
@@ -23,9 +24,12 @@ How to run:
 3. Start the server.
 4. Go to your c:\Windows\System32\Drivers\etc\hosts and open it.
 5. Copy all stuff from hosts_edit.txt
-6. Run your Beta Client & Have fun.
+6. Run your Client & Have fun.
 
 If you want your friends to join you, they need to edit the 127.0.0.1 to your IP (Can be Lan or your External)
+
+# Where can I get the built server?
+In [Github Actions](https://github.com/SlejmUr/PayCheck3/actions) you find most recent pushes/request Build version.
 
 # Configurate your server.
 You see a config.json where you can edit some things that can edit server stuff.
@@ -44,8 +48,9 @@ UDP_PORT: Can set Port for UDP connection
 Can enable/disable certain features that could land you something now work perfectly.
 
 # Soon stuff's
+Aka just ideas
 
 ### How to add your server
-.
-
-### How to 
+Open servers.json\
+Duplicate the eu-central-1 alias server\
+Edit the Status, Region, Port, IP to your UDP one
