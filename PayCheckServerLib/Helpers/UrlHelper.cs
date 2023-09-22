@@ -10,8 +10,8 @@
             if (string.IsNullOrEmpty(pattern)) throw new ArgumentNullException(nameof(pattern));
 
             vals = new Dictionary<string, string>();
-            string[] urlParts = url.Split(new char[] { '/' }, StringSplitOptions.RemoveEmptyEntries);
-            string[] patternParts = pattern.Split(new char[] { '/' }, StringSplitOptions.RemoveEmptyEntries);
+            string[] urlParts = SplitUrl(url);
+            string[] patternParts = SplitUrl(pattern);
 
             if (urlParts.Length != patternParts.Length) return false;
 
@@ -32,7 +32,7 @@
                 {
                     vals.Add(
                         paramName.Replace("{", "").Replace("}", ""),
-                        urlParts[i]);
+                        urlParts[i].Split('=').Last());
                 }
             }
             return true;
@@ -57,6 +57,35 @@
 
             return string.Empty;
         }
+        
+        private static string[] SplitUrl(string url)
+        {
+            string[] urlPaths = url.Split('/', StringSplitOptions.RemoveEmptyEntries);;
+            urlPaths = SplitUrl(urlPaths, '?');
+            urlPaths = SplitUrl(urlPaths, '&');
+
+            return urlPaths;
+        }
+
+        private static string[] SplitUrl(string[] urlParts, char splitChar)
+        {
+            List<string> parts = new List<string>();
+
+            foreach (var part in urlParts)
+            {
+                if (!part.Contains(splitChar))
+                {
+                    parts.Add(part);
+                    continue;
+                }
+
+                string[] subParts = part.Split(splitChar, StringSplitOptions.RemoveEmptyEntries);
+                parts.AddRange(subParts);
+            }
+
+            return parts.ToArray();
+        }
+        
         #endregion
     }
 }

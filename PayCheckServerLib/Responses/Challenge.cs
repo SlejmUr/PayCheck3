@@ -19,9 +19,8 @@ namespace PayCheckServerLib.Responses
         [HTTP("GET", "/challenge/v1/public/namespaces/pd3/users/me/records?limit={limit}&offset={offset}")]
         public static bool ChallengeRecordsSplit(HttpRequest _, PC3Server.PC3Session session)
         {
-            var limit_offset = session.HttpParam["limit&offset=offset"].Replace("records?limit=","").Replace("offset=", ""); //records?limit=100&offset=0
-            var offset = int.Parse(limit_offset.Split("&")[1]);
-            var limit = int.Parse(limit_offset.Split("&")[0]);
+            var offset = int.Parse(session.HttpParam["offset"]);
+            var limit = int.Parse(session.HttpParam["limit"]);
             var auth = session.Headers["authorization"].Replace("Bearer ", "");
             var token = TokenHelper.ReadToken(auth);
             ResponseCreator creator = new();
