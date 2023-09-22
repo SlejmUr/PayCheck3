@@ -42,6 +42,7 @@ SaveRequest: In here you can save each request when client send any change in th
 Extension: It basicly a json but with a funny extension
 
 ### Hosting
+IP: Currently is its 127.0.0.1 but can be changed to your IP or anything as IP (IT HOST GSTATIC,WSS,UDP too!!!)\
 WSS: Can enable/disable to run the HTTPS/WSS Server\
 UDP: Can enable/disable to run the UDP Server (GameServer?) [NOT USED]\
 GSTATIC: Can enable/disable to run the GSTATIC server (Enable you to play without internet)\

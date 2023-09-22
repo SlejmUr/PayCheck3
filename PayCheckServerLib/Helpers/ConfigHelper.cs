@@ -27,7 +27,8 @@ namespace PayCheckServerLib.Helpers
                         WSS = true,
                         Gstatic = true,
                         Udp = true,
-                        UDP_PORT = 6969
+                        UDP_PORT = 6969,
+                        IP = "127.0.0.1"
                     },
                     Saves = new()
                     {

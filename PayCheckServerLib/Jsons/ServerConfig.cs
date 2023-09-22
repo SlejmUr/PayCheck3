@@ -18,6 +18,9 @@ namespace PayCheckServerLib.Jsons
 
         public partial class CHosting
         {
+            [JsonProperty("IP")]
+            public string IP { get; set; }
+
             [JsonProperty("Server")]
             public bool WSS { get; set; }
 

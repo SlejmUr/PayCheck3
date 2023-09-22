@@ -4,6 +4,7 @@
     "SaveRequest": false
   },
   "Hosting": {
+    "IP": "127.0.0.1",
     "Server": true,
     "UDP": true,
     "GSTATIC": true,

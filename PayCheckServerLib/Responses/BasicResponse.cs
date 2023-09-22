@@ -1,5 +1,6 @@
 ﻿using NetCoreServer;
 using Newtonsoft.Json;
+using PayCheckServerLib.Helpers;
 using PayCheckServerLib.Jsons;
 
 namespace PayCheckServerLib.Responses
@@ -21,27 +22,27 @@ namespace PayCheckServerLib.Responses
                         Alias = "eu-central-1",
                         Region = "eu-central-1",
                         Status = "ACTIVE",
-                        Ip = "127.0.0.1",
+                        Ip = ConfigHelper.ServerConfig.Hosting.IP,
                         LastUpdate = "2023-08-06T10:00:00.000000000Z",
-                        Port = 6969
+                        Port = ConfigHelper.ServerConfig.Hosting.UDP_PORT
                     },
                     new()
                     {
                         Alias = "eu-north-1",
                         Region = "eu-north-1",
                         Status = "ACTIVE",
-                        Ip = "127.0.0.1",
+                        Ip = ConfigHelper.ServerConfig.Hosting.IP,
                         LastUpdate = "2023-08-06T10:00:00.000000000Z",
-                        Port = 6969
+                        Port = ConfigHelper.ServerConfig.Hosting.UDP_PORT
                     },
                     new()
                     {
                         Alias = "eu-west-1",
                         Region = "eu-west-1",
                         Status = "ACTIVE",
-                        Ip = "127.0.0.1",
+                        Ip = ConfigHelper.ServerConfig.Hosting.IP,
                         LastUpdate = "2023-08-06T10:00:00.000000000Z",
-                        Port = 6969
+                        Port = ConfigHelper.ServerConfig.Hosting.UDP_PORT
                     }
                 }
             };
