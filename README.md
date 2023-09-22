@@ -9,6 +9,9 @@ does not work with an illegitimate copy. We're sorry to have caused any confusio
 this could be used for piracy.
  - This project is in no way affliated or endorsed by Starbreeze Entertainment.
 
+## CURRENTLY MATCHMAKING IS NOT WORKING!
+Thank you for understanding! I working on a solution, no ETA yet.
+
 ## Current State
 Left to do (& Working on it):
 - WSS Response
