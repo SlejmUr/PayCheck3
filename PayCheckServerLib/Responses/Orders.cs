@@ -46,11 +46,11 @@ namespace PayCheckServerLib.Responses
             File.WriteAllText($"Orders/{session.HttpParam["userid"]}_{body.ItemId}", request.Body);
 
             ResponseCreator response = new();
-
+            var ordernumber = GenOrderNumber();
             ItemDefinitionJson? item = GetItemFromId(body.ItemId) ?? throw new Exception("GetItemFromId -> Item is null!");
             Order order = new()
             {
-                OrderNo = GenOrderNumber(),
+                OrderNo = ordernumber,
                 Namespace = "pd3",
                 UserId = session.HttpParam["userid"],
                 ItemId = item.ItemId,
@@ -86,7 +86,9 @@ namespace PayCheckServerLib.Responses
                 TotalPrice = body.Price,
                 SubtotalPrice = body.Price,
                 CreatedAt = DateTime.UtcNow.ToString("o"),
-                UpdatedAt = DateTime.UtcNow.ToString("o")
+                UpdatedAt = DateTime.UtcNow.ToString("o"),
+                PaymentOrderNo = "P" + ordernumber,
+                PaymentProvider = "WALLET"
             };
             response.SetBody(JsonConvert.SerializeObject(order));
             session.SendResponse(response.GetResponse());
