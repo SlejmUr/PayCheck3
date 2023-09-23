@@ -363,5 +363,40 @@ namespace PayCheckServerLib.Responses
             session.SendResponse(response.GetResponse());
             return true;
         }
+
+        [HTTP("POST", "/iam/v3/public/namespaces/pd3/platforms/steam/users?rawPUID=true")]
+        public static bool GetSteamUsersWithPID(HttpRequest request, PC3Server.PC3Session session)
+        {
+            var req = JsonConvert.DeserializeObject<SteamUsersReq>(request.Body);
+            ResponseCreator response = new();
+            response.SetHeader("Content-Type", "application/json");
+            response.SetHeader("Connection", "keep-alive");
+
+            SteamUsers steamUsers = new()
+            { 
+                userIdPlatforms = new()
+            };
+
+
+            foreach (var id in req.platformUserIds)
+            {
+                if (UserController.CheckUser(id, TokenHelper.TokenPlatform.Steam))
+                {
+                    var user = UserController.GetUser(id, TokenHelper.TokenPlatform.Steam);
+                    steamUsers.userIdPlatforms.Add(new()
+                    { 
+                        platformId = "steam",
+                        platformUserId = id,
+                        userId = user.UserData.UserId
+                    
+                    });
+
+                }
+            }
+
+            response.SetBody(JsonConvert.SerializeObject(steamUsers));
+            session.SendResponse(response.GetResponse());
+            return true;
+        }
     }
 }
