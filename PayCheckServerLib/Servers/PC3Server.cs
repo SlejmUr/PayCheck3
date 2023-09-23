@@ -70,6 +70,7 @@ namespace PayCheckServerLib
             }
 
             public Dictionary<string, PC3Session> WSS_Stuff = new();
+            public List<PC3Session> MiddleMans = new();
 
             public PC3Session GetWSLobby(string UserId)
             {
@@ -111,6 +112,7 @@ namespace PayCheckServerLib
                 {
                     WSUserId = "MiddleManId-" + Headers["middleman"];
                     WS_ID = WSEnum.MiddleMan;
+                    MiddleMans.Add(this);
                     return;
                 }
                 else

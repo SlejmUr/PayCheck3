@@ -4,12 +4,15 @@ using PayCheckServerLib.Responses;
 using PayCheckServerLib.Jsons.PartyStuff;
 using PayCheckServerLib.WSController;
 
+
 namespace PayCheckServerLib.Helpers
 {
     //AKA GameSessionController
     public class GSController
     {
         public static List<string> MatchFoundSent = new();
+        public static List<string> DSInfoSentList = new();
+        public static Dictionary<string, DSInformationServer> DSInfo = new();
         public static Dictionary<string, GameSession> Sessions = new();
         public static Dictionary<string, string> Tickets = new();
         //  Here we making a Full created Match 
@@ -98,7 +101,6 @@ namespace PayCheckServerLib.Helpers
             }
         }
 
-
         public static GameSession GetGameSession(string id)
         {
             if (Sessions.TryGetValue(id, out var session))
@@ -121,30 +123,104 @@ namespace PayCheckServerLib.Helpers
             session.DSInformation.StatusV2 = "REQUESTED";
             foreach (var item in session.Members)
             {
-                item.Status = "JOINED";
-                item.StatusV2 = "JOINED";
+                if (item.Id == UserId)
+                {
+                    item.Status = "JOINED";
+                    item.StatusV2 = "JOINED";
+                }
             }
             session.Version++;
             session.UpdatedAt = DateTime.UtcNow.ToString("o");
+            if (string.IsNullOrEmpty(session.LeaderID))
+            {
+                session.LeaderID = UserId;
+            }
             Sessions[id] =  session;
             return session;
         }
 
-        public static GameSession Patch(PatchGameSessions patchGameSessions, string id)
+        public static GameSession Patch(PatchGameSessions patchGameSessions, string id, PC3Server.PC3Session pcSession)
         {
             if (!Sessions.TryGetValue(id, out var session))
             {
                 Debugger.PrintWarn("Session NOT FOUND");
                 throw new Exception("Session NOT FOUND");
             }
+            //send stuff to middleman
+            var random = new Random();
+            var mlist = pcSession.MiddleMans;
+            int index = random.Next(mlist.Count);
+            var middleMan = mlist[index];
+            string Req = "DSInfoReq-END-" + "eu-central-1,"+ "624677," + session.Id;
+            middleMan.Send(Req);
+            //recieve back here?
+            //  PLEASE if you know how to wait better than this, make a PR!
+            while (!DSInfoSentList.Contains(id))
+            {
+                Thread.Sleep(100);
+            }
+            
+            session.DSInformation.Server = DSInfo[id];
+            session.DSInformation.Status = "AVAILABLE";
+            session.DSInformation.StatusV2 = "AVAILABLE";
+
+
+            OnDSStatusChanged.Basic onDSStatusChanged = new()
+            { 
+                SessionID = id,
+                GameServer = DSInfo[id],
+                Session = new()
+                { 
+                    ID = id,
+                    IsFull = session.IsFull,
+                    DSInformation = new()
+                    { 
+                        Server = session.DSInformation.Server,
+                        Status = "AVAILABLE",
+                        StatusV2 = "AVAILABLE"
+                    },
+                    BackfillTicketID = session.BackfillTicketID,
+                    Attributes = session.Attributes,
+                    Code = session.Code,
+                    Configuration = JsonConvert.DeserializeObject<Dictionary<string, object>>(File.ReadAllText("Files/Lobby_pveheist_DS.json")),
+                    ConfigurationName = session.MatchPool,
+                    CreatedAt = session.CreatedAt,
+                    CreatedBy = session.CreatedBy,
+                    GameMode = session.MatchPool,
+                    LeaderID = session.LeaderID,
+                    MatchPool = session.MatchPool,
+                    Members = new(),
+                    Namespace = session.Namespace,
+                    Teams = session.Teams,
+                    UpdatedAt = DateTime.UtcNow.ToString("o"),
+                    Version = session.Version+1
+                }
+            };
+            foreach (var member in session.Members)
+            {
+                onDSStatusChanged.Session.Members.Add(new()
+                {
+                    ID = member.Id,
+                    Status = member.Status,
+                    StatusV2 = member.StatusV2,
+                    PlatformID = member.PlatformId,
+                    PlatformUserID = member.PlatformUserId,
+                    UpdatedAt = member.UpdatedAt
+                });
+            }
+            Dictionary<string, string> kv = new()
+            {
+                { "type","messageSessionNotif" },
+                { "topic", "OnDSStatusChanged" },
+                { "payload", LobbyControl.Base64Encode(JsonConvert.SerializeObject(onDSStatusChanged)) },
+                { "sentAt", DateTime.UtcNow.ToString("o") },
+            };
+
+            var ws = pcSession.GetWSLobby(pcSession.WSUserId);
+            LobbyControl.SendToLobby(kv, ws);
+
             session.Attributes = patchGameSessions.Attributes;
-            session.Version = patchGameSessions.version;
-
-
-
-
-
-
+            session.Version = patchGameSessions.version+1;
             Sessions[id] = session;
             return session;
         }
