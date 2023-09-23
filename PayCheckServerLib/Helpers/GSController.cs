@@ -9,6 +9,7 @@ namespace PayCheckServerLib.Helpers
     //AKA GameSessionController
     public class GSController
     {
+        public static List<string> MatchFoundSent = new();
         public static Dictionary<string, GameSession> Sessions = new();
         public static Dictionary<string, string> Tickets = new();
         //  Here we making a Full created Match 
@@ -23,9 +24,9 @@ namespace PayCheckServerLib.Helpers
 
             var id = UserIdHelper.CreateNewID();
             var gs = new GameSession()
-            { 
-                DSInformation = new() 
-                { 
+            {
+                DSInformation = new()
+                {
                     RequestedAt = "0001-01-01T01:01:01.001Z00:00",
                     Server = null,
                     Status = "NEED_TO_REQUEST",
@@ -36,7 +37,7 @@ namespace PayCheckServerLib.Helpers
                 Code = UserIdHelper.CreateCode(),
                 Configuration = JsonConvert.DeserializeObject<PartyPost.Configuration>(File.ReadAllText($"{ticketReq.matchPool}Configuration.json")),
                 CreatedAt = DateTime.UtcNow.ToString("o"),
-                CreatedBy = "client-db"+ UserIdHelper.CreateNewID(),
+                CreatedBy = "client-db" + UserIdHelper.CreateNewID(),
                 Id = id,
                 IsActive = true,
                 IsFull = party.Members.Count > 4,
@@ -51,13 +52,13 @@ namespace PayCheckServerLib.Helpers
             };
             var team = new Team();
             var party_gs = new Jsons.GS.Party()
-            { 
+            {
                 PartyID = party.Id
             };
             foreach (var member in party.Members)
             {
                 gs.Members.Add(new()
-                { 
+                {
                     Id = member.Id,
                     Status = "INVITED",
                     StatusV2 = "INVITED",
@@ -72,7 +73,7 @@ namespace PayCheckServerLib.Helpers
             gs.Teams.Add(team);
             Sessions.Add(id, gs);
             OnSessionInvited onSessionInvited = new()
-            { 
+            {
                 SenderID = gs.CreatedBy,
                 SessionID = id
             };
@@ -95,7 +96,6 @@ namespace PayCheckServerLib.Helpers
                     }
                 }
             }
-
         }
 
 
@@ -117,14 +117,35 @@ namespace PayCheckServerLib.Helpers
                 throw new Exception("Session NOT FOUND");
             }
 
-            session.DSInformation.Status = "";
-            session.DSInformation.StatusV2 = "";
+            session.DSInformation.Status = "REQUESTED";
+            session.DSInformation.StatusV2 = "REQUESTED";
             foreach (var item in session.Members)
             {
                 item.Status = "JOINED";
                 item.StatusV2 = "JOINED";
             }
             session.Version++;
+            session.UpdatedAt = DateTime.UtcNow.ToString("o");
+            Sessions[id] =  session;
+            return session;
+        }
+
+        public static GameSession Patch(PatchGameSessions patchGameSessions, string id)
+        {
+            if (!Sessions.TryGetValue(id, out var session))
+            {
+                Debugger.PrintWarn("Session NOT FOUND");
+                throw new Exception("Session NOT FOUND");
+            }
+            session.Attributes = patchGameSessions.Attributes;
+            session.Version = patchGameSessions.version;
+
+
+
+
+
+
+            Sessions[id] = session;
             return session;
         }
     }

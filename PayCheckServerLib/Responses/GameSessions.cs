@@ -24,6 +24,10 @@ namespace PayCheckServerLib.Responses
             var gs = GSController.GetGameSession(session.HttpParam["sessionid"]);
             response.SetBody(JsonConvert.SerializeObject(gs));
             session.SendResponse(response.GetResponse());
+
+            if (GSController.MatchFoundSent.Contains(token.UserId))
+                return true;
+
             //SEND OnMatchFound on WSS
             OnMatchFound onMatchFound = new()
             { 
@@ -60,6 +64,7 @@ namespace PayCheckServerLib.Responses
                 { "sentAt", DateTime.UtcNow.ToString("o") },
             };
             LobbyControl.SendToLobby(kv, session.GetWSLobby(session.WSUserId));
+            GSController.MatchFoundSent.Add(token.UserId);
             return true;
         }
 
@@ -68,19 +73,11 @@ namespace PayCheckServerLib.Responses
         {
             ResponseCreator response = new();
             response.SetHeader("Content-Type", "application/json");
-            DataPaging<object> gamesessions = new()
-            {
-                Paging = new()
-                {
-                    First = "",
-                    Last = "",
-                    Previous = "",
-                    Next = ""
-                },
-                Data = new()
-            };
-            response.SetBody(JsonConvert.SerializeObject(gamesessions));
+            //response.SetBody(JsonConvert.SerializeObject(gamesessions));
             session.SendResponse(response.GetResponse());
+
+            //OnDSStatusChanged
+
             return true;
         }
 
@@ -111,7 +108,68 @@ namespace PayCheckServerLib.Responses
             };
             LobbyControl.SendToLobby(kv, session.GetWSLobby(session.WSUserId));
 
+            
+            OnSessionMembersChanged onSessionMembersChanged = new()
+            {
+                JoinerID = token.UserId,
+                SessionID = gs.Id,
+                LeaderID = token.UserId,
+                TextChat = false,
+                Members = new(),
+                Teams = gs.Teams,
+                Session = new()
+                {
+                    DSInformation = gs.DSInformation,
+                    Attributes = gs.Attributes,
+                    BackfillTicketID = gs.BackfillTicketID,
+                    Code = gs.Code,
+                    Configuration = JsonConvert.DeserializeObject<Dictionary<string, object>>(File.ReadAllText("Files/Lobby_pveheist_DS.json")),
+                    ConfigurationName = gs.MatchPool,
+                    CreatedAt = gs.CreatedAt,
+                    CreatedBy = gs.CreatedBy,
+                    GameMode = gs.MatchPool,
+                    ID = gs.Id,
+                    IsFull = gs.IsFull,
+                    LeaderID = gs.LeaderID,
+                    MatchPool = gs.MatchPool,
+                    Members = new(),
+                    Namespace = gs.Namespace,
+                    Teams = gs.Teams,
+                    UpdatedAt = gs.UpdatedAt,
+                    Version = gs.Version
+                }
+            };
+            foreach (var member in gs.Members)
+            {
+                onSessionMembersChanged.Members.Add(new()
+                { 
+                    ID = member.Id,
+                    Status = member.Status,
+                    StatusV2 = member.StatusV2,
+                    PlatformID = member.PlatformId,
+                    PlatformUserID = member.PlatformUserId,
+                    UpdatedAt = member.UpdatedAt
+                });
+                onSessionMembersChanged.Session.Members.Add(new()
+                {
+                    ID = member.Id,
+                    Status = member.Status,
+                    StatusV2 = member.StatusV2,
+                    PlatformID = member.PlatformId,
+                    PlatformUserID = member.PlatformUserId,
+                    UpdatedAt = member.UpdatedAt
+                });
+            }
+            kv = new()
+            {
+                { "type", "messageSessionNotif" },
+                { "topic", "OnSessionMembersChanged" },
+                { "payload", LobbyControl.Base64Encode(JsonConvert.SerializeObject(onSessionMembersChanged)) },
+                { "sentAt", DateTime.UtcNow.ToString("o") },
+            };
+
             //OnMemeberChanged to full team?
+            LobbyControl.SendToLobby(kv, session.GetWSLobby(session.WSUserId));
             return true;
         }
 

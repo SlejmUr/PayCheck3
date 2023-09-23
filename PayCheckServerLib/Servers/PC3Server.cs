@@ -65,7 +65,8 @@ namespace PayCheckServerLib
             {
                 IDK = -1,
                 Lobby,
-                Chat
+                Chat,
+                MiddleMan
             }
 
             public Dictionary<string, PC3Session> WSS_Stuff = new();
@@ -105,6 +106,12 @@ namespace PayCheckServerLib
                 if (Headers.ContainsKey("x-ab-lobbysessionid"))
                 {
                     id = Headers["x-ab-lobbysessionid"].Replace("Authorization: Bearer ", "");
+                }
+                else if (Headers.ContainsKey("middleman"))
+                {
+                    WSUserId = "MiddleManId-" + Headers["middleman"];
+                    WS_ID = WSEnum.MiddleMan;
+                    return;
                 }
                 else
                 {
@@ -203,6 +210,9 @@ namespace PayCheckServerLib
                         return;
                     case WSEnum.Chat:
                         ChatControl.Control(buffer, offset, size, this);
+                        return;
+                    case WSEnum.MiddleMan:
+                        MiddleManControl.Control(buffer, offset, size, this);
                         return;
                     case WSEnum.IDK:
                     default:

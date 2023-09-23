@@ -172,7 +172,7 @@ namespace PayCheckServerLib.Jsons.PartyStuff
             public string StatusV2 { get; set; }
 
             [JsonProperty("UpdatedAt")]
-            public DateTime UpdatedAt { get; set; }
+            public string UpdatedAt { get; set; }
 
             [JsonProperty("PlatformID")]
             public string PlatformID { get; set; }
