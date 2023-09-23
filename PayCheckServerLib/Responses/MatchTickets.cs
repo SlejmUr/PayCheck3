@@ -63,7 +63,8 @@ namespace PayCheckServerLib.Responses
             };
             resp.Add("payload", LobbyControl.Base64Encode(JsonConvert.SerializeObject(onMatchmakingStarted)));
             LobbyControl.SendToLobby(resp, session.GetWSLobby(session.WSUserId));
-            GSController.Make(ticket,session);
+            GSController.Make(ticket, session);
+            GSController.Tickets.Add(token.UserId, ticketId);
             /*
              * Need to check what happens at this stage.
              * Do we need to send everyone its token or something?

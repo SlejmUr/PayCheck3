@@ -1,8 +1,8 @@
 ﻿using Newtonsoft.Json;
 using PayCheckServerLib.Jsons.GS;
 using PayCheckServerLib.Responses;
-using PayCheckServerLib.Jsons;
 using PayCheckServerLib.Jsons.PartyStuff;
+using PayCheckServerLib.WSController;
 
 namespace PayCheckServerLib.Helpers
 {
@@ -10,9 +10,8 @@ namespace PayCheckServerLib.Helpers
     public class GSController
     {
         public static Dictionary<string, GameSession> Sessions = new();
-
-
-        //  Please Kill me
+        public static Dictionary<string, string> Tickets = new();
+        //  Here we making a Full created Match 
         public static void Make(MatchTickets.TicketReqJson ticketReq, PC3Server.PC3Session session)
         {
             var party = PartyController.PartySaves.Where(x => x.Value.Id == ticketReq.sessionId).FirstOrDefault().Value;
@@ -72,6 +71,61 @@ namespace PayCheckServerLib.Helpers
             team.Parties.Add(party_gs);
             gs.Teams.Add(team);
             Sessions.Add(id, gs);
+            OnSessionInvited onSessionInvited = new()
+            { 
+                SenderID = gs.CreatedBy,
+                SessionID = id
+            };
+            Dictionary<string, string> kv = new()
+            {
+                { "type", "messageSessionNotif" },
+                { "topic", "OnSessionInvited" },
+                { "payload", LobbyControl.Base64Encode(JsonConvert.SerializeObject(onSessionInvited)) },
+                { "sentAt", DateTime.UtcNow.ToString("o") },
+            };
+
+            //  Maybe can be much better this but atleast works
+            foreach (var vs_ui in session.WSSServer().WSUserIds)
+            {
+                foreach (var uid in team.UserIDs)
+                {
+                    if (uid == vs_ui)
+                    {
+                        LobbyControl.SendToLobby(kv, session.GetWSLobby(vs_ui));
+                    }
+                }
+            }
+
+        }
+
+
+        public static GameSession GetGameSession(string id)
+        {
+            if (Sessions.TryGetValue(id, out var session))
+            {
+                return session;
+            }
+            Debugger.PrintWarn("Session NOT FOUND");
+            throw new Exception("Session NOT FOUND");
+        }
+
+        public static GameSession JoinSession(string id, string UserId)
+        {
+            if (!Sessions.TryGetValue(id, out var session))
+            {
+                Debugger.PrintWarn("Session NOT FOUND");
+                throw new Exception("Session NOT FOUND");
+            }
+
+            session.DSInformation.Status = "";
+            session.DSInformation.StatusV2 = "";
+            foreach (var item in session.Members)
+            {
+                item.Status = "JOINED";
+                item.StatusV2 = "JOINED";
+            }
+            session.Version++;
+            return session;
         }
     }
 }
