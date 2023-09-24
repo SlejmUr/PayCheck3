@@ -63,9 +63,8 @@ namespace PayCheckServerLib.Responses
                 { "to", token.UserId },
                 { "topic", "OnMatchmakingStarted" },
                 { "payload", LobbyControl.Base64Encode(JsonConvert.SerializeObject(onMatchmakingStarted)) },
-                { "sentAt", DateTime.UtcNow.ToString("o") }
+                { "sentAt", DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ") }
             };
-            Debugger.PrintDebug("resp made!");
             LobbyControl.SendToLobby(resp, session.GetWSLobby(token.UserId));
             GSController.Make(ticket, session);
             GSController.Tickets.Add(token.UserId, ticketId);

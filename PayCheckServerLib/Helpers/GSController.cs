@@ -4,8 +4,6 @@ using PayCheckServerLib.Responses;
 using PayCheckServerLib.Jsons.PartyStuff;
 using PayCheckServerLib.WSController;
 
-
-
 namespace PayCheckServerLib.Helpers
 {
     //AKA GameSessionController
@@ -19,6 +17,7 @@ namespace PayCheckServerLib.Helpers
         //  Here we making a Full created Match 
         public static void Make(MatchTickets.TicketReqJson ticketReq, PC3Server.PC3Session session)
         {
+            Debugger.PrintDebug("GSController.MAKE");
             var party = PartyController.PartySaves.Where(x => x.Value.Id == ticketReq.sessionId).FirstOrDefault().Value;
             if (party == null)
             {
@@ -86,7 +85,7 @@ namespace PayCheckServerLib.Helpers
                 { "type", "messageSessionNotif" },
                 { "topic", "OnSessionInvited" },
                 { "payload", LobbyControl.Base64Encode(JsonConvert.SerializeObject(onSessionInvited)) },
-                { "sentAt", DateTime.UtcNow.ToString("o") },
+                { "sentAt", DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ") },
             };
 
             //  Maybe can be much better this but atleast works
@@ -132,7 +131,7 @@ namespace PayCheckServerLib.Helpers
                 }
             }
             session.Version++;
-            session.UpdatedAt = DateTime.UtcNow.ToString("o");
+            session.UpdatedAt = DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ");
             if (string.IsNullOrEmpty(session.LeaderID))
             {
                 session.LeaderID = UserId;
@@ -216,7 +215,7 @@ namespace PayCheckServerLib.Helpers
                 { "type","messageSessionNotif" },
                 { "topic", "OnDSStatusChanged" },
                 { "payload", LobbyControl.Base64Encode(JsonConvert.SerializeObject(onDSStatusChanged)) },
-                { "sentAt", DateTime.UtcNow.ToString("o") },
+                { "sentAt", DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ") },
             };
 
             //  Maybe can be much better this but atleast works

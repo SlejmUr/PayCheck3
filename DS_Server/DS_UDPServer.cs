@@ -28,6 +28,8 @@ namespace DS_Server
                 {
 
                     var sent = SendAsync(endpoint, buffer, offset, size);
+                    Console.WriteLine("Is sent back? " + sent);
+                    //dont know why but it doesnt happy with this debugger print
                     Debugger.PrintInfo("Recieved ping ,sending back: "+ sent);
                 }
             }

@@ -33,7 +33,7 @@ namespace PayCheckServerLib.Responses
                 { "type", "messageSessionNotif" },
                 { "topic", "OnPartyCreated" },
                 { "payload", LobbyControl.Base64Encode(JsonConvert.SerializeObject(pld)) },
-                { "sentAt", DateTime.UtcNow.ToString("o") }
+                { "sentAt", DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ") }
             };
 
             LobbyControl.SendToLobby(resp,wss_sess);
@@ -82,7 +82,7 @@ namespace PayCheckServerLib.Responses
                 { "type", "messageSessionNotif" },
                 { "topic", "OnPartyUpdated" },
                 { "payload", LobbyControl.Base64Encode(JsonConvert.SerializeObject(pld)) },
-                { "sentAt", DateTime.UtcNow.ToString("o") }
+                { "sentAt", DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ") }
             };
             
 

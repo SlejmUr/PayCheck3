@@ -61,7 +61,7 @@ namespace PayCheckServerLib.WSController
                         user.Status.activity = kv["activity"];
                         user.Status.availability = kv["availability"];
                         user.Status.platform = kv["platform"];
-                        user.Status.lastSeenAt = DateTime.UtcNow.ToString("O");
+                        user.Status.lastSeenAt = DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ");
                         UserController.SaveUser(user);
                         SendToLobby(rsp, session);
                         rsp.Remove("type");
@@ -71,7 +71,7 @@ namespace PayCheckServerLib.WSController
                         rsp.Add("activity", kv["activity"]);
                         rsp.Add("availability", kv["availability"]);
                         rsp.Add("platform", kv["platform"]);
-                        rsp.Add("lastSeenAt", DateTime.UtcNow.ToString("O"));
+                        rsp.Add("lastSeenAt", DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ"));
                         foreach (var id in session.WSSServer().WSUserIds)
                         { 
                             if (id == session.WSUserId)

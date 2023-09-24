@@ -131,7 +131,7 @@ namespace PayCheckServerLib.Helpers
             party.UpdatedAt = DateTime.UtcNow.ToString("o");
             party.Attributes = body.Attributes;
             party.version = body.Version++;
-
+            PartySaves[party.Code] = party;
             return ParsePartyToRSP(party);
         }
 
