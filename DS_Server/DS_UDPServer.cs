@@ -22,9 +22,11 @@ namespace DS_Server
             Console.WriteLine("UDP_DS Recieved: " + BitConverter.ToString(buffer, (int)offset, (int)size));
             File.WriteAllBytes("UDP_DS/" + Port + "_" + DateTime.Now.ToString("s").Replace(":", "-") + ".bytes", buffer[..(int)size]);
             Console.WriteLine(size);
+            Console.WriteLine(BitConverter.ToInt32(buffer, 14));
+            Console.WriteLine(BitConverter.ToInt32(buffer, 18));
             if (size == 22)
             {
-                if (BitConverter.ToInt32(buffer, 10) == 37 && BitConverter.ToInt32(buffer, 14) == -1431655766)
+                if (BitConverter.ToInt32(buffer, 14) == -1431655766 && BitConverter.ToInt32(buffer, 18) == -1145324613)
                 {
 
                     var sent = SendAsync(endpoint, buffer, offset, size);

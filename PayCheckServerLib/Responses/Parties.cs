@@ -1,6 +1,7 @@
 ﻿using NetCoreServer;
 using Newtonsoft.Json;
 using PayCheckServerLib.Helpers;
+using PayCheckServerLib.Jsons.GS;
 using PayCheckServerLib.Jsons.PartyStuff;
 using PayCheckServerLib.WSController;
 
@@ -72,11 +73,23 @@ namespace PayCheckServerLib.Responses
                 Id = rsp.Id,
                 IsFull = rsp.IsFull,
                 LeaderId = rsp.LeaderId,
-                Members = rsp.Members,
+                Members = new(),
                 Namespace = "pd3",
                 UpdatedAt = rsp.UpdatedAt,
                 Version = rsp.Version
-            };
+            }; 
+            foreach (var member in rsp.Members)
+            {
+                pld.Members.Add(new()
+                {
+                    ID = member.Id,
+                    Status = member.Status,
+                    StatusV2 = member.StatusV2,
+                    PlatformID = member.PlatformId,
+                    PlatformUserID = member.PlatformUserId,
+                    UpdatedAt = member.UpdatedAt
+                });
+            }
             Dictionary<string, string> resp = new()
             {
                 { "type", "messageSessionNotif" },

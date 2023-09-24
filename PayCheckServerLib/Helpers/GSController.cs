@@ -17,13 +17,12 @@ namespace PayCheckServerLib.Helpers
         //  Here we making a Full created Match 
         public static void Make(MatchTickets.TicketReqJson ticketReq, PC3Server.PC3Session session)
         {
-            Debugger.PrintDebug("GSController.MAKE");
             var party = PartyController.PartySaves.Where(x => x.Value.Id == ticketReq.sessionId).FirstOrDefault().Value;
             if (party == null)
             {
                 Debugger.PrintError("NO Code???? WHAT THE FUCK");
             }
-
+            
             var id = UserIdHelper.CreateNewID();
             var gs = new GameSession()
             {
@@ -37,8 +36,8 @@ namespace PayCheckServerLib.Helpers
                 Attributes = ticketReq.attributes,
                 BackfillTicketID = UserIdHelper.CreateNewID(),
                 Code = UserIdHelper.CreateCode(),
-                Configuration = JsonConvert.DeserializeObject<PartyPost.Configuration>(File.ReadAllText($"{ticketReq.matchPool}Configuration.json")),
-                CreatedAt = DateTime.UtcNow.ToString("o"),
+                Configuration = JsonConvert.DeserializeObject<PartyPost.Configuration>(File.ReadAllText($"Files/{ticketReq.matchPool}Configuration.json")),
+                CreatedAt = DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ"),
                 CreatedBy = "client-db" + UserIdHelper.CreateNewID(),
                 Id = id,
                 IsActive = true,
@@ -51,14 +50,22 @@ namespace PayCheckServerLib.Helpers
                 Teams = new(),
                 UpdatedAt = DateTime.UtcNow.ToString("o"),
                 Version = 1
+            }; 
+            Debugger.PrintDebug("gs!!");
+            var team = new Team()
+            { 
+                Parties = new(),
+                UserIDs = new()
             };
-            var team = new Team();
             var party_gs = new Jsons.GS.Party()
             {
-                PartyID = party.Id
+                PartyID = party.Id,
+                UserIDs = new()
             };
+            Debugger.PrintDebug("gsParty");
             foreach (var member in party.Members)
             {
+                Debugger.PrintDebug(member.ToString());
                 gs.Members.Add(new()
                 {
                     Id = member.Id,
@@ -71,6 +78,7 @@ namespace PayCheckServerLib.Helpers
                 team.UserIDs.Add(member.Id);
                 party_gs.UserIDs.Add(member.Id);
             }
+            Debugger.PrintDebug("foreach done");
             team.Parties.Add(party_gs);
             gs.Teams.Add(team);
             Sessions.Add(id, gs);
@@ -87,7 +95,7 @@ namespace PayCheckServerLib.Helpers
                 { "payload", LobbyControl.Base64Encode(JsonConvert.SerializeObject(onSessionInvited)) },
                 { "sentAt", DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ") },
             };
-
+            Debugger.PrintDebug("OnSessionInvited");
             //  Maybe can be much better this but atleast works
             foreach (var vs_ui in session.WSSServer().WSUserIds)
             {

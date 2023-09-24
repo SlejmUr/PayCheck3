@@ -127,15 +127,28 @@ namespace PayCheckServerLib.Responses
             if (SaveHandler.IsUserExist(userID))
             {
                 var now = DateTime.UtcNow.ToString("o");
-                var save = JsonConvert.DeserializeObject<object>(SaveHandler.ReadUserSTR(userID)) ?? throw new Exception("save is null!");
+                Progression.Basic? save = null;
+                try
+                {
+                    save = Progression.Basic.FromJson(SaveHandler.ReadUserSTR(userID));
+                    save.ProgressionSaveGame.LastTimeEventCheck = TimeHelper.GetEpochTime();
+                }
+                catch
+                {
+                    Debugger.PrintError("JSON cannot be serialized!");
+                }
                 ProgressionSaveRSP saveRSP = new()
                 {
-                    CreatedAt = now,
+                    CreatedAt = DateTime.UtcNow.AddDays(-1).ToString("o"),
                     UpdatedAt = now,
                     UserId = userID,
-                    Value = save
+                    Value = save,
+                    IsPublic = false,
+                    Key = "progressionsavegame",
+                    Namespace = "pd3",
+                    SetBy = "CLIENT"
                 };
-                response.SetBody(JsonConvert.SerializeObject(saveRSP));
+                response.SetBody(JsonConvert.SerializeObject(saveRSP, Formatting.Indented, Progression.Converter.Settings));
                 session.SendResponse(response.GetResponse());
                 return true;
             }
@@ -158,17 +171,30 @@ namespace PayCheckServerLib.Responses
             if (ConfigHelper.ServerConfig.Saves.SaveRequest)
                 SaveHandler.SaveUser_Request(userID, request.Body);
             var now = DateTime.UtcNow.ToString("o");
-            var save = JsonConvert.DeserializeObject<object>(request.Body);
-            if (save == null) throw new Exception("save is null!");
+            Progression.Basic? save = null;
+            try
+            {
+                save = Progression.Basic.FromJson(request.Body);
+                save.ProgressionSaveGame.LastTimeEventCheck = TimeHelper.GetEpochTime();
+            }
+            catch
+            {
+                Debugger.PrintError("JSON cannot be serialized!");
+            }
+
             ProgressionSaveRSP saveRSP = new()
             {
                 CreatedAt = now,
                 UpdatedAt = now,
                 UserId = userID,
-                Value = save
+                Value = save,
+                IsPublic = false,
+                Key = "progressionsavegame",
+                Namespace = "pd3",
+                SetBy = "CLIENT"
             };
             ResponseCreator response = new();
-            response.SetBody(JsonConvert.SerializeObject(saveRSP));
+            response.SetBody(JsonConvert.SerializeObject(saveRSP, Formatting.Indented, Progression.Converter.Settings));
             session.SendResponse(response.GetResponse());
             return true;
         }

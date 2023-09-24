@@ -158,6 +158,11 @@ namespace PayCheckServerLib.Jsons.PartyStuff
 
             [JsonProperty("updatedAt")]
             public string UpdatedAt { get; set; }
+
+            public override string ToString()
+            {
+                return $"Id: {Id}, PId: {PlatformId}, PUID: {PlatformUserId}, S: {Status}, S2: {StatusV2},UA: {UpdatedAt}";
+            }
         }
 
         public partial class Memberv2

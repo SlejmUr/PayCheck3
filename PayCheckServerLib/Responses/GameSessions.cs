@@ -61,16 +61,18 @@ namespace PayCheckServerLib.Responses
                 { "to", token.UserId },
                 { "topic", "OnMatchFound" },
                 { "payload", LobbyControl.Base64Encode(JsonConvert.SerializeObject(onMatchFound)) },
-                { "sentAt", DateTime.UtcNow.ToString("o") },
+                { "sentAt", DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ") },
             };
             LobbyControl.SendToLobby(kv, session.GetWSLobby(token.UserId));
             GSController.MatchFoundSent.Add(token.UserId);
+            Debugger.PrintDebug("MatchFoundSent!");
             return true;
         }
 
         [HTTP("PATCH", "/session/v1/public/namespaces/pd3/gamesessions/{sessionid}")]
         public static bool PATCHGameSessions(HttpRequest _, PC3Server.PC3Session session)
         {
+            Debugger.PrintDebug("PATCH! gamesessions");
             ResponseCreator response = new();
             response.SetHeader("Content-Type", "application/json");
             //response.SetBody(JsonConvert.SerializeObject(gamesessions));
@@ -104,7 +106,7 @@ namespace PayCheckServerLib.Responses
                 { "type", "messageSessionNotif" },
                 { "topic", "OnSessionJoined" },
                 { "payload", LobbyControl.Base64Encode(JsonConvert.SerializeObject(onSessionJoined)) },
-                { "sentAt", DateTime.UtcNow.ToString("o") },
+                { "sentAt", DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ") },
             };
             LobbyControl.SendToLobby(kv, session.GetWSLobby(token.UserId));
 
@@ -165,7 +167,7 @@ namespace PayCheckServerLib.Responses
                 { "type", "messageSessionNotif" },
                 { "topic", "OnSessionMembersChanged" },
                 { "payload", LobbyControl.Base64Encode(JsonConvert.SerializeObject(onSessionMembersChanged)) },
-                { "sentAt", DateTime.UtcNow.ToString("o") },
+                { "sentAt", DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ") },
             };
 
             //OnMemeberChanged to full team?
