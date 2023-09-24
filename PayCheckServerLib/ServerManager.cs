@@ -27,11 +27,13 @@ namespace PayCheckServerLib
                 STATICServer = new GSTATICServer.GSServer(ConfigHelper.ServerConfig.Hosting.IP, 80);
                 STATICServer.Start();
             }
+            /*
             if (ConfigHelper.ServerConfig.Hosting.Udp)
             {
                 UDPServer = new PD3UDPServer(ConfigHelper.ServerConfig.Hosting.IP, ConfigHelper.ServerConfig.Hosting.UDP_PORT);
                 UDPServer.Start();
             }
+            */
         }
 
         public static void Stop()
@@ -40,8 +42,10 @@ namespace PayCheckServerLib
                 PC3Server.Stop();
             if (ConfigHelper.ServerConfig.Hosting.Gstatic)
                 STATICServer.Stop();
+            /*
             if (ConfigHelper.ServerConfig.Hosting.Udp)
                 UDPServer.Stop();
+            */
         }
     }
 }

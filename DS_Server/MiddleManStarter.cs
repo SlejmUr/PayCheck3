@@ -12,8 +12,12 @@ namespace DS_Server
             var context = new SslContext(SslProtocols.Tls12, PayCheckServerLib.PC3Server.GetCert());
             Client = new MiddleManClient(context, PayCheckServerLib.Helpers.ConfigHelper.ServerConfig.Hosting.IP, 443);
             Client.Connect();
-            DS_UDPServers.Add(new("127.0.0.1", 6969));
-            DS_UDPServers.Add(new("127.0.0.1", 6970));
+            DS_UDPServers.Add(new("127.0.0.1", 6969));  // THIS is a Qos Server
+            DS_UDPServers.Add(new("127.0.0.1", 6970));  // This is a Beacon Server
+            foreach (var item in DS_UDPServers)
+            {
+                item.Start();
+            }
         }
 
         public static void Stop()

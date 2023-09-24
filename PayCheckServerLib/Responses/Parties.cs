@@ -11,6 +11,8 @@ namespace PayCheckServerLib.Responses
         [HTTP("POST", "/session/v1/public/namespaces/pd3/party")]
         public static bool Party(HttpRequest request, PC3Server.PC3Session session)
         {
+            var auth = session.Headers["authorization"].Replace("Bearer ", "");
+            var token = TokenHelper.ReadToken(auth);
             var body = JsonConvert.DeserializeObject<PartyPostReq>(request.Body);
             var rsp = PartyController.CreateParty(body);
             ResponseCreator response = new();
@@ -18,46 +20,43 @@ namespace PayCheckServerLib.Responses
             session.SendResponse(response.GetResponse());
 
             //send notif to user to party created
-            var wss_sess = session.GetWSLobby(session.WSUserId);
-            Dictionary<string, string> resp = new()
-            {
-                { "type", "messageSessionNotif" },
-                { "topic", "OnPartyCreated" },
-                { "sentAt", DateTime.UtcNow.ToString("o") },
-            };
+            var wss_sess = session.GetWSLobby(token.UserId);
             OnPartyCreated pld = new()
-            { 
+            {
                 Code = rsp.Code,
                 CreatedBy = rsp.CreatedBy,
                 PartyId = rsp.Id,
                 TextChat = body.TextChat
             };
-            resp.Add("payload", LobbyControl.Base64Encode(JsonConvert.SerializeObject(pld)));
+            Dictionary<string, string> resp = new()
+            {
+                { "type", "messageSessionNotif" },
+                { "topic", "OnPartyCreated" },
+                { "payload", LobbyControl.Base64Encode(JsonConvert.SerializeObject(pld)) },
+                { "sentAt", DateTime.UtcNow.ToString("o") }
+            };
+
             LobbyControl.SendToLobby(resp,wss_sess);
             return true;
         }
+
         [HTTP("PATCH", "/session/v1/public/namespaces/pd3/parties/{partyid}")]
         public static bool PATCH_Parties(HttpRequest request, PC3Server.PC3Session session)
         {
+            var auth = session.Headers["authorization"].Replace("Bearer ", "");
+            var token = TokenHelper.ReadToken(auth);
             var body = JsonConvert.DeserializeObject<PartyPatch>(request.Body);
             PartyPost.Response rsp = PartyController.UpdateParty(session.HttpParam["partyid"],body);
             ResponseCreator response = new();
             response.SetBody(JsonConvert.SerializeObject(rsp));
             session.SendResponse(response.GetResponse());
-
-            Dictionary<string, string> resp = new()
-            {
-                { "type", "messageSessionNotif" },
-                { "topic", "OnPartyUpdated" },
-                { "sentAt", DateTime.UtcNow.ToString("o") },
-            };
             OnPartyUpdated pld = new()
             {
                 Code = rsp.Code,
                 CreatedBy = rsp.CreatedBy,
                 Attributes = rsp.Attributes,
                 Configuration = new()
-                { 
+                {
                     ClientVersion = rsp.Configuration.ClientVersion,
                     Joinability = rsp.Configuration.Joinability,
                     InactiveTimeout = rsp.Configuration.InactiveTimeout,
@@ -78,7 +77,14 @@ namespace PayCheckServerLib.Responses
                 UpdatedAt = rsp.UpdatedAt,
                 Version = rsp.Version
             };
-            resp.Add("payload", LobbyControl.Base64Encode(JsonConvert.SerializeObject(pld)));
+            Dictionary<string, string> resp = new()
+            {
+                { "type", "messageSessionNotif" },
+                { "topic", "OnPartyUpdated" },
+                { "payload", LobbyControl.Base64Encode(JsonConvert.SerializeObject(pld)) },
+                { "sentAt", DateTime.UtcNow.ToString("o") }
+            };
+            
 
             List<string> ids = new();
             rsp.Members.ForEach(m => ids.Add(m.Id));
@@ -87,6 +93,7 @@ namespace PayCheckServerLib.Responses
             { 
                 if (ids.Contains(id))
                 {
+                    Debugger.PrintDebug(id);
                     LobbyControl.SendToLobby(resp, session.GetWSLobby(id));
                 }
             }

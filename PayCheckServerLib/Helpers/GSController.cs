@@ -5,6 +5,7 @@ using PayCheckServerLib.Jsons.PartyStuff;
 using PayCheckServerLib.WSController;
 
 
+
 namespace PayCheckServerLib.Helpers
 {
     //AKA GameSessionController
@@ -22,7 +23,6 @@ namespace PayCheckServerLib.Helpers
             if (party == null)
             {
                 Debugger.PrintError("NO Code???? WHAT THE FUCK");
-                throw new Exception("Code is not exist in saved parties????");
             }
 
             var id = UserIdHelper.CreateNewID();
@@ -75,6 +75,7 @@ namespace PayCheckServerLib.Helpers
             team.Parties.Add(party_gs);
             gs.Teams.Add(team);
             Sessions.Add(id, gs);
+            Debugger.PrintDebug("GS_Session Made!");
             OnSessionInvited onSessionInvited = new()
             {
                 SenderID = gs.CreatedBy,
@@ -95,6 +96,7 @@ namespace PayCheckServerLib.Helpers
                 {
                     if (uid == vs_ui)
                     {
+                        Debugger.PrintDebug("GS_Session OnSessionInvited sent to " + vs_ui);
                         LobbyControl.SendToLobby(kv, session.GetWSLobby(vs_ui));
                     }
                 }
@@ -152,6 +154,7 @@ namespace PayCheckServerLib.Helpers
             int index = random.Next(mlist.Count);
             var middleMan = mlist[index];
             string Req = "DSInfoReq-END-" + "eu-central-1,"+ "624677," + session.Id;
+            Debugger.PrintDebug("Sending to middleman");
             middleMan.Send(Req);
             //recieve back here?
             //  PLEASE if you know how to wait better than this, make a PR!
@@ -159,7 +162,7 @@ namespace PayCheckServerLib.Helpers
             {
                 Thread.Sleep(100);
             }
-            
+            Debugger.PrintDebug("Recieved from MM in Patch");
             session.DSInformation.Server = DSInfo[id];
             session.DSInformation.Status = "AVAILABLE";
             session.DSInformation.StatusV2 = "AVAILABLE";
@@ -193,7 +196,7 @@ namespace PayCheckServerLib.Helpers
                     Namespace = session.Namespace,
                     Teams = session.Teams,
                     UpdatedAt = DateTime.UtcNow.ToString("o"),
-                    Version = session.Version+1
+                    Version = session.Version++
                 }
             };
             foreach (var member in session.Members)
@@ -216,11 +219,21 @@ namespace PayCheckServerLib.Helpers
                 { "sentAt", DateTime.UtcNow.ToString("o") },
             };
 
-            var ws = pcSession.GetWSLobby(pcSession.WSUserId);
-            LobbyControl.SendToLobby(kv, ws);
+            //  Maybe can be much better this but atleast works
+            foreach (var vs_ui in pcSession.WSSServer().WSUserIds)
+            {
+                foreach (var uid in session.Members)
+                {
+                    if (uid.Id == vs_ui)
+                    {
+                        Debugger.PrintDebug("GS_Session OnSessionInvited sent to " + vs_ui);
+                        LobbyControl.SendToLobby(kv, pcSession.GetWSLobby(vs_ui));
+                    }
+                }
+            }
 
             session.Attributes = patchGameSessions.Attributes;
-            session.Version = patchGameSessions.version+1;
+            session.Version = patchGameSessions.version++;
             Sessions[id] = session;
             return session;
         }

@@ -63,7 +63,7 @@ namespace PayCheckServerLib.Responses
                 { "payload", LobbyControl.Base64Encode(JsonConvert.SerializeObject(onMatchFound)) },
                 { "sentAt", DateTime.UtcNow.ToString("o") },
             };
-            LobbyControl.SendToLobby(kv, session.GetWSLobby(session.WSUserId));
+            LobbyControl.SendToLobby(kv, session.GetWSLobby(token.UserId));
             GSController.MatchFoundSent.Add(token.UserId);
             return true;
         }
@@ -106,7 +106,7 @@ namespace PayCheckServerLib.Responses
                 { "payload", LobbyControl.Base64Encode(JsonConvert.SerializeObject(onSessionJoined)) },
                 { "sentAt", DateTime.UtcNow.ToString("o") },
             };
-            LobbyControl.SendToLobby(kv, session.GetWSLobby(session.WSUserId));
+            LobbyControl.SendToLobby(kv, session.GetWSLobby(token.UserId));
 
             
             OnSessionMembersChanged onSessionMembersChanged = new()
@@ -169,7 +169,7 @@ namespace PayCheckServerLib.Responses
             };
 
             //OnMemeberChanged to full team?
-            LobbyControl.SendToLobby(kv, session.GetWSLobby(session.WSUserId));
+            LobbyControl.SendToLobby(kv, session.GetWSLobby(token.UserId));
             return true;
         }
 

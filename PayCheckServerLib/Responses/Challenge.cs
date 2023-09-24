@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace PayCheckServerLib.Responses
 {
-    internal class Challenge
+    public class Challenge
     {
         [HTTP("GET", "/challenge/v1/public/namespaces/pd3/users/{userId}/eligibility")]
         public static bool ChallengeEligibility(HttpRequest _, PC3Server.PC3Session session)

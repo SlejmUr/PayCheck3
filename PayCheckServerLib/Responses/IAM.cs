@@ -90,7 +90,6 @@ namespace PayCheckServerLib.Responses
             };
             response.SetBody(JsonConvert.SerializeObject(LoginToken));
             session.SendResponse(response.GetResponse());
-            Debugger.PrintDebug("Sent Response!");
             return true;
 		}
 

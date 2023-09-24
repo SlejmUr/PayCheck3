@@ -5,7 +5,7 @@ using PayCheckServerLib.Jsons;
 
 namespace PayCheckServerLib.Responses
 {
-    internal class BasicResponse
+    public class BasicResponse
     {
         [HTTP("GET", "/qosm/public/qos")]
         public static bool QOSM_Public_QOS(HttpRequest request, PC3Server.PC3Session session)
@@ -21,24 +21,6 @@ namespace PayCheckServerLib.Responses
                     {
                         Alias = "eu-central-1",
                         Region = "eu-central-1",
-                        Status = "ACTIVE",
-                        Ip = ConfigHelper.ServerConfig.Hosting.IP,
-                        LastUpdate = "2023-08-06T10:00:00.000000000Z",
-                        Port = ConfigHelper.ServerConfig.Hosting.UDP_PORT
-                    },
-                    new()
-                    {
-                        Alias = "eu-north-1",
-                        Region = "eu-north-1",
-                        Status = "ACTIVE",
-                        Ip = ConfigHelper.ServerConfig.Hosting.IP,
-                        LastUpdate = "2023-08-06T10:00:00.000000000Z",
-                        Port = ConfigHelper.ServerConfig.Hosting.UDP_PORT
-                    },
-                    new()
-                    {
-                        Alias = "eu-west-1",
-                        Region = "eu-west-1",
                         Status = "ACTIVE",
                         Ip = ConfigHelper.ServerConfig.Hosting.IP,
                         LastUpdate = "2023-08-06T10:00:00.000000000Z",
