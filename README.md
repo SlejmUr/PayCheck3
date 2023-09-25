@@ -7,7 +7,7 @@ at https://www.paydaythegame.com/payday3/#buy
  - The contributors of PayCheck3 in no way support piracy, and actively ensure that PayCheck3
 does not work with an illegitimate copy. We're sorry to have caused any confusion that
 this could be used for piracy.
- - This project is in no way affliated or endorsed by Starbreeze Entertainment.
+ - This project is in no way affiliated or endorsed by Starbreeze Entertainment.
 
 ## CURRENTLY MATCHMAKING IS NOT WORKING!
 Thank you for understanding! I working on a solution, no ETA yet.
