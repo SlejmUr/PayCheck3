@@ -34,9 +34,6 @@ If you want your friends to join you, they need to edit the 127.0.0.1 to your IP
 # Where can I get the built server?
 In [Github Actions](https://github.com/SlejmUr/PayCheck3/actions) you find most recent pushes/request Build version.
 
-# Building in Linux
-Currently because every damn system has no same copy command you need to edit PayCheck3ServerApp.csproj, edit the "copy" to "cp" and you done.
-
 # Configurate your server.
 You see a config.json where you can edit some things that can edit server stuff.
 
