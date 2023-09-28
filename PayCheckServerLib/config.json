@@ -5,14 +5,22 @@
   },
   "Hosting": {
     "IP": "127.0.0.1",
+    "Port": 443,
     "Server": true,
-    "UDP": true,
-    "GSTATIC": true,
-    "UDP_PORT": 6969
+    "GSTATIC": true
   },
   "InDevFeatures": {
     "Enable_PartySession": false,
     "UsePWInsteadSteamToken": false
   },
+  "DS_Servers": [
+    {
+      "Ip": "127.0.0.1",
+      "Port": 6969,
+      "Alias": "eu-central-1",
+      "Region": "eu-central-1",
+      "Status": "ACTIVE"
+    }
+  ],
   "EnableAutoUpdate": false
 }

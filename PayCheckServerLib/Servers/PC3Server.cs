@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.Net.Sockets;
 using System.Reflection;
 using System.Security.Authentication;
+using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
@@ -65,24 +66,27 @@ namespace PayCheckServerLib
             {
                 IDK = -1,
                 Lobby,
-                Chat
+                Chat,
+                MiddleMan
             }
 
-            public Dictionary<string, PC3Session> WSS_Stuff = new();
+            
+            public List<PC3Session> MiddleMans = new();
 
-            public PC3Session GetWSLobby(string UserId)
+            public PC3Session? GetWSLobby(string UserId)
             {
                 if (UserId == null)
-                    throw new Exception("UserId is null! (Parameter)");
+                    Debugger.PrintError("UserId is null! (Parameter)");
 
-                if (WSS_Stuff.TryGetValue(UserId + "_lobby", out var value))
+                if (WSSServer().WSS_Stuff.TryGetValue(UserId + "_lobby", out var value))
                 {
                     return value;
                 }
-                throw new Exception("User(Lobby) not found in WSS_Stuff!");
+                Debugger.PrintError($"User({UserId}_lobby) not found in WSS_Stuff!");
+                return null;
             }
 
-            public PC3Session GetWSChat(string UserId) => WSS_Stuff[UserId + "_chat"];
+            public PC3Session GetWSChat(string UserId) => WSSServer().WSS_Stuff[UserId + "_chat"];
 
             public PC3WSSServer WSSServer() => (PC3WSSServer)Server;
 
@@ -106,6 +110,14 @@ namespace PayCheckServerLib
                 {
                     id = Headers["x-ab-lobbysessionid"].Replace("Authorization: Bearer ", "");
                 }
+                else if (Headers.ContainsKey("middleman"))
+                {
+                    WSUserId = "MiddleManId-" + Headers["middleman"];
+                    WS_ID = WSEnum.MiddleMan;
+                    MiddleMans.Add(this);
+                    Debugger.PrintInfo(WSUserId + " joined to " + WS_ID);
+                    return;
+                }
                 else
                 {
                     id = Headers["authorization"].Replace("Bearer ", "");
@@ -117,11 +129,11 @@ namespace PayCheckServerLib
                     WSUserId = token.UserId;
                     var serv = (PC3WSSServer)this.Server;
                     serv.WSUserIds.Add(WSUserId);
-                    if (WSS_Stuff.ContainsKey(token.UserId + "_" + WS_ID.ToString().ToLower()))
+                    if (WSSServer().WSS_Stuff.ContainsKey(token.UserId + "_" + WS_ID.ToString().ToLower()))
                     {
                         Debugger.PrintWarn("The fuck? This User now wants to to join to WS again! " + WS_ID);
                     }
-                    WSS_Stuff.Add(token.UserId + "_" + WS_ID.ToString().ToLower(), this);
+                    WSSServer().WSS_Stuff.Add(token.UserId + "_" + WS_ID.ToString().ToLower(), this);
                     var x = "type: connectNotif\r\nloginType: NewRegister\r\nreconnectFromCode: 5000\r\nlobbySessionID: ee62822a8428424d9a408f6385484ae5";
                     SendBinaryAsync(Encoding.UTF8.GetBytes(x));
                 }
@@ -129,15 +141,19 @@ namespace PayCheckServerLib
                 {
                     WS_ID = WSEnum.Chat;
                     WSUserId = token.UserId;
-                    if (WSS_Stuff.ContainsKey(token.UserId + "_" + WS_ID.ToString().ToLower()))
+                    if (WSSServer().WSS_Stuff.ContainsKey(token.UserId + "_" + WS_ID.ToString().ToLower()))
                     {
                         Debugger.PrintWarn("The fuck? This User now wants to to join to WS again! " + WS_ID);
                     }
-                    WSS_Stuff.Add(token.UserId + "_" + WS_ID.ToString().ToLower(), this);
+                    WSSServer().WSS_Stuff.Add(token.UserId + "_" + WS_ID.ToString().ToLower(), this);
                     var x = "CaSr{\"jsonrpc\":\"2.0\",\"method\":\"eventConnected\",\"params\":{\"sessionId\":\"9f51a15b940b4c538cc48281950de549\"}}CaEd";
                     SendBinaryAsync(Encoding.UTF8.GetBytes(x));
                 }
                 Debugger.PrintInfo(WSUserId + " joined to " + WS_ID);
+                foreach (var wss_stuff in WSSServer().WSS_Stuff)
+                {
+                    Debugger.PrintInfo(wss_stuff.Key);
+                }
             }
 
             public override void OnWsDisconnecting()
@@ -149,7 +165,6 @@ namespace PayCheckServerLib
                     if (user == null)
                     {
                         Debugger.PrintWarn($"User not found! ({WSUserId}) WSS Cannot continue");
-                        throw new Exception("UserId is null");
                     }
                     user.Status.activity = "nil";
                     user.Status.availability = "offline";
@@ -172,7 +187,7 @@ namespace PayCheckServerLib
                         LobbyControl.SendToLobby(rsp, GetWSLobby(id));
                     }
                 }
-                WSS_Stuff.Remove(WS_ID + "_" + WS_ID.ToString().ToLower());
+                WSSServer().WSS_Stuff.Remove(WS_ID + "_" + WS_ID.ToString().ToLower());
                 var serv = (PC3WSSServer)Server;
                 serv.WSUserIds.Remove(WSUserId);
                 WSUserId = "";
@@ -203,6 +218,9 @@ namespace PayCheckServerLib
                         return;
                     case WSEnum.Chat:
                         ChatControl.Control(buffer, offset, size, this);
+                        return;
+                    case WSEnum.MiddleMan:
+                        MiddleManControl.Control(buffer, offset, size, this);
                         return;
                     case WSEnum.IDK:
                     default:
@@ -286,6 +304,7 @@ namespace PayCheckServerLib
         public class PC3WSSServer : WssServer
         {
             public List<string> WSUserIds;
+            public Dictionary<string, PC3Session> WSS_Stuff = new();
             public PC3WSSServer(SslContext context, string address, int port) : base(context, address, port)
             {
                 WSUserIds = new();

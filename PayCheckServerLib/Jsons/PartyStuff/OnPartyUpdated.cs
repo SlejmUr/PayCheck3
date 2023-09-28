@@ -11,7 +11,7 @@ namespace PayCheckServerLib.Jsons.PartyStuff
         public string Namespace { get; set; }
 
         [JsonProperty("Members")]
-        public List<PartyPost.Member> Members { get; set; }
+        public List<PartyPost.Memberv2> Members { get; set; }
 
         [JsonProperty("Attributes")]
         public Dictionary<string, object> Attributes { get; set; }

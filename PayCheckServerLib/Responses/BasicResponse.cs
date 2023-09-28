@@ -5,7 +5,7 @@ using PayCheckServerLib.Jsons;
 
 namespace PayCheckServerLib.Responses
 {
-    internal class BasicResponse
+    public class BasicResponse
     {
         [HTTP("GET", "/qosm/public/qos")]
         public static bool QOSM_Public_QOS(HttpRequest request, PC3Server.PC3Session session)
@@ -16,36 +16,20 @@ namespace PayCheckServerLib.Responses
             var rsp = new JsonServers()
             {
                 Servers = new()
-                {
-                    new()
-                    {
-                        Alias = "eu-central-1",
-                        Region = "eu-central-1",
-                        Status = "ACTIVE",
-                        Ip = ConfigHelper.ServerConfig.Hosting.IP,
-                        LastUpdate = "2023-08-06T10:00:00.000000000Z",
-                        Port = ConfigHelper.ServerConfig.Hosting.UDP_PORT
-                    },
-                    new()
-                    {
-                        Alias = "eu-north-1",
-                        Region = "eu-north-1",
-                        Status = "ACTIVE",
-                        Ip = ConfigHelper.ServerConfig.Hosting.IP,
-                        LastUpdate = "2023-08-06T10:00:00.000000000Z",
-                        Port = ConfigHelper.ServerConfig.Hosting.UDP_PORT
-                    },
-                    new()
-                    {
-                        Alias = "eu-west-1",
-                        Region = "eu-west-1",
-                        Status = "ACTIVE",
-                        Ip = ConfigHelper.ServerConfig.Hosting.IP,
-                        LastUpdate = "2023-08-06T10:00:00.000000000Z",
-                        Port = ConfigHelper.ServerConfig.Hosting.UDP_PORT
-                    }
-                }
             };
+            foreach (var server in ConfigHelper.ServerConfig.DS_Servers)
+            {
+                rsp.Servers.Add(new()
+                { 
+                    Alias = server.Alias,
+                    Status = server.Status,
+                    Ip = server.Ip,
+                    LastUpdate = "2023-08-06T10:00:00.000000000Z",
+                    Port = server.Port,
+                    Region = server.Region
+                });
+            }
+
             response.SetBody(JsonConvert.SerializeObject(rsp, Formatting.Indented));
             session.SendResponse(response.GetResponse());
             return true;
@@ -54,12 +38,11 @@ namespace PayCheckServerLib.Responses
         [HTTP("GET", "/basic/v1/public/misc/time")]
         public static bool Time(HttpRequest request, PC3Server.PC3Session session)
         {
-            var tokens = TokenHelper.ReadFromHeader(session.Headers);
-            Debugger.PrintDebug($"{tokens.AccessToken.UserId}({tokens.AccessToken.Name}) Is still in the server!");
-            
-            //todo send friendstatus online in WSS -NOT
-            //save the state if still active if not active then X sec then send offline into wss.
-
+            if (session.Headers.ContainsKey("cookie"))
+            {
+                var tokens = TokenHelper.ReadFromHeader(session.Headers);
+                Debugger.PrintDebug($"{tokens.AccessToken.UserId}({tokens.AccessToken.Name}) Is still in the server!");
+            }
 
             ResponseCreator response = new ResponseCreator();
             response.SetHeader("Content-Type", "application/json");

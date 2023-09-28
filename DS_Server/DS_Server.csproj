@@ -1,24 +1,19 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <OutputType>Exe</OutputType>
+    <StartupObject>DS_Server.Program</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="..\.editorconfig" Link=".editorconfig" />
+    <PackageReference Include="NetCoreServer" Version="7.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\PayCheckServerLib\PayCheckServerLib.csproj" />
   </ItemGroup>
-	
 
-	<ItemGroup>
-		<Content Include="..\Cert\**" LinkBase="Cert\" CopyToOutputDirectory="Always" />
-	</ItemGroup>
-	
-	
 </Project>

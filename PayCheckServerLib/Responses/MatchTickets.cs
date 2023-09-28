@@ -2,8 +2,6 @@
 using Newtonsoft.Json;
 using PayCheckServerLib.Helpers;
 using PayCheckServerLib.WSController;
-using System.Security.Cryptography;
-using static PayCheckServerLib.Jsons.GS.OnMatchFound;
 
 namespace PayCheckServerLib.Responses
 {
@@ -42,17 +40,13 @@ namespace PayCheckServerLib.Responses
             {
                 matchTicketID = ticketId,
                 queueTime = 2
-            };
+            }; 
+            ResponseCreator response = new();
+            response.SetBody(JsonConvert.SerializeObject(ticketRsp));
+            session.SendResponse(response.GetResponse());
+            Debugger.PrintDebug("OnMatchmakingStarted YEET");
             //Store Both and send into Lobby WSS
-            Dictionary<string, string> resp = new()
-            {
-                { "type", "messageSessionNotif" },
-                { "id", UserIdHelper.CreateNewID() },
-                { "from", "system" },
-                { "to", token.UserId },
-                { "topic", "OnMatchmakingStarted" },
-                { "sentAt", DateTime.UtcNow.ToString("o") },
-            };
+
             WSS_OnMatchmakingStarted onMatchmakingStarted = new()
             { 
                 TicketID = ticketId,
@@ -61,9 +55,19 @@ namespace PayCheckServerLib.Responses
                 MatchPool = ticket.matchPool,
                 Namespace = "pd3"
             };
-            resp.Add("payload", LobbyControl.Base64Encode(JsonConvert.SerializeObject(onMatchmakingStarted)));
-            LobbyControl.SendToLobby(resp, session.GetWSLobby(session.WSUserId));
-            GSController.Make(ticket,session);
+            Dictionary<string, string> resp = new()
+            {
+                { "type", "messageSessionNotif" },
+                { "id", UserIdHelper.CreateNewID() },
+                { "from", "system" },
+                { "to", token.UserId },
+                { "topic", "OnMatchmakingStarted" },
+                { "payload", LobbyControl.Base64Encode(JsonConvert.SerializeObject(onMatchmakingStarted)) },
+                { "sentAt", DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ") }
+            };
+            LobbyControl.SendToLobby(resp, session.GetWSLobby(token.UserId));
+            GSController.Make(ticket, session);
+            GSController.Tickets.Add(token.UserId, ticketId);
             /*
              * Need to check what happens at this stage.
              * Do we need to send everyone its token or something?
@@ -78,9 +82,7 @@ namespace PayCheckServerLib.Responses
                 }
             }*/
 
-            ResponseCreator response = new();
-            response.SetBody(JsonConvert.SerializeObject(ticketRsp));
-            session.SendResponse(response.GetResponse());
+
             return true;
         }
     }

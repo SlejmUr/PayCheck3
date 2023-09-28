@@ -34,6 +34,9 @@ If you want your friends to join you, they need to edit the 127.0.0.1 to your IP
 # Where can I get the built server?
 In [Github Actions](https://github.com/SlejmUr/PayCheck3/actions) you find most recent pushes/request Build version.
 
+# Building in Linux
+Currently because every damn system has no same copy command you need to edit PayCheck3ServerApp.csproj, edit the "copy" to "cp" and you done.
+
 # Configurate your server.
 You see a config.json where you can edit some things that can edit server stuff.
 
@@ -42,11 +45,10 @@ SaveRequest: In here you can save each request when client send any change in th
 Extension: It basicly a json but with a funny extension
 
 ### Hosting
-IP: Currently is its 127.0.0.1 but can be changed to your IP or anything as IP (IT HOST GSTATIC,WSS,UDP too!!!)\
+IP: Currently is its 127.0.0.1 but can be changed to your IP or anything as IP (IT HOST GSTATIC,WSS too!!!)\
+Port: Hosting on that port (Default 443), Please if you change that, use caddy or reverse-proxy for this. 
 WSS: Can enable/disable to run the HTTPS/WSS Server\
-UDP: Can enable/disable to run the UDP Server (GameServer?) [NOT USED]\
 GSTATIC: Can enable/disable to run the GSTATIC server (Enable you to play without internet)\
-UDP_PORT: Can set Port for UDP connection
 
 ### InDevFeatures
 Can enable/disable certain features that could land you something now work perfectly.
@@ -55,6 +57,9 @@ Can enable/disable certain features that could land you something now work perfe
 Aka just ideas
 
 ### How to add your server
-Open servers.json\
-Duplicate the eu-central-1 alias server\
+Open config.json\
+Duplicate the first server in DS_Servers\
 Edit the Status, Region, Port, IP to your UDP one
+
+
+ 

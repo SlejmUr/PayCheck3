@@ -158,6 +158,11 @@ namespace PayCheckServerLib.Jsons.PartyStuff
 
             [JsonProperty("updatedAt")]
             public string UpdatedAt { get; set; }
+
+            public override string ToString()
+            {
+                return $"Id: {Id}, PId: {PlatformId}, PUID: {PlatformUserId}, S: {Status}, S2: {StatusV2},UA: {UpdatedAt}";
+            }
         }
 
         public partial class Memberv2
@@ -172,7 +177,7 @@ namespace PayCheckServerLib.Jsons.PartyStuff
             public string StatusV2 { get; set; }
 
             [JsonProperty("UpdatedAt")]
-            public DateTime UpdatedAt { get; set; }
+            public string UpdatedAt { get; set; }
 
             [JsonProperty("PlatformID")]
             public string PlatformID { get; set; }

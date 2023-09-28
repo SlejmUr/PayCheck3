@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using PayCheckServerLib;
+using System.Text;
 
 namespace PayCheck3ServerApp
 {

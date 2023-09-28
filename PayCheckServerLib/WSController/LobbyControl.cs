@@ -30,7 +30,7 @@ namespace PayCheckServerLib.WSController
                 if (string.IsNullOrEmpty(item) || item == "\n")
                     continue;
                 var kv2 = item.Split(": ");
-                Console.WriteLine(kv2[0]);
+                Console.WriteLine(item);
                 kv.Add(kv2[0], kv2[1]);
             }
             Debugger.PrintWebsocket("KVs done!");
@@ -61,7 +61,7 @@ namespace PayCheckServerLib.WSController
                         user.Status.activity = kv["activity"];
                         user.Status.availability = kv["availability"];
                         user.Status.platform = kv["platform"];
-                        user.Status.lastSeenAt = DateTime.UtcNow.ToString("O");
+                        user.Status.lastSeenAt = DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ");
                         UserController.SaveUser(user);
                         SendToLobby(rsp, session);
                         rsp.Remove("type");
@@ -71,7 +71,7 @@ namespace PayCheckServerLib.WSController
                         rsp.Add("activity", kv["activity"]);
                         rsp.Add("availability", kv["availability"]);
                         rsp.Add("platform", kv["platform"]);
-                        rsp.Add("lastSeenAt", DateTime.UtcNow.ToString("O"));
+                        rsp.Add("lastSeenAt", DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ"));
                         foreach (var id in session.WSSServer().WSUserIds)
                         { 
                             if (id == session.WSUserId)
@@ -161,16 +161,18 @@ namespace PayCheckServerLib.WSController
         }
 
 
-        public static void SendToLobby(Dictionary<string, string> kv, PC3Session session)
+        public static void SendToLobby(Dictionary<string, string> kv, PC3Session? session)
         {
+            Debugger.PrintDebug("SendToLobby Called!");
             var str = "";
             foreach (var item in kv)
             {
                 str += item.Key + ": " + item.Value + "\n";
             }
+
             str = str.Remove(str.Length - 1);
-            Debugger.PrintWebsocket(str);
-            session.SendBinaryAsync(str);
+            Debugger.PrintDebug(str);
+            session?.SendBinaryAsync(str);
         }
     }
 }

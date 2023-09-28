@@ -130,8 +130,8 @@ namespace PayCheckServerLib.Helpers
 
             party.UpdatedAt = DateTime.UtcNow.ToString("o");
             party.Attributes = body.Attributes;
-            party.version = body.Version + 1;
-
+            party.version = (body.Version + 1);
+            PartySaves[party.Code] = party;
             return ParsePartyToRSP(party);
         }
 
