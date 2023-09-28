@@ -1,5 +1,6 @@
 ﻿using NetCoreServer;
 using Newtonsoft.Json;
+using PayCheckServerLib.Helpers;
 using PayCheckServerLib.Jsons;
 
 namespace PayCheckServerLib.Responses
@@ -15,9 +16,12 @@ namespace PayCheckServerLib.Responses
             // return fake data for now
             Debugger.PrintDebug(String.Format("pd3_{0}_{1}", userID, currencyType));
             ResponseCreator response = new ResponseCreator();
+            int balance = 0;
+            if (ConfigHelper.ServerConfig.InDevFeatures.GiveMeMoney > 0)
+                balance = ConfigHelper.ServerConfig.InDevFeatures.GiveMeMoney;
             CurrencyJson currencyReponse = new()
             {
-                Balance = 0,
+                Balance = balance,
                 CurrencyCode = currencyType,
                 CurrencySymbol = currencySymbol,
                 Id = String.Format("pd3_{0}_{1}", userID, currencyType),
@@ -28,7 +32,7 @@ namespace PayCheckServerLib.Responses
                 {
                     new()
                     {
-                        Balance = 0,
+                        Balance = balance,
                         BalanceOrigin = "System",
                         CreatedAt = "2023-08-05T03:23:16.598Z",
                         CurrencyCode = currencyType,
@@ -37,7 +41,7 @@ namespace PayCheckServerLib.Responses
                         Namespace = "pd3",
                         Status = "ACTIVE",
                         TimeLimitedBalances = new(),
-                        TotalPermanentBalance = 100000,
+                        TotalPermanentBalance = balance,
                         TotalTimeLimitedBalance = 0,
                         UpdatedAt = "2023-08-05T03:23:16.612Z",
                         UserId = userID

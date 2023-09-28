@@ -15,4 +15,8 @@
     <ProjectReference Include="..\PayCheckServerLib\PayCheckServerLib.csproj" />
   </ItemGroup>
 
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="mkdir $(OutDir)\Cert&#xD;&#xA;copy ..\Cert $(OutDir)\Cert\" />
+  </Target>
+
 </Project>

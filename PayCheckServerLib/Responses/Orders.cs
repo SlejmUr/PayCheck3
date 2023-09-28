@@ -10,7 +10,7 @@ namespace PayCheckServerLib.Responses
         {
             var rand = new Random();
             string ret = "";
-            for (int i = 0; i < 19; i++)
+            for (int i = 0; i <= 19; i++)
             {
                 ret += rand.Next(0, 9);
             }
@@ -78,9 +78,10 @@ namespace PayCheckServerLib.Responses
                 Language = body.Language,
                 Status = "FULFILLED",
                 CreatedTime = DateTime.UtcNow.ToString("o"),
-                ChargedTime = DateTime.UtcNow.ToString("o"),
+                ChargedTime = DateTime.UtcNow.AddMilliseconds(100).ToString("o"),
                 FulfilledTime = DateTime.UtcNow.ToString("o"),
-                ExpireTime = DateTime.UtcNow.ToString("o"),
+                //  this should fix buying attachments
+                ExpireTime = DateTime.UtcNow.AddDays(1).ToString("o"),
                 PaymentRemainSeconds = 0,
                 TotalTax = 0,
                 TotalPrice = body.Price,

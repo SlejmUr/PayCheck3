@@ -13,6 +13,9 @@ namespace PayCheckServerLib.Jsons
         [JsonProperty("InDevFeatures")]
         public CInDevFeatures InDevFeatures { get; set; }
 
+        [JsonProperty("DS_Servers")]
+        public List<CDS_Server> DS_Servers { get; set; }
+
         [JsonProperty("EnableAutoUpdate")]
         public bool EnableAutoUpdate { get; set; }
 
@@ -21,17 +24,32 @@ namespace PayCheckServerLib.Jsons
             [JsonProperty("IP")]
             public string IP { get; set; }
 
+            [JsonProperty("Port")]
+            public int Port { get; set; }
+
             [JsonProperty("Server")]
             public bool WSS { get; set; }
 
-            [JsonProperty("UDP")]
-            public bool Udp { get; set; }
-
             [JsonProperty("GSTATIC")]
             public bool Gstatic { get; set; }
+        }
 
-            [JsonProperty("UDP_PORT")]
-            public int UDP_PORT { get; set; }
+        public partial class CDS_Server
+        {
+            [JsonProperty("Ip")]
+            public string Ip { get; set; }
+
+            [JsonProperty("Port")]
+            public int Port { get; set; }
+
+            [JsonProperty("Alias")]
+            public string Alias { get; set; }
+
+            [JsonProperty("Region")]
+            public string Region { get; set; }
+
+            [JsonProperty("Status")]
+            public string Status { get; set; }
         }
 
         public partial class CInDevFeatures
@@ -41,6 +59,9 @@ namespace PayCheckServerLib.Jsons
 
             [JsonProperty("UsePWInsteadSteamToken")]
             public bool UsePWInsteadSteamToken { get; set; }
+
+            [JsonProperty("GiveMeMoneyCheat", DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore)]
+            public int GiveMeMoney { get; set; } = 0;
         }
 
         public partial class CSaves

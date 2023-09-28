@@ -26,9 +26,19 @@ namespace PayCheckServerLib.Helpers
                     {
                         WSS = true,
                         Gstatic = true,
-                        Udp = true,
-                        UDP_PORT = 6969,
-                        IP = "127.0.0.1"
+                        IP = "127.0.0.1",
+                        Port = 443
+                    },
+                    DS_Servers = new()
+                    { 
+                        new()
+                        { 
+                            Alias = "eu-central-1",
+                            Ip = "127.0.0.1",
+                            Port = 6969,
+                            Region = "eu-central-1",
+                            Status = "ACTIVE"
+                        }
                     },
                     Saves = new()
                     {

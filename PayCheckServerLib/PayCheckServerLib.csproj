@@ -7,7 +7,7 @@
     <PackageProjectUrl>https://github.com/SlejmUr/PayCheck3</PackageProjectUrl>
     <RepositoryUrl>https://github.com/SlejmUr/PayCheck3</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <Copyright>SlejmUr</Copyright>
+    <Copyright>SlejmUr,HW12Dev</Copyright>
     <Description>PayDay3 Server Lib</Description>
     <Company>$(Authors)</Company>
     <Authors>SlejmUr,HW12Dev</Authors>
@@ -62,7 +62,7 @@
 	</Target>
 	
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
-	  <Exec Command="git branch --show-current &gt; &quot;$(ProjectDir)/Properties/BuildDate.txt&quot;&#xD;&#xA;echo $([System.DateTime]::UtcNow.ToString(&quot;s&quot;))&gt;&gt; &quot;$(ProjectDir)/Properties/BuildDate.txt&quot;&#xD;&#xA;git rev-parse --short HEAD &gt;&gt; &quot;$(ProjectDir)/Properties/BuildDate.txt&quot;&#xD;&#xA;" />
+	  <Exec Command="git branch --show-current &gt; &quot;$(ProjectDir)/Properties/BuildDate.txt&quot;&#xD;&#xA;echo $([System.DateTime]::UtcNow.ToString(&quot;s&quot;))&gt;&gt; &quot;$(ProjectDir)/Properties/BuildDate.txt&quot;&#xD;&#xA;git rev-parse --short HEAD &gt;&gt; &quot;$(ProjectDir)/Properties/BuildDate.txt&quot;" />
   </Target>
 
 </Project>
