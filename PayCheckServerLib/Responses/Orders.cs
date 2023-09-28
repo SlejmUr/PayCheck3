@@ -24,6 +24,7 @@ namespace PayCheckServerLib.Responses
             {
                 if (item.ItemId == id)
                 {
+                    item.UpdatedAt = DateTime.UtcNow.AddDays(-10).ToString("o");
                     return item;
                 }
             }

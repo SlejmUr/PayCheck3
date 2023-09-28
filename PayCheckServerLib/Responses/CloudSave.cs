@@ -126,7 +126,6 @@ namespace PayCheckServerLib.Responses
             var response = new ResponseCreator();
             if (SaveHandler.IsUserExist(userID))
             {
-                var now = DateTime.UtcNow.ToString("o");
                 Progression.Basic? save = null;
                 try
                 {
@@ -137,6 +136,7 @@ namespace PayCheckServerLib.Responses
                 {
                     Debugger.PrintError("JSON cannot be serialized!");
                 }
+                var now = DateTime.UtcNow.ToString("o");
                 ProgressionSaveRSP saveRSP = new()
                 {
                     CreatedAt = DateTime.UtcNow.AddDays(-1).ToString("o"),
@@ -148,7 +148,7 @@ namespace PayCheckServerLib.Responses
                     Namespace = "pd3",
                     SetBy = "CLIENT"
                 };
-                response.SetBody(JsonConvert.SerializeObject(saveRSP, Formatting.Indented, Progression.Converter.Settings));
+                response.SetBody(JsonConvert.SerializeObject(saveRSP, Progression.Converter.Settings));
                 session.SendResponse(response.GetResponse());
                 return true;
             }
@@ -170,7 +170,7 @@ namespace PayCheckServerLib.Responses
             SaveHandler.SaveUser(userID, request.BodyBytes);
             if (ConfigHelper.ServerConfig.Saves.SaveRequest)
                 SaveHandler.SaveUser_Request(userID, request.Body);
-            var now = DateTime.UtcNow.ToString("o");
+            
             Progression.Basic? save = null;
             try
             {
@@ -181,10 +181,10 @@ namespace PayCheckServerLib.Responses
             {
                 Debugger.PrintError("JSON cannot be serialized!");
             }
-
+            var now = DateTime.UtcNow.ToString("o");
             ProgressionSaveRSP saveRSP = new()
             {
-                CreatedAt = now,
+                CreatedAt = DateTime.UtcNow.AddDays(-1).ToString("o"),
                 UpdatedAt = now,
                 UserId = userID,
                 Value = save,
@@ -194,7 +194,7 @@ namespace PayCheckServerLib.Responses
                 SetBy = "CLIENT"
             };
             ResponseCreator response = new();
-            response.SetBody(JsonConvert.SerializeObject(saveRSP, Formatting.Indented, Progression.Converter.Settings));
+            response.SetBody(JsonConvert.SerializeObject(saveRSP, Progression.Converter.Settings));
             session.SendResponse(response.GetResponse());
             return true;
         }

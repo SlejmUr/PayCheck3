@@ -1,7 +1,7 @@
 {
   "Saves": {
-    "Extension": "save",
-    "SaveRequest": false
+    "Extension": "json",
+    "SaveRequest": true
   },
   "Hosting": {
     "IP": "127.0.0.1",
