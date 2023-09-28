@@ -23,7 +23,7 @@ namespace PayCheckServerLib.Jsons
             public long ActiveLoadoutIndex { get; set; }
 
             [JsonProperty("currentRequestedPriceProgressionLevel")]
-            public CurrentRequestedPriceProgressionLevel CurrentRequestedPriceProgressionLevel { get; set; }
+            public Dictionary<string, int> CurrentRequestedPriceProgressionLevel { get; set; }
 
             [JsonProperty("gloveConfigInventorySaveData")]
             public GloveConfigInventorySaveData GloveConfigInventorySaveData { get; set; }

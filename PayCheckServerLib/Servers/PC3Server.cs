@@ -187,7 +187,7 @@ namespace PayCheckServerLib
                         LobbyControl.SendToLobby(rsp, GetWSLobby(id));
                     }
                 }
-                WSSServer().WSS_Stuff.Remove(WS_ID + "_" + WS_ID.ToString().ToLower());
+                WSSServer().WSS_Stuff.Remove(WSUserId + "_" + WS_ID.ToString().ToLower());
                 var serv = (PC3WSSServer)Server;
                 serv.WSUserIds.Remove(WSUserId);
                 WSUserId = "";
