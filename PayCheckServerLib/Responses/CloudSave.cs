@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using PayCheckServerLib.Helpers;
 using PayCheckServerLib.Jsons;
+using PayCheckServerLib.Jsons.Basic;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace PayCheckServerLib.Responses
@@ -42,8 +43,14 @@ namespace PayCheckServerLib.Responses
         public static bool InfamyTranslationTable(HttpRequest _, PC3Server.PC3Session session)
         {
             ResponseCreator response = new();
-            InfamyTranslationTable.Basic table = new()
+            //InfamyTranslationTable.Basic;
+            TopLevel<InfamyTranslationTable.Value> table = new()
             {
+                CreatedAt = "2023-06-27T12:18:00.00Z",
+                UpdatedAt = "2023-06-27T12:18:00.00Z",
+                Key = "infamy-translation-table",
+                Namespace = "pd3",
+                SetBy = "SERVER",
                 Value = new()
                 {
                     InfamyTranslationTable = new()

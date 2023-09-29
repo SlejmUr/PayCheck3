@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using PayCheckServerLib.Helpers;
 using PayCheckServerLib.Jsons;
+using PayCheckServerLib.Jsons.Basic;
 using System.Web;
 
 namespace PayCheckServerLib.Responses

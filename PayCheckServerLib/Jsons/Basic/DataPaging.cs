@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace PayCheckServerLib.Jsons
+namespace PayCheckServerLib.Jsons.Basic
 {
     public class DataPaging<T> where T : class
     {

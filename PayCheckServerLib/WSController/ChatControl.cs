@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json;
-using PayCheckServerLib.Jsons;
+using PayCheckServerLib.Jsons.WSS;
 using System.Text;
 using static PayCheckServerLib.PC3Server;
 
