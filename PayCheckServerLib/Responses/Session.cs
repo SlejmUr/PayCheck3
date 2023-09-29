@@ -1,6 +1,6 @@
 ﻿using NetCoreServer;
 using Newtonsoft.Json;
-using PayCheckServerLib.Jsons;
+using PayCheckServerLib.Jsons.Basic;
 
 namespace PayCheckServerLib.Responses
 {

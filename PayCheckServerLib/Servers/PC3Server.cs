@@ -162,16 +162,14 @@ namespace PayCheckServerLib
                 if (WS_ID == WSEnum.Lobby)
                 {
                     var user = UserController.GetUser(WSUserId);
-                    if (user == null)
+                    if (user != null)
                     {
-                        Debugger.PrintWarn($"User not found! ({WSUserId}) WSS Cannot continue");
-                    }
-                    user.Status.activity = "nil";
-                    user.Status.availability = "offline";
-                    user.Status.platform = "nil";
-                    user.Status.lastSeenAt = DateTime.UtcNow.ToString("O");
-                    UserController.SaveUser(user);
-                    Dictionary<string, string> rsp = new()
+                        user.Status.activity = "nil";
+                        user.Status.availability = "offline";
+                        user.Status.platform = "nil";
+                        user.Status.lastSeenAt = DateTime.UtcNow.ToString("O");
+                        UserController.SaveUser(user);
+                        Dictionary<string, string> rsp = new()
                     {
                         { "type", "userStatusNotif" },
                         { "userID", WSUserId },
@@ -179,13 +177,18 @@ namespace PayCheckServerLib
                         { "activity", "nil" },
                         { "platform", "nil" },
                         { "lastSeenAt", user.Status.lastSeenAt },
-                    }; 
-                    foreach (var id in WSSServer().WSUserIds)
-                    {
-                        if (id == WSUserId)
-                            continue;
-                        LobbyControl.SendToLobby(rsp, GetWSLobby(id));
+                    };
+                        foreach (var id in WSSServer().WSUserIds)
+                        {
+                            if (id == WSUserId)
+                                continue;
+                            LobbyControl.SendToLobby(rsp, GetWSLobby(id));
+                        }
                     }
+                    else
+                    {
+                        Debugger.PrintWarn($"User not found! ({WSUserId}) WSS Continue ");
+                    }                    
                 }
                 WSSServer().WSS_Stuff.Remove(WSUserId + "_" + WS_ID.ToString().ToLower());
                 var serv = (PC3WSSServer)Server;

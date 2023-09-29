@@ -1,0 +1,62 @@
+﻿{
+    "CEMASK0000000000": [
+        "pd3_playstation_cosmetic_mask_premium_collectoredition"
+    ],
+    "CEMASKASI0000000": [
+        "pd3_playstation_cosmetic_mask_premium_collectoredition"
+    ],
+    "CEMASKJAP0000000": [
+        "pd3_playstation_cosmetic_mask_premium_collectoredition"
+    ],
+    "CEMASKSIE0000000": [
+        "pd3_playstation_cosmetic_mask_premium_collectoredition"
+    ],
+    "GOLDEDITIONITEM1": [
+        "pd3_playstation_cosmetic_accessory_gloves_goldedition",
+        "pd3_playstation_cosmetic_mask_premium7"
+    ],
+    "GOLDEDITIONITEM2": [
+        "pd3_playstation_cosmetic_accessory_gloves_goldedition",
+        "pd3_playstation_cosmetic_mask_premium7"
+    ],
+    "GOLDEDITIONITEM3": [
+        "pd3_playstation_cosmetic_accessory_gloves_goldedition",
+        "pd3_playstation_cosmetic_mask_premium7"
+    ],
+    "GOLDEDITIONITEMS": [
+        "pd3_playstation_cosmetic_accessory_gloves_goldedition",
+        "pd3_playstation_cosmetic_mask_premium7"
+    ],
+    "SILVERED0MASK000": [
+        "pd3_playstation_cosmetic_mask_premium_silveredition"
+    ],
+    "SILVERED0MASKASI": [
+        "pd3_playstation_cosmetic_mask_premium_silveredition"
+    ],
+    "SILVERED0MASKJAP": [
+        "pd3_playstation_cosmetic_mask_premium_silveredition"
+    ],
+    "SILVERED0MASKSIE": [
+        "pd3_playstation_cosmetic_mask_premium_silveredition"
+    ],
+    "TRIFECTALOOTBAG0": [
+        "pd3_playstation_cosmetic_mask_premium_preorder",
+        "pd3_playstation_cosmetic_suit_premiumsuit_preorder",
+        "pd3_playstation_cosmetic_accessory_gloves_preorder"
+    ],
+    "TRIFECTALOOTBAG1": [
+        "pd3_playstation_cosmetic_mask_premium_preorder",
+        "pd3_playstation_cosmetic_suit_premiumsuit_preorder",
+        "pd3_playstation_cosmetic_accessory_gloves_preorder"
+    ],
+    "TRIFECTALOOTBAG2": [
+        "pd3_playstation_cosmetic_mask_premium_preorder",
+        "pd3_playstation_cosmetic_suit_premiumsuit_preorder",
+        "pd3_playstation_cosmetic_accessory_gloves_preorder"
+    ],
+    "TRIFECTALOOTBAG3": [
+        "pd3_playstation_cosmetic_mask_premium_preorder",
+        "pd3_playstation_cosmetic_suit_premiumsuit_preorder",
+        "pd3_playstation_cosmetic_accessory_gloves_preorder"
+    ]
+}
