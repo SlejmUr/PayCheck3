@@ -21,7 +21,6 @@
 
   <ItemGroup>
     <None Remove="config.json" />
-    <None Remove="Files\DLC_Entiltements.json" />
   </ItemGroup>
 
   <ItemGroup>

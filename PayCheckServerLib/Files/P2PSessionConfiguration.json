@@ -1,0 +1,30 @@
+﻿{
+    "PSNBaseURL": "",
+    "autoJoin": false,
+    "clientVersion": "",
+    "deployment": "",
+    "dsSource": "",
+    "fallbackClaimKeys": null,
+    "inactiveTimeout": 60,
+    "inviteTimeout": 60,
+    "joinability": "OPEN",
+    "maxActiveSession": -1,
+    "maxPlayers": 4,
+    "minPlayers": 1,
+    "name": "P2PSession",
+    "nativeSessionSetting": {
+        "PSNServiceLabel": 0,
+        "PSNSupportedPlatforms": [],
+        "SessionTitle": "",
+        "ShouldSync": false,
+        "XboxServiceConfigID": "",
+        "XboxSessionTemplateName": "",
+        "localizedSessionName": null
+    },
+    "persistent": false,
+    "preferredClaimKeys": null,
+    "requestedRegions": null,
+    "textChat": false,
+    "tieTeamsSessionLifetime": false,
+    "type": "P2P"
+}
