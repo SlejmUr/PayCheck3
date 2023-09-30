@@ -5,6 +5,7 @@
         public UserBulk.UserBulkData UserData;
         public List<FriendsPlatfrom.FriendsPlatfromData> Friends;
         public FStatus Status;
+        //public string Namespace;
 
         public class FStatus
         {

@@ -43,7 +43,7 @@ namespace PayCheckServerLib.Responses
             var platform_token = bodyTokens["platform_token"];
             var sai = UserIdHelper.getsai(platform_token);
             Debugger.PrintInfo(sai);
-            if (sai != "1272080")
+            if (sai != "1272080" || sai != "2478210")
             {
                 Debugger.PrintError("Unable to auth incorrectly");
                 return true;
@@ -58,7 +58,7 @@ namespace PayCheckServerLib.Responses
             /*
             response.SetHeader("cache-control", "no-cache, no-store, max-age=0, must-revalidate");
             response.SetHeader("expires", "Fri, 01 Jan 1990 00:00:00 GMT");
-            response.SetHeader("pragma", "no-cache");*/
+            response.SetHeader("pragma",    "no-cache");*/
             response.SetHeader("Set-Cookie", "refresh_token=" + refresh_token.ToBase64() + "; Path=/; HttpOnly; Secure; SameSite=None");
             response.SetHeader("Set-Cookie", "access_token=" + access_token.ToBase64() + "; Path=/; HttpOnly; Secure; SameSite=None");
             LoginToken LoginToken = new()

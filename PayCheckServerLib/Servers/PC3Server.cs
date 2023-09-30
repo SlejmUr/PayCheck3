@@ -239,7 +239,8 @@ namespace PayCheckServerLib
                 for (int i = 0; i < request.Headers; i++)
                 {
                     var headerpart = request.Header(i);
-                    Headers.Add(headerpart.Item1.ToLower(), headerpart.Item2);
+                    if (!Headers.ContainsKey(headerpart.Item1.ToLower())) 
+                        Headers.Add(headerpart.Item1.ToLower(), headerpart.Item2);
                 }
                 string url = request.Url;
                 url = Uri.UnescapeDataString(url);

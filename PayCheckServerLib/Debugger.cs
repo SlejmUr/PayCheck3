@@ -12,7 +12,7 @@ namespace PayCheckServerLib
         {
             Console.ForegroundColor = GetColorByType("info");
             Console.WriteLine($"[WEBSOCKET] {ToPrint}");
-            logger.Log("WEBSOCKET", ToPrint);
+            logger.Log("WEBSOCKET", ToPrint == null ? "NULL" : ToPrint);
             Console.ResetColor();
         }
 
@@ -20,7 +20,7 @@ namespace PayCheckServerLib
         {
             Console.ForegroundColor = GetColorByType("info");
             Console.WriteLine($"[{prefix}] {ToPrint}");
-            logger.Log(prefix, ToPrint);
+            logger.Log(prefix, ToPrint == null ? "NULL" : ToPrint);
             Console.ResetColor();
         }
 
@@ -30,12 +30,12 @@ namespace PayCheckServerLib
             {
                 Console.ForegroundColor = GetColorByType("debug");
                 Console.WriteLine($"[{prefix}] {ToPrint}");
-                logger.Log(prefix, ToPrint);
+                logger.Log(prefix, ToPrint == null ? "NULL" : ToPrint);
                 Console.ResetColor();
             }
             else
             {
-                logger.Log(prefix, ToPrint);
+                logger.Log(prefix, ToPrint == null ? "NULL" : ToPrint);
             }
         }
 
@@ -43,7 +43,7 @@ namespace PayCheckServerLib
         {
             Console.ForegroundColor = GetColorByType("warning");
             Console.WriteLine($"[{prefix}] {ToPrint}");
-            logger.Log(prefix, ToPrint);
+            logger.Log(prefix, ToPrint == null ? "NULL" : ToPrint);
             Console.ResetColor();
         }
 
@@ -51,7 +51,7 @@ namespace PayCheckServerLib
         {
             Console.ForegroundColor = GetColorByType("error");
             Console.WriteLine($"[{prefix}] {ToPrint}");
-            logger.Log(prefix, ToPrint);
+            logger.Log(prefix, ToPrint == null ? "NULL" : ToPrint);
             Console.ResetColor();
         }
 
