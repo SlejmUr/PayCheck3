@@ -9,7 +9,7 @@ namespace PayCheckServerLib.Responses
 {
     public class Parties
     {
-        [HTTP("POST", "/session/v1/public/namespaces/pd3/party")]
+        [HTTP("POST", "/session/v1/public/namespaces/{namespace}/party")]
         public static bool Party(HttpRequest request, PC3Server.PC3Session session)
         {
             var auth = session.Headers["authorization"].Replace("Bearer ", "");
@@ -41,7 +41,7 @@ namespace PayCheckServerLib.Responses
             return true;
         }
 
-        [HTTP("PATCH", "/session/v1/public/namespaces/pd3/parties/{partyid}")]
+        [HTTP("PATCH", "/session/v1/public/namespaces/{namespace}/parties/{partyid}")]
         public static bool PATCH_Parties(HttpRequest request, PC3Server.PC3Session session)
         {
             var auth = session.Headers["authorization"].Replace("Bearer ", "");
@@ -74,7 +74,7 @@ namespace PayCheckServerLib.Responses
                 IsFull = rsp.IsFull,
                 LeaderId = rsp.LeaderId,
                 Members = new(),
-                Namespace = "pd3",
+                Namespace = session.HttpParam["namespace"],
                 UpdatedAt = rsp.UpdatedAt,
                 Version = rsp.Version
             }; 
@@ -115,7 +115,7 @@ namespace PayCheckServerLib.Responses
         }
 
 
-        [HTTP("DELETE", "/session/v1/public/namespaces/pd3/parties/{partyid}/users/me/leave")]
+        [HTTP("DELETE", "/session/v1/public/namespaces/{namespace}/parties/{partyid}/users/me/leave")]
         public static bool LeaveParties(HttpRequest request, PC3Server.PC3Session session)
         {
             //This response sadly KILLING THE GAME (Even without emu)
@@ -126,7 +126,7 @@ namespace PayCheckServerLib.Responses
         }
 
 
-        [HTTP("POST", "/session/v1/public/namespaces/pd3/parties/{partyid}/users/me/join")]
+        [HTTP("POST", "/session/v1/public/namespaces/{namespace}/parties/{partyid}/users/me/join")]
         public static bool JoinParties(HttpRequest request, PC3Server.PC3Session session)
         {
             /*
@@ -138,7 +138,7 @@ namespace PayCheckServerLib.Responses
             return false;
         }
 
-        [HTTP("POST", "/session/v1/public/namespaces/pd3/parties/{partyid}/users/me/reject")]
+        [HTTP("POST", "/session/v1/public/namespaces/{namespace}/parties/{partyid}/users/me/reject")]
         public static bool RejectParties(HttpRequest request, PC3Server.PC3Session session)
         {
             /*
@@ -150,7 +150,7 @@ namespace PayCheckServerLib.Responses
             return false;
         }
 
-        [HTTP("POST", "/session/v1/public/namespaces/pd3/parties/users/me/join/code")]
+        [HTTP("POST", "/session/v1/public/namespaces/{namespace}/parties/users/me/join/code")]
         public static bool JoinPartyByCode(HttpRequest request, PC3Server.PC3Session session)
         {
             /*
@@ -162,7 +162,7 @@ namespace PayCheckServerLib.Responses
             return false;
         }
 
-        [HTTP("POST", "/session/v1/public/namespaces/pd3/parties/{partyid}/invite")]
+        [HTTP("POST", "/session/v1/public/namespaces/{namespace}/parties/{partyid}/invite")]
         public static bool InviteOtherPlayer(HttpRequest request, PC3Server.PC3Session session)
         {
             /*

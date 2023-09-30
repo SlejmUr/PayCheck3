@@ -29,7 +29,7 @@ namespace PayCheckServerLib.Responses
             public string MatchPool { get; set; }
         }
 
-        [HTTP("POST", "/match2/v1/namespaces/pd3/match-tickets")]
+        [HTTP("POST", "/match2/v1/namespaces/{namespace}/match-tickets")]
         public static bool Tickets(HttpRequest request, PC3Server.PC3Session session)
         {
             var auth = session.Headers["authorization"].Replace("Bearer ", "");
@@ -53,7 +53,7 @@ namespace PayCheckServerLib.Responses
                 PartyID = ticket.sessionId,
                 CreatedAt = DateTime.UtcNow.ToString("o"),
                 MatchPool = ticket.matchPool,
-                Namespace = "pd3"
+                Namespace = session.Headers["namespace"]
             };
             Dictionary<string, string> resp = new()
             {
@@ -66,7 +66,7 @@ namespace PayCheckServerLib.Responses
                 { "sentAt", DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ") }
             };
             LobbyControl.SendToLobby(resp, session.GetWSLobby(token.UserId));
-            GSController.Make(ticket, session);
+            GSController.Make(ticket, session, session.Headers["namespace"]);
             GSController.Tickets.Add(token.UserId, ticketId);
             /*
              * Need to check what happens at this stage.

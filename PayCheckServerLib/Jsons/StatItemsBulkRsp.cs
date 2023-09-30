@@ -7,7 +7,7 @@ namespace PayCheckServerLib.Jsons
         [JsonProperty("currentValue")]
         public float CurrentValue { get; set; }
     }
-    public class PutStatItemsBulk
+    public class StatItemsBulkRsp
     {
         [JsonProperty("details")]
         public PutStatItemsBulkDetailsData Details { get; set; }
@@ -17,5 +17,14 @@ namespace PayCheckServerLib.Jsons
 
         [JsonProperty("success")]
         public bool Success { get; set; }
+    }
+
+    public class StatItemsBulkReq
+    {
+        [JsonProperty("inc")]
+        public int Inc { get; set; }
+
+        [JsonProperty("statCode")]
+        public string StatCode { get; set; }
     }
 }

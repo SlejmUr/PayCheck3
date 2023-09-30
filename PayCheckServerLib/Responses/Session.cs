@@ -6,7 +6,7 @@ namespace PayCheckServerLib.Responses
 {
     public class Session
     {
-        [HTTP("GET", "/session/v1/public/namespaces/pd3/users/me/attributes")]
+        [HTTP("GET", "/session/v1/public/namespaces/{namespace}/users/me/attributes")]
         public static bool GETSessionAttributes(HttpRequest _, PC3Server.PC3Session session)
         {
             var auth = session.Headers["authorization"].Replace("Bearer ", "");
@@ -16,7 +16,7 @@ namespace PayCheckServerLib.Responses
             {
                 CrossplayEnabled = true,
                 CurrentPlatform = token.PlatformType.ToString().ToUpper(),
-                Namespace = "pd3",
+                Namespace = token.Namespace,
                 Platforms = new()
                 {
                     new()
@@ -32,7 +32,7 @@ namespace PayCheckServerLib.Responses
             return true;
         }
 
-        [HTTP("POST", "/session/v1/public/namespaces/pd3/users/me/attributes")]
+        [HTTP("POST", "/session/v1/public/namespaces/{namespace}/users/me/attributes")]
         public static bool POSTSessionAttributes(HttpRequest request, PC3Server.PC3Session session)
         {
             var auth = session.Headers["authorization"].Replace("Bearer ", "");
@@ -44,7 +44,7 @@ namespace PayCheckServerLib.Responses
             {
                 CrossplayEnabled = req.CrossplayEnabled,
                 CurrentPlatform = req.CurrentPlatform,
-                Namespace = "pd3",
+                Namespace = token.Namespace,
                 Platforms = req.Platforms,
                 UserId = token.UserId
             };
@@ -53,7 +53,7 @@ namespace PayCheckServerLib.Responses
             return true;
         }
 
-        [HTTP("GET", "/session/v1/public/namespaces/pd3/users/me/parties")]
+        [HTTP("GET", "/session/v1/public/namespaces/{namespace}/users/me/parties")]
         public static bool SessionsParties(HttpRequest _, PC3Server.PC3Session session)
         {
             ResponseCreator response = new();
@@ -74,7 +74,7 @@ namespace PayCheckServerLib.Responses
             return true;
         }
 
-        [HTTP("GET", "/session/v1/public/namespaces/pd3/users/me/gamesessions")]
+        [HTTP("GET", "/session/v1/public/namespaces/{namespace}/users/me/gamesessions")]
         public static bool Sessionsgamesessions(HttpRequest _, PC3Server.PC3Session session)
         {
             ResponseCreator response = new();

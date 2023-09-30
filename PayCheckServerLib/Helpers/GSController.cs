@@ -15,7 +15,7 @@ namespace PayCheckServerLib.Helpers
         public static Dictionary<string, GameSession> Sessions = new();
         public static Dictionary<string, string> Tickets = new();
         //  Here we making a Full created Match 
-        public static void Make(MatchTickets.TicketReqJson ticketReq, PC3Server.PC3Session session)
+        public static void Make(MatchTickets.TicketReqJson ticketReq, PC3Server.PC3Session session, string NameSpace)
         {
             var party = PartyController.PartySaves.Where(x => x.Value.Id == ticketReq.sessionId).FirstOrDefault().Value;
             if (party == null)
@@ -46,7 +46,7 @@ namespace PayCheckServerLib.Helpers
                 LeaderID = "",
                 MatchPool = ticketReq.matchPool,
                 Members = new(),
-                Namespace = "pd3",
+                Namespace = NameSpace,
                 Teams = new(),
                 UpdatedAt = DateTime.UtcNow.ToString("o"),
                 Version = 1
@@ -81,7 +81,7 @@ namespace PayCheckServerLib.Helpers
             Debugger.PrintDebug("foreach done");
             team.Parties.Add(party_gs);
             gs.Teams.Add(team);
-            Sessions.Add(id, gs);
+            Sessions.Add(NameSpace + "_" + id, gs);
             Debugger.PrintDebug("GS_Session Made!");
             OnSessionInvited onSessionInvited = new()
             {
@@ -110,9 +110,9 @@ namespace PayCheckServerLib.Helpers
             }
         }
 
-        public static GameSession GetGameSession(string id)
+        public static GameSession GetGameSession(string id, string NameSpace)
         {
-            if (Sessions.TryGetValue(id, out var session))
+            if (Sessions.TryGetValue(NameSpace + "_" + id, out var session))
             {
                 return session;
             }
@@ -120,9 +120,9 @@ namespace PayCheckServerLib.Helpers
             throw new Exception("Session NOT FOUND");
         }
 
-        public static GameSession JoinSession(string id, string UserId)
+        public static GameSession JoinSession(string id, string UserId, string NameSpace)
         {
-            if (!Sessions.TryGetValue(id, out var session))
+            if (!Sessions.TryGetValue(NameSpace + "_" + id, out var session))
             {
                 Debugger.PrintWarn("Session NOT FOUND");
                 throw new Exception("Session NOT FOUND");
@@ -144,13 +144,13 @@ namespace PayCheckServerLib.Helpers
             {
                 session.LeaderID = UserId;
             }
-            Sessions[id] =  session;
+            Sessions[NameSpace + "_" + id] =  session;
             return session;
         }
 
-        public static GameSession Patch(PatchGameSessions patchGameSessions, string id, PC3Server.PC3Session pcSession)
+        public static GameSession Patch(PatchGameSessions patchGameSessions, string id, PC3Server.PC3Session pcSession, string NameSpace)
         {
-            if (!Sessions.TryGetValue(id, out var session))
+            if (!Sessions.TryGetValue(NameSpace + "_" + id, out var session))
             {
                 Debugger.PrintWarn("Session NOT FOUND");
                 throw new Exception("Session NOT FOUND");
@@ -160,12 +160,13 @@ namespace PayCheckServerLib.Helpers
             var mlist = pcSession.MiddleMans;
             int index = random.Next(mlist.Count);
             var middleMan = mlist[index];
-            string Req = "DSInfoReq-END-" + "eu-central-1,"+ "624677," + session.Id;
+            //todo get client info
+            string Req = "DSInfoReq-END-" + "eu-central-1,"+ "624677," + session.Id + ","+ NameSpace;
             Debugger.PrintDebug("Sending to middleman");
             middleMan.Send(Req);
             //recieve back here?
             //  PLEASE if you know how to wait better than this, make a PR!
-            while (!DSInfoSentList.Contains(id))
+            while (!DSInfoSentList.Contains(NameSpace + "_" + id))
             {
                 Thread.Sleep(100);
             }
@@ -241,7 +242,7 @@ namespace PayCheckServerLib.Helpers
 
             session.Attributes = patchGameSessions.Attributes;
             session.Version = patchGameSessions.version++;
-            Sessions[id] = session;
+            Sessions[NameSpace + "_" + id] = session;
             return session;
         }
     }

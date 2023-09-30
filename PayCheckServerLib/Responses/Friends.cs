@@ -7,12 +7,12 @@ namespace PayCheckServerLib.Responses
 {
     public class Friends
     {
-        [HTTP("GET", "/friends/namespaces/pd3/me/platforms")]
+        [HTTP("GET", "/friends/namespaces/{namespace}/me/platforms")]
         public static bool MePlatforms(HttpRequest _, PC3Server.PC3Session session)
         {
             var auth = session.Headers["authorization"].Replace("Bearer ", "");
             var token = TokenHelper.ReadToken(auth);
-            var MainUser = UserController.GetUser(token.UserId) ?? throw new Exception("MainUser is null!");
+            var MainUser = UserController.GetUser(token.UserId,token.Namespace) ?? throw new Exception("MainUser is null!");
             ResponseCreator response = new();
             response.SetHeader("Content-Type", "application/json");
             FriendsPlatfrom friends = new FriendsPlatfrom()
@@ -24,18 +24,18 @@ namespace PayCheckServerLib.Responses
             return true;
         }
 
-        [HTTP("POST", "/friends/namespaces/pd3/users/{userId}/add/bulk")]
+        [HTTP("POST", "/friends/namespaces/{namespace}/users/{userId}/add/bulk")]
         public static bool FriendAddBulk(HttpRequest request, PC3Server.PC3Session session)
         {
             var auth = session.Headers["authorization"].Replace("Bearer ", "");
             var token = TokenHelper.ReadToken(auth);
-            var MainUser = UserController.GetUser(token.UserId) ?? throw new Exception("MainUser is null!");
+            var MainUser = UserController.GetUser(token.UserId, token.Namespace) ?? throw new Exception("MainUser is null!");
             var friends = JsonConvert.DeserializeObject<FriendAdd>(request.Body)!.FriendIds;
 
             //  Add func to UserC. for adding and checking friends infomation.
             foreach (var item in friends)
             {
-                var user = UserController.GetUser(item);
+                var user = UserController.GetUser(item, token.Namespace);
                 if (user == null)
                 {
                     Debugger.PrintWarn($"UserId {item} not found in users!");
@@ -49,10 +49,6 @@ namespace PayCheckServerLib.Responses
                     UserId = user.UserData.UserId,
                     Username = user.UserData.DisplayName,
                     PlatformInfos = new()
-                    {
-
-                    }
-
                 };
 
                 foreach (var pids in user.UserData.PlatformUserIds)
@@ -66,8 +62,6 @@ namespace PayCheckServerLib.Responses
                 }
                 MainUser.Friends.Add(data);
             }
-
-
 
             ResponseCreator response = new(204);
             session.SendResponse(response.GetResponse());

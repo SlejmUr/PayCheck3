@@ -7,7 +7,7 @@ namespace PayCheckServerLib.Responses
 {
     public class Entitlements
     {
-        [HTTP("GET", "/platform/public/namespaces/pd3/users/{userId}/entitlements?limit={limit}")]
+        [HTTP("GET", "/platform/public/namespaces/{namespace}/users/{userId}/entitlements?limit={limit}")]
         public static bool GetUserEntitlements(HttpRequest _, PC3Server.PC3Session session)
         {
             try
@@ -42,7 +42,7 @@ namespace PayCheckServerLib.Responses
             return false;
         }
 
-        [HTTP("GET", "/platform/public/namespaces/pd3/users/{userId}/entitlements?itemId={itemid}&limit={limit}")]
+        [HTTP("GET", "/platform/public/namespaces/{namespace}/users/{userId}/entitlements?itemId={itemid}&limit={limit}")]
         public static bool GetUserEntitlementsByItemId(HttpRequest _, PC3Server.PC3Session session)
         {
             try

@@ -1,5 +1,4 @@
 ﻿using PayCheckServerLib.Jsons;
-using PayCheckServerLib.Responses;
 
 namespace PayCheckServerLib
 {
@@ -12,6 +11,7 @@ namespace PayCheckServerLib
             public string UserId;
             public TokenPlatform PlatformType;
             public bool IsAccessToken;
+            public string Namespace;
         }
 
         public enum TokenPlatform
@@ -26,27 +26,6 @@ namespace PayCheckServerLib
             Live
         }
 
-        public static Token GetTokenFromPlatform(string platformId, TokenPlatform platformType)
-        {
-            if (!Directory.Exists("Tokens")) { Directory.CreateDirectory("Tokens"); }
-            var files = Directory.GetFiles("Tokens");
-            foreach (var file in files)
-            {
-                var token = ReadToken(File.ReadAllText(file));
-
-                if (token.PlatformType == platformType && token.PlatformId == platformId && token.IsAccessToken)
-                    return token;
-            }
-            var newtoken = GenerateNewToken(platformId,"DefaultUser", platformType);
-            return newtoken;
-        }
-
-        public static bool IsUserIdExist(string UserId)
-        {
-            if (!Directory.Exists("Tokens")) { Directory.CreateDirectory("Tokens"); }
-            return (File.Exists($"Tokens/{UserId}_AccessToken") || File.Exists($"Tokens/{UserId}_RefreshToken"));
-        }
-
         public static Token GenerateNewTokenFromUser(User User, TokenPlatform platform = TokenPlatform.Steam, bool IsAccessToken = true)
         {
             return new()
@@ -55,32 +34,8 @@ namespace PayCheckServerLib
                 PlatformId = User.UserData.PlatformUserIds[platform.ToString().ToLower()],
                 UserId = User.UserData.UserId,
                 PlatformType = platform,
-                IsAccessToken = IsAccessToken
-            };
-        }
-
-
-        public static Token GenerateNewToken(string PlatformId, string Name = "DefaultUser", TokenPlatform platform = TokenPlatform.Steam, bool IsAccessToken = true)
-        {
-            return new()
-            {
-                Name = Name,
-                PlatformId = PlatformId,
-                UserId = UserIdHelper.CreateNewID(),
-                PlatformType = platform,
-                IsAccessToken = IsAccessToken
-            };
-        }
-
-        public static Token GenerateFromSteamToken(string platform_token, string Name = "DefaultUser", bool IsAccessToken = true)
-        {
-            return new()
-            {
-                Name = Name,
-                PlatformId = UserIdHelper.GetSteamIDFromAUTH(platform_token),
-                UserId = UserIdHelper.CreateNewID(),
-                PlatformType = TokenPlatform.Steam,
-                IsAccessToken = IsAccessToken
+                IsAccessToken = IsAccessToken,
+                Namespace = User.Namespace
             };
         }
 
@@ -117,6 +72,9 @@ namespace PayCheckServerLib
             ms.Write(BitConverter.GetBytes(buid.Length));
             ms.Write(buid);
             ms.Write(BitConverter.GetBytes(token.IsAccessToken));
+            var nspace = System.Text.Encoding.UTF8.GetBytes(token.Namespace);
+            ms.Write(BitConverter.GetBytes(nspace.Length));
+            ms.Write(nspace);
             return ms.ToArray();
         }
 
@@ -126,13 +84,6 @@ namespace PayCheckServerLib
             if (!Directory.Exists("Tokens")) { Directory.CreateDirectory("Tokens"); }
             string acctoken = token.IsAccessToken ? "AccessToken" : "RefreshToken";
             File.WriteAllText("Tokens/" + token.UserId + "_" + acctoken, token.ToBase64());
-        }
-
-        public static Token ReadTokenFile(string UserId, bool IsAccessToken = true)
-        {
-            string acctoken = IsAccessToken ? "AccessToken" : "RefreshToken";
-            var text = File.ReadAllText($"Tokens/{UserId}_{acctoken}");
-            return ReadToken(text);
         }
 
         public static (Token AccessToken, Token RefleshToken) ReadFromHeader(Dictionary<string, string> kv)
@@ -190,15 +141,17 @@ namespace PayCheckServerLib
             }
             var buid_l = BitConverter.ToInt32(b64[lastPost..(4 + lastPost)]);
             var buid = System.Text.Encoding.UTF8.GetString(b64[(4 + lastPost)..(4 + lastPost + buid_l)]);
-            var iAcc = BitConverter.ToBoolean(b64[(4 + lastPost + buid_l)..]);
-
+            var iAcc = BitConverter.ToBoolean(b64[(4 + lastPost + buid_l)..(5 + lastPost + buid_l)]);
+            var namespace_l = BitConverter.ToInt32(b64[(5 + lastPost + buid_l)..(9 + lastPost + buid_l)]);
+            var nspace = System.Text.Encoding.UTF8.GetString(b64[(9 + lastPost + buid_l)..(9 + lastPost + buid_l + namespace_l)]);
             return new()
             {
                 Name = name,
                 PlatformId = PlatformId,
                 UserId = buid,
                 PlatformType = platType,
-                IsAccessToken = iAcc
+                IsAccessToken = iAcc,
+                Namespace = nspace
             };
         }
 
@@ -210,7 +163,7 @@ namespace PayCheckServerLib
     {
         public static string ToPrint(this TokenHelper.Token token)
         {
-            return $"Name: {token.Name}, PlatformId: {token.PlatformId}, PlatformType: {token.PlatformType}, UserId: {token.UserId}, IsAccessToken: {token.IsAccessToken}";
+            return $"Name: {token.Name}, PlatformId: {token.PlatformId}, PlatformType: {token.PlatformType}, UserId: {token.UserId}, IsAccessToken: {token.IsAccessToken}, Namespace: {token.Namespace}";
         }
 
         public static byte[] ToBytes(this TokenHelper.Token token)

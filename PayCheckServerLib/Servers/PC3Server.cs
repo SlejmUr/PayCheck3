@@ -73,7 +73,7 @@ namespace PayCheckServerLib
             
             public List<PC3Session> MiddleMans = new();
 
-            public PC3Session? GetWSLobby(string UserId)
+            public PC3Session? GetWSLobby(string UserId, string NameSpace = "pd3")
             {
                 if (UserId == null)
                     Debugger.PrintError("UserId is null! (Parameter)");
@@ -86,7 +86,7 @@ namespace PayCheckServerLib
                 return null;
             }
 
-            public PC3Session GetWSChat(string UserId) => WSSServer().WSS_Stuff[UserId + "_chat"];
+            public PC3Session GetWSChat(string UserId, string NameSpace = "pd3") => WSSServer().WSS_Stuff[UserId + "_chat"];
 
             public PC3WSSServer WSSServer() => (PC3WSSServer)Server;
 
@@ -208,7 +208,7 @@ namespace PayCheckServerLib
                 var buf2 = buffer.Take((int)size).ToArray();
                 if (size == 0)
                 {
-                    Debugger.PrintInfo("Nothing was sent to WSS");
+                    //Debugger.PrintInfo("Nothing was sent to WSS");
                     return;
                 }
                 Debugger.PrintInfo(WSUserId + " on " + WS_ID + " WSS Recieved!");

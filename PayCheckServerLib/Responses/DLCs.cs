@@ -28,7 +28,7 @@ namespace PayCheckServerLib.Responses
 
 
 
-        [HTTP("PUT", "/platform/public/namespaces/pd3/users/{UserId}/dlc/steam/sync")]
+        [HTTP("PUT", "/platform/public/namespaces/{namespace}/users/{UserId}/dlc/steam/sync")]
         public static bool PUT_DLC_SteamSync(HttpRequest request, PC3Server.PC3Session session)
         {
             //var body = JsonConvert.DeserializeObject<PutDLC>(request.Body);
@@ -39,7 +39,7 @@ namespace PayCheckServerLib.Responses
         }
 
 
-        [HTTP("GET", "/cloudsave/v1/namespaces/pd3/records/dlc-entitlements")]
+        [HTTP("GET", "/cloudsave/v1/namespaces/{namespace}/records/dlc-entitlements")]
         public static bool GETdlcentitlements(HttpRequest request, PC3Server.PC3Session session)
         {
             TopLevel<DLC_Value> dlc = new()
@@ -47,7 +47,7 @@ namespace PayCheckServerLib.Responses
                 SetBy = "SERVER",
                 CreatedAt = "2023-09-25T12:01:02.096Z",
                 Key = "dlc-entitlements",
-                Namespace = "pd3",
+                Namespace = session.HttpParam["namespace"],
                 UpdatedAt = "2023-09-25T12:01:02.096Z",
                 Value = new()
                 { 

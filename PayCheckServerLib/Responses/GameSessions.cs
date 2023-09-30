@@ -14,14 +14,14 @@ namespace PayCheckServerLib.Responses
 {
     public class GameSessions
     {
-        [HTTP("GET", "/session/v1/public/namespaces/pd3/gamesessions/{sessionid}")]
+        [HTTP("GET", "/session/v1/public/namespaces/{namespace}/gamesessions/{sessionid}")]
         public static bool GETGameSessions(HttpRequest _, PC3Server.PC3Session session)
         {
             var auth = session.Headers["authorization"].Replace("Bearer ", "");
             var token = TokenHelper.ReadToken(auth);
             ResponseCreator response = new();
             response.SetHeader("Content-Type", "application/json");
-            var gs = GSController.GetGameSession(session.HttpParam["sessionid"]);
+            var gs = GSController.GetGameSession(session.HttpParam["sessionid"], session.HttpParam["namespace"]);
             response.SetBody(JsonConvert.SerializeObject(gs));
             session.SendResponse(response.GetResponse());
 
@@ -69,7 +69,7 @@ namespace PayCheckServerLib.Responses
             return true;
         }
 
-        [HTTP("PATCH", "/session/v1/public/namespaces/pd3/gamesessions/{sessionid}")]
+        [HTTP("PATCH", "/session/v1/public/namespaces/{namespace}/gamesessions/{sessionid}")]
         public static bool PATCHGameSessions(HttpRequest _, PC3Server.PC3Session session)
         {
             Debugger.PrintDebug("PATCH! gamesessions");
@@ -83,12 +83,12 @@ namespace PayCheckServerLib.Responses
             return true;
         }
 
-        [HTTP("POST", "/session/v1/public/namespaces/pd3/gamesessions/{sessionid}/join")]
+        [HTTP("POST", "/session/v1/public/namespaces/{namespace}/gamesessions/{sessionid}/join")]
         public static bool JoinToGameSessions(HttpRequest _, PC3Server.PC3Session session)
         {
             var auth = session.Headers["authorization"].Replace("Bearer ", "");
             var token = TokenHelper.ReadToken(auth);
-            var gs = GSController.JoinSession(session.HttpParam["sessionid"], token.UserId);
+            var gs = GSController.JoinSession(session.HttpParam["sessionid"], token.UserId,session.HttpParam["namespace"]);
             ResponseCreator response = new();
             response.SetHeader("Content-Type", "application/json");
             response.SetBody(JsonConvert.SerializeObject(gs));
@@ -175,7 +175,7 @@ namespace PayCheckServerLib.Responses
             return true;
         }
 
-        [HTTP("DELETE", "/session/v1/public/namespaces/pd3/gamesessions/{sessionid}/leave")]
+        [HTTP("DELETE", "/session/v1/public/namespaces/{namespace}/gamesessions/{sessionid}/leave")]
         public static bool LeaveGameSessions(HttpRequest _, PC3Server.PC3Session session)
         {
             return false;

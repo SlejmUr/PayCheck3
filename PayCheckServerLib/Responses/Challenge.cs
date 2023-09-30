@@ -8,7 +8,7 @@ namespace PayCheckServerLib.Responses
 {
     public class Challenge
     {
-        [HTTP("GET", "/challenge/v1/public/namespaces/pd3/users/{userId}/eligibility")]
+        [HTTP("GET", "/challenge/v1/public/namespaces/{namespace}/users/{userId}/eligibility")]
         public static bool ChallengeEligibility(HttpRequest _, PC3Server.PC3Session session)
         {
             ResponseCreator creator = new();
@@ -17,7 +17,7 @@ namespace PayCheckServerLib.Responses
             return true;
         }
 
-        [HTTP("GET", "/challenge/v1/public/namespaces/pd3/users/me/records?limit={limit}&offset={offset}")]
+        [HTTP("GET", "/challenge/v1/public/namespaces/{namespace}/users/me/records?limit={limit}&offset={offset}")]
         public static bool ChallengeRecordsSplit(HttpRequest _, PC3Server.PC3Session session)
         {
             var offset = int.Parse(session.HttpParam["offset"]);

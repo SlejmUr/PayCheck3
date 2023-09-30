@@ -32,7 +32,7 @@ namespace PayCheckServerLib.Responses
             return null;
         }
 
-        [HTTP("POST", "/platform/public/namespaces/pd3/users/{userid}/orders")]
+        [HTTP("POST", "/platform/public/namespaces/{namespace}/users/{userid}/orders")]
         public static bool UserOrders(HttpRequest request, PC3Server.PC3Session session)
         {
             //ResponseCreator response = new ResponseCreator();
@@ -45,7 +45,7 @@ namespace PayCheckServerLib.Responses
 
             var body = JsonConvert.DeserializeObject<OrderPostBody>(request.Body) ?? throw new Exception("UserOrders -> body is null!");
             if (!Directory.Exists("Orders")) { Directory.CreateDirectory("Orders"); }
-            File.WriteAllText($"Orders/{session.HttpParam["userid"]}_{body.ItemId}", request.Body);
+            File.WriteAllText($"Orders/{session.HttpParam["namespace"]}_{session.HttpParam["userid"]}_{body.ItemId}", request.Body);
 
             ResponseCreator response = new();
             var ordernumber = GenOrderNumber();
@@ -53,7 +53,7 @@ namespace PayCheckServerLib.Responses
             Order order = new()
             {
                 OrderNo = ordernumber,
-                Namespace = "pd3",
+                Namespace = session.HttpParam["namespace"],
                 UserId = session.HttpParam["userid"],
                 ItemId = item.ItemId,
                 Sandbox = false,
@@ -71,7 +71,7 @@ namespace PayCheckServerLib.Responses
                     CurrencySymbol = body.CurrencyCode,
                     // CASH = Cash, GOLD = CStacks
                     CurrencyType = (body.CurrencyCode == "CASH" || body.CurrencyCode == "GOLD") ? "VIRTUAL" : "REAL",
-                    Namespace = "pd3",
+                    Namespace = session.HttpParam["namespace"],
                     Decimals = 0
                 },
                 // will be like this until i can confirm they are the same type ~HW12Dev

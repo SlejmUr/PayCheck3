@@ -9,7 +9,7 @@ namespace PayCheckServerLib.Responses
 {
     public class CloudSave
     {
-        [HTTP("GET", "/cloudsave/v1/namespaces/pd3/records/title-data")]
+        [HTTP("GET", "/cloudsave/v1/namespaces/{namespace}/records/title-data")]
         public static bool TitleData(HttpRequest _, PC3Server.PC3Session session)
         {
             ResponseCreator response = new();
@@ -19,7 +19,7 @@ namespace PayCheckServerLib.Responses
                 CreatedAt = "2023-06-23T07:21:11.604Z",
                 UpdatedAt = "2023-06-23T07:21:11.604Z",
                 Key = "title-data",
-                Namespace = "pd3",
+                Namespace = session.HttpParam["namespace"],
                 Value = new()
                 {
                     { "TitleData", "My Fancy Title Data" }
@@ -30,16 +30,18 @@ namespace PayCheckServerLib.Responses
             return true;
         }
 
-        [HTTP("GET", "/cloudsave/v1/namespaces/pd3/records/news-feed")]
+        [HTTP("GET", "/cloudsave/v1/namespaces/{namespace}/records/news-feed")]
         public static bool NewsFeed(HttpRequest _, PC3Server.PC3Session session)
         {
             ResponseCreator response = new();
+            //todo:
+            //  make into json C# and replace namespace
             response.SetBody(File.ReadAllText("./Files/NewsFeed.json"));
             session.SendResponse(response.GetResponse());
             return true;
         }
 
-        [HTTP("GET", "/cloudsave/v1/namespaces/pd3/records/infamy-translation-table")]
+        [HTTP("GET", "/cloudsave/v1/namespaces/{namespace}/records/infamy-translation-table")]
         public static bool InfamyTranslationTable(HttpRequest _, PC3Server.PC3Session session)
         {
             ResponseCreator response = new();
@@ -49,7 +51,7 @@ namespace PayCheckServerLib.Responses
                 CreatedAt = "2023-06-27T12:18:00.00Z",
                 UpdatedAt = "2023-06-27T12:18:00.00Z",
                 Key = "infamy-translation-table",
-                Namespace = "pd3",
+                Namespace = session.HttpParam["namespace"],
                 SetBy = "SERVER",
                 Value = new()
                 {
@@ -65,7 +67,7 @@ namespace PayCheckServerLib.Responses
             return true;
         }
 
-        [HTTP("POST", "/cloudsave/v1/namespaces/pd3/records/bulk")]
+        [HTTP("POST", "/cloudsave/v1/namespaces/{namespace}/records/bulk")]
         public static bool RecordsBulk(HttpRequest request, PC3Server.PC3Session session)
         {
             var req = JsonConvert.DeserializeObject<WeaponsTableREQ>(request.Body) ?? throw new Exception("WeaponsTableREQ is null!");
@@ -92,25 +94,29 @@ namespace PayCheckServerLib.Responses
             return true;
         }
 
-        [HTTP("GET", "/cloudsave/v1/namespaces/pd3/records/meta-events")]
+        [HTTP("GET", "/cloudsave/v1/namespaces/{namespace}/records/meta-events")]
         public static bool MetaEvents(HttpRequest _, PC3Server.PC3Session session)
         {
             ResponseCreator response = new();
+            //todo:
+            //  make into json C# and replace namespace
             response.SetBody(File.ReadAllText("Files/MetaEvents.json"));
             session.SendResponse(response.GetResponse());
             return true;
         }
 
-        [HTTP("GET", "/cloudsave/v1/namespaces/pd3/records/security-firm-rotation")]
+        [HTTP("GET", "/cloudsave/v1/namespaces/{namespace}/records/security-firm-rotation")]
         public static bool SecurityFirmRotation(HttpRequest _, PC3Server.PC3Session session)
         {
             ResponseCreator response = new();
+            //todo:
+            //  make into json C# and replace namespace
             response.SetBody(File.ReadAllText("Files/FirmRotation.json"));
             session.SendResponse(response.GetResponse());
             return true;
         }
 
-        [HTTP("GET", "/cloudsave/v1/namespaces/pd3/users/{userId}/records/PlatformBlockedPlayerData")]
+        [HTTP("GET", "/cloudsave/v1/namespaces/{namespace}/users/{userId}/records/PlatformBlockedPlayerData")]
         public static bool PlatformBlockedPlayerData(HttpRequest _, PC3Server.PC3Session session)
         {
             var userID = session.HttpParam["userId"];
@@ -126,17 +132,17 @@ namespace PayCheckServerLib.Responses
         }
 
 
-        [HTTP("GET", "/cloudsave/v1/namespaces/pd3/users/{userId}/records/progressionsavegame")]
+        [HTTP("GET", "/cloudsave/v1/namespaces/{namespace}/users/{userId}/records/progressionsavegame")]
         public static bool ProgressionsavegameGET(HttpRequest _, PC3Server.PC3Session session)
         {
             var userID = session.HttpParam["userId"];
             var response = new ResponseCreator();
-            if (SaveHandler.IsUserExist(userID))
+            if (SaveHandler.IsUserExist(userID, session.HttpParam["namespace"]))
             {
                 Progression.Basic? save = null;
                 try
                 {
-                    save = Progression.Basic.FromJson(SaveHandler.ReadUserSTR(userID));
+                    save = Progression.Basic.FromJson(SaveHandler.ReadUserSTR(userID, session.HttpParam["namespace"]));
                     save.ProgressionSaveGame.LastTimeEventCheck = TimeHelper.GetEpochTime();
                 }
                 catch
@@ -152,7 +158,7 @@ namespace PayCheckServerLib.Responses
                     Value = save,
                     IsPublic = false,
                     Key = "progressionsavegame",
-                    Namespace = "pd3",
+                    Namespace = session.HttpParam["namespace"],
                     SetBy = "CLIENT"
                 };
                 response.SetBody(JsonConvert.SerializeObject(saveRSP, Progression.Converter.Settings));
@@ -170,13 +176,13 @@ namespace PayCheckServerLib.Responses
             return true;
         }
 
-        [HTTP("POST", "/cloudsave/v1/namespaces/pd3/users/{userId}/records/progressionsavegame")]
+        [HTTP("POST", "/cloudsave/v1/namespaces/{namespace}/users/{userId}/records/progressionsavegame")]
         public static bool ProgressionsavegamePOST(HttpRequest request, PC3Server.PC3Session session)
         {
             var userID = session.HttpParam["userId"];
-            SaveHandler.SaveUser(userID, request.BodyBytes);
+            SaveHandler.SaveUser(userID, session.HttpParam["namespace"], request.BodyBytes);
             if (ConfigHelper.ServerConfig.Saves.SaveRequest)
-                SaveHandler.SaveUser_Request(userID, request.Body);
+                SaveHandler.SaveUser_Request(userID, session.HttpParam["namespace"], request.Body);
             
             Progression.Basic? save = null;
             try
@@ -197,7 +203,7 @@ namespace PayCheckServerLib.Responses
                 Value = save,
                 IsPublic = false,
                 Key = "progressionsavegame",
-                Namespace = "pd3",
+                Namespace = session.HttpParam["namespace"],
                 SetBy = "CLIENT"
             };
             ResponseCreator response = new();

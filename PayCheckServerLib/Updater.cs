@@ -70,7 +70,7 @@ namespace PayCheckServerLib
                                 Debugger.PrintInfo("Updating started!");
                                 HttpClient client = new();
                                 var FilesData = client.GetStringAsync(FilesUrl + KeyPair.Key).Result;
-                                File.WriteAllText(KeyPair.Key, FilesData);
+                                File.WriteAllText("Files/" + KeyPair.Key, FilesData);
                             }
                             else
                             {
@@ -89,6 +89,36 @@ namespace PayCheckServerLib
                 }
             }
             Debugger.PrintInfo("Update Finished!");
+        }
+
+
+        public static void DownloadBetaFiles()
+        {
+            Dictionary<string, string> LocalFiles = new();
+            foreach (var file in Directory.GetFiles("./Files"))
+            {
+                string hash = BitConverter.ToString(SHA256.HashData(File.ReadAllBytes(file))).Replace("-", "").ToLower();
+                LocalFiles.Add(file.Replace("./Files\\", ""), hash);
+            }
+            HttpClient client = new();
+            var FilesData = client.GetStringAsync(FilesUrl.Replace("main", "pd3beta") + "Hashes.json").Result;
+            Dictionary<string, string> Files = JsonConvert.DeserializeObject<Dictionary<string, string>>(FilesData)!;
+            Files.Remove("WeaponTables.json");
+            foreach (var KeyPair in Files)
+            {
+                if (LocalFiles[KeyPair.Key] != Files[KeyPair.Key])
+                {
+                    client = new();
+                    var data = client.GetStringAsync(FilesUrl.Replace("main", "pd3beta") + KeyPair.Key).Result;
+                    File.WriteAllText("Files/" + KeyPair.Key, data);
+                }
+                else
+                {
+                    Debugger.PrintInfo("File " + KeyPair.Key+ " is already downgraded to Beta!");
+                }
+
+            }
+            Debugger.PrintInfo("Downgrade Finished!");
         }
 
         public static event EventHandler<string> UpdateWithUI;

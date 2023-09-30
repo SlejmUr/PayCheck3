@@ -15,7 +15,7 @@ namespace PayCheckServerLib.Helpers
         /// <param name="platform">Steam or Device</param>
         /// <param name="UserName">Unique username</param>
         /// <returns>The new User</returns>
-        public static User RegisterUser(string PlatformId, TokenHelper.TokenPlatform platform, string UserName)
+        public static User RegisterUser(string PlatformId, TokenHelper.TokenPlatform platform, string UserName, string NameSpace)
         {
             User user = new()
             {
@@ -36,7 +36,8 @@ namespace PayCheckServerLib.Helpers
                     activity = "nil",
                     platform = "nil",
                     lastSeenAt = "2023-09-08T12:00:00Z"
-                }
+                },
+                Namespace = NameSpace
             };
             SaveUser(user);
             Debugger.PrintInfo("User has been registered!");
@@ -49,10 +50,13 @@ namespace PayCheckServerLib.Helpers
         /// <param name="PlaformId">SteamId or DeviceId</param>
         /// <param name="platform">Steam or Device</param>
         /// <returns>True or False</returns>
-        public static bool CheckUser(string PlaformId, TokenHelper.TokenPlatform platform)
+        public static bool CheckUser(string PlaformId, TokenHelper.TokenPlatform platform, string NameSpace)
         {
             foreach (User item in GetUsers())
             {
+                if (item.Namespace != NameSpace)
+                    continue;
+
                 if (item.UserData.PlatformUserIds.TryGetValue(platform.ToString().ToLower(), out var pId))
                 {
                     if (pId != null)
@@ -60,7 +64,7 @@ namespace PayCheckServerLib.Helpers
                 }
             }
 
-            return true;
+            return false;
         }
 
         /// <summary>
@@ -69,10 +73,13 @@ namespace PayCheckServerLib.Helpers
         /// <param name="PlaformId">SteamId or DeviceId</param>
         /// <param name="platform">Steam or Device</param>
         /// <returns>User object or null</returns>
-        public static User? GetUser(string PlaformId, TokenHelper.TokenPlatform platform)
+        public static User? GetUser(string PlaformId, TokenHelper.TokenPlatform platform, string NameSpace)
         {
             foreach (User item in GetUsers())
             {
+                if (item.Namespace != NameSpace)
+                    continue;
+
                 if (item.UserData.PlatformUserIds.TryGetValue(platform.ToString().ToLower(), out var pId))
                 {
                     if (pId != null & pId == PlaformId)
@@ -83,19 +90,35 @@ namespace PayCheckServerLib.Helpers
             return null;
         }
 
+        public static User? GetUser(string UserId, string NameSpace)
+        {
+            foreach (User item in GetUsers())
+            {
+                if (item.Namespace != NameSpace)
+                    continue;
+                if (item.UserData.UserId == UserId)
+                    return item;
+            }
+
+            return null;
+        }
+
+
+
+
         /// <summary>
         /// Login User with Parameters, If not exist it will create one!
         /// </summary>
         /// <param name="PlaformId">SteamId or DeviceId</param>
         /// <param name="platform">Steam or Device</param>
         /// <returns>AccessToken and RefleshToken</returns>
-        public static (TokenHelper.Token AccessToken, TokenHelper.Token RefleshToken) LoginUser(string PlaformId, TokenHelper.TokenPlatform platform)
+        public static (TokenHelper.Token AccessToken, TokenHelper.Token RefleshToken) LoginUser(string PlaformId, TokenHelper.TokenPlatform platform, string NameSpace)
         {
-            var user = GetUser(PlaformId, platform);
+            var user = GetUser(PlaformId, platform, NameSpace);
             if (user == null)
             {
                 Debugger.PrintWarn("User Is not Registered! Continue generating DefaultUser...", "USERCONTROLLER.WARN");
-                user = RegisterUser(PlaformId, platform, "DefaultUser");
+                user = RegisterUser(PlaformId, platform, "DefaultUser", NameSpace);
             }
             var token = TokenHelper.GenerateNewTokenFromUser(user, platform);
             TokenHelper.StoreToken(token);

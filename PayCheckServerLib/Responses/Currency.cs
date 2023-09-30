@@ -7,14 +7,15 @@ namespace PayCheckServerLib.Responses
 {
     public class Currency
     {
-        [HTTP("GET", "/platform/public/namespaces/pd3/users/{userId}/wallets/{currency}")]
+        [HTTP("GET", "/platform/public/namespaces/{namespace}/users/{userId}/wallets/{currency}")]
         public static bool GetUserCurrency(HttpRequest request, PC3Server.PC3Session session)
         {
             var userID = session.HttpParam["userId"];
             var currencyType = session.HttpParam["currency"];
+            var nspace = session.HttpParam["namespace"];
             var currencySymbol = currencyType == "CRED" ? "CREDITS" : currencyType;
             // return fake data for now
-            Debugger.PrintDebug(String.Format("pd3_{0}_{1}", userID, currencyType));
+            Debugger.PrintDebug(String.Format("{0}_{1}_{2}", nspace, userID, currencyType));
             ResponseCreator response = new ResponseCreator();
             int balance = 0;
             if (ConfigHelper.ServerConfig.InDevFeatures.GiveMeMoney > 0)
@@ -24,8 +25,8 @@ namespace PayCheckServerLib.Responses
                 Balance = balance,
                 CurrencyCode = currencyType,
                 CurrencySymbol = currencySymbol,
-                Id = String.Format("pd3_{0}_{1}", userID, currencyType),
-                Namespace = "pd3",
+                Id = String.Format("{0}_{1}_{2}", nspace, userID, currencyType),
+                Namespace = nspace,
                 Status = "ACTIVE",
                 UserId = userID,
                 WalletInfos = new()
@@ -38,7 +39,7 @@ namespace PayCheckServerLib.Responses
                         CurrencyCode = currencyType,
                         CurrencySymbol = currencySymbol,
                         Id = "8ab9cfab89c2807f0189c3b882f659c6",
-                        Namespace = "pd3",
+                        Namespace = nspace,
                         Status = "ACTIVE",
                         TimeLimitedBalances = new(),
                         TotalPermanentBalance = balance,
