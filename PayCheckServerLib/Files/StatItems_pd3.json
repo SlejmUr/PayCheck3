@@ -1,0 +1,3886 @@
+[
+  {
+    "statCode": "achievements-rewarded",
+    "statName": "Achievements rewarded",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-08-01T07:55:25.377Z",
+    "updatedAt": "2023-10-02T14:46:56.902Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "armoredtransport-loud-hard-best-time",
+    "statName": "Armored Transport Loud Hard Best Time",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-08-23T08:00:22.296Z",
+    "updatedAt": "2023-10-02T14:46:56.913Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "armoredtransport-loud-normal-best-time",
+    "statName": "Armored Transport Loud Normal Best Time",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-08-11T09:33:19.004Z",
+    "updatedAt": "2023-10-02T14:46:56.904Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "armoredtransport-loud-overkill-best-time",
+    "statName": "Armored Transport Loud Overkill Best Time",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-08-28T14:28:08.887Z",
+    "updatedAt": "2023-10-02T14:46:56.899Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "armoredtransport-loud-veryhard-best-time",
+    "statName": "Armored Transport Loud Very Hard Best Time",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-11T11:53:27.046Z",
+    "updatedAt": "2023-10-02T14:46:56.923Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "armoredtransport-stealth-normal-best-time",
+    "statName": "Armored Transport Stealth Normal Best Time",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-08-28T13:08:58.908Z",
+    "updatedAt": "2023-08-31T07:43:02.114Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "artgallery-loud-hard-best-time",
+    "statName": "Art Gallery Loud Hard Best Time",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-08-25T15:01:25.368Z",
+    "updatedAt": "2023-10-02T14:46:56.917Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "artgallery-loud-normal-best-time",
+    "statName": "Art Gallery Loud Normal Best Time",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-08-11T10:09:23.971Z",
+    "updatedAt": "2023-10-02T14:46:56.911Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "artgallery-loud-overkill-best-time",
+    "statName": "Art Gallery Loud Overkill Best Time",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-08-28T14:15:16.045Z",
+    "updatedAt": "2023-10-02T14:46:56.920Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "artgallery-loud-veryhard-best-time",
+    "statName": "Art Gallery Loud Very hard Best Time",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-08-29T08:37:07.911Z",
+    "updatedAt": "2023-10-02T14:45:56.893Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "artgallery-stealth-hard-best-time",
+    "statName": "Art Gallery best time on hard and stealth",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-08-29T14:44:57.812Z",
+    "updatedAt": "2023-10-02T14:43:56.834Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "artgallery-stealth-normal-best-time",
+    "statName": "Art Gallery Stealth Normal Best Time",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-08-11T11:51:10.393Z",
+    "updatedAt": "2023-10-02T14:45:56.873Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "artgallery-stealth-overkill-best-time",
+    "statName": "Art Gallery Stealth Overkill Best Time",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-18T19:14:24.136Z",
+    "updatedAt": "2023-10-02T14:44:56.848Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "artgallery-stealth-veryhard-best-time",
+    "statName": "Art Gallery Stealth Very Hard Best Time",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-18T19:04:42.968Z",
+    "updatedAt": "2023-10-02T14:46:56.923Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "assault-human-shield-time",
+    "statName": "Assault Human Shield Time",
+    "namespace": "pd3",
+    "value": 0.0,
+    "tags": [
+      "Human",
+      "Shield",
+      "Combat",
+      "Time"
+    ],
+    "createdAt": "2023-08-01T07:13:41.123Z",
+    "updatedAt": "2023-10-02T14:46:56.901Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "branchbank-loud-hard-best-time",
+    "statName": "Branch Bank Loud Hard Best Time",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-08-23T11:20:50.741Z",
+    "updatedAt": "2023-10-02T14:46:56.905Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "branchbank-loud-normal-best-time",
+    "statName": "Branch Bank Loud Normal Best Time",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-08-01T14:06:22.947Z",
+    "updatedAt": "2023-10-02T14:46:56.906Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "branchbank-loud-overkill-best-time",
+    "statName": "Branch Bank Loud Overkill Best Time",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-08-28T13:21:46.580Z",
+    "updatedAt": "2023-10-02T14:46:56.924Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "branchbank-loud-veryhard-best-time",
+    "statName": "Branch Bank Loud Very Hard Best Time",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-08-29T13:42:09.169Z",
+    "updatedAt": "2023-10-02T14:46:56.923Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "branchbank-stealth-hard-best-time",
+    "statName": "Branch Bank Stealth Hard Best Time",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-08-24T14:01:01.347Z",
+    "updatedAt": "2023-10-02T14:46:56.919Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "branchbank-stealth-normal-best-time",
+    "statName": "Branch Bank Stealth Normal Best Time",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-08-11T13:18:28.281Z",
+    "updatedAt": "2023-10-02T14:46:56.907Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "branchbank-stealth-overkill-best-time",
+    "statName": "Branch Bank Stealth Overkill Best Time",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-08-07T22:24:40.842Z",
+    "updatedAt": "2023-10-02T14:46:56.910Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "branchbank-stealth-veryhard-best-time",
+    "statName": "Branch Bank Stealth Very Hard Best Time",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-08-07T23:15:00.935Z",
+    "updatedAt": "2023-10-02T14:46:56.904Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "cargodock-loud-hard-best-time",
+    "statName": "Cargo Dock Loud Hard Best Time",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-08-25T12:56:30.258Z",
+    "updatedAt": "2023-10-02T14:46:56.919Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "cargodock-loud-normal-best-time",
+    "statName": "Cargo Dock Loud Normal Best Time",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-08-11T10:54:15.759Z",
+    "updatedAt": "2023-10-02T14:46:56.910Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "cargodock-loud-overkill-best-time",
+    "statName": "Cargo Dock Loud Overkill Best Time",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-18T18:57:23.364Z",
+    "updatedAt": "2023-10-02T14:44:56.843Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "cargodock-loud-veryhard-best-time",
+    "statName": "Cargo Dock Loud Very Hard Best Time",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-08-25T14:36:25.593Z",
+    "updatedAt": "2023-10-02T14:45:56.886Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "cargodock-stealth-hard-best-time",
+    "statName": "Cargo Dock Stealth Hard Best Time",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-08-29T08:56:19.807Z",
+    "updatedAt": "2023-10-02T14:46:56.902Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "cargodock-stealth-normal-best-time",
+    "statName": "Cargo Dock Stealth Normal Best Time",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-08-24T11:52:45.944Z",
+    "updatedAt": "2023-10-02T14:46:56.910Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "cargodock-stealth-overkill-best-time",
+    "statName": "Cargo Dock Stealth Overkill Best Time",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-18T20:24:44.575Z",
+    "updatedAt": "2023-10-02T14:46:56.911Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "cargodock-stealth-veryhard-best-time",
+    "statName": "Cargo Dock Stealth Very Hard Best Time",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-11T14:24:29.121Z",
+    "updatedAt": "2023-10-02T14:46:56.900Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "firstplayable-loud-hard-best-time",
+    "statName": "First Playable Loud Hard Best Time",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-08-23T12:34:47.420Z",
+    "updatedAt": "2023-10-02T14:46:56.916Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "firstplayable-loud-normal-best-time",
+    "statName": "First Playable Loud Normal Best Time",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-08-11T10:35:43.909Z",
+    "updatedAt": "2023-10-02T14:46:56.923Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "firstplayable-loud-overkill-best-time",
+    "statName": "First Playable Loud Overkill Best Time",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-08-23T11:48:20.078Z",
+    "updatedAt": "2023-10-02T14:46:56.921Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "firstplayable-loud-veryhard-best-time",
+    "statName": "First Playable Loud Very hard Best Time",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-13T12:53:32.592Z",
+    "updatedAt": "2023-10-02T14:45:56.880Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "firstplayable-max-payout-achievement-epic",
+    "statName": "Sharke Bank Max Payout Achievement Epic",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-05T07:11:21.218Z",
+    "updatedAt": "2023-09-05T07:11:21.218Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "firstplayable-stealth-hard-best-time",
+    "statName": "First Playable Stealth Hard Best Time",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-08-25T09:48:24.632Z",
+    "updatedAt": "2023-10-02T14:45:56.894Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "firstplayable-stealth-normal-best-time",
+    "statName": "First Playable Stealth Normal Best Time",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-08-11T13:08:59.625Z",
+    "updatedAt": "2023-10-02T14:46:56.907Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "firstplayable-stealth-overkill-best-time",
+    "statName": "First Playable Stealth Overkill Best Time",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-08-23T10:15:30.908Z",
+    "updatedAt": "2023-10-02T14:46:56.917Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "firstplayable-stealth-veryhard-best-time",
+    "statName": "First Playable Stealth Very hard Best Time",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-18T17:30:41.339Z",
+    "updatedAt": "2023-10-02T14:43:56.833Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "game-started",
+    "statName": "Game Started",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-08-01T03:24:54.004Z",
+    "updatedAt": "2023-10-02T14:46:56.900Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "jewelrystore-loud-hard-best-time",
+    "statName": "Jewelry Store Loud Hard Best Time",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-08-25T12:50:03.035Z",
+    "updatedAt": "2023-10-02T14:46:56.905Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "jewelrystore-loud-normal-best-time",
+    "statName": "Jewelry Store Loud Normal Best Time",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-08-01T14:45:11.661Z",
+    "updatedAt": "2023-10-02T14:46:56.907Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "jewelrystore-loud-overkill-best-time",
+    "statName": "Jewelry Store Loud Overkill Best Time",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-08-23T09:14:00.290Z",
+    "updatedAt": "2023-10-02T14:46:56.910Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "jewelrystore-loud-veryhard-best-time",
+    "statName": "Jewelry Store Loud Very hard Best Time",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-08-23T13:18:54.175Z",
+    "updatedAt": "2023-10-02T14:45:56.881Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "jewelrystore-stealth-hard-best-time",
+    "statName": "Jewelry Store Stealth Hard Best Time",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-08-24T07:22:32.545Z",
+    "updatedAt": "2023-10-02T14:46:56.898Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "jewelrystore-stealth-normal-best-time",
+    "statName": "Jewelry Store Stealth Normal Best Time",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-08-11T11:24:38.359Z",
+    "updatedAt": "2023-10-02T14:46:56.905Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "jewelrystore-stealth-overkill-best-time",
+    "statName": "Jewelry Store Stealth Overkill Best Time",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-08-29T12:33:23.759Z",
+    "updatedAt": "2023-10-02T14:46:56.924Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "jewelrystore-stealth-veryhard-best-time",
+    "statName": "Jewelry Store Stealth Very Hard Best Time",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-18T16:20:40.250Z",
+    "updatedAt": "2023-10-02T14:45:56.882Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "jump-kills",
+    "statName": "Jump Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "tags": [
+      "Combat",
+      "Jump",
+      "Kill"
+    ],
+    "createdAt": "2023-08-01T08:02:08.996Z",
+    "updatedAt": "2023-10-02T14:46:56.903Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "nightclub-loud-hard-best-time",
+    "statName": "Night Club Loud Hard Best Time",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-08-24T08:30:25.364Z",
+    "updatedAt": "2023-10-02T14:46:56.898Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "nightclub-loud-normal-best-time",
+    "statName": "Night Club Loud Normal Best Time",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-08-11T09:57:02.256Z",
+    "updatedAt": "2023-10-02T14:46:56.910Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "nightclub-loud-overkill-best-time",
+    "statName": "Night Club Loud Overkill Best Time",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-06T13:45:58.674Z",
+    "updatedAt": "2023-10-02T14:46:56.918Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "nightclub-loud-veryhard-best-time",
+    "statName": "Night Club Loud Very Hard Best Time",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-08-24T10:14:44.879Z",
+    "updatedAt": "2023-10-02T14:46:56.899Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "nightclub-stealth-hard-best-time",
+    "statName": "Night Club Stealth Hard Best Time",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-08-24T07:28:11.647Z",
+    "updatedAt": "2023-10-02T14:46:56.897Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "nightclub-stealth-normal-best-time",
+    "statName": "Night Club Stealth Normal Best Time",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-08-23T10:05:37.726Z",
+    "updatedAt": "2023-10-02T14:46:56.923Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "nightclub-stealth-overkill-best-time",
+    "statName": "Night Club Stealth Overkill Best Time",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-08-24T12:12:41.793Z",
+    "updatedAt": "2023-10-02T14:46:56.907Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "nightclub-stealth-veryhard-best-time",
+    "statName": "Night Club Stealth Very Hard Best Time",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-08-23T14:49:04.030Z",
+    "updatedAt": "2023-10-02T14:46:56.900Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "penthouse-loud-hard-best-time",
+    "statName": "Penthouse Loud Hard Best Time",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-08-24T12:43:55.466Z",
+    "updatedAt": "2023-10-02T14:46:56.911Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "penthouse-loud-normal-best-time",
+    "statName": "Penthouse Loud Normal Best Time",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-08-11T11:09:04.452Z",
+    "updatedAt": "2023-10-02T14:46:56.903Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "armoredtransport-loud-normal",
+    "statName": "Armored Transport Loud Normal",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-22T07:31:48.792Z",
+    "updatedAt": "2023-09-22T07:31:48.795Z",
+    "userId": "UserId",
+    "tags": [
+      "Loud",
+      "Transport",
+      "Normal",
+      "Map",
+      "Armored"
+    ]
+  },
+  {
+    "statCode": "armoredtransport-max-payout",
+    "statName": "Armored Transport Max Payout",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-22T07:31:48.813Z",
+    "updatedAt": "2023-09-22T07:31:48.817Z",
+    "userId": "UserId",
+    "tags": [
+      "Max",
+      "Payout",
+      "Transport",
+      "Map",
+      "Armored"
+    ]
+  },
+  {
+    "statCode": "assaultrifle-car4-ads-kills",
+    "statName": "CAR4 Aim Down Sights Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-22T07:25:25.500Z",
+    "updatedAt": "2023-09-22T07:28:26.424Z",
+    "userId": "UserId",
+    "tags": [
+      "ADS",
+      "Combat",
+      "Kill",
+      "CAR4"
+    ]
+  },
+  {
+    "statCode": "assaultrifle-car4-armored-headshot-kills",
+    "statName": "CAR4 Armored Headshot Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-22T07:27:26.903Z",
+    "updatedAt": "2023-09-22T08:19:25.392Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "assaultrifle-car4-four-mods-equipped",
+    "statName": "CAR4 Four Mods Equipped",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-22T06:58:48.284Z",
+    "updatedAt": "2023-09-22T07:57:56.511Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "assaultrifle-car4-headshot-kills",
+    "statName": "CAR4 Headshot Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-22T07:24:01.524Z",
+    "updatedAt": "2023-09-22T08:33:39.452Z",
+    "userId": "UserId",
+    "tags": [
+      "Combat",
+      "Headshot",
+      "Kill",
+      "CAR4"
+    ]
+  },
+  {
+    "statCode": "assaultrifle-car4-hipfire-kills",
+    "statName": "CAR4 Hipfire Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-21T18:30:56.748Z",
+    "updatedAt": "2023-09-22T08:33:39.426Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "assaultrifle-car4-kills",
+    "statName": "CAR4 Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-21T18:30:56.727Z",
+    "updatedAt": "2023-09-22T08:33:39.436Z",
+    "userId": "UserId",
+    "tags": [
+      "Combat",
+      "Kill",
+      "CAR4"
+    ]
+  },
+  {
+    "statCode": "assaultrifle-car4-mod-equipped",
+    "statName": "CAR4 Mod Equipped",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-22T06:58:48.270Z",
+    "updatedAt": "2023-09-22T07:57:56.506Z",
+    "userId": "UserId",
+    "tags": [
+      "Meta",
+      "Equip",
+      "Mod",
+      "CAR4"
+    ]
+  },
+  {
+    "statCode": "assaultrifle-car4-specialenemies-kills",
+    "statName": "CAR4 Special Enemies Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-22T07:25:25.509Z",
+    "updatedAt": "2023-09-22T07:28:26.429Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "assaultrifle-car4-weapon-level",
+    "statName": "CAR4 Weapon Level",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-21T16:28:51.732Z",
+    "updatedAt": "2023-09-22T07:57:56.425Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "assaultrifle-car4-weapon-points",
+    "statName": "CAR4 Weapon Points",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-21T16:28:51.723Z",
+    "updatedAt": "2023-09-22T07:57:56.418Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "branchbank-max-payout",
+    "statName": "Branch Bank Max Payout",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-22T06:58:48.262Z",
+    "updatedAt": "2023-09-22T06:58:48.265Z",
+    "userId": "UserId",
+    "tags": [
+      "Bank",
+      "Max",
+      "Payout",
+      "Branch",
+      "Map"
+    ]
+  },
+  {
+    "statCode": "branchbank-open-deposit-boxes",
+    "statName": "Branch Bank Open Deposit Boxes",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-21T16:26:39.088Z",
+    "updatedAt": "2023-09-22T06:56:38.050Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "branchbank-open-deposit-boxes-steam",
+    "statName": "Branch Bank Open Deposit Boxes Steam",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-21T16:26:39.099Z",
+    "updatedAt": "2023-09-22T06:56:38.057Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "branchbank-stealth-normal",
+    "statName": "Branch Bank Stealth Normal",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-21T16:28:51.787Z",
+    "updatedAt": "2023-09-22T06:58:48.250Z",
+    "userId": "UserId",
+    "tags": [
+      "Bank",
+      "Branch",
+      "Stealth",
+      "Normal",
+      "Map"
+    ]
+  },
+  {
+    "statCode": "cloaker-kills",
+    "statName": "Cloaker Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-22T07:30:23.282Z",
+    "updatedAt": "2023-09-22T07:30:23.285Z",
+    "userId": "UserId",
+    "tags": [
+      "Combat",
+      "Cloaker",
+      "Kill"
+    ]
+  },
+  {
+    "statCode": "cloaker-save",
+    "statName": "Cloaker Save",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-22T07:27:40.213Z",
+    "updatedAt": "2023-09-22T08:19:25.357Z",
+    "userId": "UserId",
+    "tags": [
+      "Combat",
+      "Save",
+      "Cloaker"
+    ]
+  },
+  {
+    "statCode": "cut-objects",
+    "statName": "Cut Objects",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-22T07:43:55.397Z",
+    "updatedAt": "2023-09-22T07:43:55.402Z",
+    "userId": "UserId",
+    "tags": [
+      "Cut",
+      "Heist"
+    ]
+  },
+  {
+    "statCode": "deploy-ammo-bag",
+    "statName": "Deploy Ammo Bag",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-22T07:25:35.229Z",
+    "updatedAt": "2023-09-22T07:25:35.232Z",
+    "userId": "UserId",
+    "tags": [
+      "Ammo",
+      "Combat",
+      "Deploy"
+    ]
+  },
+  {
+    "statCode": "destroy-choker-belt",
+    "statName": "Destroy Choker Belt",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-22T07:25:25.373Z",
+    "updatedAt": "2023-09-22T07:25:25.378Z",
+    "userId": "UserId",
+    "tags": [
+      "Belt",
+      "Destroy",
+      "Combat",
+      "Choker"
+    ]
+  },
+  {
+    "statCode": "detected-kills",
+    "statName": "Detected Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-22T06:54:43.295Z",
+    "updatedAt": "2023-09-22T08:33:39.419Z",
+    "userId": "UserId",
+    "tags": [
+      "Combat",
+      "Detect",
+      "Kill"
+    ]
+  },
+  {
+    "statCode": "door-sprint",
+    "statName": "Door Sprint",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-22T08:17:58.397Z",
+    "updatedAt": "2023-09-22T08:33:39.460Z",
+    "userId": "UserId",
+    "tags": [
+      "Heist",
+      "Sprint",
+      "Door"
+    ]
+  },
+  {
+    "statCode": "dozer-faceplate",
+    "statName": "Dozer Faceplate",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-22T07:28:22.797Z",
+    "updatedAt": "2023-09-22T07:28:22.800Z",
+    "userId": "UserId",
+    "tags": [
+      "Combat",
+      "Dozer",
+      "Faceplate"
+    ]
+  },
+  {
+    "statCode": "dozer-kills",
+    "statName": "Dozer Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-22T07:28:26.435Z",
+    "updatedAt": "2023-09-22T07:28:26.438Z",
+    "userId": "UserId",
+    "tags": [
+      "Combat",
+      "Kill",
+      "Dozer"
+    ]
+  },
+  {
+    "statCode": "grenadier-kills",
+    "statName": "Grenadier Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-22T07:25:25.376Z",
+    "updatedAt": "2023-09-22T07:25:25.516Z",
+    "userId": "UserId",
+    "tags": [
+      "Combat",
+      "Kill",
+      "Grenadier"
+    ]
+  },
+  {
+    "statCode": "infamy-point",
+    "statName": "Infamy Points",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-21T16:17:00.147Z",
+    "updatedAt": "2023-09-22T08:10:55.236Z",
+    "userId": "UserId",
+    "tags": [
+      "Infamy"
+    ]
+  },
+  {
+    "statCode": "infiltrator-progression-code",
+    "statName": "Infiltrator Progression Level ID",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-22T07:57:56.470Z",
+    "updatedAt": "2023-09-22T07:57:56.473Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "infiltrator-research-code",
+    "statName": "Infiltrator Research Level ID",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-22T06:58:48.228Z",
+    "updatedAt": "2023-09-22T06:58:48.231Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "jewelrystore-optional-objective-3",
+    "statName": "Jewelry Store Optional Objective 3",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-22T07:54:01.852Z",
+    "updatedAt": "2023-09-22T07:54:01.855Z",
+    "userId": "UserId",
+    "tags": [
+      "Optional",
+      "Jewelry",
+      "Map"
+    ]
+  },
+  {
+    "statCode": "jewelrystore-optional-objective-4",
+    "statName": "Jewelry Store Optional Objective 4",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-22T07:54:44.197Z",
+    "updatedAt": "2023-09-22T07:54:44.202Z",
+    "userId": "UserId",
+    "tags": [
+      "Optional",
+      "Jewelry",
+      "Map"
+    ]
+  },
+  {
+    "statCode": "jewelrystore-stealth-normal",
+    "statName": "Jewelry Store Stealth Normal",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-22T07:57:56.481Z",
+    "updatedAt": "2023-09-22T07:57:56.486Z",
+    "userId": "UserId",
+    "tags": [
+      "Stealth",
+      "Jewelry",
+      "Normal",
+      "Map"
+    ]
+  },
+  {
+    "statCode": "lock-picked",
+    "statName": "Locks Picked",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-21T16:17:19.994Z",
+    "updatedAt": "2023-09-22T08:46:08.058Z",
+    "userId": "UserId",
+    "tags": [
+      "Heist",
+      "Lock"
+    ]
+  },
+  {
+    "statCode": "mark-camera",
+    "statName": "Mark Security Cameras",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-21T16:17:59.990Z",
+    "updatedAt": "2023-09-22T08:46:08.066Z",
+    "userId": "UserId",
+    "tags": [
+      "Heist",
+      "Camera"
+    ]
+  },
+  {
+    "statCode": "mark-guard",
+    "statName": "Mark Security Guards",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-21T16:16:59.993Z",
+    "updatedAt": "2023-09-22T08:43:19.759Z",
+    "userId": "UserId",
+    "tags": [
+      "Guard",
+      "Heist"
+    ]
+  },
+  {
+    "statCode": "mask-on",
+    "statName": "Mask On",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-21T18:30:49.780Z",
+    "updatedAt": "2023-09-22T07:49:18.526Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "mask-on-steam",
+    "statName": "Mask On Steam",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-21T18:30:49.794Z",
+    "updatedAt": "2023-09-22T07:49:18.533Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "medic-progression-code",
+    "statName": "Medic Progression Level ID",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-21T16:28:51.777Z",
+    "updatedAt": "2023-09-22T07:57:56.456Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "mower-progression-code",
+    "statName": "Mower Progression Level ID",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-22T06:58:48.242Z",
+    "updatedAt": "2023-09-22T07:57:56.463Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "mower-research-code",
+    "statName": "Mower Research Level ID",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-21T16:28:51.768Z",
+    "updatedAt": "2023-09-21T16:28:51.771Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "nightclub-optional-objective-2",
+    "statName": "Nightclub Optional Objective 2",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-22T08:10:39.557Z",
+    "updatedAt": "2023-09-22T08:39:06.510Z",
+    "userId": "UserId",
+    "tags": [
+      "Night",
+      "Optional",
+      "Club",
+      "Map"
+    ]
+  },
+  {
+    "statCode": "pistol-s40-ads-kills",
+    "statName": "S40 Aim Down Sights Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-22T07:25:41.544Z",
+    "updatedAt": "2023-09-22T07:49:22.394Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "pistol-s40-armored-headshot-kills",
+    "statName": "S40 Armored Headshot Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-22T07:31:09.810Z",
+    "updatedAt": "2023-09-22T07:31:09.813Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "pistol-s40-headshot-kills",
+    "statName": "S40 Headshot Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-22T07:25:45.443Z",
+    "updatedAt": "2023-09-22T07:49:22.388Z",
+    "userId": "UserId",
+    "tags": [
+      "Combat",
+      "Headshot",
+      "Kill",
+      "S40"
+    ]
+  },
+  {
+    "statCode": "pistol-s40-hipfire-kills",
+    "statName": "S40 Hipfire Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-22T06:54:43.312Z",
+    "updatedAt": "2023-09-22T07:31:09.804Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "pistol-s40-kills",
+    "statName": "S40 Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-22T06:54:43.303Z",
+    "updatedAt": "2023-09-22T07:49:22.381Z",
+    "userId": "UserId",
+    "tags": [
+      "Combat",
+      "Kill",
+      "S40"
+    ]
+  },
+  {
+    "statCode": "pistol-s40-longrange-kills",
+    "statName": "S40 Long Range Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-22T07:25:41.566Z",
+    "updatedAt": "2023-09-22T07:31:03.510Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "pistol-s40-mod-equipped",
+    "statName": "S40 Mod Equipped",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-21T16:28:51.807Z",
+    "updatedAt": "2023-09-22T07:57:56.519Z",
+    "userId": "UserId",
+    "tags": [
+      "Meta",
+      "Equip",
+      "Mod",
+      "S40"
+    ]
+  },
+  {
+    "statCode": "pistol-s40-specialenemies-kills",
+    "statName": "s40 Special Enemy Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-22T07:30:22.232Z",
+    "updatedAt": "2023-09-22T07:30:23.277Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "pistol-s40-suppressor-kills",
+    "statName": "S40 Suppressor Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-22T06:54:43.320Z",
+    "updatedAt": "2023-09-22T07:49:22.399Z",
+    "userId": "UserId",
+    "tags": [
+      "Legion",
+      "Combat",
+      "Suppressor",
+      "Kill",
+      "S40"
+    ]
+  },
+  {
+    "statCode": "pistol-s40-weapon-level",
+    "statName": "S40 Weapon Level",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-21T16:28:51.755Z",
+    "updatedAt": "2023-09-22T07:57:56.439Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "pistol-s40-weapon-points",
+    "statName": "S40 Weapon Points",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-21T16:28:51.744Z",
+    "updatedAt": "2023-09-22T07:57:56.432Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "shield-kills",
+    "statName": "Shield Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-22T07:24:34.067Z",
+    "updatedAt": "2023-09-22T07:29:42.981Z",
+    "userId": "UserId",
+    "tags": [
+      "Shield",
+      "Combat",
+      "Kill"
+    ]
+  },
+  {
+    "statCode": "slide-distance",
+    "statName": "Slide Distance",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-22T06:57:22.084Z",
+    "updatedAt": "2023-09-22T08:17:58.382Z",
+    "userId": "UserId",
+    "tags": [
+      "Slide",
+      "Combat",
+      "Distance"
+    ]
+  },
+  {
+    "statCode": "sniper-kills",
+    "statName": "Sniper Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-22T07:25:41.629Z",
+    "updatedAt": "2023-09-22T07:31:03.523Z",
+    "userId": "UserId",
+    "tags": [
+      "Combat",
+      "Kill",
+      "Sniper"
+    ]
+  },
+  {
+    "statCode": "tank-research-code",
+    "statName": "Tank Research Level ID",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-22T07:31:48.769Z",
+    "updatedAt": "2023-09-22T07:57:56.448Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "taser-kills",
+    "statName": "Taser Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-22T07:30:22.241Z",
+    "updatedAt": "2023-09-22T07:30:22.244Z",
+    "userId": "UserId",
+    "tags": [
+      "Combat",
+      "Kill",
+      "Taser"
+    ]
+  },
+  {
+    "statCode": "ammospecialist-progression-code",
+    "statName": "Ammo Specialist Progression Level ID",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "armoredtransport-loud-hard",
+    "statName": "Armored Transport Loud Hard",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Loud",
+      "Hard",
+      "Transport",
+      "Map",
+      "Armored"
+    ]
+  },
+  {
+    "statCode": "armoredtransport-loud-normal",
+    "statName": "Armored Transport Loud Normal",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Loud",
+      "Transport",
+      "Normal",
+      "Map",
+      "Armored"
+    ]
+  },
+  {
+    "statCode": "armoredtransport-max-payout",
+    "statName": "Armored Transport Max Payout",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Max",
+      "Payout",
+      "Transport",
+      "Map",
+      "Armored"
+    ]
+  },
+  {
+    "statCode": "artgallery-loud-hard",
+    "statName": "Art Gallery Loud Hard",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Art",
+      "Loud",
+      "Gallery",
+      "Hard",
+      "Map"
+    ]
+  },
+  {
+    "statCode": "artgallery-loud-normal",
+    "statName": "Art Gallery Loud Normal",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Art",
+      "Loud",
+      "Gallery",
+      "Normal",
+      "Map"
+    ]
+  },
+  {
+    "statCode": "artgallery-loud-overkill",
+    "statName": "Art Gallery Loud Overkill",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Art",
+      "Loud",
+      "Gallery",
+      "Overkill",
+      "Map"
+    ]
+  },
+  {
+    "statCode": "artgallery-loud-veryhard",
+    "statName": "Art Gallery Loud Very Hard",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Art",
+      "Loud",
+      "Hard",
+      "Map",
+      "Very"
+    ]
+  },
+  {
+    "statCode": "artgallery-max-payout",
+    "statName": "Art Gallery Max Payout",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Art",
+      "Max",
+      "Payout",
+      "Gallery",
+      "Map"
+    ]
+  },
+  {
+    "statCode": "artgallery-no-downs",
+    "statName": "Art Gallery No Downs",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "No",
+      "Art",
+      "Down",
+      "Gallery",
+      "Map"
+    ]
+  },
+  {
+    "statCode": "artgallery-optional-objective-2",
+    "statName": "Art Gallery Optional Objective 2",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Art",
+      "Optional",
+      "Gallery",
+      "Map"
+    ]
+  },
+  {
+    "statCode": "artgallery-stealth-hard",
+    "statName": "Art Gallery Stealth Hard",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Art",
+      "Gallery",
+      "Stealth",
+      "Hard",
+      "Map"
+    ]
+  },
+  {
+    "statCode": "artgallery-stealth-normal",
+    "statName": "Art Gallery Stealth Normal",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Art",
+      "Gallery",
+      "Stealth",
+      "Normal",
+      "Map"
+    ]
+  },
+  {
+    "statCode": "assaultrifle-car4-ads-kills",
+    "statName": "CAR4 Aim Down Sights Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "ADS",
+      "Combat",
+      "Kill",
+      "CAR4"
+    ]
+  },
+  {
+    "statCode": "assaultrifle-car4-armored-headshot-kills",
+    "statName": "CAR4 Armored Headshot Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "assaultrifle-car4-four-mods-equipped",
+    "statName": "CAR4 Four Mods Equipped",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "assaultrifle-car4-headshot-kills",
+    "statName": "CAR4 Headshot Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Combat",
+      "Headshot",
+      "Kill",
+      "CAR4"
+    ]
+  },
+  {
+    "statCode": "assaultrifle-car4-hipfire-kills",
+    "statName": "CAR4 Hipfire Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "assaultrifle-car4-kills",
+    "statName": "CAR4 Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Combat",
+      "Kill",
+      "CAR4"
+    ]
+  },
+  {
+    "statCode": "assaultrifle-car4-longrange-kills",
+    "statName": "CAR4 Long Range Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "assaultrifle-car4-mod-equipped",
+    "statName": "CAR4 Mod Equipped",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Meta",
+      "Equip",
+      "Mod",
+      "CAR4"
+    ]
+  },
+  {
+    "statCode": "assaultrifle-car4-noreload-kills",
+    "statName": "CAR4 No Reload Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "assaultrifle-car4-specialenemies-kills",
+    "statName": "CAR4 Special Enemies Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "assaultrifle-car4-weapon-level",
+    "statName": "CAR4 Weapon Level",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "assaultrifle-car4-weapon-points",
+    "statName": "CAR4 Weapon Points",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "branchbank-loud-normal",
+    "statName": "Branch Bank Loud Normal",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Bank",
+      "Branch",
+      "Loud",
+      "Normal",
+      "Map"
+    ]
+  },
+  {
+    "statCode": "branchbank-max-payout",
+    "statName": "Branch Bank Max Payout",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Bank",
+      "Max",
+      "Payout",
+      "Branch",
+      "Map"
+    ]
+  },
+  {
+    "statCode": "branchbank-no-downs",
+    "statName": "Branch Bank No Downs",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "No",
+      "Down",
+      "Bank",
+      "Branch",
+      "Map"
+    ]
+  },
+  {
+    "statCode": "branchbank-no-dye-packs-exploded",
+    "statName": "Branch Bank No Dye Packs Exploded",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "branchbank-no-dye-packs-exploded-steam",
+    "statName": "Branch Bank No Dye Packs Exploded Steam",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "branchbank-open-deposit-boxes",
+    "statName": "Branch Bank Open Deposit Boxes",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "branchbank-open-deposit-boxes-steam",
+    "statName": "Branch Bank Open Deposit Boxes Steam",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "branchbank-optional-objective-2",
+    "statName": "Branch Bank Optional Objective 2",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Bank",
+      "Optional",
+      "Branch",
+      "Map"
+    ]
+  },
+  {
+    "statCode": "branchbank-optional-objective-3",
+    "statName": "Branch Bank Optional Objective 3",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Bank",
+      "Optional",
+      "Branch",
+      "Map"
+    ]
+  },
+  {
+    "statCode": "branchbank-stealth-hard",
+    "statName": "Branch Bank Stealth Hard",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Bank",
+      "Branch",
+      "Stealth",
+      "Hard",
+      "Map"
+    ]
+  },
+  {
+    "statCode": "branchbank-stealth-normal",
+    "statName": "Branch Bank Stealth Normal",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Bank",
+      "Branch",
+      "Stealth",
+      "Normal",
+      "Map"
+    ]
+  },
+  {
+    "statCode": "branchbank-stealth-overkill",
+    "statName": "Branch Bank Stealth Overkill",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Bank",
+      "Branch",
+      "Stealth",
+      "Overkill",
+      "Map"
+    ]
+  },
+  {
+    "statCode": "branchbank-stealth-veryhard",
+    "statName": "Branch Bank Stealth Very Hard",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Branch",
+      "Stealth",
+      "Hard",
+      "Map",
+      "Very"
+    ]
+  },
+  {
+    "statCode": "break-case",
+    "statName": "Break Display Cases",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Heist",
+      "Display"
+    ]
+  },
+  {
+    "statCode": "cargodock-max-hi-tech-secured",
+    "statName": "Cargo Dock Max Hi Tech Secured",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "cargodock-max-hi-tech-secured-steam",
+    "statName": "Cargo Dock Hi Tech Secured Steam",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "cargodock-max-payout",
+    "statName": "Cargo Dock Max Payout",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Cargo",
+      "Dock",
+      "Max",
+      "Payout",
+      "Map"
+    ]
+  },
+  {
+    "statCode": "cargodock-optional-objective-1",
+    "statName": "Cargo Dock Optional Objective 1",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Cargo",
+      "Dock",
+      "Optional",
+      "Map"
+    ]
+  },
+  {
+    "statCode": "cargodock-stealth-hard",
+    "statName": "Cargo Dock Stealth Hard",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Cargo",
+      "Dock",
+      "Stealth",
+      "Hard",
+      "Map"
+    ]
+  },
+  {
+    "statCode": "cargodock-stealth-normal",
+    "statName": "Cargo Dock Stealth Normal",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Cargo",
+      "Dock",
+      "Stealth",
+      "Normal",
+      "Map"
+    ]
+  },
+  {
+    "statCode": "cargodock-stealth-overkill",
+    "statName": "Cargo Dock Stealth Overkill",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Cargo",
+      "Dock",
+      "Stealth",
+      "Overkill",
+      "Map"
+    ]
+  },
+  {
+    "statCode": "cargodock-stealth-veryhard",
+    "statName": "Cargo Dock Stealth Very Hard",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Cargo",
+      "Stealth",
+      "Hard",
+      "Map",
+      "Very"
+    ]
+  },
+  {
+    "statCode": "cloaker-kills",
+    "statName": "Cloaker Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Combat",
+      "Cloaker",
+      "Kill"
+    ]
+  },
+  {
+    "statCode": "cloaker-save",
+    "statName": "Cloaker Save",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Combat",
+      "Save",
+      "Cloaker"
+    ]
+  },
+  {
+    "statCode": "complete-loudcombat",
+    "statName": "Tutorial Loud Combat",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Tutorial"
+    ]
+  },
+  {
+    "statCode": "cqcspecialist-progression-code",
+    "statName": "CQC Specialist Progression Level ID",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "cqcspecialist-research-code",
+    "statName": "CQC Specialist Research Level ID",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "cut-objects",
+    "statName": "Cut Objects",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Cut",
+      "Heist"
+    ]
+  },
+  {
+    "statCode": "demolitionist-research-code",
+    "statName": "Demolitionist Research Level ID",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "deploy-ammo-bag",
+    "statName": "Deploy Ammo Bag",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Ammo",
+      "Combat",
+      "Deploy"
+    ]
+  },
+  {
+    "statCode": "deploy-armor-bag",
+    "statName": "Deploy Armor Bag",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Armor",
+      "Combat",
+      "Deploy"
+    ]
+  },
+  {
+    "statCode": "destroy-choker-belt",
+    "statName": "Destroy Choker Belt",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Belt",
+      "Destroy",
+      "Combat",
+      "Choker"
+    ]
+  },
+  {
+    "statCode": "destroy-taser-battery",
+    "statName": "Destroy Taser Battery",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Destroy",
+      "Combat",
+      "Battery",
+      "Taser"
+    ]
+  },
+  {
+    "statCode": "detected-kills",
+    "statName": "Detected Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Combat",
+      "Detect",
+      "Kill"
+    ]
+  },
+  {
+    "statCode": "devices-hacked",
+    "statName": "Devices Hacked",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Hack",
+      "Heist"
+    ]
+  },
+  {
+    "statCode": "door-sprint",
+    "statName": "Door Sprint",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Heist",
+      "Sprint",
+      "Door"
+    ]
+  },
+  {
+    "statCode": "dozer-faceplate",
+    "statName": "Dozer Faceplate",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Combat",
+      "Dozer",
+      "Faceplate"
+    ]
+  },
+  {
+    "statCode": "dozer-kills",
+    "statName": "Dozer Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Combat",
+      "Kill",
+      "Dozer"
+    ]
+  },
+  {
+    "statCode": "enforcer-progression-code",
+    "statName": "Enforcer Progression Level ID",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "enforcer-research-code",
+    "statName": "Enforcer Research Level ID",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "engineer-progression-code",
+    "statName": "Engineer Progression Level ID",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "engineer-research-code",
+    "statName": "Engineer Research Level ID",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "escapist-research-code",
+    "statName": "Escapist Research Level ID",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "firstplayable-loud-hard",
+    "statName": "Sharke Bank Loud Hard",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Bank",
+      "Loud",
+      "Sharke",
+      "Hard",
+      "Map"
+    ]
+  },
+  {
+    "statCode": "firstplayable-loud-normal",
+    "statName": "Sharke Bank Loud Normal",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Bank",
+      "Loud",
+      "Sharke",
+      "Normal",
+      "Map"
+    ]
+  },
+  {
+    "statCode": "firstplayable-loud-overkill",
+    "statName": "Sharke Bank Loud Overkill",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Bank",
+      "Loud",
+      "Sharke",
+      "Overkill",
+      "Map"
+    ]
+  },
+  {
+    "statCode": "firstplayable-loud-veryhard",
+    "statName": "Sharke Bank Loud Very Hard",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Loud",
+      "Sharke",
+      "Hard",
+      "Map",
+      "Very"
+    ]
+  },
+  {
+    "statCode": "firstplayable-max-payout",
+    "statName": "Sharke Bank Max Payout",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Bank",
+      "Max",
+      "Sharke",
+      "Map"
+    ]
+  },
+  {
+    "statCode": "firstplayable-max-payout-achievement",
+    "statName": "Sharke Bank Max Payout Achievement",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Achievement"
+    ]
+  },
+  {
+    "statCode": "firstplayable-max-payout-achievement-steam",
+    "statName": "Sharke Bank Max Payout Achievement Steam",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "firstplayable-no-downs",
+    "statName": "Sharke Bank No Downs",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "No",
+      "Down",
+      "Bank",
+      "Sharke",
+      "Map"
+    ]
+  },
+  {
+    "statCode": "firstplayable-no-hr-computer",
+    "statName": "Sharke Bank No HR Computer",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "firstplayable-no-hr-computer-steam",
+    "statName": "Sharke Bank No HR Computer Steam",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "firstplayable-stealth-hard",
+    "statName": "Sharke Bank Stealth Hard",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Bank",
+      "Stealth",
+      "Sharke",
+      "Hard",
+      "Map"
+    ]
+  },
+  {
+    "statCode": "firstplayable-stealth-normal",
+    "statName": "Sharke Bank Stealth Normal",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Bank",
+      "Stealth",
+      "Sharke",
+      "Normal",
+      "Map"
+    ]
+  },
+  {
+    "statCode": "firstplayable-stealth-overkill",
+    "statName": "Sharke Bank Stealth Overkill",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Bank",
+      "Stealth",
+      "Sharke",
+      "Overkill",
+      "Map"
+    ]
+  },
+  {
+    "statCode": "firstplayable-stealth-veryhard",
+    "statName": "Sharke Bank Stealth Very Hard",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Stealth",
+      "Sharke",
+      "Hard",
+      "Map",
+      "Very"
+    ]
+  },
+  {
+    "statCode": "frag-grenade-kills",
+    "statName": "Frag Grenade Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Frag",
+      "Combat",
+      "Grenade",
+      "Kill"
+    ]
+  },
+  {
+    "statCode": "grenadier-kills",
+    "statName": "Grenadier Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Combat",
+      "Kill",
+      "Grenadier"
+    ]
+  },
+  {
+    "statCode": "grifter-progression-code",
+    "statName": "Grifter Progression Level ID",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "grifter-research-code",
+    "statName": "Grifter Research Level ID",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "gunslinger-progression-code",
+    "statName": "Gunslinger Progression Level ID",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "gunslinger-research-code",
+    "statName": "Gunslinger Research Level ID",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "hacker-progression-code",
+    "statName": "Hacker Progression Level",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "hacker-research-code",
+    "statName": "Hacker Research Level",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "hostages-traded",
+    "statName": "Hostages Traded",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Hostage",
+      "Heist"
+    ]
+  },
+  {
+    "statCode": "human-shield-headshot-kills",
+    "statName": "Human Shield Headshot Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Human",
+      "Shield",
+      "Combat",
+      "Headshot",
+      "Kill"
+    ]
+  },
+  {
+    "statCode": "human-shield-kills",
+    "statName": "Human Shield Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Human",
+      "Shield",
+      "Combat",
+      "Kill"
+    ]
+  },
+  {
+    "statCode": "infamy-point",
+    "statName": "Infamy Points",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Infamy"
+    ]
+  },
+  {
+    "statCode": "infiltrator-progression-code",
+    "statName": "Infiltrator Progression Level ID",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "infiltrator-research-code",
+    "statName": "Infiltrator Research Level ID",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "jewelrystore-loud-hard",
+    "statName": "Jewelry Store Loud Hard",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Loud",
+      "Jewelry",
+      "Hard",
+      "Map"
+    ]
+  },
+  {
+    "statCode": "jewelrystore-loud-normal",
+    "statName": "Jewelry Store Loud Normal",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Loud",
+      "Jewelry",
+      "Normal",
+      "Map"
+    ]
+  },
+  {
+    "statCode": "jewelrystore-loud-overkill",
+    "statName": "Jewelry Store Loud Overkill",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Loud",
+      "Jewelry",
+      "Overkill",
+      "Map"
+    ]
+  },
+  {
+    "statCode": "jewelrystore-loud-veryhard",
+    "statName": "Jewelry Store Loud Very Hard",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Loud",
+      "Jewelry",
+      "Hard",
+      "Map",
+      "Very"
+    ]
+  },
+  {
+    "statCode": "jewelrystore-max-payout",
+    "statName": "Jewelry Store Max Payout",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Max",
+      "Payout",
+      "Jewelry",
+      "Map"
+    ]
+  },
+  {
+    "statCode": "jewelrystore-max-payout-achievement",
+    "statName": "Jewelry Store Max Payout Achievement",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Achievement"
+    ]
+  },
+  {
+    "statCode": "jewelrystore-max-payout-achievement-steam",
+    "statName": "Jewelry Store Max Payout Achievement Steam",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "jewelrystore-no-downs",
+    "statName": "Jewelry Store No Downs",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "No",
+      "Down",
+      "Jewelry",
+      "Map"
+    ]
+  },
+  {
+    "statCode": "jewelrystore-optional-objective-1",
+    "statName": "Jewelry Store Optional Objective 1",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Optional",
+      "Jewelry",
+      "Map"
+    ]
+  },
+  {
+    "statCode": "jewelrystore-optional-objective-2",
+    "statName": "Jewelry Store Optional Objective 2",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Optional",
+      "Jewelry",
+      "Map"
+    ]
+  },
+  {
+    "statCode": "jewelrystore-optional-objective-3",
+    "statName": "Jewelry Store Optional Objective 3",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Optional",
+      "Jewelry",
+      "Map"
+    ]
+  },
+  {
+    "statCode": "jewelrystore-optional-objective-4",
+    "statName": "Jewelry Store Optional Objective 4",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Optional",
+      "Jewelry",
+      "Map"
+    ]
+  },
+  {
+    "statCode": "jewelrystore-optional-objective-5",
+    "statName": "Jewelry Store Optional Objective 5",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Optional",
+      "Jewelry",
+      "Map"
+    ]
+  },
+  {
+    "statCode": "jewelrystore-optional-objective-6",
+    "statName": "Jewelry Store Optional Objective 6",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Optional",
+      "Jewelry",
+      "Map"
+    ]
+  },
+  {
+    "statCode": "jewelrystore-stealth-hard",
+    "statName": "Jewelry Store Stealth Hard",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Stealth",
+      "Jewelry",
+      "Hard",
+      "Map"
+    ]
+  },
+  {
+    "statCode": "jewelrystore-stealth-normal",
+    "statName": "Jewelry Store Stealth Normal",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Stealth",
+      "Jewelry",
+      "Normal",
+      "Map"
+    ]
+  },
+  {
+    "statCode": "jewelrystore-stealth-overkill",
+    "statName": "Jewelry Store Stealth Overkill",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Stealth",
+      "Jewelry",
+      "Overkill",
+      "Map"
+    ]
+  },
+  {
+    "statCode": "jewelrystore-stealth-veryhard",
+    "statName": "Jewelry Store Stealth Very Hard",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Stealth",
+      "Jewelry",
+      "Hard",
+      "Map",
+      "Very"
+    ]
+  },
+  {
+    "statCode": "jump-headshot-kills",
+    "statName": "Jump Headshot Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Combat",
+      "Headshot",
+      "Jump",
+      "Kill"
+    ]
+  },
+  {
+    "statCode": "lock-picked",
+    "statName": "Locks Picked",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Heist",
+      "Lock"
+    ]
+  },
+  {
+    "statCode": "manipulator-progression-code",
+    "statName": "Manipulator Progression Level ID",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "manipulator-research-code",
+    "statName": "Manipulator Research Level ID",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "mark-camera",
+    "statName": "Mark Security Cameras",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Heist",
+      "Camera"
+    ]
+  },
+  {
+    "statCode": "mark-guard",
+    "statName": "Mark Security Guards",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Guard",
+      "Heist"
+    ]
+  },
+  {
+    "statCode": "marksman-a114-ads-kills",
+    "statName": "A114 Aim Down Sights Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "marksman-a114-armored-headshot-kills",
+    "statName": "A114 Armored Headshot Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Armor",
+      "Combat",
+      "Headshot",
+      "Kill",
+      "A114"
+    ]
+  },
+  {
+    "statCode": "marksman-a114-four-mods-equipped",
+    "statName": "A114 Four Mods Equipped",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "marksman-a114-headshot-kills",
+    "statName": "A114 Headshot Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Combat",
+      "Headshot",
+      "Kill",
+      "A114"
+    ]
+  },
+  {
+    "statCode": "marksman-a114-hipfire-kills",
+    "statName": "A114 Hipfire Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "marksman-a114-kills",
+    "statName": "A114 Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Combat",
+      "Kill",
+      "A114"
+    ]
+  },
+  {
+    "statCode": "marksman-a114-longrange-kills",
+    "statName": "A114 Long Range Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "marksman-a114-mod-equipped",
+    "statName": "A114 Mod Equipped",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Meta",
+      "Equip",
+      "Mod",
+      "A114"
+    ]
+  },
+  {
+    "statCode": "marksman-a114-noreload-kills",
+    "statName": "A114 No Reload Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "marksman-a114-specialenemies-kills",
+    "statName": "A114 Special Enemies Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "marksman-a114-weapon-level",
+    "statName": "A114 Weapon Level",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "marksman-a114-weapon-points",
+    "statName": "A114 Weapon Points",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "mask-on",
+    "statName": "Mask On",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "mask-on-steam",
+    "statName": "Mask On Steam",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "medic-progression-code",
+    "statName": "Medic Progression Level ID",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "mower-progression-code",
+    "statName": "Mower Progression Level ID",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "mower-research-code",
+    "statName": "Mower Research Level ID",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "nightclub-loud-hard",
+    "statName": "Night Club Loud Hard",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Night",
+      "Club",
+      "Loud",
+      "Hard",
+      "Map"
+    ]
+  },
+  {
+    "statCode": "nightclub-loud-normal",
+    "statName": "Night Club Loud Normal",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Night",
+      "Club",
+      "Loud",
+      "Normal",
+      "Map"
+    ]
+  },
+  {
+    "statCode": "nightclub-loud-veryhard",
+    "statName": "Night Club Loud Very Hard",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Night",
+      "Loud",
+      "Hard",
+      "Map",
+      "Very"
+    ]
+  },
+  {
+    "statCode": "nightclub-no-id-vip-area",
+    "statName": "Night Club No ID VIP Area",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "nightclub-no-id-vip-area-steam",
+    "statName": "Night Club No ID VIP Area Steam",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "nightclub-optional-objective-1",
+    "statName": "Nightclub Optional Objective 1",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Night",
+      "Optional",
+      "Club",
+      "Map"
+    ]
+  },
+  {
+    "statCode": "nightclub-optional-objective-2",
+    "statName": "Nightclub Optional Objective 2",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Night",
+      "Optional",
+      "Club",
+      "Map"
+    ]
+  },
+  {
+    "statCode": "nightclub-optional-objective-3",
+    "statName": "Nightclub Optional Objective 3",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Night",
+      "Optional",
+      "Club",
+      "Map"
+    ]
+  },
+  {
+    "statCode": "nightclub-stealth-hard",
+    "statName": "Night Club Stealth Hard",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Night",
+      "Club",
+      "Stealth",
+      "Hard",
+      "Map"
+    ]
+  },
+  {
+    "statCode": "nightclub-stealth-normal",
+    "statName": "Night Club Stealth Normal",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Night",
+      "Club",
+      "Stealth",
+      "Normal",
+      "Map"
+    ]
+  },
+  {
+    "statCode": "nightclub-stealth-overkill",
+    "statName": "Night Club Stealth Overkill",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Night",
+      "Club",
+      "Stealth",
+      "Overkill",
+      "Map"
+    ]
+  },
+  {
+    "statCode": "nightclub-stealth-veryhard",
+    "statName": "Night Club Stealth Very Hard",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Night",
+      "Stealth",
+      "Hard",
+      "Map",
+      "Very"
+    ]
+  },
+  {
+    "statCode": "nightclub-survived-assaults",
+    "statName": "Night Club Survived Assaults",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "nightclub-survived-assaults-steam",
+    "statName": "Night Club Survived Assaults Steam",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "overkill-mamba-hipfire-kills",
+    "statName": "Mamba Hipfire Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "overkill-mamba-kills",
+    "statName": "Mamba Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Mamba",
+      "Combat",
+      "Kill"
+    ]
+  },
+  {
+    "statCode": "overkill-mamba-noreload-kills",
+    "statName": "Mamba No Reload Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "overkill-mamba-specialenemies-kills",
+    "statName": "Mamba Special Enemies Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "overkill-mamba-twoenemies-kills",
+    "statName": "Mamba Two Enemies Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Mamba",
+      "Combat",
+      "One",
+      "Grenade",
+      "Two"
+    ]
+  },
+  {
+    "statCode": "penthouse-loud-normal",
+    "statName": "Penthouse Loud Normal",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Penthouse",
+      "Loud",
+      "Normal",
+      "Map"
+    ]
+  },
+  {
+    "statCode": "pistol-s40-ads-kills",
+    "statName": "S40 Aim Down Sights Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "pistol-s40-armored-headshot-kills",
+    "statName": "S40 Armored Headshot Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "pistol-s40-four-mods-equipped",
+    "statName": "S40 Four Mods Equipped",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "pistol-s40-full-mod-unlock",
+    "statName": "S40 Full Mod Unlock",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Meta",
+      "Unlock",
+      "Full",
+      "S40"
+    ]
+  },
+  {
+    "statCode": "pistol-s40-headshot-kills",
+    "statName": "S40 Headshot Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Combat",
+      "Headshot",
+      "Kill",
+      "S40"
+    ]
+  },
+  {
+    "statCode": "pistol-s40-hipfire-kills",
+    "statName": "S40 Hipfire Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "pistol-s40-kills",
+    "statName": "S40 Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Combat",
+      "Kill",
+      "S40"
+    ]
+  },
+  {
+    "statCode": "pistol-s40-longrange-kills",
+    "statName": "S40 Long Range Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "pistol-s40-mod-equipped",
+    "statName": "S40 Mod Equipped",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Meta",
+      "Equip",
+      "Mod",
+      "S40"
+    ]
+  },
+  {
+    "statCode": "pistol-s40-noreload-kills",
+    "statName": "S40 No Reload Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "pistol-s40-specialenemies-kills",
+    "statName": "s40 Special Enemy Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "pistol-s40-suppressor-kills",
+    "statName": "S40 Suppressor Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Legion",
+      "Combat",
+      "Suppressor",
+      "Kill",
+      "S40"
+    ]
+  },
+  {
+    "statCode": "pistol-s40-weapon-level",
+    "statName": "S40 Weapon Level",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "pistol-s40-weapon-points",
+    "statName": "S40 Weapon Points",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "revive-crewmate",
+    "statName": "Revive Crewmate",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Revive",
+      "Combat",
+      "Crewmate"
+    ]
+  },
+  {
+    "statCode": "revolver-castigo44-ads-kills",
+    "statName": "Castigo44 Aim Down Sights Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "ADS",
+      "Castigo44",
+      "Combat",
+      "Kill"
+    ]
+  },
+  {
+    "statCode": "revolver-castigo44-armored-headshot-kills",
+    "statName": "Castigo44 Armored Headshot Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "revolver-castigo44-four-mods-equipped",
+    "statName": "Castigo44 Four Mods Equipped",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "revolver-castigo44-headshot-kills",
+    "statName": "Castigo44 Headshot Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Castigo44",
+      "Combat",
+      "Headshot",
+      "Kill"
+    ]
+  },
+  {
+    "statCode": "revolver-castigo44-hipfire-kills",
+    "statName": "Castigo44 Hipfire Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "revolver-castigo44-kills",
+    "statName": "Castigo44 Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Castigo44",
+      "Combat",
+      "Kill"
+    ]
+  },
+  {
+    "statCode": "revolver-castigo44-longrange-kills",
+    "statName": "Castigo44 Long Range Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "revolver-castigo44-mod-equipped",
+    "statName": "Castigo44 Mod Equipped",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Meta",
+      "Equip",
+      "Mod",
+      "Castigo44"
+    ]
+  },
+  {
+    "statCode": "revolver-castigo44-noreload-kills",
+    "statName": "Castigo44 No Reload Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "revolver-castigo44-specialenemies-kills",
+    "statName": "Castigo44 Special Enemies Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "revolver-castigo44-weapon-level",
+    "statName": "Castigo44 Weapon Level",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "revolver-castigo44-weapon-points",
+    "statName": "Castigo44 Weapon Points",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "riot-shield-break-glass",
+    "statName": "Riot Shield Break Glass",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Combat",
+      "Break",
+      "Riot"
+    ]
+  },
+  {
+    "statCode": "save-taser-crewmate",
+    "statName": "Save Taser Crewmate",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Combat",
+      "Crewmate",
+      "Save",
+      "Taser"
+    ]
+  },
+  {
+    "statCode": "sharpshooter-progression-code",
+    "statName": "Sharpshooter Progression Level ID",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "sharpshooter-research-code",
+    "statName": "Sharpshooter Research Level ID",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "shield-kills",
+    "statName": "Shield Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Shield",
+      "Combat",
+      "Kill"
+    ]
+  },
+  {
+    "statCode": "slide-distance",
+    "statName": "Slide Distance",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Slide",
+      "Combat",
+      "Distance"
+    ]
+  },
+  {
+    "statCode": "smg-commando-ads-kills",
+    "statName": "Commando Aim Down Sights Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "smg-commando-armored-headshot-kills",
+    "statName": "Commando Armored Headshot Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "smg-commando-four-mods-equipped",
+    "statName": "Commando Four Mods Equipped",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "smg-commando-headshot-kills",
+    "statName": "Commando Headshot Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Commando",
+      "Combat",
+      "Headshot",
+      "Kill"
+    ]
+  },
+  {
+    "statCode": "smg-commando-hipfire-kills",
+    "statName": "Commando Hip Fire Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Commando",
+      "Combat",
+      "Kill",
+      "Hip"
+    ]
+  },
+  {
+    "statCode": "smg-commando-kills",
+    "statName": "Commando Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Commando",
+      "Combat",
+      "Kill"
+    ]
+  },
+  {
+    "statCode": "smg-commando-mod-equipped",
+    "statName": "Commando Mod Equipped",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Meta",
+      "Equip",
+      "Mod",
+      "Commando"
+    ]
+  },
+  {
+    "statCode": "smg-commando-noreload-kills",
+    "statName": "Commando No Reload Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "smg-commando-specialenemies-kills",
+    "statName": "Commando Special Enemies Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "smg-commando-suppressor-kills",
+    "statName": "Commando Suppressor Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "smg-commando-weapon-level",
+    "statName": "Commando Weapon Level",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "smg-commando-weapon-points",
+    "statName": "Commando Weapon Points",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "sniper-kills",
+    "statName": "Sniper Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Combat",
+      "Kill",
+      "Sniper"
+    ]
+  },
+  {
+    "statCode": "strategist-progression-code",
+    "statName": "Strategist Progression Level ID",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "strategist-research-code",
+    "statName": "Strategist Research Level ID",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "tactician-research-code",
+    "statName": "Tactician Research Level ID",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "tank-progression-code",
+    "statName": "Tank Progression Level ID",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "tank-research-code",
+    "statName": "Tank Research Level ID",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "taser-battery-enemy-stuns",
+    "statName": "Taser Battery Enemy Stuns",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "taser-battery-enemy-stuns-steam",
+    "statName": "Taser Battery Enemy stuns Steam",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "taser-kills",
+    "statName": "Taser Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Combat",
+      "Kill",
+      "Taser"
+    ]
+  },
+  {
+    "statCode": "throwingknife-kills",
+    "statName": "Throwing Knife Kills",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Knife",
+      "Combat",
+      "Kill"
+    ]
+  },
+  {
+    "statCode": "use-microcamera",
+    "statName": "Use Micro Cameras",
+    "namespace": "pd3",
+    "value": 0.0,
+    "createdAt": "2023-09-20T10:00:00.000Z",
+    "updatedAt": "2023-09-20T10:00:00.000Z",
+    "userId": "UserId",
+    "tags": [
+      "Micro",
+      "Heist"
+    ]
+  }
+]

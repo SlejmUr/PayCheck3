@@ -2,7 +2,7 @@
 
 namespace PayCheckServerLib.Jsons
 {
-    public class GetUserStatItemsData
+    public class UserStatItemsData
     {
         [JsonProperty("createdAt")]
         public string CreatedAt { get; set; }

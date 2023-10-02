@@ -1,0 +1,916 @@
+[
+  {
+    "statCode": "23cdde1e5cb540a6af317678a824ed49",
+    "statName": "Shotgun R870 progression",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:07.112Z",
+    "updatedAt": "2023-06-23T03:37:07.112Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "accelbyteteststat1",
+    "statName": "AB Test 1",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:07.121Z",
+    "updatedAt": "2023-06-23T03:37:07.121Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "accelbyteteststat2",
+    "statName": "AB Test 2",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:07.142Z",
+    "updatedAt": "2023-06-23T03:37:07.142Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "achievements-rewarded",
+    "statName": "Achievements rewarded",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:11.824Z",
+    "updatedAt": "2023-09-11T19:10:32.820Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "armoredtransport-loud-hard-best-time",
+    "statName": "Armored Transport Loud Hard Best Time",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:10.142Z",
+    "updatedAt": "2023-06-23T03:37:10.142Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "armoredtransport-loud-normal-best-time",
+    "statName": "Armored Transport Loud Normal Best Time",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:10.133Z",
+    "updatedAt": "2023-06-23T03:37:10.133Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "armoredtransport-loud-overkill-best-time",
+    "statName": "Armored Transport Loud Overkill Best Time",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:09.911Z",
+    "updatedAt": "2023-06-23T03:37:09.911Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "armoredtransport-loud-veryhard-best-time",
+    "statName": "Armored Transport Loud Very Hard Best Time",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:09.836Z",
+    "updatedAt": "2023-06-23T03:37:09.836Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "armoredtransport-stealth-hard-best-time",
+    "statName": "Armored Transport Stealth Hard Best Time",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:10.428Z",
+    "updatedAt": "2023-06-23T03:37:10.428Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "armoredtransport-stealth-normal-best-time",
+    "statName": "Armored Transport Stealth Normal Best Time",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:10.166Z",
+    "updatedAt": "2023-06-23T03:37:10.166Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "armoredtransport-stealth-overkill-best-time",
+    "statName": "Armored Transport Stealth Overkill Best Time",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:10.418Z",
+    "updatedAt": "2023-06-23T03:37:10.418Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "armoredtransport-stealth-veryhard-best-time",
+    "statName": "Armored Transport Stealth Very Hard Best Time",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:11.733Z",
+    "updatedAt": "2023-06-23T03:37:11.733Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "artgallery-loud-hard-best-time",
+    "statName": "Art Gallery Loud Hard Best Time",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:07.750Z",
+    "updatedAt": "2023-06-23T03:37:07.750Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "artgallery-loud-normal-best-time",
+    "statName": "Art Gallery Loud Normal Best Time",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:07.731Z",
+    "updatedAt": "2023-06-23T03:37:07.731Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "artgallery-loud-overkill-best-time",
+    "statName": "Art Gallery Loud Overkill Best Time",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:07.851Z",
+    "updatedAt": "2023-06-23T03:37:07.851Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "artgallery-loud-veryhard-best-time",
+    "statName": "Art Gallery Loud Very hard Best Time",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:07.875Z",
+    "updatedAt": "2023-06-23T03:37:07.875Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "artgallery-stealth-hard-best-time",
+    "statName": "Art Gallery best time on hard and stealth",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:07.712Z",
+    "updatedAt": "2023-06-23T03:37:07.712Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "artgallery-stealth-normal-best-time",
+    "statName": "Art Gallery Stealth Normal Best Time",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:07.636Z",
+    "updatedAt": "2023-06-23T03:37:07.636Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "artgallery-stealth-overkill-best-time",
+    "statName": "Art Gallery Stealth Overkill Best Time",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:07.740Z",
+    "updatedAt": "2023-06-23T03:37:07.740Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "artgallery-stealth-veryhard-best-time",
+    "statName": "Art Gallery Stealth Very Hard Best Time",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:07.721Z",
+    "updatedAt": "2023-06-23T03:37:07.721Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "assault-human-shield-time",
+    "statName": "Assault Human Shield Time",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "tags": [
+      "Human",
+      "Shield",
+      "Combat",
+      "Time"
+    ],
+    "createdAt": "2023-06-23T03:37:10.860Z",
+    "updatedAt": "2023-09-11T09:49:25.412Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "assaultrifle-m4a1-weapon-points-level-up",
+    "statName": "Not Used",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:09.504Z",
+    "updatedAt": "2023-06-23T03:37:09.504Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "assaultrifle-m4a1-wp-level-up",
+    "statName": "AssaultRifle M4A1 points required to level up",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:09.487Z",
+    "updatedAt": "2023-06-23T03:37:09.487Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "assaultrifle-m4a1-wp-pre-level-up",
+    "statName": "AssaultReifle M4A1 previous level up points",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:09.478Z",
+    "updatedAt": "2023-06-23T03:37:09.478Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "branchbank-loud-hard-best-time",
+    "statName": "Branch Bank Loud Hard Best Time",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:10.250Z",
+    "updatedAt": "2023-09-11T09:21:25.011Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "branchbank-loud-normal-best-time",
+    "statName": "Branch Bank Loud Normal Best Time",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:10.157Z",
+    "updatedAt": "2023-09-11T09:05:40.000Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "branchbank-loud-overkill-best-time",
+    "statName": "Branch Bank Loud Overkill Best Time",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:10.527Z",
+    "updatedAt": "2023-09-11T08:45:24.440Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "branchbank-loud-veryhard-best-time",
+    "statName": "Branch Bank Loud Very Hard Best Time",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:10.315Z",
+    "updatedAt": "2023-09-11T09:15:38.667Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "branchbank-stealth-hard-best-time",
+    "statName": "Branch Bank Stealth Hard Best Time",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:10.222Z",
+    "updatedAt": "2023-09-11T09:34:25.162Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "branchbank-stealth-normal-best-time",
+    "statName": "Branch Bank Stealth Normal Best Time",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:10.304Z",
+    "updatedAt": "2023-09-11T09:40:25.257Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "branchbank-stealth-overkill-best-time",
+    "statName": "Branch Bank Stealth Overkill Best Time",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:10.325Z",
+    "updatedAt": "2023-09-11T09:36:25.190Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "branchbank-stealth-veryhard-best-time",
+    "statName": "Branch Bank Stealth Very Hard Best Time",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:10.233Z",
+    "updatedAt": "2023-09-11T09:37:38.687Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "cargodock-loud-hard-best-time",
+    "statName": "Cargo Dock Loud Hard Best Time",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:10.371Z",
+    "updatedAt": "2023-06-23T03:37:10.371Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "cargodock-loud-normal-best-time",
+    "statName": "Cargo Dock Loud Normal Best Time",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:10.336Z",
+    "updatedAt": "2023-06-23T03:37:10.336Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "cargodock-loud-overkill-best-time",
+    "statName": "Cargo Dock Loud Overkill Best Time",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:10.354Z",
+    "updatedAt": "2023-06-23T03:37:10.354Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "cargodock-loud-veryhard-best-time",
+    "statName": "Cargo Dock Loud Very Hard Best Time",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:10.345Z",
+    "updatedAt": "2023-06-23T03:37:10.345Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "cargodock-stealth-hard-best-time",
+    "statName": "Cargo Dock Stealth Hard Best Time",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:10.409Z",
+    "updatedAt": "2023-06-23T03:37:10.409Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "cargodock-stealth-normal-best-time",
+    "statName": "Cargo Dock Stealth Normal Best Time",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:10.362Z",
+    "updatedAt": "2023-06-23T03:37:10.362Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "cargodock-stealth-overkill-best-time",
+    "statName": "Cargo Dock Stealth Overkill Best Time",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:10.380Z",
+    "updatedAt": "2023-06-23T03:37:10.380Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "cargodock-stealth-veryhard-best-time",
+    "statName": "Cargo Dock Stealth Very Hard Best Time",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:11.067Z",
+    "updatedAt": "2023-06-23T03:37:11.067Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "fieldmedic",
+    "statName": "Field Medic",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:07.029Z",
+    "updatedAt": "2023-06-23T03:37:07.029Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "firstplayable-loud-hard-best-time",
+    "statName": "First Playable Loud Hard Best Time",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:07.811Z",
+    "updatedAt": "2023-06-23T03:37:07.811Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "firstplayable-loud-normal-best-time",
+    "statName": "First Playable Loud Normal Best Time",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:07.765Z",
+    "updatedAt": "2023-06-23T03:37:07.765Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "firstplayable-loud-overkill-best-time",
+    "statName": "First Playable Loud Overkill Best Time",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:07.841Z",
+    "updatedAt": "2023-06-23T03:37:07.841Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "firstplayable-loud-veryhard-best-time",
+    "statName": "First Playable Loud Very hard Best Time",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:07.860Z",
+    "updatedAt": "2023-06-23T03:37:07.860Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "firstplayable-stealth-hard-best-time",
+    "statName": "First Playable Stealth Hard Best Time",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:07.885Z",
+    "updatedAt": "2023-06-23T03:37:07.885Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "firstplayable-stealth-normal-best-time",
+    "statName": "First Playable Stealth Normal Best Time",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:07.830Z",
+    "updatedAt": "2023-06-23T03:37:07.830Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "firstplayable-stealth-overkill-best-time",
+    "statName": "First Playable Stealth Overkill Best Time",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:07.920Z",
+    "updatedAt": "2023-06-23T03:37:07.920Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "firstplayable-stealth-veryhard-best-time",
+    "statName": "First Playable Stealth Very hard Best Time",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:07.910Z",
+    "updatedAt": "2023-06-23T03:37:07.910Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "game-started",
+    "statName": "Game Started",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:07.132Z",
+    "updatedAt": "2023-09-26T18:28:35.058Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "infamy-points",
+    "statName": "LEGACY Infamy Points",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "tags": [
+      "Infamy"
+    ],
+    "createdAt": "2023-06-23T03:37:07.062Z",
+    "updatedAt": "2023-06-23T03:37:07.062Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "infamylevel",
+    "statName": "Infamy Level",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:07.017Z",
+    "updatedAt": "2023-06-23T03:37:07.017Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "jewelrystore-loud-hard-best-time",
+    "statName": "Jewelry Store Loud Hard Best Time",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:07.939Z",
+    "updatedAt": "2023-06-23T03:37:07.939Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "jewelrystore-loud-normal-best-time",
+    "statName": "Jewelry Store Loud Normal Best Time",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:07.929Z",
+    "updatedAt": "2023-06-23T03:37:07.929Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "jewelrystore-loud-overkill-best-time",
+    "statName": "Jewelry Store Loud Overkill Best Time",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:07.949Z",
+    "updatedAt": "2023-06-23T03:37:07.949Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "jewelrystore-loud-veryhard-best-time",
+    "statName": "Jewelry Store Loud Very hard Best Time",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:07.967Z",
+    "updatedAt": "2023-06-23T03:37:07.967Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "jewelrystore-stealth-hard-best-time",
+    "statName": "Jewelry Store Stealth Hard Best Time",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:07.958Z",
+    "updatedAt": "2023-06-23T03:37:07.958Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "jewelrystore-stealth-normal-best-time",
+    "statName": "Jewelry Store Stealth Normal Best Time",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:07.976Z",
+    "updatedAt": "2023-06-23T03:37:07.976Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "jewelrystore-stealth-overkill-best-time",
+    "statName": "Jewelry Store Stealth Overkill Best Time",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:07.995Z",
+    "updatedAt": "2023-06-23T03:37:07.995Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "jewelrystore-stealth-veryhard-best-time",
+    "statName": "Jewelry Store Stealth Very Hard Best Time",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:07.985Z",
+    "updatedAt": "2023-06-23T03:37:07.985Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "jump-kills",
+    "statName": "Jump Kills",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "tags": [
+      "Combat",
+      "Jump",
+      "Kill"
+    ],
+    "createdAt": "2023-06-23T03:37:10.711Z",
+    "updatedAt": "2023-09-11T09:58:25.535Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "local-exp-for-test",
+    "statName": "local exp val",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:07.048Z",
+    "updatedAt": "2023-06-23T03:37:07.048Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "nightclub-loud-hard-best-time",
+    "statName": "Night Club Loud Hard Best Time",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:10.546Z",
+    "updatedAt": "2023-06-23T03:37:10.546Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "nightclub-loud-normal-best-time",
+    "statName": "Night Club Loud Normal Best Time",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:10.536Z",
+    "updatedAt": "2023-06-23T03:37:10.536Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "nightclub-loud-overkill-best-time",
+    "statName": "Night Club Loud Overkill Best Time",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:10.439Z",
+    "updatedAt": "2023-06-23T03:37:10.439Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "nightclub-loud-veryhard-best-time",
+    "statName": "Night Club Loud Very Hard Best Time",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:10.468Z",
+    "updatedAt": "2023-06-23T03:37:10.468Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "nightclub-stealth-hard-best-time",
+    "statName": "Night Club Stealth Hard Best Time",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:10.458Z",
+    "updatedAt": "2023-06-23T03:37:10.458Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "nightclub-stealth-normal-best-time",
+    "statName": "Night Club Stealth Normal Best Time",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:10.448Z",
+    "updatedAt": "2023-06-23T03:37:10.448Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "nightclub-stealth-overkill-best-time",
+    "statName": "Night Club Stealth Overkill Best Time",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:10.518Z",
+    "updatedAt": "2023-06-23T03:37:10.518Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "nightclub-stealth-veryhard-best-time",
+    "statName": "Night Club Stealth Very Hard Best Time",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:10.509Z",
+    "updatedAt": "2023-06-23T03:37:10.509Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "penthouse-loud-hard-best-time",
+    "statName": "Penthouse Loud Hard Best Time",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:10.554Z",
+    "updatedAt": "2023-06-23T03:37:10.554Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "penthouse-loud-normal-best-time",
+    "statName": "Penthouse Loud Normal Best Time",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:10.563Z",
+    "updatedAt": "2023-06-23T03:37:10.563Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "penthouse-loud-overkill-best-time",
+    "statName": "Penthouse Loud Overkill Best Time",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:10.581Z",
+    "updatedAt": "2023-06-23T03:37:10.581Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "penthouse-loud-veryhard-best-time",
+    "statName": "Penthouse Loud Very Hard Best Time",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:10.571Z",
+    "updatedAt": "2023-06-23T03:37:10.571Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "penthouse-stealth-hard-best-time",
+    "statName": "Penthouse Stealth Hard Best Time",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:10.617Z",
+    "updatedAt": "2023-06-23T03:37:10.617Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "penthouse-stealth-normal-best-time",
+    "statName": "Penthouse Stealth Normal Best Time",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:10.608Z",
+    "updatedAt": "2023-06-23T03:37:10.608Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "penthouse-stealth-overkill-best-time",
+    "statName": "Penthouse Stealth Overkill Best Time",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:10.626Z",
+    "updatedAt": "2023-06-23T03:37:10.626Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "penthouse-stealth-veryhard-best-time",
+    "statName": "Penthouse Stealth Very Hard Best Time",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:11.534Z",
+    "updatedAt": "2023-06-23T03:37:11.534Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "sk8782a375876c491887a58410cf4e820e",
+    "statName": "Medic skill",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:07.304Z",
+    "updatedAt": "2023-06-23T03:37:07.304Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "weapon-level-608e2ed558594f4097694d8c8abedf8b",
+    "statName": "LEGACY Pistol P226 Weapon progression level",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:07.820Z",
+    "updatedAt": "2023-06-23T03:37:07.820Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "weapon-level-64126b1908e34b3ba57c6aea20c9757b",
+    "statName": "LEGACY Revolver SW29 Weapon Progression Level",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:07.625Z",
+    "updatedAt": "2023-06-23T03:37:07.625Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "weapon-level-assaultrifle-m4a1",
+    "statName": "LEGACY Weapon Level Assult Rifle M4A1",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:08.109Z",
+    "updatedAt": "2023-06-23T03:37:08.109Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "weapon-level-bd59f1eb7e2e4ee398923418bfe26b0c",
+    "statName": "LEGACY Marksman R700 weapon progression level",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:07.423Z",
+    "updatedAt": "2023-06-23T03:37:07.423Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "weapon-level-m32a1-mgl",
+    "statName": "LEGACY Weapon Level M32A1 MGL",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:08.073Z",
+    "updatedAt": "2023-06-23T03:37:08.073Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "weapon-level-marksman-r700",
+    "statName": "LEGACY Weapon level Marksman R700",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:08.005Z",
+    "updatedAt": "2023-06-23T03:37:08.005Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "weapon-level-pistol-p226",
+    "statName": "LEGACY Weapon Level Pistol P226",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:08.129Z",
+    "updatedAt": "2023-06-23T03:37:08.129Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "weapon-level-revolver-sw29",
+    "statName": "LEGACY Weapon Level Revolver SW29",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:08.063Z",
+    "updatedAt": "2023-06-23T03:37:08.063Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "weapon-level-shotgun-r870",
+    "statName": "Weapon level Shotgun R870",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:08.093Z",
+    "updatedAt": "2023-06-23T03:37:08.093Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "weapon-level-smg-mp7",
+    "statName": "Weapon Level SMG MP7",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:08.171Z",
+    "updatedAt": "2023-06-23T03:37:08.171Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "weapon-level-smg-uzipro",
+    "statName": "Weapon Level SMG UZIPRO",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:08.156Z",
+    "updatedAt": "2023-06-23T03:37:08.156Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "weapon-points-608e2ed558594f4097694d8c8abedf8b",
+    "statName": "Pistol P226 weapon progression points",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:07.511Z",
+    "updatedAt": "2023-06-23T03:37:07.511Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "weapon-points-64126b1908e34b3ba57c6aea20c9757b",
+    "statName": "Revolver 29 Weapon Progression Points",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:07.646Z",
+    "updatedAt": "2023-06-23T03:37:07.646Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "weapon-points-assaultrifle-m4a1",
+    "statName": "Weapon Points Assault Riffle M4A1",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:08.119Z",
+    "updatedAt": "2023-06-23T03:37:08.119Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "weapon-points-bd59f1eb7e2e4ee398923418bfe26b0c",
+    "statName": "Marksman R700 weapon progression points",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:07.433Z",
+    "updatedAt": "2023-06-23T03:37:07.433Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "weapon-points-m32a1-mgl",
+    "statName": "Weapon points M32A1 MGL",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:08.054Z",
+    "updatedAt": "2023-06-23T03:37:08.054Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "weapon-points-marksman-r700",
+    "statName": "Weapon points for Marksman R700",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:08.026Z",
+    "updatedAt": "2023-06-23T03:37:08.026Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "weapon-points-pistol-p226",
+    "statName": "Weapon Points Pistol P226",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:08.045Z",
+    "updatedAt": "2023-06-23T03:37:08.045Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "weapon-points-revolver-sw29",
+    "statName": "Weapon Points Revolver SW29",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:08.016Z",
+    "updatedAt": "2023-06-23T03:37:08.016Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "weapon-points-shotgun-r870",
+    "statName": "Weapon points Shotgun R870",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:08.036Z",
+    "updatedAt": "2023-06-23T03:37:08.036Z",
+    "userId": "UserId"
+  },
+  {
+    "statCode": "weapon-points-smg-mp7",
+    "statName": "Weapon points SMG MP7",
+    "namespace": "pd3beta",
+    "value": 0.0,
+    "createdAt": "2023-06-23T03:37:08.083Z",
+    "updatedAt": "2023-06-23T03:37:08.083Z",
+    "userId": "UserId"
+  }
+]
