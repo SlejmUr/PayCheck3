@@ -6957,9 +6957,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            "63762f0b29040c967e3e39d8"
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -6996,12 +6994,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            {
-              "challengeId": "63762f0b29040c967e3e39d8",
-              "isCompleted": false
-            }
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -7014,7 +7007,7 @@
         }
       },
       "updatedAt": "updatedattomakegitdiffseasiertoread",
-      "status": "INIT",
+      "status": "INPROGRESS",
       "isActive": true
     },
     {
@@ -7605,9 +7598,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            "63762fd029040c967e3e3a05"
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -7645,12 +7636,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            {
-              "challengeId": "63762fd029040c967e3e3a05",
-              "isCompleted": false
-            }
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -7663,7 +7649,7 @@
         }
       },
       "updatedAt": "updatedattomakegitdiffseasiertoread",
-      "status": "INIT",
+      "status": "INPROGRESS",
       "isActive": true
     },
     {
@@ -8262,9 +8248,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            "63763a5b29040c967e3e4a1e"
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -8301,12 +8285,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            {
-              "challengeId": "63763a5b29040c967e3e4a1e",
-              "isCompleted": false
-            }
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -8319,7 +8298,7 @@
         }
       },
       "updatedAt": "updatedattomakegitdiffseasiertoread",
-      "status": "INIT",
+      "status": "INPROGRESS",
       "isActive": true
     },
     {
@@ -9744,9 +9723,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            "625e858228fe1154bf4b6fa4"
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -9783,12 +9760,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            {
-              "challengeId": "625e858228fe1154bf4b6fa4",
-              "isCompleted": false
-            }
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -9801,7 +9773,7 @@
         }
       },
       "updatedAt": "updatedattomakegitdiffseasiertoread",
-      "status": "INIT",
+      "status": "INPROGRESS",
       "isActive": true
     },
     {
@@ -10392,9 +10364,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            "625e865e28fe1154bf4b6fb7"
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -10432,12 +10402,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            {
-              "challengeId": "625e865e28fe1154bf4b6fb7",
-              "isCompleted": false
-            }
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -10450,7 +10415,7 @@
         }
       },
       "updatedAt": "updatedattomakegitdiffseasiertoread",
-      "status": "INIT",
+      "status": "INPROGRESS",
       "isActive": true
     },
     {
@@ -11049,9 +11014,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            "625e86d728fe1154bf4b6fb8"
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -11088,12 +11051,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            {
-              "challengeId": "625e86d728fe1154bf4b6fb8",
-              "isCompleted": false
-            }
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -11106,7 +11064,7 @@
         }
       },
       "updatedAt": "updatedattomakegitdiffseasiertoread",
-      "status": "INIT",
+      "status": "INPROGRESS",
       "isActive": true
     },
     {
@@ -12466,9 +12424,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            "625e993728fe1154bf4b6fd4"
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -12505,12 +12461,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            {
-              "challengeId": "625e993728fe1154bf4b6fd4",
-              "isCompleted": false
-            }
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -12523,7 +12474,7 @@
         }
       },
       "updatedAt": "updatedattomakegitdiffseasiertoread",
-      "status": "INIT",
+      "status": "INPROGRESS",
       "isActive": true
     },
     {
@@ -13114,9 +13065,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            "625e99a928fe1154bf4b6fd6"
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -13154,12 +13103,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            {
-              "challengeId": "625e99a928fe1154bf4b6fd6",
-              "isCompleted": false
-            }
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -13172,7 +13116,7 @@
         }
       },
       "updatedAt": "updatedattomakegitdiffseasiertoread",
-      "status": "INIT",
+      "status": "INPROGRESS",
       "isActive": true
     },
     {
@@ -13771,9 +13715,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            "625e9a1b28fe1154bf4b6fd7"
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -13810,12 +13752,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            {
-              "challengeId": "625e9a1b28fe1154bf4b6fd7",
-              "isCompleted": false
-            }
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -13828,7 +13765,7 @@
         }
       },
       "updatedAt": "updatedattomakegitdiffseasiertoread",
-      "status": "INIT",
+      "status": "INPROGRESS",
       "isActive": true
     },
     {
@@ -16478,9 +16415,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            "62c82f6428fe1154bf4bfe57"
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -16517,12 +16452,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            {
-              "challengeId": "62c82f6428fe1154bf4bfe57",
-              "isCompleted": false
-            }
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -16535,7 +16465,7 @@
         }
       },
       "updatedAt": "updatedattomakegitdiffseasiertoread",
-      "status": "INIT",
+      "status": "INPROGRESS",
       "isActive": true
     },
     {
@@ -17126,9 +17056,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            "62c8301228fe1154bf4bfe58"
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -17166,12 +17094,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            {
-              "challengeId": "62c8301228fe1154bf4bfe58",
-              "isCompleted": false
-            }
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -17184,7 +17107,7 @@
         }
       },
       "updatedAt": "updatedattomakegitdiffseasiertoread",
-      "status": "INIT",
+      "status": "INPROGRESS",
       "isActive": true
     },
     {
@@ -17783,9 +17706,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            "62c830c028fe1154bf4bfe99"
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -17822,12 +17743,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            {
-              "challengeId": "62c830c028fe1154bf4bfe99",
-              "isCompleted": false
-            }
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -17840,7 +17756,7 @@
         }
       },
       "updatedAt": "updatedattomakegitdiffseasiertoread",
-      "status": "INIT",
+      "status": "INPROGRESS",
       "isActive": true
     },
     {
@@ -19200,9 +19116,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            "62c833ea28fe1154bf4bfe9f"
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -19239,12 +19153,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            {
-              "challengeId": "62c833ea28fe1154bf4bfe9f",
-              "isCompleted": false
-            }
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -19257,7 +19166,7 @@
         }
       },
       "updatedAt": "updatedattomakegitdiffseasiertoread",
-      "status": "INIT",
+      "status": "INPROGRESS",
       "isActive": true
     },
     {
@@ -19848,9 +19757,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            "62c834a728fe1154bf4bfea0"
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -19888,12 +19795,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            {
-              "challengeId": "62c834a728fe1154bf4bfea0",
-              "isCompleted": false
-            }
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -19906,7 +19808,7 @@
         }
       },
       "updatedAt": "updatedattomakegitdiffseasiertoread",
-      "status": "INIT",
+      "status": "INPROGRESS",
       "isActive": true
     },
     {
@@ -20505,9 +20407,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            "62c8359728fe1154bf4bfeb3"
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -20544,12 +20444,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            {
-              "challengeId": "62c8359728fe1154bf4bfeb3",
-              "isCompleted": false
-            }
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -20562,7 +20457,7 @@
         }
       },
       "updatedAt": "updatedattomakegitdiffseasiertoread",
-      "status": "INIT",
+      "status": "INPROGRESS",
       "isActive": true
     },
     {
@@ -23278,9 +23173,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            "6376442829040c967e3e55f2"
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -23317,12 +23210,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            {
-              "challengeId": "6376442829040c967e3e55f2",
-              "isCompleted": false
-            }
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -23335,7 +23223,7 @@
         }
       },
       "updatedAt": "updatedattomakegitdiffseasiertoread",
-      "status": "INIT",
+      "status": "INPROGRESS",
       "isActive": true
     },
     {
@@ -23926,9 +23814,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            "63774a3829040c967e3f0ccc"
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -23966,12 +23852,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            {
-              "challengeId": "63774a3829040c967e3f0ccc",
-              "isCompleted": false
-            }
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -23984,7 +23865,7 @@
         }
       },
       "updatedAt": "updatedattomakegitdiffseasiertoread",
-      "status": "INIT",
+      "status": "INPROGRESS",
       "isActive": true
     },
     {
@@ -24583,9 +24464,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            "63774b8529040c967e3f0fe1"
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -24622,12 +24501,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            {
-              "challengeId": "63774b8529040c967e3f0fe1",
-              "isCompleted": false
-            }
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -24640,7 +24514,7 @@
         }
       },
       "updatedAt": "updatedattomakegitdiffseasiertoread",
-      "status": "INIT",
+      "status": "INPROGRESS",
       "isActive": true
     },
     {
@@ -26064,9 +25938,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            "63774e4129040c967e3f123d"
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -26103,12 +25975,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            {
-              "challengeId": "63774e4129040c967e3f123d",
-              "isCompleted": false
-            }
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -26121,7 +25988,7 @@
         }
       },
       "updatedAt": "updatedattomakegitdiffseasiertoread",
-      "status": "INIT",
+      "status": "INPROGRESS",
       "isActive": true
     },
     {
@@ -26712,9 +26579,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            "63775e0829040c967e3f2c15"
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -26752,12 +26617,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            {
-              "challengeId": "63775e0829040c967e3f2c15",
-              "isCompleted": false
-            }
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -26770,7 +26630,7 @@
         }
       },
       "updatedAt": "updatedattomakegitdiffseasiertoread",
-      "status": "INIT",
+      "status": "INPROGRESS",
       "isActive": true
     },
     {
@@ -27369,9 +27229,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            "63775e9329040c967e3f2ca0"
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -27408,12 +27266,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            {
-              "challengeId": "63775e9329040c967e3f2ca0",
-              "isCompleted": false
-            }
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -27426,7 +27279,7 @@
         }
       },
       "updatedAt": "updatedattomakegitdiffseasiertoread",
-      "status": "INIT",
+      "status": "INPROGRESS",
       "isActive": true
     },
     {
@@ -43033,9 +42886,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            "625e7c1c28fe1154bf4b6f80"
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -43072,12 +42923,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            {
-              "challengeId": "625e7c1c28fe1154bf4b6f80",
-              "isCompleted": false
-            }
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -43090,7 +42936,7 @@
         }
       },
       "updatedAt": "updatedattomakegitdiffseasiertoread",
-      "status": "INIT",
+      "status": "INPROGRESS",
       "isActive": true
     },
     {
@@ -43667,9 +43513,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            "625e7e4028fe1154bf4b6f83"
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -43707,12 +43551,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            {
-              "challengeId": "625e7e4028fe1154bf4b6f83",
-              "isCompleted": false
-            }
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -43725,7 +43564,7 @@
         }
       },
       "updatedAt": "updatedattomakegitdiffseasiertoread",
-      "status": "INIT",
+      "status": "INPROGRESS",
       "isActive": true
     },
     {
@@ -44324,9 +44163,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            "625e7f0628fe1154bf4b6f84"
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -44363,12 +44200,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            {
-              "challengeId": "625e7f0628fe1154bf4b6f84",
-              "isCompleted": false
-            }
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -44381,7 +44213,7 @@
         }
       },
       "updatedAt": "updatedattomakegitdiffseasiertoread",
-      "status": "INIT",
+      "status": "INPROGRESS",
       "isActive": true
     },
     {
@@ -45869,9 +45701,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            "625e827528fe1154bf4b6f92"
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -45908,12 +45738,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            {
-              "challengeId": "625e827528fe1154bf4b6f92",
-              "isCompleted": false
-            }
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -45926,7 +45751,7 @@
         }
       },
       "updatedAt": "updatedattomakegitdiffseasiertoread",
-      "status": "INIT",
+      "status": "INPROGRESS",
       "isActive": true
     },
     {
@@ -46517,9 +46342,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            "625e833828fe1154bf4b6fa1"
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -46557,12 +46380,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            {
-              "challengeId": "625e833828fe1154bf4b6fa1",
-              "isCompleted": false
-            }
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -46575,7 +46393,7 @@
         }
       },
       "updatedAt": "updatedattomakegitdiffseasiertoread",
-      "status": "INIT",
+      "status": "INPROGRESS",
       "isActive": true
     },
     {
@@ -47174,9 +46992,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            "625e83af28fe1154bf4b6fa2"
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -47213,12 +47029,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            {
-              "challengeId": "625e83af28fe1154bf4b6fa2",
-              "isCompleted": false
-            }
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -47231,7 +47042,7 @@
         }
       },
       "updatedAt": "updatedattomakegitdiffseasiertoread",
-      "status": "INIT",
+      "status": "INPROGRESS",
       "isActive": true
     },
     {
@@ -56968,7 +56779,9 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": []
+          "completedChallengeIds": [
+            "63d9463c21282a2b1cfb1413"
+          ]
         },
         "objective": {
           "stats": [
@@ -57005,7 +56818,12 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": []
+          "completedChallengeIds": [
+            {
+              "challengeId": "63d9463c21282a2b1cfb1413",
+              "isCompleted": false
+            }
+          ]
         },
         "objective": {
           "stats": [
@@ -62096,9 +61914,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            "63779a3429040c967e3f6bfd"
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -62134,12 +61950,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            {
-              "challengeId": "63779a3429040c967e3f6bfd",
-              "isCompleted": false
-            }
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -62152,7 +61963,7 @@
         }
       },
       "updatedAt": "updatedattomakegitdiffseasiertoread",
-      "status": "INIT",
+      "status": "INPROGRESS",
       "isActive": true
     },
     {
@@ -62735,9 +62546,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            "63779a8d29040c967e3f6cba"
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -62774,12 +62583,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            {
-              "challengeId": "63779a8d29040c967e3f6cba",
-              "isCompleted": false
-            }
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -62792,7 +62596,7 @@
         }
       },
       "updatedAt": "updatedattomakegitdiffseasiertoread",
-      "status": "INIT",
+      "status": "INPROGRESS",
       "isActive": true
     },
     {
@@ -63383,9 +63187,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            "63779b1f29040c967e3f6da8"
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -63421,12 +63223,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            {
-              "challengeId": "63779b1f29040c967e3f6da8",
-              "isCompleted": false
-            }
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -63439,7 +63236,7 @@
         }
       },
       "updatedAt": "updatedattomakegitdiffseasiertoread",
-      "status": "INIT",
+      "status": "INPROGRESS",
       "isActive": true
     },
     {
@@ -64842,9 +64639,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            "63779c7129040c967e3f6fee"
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -64880,12 +64675,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            {
-              "challengeId": "63779c7129040c967e3f6fee",
-              "isCompleted": false
-            }
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -64898,7 +64688,7 @@
         }
       },
       "updatedAt": "updatedattomakegitdiffseasiertoread",
-      "status": "INIT",
+      "status": "INPROGRESS",
       "isActive": true
     },
     {
@@ -65481,9 +65271,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            "63779cf429040c967e3f7083"
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -65520,12 +65308,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            {
-              "challengeId": "63779cf429040c967e3f7083",
-              "isCompleted": false
-            }
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -65538,7 +65321,7 @@
         }
       },
       "updatedAt": "updatedattomakegitdiffseasiertoread",
-      "status": "INIT",
+      "status": "INPROGRESS",
       "isActive": true
     },
     {
@@ -66129,9 +65912,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            "63779dc429040c967e3f7143"
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -66167,12 +65948,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            {
-              "challengeId": "63779dc429040c967e3f7143",
-              "isCompleted": false
-            }
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -66185,7 +65961,7 @@
         }
       },
       "updatedAt": "updatedattomakegitdiffseasiertoread",
-      "status": "INIT",
+      "status": "INPROGRESS",
       "isActive": true
     },
     {
@@ -73415,9 +73191,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            "625e9d3228fe1154bf4b6ff7"
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -73454,12 +73228,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            {
-              "challengeId": "625e9d3228fe1154bf4b6ff7",
-              "isCompleted": false
-            }
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -73472,7 +73241,7 @@
         }
       },
       "updatedAt": "updatedattomakegitdiffseasiertoread",
-      "status": "INIT",
+      "status": "INPROGRESS",
       "isActive": true
     },
     {
@@ -74063,9 +73832,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            "625eb30528fe1154bf4b708c"
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -74103,12 +73870,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            {
-              "challengeId": "625eb30528fe1154bf4b708c",
-              "isCompleted": false
-            }
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -74121,7 +73883,7 @@
         }
       },
       "updatedAt": "updatedattomakegitdiffseasiertoread",
-      "status": "INIT",
+      "status": "INPROGRESS",
       "isActive": true
     },
     {
@@ -74720,9 +74482,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            "625eb38c28fe1154bf4b708e"
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -74759,12 +74519,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            {
-              "challengeId": "625eb38c28fe1154bf4b708e",
-              "isCompleted": false
-            }
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -74777,7 +74532,7 @@
         }
       },
       "updatedAt": "updatedattomakegitdiffseasiertoread",
-      "status": "INIT",
+      "status": "INPROGRESS",
       "isActive": true
     },
     {
@@ -76008,9 +75763,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            "625eb43c28fe1154bf4b7090"
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -76047,12 +75800,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            {
-              "challengeId": "625eb43c28fe1154bf4b7090",
-              "isCompleted": false
-            }
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -76065,7 +75813,7 @@
         }
       },
       "updatedAt": "updatedattomakegitdiffseasiertoread",
-      "status": "INIT",
+      "status": "INPROGRESS",
       "isActive": true
     },
     {
@@ -76656,9 +76404,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            "625eb49828fe1154bf4b7091"
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -76696,12 +76442,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            {
-              "challengeId": "625eb49828fe1154bf4b7091",
-              "isCompleted": false
-            }
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -76714,7 +76455,7 @@
         }
       },
       "updatedAt": "updatedattomakegitdiffseasiertoread",
-      "status": "INIT",
+      "status": "INPROGRESS",
       "isActive": true
     },
     {
@@ -77313,9 +77054,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            "625eb4e628fe1154bf4b70a8"
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -77352,12 +77091,7 @@
         "prerequisite": {
           "stats": [],
           "items": [],
-          "completedChallengeIds": [
-            {
-              "challengeId": "625eb4e628fe1154bf4b70a8",
-              "isCompleted": false
-            }
-          ]
+          "completedChallengeIds": []
         },
         "objective": {
           "stats": [
@@ -77370,7 +77104,7 @@
         }
       },
       "updatedAt": "updatedattomakegitdiffseasiertoread",
-      "status": "INIT",
+      "status": "INPROGRESS",
       "isActive": true
     },
     {

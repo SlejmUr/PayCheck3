@@ -1,8 +1,8 @@
 ﻿using NetCoreServer;
 using Newtonsoft.Json;
+using PayCheckServerLib.Helpers;
 using PayCheckServerLib.Jsons;
 using PayCheckServerLib.Jsons.Basic;
-using System.Linq;
 
 namespace PayCheckServerLib.Responses
 {
@@ -30,6 +30,8 @@ namespace PayCheckServerLib.Responses
             foreach (var item in challenges.Data)
             {
                 item.UserId = token.UserId;
+                item.RecordId = token.UserId;
+                item.UpdatedAt = TimeHelper.GetOTime();
             }
 
             creator.SetBody(JsonConvert.SerializeObject(challenges));

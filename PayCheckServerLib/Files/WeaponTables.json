@@ -1,0 +1,1445 @@
+[
+  {
+    "namespace": "pd3",
+    "key": "weapon-translation-table-assaultrifle-car4",
+    "set_by": "SERVER",
+    "value": {
+      "weapon-translation-table": [
+        {
+          "Weapon Level": 1,
+          "Weapon Points": 0
+        },
+        {
+          "Weapon Level": 2,
+          "Weapon Points": 250
+        },
+        {
+          "Weapon Level": 3,
+          "Weapon Points": 750
+        },
+        {
+          "Weapon Level": 4,
+          "Weapon Points": 1500
+        },
+        {
+          "Weapon Level": 5,
+          "Weapon Points": 2500
+        },
+        {
+          "Weapon Level": 6,
+          "Weapon Points": 3500
+        },
+        {
+          "Weapon Level": 7,
+          "Weapon Points": 4500
+        },
+        {
+          "Weapon Level": 8,
+          "Weapon Points": 5500
+        },
+        {
+          "Weapon Level": 9,
+          "Weapon Points": 6500
+        },
+        {
+          "Weapon Level": 10,
+          "Weapon Points": 7500
+        },
+        {
+          "Weapon Level": 11,
+          "Weapon Points": 9000
+        },
+        {
+          "Weapon Level": 12,
+          "Weapon Points": 10500
+        },
+        {
+          "Weapon Level": 13,
+          "Weapon Points": 12000
+        },
+        {
+          "Weapon Level": 14,
+          "Weapon Points": 13500
+        },
+        {
+          "Weapon Level": 15,
+          "Weapon Points": 15000
+        },
+        {
+          "Weapon Level": 16,
+          "Weapon Points": 17000
+        },
+        {
+          "Weapon Level": 17,
+          "Weapon Points": 19000
+        },
+        {
+          "Weapon Level": 18,
+          "Weapon Points": 21000
+        },
+        {
+          "Weapon Level": 19,
+          "Weapon Points": 23000
+        },
+        {
+          "Weapon Level": 20,
+          "Weapon Points": 25000
+        },
+        {
+          "Weapon Level": 21,
+          "Weapon Points": 27000
+        },
+        {
+          "Weapon Level": 22,
+          "Weapon Points": 29000
+        },
+        {
+          "Weapon Level": 23,
+          "Weapon Points": 31000
+        },
+        {
+          "Weapon Level": 24,
+          "Weapon Points": 33000
+        },
+        {
+          "Weapon Level": 25,
+          "Weapon Points": 35000
+        },
+        {
+          "Weapon Level": 26,
+          "Weapon Points": 37000
+        },
+        {
+          "Weapon Level": 27,
+          "Weapon Points": 39000
+        },
+        {
+          "Weapon Level": 28,
+          "Weapon Points": 41000
+        },
+        {
+          "Weapon Level": 29,
+          "Weapon Points": 44000
+        }
+      ]
+    },
+    "created_at": "2022-11-15T16:49:57.601Z",
+    "updated_at": "2023-02-02T10:46:03.926Z"
+  },
+  {
+    "namespace": "pd3",
+    "key": "weapon-translation-table-assaultrifle-ku59",
+    "set_by": "SERVER",
+    "value": {
+      "weapon-translation-table": [
+        {
+          "Weapon Level": 1,
+          "Weapon Points": 0
+        },
+        {
+          "Weapon Level": 2,
+          "Weapon Points": 250
+        },
+        {
+          "Weapon Level": 3,
+          "Weapon Points": 750
+        },
+        {
+          "Weapon Level": 4,
+          "Weapon Points": 1500
+        },
+        {
+          "Weapon Level": 5,
+          "Weapon Points": 2500
+        },
+        {
+          "Weapon Level": 6,
+          "Weapon Points": 3500
+        },
+        {
+          "Weapon Level": 7,
+          "Weapon Points": 4500
+        },
+        {
+          "Weapon Level": 8,
+          "Weapon Points": 5500
+        },
+        {
+          "Weapon Level": 9,
+          "Weapon Points": 6500
+        },
+        {
+          "Weapon Level": 10,
+          "Weapon Points": 7500
+        },
+        {
+          "Weapon Level": 11,
+          "Weapon Points": 9000
+        },
+        {
+          "Weapon Level": 12,
+          "Weapon Points": 10500
+        },
+        {
+          "Weapon Level": 13,
+          "Weapon Points": 12000
+        },
+        {
+          "Weapon Level": 14,
+          "Weapon Points": 13500
+        },
+        {
+          "Weapon Level": 15,
+          "Weapon Points": 15000
+        },
+        {
+          "Weapon Level": 16,
+          "Weapon Points": 17000
+        },
+        {
+          "Weapon Level": 17,
+          "Weapon Points": 19000
+        },
+        {
+          "Weapon Level": 18,
+          "Weapon Points": 21000
+        },
+        {
+          "Weapon Level": 19,
+          "Weapon Points": 23000
+        },
+        {
+          "Weapon Level": 20,
+          "Weapon Points": 25000
+        },
+        {
+          "Weapon Level": 21,
+          "Weapon Points": 27000
+        },
+        {
+          "Weapon Level": 22,
+          "Weapon Points": 29000
+        },
+        {
+          "Weapon Level": 23,
+          "Weapon Points": 31000
+        },
+        {
+          "Weapon Level": 24,
+          "Weapon Points": 33000
+        },
+        {
+          "Weapon Level": 25,
+          "Weapon Points": 35000
+        },
+        {
+          "Weapon Level": 26,
+          "Weapon Points": 37000
+        },
+        {
+          "Weapon Level": 27,
+          "Weapon Points": 39000
+        },
+        {
+          "Weapon Level": 28,
+          "Weapon Points": 41000
+        },
+        {
+          "Weapon Level": 29,
+          "Weapon Points": 44000
+        }
+      ]
+    },
+    "created_at": "2022-11-15T16:53:45.713Z",
+    "updated_at": "2023-02-02T10:46:59.39Z"
+  },
+  {
+    "namespace": "pd3",
+    "key": "weapon-translation-table-assaultrifle-nwb9",
+    "set_by": "SERVER",
+    "value": {
+      "weapon-translation-table": [
+        {
+          "Weapon Level": 1,
+          "Weapon Points": 0
+        },
+        {
+          "Weapon Level": 2,
+          "Weapon Points": 250
+        },
+        {
+          "Weapon Level": 3,
+          "Weapon Points": 750
+        },
+        {
+          "Weapon Level": 4,
+          "Weapon Points": 1500
+        },
+        {
+          "Weapon Level": 5,
+          "Weapon Points": 2500
+        },
+        {
+          "Weapon Level": 6,
+          "Weapon Points": 3500
+        },
+        {
+          "Weapon Level": 7,
+          "Weapon Points": 4500
+        },
+        {
+          "Weapon Level": 8,
+          "Weapon Points": 5500
+        },
+        {
+          "Weapon Level": 9,
+          "Weapon Points": 6500
+        },
+        {
+          "Weapon Level": 10,
+          "Weapon Points": 7500
+        },
+        {
+          "Weapon Level": 11,
+          "Weapon Points": 9000
+        },
+        {
+          "Weapon Level": 12,
+          "Weapon Points": 10500
+        },
+        {
+          "Weapon Level": 13,
+          "Weapon Points": 12000
+        },
+        {
+          "Weapon Level": 14,
+          "Weapon Points": 13500
+        },
+        {
+          "Weapon Level": 15,
+          "Weapon Points": 15000
+        },
+        {
+          "Weapon Level": 16,
+          "Weapon Points": 17000
+        },
+        {
+          "Weapon Level": 17,
+          "Weapon Points": 19000
+        },
+        {
+          "Weapon Level": 18,
+          "Weapon Points": 21000
+        },
+        {
+          "Weapon Level": 19,
+          "Weapon Points": 23000
+        },
+        {
+          "Weapon Level": 20,
+          "Weapon Points": 25000
+        },
+        {
+          "Weapon Level": 21,
+          "Weapon Points": 27000
+        },
+        {
+          "Weapon Level": 22,
+          "Weapon Points": 29000
+        },
+        {
+          "Weapon Level": 23,
+          "Weapon Points": 31000
+        },
+        {
+          "Weapon Level": 24,
+          "Weapon Points": 33000
+        },
+        {
+          "Weapon Level": 25,
+          "Weapon Points": 36000
+        },
+        {
+          "Weapon Level": 26,
+          "Weapon Points": 39000
+        },
+        {
+          "Weapon Level": 27,
+          "Weapon Points": 42000
+        }
+      ]
+    },
+    "created_at": "2022-11-15T16:56:29.643Z",
+    "updated_at": "2023-02-02T10:45:35.396Z"
+  },
+  {
+    "namespace": "pd3",
+    "key": "weapon-translation-table-assaultrifle-vf7s",
+    "set_by": "SERVER",
+    "value": {
+      "weapon-translation-table": [
+        {
+          "Weapon Level": 1,
+          "Weapon Points": 0
+        },
+        {
+          "Weapon Level": 2,
+          "Weapon Points": 250
+        },
+        {
+          "Weapon Level": 3,
+          "Weapon Points": 750
+        },
+        {
+          "Weapon Level": 4,
+          "Weapon Points": 1500
+        },
+        {
+          "Weapon Level": 5,
+          "Weapon Points": 2500
+        },
+        {
+          "Weapon Level": 6,
+          "Weapon Points": 3500
+        },
+        {
+          "Weapon Level": 7,
+          "Weapon Points": 4500
+        },
+        {
+          "Weapon Level": 8,
+          "Weapon Points": 5500
+        },
+        {
+          "Weapon Level": 9,
+          "Weapon Points": 6500
+        },
+        {
+          "Weapon Level": 10,
+          "Weapon Points": 7500
+        },
+        {
+          "Weapon Level": 11,
+          "Weapon Points": 9000
+        },
+        {
+          "Weapon Level": 12,
+          "Weapon Points": 10500
+        },
+        {
+          "Weapon Level": 13,
+          "Weapon Points": 12000
+        },
+        {
+          "Weapon Level": 14,
+          "Weapon Points": 13500
+        },
+        {
+          "Weapon Level": 15,
+          "Weapon Points": 15000
+        },
+        {
+          "Weapon Level": 16,
+          "Weapon Points": 17000
+        },
+        {
+          "Weapon Level": 17,
+          "Weapon Points": 19000
+        },
+        {
+          "Weapon Level": 18,
+          "Weapon Points": 21000
+        },
+        {
+          "Weapon Level": 19,
+          "Weapon Points": 23000
+        },
+        {
+          "Weapon Level": 20,
+          "Weapon Points": 25000
+        },
+        {
+          "Weapon Level": 21,
+          "Weapon Points": 27000
+        },
+        {
+          "Weapon Level": 22,
+          "Weapon Points": 29000
+        },
+        {
+          "Weapon Level": 23,
+          "Weapon Points": 31000
+        },
+        {
+          "Weapon Level": 24,
+          "Weapon Points": 33000
+        },
+        {
+          "Weapon Level": 25,
+          "Weapon Points": 35000
+        },
+        {
+          "Weapon Level": 26,
+          "Weapon Points": 37000
+        },
+        {
+          "Weapon Level": 27,
+          "Weapon Points": 39000
+        },
+        {
+          "Weapon Level": 28,
+          "Weapon Points": 41000
+        },
+        {
+          "Weapon Level": 29,
+          "Weapon Points": 44000
+        }
+      ]
+    },
+    "created_at": "2022-11-15T16:56:47.894Z",
+    "updated_at": "2023-02-02T10:46:34.37Z"
+  },
+  {
+    "namespace": "pd3",
+    "key": "weapon-translation-table-marksman-a114",
+    "set_by": "SERVER",
+    "value": {
+      "weapon-translation-table": [
+        {
+          "Weapon Level": 1,
+          "Weapon Points": 0
+        },
+        {
+          "Weapon Level": 2,
+          "Weapon Points": 250
+        },
+        {
+          "Weapon Level": 3,
+          "Weapon Points": 750
+        },
+        {
+          "Weapon Level": 4,
+          "Weapon Points": 1500
+        },
+        {
+          "Weapon Level": 5,
+          "Weapon Points": 2500
+        },
+        {
+          "Weapon Level": 6,
+          "Weapon Points": 3500
+        },
+        {
+          "Weapon Level": 7,
+          "Weapon Points": 4500
+        },
+        {
+          "Weapon Level": 8,
+          "Weapon Points": 5500
+        },
+        {
+          "Weapon Level": 9,
+          "Weapon Points": 6500
+        },
+        {
+          "Weapon Level": 10,
+          "Weapon Points": 7500
+        },
+        {
+          "Weapon Level": 11,
+          "Weapon Points": 9000
+        },
+        {
+          "Weapon Level": 12,
+          "Weapon Points": 10500
+        },
+        {
+          "Weapon Level": 13,
+          "Weapon Points": 12000
+        },
+        {
+          "Weapon Level": 14,
+          "Weapon Points": 13500
+        },
+        {
+          "Weapon Level": 15,
+          "Weapon Points": 15000
+        },
+        {
+          "Weapon Level": 16,
+          "Weapon Points": 17000
+        },
+        {
+          "Weapon Level": 17,
+          "Weapon Points": 19000
+        },
+        {
+          "Weapon Level": 18,
+          "Weapon Points": 21000
+        },
+        {
+          "Weapon Level": 19,
+          "Weapon Points": 23000
+        },
+        {
+          "Weapon Level": 20,
+          "Weapon Points": 25000
+        },
+        {
+          "Weapon Level": 21,
+          "Weapon Points": 27000
+        },
+        {
+          "Weapon Level": 22,
+          "Weapon Points": 29000
+        },
+        {
+          "Weapon Level": 23,
+          "Weapon Points": 32000
+        },
+        {
+          "Weapon Level": 24,
+          "Weapon Points": 35000
+        }
+      ]
+    },
+    "created_at": "2022-11-15T16:53:13.643Z",
+    "updated_at": "2023-03-08T12:18:57.323Z"
+  },
+  {
+    "namespace": "pd3",
+    "key": "weapon-translation-table-marksman-r900s",
+    "set_by": "SERVER",
+    "value": {
+      "weapon-translation-table": [
+        {
+          "Weapon Level": 1,
+          "Weapon Points": 0
+        },
+        {
+          "Weapon Level": 2,
+          "Weapon Points": 250
+        },
+        {
+          "Weapon Level": 3,
+          "Weapon Points": 750
+        },
+        {
+          "Weapon Level": 4,
+          "Weapon Points": 1500
+        },
+        {
+          "Weapon Level": 5,
+          "Weapon Points": 2500
+        },
+        {
+          "Weapon Level": 6,
+          "Weapon Points": 3500
+        },
+        {
+          "Weapon Level": 7,
+          "Weapon Points": 5000
+        },
+        {
+          "Weapon Level": 8,
+          "Weapon Points": 6500
+        },
+        {
+          "Weapon Level": 9,
+          "Weapon Points": 8500
+        },
+        {
+          "Weapon Level": 10,
+          "Weapon Points": 10500
+        },
+        {
+          "Weapon Level": 11,
+          "Weapon Points": 12500
+        },
+        {
+          "Weapon Level": 12,
+          "Weapon Points": 15500
+        },
+        {
+          "Weapon Level": 13,
+          "Weapon Points": 18500
+        },
+        {
+          "Weapon Level": 14,
+          "Weapon Points": 21500
+        }
+      ]
+    },
+    "created_at": "2022-11-15T16:51:29.976Z",
+    "updated_at": "2023-02-02T10:50:37.174Z"
+  },
+  {
+    "namespace": "pd3",
+    "key": "weapon-translation-table-pistol-s40",
+    "set_by": "SERVER",
+    "value": {
+      "weapon-translation-table": [
+        {
+          "Weapon Level": 1,
+          "Weapon Points": 0
+        },
+        {
+          "Weapon Level": 2,
+          "Weapon Points": 250
+        },
+        {
+          "Weapon Level": 3,
+          "Weapon Points": 750
+        },
+        {
+          "Weapon Level": 4,
+          "Weapon Points": 1500
+        },
+        {
+          "Weapon Level": 5,
+          "Weapon Points": 2500
+        },
+        {
+          "Weapon Level": 6,
+          "Weapon Points": 4000
+        },
+        {
+          "Weapon Level": 7,
+          "Weapon Points": 6000
+        },
+        {
+          "Weapon Level": 8,
+          "Weapon Points": 8000
+        },
+        {
+          "Weapon Level": 9,
+          "Weapon Points": 10000
+        },
+        {
+          "Weapon Level": 10,
+          "Weapon Points": 13000
+        },
+        {
+          "Weapon Level": 11,
+          "Weapon Points": 16000
+        },
+        {
+          "Weapon Level": 12,
+          "Weapon Points": 19000
+        },
+        {
+          "Weapon Level": 13,
+          "Weapon Points": 22000
+        }
+      ]
+    },
+    "created_at": "2022-11-15T16:50:25.769Z",
+    "updated_at": "2023-02-02T10:52:25.684Z"
+  },
+  {
+    "namespace": "pd3",
+    "key": "weapon-translation-table-pistol-s403",
+    "set_by": "SERVER",
+    "value": {
+      "weapon-translation-table": [
+        {
+          "Weapon Level": 1,
+          "Weapon Points": 0
+        },
+        {
+          "Weapon Level": 2,
+          "Weapon Points": 250
+        },
+        {
+          "Weapon Level": 3,
+          "Weapon Points": 750
+        },
+        {
+          "Weapon Level": 4,
+          "Weapon Points": 1500
+        },
+        {
+          "Weapon Level": 5,
+          "Weapon Points": 2500
+        },
+        {
+          "Weapon Level": 6,
+          "Weapon Points": 4000
+        },
+        {
+          "Weapon Level": 7,
+          "Weapon Points": 6000
+        },
+        {
+          "Weapon Level": 8,
+          "Weapon Points": 8000
+        },
+        {
+          "Weapon Level": 9,
+          "Weapon Points": 10000
+        },
+        {
+          "Weapon Level": 10,
+          "Weapon Points": 13000
+        },
+        {
+          "Weapon Level": 11,
+          "Weapon Points": 16000
+        },
+        {
+          "Weapon Level": 12,
+          "Weapon Points": 19000
+        },
+        {
+          "Weapon Level": 13,
+          "Weapon Points": 22000
+        }
+      ]
+    },
+    "created_at": "2022-11-15T16:57:21.414Z",
+    "updated_at": "2023-02-02T10:52:01.395Z"
+  },
+  {
+    "namespace": "pd3",
+    "key": "weapon-translation-table-pistol-spm11",
+    "set_by": "SERVER",
+    "value": {
+      "weapon-translation-table": [
+        {
+          "Weapon Level": 1,
+          "Weapon Points": 0
+        },
+        {
+          "Weapon Level": 2,
+          "Weapon Points": 250
+        },
+        {
+          "Weapon Level": 3,
+          "Weapon Points": 750
+        },
+        {
+          "Weapon Level": 4,
+          "Weapon Points": 1500
+        },
+        {
+          "Weapon Level": 5,
+          "Weapon Points": 2500
+        },
+        {
+          "Weapon Level": 6,
+          "Weapon Points": 4000
+        },
+        {
+          "Weapon Level": 7,
+          "Weapon Points": 6000
+        },
+        {
+          "Weapon Level": 8,
+          "Weapon Points": 8000
+        },
+        {
+          "Weapon Level": 9,
+          "Weapon Points": 10000
+        },
+        {
+          "Weapon Level": 10,
+          "Weapon Points": 13000
+        },
+        {
+          "Weapon Level": 11,
+          "Weapon Points": 16000
+        },
+        {
+          "Weapon Level": 12,
+          "Weapon Points": 19000
+        },
+        {
+          "Weapon Level": 13,
+          "Weapon Points": 22000
+        }
+      ]
+    },
+    "created_at": "2022-11-15T16:55:52.088Z",
+    "updated_at": "2023-02-02T10:52:51.426Z"
+  },
+  {
+    "namespace": "pd3",
+    "key": "weapon-translation-table-pistol-stryk7",
+    "set_by": "SERVER",
+    "value": {
+      "weapon-translation-table": [
+        {
+          "Weapon Level": 1,
+          "Weapon Points": 0
+        },
+        {
+          "Weapon Level": 2,
+          "Weapon Points": 250
+        },
+        {
+          "Weapon Level": 3,
+          "Weapon Points": 750
+        },
+        {
+          "Weapon Level": 4,
+          "Weapon Points": 1500
+        },
+        {
+          "Weapon Level": 5,
+          "Weapon Points": 2500
+        },
+        {
+          "Weapon Level": 6,
+          "Weapon Points": 4000
+        },
+        {
+          "Weapon Level": 7,
+          "Weapon Points": 6000
+        },
+        {
+          "Weapon Level": 8,
+          "Weapon Points": 8000
+        },
+        {
+          "Weapon Level": 9,
+          "Weapon Points": 10000
+        },
+        {
+          "Weapon Level": 10,
+          "Weapon Points": 13000
+        },
+        {
+          "Weapon Level": 11,
+          "Weapon Points": 16000
+        },
+        {
+          "Weapon Level": 12,
+          "Weapon Points": 19000
+        },
+        {
+          "Weapon Level": 13,
+          "Weapon Points": 22000
+        }
+      ]
+    },
+    "created_at": "2022-11-15T16:54:38.096Z",
+    "updated_at": "2023-02-02T10:51:36.059Z"
+  },
+  {
+    "namespace": "pd3",
+    "key": "weapon-translation-table-revolver-bison",
+    "set_by": "SERVER",
+    "value": {
+      "weapon-translation-table": [
+        {
+          "Weapon Level": 1,
+          "Weapon Points": 0
+        },
+        {
+          "Weapon Level": 2,
+          "Weapon Points": 250
+        },
+        {
+          "Weapon Level": 3,
+          "Weapon Points": 750
+        },
+        {
+          "Weapon Level": 4,
+          "Weapon Points": 1500
+        },
+        {
+          "Weapon Level": 5,
+          "Weapon Points": 2500
+        },
+        {
+          "Weapon Level": 6,
+          "Weapon Points": 4000
+        },
+        {
+          "Weapon Level": 7,
+          "Weapon Points": 6000
+        },
+        {
+          "Weapon Level": 8,
+          "Weapon Points": 9000
+        },
+        {
+          "Weapon Level": 9,
+          "Weapon Points": 12000
+        },
+        {
+          "Weapon Level": 10,
+          "Weapon Points": 15000
+        },
+        {
+          "Weapon Level": 11,
+          "Weapon Points": 18000
+        }
+      ]
+    },
+    "created_at": "2022-11-15T16:58:09.374Z",
+    "updated_at": "2023-02-02T10:53:38.381Z"
+  },
+  {
+    "namespace": "pd3",
+    "key": "weapon-translation-table-revolver-castigo44",
+    "set_by": "SERVER",
+    "value": {
+      "weapon-translation-table": [
+        {
+          "Weapon Level": 1,
+          "Weapon Points": 0
+        },
+        {
+          "Weapon Level": 2,
+          "Weapon Points": 250
+        },
+        {
+          "Weapon Level": 3,
+          "Weapon Points": 750
+        },
+        {
+          "Weapon Level": 4,
+          "Weapon Points": 1500
+        },
+        {
+          "Weapon Level": 5,
+          "Weapon Points": 2500
+        },
+        {
+          "Weapon Level": 6,
+          "Weapon Points": 4000
+        },
+        {
+          "Weapon Level": 7,
+          "Weapon Points": 6000
+        },
+        {
+          "Weapon Level": 8,
+          "Weapon Points": 9000
+        },
+        {
+          "Weapon Level": 9,
+          "Weapon Points": 12000
+        },
+        {
+          "Weapon Level": 10,
+          "Weapon Points": 15000
+        },
+        {
+          "Weapon Level": 11,
+          "Weapon Points": 18000
+        },
+        {
+          "Weapon Level": 12,
+          "Weapon Points": 21000
+        }
+      ]
+    },
+    "created_at": "2022-11-15T16:52:50.791Z",
+    "updated_at": "2023-02-02T10:53:12.26Z"
+  },
+  {
+    "namespace": "pd3",
+    "key": "weapon-translation-table-shotgun-mosconi12c",
+    "set_by": "SERVER",
+    "value": {
+      "weapon-translation-table": [
+        {
+          "Weapon Level": 1,
+          "Weapon Points": 0
+        },
+        {
+          "Weapon Level": 2,
+          "Weapon Points": 250
+        },
+        {
+          "Weapon Level": 3,
+          "Weapon Points": 750
+        },
+        {
+          "Weapon Level": 4,
+          "Weapon Points": 1500
+        },
+        {
+          "Weapon Level": 5,
+          "Weapon Points": 2500
+        },
+        {
+          "Weapon Level": 6,
+          "Weapon Points": 4000
+        },
+        {
+          "Weapon Level": 7,
+          "Weapon Points": 6000
+        },
+        {
+          "Weapon Level": 8,
+          "Weapon Points": 9000
+        },
+        {
+          "Weapon Level": 9,
+          "Weapon Points": 12000
+        },
+        {
+          "Weapon Level": 10,
+          "Weapon Points": 15000
+        },
+        {
+          "Weapon Level": 11,
+          "Weapon Points": 18000
+        },
+        {
+          "Weapon Level": 12,
+          "Weapon Points": 21000
+        }
+      ]
+    },
+    "created_at": "2022-11-15T16:55:06.799Z",
+    "updated_at": "2023-02-02T10:49:37.276Z"
+  },
+  {
+    "namespace": "pd3",
+    "key": "weapon-translation-table-shotgun-r880",
+    "set_by": "SERVER",
+    "value": {
+      "weapon-translation-table": [
+        {
+          "Weapon Level": 1,
+          "Weapon Points": 0
+        },
+        {
+          "Weapon Level": 2,
+          "Weapon Points": 250
+        },
+        {
+          "Weapon Level": 3,
+          "Weapon Points": 750
+        },
+        {
+          "Weapon Level": 4,
+          "Weapon Points": 1500
+        },
+        {
+          "Weapon Level": 5,
+          "Weapon Points": 2500
+        },
+        {
+          "Weapon Level": 6,
+          "Weapon Points": 3500
+        },
+        {
+          "Weapon Level": 7,
+          "Weapon Points": 4500
+        },
+        {
+          "Weapon Level": 8,
+          "Weapon Points": 6000
+        },
+        {
+          "Weapon Level": 9,
+          "Weapon Points": 7500
+        },
+        {
+          "Weapon Level": 10,
+          "Weapon Points": 9000
+        },
+        {
+          "Weapon Level": 11,
+          "Weapon Points": 11000
+        },
+        {
+          "Weapon Level": 12,
+          "Weapon Points": 13000
+        },
+        {
+          "Weapon Level": 13,
+          "Weapon Points": 16000
+        },
+        {
+          "Weapon Level": 14,
+          "Weapon Points": 19000
+        },
+        {
+          "Weapon Level": 15,
+          "Weapon Points": 22000
+        },
+        {
+          "Weapon Level": 16,
+          "Weapon Points": 25000
+        },
+        {
+          "Weapon Level": 17,
+          "Weapon Points": 28000
+        }
+      ]
+    },
+    "created_at": "2022-11-15T16:50:57.938Z",
+    "updated_at": "2023-02-02T10:49:12.442Z"
+  },
+  {
+    "namespace": "pd3",
+    "key": "weapon-translation-table-smg-commando",
+    "set_by": "SERVER",
+    "value": {
+      "weapon-translation-table": [
+        {
+          "Weapon Level": 1,
+          "Weapon Points": 0
+        },
+        {
+          "Weapon Level": 2,
+          "Weapon Points": 250
+        },
+        {
+          "Weapon Level": 3,
+          "Weapon Points": 750
+        },
+        {
+          "Weapon Level": 4,
+          "Weapon Points": 1500
+        },
+        {
+          "Weapon Level": 5,
+          "Weapon Points": 2500
+        },
+        {
+          "Weapon Level": 6,
+          "Weapon Points": 3500
+        },
+        {
+          "Weapon Level": 7,
+          "Weapon Points": 4500
+        },
+        {
+          "Weapon Level": 8,
+          "Weapon Points": 6000
+        },
+        {
+          "Weapon Level": 9,
+          "Weapon Points": 7500
+        },
+        {
+          "Weapon Level": 10,
+          "Weapon Points": 9000
+        },
+        {
+          "Weapon Level": 11,
+          "Weapon Points": 11000
+        },
+        {
+          "Weapon Level": 12,
+          "Weapon Points": 13000
+        },
+        {
+          "Weapon Level": 13,
+          "Weapon Points": 16000
+        },
+        {
+          "Weapon Level": 14,
+          "Weapon Points": 19000
+        },
+        {
+          "Weapon Level": 15,
+          "Weapon Points": 22000
+        },
+        {
+          "Weapon Level": 16,
+          "Weapon Points": 25000
+        },
+        {
+          "Weapon Level": 17,
+          "Weapon Points": 28000
+        }
+      ]
+    },
+    "created_at": "2022-11-15T16:54:07.062Z",
+    "updated_at": "2023-02-02T10:47:36.498Z"
+  },
+  {
+    "namespace": "pd3",
+    "key": "weapon-translation-table-smg-compact7",
+    "set_by": "SERVER",
+    "value": {
+      "weapon-translation-table": [
+        {
+          "Weapon Level": 1,
+          "Weapon Points": 0
+        },
+        {
+          "Weapon Level": 2,
+          "Weapon Points": 250
+        },
+        {
+          "Weapon Level": 3,
+          "Weapon Points": 750
+        },
+        {
+          "Weapon Level": 4,
+          "Weapon Points": 1500
+        },
+        {
+          "Weapon Level": 5,
+          "Weapon Points": 2500
+        },
+        {
+          "Weapon Level": 6,
+          "Weapon Points": 3500
+        },
+        {
+          "Weapon Level": 7,
+          "Weapon Points": 4500
+        },
+        {
+          "Weapon Level": 8,
+          "Weapon Points": 6000
+        },
+        {
+          "Weapon Level": 9,
+          "Weapon Points": 7500
+        },
+        {
+          "Weapon Level": 10,
+          "Weapon Points": 9000
+        },
+        {
+          "Weapon Level": 11,
+          "Weapon Points": 11000
+        },
+        {
+          "Weapon Level": 12,
+          "Weapon Points": 13000
+        },
+        {
+          "Weapon Level": 13,
+          "Weapon Points": 16000
+        },
+        {
+          "Weapon Level": 14,
+          "Weapon Points": 19000
+        },
+        {
+          "Weapon Level": 15,
+          "Weapon Points": 22000
+        },
+        {
+          "Weapon Level": 16,
+          "Weapon Points": 25000
+        },
+        {
+          "Weapon Level": 17,
+          "Weapon Points": 28000
+        }
+      ]
+    },
+    "created_at": "2022-11-15T16:52:28.749Z",
+    "updated_at": "2023-02-02T10:48:42.537Z"
+  },
+  {
+    "namespace": "pd3",
+    "key": "weapon-translation-table-smg-pc9",
+    "set_by": "SERVER",
+    "value": {
+      "weapon-translation-table": [
+        {
+          "Weapon Level": 1,
+          "Weapon Points": 0
+        },
+        {
+          "Weapon Level": 2,
+          "Weapon Points": 250
+        },
+        {
+          "Weapon Level": 3,
+          "Weapon Points": 750
+        },
+        {
+          "Weapon Level": 4,
+          "Weapon Points": 1500
+        },
+        {
+          "Weapon Level": 5,
+          "Weapon Points": 2500
+        },
+        {
+          "Weapon Level": 6,
+          "Weapon Points": 3500
+        },
+        {
+          "Weapon Level": 7,
+          "Weapon Points": 4500
+        },
+        {
+          "Weapon Level": 8,
+          "Weapon Points": 5500
+        },
+        {
+          "Weapon Level": 9,
+          "Weapon Points": 6500
+        },
+        {
+          "Weapon Level": 10,
+          "Weapon Points": 7500
+        },
+        {
+          "Weapon Level": 11,
+          "Weapon Points": 9000
+        },
+        {
+          "Weapon Level": 12,
+          "Weapon Points": 10500
+        },
+        {
+          "Weapon Level": 13,
+          "Weapon Points": 12000
+        },
+        {
+          "Weapon Level": 14,
+          "Weapon Points": 13500
+        },
+        {
+          "Weapon Level": 15,
+          "Weapon Points": 15000
+        },
+        {
+          "Weapon Level": 16,
+          "Weapon Points": 17000
+        },
+        {
+          "Weapon Level": 17,
+          "Weapon Points": 19000
+        },
+        {
+          "Weapon Level": 18,
+          "Weapon Points": 21000
+        },
+        {
+          "Weapon Level": 19,
+          "Weapon Points": 23000
+        },
+        {
+          "Weapon Level": 20,
+          "Weapon Points": 25000
+        },
+        {
+          "Weapon Level": 21,
+          "Weapon Points": 27000
+        },
+        {
+          "Weapon Level": 22,
+          "Weapon Points": 29000
+        },
+        {
+          "Weapon Level": 23,
+          "Weapon Points": 32000
+        },
+        {
+          "Weapon Level": 24,
+          "Weapon Points": 35000
+        }
+      ]
+    },
+    "created_at": "2022-11-15T16:55:26.931Z",
+    "updated_at": "2023-03-08T12:19:22.033Z"
+  }
+]

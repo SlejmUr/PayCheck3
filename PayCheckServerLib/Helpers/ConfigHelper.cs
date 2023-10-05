@@ -48,7 +48,8 @@ namespace PayCheckServerLib.Helpers
                     InDevFeatures = new()
                     {
                         EnablePartySession = false,
-                        UsePWInsteadSteamToken = false
+                        UsePWInsteadSteamToken = false,
+                        UseBasicWeaponTable = true
                     },
                     EnableAutoUpdate = true
                 };

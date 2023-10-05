@@ -3,7 +3,6 @@ using Newtonsoft.Json;
 using PayCheckServerLib.Helpers;
 using PayCheckServerLib.Jsons;
 using PayCheckServerLib.Jsons.Basic;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace PayCheckServerLib.Responses
 {
@@ -72,23 +71,41 @@ namespace PayCheckServerLib.Responses
         {
             var req = JsonConvert.DeserializeObject<WeaponsTableREQ>(request.Body) ?? throw new Exception("WeaponsTableREQ is null!");
             ResponseCreator response = new();
-
             WeaponsTable weaponsTable = new()
             {
                 Data = new()
             };
-            var weaponTranslationTables = JsonConvert.DeserializeObject<List<WeaponsTable.WeaponTranslationTable>>(File.ReadAllText("Files/BasicWeaponsTable.json")) ?? throw new Exception("BasicWeaponsTable is null!");
-            foreach (var item in req.Keys)
+            if (ConfigHelper.ServerConfig.InDevFeatures.UseBasicWeaponTable)
             {
-                weaponsTable.Data.Add(new WeaponsTable.CData()
+                var weaponTranslationTables = JsonConvert.DeserializeObject<List<WeaponsTable.WeaponTranslationTable>>(File.ReadAllText("Files/BasicWeaponsTable.json")) ?? throw new Exception("BasicWeaponsTable is null!");
+                foreach (var item in req.Keys)
                 {
-                    Key = item,
-                    Value = new()
+                    weaponsTable.Data.Add(new WeaponsTable.CData()
                     {
-                        WeaponTranslationTable = weaponTranslationTables
-                    }
-                });
+                        Key = item,
+                        Value = new()
+                        {
+                            WeaponTranslationTable = weaponTranslationTables
+                        }
+                    });
+                }
             }
+            else
+            {
+                var WeaponTables = JsonConvert.DeserializeObject<List<WeaponsTable.CData>>(File.ReadAllText("Files/WeaponTables.json"));
+                if (WeaponTables == null)
+                {
+                    throw new Exception("WeaponTables null!");
+                }
+                foreach (var item in WeaponTables)
+                {
+                    if (req.Keys.Contains(item.Key))
+                    {
+                        weaponsTable.Data.Add(item);
+                    }
+                }
+            }
+
             response.SetBody(JsonConvert.SerializeObject(weaponsTable));
             session.SendResponse(response.GetResponse());
             return true;
