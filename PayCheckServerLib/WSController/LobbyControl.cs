@@ -72,7 +72,7 @@ namespace PayCheckServerLib.WSController
                         rsp.Add("availability", kv["availability"]);
                         rsp.Add("platform", kv["platform"]);
                         rsp.Add("lastSeenAt", DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ"));
-                        foreach (var id in session.WSSServer().WSUserIds)
+                        foreach (var id in session.WSSServer.WSUserIds)
                         { 
                             if (id == session.WSUserId)
                                 continue;

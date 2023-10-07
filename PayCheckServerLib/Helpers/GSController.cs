@@ -97,7 +97,7 @@ namespace PayCheckServerLib.Helpers
             };
             Debugger.PrintDebug("OnSessionInvited");
             //  Maybe can be much better this but atleast works
-            foreach (var vs_ui in session.WSSServer().WSUserIds)
+            foreach (var vs_ui in session.WSSServer.WSUserIds)
             {
                 foreach (var uid in team.UserIDs)
                 {
@@ -228,7 +228,7 @@ namespace PayCheckServerLib.Helpers
             };
 
             //  Maybe can be much better this but atleast works
-            foreach (var vs_ui in pcSession.WSSServer().WSUserIds)
+            foreach (var vs_ui in pcSession.WSSServer.WSUserIds)
             {
                 foreach (var uid in session.Members)
                 {

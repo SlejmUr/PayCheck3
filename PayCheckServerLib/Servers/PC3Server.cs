@@ -78,20 +78,31 @@ namespace PayCheckServerLib
                 if (UserId == null)
                     Debugger.PrintError("UserId is null! (Parameter)");
 
-                if (WSSServer().WSS_Stuff.TryGetValue(UserId + "_lobby", out var value))
+                if (WSSServer.WSS_Stuff.TryGetValue($"{NameSpace}_{UserId}_lobby", out var value))
                 {
                     return value;
                 }
-                Debugger.PrintError($"User({UserId}_lobby) not found in WSS_Stuff!");
+                Debugger.PrintError($"User({NameSpace}_{UserId}_lobby) not found in WSS_Stuff!");
                 return null;
             }
 
-            public PC3Session GetWSChat(string UserId, string NameSpace = "pd3") => WSSServer().WSS_Stuff[UserId + "_chat"];
+            public PC3Session? GetWSChat(string UserId, string NameSpace = "pd3")
+            {
+                if (UserId == null)
+                    Debugger.PrintError("UserId is null! (Parameter)");
 
-            public PC3WSSServer WSSServer() => (PC3WSSServer)Server;
+                if (WSSServer.WSS_Stuff.TryGetValue($"{NameSpace}_{UserId}_chat", out var value))
+                {
+                    return value;
+                }
+                Debugger.PrintError($"User({NameSpace}_{UserId}_chat) not found in WSS_Stuff!");
+                return null;
+            }
+
+            public PC3WSSServer WSSServer => (PC3WSSServer)Server;
 
             public string WSUserId = "";
-
+            public TokenHelper.Token Token = new();
             public PC3Session(WssServer server) : base(server) { }
             public Dictionary<string, string> Headers = new();
             public Dictionary<string, string> HttpParam = new();
@@ -127,13 +138,14 @@ namespace PayCheckServerLib
                 {
                     WS_ID = WSEnum.Lobby;
                     WSUserId = token.UserId;
+                    Token = token;
                     var serv = (PC3WSSServer)this.Server;
                     serv.WSUserIds.Add(WSUserId);
-                    if (WSSServer().WSS_Stuff.ContainsKey(token.UserId + "_" + WS_ID.ToString().ToLower()))
+                    if (WSSServer.WSS_Stuff.ContainsKey(token.Namespace + "_" + token.UserId + "_" + WS_ID.ToString().ToLower()))
                     {
                         Debugger.PrintWarn("The fuck? This User now wants to to join to WS again! " + WS_ID);
                     }
-                    WSSServer().WSS_Stuff.Add(token.UserId + "_" + WS_ID.ToString().ToLower(), this);
+                    WSSServer.WSS_Stuff.Add(token.Namespace + "_" + token.UserId + "_" + WS_ID.ToString().ToLower(), this);
                     var x = "type: connectNotif\r\nloginType: NewRegister\r\nreconnectFromCode: 5000\r\nlobbySessionID: ee62822a8428424d9a408f6385484ae5";
                     SendBinaryAsync(Encoding.UTF8.GetBytes(x));
                 }
@@ -141,16 +153,17 @@ namespace PayCheckServerLib
                 {
                     WS_ID = WSEnum.Chat;
                     WSUserId = token.UserId;
-                    if (WSSServer().WSS_Stuff.ContainsKey(token.UserId + "_" + WS_ID.ToString().ToLower()))
+                    Token = token;
+                    if (WSSServer.WSS_Stuff.ContainsKey(token.Namespace + "_" + token.UserId + "_" + WS_ID.ToString().ToLower()))
                     {
                         Debugger.PrintWarn("The fuck? This User now wants to to join to WS again! " + WS_ID);
                     }
-                    WSSServer().WSS_Stuff.Add(token.UserId + "_" + WS_ID.ToString().ToLower(), this);
+                    WSSServer.WSS_Stuff.Add(token.Namespace + "_" + token.UserId + "_" + WS_ID.ToString().ToLower(), this);
                     var x = "CaSr{\"jsonrpc\":\"2.0\",\"method\":\"eventConnected\",\"params\":{\"sessionId\":\"9f51a15b940b4c538cc48281950de549\"}}CaEd";
                     SendBinaryAsync(Encoding.UTF8.GetBytes(x));
                 }
                 Debugger.PrintInfo(WSUserId + " joined to " + WS_ID);
-                foreach (var wss_stuff in WSSServer().WSS_Stuff)
+                foreach (var wss_stuff in WSSServer.WSS_Stuff)
                 {
                     Debugger.PrintInfo(wss_stuff.Key);
                 }
@@ -158,7 +171,7 @@ namespace PayCheckServerLib
 
             public override void OnWsDisconnecting()
             {
-                Console.WriteLine(WSUserId + " " + WS_ID + " quit");
+                Console.WriteLine(Token.Namespace + " " + WSUserId + " " + WS_ID + " quit");
                 if (WS_ID == WSEnum.Lobby)
                 {
                     var user = UserController.GetUser(WSUserId);
@@ -178,7 +191,7 @@ namespace PayCheckServerLib
                         { "platform", "nil" },
                         { "lastSeenAt", user.Status.lastSeenAt },
                     };
-                        foreach (var id in WSSServer().WSUserIds)
+                        foreach (var id in WSSServer.WSUserIds)
                         {
                             if (id == WSUserId)
                                 continue;
@@ -190,9 +203,9 @@ namespace PayCheckServerLib
                         Debugger.PrintWarn($"User not found! ({WSUserId}) WSS Continue ");
                     }                    
                 }
-                WSSServer().WSS_Stuff.Remove(WSUserId + "_" + WS_ID.ToString().ToLower());
+                WSSServer.WSS_Stuff.Remove(Token.Namespace + "_" + WSUserId + "_" + WS_ID.ToString().ToLower());
                 var serv = (PC3WSSServer)Server;
-                serv.WSUserIds.Remove(WSUserId);
+                serv.WSUserIds.Remove(Token.Namespace + "_" + WSUserId);
                 WSUserId = "";
             }
 

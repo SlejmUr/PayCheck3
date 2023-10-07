@@ -1,7 +1,5 @@
 ﻿using Newtonsoft.Json;
-using PayCheckServerLib.Jsons;
 using PayCheckServerLib.Jsons.PartyStuff;
-using System.Security.Cryptography;
 
 namespace PayCheckServerLib.Helpers
 {
@@ -22,6 +20,7 @@ namespace PayCheckServerLib.Helpers
             public string SessionType;
             public string CreatedAt;
             public string UpdatedAt;
+            public string NameSpace;
         }
 
         public static Dictionary<string, SavedStuff> PartySaves = new();
@@ -37,7 +36,7 @@ namespace PayCheckServerLib.Helpers
             rsp.IsFull = stuff.IsFull;
             rsp.LeaderId = stuff.LeaderId;
             rsp.CreatedBy = stuff.CreatedBy;
-            rsp.Namespace = "pd3";
+            rsp.Namespace = stuff.NameSpace;
             rsp.Version = stuff.version;
             rsp.CreatedAt = stuff.CreatedAt;
             rsp.UpdatedAt = stuff.UpdatedAt;
@@ -46,7 +45,7 @@ namespace PayCheckServerLib.Helpers
         }
 
 
-        public static PartyPost.Response CreateParty(PartyPostReq partyPost)
+        public static PartyPost.Response CreateParty(PartyPostReq partyPost, string nameSpace)
         {
             var code = UserIdHelper.CreateCode();
 
@@ -59,7 +58,7 @@ namespace PayCheckServerLib.Helpers
             rsp.IsFull = false;
             rsp.LeaderId = partyPost.Members[0].ID;
             rsp.CreatedBy = partyPost.Members[0].ID;
-            rsp.Namespace = "pd3";
+            rsp.Namespace = nameSpace;
             rsp.Version = 1;    //init version 1
             rsp.CreatedAt = DateTime.UtcNow.ToString("o");
             rsp.UpdatedAt = DateTime.UtcNow.ToString("o");
