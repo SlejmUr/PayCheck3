@@ -111,7 +111,7 @@ namespace PayCheckServerLib
                 }
                 else
                 {
-                    Debugger.PrintInfo("File " + KeyPair.Key+ " is already downgraded to Beta!");
+                    Debugger.PrintInfo("File " + KeyPair.Key + " is already downgraded to Beta!");
                 }
 
             }

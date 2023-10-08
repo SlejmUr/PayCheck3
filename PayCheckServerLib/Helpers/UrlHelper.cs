@@ -57,10 +57,10 @@
 
             return string.Empty;
         }
-        
+
         private static string[] SplitUrl(string url)
         {
-            string[] urlPaths = url.Split('/', StringSplitOptions.RemoveEmptyEntries);;
+            string[] urlPaths = url.Split('/', StringSplitOptions.RemoveEmptyEntries); ;
             urlPaths = SplitUrl(urlPaths, '?');
             urlPaths = SplitUrl(urlPaths, '&');
 
@@ -85,7 +85,7 @@
 
             return parts.ToArray();
         }
-        
+
         #endregion
     }
 }

@@ -12,7 +12,7 @@ namespace PayCheckServerLib.Responses
         {
             var auth = session.Headers["authorization"].Replace("Bearer ", "");
             var token = TokenHelper.ReadToken(auth);
-            var MainUser = UserController.GetUser(token.UserId,token.Namespace) ?? throw new Exception("MainUser is null!");
+            var MainUser = UserController.GetUser(token.UserId, token.Namespace) ?? throw new Exception("MainUser is null!");
             ResponseCreator response = new();
             response.SetHeader("Content-Type", "application/json");
             FriendsPlatfrom friends = new FriendsPlatfrom()

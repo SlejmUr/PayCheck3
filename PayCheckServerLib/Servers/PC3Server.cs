@@ -67,7 +67,7 @@ namespace PayCheckServerLib
                 MiddleMan
             }
 
-            
+
             public List<PC3Session> MiddleMans = new();
 
             public PC3Session? GetWSLobby(string UserId, string NameSpace)
@@ -130,7 +130,7 @@ namespace PayCheckServerLib
                 {
                     id = Headers["authorization"].Replace("Bearer ", "");
                 }
-                var token =  TokenHelper.ReadToken(id);
+                var token = TokenHelper.ReadToken(id);
                 if (request.Url == "/lobby/")
                 {
                     WS_ID = WSEnum.Lobby;
@@ -198,7 +198,7 @@ namespace PayCheckServerLib
                     else
                     {
                         Debugger.PrintWarn($"User not found! ({WSUserId}) WSS Continue ");
-                    }                    
+                    }
                 }
                 WSSServer.WSS_Stuff.Remove(Token.Namespace + "_" + WSUserId + "_" + WS_ID.ToString().ToLower());
                 var serv = (PC3WSSServer)Server;
@@ -249,7 +249,7 @@ namespace PayCheckServerLib
                 for (int i = 0; i < request.Headers; i++)
                 {
                     var headerpart = request.Header(i);
-                    if (!Headers.ContainsKey(headerpart.Item1.ToLower())) 
+                    if (!Headers.ContainsKey(headerpart.Item1.ToLower()))
                         Headers.Add(headerpart.Item1.ToLower(), headerpart.Item2);
                 }
                 string url = request.Url;
@@ -285,7 +285,7 @@ namespace PayCheckServerLib
                     Console.WriteLine("something isnt good");
                 }
                 else
-                { 
+                {
                     //Everything went fine!
                 }
                 //SendResponse(Response.MakeOkResponse());
@@ -338,7 +338,7 @@ namespace PayCheckServerLib
             }
 
 
-            protected override void OnError(SocketError error) 
+            protected override void OnError(SocketError error)
             {
                 Debugger.PrintDebug($"Server reported error: {error}");
                 StackTrace st = new StackTrace(true);
@@ -353,7 +353,7 @@ namespace PayCheckServerLib
                     Debugger.PrintDebug($"Line Number: " + sf.GetFileLineNumber());
                     Debugger.PrintDebug("");
                 }
-            } 
+            }
         }
     }
 }

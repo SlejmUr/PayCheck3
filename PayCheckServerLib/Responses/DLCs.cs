@@ -1,18 +1,13 @@
 ﻿using NetCoreServer;
 using Newtonsoft.Json;
 using PayCheckServerLib.Jsons.Basic;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PayCheckServerLib.Responses
 {
     public class DLCs
     {
         public class PutDLC
-        { 
+        {
             public string steamId { get; set; }
             public string appId { get; set; }
         }
@@ -43,14 +38,14 @@ namespace PayCheckServerLib.Responses
         public static bool GETdlcentitlements(HttpRequest request, PC3Server.PC3Session session)
         {
             TopLevel<DLC_Value> dlc = new()
-            { 
+            {
                 SetBy = "SERVER",
                 CreatedAt = "2023-09-25T12:01:02.096Z",
                 Key = "dlc-entitlements",
                 Namespace = session.HttpParam["namespace"],
                 UpdatedAt = "2023-09-25T12:01:02.096Z",
                 Value = new()
-                { 
+                {
                     Data = new(),
                     DlcType = "PSN"
                 }

@@ -1,6 +1,5 @@
 ﻿using Newtonsoft.Json;
 using PayCheckServerLib.Helpers;
-using PayCheckServerLib.Jsons;
 using PayCheckServerLib.Jsons.GS;
 using System.Text;
 using static PayCheckServerLib.PC3Server;
@@ -23,7 +22,7 @@ namespace PayCheckServerLib.WSController
             {
                 case "DSInfoRsp":
                     var ds = JsonConvert.DeserializeObject<DSInformationServer>(data);
-                    GSController.DSInfo.Add(ds.SessionId,ds);
+                    GSController.DSInfo.Add(ds.SessionId, ds);
                     GSController.DSInfoSentList.Add(ds.SessionId);
                     break;
                 default:

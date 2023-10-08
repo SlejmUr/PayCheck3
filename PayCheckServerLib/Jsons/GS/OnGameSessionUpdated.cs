@@ -14,7 +14,7 @@ namespace PayCheckServerLib.Jsons.GS
         public List<PartyStuff.PartyPost.Memberv2> Members { get; set; }
 
         [JsonProperty("Attributes")]
-        public Dictionary<string,object> Attributes { get; set; }
+        public Dictionary<string, object> Attributes { get; set; }
 
         [JsonProperty("CreatedAt")]
         public string CreatedAt { get; set; }

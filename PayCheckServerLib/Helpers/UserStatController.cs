@@ -1,13 +1,12 @@
 ﻿using Newtonsoft.Json;
 using PayCheckServerLib.Jsons;
-using PayCheckServerLib.Responses;
 
 namespace PayCheckServerLib.Helpers
 {
     public class UserStatController
     {
         public static List<UserStatItemsData> GetStatItems(string NameSpace)
-        { 
+        {
             return JsonConvert.DeserializeObject<List<UserStatItemsData>>(File.ReadAllText($"Files/StatItems_{NameSpace.ToLower()}.json"));
         }
 
@@ -82,13 +81,13 @@ namespace PayCheckServerLib.Helpers
                     Debugger.PrintWarn($"what the fuck.");
                 }
                 resp.Add(new()
-                { 
+                {
                     Details = new()
-                    { 
+                    {
                         CurrentValue = statItem.Value
                     },
                     StatCode = item.StatCode,
-                    Success = true               
+                    Success = true
                 });
             }
             SaveStat(stat, token.UserId, token.Namespace);

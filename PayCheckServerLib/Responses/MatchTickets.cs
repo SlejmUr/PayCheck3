@@ -40,7 +40,7 @@ namespace PayCheckServerLib.Responses
             {
                 matchTicketID = ticketId,
                 queueTime = 2
-            }; 
+            };
             ResponseCreator response = new();
             response.SetBody(JsonConvert.SerializeObject(ticketRsp));
             session.SendResponse(response.GetResponse());
@@ -48,7 +48,7 @@ namespace PayCheckServerLib.Responses
             //Store Both and send into Lobby WSS
 
             WSS_OnMatchmakingStarted onMatchmakingStarted = new()
-            { 
+            {
                 TicketID = ticketId,
                 PartyID = ticket.sessionId,
                 CreatedAt = DateTime.UtcNow.ToString("o"),
@@ -65,7 +65,7 @@ namespace PayCheckServerLib.Responses
                 { "payload", LobbyControl.Base64Encode(JsonConvert.SerializeObject(onMatchmakingStarted)) },
                 { "sentAt", DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ") }
             };
-            LobbyControl.SendToLobby(resp, session.GetWSLobby(token.UserId,, token.Namespace));
+            LobbyControl.SendToLobby(resp, session.GetWSLobby(token.UserId, token.Namespace));
             GSController.Make(ticket, session, session.Headers["namespace"]);
             GSController.Tickets.Add(token.UserId, ticketId);
             /*

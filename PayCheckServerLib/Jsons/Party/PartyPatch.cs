@@ -5,7 +5,7 @@ namespace PayCheckServerLib.Jsons.PartyStuff
     public class PartyPatch
     {
         [JsonProperty("attributes")]
-        public Dictionary<string,object> Attributes { get; set; }
+        public Dictionary<string, object> Attributes { get; set; }
 
         [JsonProperty("inactiveTimeout", NullValueHandling = NullValueHandling.Ignore)]
         public int? InactiveTimeout { get; set; }

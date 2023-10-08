@@ -73,7 +73,7 @@ namespace PayCheckServerLib.WSController
                         rsp.Add("platform", kv["platform"]);
                         rsp.Add("lastSeenAt", DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ"));
                         foreach (var id in session.WSSServer.WSUserIds)
-                        { 
+                        {
                             if (id == session.WSUserId)
                                 continue;
                             SendToLobby(rsp, session.GetWSLobby(id, session.Token.Namespace));
@@ -148,15 +148,15 @@ namespace PayCheckServerLib.WSController
             {
                 Debugger.PrintError(ex.ToString());
             }
-            
-        
+
+
         }
 
         public static string ListToStr<T>(List<T> list) where T : class
         {
             var str = JsonConvert.SerializeObject(list);
-            str = str.Replace("\"]",",]");
-            str = str.Replace("\"","");
+            str = str.Replace("\"]", ",]");
+            str = str.Replace("\"", "");
             return str;
         }
 

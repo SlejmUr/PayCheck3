@@ -66,7 +66,7 @@ namespace PayCheckServerLib.Helpers
             foreach (var item in partyPost.Members)
             {
                 rsp.Members.Add(new()
-                { 
+                {
                     Id = item.ID,
                     PlatformId = item.PlatformId.ToUpper(),
                     PlatformUserId = item.PlatformUserId,
@@ -77,7 +77,7 @@ namespace PayCheckServerLib.Helpers
             }
 
             SavedStuff saved = new()
-            { 
+            {
                 Code = code,
                 SessionType = partyPost.ConfigurationName,
                 CreatedAt = rsp.CreatedAt,
@@ -97,7 +97,7 @@ namespace PayCheckServerLib.Helpers
 
 
         public static PartyPost.Response JoinParty(string Code, TokenHelper.Token token)
-        { 
+        {
             if (!PartySaves.ContainsKey(Code))
             {
                 Debugger.PrintError("NO Code???? WHAT THE FUCK");
@@ -120,7 +120,7 @@ namespace PayCheckServerLib.Helpers
 
         public static PartyPost.Response UpdateParty(string PartyId, PartyPatch body)
         {
-            var party = PartySaves.Where(x=>x.Value.Id == PartyId).FirstOrDefault().Value;
+            var party = PartySaves.Where(x => x.Value.Id == PartyId).FirstOrDefault().Value;
             if (party == null)
             {
                 Debugger.PrintError("NO Code???? WHAT THE FUCK");

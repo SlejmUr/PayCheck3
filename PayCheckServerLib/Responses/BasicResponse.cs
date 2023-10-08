@@ -20,7 +20,7 @@ namespace PayCheckServerLib.Responses
             foreach (var server in ConfigHelper.ServerConfig.DS_Servers)
             {
                 rsp.Servers.Add(new()
-                { 
+                {
                     Alias = server.Alias,
                     Status = server.Status,
                     Ip = server.Ip,

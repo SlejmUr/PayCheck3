@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using PayCheckServerLib.Responses;
 
 namespace PayCheckServerLib.Jsons
 {

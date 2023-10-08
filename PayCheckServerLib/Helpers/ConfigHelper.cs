@@ -30,9 +30,9 @@ namespace PayCheckServerLib.Helpers
                         Port = 443
                     },
                     DS_Servers = new()
-                    { 
+                    {
                         new()
-                        { 
+                        {
                             Alias = "eu-central-1",
                             Ip = "127.0.0.1",
                             Port = 6969,

@@ -1,14 +1,8 @@
 ﻿using NetCoreServer;
 using Newtonsoft.Json;
 using PayCheckServerLib.Helpers;
-using PayCheckServerLib.Jsons;
 using PayCheckServerLib.Jsons.GS;
 using PayCheckServerLib.WSController;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PayCheckServerLib.Responses
 {
@@ -30,7 +24,7 @@ namespace PayCheckServerLib.Responses
 
             //SEND OnMatchFound on WSS
             OnMatchFound onMatchFound = new()
-            { 
+            {
                 CreatedAt = gs.CreatedAt,
                 ID = gs.Id,
                 MatchPool = gs.MatchPool,
@@ -43,9 +37,9 @@ namespace PayCheckServerLib.Responses
                 foreach (var uid in team.UserIDs)
                 {
                     onMatchFound.Tickets.Add(new()
-                    { 
+                    {
                         TicketID = GSController.Tickets[uid]
-                    }); 
+                    });
                 }
                 onMatchFound.Teams.Add(new()
                 {
@@ -88,7 +82,7 @@ namespace PayCheckServerLib.Responses
         {
             var auth = session.Headers["authorization"].Replace("Bearer ", "");
             var token = TokenHelper.ReadToken(auth);
-            var gs = GSController.JoinSession(session.HttpParam["sessionid"], token.UserId,session.HttpParam["namespace"]);
+            var gs = GSController.JoinSession(session.HttpParam["sessionid"], token.UserId, session.HttpParam["namespace"]);
             ResponseCreator response = new();
             response.SetHeader("Content-Type", "application/json");
             response.SetBody(JsonConvert.SerializeObject(gs));
@@ -96,11 +90,11 @@ namespace PayCheckServerLib.Responses
             //Send OnSessionMembersChanged, OnSessionJoined
 
             OnSessionJoined onSessionJoined = new()
-            { 
+            {
                 SessionID = gs.Id,
                 TextChat = false,
-                Members = gs.Members            
-            }; 
+                Members = gs.Members
+            };
             Dictionary<string, string> kv = new()
             {
                 { "type", "messageSessionNotif" },
@@ -110,7 +104,7 @@ namespace PayCheckServerLib.Responses
             };
             LobbyControl.SendToLobby(kv, session.GetWSLobby(token.UserId, token.Namespace));
 
-            
+
             OnSessionMembersChanged onSessionMembersChanged = new()
             {
                 JoinerID = token.UserId,
@@ -144,7 +138,7 @@ namespace PayCheckServerLib.Responses
             foreach (var member in gs.Members)
             {
                 onSessionMembersChanged.Members.Add(new()
-                { 
+                {
                     ID = member.Id,
                     Status = member.Status,
                     StatusV2 = member.StatusV2,

@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using PayCheckServerLib.Jsons.GS;
-using PayCheckServerLib.Responses;
 using PayCheckServerLib.Jsons.PartyStuff;
+using PayCheckServerLib.Responses;
 using PayCheckServerLib.WSController;
 
 namespace PayCheckServerLib.Helpers
@@ -22,7 +22,7 @@ namespace PayCheckServerLib.Helpers
             {
                 Debugger.PrintError("NO Code???? WHAT THE FUCK");
             }
-            
+
             var id = UserIdHelper.CreateNewID();
             var gs = new GameSession()
             {
@@ -50,10 +50,10 @@ namespace PayCheckServerLib.Helpers
                 Teams = new(),
                 UpdatedAt = DateTime.UtcNow.ToString("o"),
                 Version = 1
-            }; 
+            };
             Debugger.PrintDebug("gs!!");
             var team = new Team()
-            { 
+            {
                 Parties = new(),
                 UserIDs = new()
             };
@@ -144,7 +144,7 @@ namespace PayCheckServerLib.Helpers
             {
                 session.LeaderID = UserId;
             }
-            Sessions[NameSpace + "_" + id] =  session;
+            Sessions[NameSpace + "_" + id] = session;
             return session;
         }
 
@@ -161,7 +161,7 @@ namespace PayCheckServerLib.Helpers
             int index = random.Next(mlist.Count);
             var middleMan = mlist[index];
             //todo get client info
-            string Req = "DSInfoReq-END-" + "eu-central-1,"+ "624677," + session.Id + ","+ NameSpace;
+            string Req = "DSInfoReq-END-" + "eu-central-1," + "624677," + session.Id + "," + NameSpace;
             Debugger.PrintDebug("Sending to middleman");
             middleMan.Send(Req);
             //recieve back here?
@@ -177,15 +177,15 @@ namespace PayCheckServerLib.Helpers
 
 
             OnDSStatusChanged.Basic onDSStatusChanged = new()
-            { 
+            {
                 SessionID = id,
                 GameServer = DSInfo[id],
                 Session = new()
-                { 
+                {
                     ID = id,
                     IsFull = session.IsFull,
                     DSInformation = new()
-                    { 
+                    {
                         Server = session.DSInformation.Server,
                         Status = "AVAILABLE",
                         StatusV2 = "AVAILABLE"

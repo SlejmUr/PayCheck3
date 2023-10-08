@@ -1,10 +1,10 @@
 ﻿using NetCoreServer;
 using Newtonsoft.Json;
 using PayCheckServerLib.Helpers;
+using PayCheckServerLib.Jsons.Basic;
 using PayCheckServerLib.Jsons.PartyStuff;
 using PayCheckServerLib.Jsons.WSS;
 using PayCheckServerLib.WSController;
-using PayCheckServerLib.Jsons.Basic;
 
 namespace PayCheckServerLib.Responses
 {
@@ -38,14 +38,14 @@ namespace PayCheckServerLib.Responses
                 { "sentAt", DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ") }
             };
 
-            LobbyControl.SendToLobby(resp,wss_sess);
+            LobbyControl.SendToLobby(resp, wss_sess);
 
             Chats.eventAddedToTopic topic = new()
-            { 
+            {
                 Jsonrpc = "2.0",
                 Method = "eventAddedToTopic",
                 Params = new()
-                { 
+                {
                     Name = "Party-" + rsp.Id,
                     SenderId = token.UserId,
                     TopicId = "p." + rsp.Id,
@@ -65,7 +65,7 @@ namespace PayCheckServerLib.Responses
             var auth = session.Headers["authorization"].Replace("Bearer ", "");
             var token = TokenHelper.ReadToken(auth);
             var body = JsonConvert.DeserializeObject<PartyPatch>(request.Body);
-            PartyPost.Response rsp = PartyController.UpdateParty(session.HttpParam["partyid"],body);
+            PartyPost.Response rsp = PartyController.UpdateParty(session.HttpParam["partyid"], body);
             ResponseCreator response = new();
             response.SetBody(JsonConvert.SerializeObject(rsp));
             session.SendResponse(response.GetResponse());
@@ -95,7 +95,7 @@ namespace PayCheckServerLib.Responses
                 Namespace = session.HttpParam["namespace"],
                 UpdatedAt = rsp.UpdatedAt,
                 Version = rsp.Version
-            }; 
+            };
             foreach (var member in rsp.Members)
             {
                 pld.Members.Add(new()
@@ -115,13 +115,13 @@ namespace PayCheckServerLib.Responses
                 { "payload", LobbyControl.Base64Encode(JsonConvert.SerializeObject(pld)) },
                 { "sentAt", DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ") }
             };
-            
+
 
             List<string> ids = new();
             rsp.Members.ForEach(m => ids.Add(m.Id));
 
             foreach (var id in session.WSSServer.WSUserIds)
-            { 
+            {
                 if (ids.Contains(id))
                 {
                     Debugger.PrintDebug(id);
@@ -204,7 +204,7 @@ namespace PayCheckServerLib.Responses
         [HTTP("POST", "/session/v1/public/namespaces/{namespace}/parties/users/me/join/code")]
         public static bool JoinPartyByCode(HttpRequest request, PC3Server.PC3Session session)
         {
-            
+
             var body = JsonConvert.DeserializeObject<UsersMeJoinCode>(request.Body);
             if (PartyController.PartySaves.TryGetValue(body.Code, out var saved))
             {
@@ -217,9 +217,9 @@ namespace PayCheckServerLib.Responses
             {
                 AttribError error = new()
                 {
-                    Attributes = new Dictionary<string,string>()
+                    Attributes = new Dictionary<string, string>()
                     {
-                        { "id", body.Code }, 
+                        { "id", body.Code },
                         { "namespace", session.HttpParam["namespace"] }
                     },
                     ErrorCode = 20041,

@@ -1,8 +1,6 @@
 ﻿using Newtonsoft.Json;
 using PayCheckServerLib.Helpers;
-using PayCheckServerLib.Jsons.GS;
 using PayCheckServerLib.Jsons.WSS;
-using System.Security.Cryptography;
 using System.Text;
 using static PayCheckServerLib.PC3Server;
 
@@ -42,7 +40,7 @@ namespace PayCheckServerLib.WSController
                     {
                         //PLEASE HELP ME IF THIS WORKS OR NOT.
                         var idk = chatbase as Chats.actionQueryTopicById;
-                        var party = PartyController.PartySaves.Where(x => x.Value.Id == idk.Params.TopicId.Replace("p.","")).FirstOrDefault().Value;
+                        var party = PartyController.PartySaves.Where(x => x.Value.Id == idk.Params.TopicId.Replace("p.", "")).FirstOrDefault().Value;
                         if (party == null)
                         {
                             Debugger.PrintError("NO Code???? WHAT THE FUCK");
@@ -54,16 +52,16 @@ namespace PayCheckServerLib.WSController
                             Jsonrpc = "2.0",
                             Method = "actionQueryTopicById",
                             Result = new()
-                            { 
+                            {
                                 Processed = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString(),
                                 Data = new()
-                                { 
+                                {
                                     Name = "Party-" + party.Id,
                                     TopicId = idk.Params.TopicId,
                                     Type = "GROUP",
                                     UpdatedAt = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds().ToString(),
                                     Members = new()
-                                    { 
+                                    {
                                     }
                                 }
                             }

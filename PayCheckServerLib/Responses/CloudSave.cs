@@ -139,7 +139,7 @@ namespace PayCheckServerLib.Responses
             var userID = session.HttpParam["userId"];
             ResponseCreator response = new(404);
             ErrorMSG errorMSG = new()
-            { 
+            {
                 ErrorCode = 18022,
                 ErrorMessage = $"unable to get_player_record: player record not found, user ID: {userID}, key: PlatformBlockedPlayerData"
             };
@@ -200,7 +200,7 @@ namespace PayCheckServerLib.Responses
             SaveHandler.SaveUser(userID, session.HttpParam["namespace"], request.BodyBytes);
             if (ConfigHelper.ServerConfig.Saves.SaveRequest)
                 SaveHandler.SaveUser_Request(userID, session.HttpParam["namespace"], request.Body);
-            
+
             Progression.Basic? save = null;
             try
             {
