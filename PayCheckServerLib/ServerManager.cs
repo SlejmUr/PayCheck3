@@ -16,7 +16,12 @@ namespace PayCheckServerLib
             {
                 Debugger.PrintDebug("GiveMeMoney Cheat Activated");
             }
-            if (ConfigHelper.ServerConfig.EnableAutoUpdate)
+            if (ArgumentHandler.NoUpdate)
+            {
+                UpdateFinished?.Invoke(null, true);
+                return;
+            }
+            if (ConfigHelper.ServerConfig.EnableAutoUpdate || ArgumentHandler.ForceUpdate)
                 Updater.CheckForJsonUpdates();
             UpdateFinished?.Invoke(null, true);
 

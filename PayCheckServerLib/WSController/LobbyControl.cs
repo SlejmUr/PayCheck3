@@ -76,7 +76,7 @@ namespace PayCheckServerLib.WSController
                         { 
                             if (id == session.WSUserId)
                                 continue;
-                            SendToLobby(rsp, session.GetWSLobby(id));
+                            SendToLobby(rsp, session.GetWSLobby(id, session.Token.Namespace));
                         }
                         break;
                     case "joinDefaultChannelRequest":

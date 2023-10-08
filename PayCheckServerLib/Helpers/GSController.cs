@@ -104,7 +104,7 @@ namespace PayCheckServerLib.Helpers
                     if (uid == vs_ui)
                     {
                         Debugger.PrintDebug("GS_Session OnSessionInvited sent to " + vs_ui);
-                        LobbyControl.SendToLobby(kv, session.GetWSLobby(vs_ui));
+                        LobbyControl.SendToLobby(kv, session.GetWSLobby(vs_ui, NameSpace));
                     }
                 }
             }
@@ -235,7 +235,7 @@ namespace PayCheckServerLib.Helpers
                     if (uid.Id == vs_ui)
                     {
                         Debugger.PrintDebug("GS_Session OnSessionInvited sent to " + vs_ui);
-                        LobbyControl.SendToLobby(kv, pcSession.GetWSLobby(vs_ui));
+                        LobbyControl.SendToLobby(kv, pcSession.GetWSLobby(vs_ui, NameSpace));
                     }
                 }
             }

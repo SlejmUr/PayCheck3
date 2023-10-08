@@ -5,9 +5,9 @@ using System.Diagnostics;
 using System.Net.Sockets;
 using System.Reflection;
 using System.Security.Authentication;
-using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using static PayCheckServerLib.TokenHelper;
 
 namespace PayCheckServerLib
 {
@@ -49,10 +49,7 @@ namespace PayCheckServerLib
             server?.Dispose();
             server = null;
             Console.WriteLine("[HTTPS] Server Stopped");
-
         }
-
-
 
         public class PC3Session : WssSession
         {
@@ -73,7 +70,7 @@ namespace PayCheckServerLib
             
             public List<PC3Session> MiddleMans = new();
 
-            public PC3Session? GetWSLobby(string UserId, string NameSpace = "pd3")
+            public PC3Session? GetWSLobby(string UserId, string NameSpace)
             {
                 if (UserId == null)
                     Debugger.PrintError("UserId is null! (Parameter)");
@@ -86,7 +83,7 @@ namespace PayCheckServerLib
                 return null;
             }
 
-            public PC3Session? GetWSChat(string UserId, string NameSpace = "pd3")
+            public PC3Session? GetWSChat(string UserId, string NameSpace)
             {
                 if (UserId == null)
                     Debugger.PrintError("UserId is null! (Parameter)");
@@ -195,7 +192,7 @@ namespace PayCheckServerLib
                         {
                             if (id == WSUserId)
                                 continue;
-                            LobbyControl.SendToLobby(rsp, GetWSLobby(id));
+                            LobbyControl.SendToLobby(rsp, GetWSLobby(id, Token.Namespace));
                         }
                     }
                     else

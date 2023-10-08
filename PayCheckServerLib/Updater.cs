@@ -37,15 +37,13 @@ namespace PayCheckServerLib
             {
                 Files = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(Path.Join(FilesUrl, "Hashes.json")))!;
             }
-            //Remove 2 Jsons to not cause error!
-            Files.Remove("UpdatedAtTimes.json");
-            Files.Remove("WeaponTables.json");
             foreach (var KeyPair in Files)
             {
                 try
                 {
                     if (LocalFiles[KeyPair.Key] != Files[KeyPair.Key])
                     {
+                        Debugger.PrintInfo(LocalFiles[KeyPair.Key] + " " + Files[KeyPair.Key]);
                         Debugger.PrintInfo(KeyPair.Key + " is out of date", "Updater");
                         if (UIHandleUpdate)
                         {
@@ -103,7 +101,6 @@ namespace PayCheckServerLib
             HttpClient client = new();
             var FilesData = client.GetStringAsync(FilesUrl.Replace("main", "pd3beta") + "Hashes.json").Result;
             Dictionary<string, string> Files = JsonConvert.DeserializeObject<Dictionary<string, string>>(FilesData)!;
-            Files.Remove("WeaponTables.json");
             foreach (var KeyPair in Files)
             {
                 if (LocalFiles[KeyPair.Key] != Files[KeyPair.Key])

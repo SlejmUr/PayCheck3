@@ -1,4 +1,5 @@
 ﻿using LLibrary;
+using PayCheckServerLib.Helpers;
 
 namespace PayCheckServerLib
 {
@@ -6,7 +7,7 @@ namespace PayCheckServerLib
     {
         public static L logger = new(true);
 
-        public static bool IsDebug = true;
+        public static bool IsDebug = ArgumentHandler.Debug;
 
         public static void PrintWebsocket(string ToPrint)
         {

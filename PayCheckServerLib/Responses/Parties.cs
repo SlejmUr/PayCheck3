@@ -125,7 +125,7 @@ namespace PayCheckServerLib.Responses
                 if (ids.Contains(id))
                 {
                     Debugger.PrintDebug(id);
-                    LobbyControl.SendToLobby(resp, session.GetWSLobby(id));
+                    LobbyControl.SendToLobby(resp, session.GetWSLobby(id, token.Namespace));
                 }
             }
 

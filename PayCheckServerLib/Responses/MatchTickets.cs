@@ -65,7 +65,7 @@ namespace PayCheckServerLib.Responses
                 { "payload", LobbyControl.Base64Encode(JsonConvert.SerializeObject(onMatchmakingStarted)) },
                 { "sentAt", DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ") }
             };
-            LobbyControl.SendToLobby(resp, session.GetWSLobby(token.UserId));
+            LobbyControl.SendToLobby(resp, session.GetWSLobby(token.UserId,, token.Namespace));
             GSController.Make(ticket, session, session.Headers["namespace"]);
             GSController.Tickets.Add(token.UserId, ticketId);
             /*
