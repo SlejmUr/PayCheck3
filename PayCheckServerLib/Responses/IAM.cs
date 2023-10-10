@@ -30,8 +30,7 @@ namespace PayCheckServerLib.Responses
                 session.SendResponse(response.GetResponse());
                 return true;
             }
-
-
+            Debugger.PrintDebug(request.Body);
             var splitted = request.Body.Split("&");
             Dictionary<string, string> bodyTokens = new();
             foreach (var item in splitted)

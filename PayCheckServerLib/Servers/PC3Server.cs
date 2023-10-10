@@ -113,8 +113,9 @@ namespace PayCheckServerLib
                     Headers.Add(headerpart.Item1.ToLower(), headerpart.Item2);
                 }
                 string id = "";
-                //There is a bug where this LobbySession empty and it contains the bearer token :)
-                if (Headers.ContainsKey("x-ab-lobbysessionid"))
+                //There is a bug where this LobbySession empty and it contains the bearer token :) - ONLY ON RELEASE
+                // On beta there is an actual ID.
+                if (Headers.ContainsKey("x-ab-lobbysessionid") && Headers["x-ab-lobbysessionid"].Contains("Bearer"))
                 {
                     id = Headers["x-ab-lobbysessionid"].Replace("Authorization: Bearer ", "");
                 }

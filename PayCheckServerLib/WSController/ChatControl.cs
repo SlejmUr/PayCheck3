@@ -39,7 +39,7 @@ namespace PayCheckServerLib.WSController
                 case "actionQueryTopicById":
                     {
                         //PLEASE HELP ME IF THIS WORKS OR NOT.
-                        var idk = chatbase as Chats.actionQueryTopicById;
+                        var idk = JsonConvert.DeserializeObject<Chats.actionQueryTopicById>(str);
                         var party = PartyController.PartySaves.Where(x => x.Value.Id == idk.Params.TopicId.Replace("p.", "")).FirstOrDefault().Value;
                         if (party == null)
                         {
