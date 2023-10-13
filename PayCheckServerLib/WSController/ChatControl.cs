@@ -21,7 +21,7 @@ namespace PayCheckServerLib.WSController
                 if (!ChatUsers.ContainsKey(key))
                 {
                     var x = "CaSr{\"jsonrpc\":\"2.0\",\"method\":\"eventConnected\",\"params\":{\"sessionId\":\"9f51a15b940b4c538cc48281950de549\"}}CaEd";
-                    socketStruct.SendWebSocketText(x);
+                    socketStruct.SendWebSocketByteArray(Encoding.UTF8.GetBytes(x));
                     ChatUsers.Add(key, socketStruct);
                 }
             }
@@ -74,7 +74,7 @@ namespace PayCheckServerLib.WSController
                         };
                         var resp = "CaSr" + JsonConvert.SerializeObject(rsp) + "CaEd";
                         Console.WriteLine("Sending back: " + resp);
-                        socketStruct.SendWebSocketText(resp);
+                        socketStruct.SendWebSocketByteArray(Encoding.UTF8.GetBytes(resp));
                     }
                     return;
                 case "actionQueryTopicById":
@@ -113,7 +113,7 @@ namespace PayCheckServerLib.WSController
                         }
                         var resp = "CaSr" + JsonConvert.SerializeObject(rsp) + "CaEd";
                         Console.WriteLine("Sending back: " + resp);
-                        socketStruct.SendWebSocketText(resp);
+                        socketStruct.SendWebSocketByteArray(Encoding.UTF8.GetBytes(resp));
                     }
                     return;
                 default:
@@ -125,7 +125,7 @@ namespace PayCheckServerLib.WSController
         public static void SendToChat(string Json, WebSocketStruct? socketStruct)
         {
             var resp = "CaSr" + Json + "CaEd";
-            socketStruct?.SendWebSocketText(resp);
+            socketStruct?.SendWebSocketByteArray(Encoding.UTF8.GetBytes(resp));
         }
     }
 }

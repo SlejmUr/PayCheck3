@@ -25,7 +25,7 @@ namespace PayCheckServerLib.Responses
             session.SendResponse(response.GetResponse());
 
             //send notif to user to party created
-            var wss_sess = session.GetWSLobby(token.UserId, token.Namespace);
+            var wss_sess = LobbyControl.GetLobbyUser(token.UserId, token.Namespace);
             OnPartyCreated pld = new()
             {
                 Code = rsp.Code,
@@ -128,7 +128,7 @@ namespace PayCheckServerLib.Responses
                 if (ids.Contains(id))
                 {
                     Debugger.PrintDebug(id);
-                    LobbyControl.SendToLobby(resp, session.GetWSLobby(id, token.Namespace));
+                    LobbyControl.SendToLobby(resp, LobbyControl.GetLobbyUser(id, token.Namespace));
                 }
             }
 

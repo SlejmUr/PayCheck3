@@ -194,7 +194,7 @@ namespace PayCheckServerLib
                         {
                             if (id == WSUserId)
                                 continue;
-                            LobbyControl.SendToLobby(rsp, GetWSLobby(id, Token.Namespace));
+                            //LobbyControl.SendToLobby(rsp, GetWSLobby(id, Token.Namespace));
                         }
                     }
                     else

@@ -1,6 +1,7 @@
 ﻿using ModdableWebServer;
 using ModdableWebServer.Attributes;
 using ModdableWebServer.Helper;
+using NetCoreServer;
 using Newtonsoft.Json;
 using PayCheckServerLib.Helpers;
 using PayCheckServerLib.Jsons;
@@ -36,13 +37,43 @@ namespace PayCheckServerLib.WSController
             {
                 if (!LobbyUsers.ContainsKey(key))
                 {
-                    var x = "CaSr{\"jsonrpc\":\"2.0\",\"method\":\"eventConnected\",\"params\":{\"sessionId\":\"9f51a15b940b4c538cc48281950de549\"}}CaEd";
-                    socketStruct.SendWebSocketText(x);
+                    var x = "type: connectNotif\r\nloginType: NewRegister\r\nreconnectFromCode: 5000\r\nlobbySessionID: ee62822a8428424d9a408f6385484ae5";
+                    socketStruct.SendWebSocketByteArray(Encoding.UTF8.GetBytes(x));
                     LobbyUsers.Add(key, socketStruct);
                 }
             }
             else
             {
+                var user = UserController.GetUser(token.UserId);
+                if (user != null)
+                {
+                    user.Status.activity = "nil";
+                    user.Status.availability = "offline";
+                    user.Status.platform = "nil";
+                    user.Status.lastSeenAt = DateTime.UtcNow.ToString("O");
+                    UserController.SaveUser(user);
+                    Dictionary<string, string> rsp = new()
+                    {
+                        { "type", "userStatusNotif" },
+                        { "userID", token.UserId },
+                        { "availability", "offline" },
+                        { "activity", "nil" },
+                        { "platform", "nil" },
+                        { "lastSeenAt", user.Status.lastSeenAt },
+                    };
+                    foreach (var id in LobbyUsers.Keys)
+                    {
+                        //split
+                        var splitted = id.Split("_");
+
+                        if (splitted[1] == token.UserId)
+                            continue;
+                        if (splitted[0] != token.Namespace)
+                            continue;
+
+                        SendToLobby(rsp, GetLobbyUser(id, token.Namespace));
+                    }
+                }
                 LobbyUsers.Remove(key);
             }
 
@@ -126,9 +157,13 @@ namespace PayCheckServerLib.WSController
                         foreach (var id in LobbyUsers.Keys)
                         {
                             //split
+                            var splitted = id.Split("_");
 
-                            if (id == token.UserId)
+                            if (splitted[1] == token.UserId)
                                 continue;
+                            if (splitted[0] != token.Namespace)
+                                continue;
+
                             SendToLobby(rsp, GetLobbyUser(id, token.Namespace));
                         }
                         break;
@@ -225,7 +260,7 @@ namespace PayCheckServerLib.WSController
 
             str = str.Remove(str.Length - 1);
             Debugger.PrintDebug(str);
-            socketStruct?.SendWebSocketText(str);
+            socketStruct?.SendWebSocketByteArray(Encoding.UTF8.GetBytes(str));
         }
     }
 }
