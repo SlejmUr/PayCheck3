@@ -1,13 +1,10 @@
 ﻿using ModdableWebServer;
 using ModdableWebServer.Attributes;
 using ModdableWebServer.Helper;
-using NetCoreServer;
 using Newtonsoft.Json;
 using PayCheckServerLib.Helpers;
 using PayCheckServerLib.Jsons;
-using System.Reflection.PortableExecutable;
 using System.Text;
-using static PayCheckServerLib.PC3Server;
 
 namespace PayCheckServerLib.WSController
 {
