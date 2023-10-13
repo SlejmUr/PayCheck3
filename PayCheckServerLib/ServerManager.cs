@@ -1,10 +1,14 @@
-﻿using PayCheckServerLib.Helpers;
+﻿using ModdableWebServer.Helper;
+using ModdableWebServer.Servers;
+using NetCoreServer;
+using PayCheckServerLib.Helpers;
+using System.Diagnostics;
+using System.Reflection;
 
 namespace PayCheckServerLib
 {
     public class ServerManager
     {
-        static GSTATICServer.GSServer STATICServer;
         /// <summary>
         /// Use this to check if update finished (Either Cancelled or Success)
         /// </summary>
@@ -26,24 +30,73 @@ namespace PayCheckServerLib
             UpdateFinished?.Invoke(null, true);
 
         }
-
+        static WSS_Server? server = null;
+        static HTTP_Server? gserver = null;
         public static void Start()
         {
             if (ConfigHelper.ServerConfig.Hosting.WSS)
-                PC3Server.Start(ConfigHelper.ServerConfig.Hosting.IP, 443);
+            {
+                var context = CertHelper.GetContext( System.Security.Authentication.SslProtocols.Tls12 , "cert.pfx", "cert");
+                server = new(context, ConfigHelper.ServerConfig.Hosting.IP, 443);
+                server.ReceivedFailed += ReceivedFailed;
+                server.Started += Server_Started;
+                server.Stopped += Server_Stopped;
+                server.HTTP_AttributeToMethods.Merge(Assembly.GetExecutingAssembly());
+                server.WS_AttributeToMethods.Merge(Assembly.GetExecutingAssembly());
+                server.WSError += WSError;
+                server.Start();
+            }
             if (ConfigHelper.ServerConfig.Hosting.Gstatic)
             {
-                STATICServer = new GSTATICServer.GSServer(ConfigHelper.ServerConfig.Hosting.IP, 80);
-                STATICServer.Start();
+                gserver = new(ConfigHelper.ServerConfig.Hosting.IP, 80);
+                gserver.Start();
             }
         }
 
         public static void Stop()
         {
             if (ConfigHelper.ServerConfig.Hosting.WSS)
-                PC3Server.Stop();
+                server?.Stop();
             if (ConfigHelper.ServerConfig.Hosting.Gstatic)
-                STATICServer.Stop();
+                gserver?.Stop();
+            server = null;
+            gserver = null;
         }
+
+        #region Actions
+        private static void Server_Stopped(object? sender, EventArgs e)
+        {
+            Console.WriteLine("HTTPS Server stopped!");
+        }
+
+        private static void Server_Started(object? sender, (string address, int port) e)
+        {
+            Console.WriteLine("HTTPS Server started!");
+        }
+
+        private static void ReceivedFailed(object? sender, HttpRequest request)
+        {
+            File.AppendAllText("REQUESTED.txt", request.Url + "\n" + request.Method + "\n" + request.Body + "\n");
+            Debugger.logger.Debug(request.Url + "\n" + request);
+            Console.WriteLine("something isnt good");
+        }
+        private static void WSError(object? sender, string error)
+        {
+            Console.WriteLine("WSError! " + error);
+            Debugger.PrintDebug($"Server reported error: {error}");
+            StackTrace st = new StackTrace(true);
+            for (int i = 0; i < st.FrameCount; i++)
+            {
+                var sf = st.GetFrame(i);
+                if (sf == null)
+                    continue;
+                Debugger.PrintDebug("");
+                Debugger.PrintDebug($"Method: " + sf.GetMethod());
+                Debugger.PrintDebug($"File: " + sf.GetFileName());
+                Debugger.PrintDebug($"Line Number: " + sf.GetFileLineNumber());
+                Debugger.PrintDebug("");
+            }
+        }
+        #endregion
     }
 }

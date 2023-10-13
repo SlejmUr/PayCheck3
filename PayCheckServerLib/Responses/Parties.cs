@@ -5,6 +5,9 @@ using PayCheckServerLib.Jsons.Basic;
 using PayCheckServerLib.Jsons.PartyStuff;
 using PayCheckServerLib.Jsons.WSS;
 using PayCheckServerLib.WSController;
+using ModdableWebServer;
+using ModdableWebServer.Attributes;
+using ModdableWebServer.Helper;
 
 namespace PayCheckServerLib.Responses
 {
@@ -54,7 +57,7 @@ namespace PayCheckServerLib.Responses
                 }
             };
 
-            ChatControl.SendToChat(JsonConvert.SerializeObject(topic), session.GetWSChat(token.UserId, token.Namespace));
+            ChatControl.SendToChat(JsonConvert.SerializeObject(topic), ChatControl.GetChatUser(token.UserId, token.Namespace));
 
             return true;
         }
@@ -162,7 +165,7 @@ namespace PayCheckServerLib.Responses
                     UserId = token.UserId
                 }
             };
-            ChatControl.SendToChat(JsonConvert.SerializeObject(topic), session.GetWSChat(token.UserId, token.Namespace));
+            ChatControl.SendToChat(JsonConvert.SerializeObject(topic), ChatControl.GetChatUser(token.UserId, token.Namespace));
             return true;
         }
 

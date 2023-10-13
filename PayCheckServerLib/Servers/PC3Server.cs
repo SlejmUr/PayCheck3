@@ -26,6 +26,7 @@ namespace PayCheckServerLib
         {
             HttpServerThingy.Clear();
             var context = new SslContext(SslProtocols.Tls12, GetCert());
+            /*
             server = new PC3WSSServer(context, IP, Port);
             Console.WriteLine("[HTTPS] Server Started on https://" + IP + ":" + Port);
             server.Start();
@@ -40,7 +41,7 @@ namespace PayCheckServerLib
                     continue;
                 Debugger.PrintDebug(method.Name + $" ({httpAttr.url}) ({httpAttr.method}) is added as an URL", "HTTPServer");
                 HttpServerThingy.Add((httpAttr.url, httpAttr.method), method);
-            }
+            }*/
         }
 
         public static void Stop()
@@ -228,13 +229,13 @@ namespace PayCheckServerLib
                 switch (WS_ID)
                 {
                     case WSEnum.Lobby:
-                        LobbyControl.Control(buffer, offset, size, this);
+                        //LobbyControl.Control(buffer, offset, size, this);
                         return;
                     case WSEnum.Chat:
-                        ChatControl.Control(buffer, offset, size, this);
+                        //ChatControl.Control(buffer, offset, size, this);
                         return;
                     case WSEnum.MiddleMan:
-                        MiddleManControl.Control(buffer, offset, size, this);
+                        //MiddleManControl.Control(buffer, offset, size, this);
                         return;
                     case WSEnum.IDK:
                     default:

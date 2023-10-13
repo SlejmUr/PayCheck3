@@ -1,18 +1,59 @@
-﻿using Newtonsoft.Json;
+﻿using ModdableWebServer;
+using ModdableWebServer.Attributes;
+using ModdableWebServer.Helper;
+using Newtonsoft.Json;
 using PayCheckServerLib.Helpers;
 using PayCheckServerLib.Jsons.WSS;
 using System.Text;
-using static PayCheckServerLib.PC3Server;
 
 namespace PayCheckServerLib.WSController
 {
     public class ChatControl
     {
-        public static void Control(byte[] buffer, long offset, long size, PC3Session session)
+        [WS("/chat/")]
+        public static void Chat(WebSocketStruct socketStruct)
+        {
+            var auth_token = socketStruct.Request.Headers["authorization"].Replace("Bearer ", "");
+            var token = TokenHelper.ReadToken(auth_token);
+            var key = $"{token.Namespace}_{token.UserId}";
+            if (socketStruct.IsConnected)
+            {
+                if (!ChatUsers.ContainsKey(key))
+                {
+                    var x = "CaSr{\"jsonrpc\":\"2.0\",\"method\":\"eventConnected\",\"params\":{\"sessionId\":\"9f51a15b940b4c538cc48281950de549\"}}CaEd";
+                    socketStruct.SendWebSocketText(x);
+                    ChatUsers.Add(key, socketStruct);
+                }
+            }
+            else
+            {
+                ChatUsers.Remove(key);
+            }
+
+            if (socketStruct.WSRequest != null)
+            {
+                Control(socketStruct.WSRequest.Value.buffer, socketStruct.WSRequest.Value.offset, socketStruct.WSRequest.Value.size, socketStruct);
+            }
+        
+        }
+
+        public static Dictionary<string, WebSocketStruct> ChatUsers = new();
+
+        public static WebSocketStruct? GetChatUser(string UserId, string NameSpace)
+        {
+            var key = $"{NameSpace}_{UserId}";
+            if (ChatUsers.TryGetValue(key, out var webSocketStruct))
+            {
+                return webSocketStruct;
+            }
+            return null;
+        }
+
+        public static void Control(byte[] buffer, long offset, long size, WebSocketStruct socketStruct)
         {
             if (size == 0)
                 return;
-            buffer = buffer.Take((int)size).ToArray();
+            buffer = buffer.Skip((int)offset).Take((int)size).ToArray();
             if (!Directory.Exists("Chat")) { Directory.CreateDirectory("Chat"); }
             File.WriteAllBytes("Chat/" + DateTime.Now.ToString("s").Replace(":", "-") + ".bytes", buffer);
             var str = Encoding.UTF8.GetString(buffer);
@@ -33,7 +74,7 @@ namespace PayCheckServerLib.WSController
                         };
                         var resp = "CaSr" + JsonConvert.SerializeObject(rsp) + "CaEd";
                         Console.WriteLine("Sending back: " + resp);
-                        session.SendTextAsync(resp);
+                        socketStruct.SendWebSocketText(resp);
                     }
                     return;
                 case "actionQueryTopicById":
@@ -72,7 +113,7 @@ namespace PayCheckServerLib.WSController
                         }
                         var resp = "CaSr" + JsonConvert.SerializeObject(rsp) + "CaEd";
                         Console.WriteLine("Sending back: " + resp);
-                        session.SendTextAsync(resp);
+                        socketStruct.SendWebSocketText(resp);
                     }
                     return;
                 default:
@@ -81,10 +122,10 @@ namespace PayCheckServerLib.WSController
             }
         }
 
-        public static void SendToChat(string Json, PC3Session session)
+        public static void SendToChat(string Json, WebSocketStruct? socketStruct)
         {
             var resp = "CaSr" + Json + "CaEd";
-            session.SendTextAsync(resp);
+            socketStruct?.SendWebSocketText(resp);
         }
     }
 }

@@ -16,7 +16,6 @@ namespace DS_Server
             request.SetHeader("Upgrade", "websocket");
             request.SetHeader("Connection", "Upgrade");
             request.SetHeader("Sec-WebSocket-Key", Convert.ToBase64String(WsNonce));
-            request.SetHeader("Sec-WebSocket-Protocol", "chat, superchat");
             request.SetHeader("Sec-WebSocket-Version", "13");
             request.SetHeader("MiddleMan", Id.ToString());
             request.SetBody();

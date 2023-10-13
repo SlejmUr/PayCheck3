@@ -1,6 +1,10 @@
-﻿using Newtonsoft.Json;
+﻿using ModdableWebServer;
+using ModdableWebServer.Attributes;
+using ModdableWebServer.Helper;
+using Newtonsoft.Json;
 using PayCheckServerLib.Helpers;
 using PayCheckServerLib.Jsons;
+using System.Reflection.PortableExecutable;
 using System.Text;
 using static PayCheckServerLib.PC3Server;
 
@@ -13,7 +17,54 @@ namespace PayCheckServerLib.WSController
             var plainTextBytes = Encoding.UTF8.GetBytes(plainText);
             return Convert.ToBase64String(plainTextBytes);
         }
-        public static void Control(byte[] buffer, long offset, long size, PC3Session session)
+
+        [WS("/lobby/")]
+        public static void Lobby(WebSocketStruct socketStruct)
+        {
+            string auth_token;
+            if (socketStruct.Request.Headers.ContainsKey("x-ab-lobbysessionid") && socketStruct.Request.Headers["x-ab-lobbysessionid"].Contains("Bearer"))
+            {
+                auth_token = socketStruct.Request.Headers["x-ab-lobbysessionid"].Replace("Authorization: Bearer ", "");
+            }
+            else
+            {
+                auth_token = socketStruct.Request.Headers["authorization"].Replace("Bearer ", "");
+            }
+            var token = TokenHelper.ReadToken(auth_token);
+            var key = $"{token.Namespace}_{token.UserId}";
+            if (socketStruct.IsConnected)
+            {
+                if (!LobbyUsers.ContainsKey(key))
+                {
+                    var x = "CaSr{\"jsonrpc\":\"2.0\",\"method\":\"eventConnected\",\"params\":{\"sessionId\":\"9f51a15b940b4c538cc48281950de549\"}}CaEd";
+                    socketStruct.SendWebSocketText(x);
+                    LobbyUsers.Add(key, socketStruct);
+                }
+            }
+            else
+            {
+                LobbyUsers.Remove(key);
+            }
+
+            if (socketStruct.WSRequest != null)
+            {
+                Control(socketStruct.WSRequest.Value.buffer, socketStruct.WSRequest.Value.offset, socketStruct.WSRequest.Value.size, socketStruct, token);
+            }
+
+        }
+
+        public static Dictionary<string, WebSocketStruct> LobbyUsers = new();
+
+        public static WebSocketStruct? GetLobbyUser(string UserId, string NameSpace)
+        {
+            var key = $"{NameSpace}_{UserId}";
+            if (LobbyUsers.TryGetValue(key, out var webSocketStruct))
+            {
+                return webSocketStruct;
+            }
+            return null;
+        }
+        public static void Control(byte[] buffer, long offset, long size, WebSocketStruct socketStruct, TokenHelper.Token token)
         {
             if (size == 0)
                 return;
@@ -34,11 +85,11 @@ namespace PayCheckServerLib.WSController
                 kv.Add(kv2[0], kv2[1]);
             }
             Debugger.PrintWebsocket("KVs done!");
-            SwitchingType(kv, session);
+            SwitchingType(kv, socketStruct, token);
             //Now doing some magic here for stuff.
         }
 
-        static void SwitchingType(Dictionary<string, string> kv, PC3Session session)
+        static void SwitchingType(Dictionary<string, string> kv, WebSocketStruct socketStruct, TokenHelper.Token token)
         {
             try
             {
@@ -51,10 +102,10 @@ namespace PayCheckServerLib.WSController
                         rsp.Add("type", "setUserStatusResponse");
                         rsp.Add("id", kv["id"]);
                         rsp.Add("code", "0");
-                        user = UserController.GetUser(session.WSUserId);
+                        user = UserController.GetUser(token.UserId);
                         if (user == null)
                         {
-                            Debugger.PrintWarn($"User not found! ({session.WSUserId}) WSS Cannot continue");
+                            Debugger.PrintWarn($"User not found! ({token.UserId}) WSS Cannot continue");
                             new Exception("UserId is null");
                             break;
                         }
@@ -63,20 +114,22 @@ namespace PayCheckServerLib.WSController
                         user.Status.platform = kv["platform"];
                         user.Status.lastSeenAt = DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ");
                         UserController.SaveUser(user);
-                        SendToLobby(rsp, session);
+                        SendToLobby(rsp, socketStruct);
                         rsp.Remove("type");
                         rsp.Remove("code");
                         rsp.Add("type", "userStatusNotif");
-                        rsp.Add("userID", session.WSUserId);
+                        rsp.Add("userID", token.UserId);
                         rsp.Add("activity", kv["activity"]);
                         rsp.Add("availability", kv["availability"]);
                         rsp.Add("platform", kv["platform"]);
                         rsp.Add("lastSeenAt", DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ"));
-                        foreach (var id in session.WSSServer.WSUserIds)
+                        foreach (var id in LobbyUsers.Keys)
                         {
-                            if (id == session.WSUserId)
+                            //split
+
+                            if (id == token.UserId)
                                 continue;
-                            SendToLobby(rsp, session.GetWSLobby(id, session.Token.Namespace));
+                            SendToLobby(rsp, GetLobbyUser(id, token.Namespace));
                         }
                         break;
                     case "joinDefaultChannelRequest":
@@ -84,30 +137,30 @@ namespace PayCheckServerLib.WSController
                         rsp.Add("id", kv["id"]);
                         rsp.Add("channelSlug", "default-channel");
                         rsp.Add("code", "0");
-                        SendToLobby(rsp, session);
+                        SendToLobby(rsp, socketStruct);
                         break;
                     case "listIncomingFriendsRequest":
                         rsp.Add("type", "listIncomingFriendsResponse");
                         rsp.Add("id", kv["id"]);
                         rsp.Add("code", "0");
                         rsp.Add("friendsId", "[]");
-                        SendToLobby(rsp, session);
+                        SendToLobby(rsp, socketStruct);
                         break;
                     case "listOutgoingFriendsRequest":
                         rsp.Add("type", "listOutgoingFriendsResponse");
                         rsp.Add("id", kv["id"]);
                         rsp.Add("code", "0");
                         rsp.Add("friendsId", "[]");
-                        SendToLobby(rsp, session);
+                        SendToLobby(rsp, socketStruct);
                         break;
                     case "friendsStatusRequest":
                         rsp.Add("type", "friendsStatusResponse");
                         rsp.Add("id", kv["id"]);
                         rsp.Add("code", "0");
-                        user = UserController.GetUser(session.WSUserId);
+                        user = UserController.GetUser(token.UserId);
                         if (user == null)
                         {
-                            Debugger.PrintWarn($"User not found! ({session.WSUserId}) WSS Cannot continue");
+                            Debugger.PrintWarn($"User not found! ({token.UserId}) WSS Cannot continue");
                             throw new Exception("UserId is null");
                         }
                         List<string> friendsId = new();
@@ -123,7 +176,7 @@ namespace PayCheckServerLib.WSController
                             var fuser = UserController.GetUser(fud);
                             if (fuser == null)
                             {
-                                Debugger.PrintWarn($"User not found! ({session.WSUserId}) WSS Cannot continue");
+                                Debugger.PrintWarn($"User not found! ({token.UserId}) WSS Cannot continue");
                                 throw new Exception("UserId is null");
                             }
                             availability.Add(fuser.Status.availability);
@@ -137,7 +190,7 @@ namespace PayCheckServerLib.WSController
                         rsp.Add("activity", ListToStr(activity));
                         rsp.Add("platform", ListToStr(platform));
                         rsp.Add("lastSeenAt", ListToStr(lastSeenAt));
-                        SendToLobby(rsp, session);
+                        SendToLobby(rsp, socketStruct);
                         break;
                     default:
                         Debugger.PrintWebsocket("Not sending back anything: " + kv["type"]);
@@ -161,7 +214,7 @@ namespace PayCheckServerLib.WSController
         }
 
 
-        public static void SendToLobby(Dictionary<string, string> kv, PC3Session? session)
+        public static void SendToLobby(Dictionary<string, string> kv, WebSocketStruct? socketStruct)
         {
             Debugger.PrintDebug("SendToLobby Called!");
             var str = "";
@@ -172,7 +225,7 @@ namespace PayCheckServerLib.WSController
 
             str = str.Remove(str.Length - 1);
             Debugger.PrintDebug(str);
-            session?.SendBinaryAsync(str);
+            socketStruct?.SendWebSocketText(str);
         }
     }
 }
