@@ -40,7 +40,7 @@ namespace PayCheckServerLib.WSController
                     LobbyUsers.Add(key, socketStruct);
                 }
             }
-            else
+            else if (!socketStruct.IsConnecting)
             {
                 var user = UserController.GetUser(token.UserId);
                 if (user != null)

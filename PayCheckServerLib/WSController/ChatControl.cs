@@ -26,7 +26,7 @@ namespace PayCheckServerLib.WSController
                     ChatUsers.Add(key, socketStruct);
                 }
             }
-            else
+            else if (!socketStruct.IsConnecting)
             {
                 ChatUsers.Remove(key);
             }
