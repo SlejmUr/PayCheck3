@@ -19,6 +19,7 @@ namespace PayCheckServerLib.WSController
         [WS("/lobby/")]
         public static void Lobby(WebSocketStruct socketStruct)
         {
+            Debugger.PrintDebug("LOBBY");
             string auth_token;
             if (socketStruct.Request.Headers.ContainsKey("x-ab-lobbysessionid") && socketStruct.Request.Headers["x-ab-lobbysessionid"].Contains("Bearer"))
             {

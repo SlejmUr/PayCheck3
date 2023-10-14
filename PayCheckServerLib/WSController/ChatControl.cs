@@ -13,6 +13,7 @@ namespace PayCheckServerLib.WSController
         [WS("/chat/")]
         public static void Chat(WebSocketStruct socketStruct)
         {
+            Debugger.PrintDebug("Chat");
             var auth_token = socketStruct.Request.Headers["authorization"].Replace("Bearer ", "");
             var token = TokenHelper.ReadToken(auth_token);
             var key = $"{token.Namespace}_{token.UserId}";

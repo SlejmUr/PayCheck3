@@ -25,6 +25,10 @@ namespace PayCheckServerLib
                 UpdateFinished?.Invoke(null, true);
                 return;
             }
+            if (ArgumentHandler.Debug)
+            {
+                DebugPrinter.PrintToConsole = true;
+            }
             if (ConfigHelper.ServerConfig.EnableAutoUpdate || ArgumentHandler.ForceUpdate)
                 Updater.CheckForJsonUpdates();
             UpdateFinished?.Invoke(null, true);
@@ -41,8 +45,8 @@ namespace PayCheckServerLib
                 server.ReceivedFailed += ReceivedFailed;
                 server.Started += Server_Started;
                 server.Stopped += Server_Stopped;
-                server.HTTP_AttributeToMethods.Merge(Assembly.GetExecutingAssembly());
-                server.WS_AttributeToMethods.Merge(Assembly.GetExecutingAssembly());
+                server.HTTP_AttributeToMethods.Merge(Assembly.GetAssembly(typeof(ConfigHelper)));
+                server.WS_AttributeToMethods = AttributeMethodHelper.UrlWSLoader(Assembly.GetAssembly(typeof(ConfigHelper)));
                 server.WSError += WSError;
                 server.Start();
             }

@@ -42,7 +42,7 @@ namespace PayCheckServerLib.Responses
             TicketRspJson ticketRsp = new()
             {
                 matchTicketID = ticketId,
-                queueTime = 2
+                queueTime = 5
             };
             ResponseCreator response = new();
             response.SetBody(JsonConvert.SerializeObject(ticketRsp));
