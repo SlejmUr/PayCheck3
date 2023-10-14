@@ -33,9 +33,9 @@ namespace PayCheckServerLib.Responses
         }
 
         [HTTP("POST", "/match2/v1/namespaces/{namespace}/match-tickets")]
-        public static bool Tickets(HttpRequest request, PC3Server.PC3Session session)
+        public static bool Tickets(HttpRequest request, ServerStruct serverStruct)
         {
-            var auth = session.Headers["authorization"].Replace("Bearer ", "");
+            var auth = serverStruct.Headers["authorization"].Replace("Bearer ", "");
             var token = TokenHelper.ReadToken(auth);
             var ticket = JsonConvert.DeserializeObject<TicketReqJson>(request.Body);
             var ticketId = UserIdHelper.CreateNewID();
@@ -46,7 +46,8 @@ namespace PayCheckServerLib.Responses
             };
             ResponseCreator response = new();
             response.SetBody(JsonConvert.SerializeObject(ticketRsp));
-            session.SendResponse(response.GetResponse());
+            serverStruct.Response = response.GetResponse();
+            serverStruct.SendResponse();
             Debugger.PrintDebug("OnMatchmakingStarted YEET");
             //Store Both and send into Lobby WSS
 
@@ -56,7 +57,7 @@ namespace PayCheckServerLib.Responses
                 PartyID = ticket.sessionId,
                 CreatedAt = DateTime.UtcNow.ToString("o"),
                 MatchPool = ticket.matchPool,
-                Namespace = session.Headers["namespace"]
+                Namespace = serverStruct.Headers["namespace"]
             };
             Dictionary<string, string> resp = new()
             {
@@ -68,8 +69,8 @@ namespace PayCheckServerLib.Responses
                 { "payload", LobbyControl.Base64Encode(JsonConvert.SerializeObject(onMatchmakingStarted)) },
                 { "sentAt", DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ") }
             };
-            LobbyControl.SendToLobby(resp, session.GetWSLobby(token.UserId, token.Namespace));
-            GSController.Make(ticket, session, session.Headers["namespace"]);
+            LobbyControl.SendToLobby(resp, LobbyControl.GetLobbyUser(token.UserId, token.Namespace));
+            GSController.Make(ticket, serverStruct, serverStruct.Headers["namespace"]);
             GSController.Tickets.Add(token.UserId, ticketId);
             /*
              * Need to check what happens at this stage.

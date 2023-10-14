@@ -36,7 +36,7 @@
   <ItemGroup>
     <PackageReference Include="JWT" Version="10.1.1" />
     <PackageReference Include="L" Version="5.0.0" />
-    <PackageReference Include="ModdableWebServer" Version="1.0.0" />
+    <PackageReference Include="ModdableWebServer" Version="1.1.0" />
     <PackageReference Include="NetCoreServer" Version="7.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>

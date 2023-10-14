@@ -11,11 +11,11 @@ namespace PayCheckServerLib.Responses
     public class Currency
     {
         [HTTP("GET", "/platform/public/namespaces/{namespace}/users/{userId}/wallets/{currency}")]
-        public static bool GetUserCurrency(HttpRequest request, PC3Server.PC3Session session)
+        public static bool GetUserCurrency(HttpRequest request, ServerStruct serverStruct)
         {
-            var userID = session.HttpParam["userId"];
-            var currencyType = session.HttpParam["currency"];
-            var nspace = session.HttpParam["namespace"];
+            var userID = serverStruct.Parameters["userId"];
+            var currencyType = serverStruct.Parameters["currency"];
+            var nspace = serverStruct.Parameters["namespace"];
             var currencySymbol = currencyType == "CRED" ? "CREDITS" : currencyType;
             // return fake data for now
             Debugger.PrintDebug(String.Format("{0}_{1}_{2}", nspace, userID, currencyType));
@@ -54,7 +54,8 @@ namespace PayCheckServerLib.Responses
                 WalletStatus = "ACTIVE"
             };
             response.SetBody(JsonConvert.SerializeObject(currencyReponse));
-            session.SendResponse(response.GetResponse());
+            serverStruct.Response = response.GetResponse();
+            serverStruct.SendResponse();
             return true;
         }
     }

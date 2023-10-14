@@ -27,25 +27,26 @@ namespace PayCheckServerLib.Responses
 
 
         [HTTP("PUT", "/platform/public/namespaces/{namespace}/users/{UserId}/dlc/steam/sync")]
-        public static bool PUT_DLC_SteamSync(HttpRequest request, PC3Server.PC3Session session)
+        public static bool PUT_DLC_SteamSync(HttpRequest _, ServerStruct serverStruct)
         {
             //var body = JsonConvert.DeserializeObject<PutDLC>(request.Body);
             ResponseCreator response = new ResponseCreator(204);
             response.SetHeader("Content-Type", "application/json");
-            session.SendResponse(response.GetResponse());
+            serverStruct.Response = response.GetResponse();
+            serverStruct.SendResponse(); ;
             return true;
         }
 
 
         [HTTP("GET", "/cloudsave/v1/namespaces/{namespace}/records/dlc-entitlements")]
-        public static bool GETdlcentitlements(HttpRequest request, PC3Server.PC3Session session)
+        public static bool GETdlcentitlements(HttpRequest _, ServerStruct serverStruct)
         {
             TopLevel<DLC_Value> dlc = new()
             {
                 SetBy = "SERVER",
                 CreatedAt = "2023-09-25T12:01:02.096Z",
                 Key = "dlc-entitlements",
-                Namespace = session.HttpParam["namespace"],
+                Namespace = serverStruct.Parameters["namespace"],
                 UpdatedAt = "2023-09-25T12:01:02.096Z",
                 Value = new()
                 {
@@ -58,7 +59,8 @@ namespace PayCheckServerLib.Responses
             ResponseCreator response = new ResponseCreator();
             response.SetHeader("Content-Type", "application/json");
             response.SetBody(JsonConvert.SerializeObject(dlc));
-            session.SendResponse(response.GetResponse());
+            serverStruct.Response = response.GetResponse();
+            serverStruct.SendResponse();
             return true;
         }
     }

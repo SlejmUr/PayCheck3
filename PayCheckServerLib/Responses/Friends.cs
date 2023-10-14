@@ -11,9 +11,9 @@ namespace PayCheckServerLib.Responses
     public class Friends
     {
         [HTTP("GET", "/friends/namespaces/{namespace}/me/platforms")]
-        public static bool MePlatforms(HttpRequest _, PC3Server.PC3Session session)
+        public static bool MePlatforms(HttpRequest _, ServerStruct serverStruct)
         {
-            var auth = session.Headers["authorization"].Replace("Bearer ", "");
+            var auth = serverStruct.Headers["authorization"].Replace("Bearer ", "");
             var token = TokenHelper.ReadToken(auth);
             var MainUser = UserController.GetUser(token.UserId, token.Namespace) ?? throw new Exception("MainUser is null!");
             ResponseCreator response = new();
@@ -23,14 +23,15 @@ namespace PayCheckServerLib.Responses
                 Data = MainUser.Friends
             };
             response.SetBody(JsonConvert.SerializeObject(friends));
-            session.SendResponse(response.GetResponse());
+            serverStruct.Response = response.GetResponse();
+            serverStruct.SendResponse();
             return true;
         }
 
         [HTTP("POST", "/friends/namespaces/{namespace}/users/{userId}/add/bulk")]
-        public static bool FriendAddBulk(HttpRequest request, PC3Server.PC3Session session)
+        public static bool FriendAddBulk(HttpRequest request, ServerStruct serverStruct)
         {
-            var auth = session.Headers["authorization"].Replace("Bearer ", "");
+            var auth = serverStruct.Headers["authorization"].Replace("Bearer ", "");
             var token = TokenHelper.ReadToken(auth);
             var MainUser = UserController.GetUser(token.UserId, token.Namespace) ?? throw new Exception("MainUser is null!");
             var friends = JsonConvert.DeserializeObject<FriendAdd>(request.Body)!.FriendIds;
@@ -66,8 +67,8 @@ namespace PayCheckServerLib.Responses
                 MainUser.Friends.Add(data);
             }
 
-            ResponseCreator response = new(204);
-            session.SendResponse(response.GetResponse());
+            serverStruct.Response = new ResponseCreator(204).GetResponse();
+            serverStruct.SendResponse();
             return true;
         }
     }

@@ -11,16 +11,16 @@ namespace PayCheckServerLib.Responses
     public class BasicResponse
     {
         [HTTP("HEAD", "/generate_204")]
-        public static bool Generate204(HttpRequest request, ServerStruct serverStruct)
+        public static bool Generate204(HttpRequest _, ServerStruct serverStruct)
         {
             serverStruct.Response.MakeOkResponse(204);
-            ResponseSender.SendResponse(serverStruct);
+            serverStruct.SendResponse();
             return true;
         }
 
 
         [HTTP("GET", "/qosm/public/qos")]
-        public static bool QOSM_Public_QOS(HttpRequest request, ServerStruct serverStruct)
+        public static bool QOSM_Public_QOS(HttpRequest _, ServerStruct serverStruct)
         {
             ResponseCreator response = new ResponseCreator();
             response.SetHeader("Content-Type", "application/json");
@@ -44,12 +44,12 @@ namespace PayCheckServerLib.Responses
 
             response.SetBody(JsonConvert.SerializeObject(rsp, Formatting.Indented));
             serverStruct.Response = response.GetResponse();
-            ResponseSender.SendResponse(serverStruct);
+            serverStruct.SendResponse();
             return true;
         }
 
         [HTTP("GET", "/basic/v1/public/misc/time")]
-        public static bool Time(HttpRequest request, ServerStruct serverStruct)
+        public static bool Time(HttpRequest _, ServerStruct serverStruct)
         {
             if (serverStruct.Headers.ContainsKey("cookie"))
             {
@@ -66,31 +66,31 @@ namespace PayCheckServerLib.Responses
             };
             response.SetBody(JsonConvert.SerializeObject(rsp));
             serverStruct.Response = response.GetResponse();
-            ResponseSender.SendResponse(serverStruct);
+            serverStruct.SendResponse();
             return true;
         }
 
 
 
         [HTTP("GET", "/lobby/v1/messages")]
-        public static bool LobbyMessages(HttpRequest request, ServerStruct serverStruct)
+        public static bool LobbyMessages(HttpRequest _, ServerStruct serverStruct)
         {
             ResponseCreator response = new ResponseCreator();
             response.SetHeader("Content-Type", "application/json");
             response.SetBody(File.ReadAllBytes("Files/messages.json"));
             serverStruct.Response = response.GetResponse();
-            ResponseSender.SendResponse(serverStruct);
+            serverStruct.SendResponse();
             return true;
         }
 
         [HTTP("GET", "/iam/v3/location/country")]
-        public static bool Country(HttpRequest request, ServerStruct serverStruct)
+        public static bool Country(HttpRequest _, ServerStruct serverStruct)
         {
             ResponseCreator response = new ResponseCreator();
             response.SetHeader("Content-Type", "application/json");
             response.SetBody(File.ReadAllBytes("Files/Country.json"));
             serverStruct.Response = response.GetResponse();
-            ResponseSender.SendResponse(serverStruct);
+            serverStruct.SendResponse();
             return true;
         }
     }

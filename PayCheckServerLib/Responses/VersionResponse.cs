@@ -48,7 +48,7 @@ namespace PayCheckServerLib.Responses
 
             response.SetBody(JsonConvert.SerializeObject(version));
             serverStruct.Response = response.GetResponse();
-            ResponseSender.SendResponse(serverStruct);
+            serverStruct.SendResponse();
             return true;
         }
 

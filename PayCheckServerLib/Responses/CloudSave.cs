@@ -12,7 +12,7 @@ namespace PayCheckServerLib.Responses
     public class CloudSave
     {
         [HTTP("GET", "/cloudsave/v1/namespaces/{namespace}/records/title-data")]
-        public static bool TitleData(HttpRequest _, PC3Server.PC3Session session)
+        public static bool TitleData(HttpRequest _, ServerStruct serverStruct)
         {
             ResponseCreator response = new();
             TitleData title = new()
@@ -21,30 +21,32 @@ namespace PayCheckServerLib.Responses
                 CreatedAt = "2023-06-23T07:21:11.604Z",
                 UpdatedAt = "2023-06-23T07:21:11.604Z",
                 Key = "title-data",
-                Namespace = session.HttpParam["namespace"],
+                Namespace = serverStruct.Parameters["namespace"],
                 Value = new()
                 {
                     { "TitleData", "My Fancy Title Data" }
                 }
             };
             response.SetBody(JsonConvert.SerializeObject(title));
-            session.SendResponse(response.GetResponse());
+            serverStruct.Response = response.GetResponse();
+            serverStruct.SendResponse();
             return true;
         }
 
         [HTTP("GET", "/cloudsave/v1/namespaces/{namespace}/records/news-feed")]
-        public static bool NewsFeed(HttpRequest _, PC3Server.PC3Session session)
+        public static bool NewsFeed(HttpRequest _, ServerStruct serverStruct)
         {
             ResponseCreator response = new();
             //todo:
             //  make into json C# and replace namespace
             response.SetBody(File.ReadAllText("./Files/NewsFeed.json"));
-            session.SendResponse(response.GetResponse());
+            serverStruct.Response = response.GetResponse();
+            serverStruct.SendResponse();
             return true;
         }
 
         [HTTP("GET", "/cloudsave/v1/namespaces/{namespace}/records/infamy-translation-table")]
-        public static bool InfamyTranslationTable(HttpRequest _, PC3Server.PC3Session session)
+        public static bool InfamyTranslationTable(HttpRequest _, ServerStruct serverStruct)
         {
             ResponseCreator response = new();
             //InfamyTranslationTable.Basic;
@@ -53,7 +55,7 @@ namespace PayCheckServerLib.Responses
                 CreatedAt = "2023-06-27T12:18:00.00Z",
                 UpdatedAt = "2023-06-27T12:18:00.00Z",
                 Key = "infamy-translation-table",
-                Namespace = session.HttpParam["namespace"],
+                Namespace = serverStruct.Parameters["namespace"],
                 SetBy = "SERVER",
                 Value = new()
                 {
@@ -65,12 +67,13 @@ namespace PayCheckServerLib.Responses
             var infamylist = JsonConvert.DeserializeObject<List<InfamyTranslationTable.CInfamyTranslationTable>>(File.ReadAllText("Files/BasicInfamyTable.json")) ?? throw new Exception("BasicInfamyTable is null!");
             table.Value.InfamyTranslationTable = infamylist;
             response.SetBody(JsonConvert.SerializeObject(table));
-            session.SendResponse(response.GetResponse());
+            serverStruct.Response = response.GetResponse();
+            serverStruct.SendResponse();
             return true;
         }
 
         [HTTP("POST", "/cloudsave/v1/namespaces/{namespace}/records/bulk")]
-        public static bool RecordsBulk(HttpRequest request, PC3Server.PC3Session session)
+        public static bool RecordsBulk(HttpRequest request, ServerStruct serverStruct)
         {
             var req = JsonConvert.DeserializeObject<WeaponsTableREQ>(request.Body) ?? throw new Exception("WeaponsTableREQ is null!");
             ResponseCreator response = new();
@@ -110,36 +113,39 @@ namespace PayCheckServerLib.Responses
             }
 
             response.SetBody(JsonConvert.SerializeObject(weaponsTable));
-            session.SendResponse(response.GetResponse());
+            serverStruct.Response = response.GetResponse();
+            serverStruct.SendResponse();
             return true;
         }
 
         [HTTP("GET", "/cloudsave/v1/namespaces/{namespace}/records/meta-events")]
-        public static bool MetaEvents(HttpRequest _, PC3Server.PC3Session session)
+        public static bool MetaEvents(HttpRequest _, ServerStruct serverStruct)
         {
             ResponseCreator response = new();
             //todo:
             //  make into json C# and replace namespace
             response.SetBody(File.ReadAllText("Files/MetaEvents.json"));
-            session.SendResponse(response.GetResponse());
+            serverStruct.Response = response.GetResponse();
+            serverStruct.SendResponse();
             return true;
         }
 
         [HTTP("GET", "/cloudsave/v1/namespaces/{namespace}/records/security-firm-rotation")]
-        public static bool SecurityFirmRotation(HttpRequest _, PC3Server.PC3Session session)
+        public static bool SecurityFirmRotation(HttpRequest _, ServerStruct serverStruct)
         {
             ResponseCreator response = new();
             //todo:
             //  make into json C# and replace namespace
             response.SetBody(File.ReadAllText("Files/FirmRotation.json"));
-            session.SendResponse(response.GetResponse());
+            serverStruct.Response = response.GetResponse();
+            serverStruct.SendResponse();
             return true;
         }
 
         [HTTP("GET", "/cloudsave/v1/namespaces/{namespace}/users/{userId}/records/PlatformBlockedPlayerData")]
-        public static bool PlatformBlockedPlayerData(HttpRequest _, PC3Server.PC3Session session)
+        public static bool PlatformBlockedPlayerData(HttpRequest _, ServerStruct serverStruct)
         {
-            var userID = session.HttpParam["userId"];
+            var userID = serverStruct.Parameters["userId"];
             ResponseCreator response = new(404);
             ErrorMSG errorMSG = new()
             {
@@ -147,22 +153,23 @@ namespace PayCheckServerLib.Responses
                 ErrorMessage = $"unable to get_player_record: player record not found, user ID: {userID}, key: PlatformBlockedPlayerData"
             };
             response.SetBody(JsonConvert.SerializeObject(errorMSG));
-            session.SendResponse(response.GetResponse());
+            serverStruct.Response = response.GetResponse();
+            serverStruct.SendResponse();
             return true;
         }
 
 
         [HTTP("GET", "/cloudsave/v1/namespaces/{namespace}/users/{userId}/records/progressionsavegame")]
-        public static bool ProgressionsavegameGET(HttpRequest _, PC3Server.PC3Session session)
+        public static bool ProgressionsavegameGET(HttpRequest _, ServerStruct serverStruct)
         {
-            var userID = session.HttpParam["userId"];
+            var userID = serverStruct.Parameters["userId"];
             var response = new ResponseCreator();
-            if (SaveHandler.IsUserExist(userID, session.HttpParam["namespace"]))
+            if (SaveHandler.IsUserExist(userID, serverStruct.Parameters["namespace"]))
             {
                 Progression.Basic? save = null;
                 try
                 {
-                    save = Progression.Basic.FromJson(SaveHandler.ReadUserSTR(userID, session.HttpParam["namespace"]));
+                    save = Progression.Basic.FromJson(SaveHandler.ReadUserSTR(userID, serverStruct.Parameters["namespace"]));
                     save.ProgressionSaveGame.LastTimeEventCheck = TimeHelper.GetEpochTime();
                 }
                 catch
@@ -178,11 +185,12 @@ namespace PayCheckServerLib.Responses
                     Value = save,
                     IsPublic = false,
                     Key = "progressionsavegame",
-                    Namespace = session.HttpParam["namespace"],
+                    Namespace = serverStruct.Parameters["namespace"],
                     SetBy = "CLIENT"
                 };
                 response.SetBody(JsonConvert.SerializeObject(saveRSP, Progression.Converter.Settings));
-                session.SendResponse(response.GetResponse());
+                serverStruct.Response = response.GetResponse();
+                serverStruct.SendResponse();
                 return true;
             }
             response = new ResponseCreator(404);
@@ -192,17 +200,18 @@ namespace PayCheckServerLib.Responses
                 ErrorMessage = $"unable to get_player_record: player record not found, user ID: {userID}, key: progressionsavegame"
             };
             response.SetBody(JsonConvert.SerializeObject(error));
-            session.SendResponse(response.GetResponse());
+            serverStruct.Response = response.GetResponse();
+            serverStruct.SendResponse();
             return true;
         }
 
         [HTTP("POST", "/cloudsave/v1/namespaces/{namespace}/users/{userId}/records/progressionsavegame")]
-        public static bool ProgressionsavegamePOST(HttpRequest request, PC3Server.PC3Session session)
+        public static bool ProgressionsavegamePOST(HttpRequest request, ServerStruct serverStruct)
         {
-            var userID = session.HttpParam["userId"];
-            SaveHandler.SaveUser(userID, session.HttpParam["namespace"], request.BodyBytes);
+            var userID = serverStruct.Parameters["userId"];
+            SaveHandler.SaveUser(userID, serverStruct.Parameters["namespace"], request.BodyBytes);
             if (ConfigHelper.ServerConfig.Saves.SaveRequest)
-                SaveHandler.SaveUser_Request(userID, session.HttpParam["namespace"], request.Body);
+                SaveHandler.SaveUser_Request(userID, serverStruct.Parameters["namespace"], request.Body);
 
             Progression.Basic? save = null;
             try
@@ -223,12 +232,13 @@ namespace PayCheckServerLib.Responses
                 Value = save,
                 IsPublic = false,
                 Key = "progressionsavegame",
-                Namespace = session.HttpParam["namespace"],
+                Namespace = serverStruct.Parameters["namespace"],
                 SetBy = "CLIENT"
             };
             ResponseCreator response = new();
             response.SetBody(JsonConvert.SerializeObject(saveRSP, Progression.Converter.Settings));
-            session.SendResponse(response.GetResponse());
+            serverStruct.Response = response.GetResponse();
+            serverStruct.SendResponse();
             return true;
         }
     }

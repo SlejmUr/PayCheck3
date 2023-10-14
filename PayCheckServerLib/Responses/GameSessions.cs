@@ -12,16 +12,16 @@ namespace PayCheckServerLib.Responses
     public class GameSessions
     {
         [HTTP("GET", "/session/v1/public/namespaces/{namespace}/gamesessions/{sessionid}")]
-        public static bool GETGameSessions(HttpRequest _, PC3Server.PC3Session session)
+        public static bool GETGameSessions(HttpRequest _, ServerStruct serverStruct)
         {
-            var auth = session.Headers["authorization"].Replace("Bearer ", "");
+            var auth = serverStruct.Headers["authorization"].Replace("Bearer ", "");
             var token = TokenHelper.ReadToken(auth);
             ResponseCreator response = new();
             response.SetHeader("Content-Type", "application/json");
-            var gs = GSController.GetGameSession(session.HttpParam["sessionid"], session.HttpParam["namespace"]);
+            var gs = GSController.GetGameSession(serverStruct.Parameters["sessionid"], serverStruct.Parameters["namespace"]);
             response.SetBody(JsonConvert.SerializeObject(gs));
-            session.SendResponse(response.GetResponse());
-
+            serverStruct.Response = response.GetResponse();
+            serverStruct.SendResponse();
             if (GSController.MatchFoundSent.Contains(token.UserId))
                 return true;
 
@@ -60,20 +60,21 @@ namespace PayCheckServerLib.Responses
                 { "payload", LobbyControl.Base64Encode(JsonConvert.SerializeObject(onMatchFound)) },
                 { "sentAt", DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ") },
             };
-            LobbyControl.SendToLobby(kv, session.GetWSLobby(token.UserId, token.Namespace));
+            LobbyControl.SendToLobby(kv, LobbyControl.GetLobbyUser(token.UserId, token.Namespace));
             GSController.MatchFoundSent.Add(token.UserId);
             Debugger.PrintDebug("MatchFoundSent!");
             return true;
         }
 
         [HTTP("PATCH", "/session/v1/public/namespaces/{namespace}/gamesessions/{sessionid}")]
-        public static bool PATCHGameSessions(HttpRequest _, PC3Server.PC3Session session)
+        public static bool PATCHGameSessions(HttpRequest _, ServerStruct serverStruct)
         {
             Debugger.PrintDebug("PATCH! gamesessions");
             ResponseCreator response = new();
             response.SetHeader("Content-Type", "application/json");
             //response.SetBody(JsonConvert.SerializeObject(gamesessions));
-            session.SendResponse(response.GetResponse());
+            serverStruct.Response = response.GetResponse();
+            serverStruct.SendResponse();
 
             //OnDSStatusChanged
 
@@ -81,15 +82,16 @@ namespace PayCheckServerLib.Responses
         }
 
         [HTTP("POST", "/session/v1/public/namespaces/{namespace}/gamesessions/{sessionid}/join")]
-        public static bool JoinToGameSessions(HttpRequest _, PC3Server.PC3Session session)
+        public static bool JoinToGameSessions(HttpRequest _, ServerStruct serverStruct)
         {
-            var auth = session.Headers["authorization"].Replace("Bearer ", "");
+            var auth = serverStruct.Headers["authorization"].Replace("Bearer ", "");
             var token = TokenHelper.ReadToken(auth);
-            var gs = GSController.JoinSession(session.HttpParam["sessionid"], token.UserId, session.HttpParam["namespace"]);
+            var gs = GSController.JoinSession(serverStruct.Parameters["sessionid"], token.UserId, serverStruct.Parameters["namespace"]);
             ResponseCreator response = new();
             response.SetHeader("Content-Type", "application/json");
             response.SetBody(JsonConvert.SerializeObject(gs));
-            session.SendResponse(response.GetResponse());
+            serverStruct.Response = response.GetResponse();
+            serverStruct.SendResponse();
             //Send OnSessionMembersChanged, OnSessionJoined
 
             OnSessionJoined onSessionJoined = new()
@@ -105,7 +107,7 @@ namespace PayCheckServerLib.Responses
                 { "payload", LobbyControl.Base64Encode(JsonConvert.SerializeObject(onSessionJoined)) },
                 { "sentAt", DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ") },
             };
-            LobbyControl.SendToLobby(kv, session.GetWSLobby(token.UserId, token.Namespace));
+            LobbyControl.SendToLobby(kv, LobbyControl.GetLobbyUser(token.UserId, token.Namespace));
 
 
             OnSessionMembersChanged onSessionMembersChanged = new()
@@ -168,12 +170,12 @@ namespace PayCheckServerLib.Responses
             };
 
             //OnMemeberChanged to full team?
-            LobbyControl.SendToLobby(kv, session.GetWSLobby(token.UserId, token.Namespace));
+            LobbyControl.SendToLobby(kv, LobbyControl.GetLobbyUser(token.UserId, token.Namespace));
             return true;
         }
 
         [HTTP("DELETE", "/session/v1/public/namespaces/{namespace}/gamesessions/{sessionid}/leave")]
-        public static bool LeaveGameSessions(HttpRequest _, PC3Server.PC3Session session)
+        public static bool LeaveGameSessions(HttpRequest _, ServerStruct serverStruct)
         {
             return false;
         }

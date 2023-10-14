@@ -10,9 +10,9 @@ namespace PayCheckServerLib.Responses
     public class Session
     {
         [HTTP("GET", "/session/v1/public/namespaces/{namespace}/users/me/attributes")]
-        public static bool GETSessionAttributes(HttpRequest _, PC3Server.PC3Session session)
+        public static bool GETSessionAttributes(HttpRequest _, ServerStruct serverStruct)
         {
-            var auth = session.Headers["authorization"].Replace("Bearer ", "");
+            var auth = serverStruct.Headers["authorization"].Replace("Bearer ", "");
             var token = TokenHelper.ReadToken(auth);
             ResponseCreator response = new();
             AttribSuccess success = new()
@@ -31,14 +31,15 @@ namespace PayCheckServerLib.Responses
                 UserId = token.UserId
             };
             response.SetBody(JsonConvert.SerializeObject(success));
-            session.SendResponse(response.GetResponse());
+            serverStruct.Response = response.GetResponse();
+            serverStruct.SendResponse();
             return true;
         }
 
         [HTTP("POST", "/session/v1/public/namespaces/{namespace}/users/me/attributes")]
-        public static bool POSTSessionAttributes(HttpRequest request, PC3Server.PC3Session session)
+        public static bool POSTSessionAttributes(HttpRequest request, ServerStruct serverStruct)
         {
-            var auth = session.Headers["authorization"].Replace("Bearer ", "");
+            var auth = serverStruct.Headers["authorization"].Replace("Bearer ", "");
             var token = TokenHelper.ReadToken(auth);
             var req = JsonConvert.DeserializeObject<AttribRequest>(request.Body) ?? throw new Exception("POSTSessionAttributes -> req is null!");
             ResponseCreator response = new();
@@ -52,12 +53,13 @@ namespace PayCheckServerLib.Responses
                 UserId = token.UserId
             };
             response.SetBody(JsonConvert.SerializeObject(success));
-            session.SendResponse(response.GetResponse());
+            serverStruct.Response = response.GetResponse();
+            serverStruct.SendResponse();
             return true;
         }
 
         [HTTP("GET", "/session/v1/public/namespaces/{namespace}/users/me/parties")]
-        public static bool SessionsParties(HttpRequest _, PC3Server.PC3Session session)
+        public static bool SessionsParties(HttpRequest _, ServerStruct serverStruct)
         {
             ResponseCreator response = new();
             response.SetHeader("Content-Type", "application/json");
@@ -73,12 +75,13 @@ namespace PayCheckServerLib.Responses
                 Data = new()
             };
             response.SetBody(JsonConvert.SerializeObject(gamesessions));
-            session.SendResponse(response.GetResponse());
+            serverStruct.Response = response.GetResponse();
+            serverStruct.SendResponse();
             return true;
         }
 
         [HTTP("GET", "/session/v1/public/namespaces/{namespace}/users/me/gamesessions")]
-        public static bool Sessionsgamesessions(HttpRequest _, PC3Server.PC3Session session)
+        public static bool Sessionsgamesessions(HttpRequest _, ServerStruct serverStruct)
         {
             ResponseCreator response = new();
             response.SetHeader("Content-Type", "application/json");
@@ -94,7 +97,8 @@ namespace PayCheckServerLib.Responses
                 Data = new()
             };
             response.SetBody(JsonConvert.SerializeObject(gamesessions));
-            session.SendResponse(response.GetResponse());
+            serverStruct.Response = response.GetResponse();
+            serverStruct.SendResponse();
             return true;
         }
     }

@@ -1,8 +1,11 @@
-﻿using Newtonsoft.Json;
+﻿using ModdableWebServer;
+using ModdableWebServer.Helper;
+using Newtonsoft.Json;
 using PayCheckServerLib.Jsons.GS;
 using PayCheckServerLib.Jsons.PartyStuff;
 using PayCheckServerLib.Responses;
 using PayCheckServerLib.WSController;
+using static PayCheckServerLib.Jsons.GS.OnMatchFound;
 
 namespace PayCheckServerLib.Helpers
 {
@@ -15,7 +18,7 @@ namespace PayCheckServerLib.Helpers
         public static Dictionary<string, GameSession> Sessions = new();
         public static Dictionary<string, string> Tickets = new();
         //  Here we making a Full created Match 
-        public static void Make(MatchTickets.TicketReqJson ticketReq, PC3Server.PC3Session session, string NameSpace)
+        public static void Make(MatchTickets.TicketReqJson ticketReq, ServerStruct serverStruct, string NameSpace)
         {
             var party = PartyController.PartySaves.Where(x => x.Value.Id == ticketReq.sessionId).FirstOrDefault().Value;
             if (party == null)
@@ -52,7 +55,7 @@ namespace PayCheckServerLib.Helpers
                 Version = 1
             };
             Debugger.PrintDebug("gs!!");
-            var team = new Team()
+            var team = new Jsons.GS.Team()
             {
                 Parties = new(),
                 UserIDs = new()
@@ -97,14 +100,16 @@ namespace PayCheckServerLib.Helpers
             };
             Debugger.PrintDebug("OnSessionInvited");
             //  Maybe can be much better this but atleast works
-            foreach (var vs_ui in session.WSSServer.WSUserIds)
+            foreach (var key in LobbyControl.LobbyUsers.Keys)
             {
+                var splitted = key.Split("_");
+                string vs_ui = splitted[1];
                 foreach (var uid in team.UserIDs)
                 {
                     if (uid == vs_ui)
                     {
                         Debugger.PrintDebug("GS_Session OnSessionInvited sent to " + vs_ui);
-                        LobbyControl.SendToLobby(kv, session.GetWSLobby(vs_ui, NameSpace));
+                        LobbyControl.SendToLobby(kv, LobbyControl.GetLobbyUser(vs_ui, NameSpace));
                     }
                 }
             }
@@ -148,7 +153,7 @@ namespace PayCheckServerLib.Helpers
             return session;
         }
 
-        public static GameSession Patch(PatchGameSessions patchGameSessions, string id, PC3Server.PC3Session pcSession, string NameSpace)
+        public static GameSession Patch(PatchGameSessions patchGameSessions, string id, ServerStruct serverStruct, string NameSpace)
         {
             if (!Sessions.TryGetValue(NameSpace + "_" + id, out var session))
             {
@@ -157,13 +162,14 @@ namespace PayCheckServerLib.Helpers
             }
             //send stuff to middleman
             var random = new Random();
-            var mlist = pcSession.MiddleMans;
-            int index = random.Next(mlist.Count);
-            var middleMan = mlist[index];
+            int rand = random.Next(0, MiddleManControl.MiddleMans.Count);
+            var MiddleMan = MiddleManControl.MiddleMans.ElementAt(rand);
+
             //todo get client info
             string Req = "DSInfoReq-END-" + "eu-central-1," + "624677," + session.Id + "," + NameSpace;
             Debugger.PrintDebug("Sending to middleman");
-            middleMan.Send(Req);
+            var x = MiddleMan.Value;
+            WebSocketSender.SendWebSocketText(x, Req);
             //recieve back here?
             //  PLEASE if you know how to wait better than this, make a PR!
             while (!DSInfoSentList.Contains(NameSpace + "_" + id))
@@ -228,14 +234,17 @@ namespace PayCheckServerLib.Helpers
             };
 
             //  Maybe can be much better this but atleast works
-            foreach (var vs_ui in pcSession.WSSServer.WSUserIds)
+
+            foreach (var key in LobbyControl.LobbyUsers.Keys)
             {
+                var splitted = key.Split("_");
+                string vs_ui = splitted[1];
                 foreach (var uid in session.Members)
                 {
                     if (uid.Id == vs_ui)
                     {
                         Debugger.PrintDebug("GS_Session OnSessionInvited sent to " + vs_ui);
-                        LobbyControl.SendToLobby(kv, pcSession.GetWSLobby(vs_ui, NameSpace));
+                        LobbyControl.SendToLobby(kv, LobbyControl.GetLobbyUser(vs_ui, NameSpace));
                     }
                 }
             }
