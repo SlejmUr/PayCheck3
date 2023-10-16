@@ -71,7 +71,7 @@ namespace PayCheckServerLib.Responses
             var body = JsonConvert.DeserializeObject<PartyPatch>(request.Body);
             PartyPost.Response rsp = PartyController.UpdateParty(serverStruct.Parameters["partyid"], body);
             ResponseCreator response = new();
-            response.SetBody(JsonConvert.SerializeObject(rsp));
+            response.SetBody(JsonConvert.SerializeObject(rsp, Formatting.Indented));
             serverStruct.Response = response.GetResponse();
             serverStruct.SendResponse();
             OnPartyUpdated pld = new()

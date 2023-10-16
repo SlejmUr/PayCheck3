@@ -10,7 +10,6 @@ namespace PayCheck3ServerApp
             Console.WriteLine("Starting Server(s)!");
             ServerManager.UpdateFinished += ServerManager_UpdateFinished;
 
-            args = args.Append("-beta").Append("-debug").ToArray();
             ArgumentHandler.MainArg(args);
             if (ArgumentHandler.AskHelp)
                 ArgumentHandler.PrintHelp();

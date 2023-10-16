@@ -20,15 +20,17 @@ namespace PayCheckServerLib
             {
                 Debugger.PrintDebug("GiveMeMoney Cheat Activated");
             }
+            if (ArgumentHandler.Debug)
+                DebugPrinter.PrintToConsole = true;
+            else
+                DebugPrinter.PrintToConsole = false;
+
             if (ArgumentHandler.NoUpdate)
             {
                 UpdateFinished?.Invoke(null, true);
                 return;
             }
-            if (ArgumentHandler.Debug)
-            {
-                DebugPrinter.PrintToConsole = true;
-            }
+
             if (ConfigHelper.ServerConfig.EnableAutoUpdate || ArgumentHandler.ForceUpdate)
                 Updater.CheckForJsonUpdates();
             UpdateFinished?.Invoke(null, true);
@@ -53,6 +55,7 @@ namespace PayCheckServerLib
             if (ConfigHelper.ServerConfig.Hosting.Gstatic)
             {
                 gserver = new(ConfigHelper.ServerConfig.Hosting.IP, 80);
+                gserver.AttributeToMethods.Merge(Assembly.GetAssembly(typeof(ConfigHelper)));
                 gserver.Start();
             }
         }

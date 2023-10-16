@@ -110,7 +110,6 @@ namespace PayCheckServerLib.WSController
                 if (string.IsNullOrEmpty(item) || item == "\n")
                     continue;
                 var kv2 = item.Split(": ");
-                Console.WriteLine(item);
                 kv.Add(kv2[0], kv2[1]);
             }
             Debugger.PrintWebsocket("KVs done!");

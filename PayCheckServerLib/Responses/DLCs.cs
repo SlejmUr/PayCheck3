@@ -26,7 +26,7 @@ namespace PayCheckServerLib.Responses
 
 
 
-        [HTTP("PUT", "/platform/public/namespaces/{namespace}/users/{UserId}/dlc/steam/sync")]
+        [HTTP("PUT", "/platform/public/namespaces/{namespace}/users/{userid}/dlc/steam/sync")]
         public static bool PUT_DLC_SteamSync(HttpRequest _, ServerStruct serverStruct)
         {
             //var body = JsonConvert.DeserializeObject<PutDLC>(request.Body);

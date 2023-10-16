@@ -89,7 +89,9 @@ namespace PayCheckServerLib.Helpers
                 LeaderId = rsp.LeaderId,
                 Members = rsp.Members,
                 UpdatedAt = rsp.UpdatedAt,
-                version = rsp.Version
+                version = rsp.Version,
+                NameSpace = nameSpace,
+                Attributes = rsp.Attributes
             };
             PartySaves.Add(code, saved);
             Debugger.PrintInfo("New Party made!");
