@@ -9,6 +9,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+	<PackageReference Include="L" Version="5.0.0" />
+	<PackageReference Include="ModdableWebServer" Version="1.1.0.1" />
     <PackageReference Include="NetCoreServer" Version="7.0.0" />
   </ItemGroup>
 

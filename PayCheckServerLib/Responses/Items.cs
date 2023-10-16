@@ -1,4 +1,7 @@
-﻿using NetCoreServer;
+﻿using ModdableWebServer;
+using ModdableWebServer.Attributes;
+using ModdableWebServer.Helper;
+using NetCoreServer;
 using Newtonsoft.Json;
 using PayCheckServerLib.Jsons;
 using PayCheckServerLib.Jsons.Basic;
@@ -8,7 +11,7 @@ namespace PayCheckServerLib.Responses
     public class Items
     {
         [HTTP("GET", "/platform/public/namespaces/{namespace}/items/byCriteria?limit={limit}&includeSubCategoryItem=false")]
-        public static bool GetItemsByCriteria(HttpRequest _, PC3Server.PC3Session session)
+        public static bool GetItemsByCriteria(HttpRequest _, ServerStruct serverStruct)
         {
             ResponseCreator creator = new();
             var items = JsonConvert.DeserializeObject<DataPaging<ItemDefinitionJson>>(File.ReadAllText("./Files/Items.json"));
@@ -18,12 +21,13 @@ namespace PayCheckServerLib.Responses
                 item.UpdatedAt = timeMrFreeman;
             }
             creator.SetBody(JsonConvert.SerializeObject(items));
-            session.SendResponse(creator.GetResponse());
+            serverStruct.Response = creator.GetResponse();
+            serverStruct.SendResponse();
             return true;
         }
 
         [HTTP("GET", "/platform/public/namespaces/{namespace}/items/byCriteria?tags={tags}&limit={limit}&includeSubCategoryItem=false")]
-        public static bool GetItemsByCriteriaByTags(HttpRequest _, PC3Server.PC3Session session)
+        public static bool GetItemsByCriteriaByTags(HttpRequest _, ServerStruct serverStruct)
         {
             ResponseCreator creator = new();
             var items = JsonConvert.DeserializeObject<DataPaging<ItemDefinitionJson>>(File.ReadAllText("./Files/Items.json")) ?? throw new Exception("Items is null!");
@@ -34,7 +38,7 @@ namespace PayCheckServerLib.Responses
                 item.UpdatedAt = timeMrFreeman;
                 if (item.Tags != null)
                 {
-                    if (item.Tags.Contains(session.HttpParam["tags"]))
+                    if (item.Tags.Contains(serverStruct.Parameters["tags"]))
                     {
                         finalitems.Add(item);
                     }
@@ -46,7 +50,8 @@ namespace PayCheckServerLib.Responses
                 Paging = { }
             };
             creator.SetBody(JsonConvert.SerializeObject(tosend));
-            session.SendResponse(creator.GetResponse());
+            serverStruct.Response = creator.GetResponse();
+            serverStruct.SendResponse();
             return true;
         }
     }

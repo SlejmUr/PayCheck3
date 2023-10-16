@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using ModdableWebServer;
+using Newtonsoft.Json;
 using PayCheckServerLib.Jsons.PartyStuff;
 
 namespace PayCheckServerLib.Helpers
@@ -88,7 +89,9 @@ namespace PayCheckServerLib.Helpers
                 LeaderId = rsp.LeaderId,
                 Members = rsp.Members,
                 UpdatedAt = rsp.UpdatedAt,
-                version = rsp.Version
+                version = rsp.Version,
+                NameSpace = nameSpace,
+                Attributes = rsp.Attributes
             };
             PartySaves.Add(code, saved);
             Debugger.PrintInfo("New Party made!");
@@ -134,7 +137,7 @@ namespace PayCheckServerLib.Helpers
             return ParsePartyToRSP(party);
         }
 
-        public static void LeftParty(string PartyId, string UserId, PC3Server.PC3Session session)
+        public static void LeftParty(string PartyId, string UserId, ServerStruct serverStruct)
         {
             var party = PartySaves.Where(x => x.Value.Id == PartyId).FirstOrDefault().Value;
             if (party == null)

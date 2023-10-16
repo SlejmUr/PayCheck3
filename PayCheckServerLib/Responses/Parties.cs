@@ -5,24 +5,28 @@ using PayCheckServerLib.Jsons.Basic;
 using PayCheckServerLib.Jsons.PartyStuff;
 using PayCheckServerLib.Jsons.WSS;
 using PayCheckServerLib.WSController;
+using ModdableWebServer;
+using ModdableWebServer.Attributes;
+using ModdableWebServer.Helper;
 
 namespace PayCheckServerLib.Responses
 {
     public class Parties
     {
         [HTTP("POST", "/session/v1/public/namespaces/{namespace}/party")]
-        public static bool Party(HttpRequest request, PC3Server.PC3Session session)
+        public static bool Party(HttpRequest request, ServerStruct serverStruct)
         {
-            var auth = session.Headers["authorization"].Replace("Bearer ", "");
+            var auth = serverStruct.Headers["authorization"].Replace("Bearer ", "");
             var token = TokenHelper.ReadToken(auth);
             var body = JsonConvert.DeserializeObject<PartyPostReq>(request.Body);
             var rsp = PartyController.CreateParty(body, token.Namespace);
             ResponseCreator response = new();
             response.SetBody(JsonConvert.SerializeObject(rsp));
-            session.SendResponse(response.GetResponse());
+            serverStruct.Response = response.GetResponse();
+            serverStruct.SendResponse();
 
             //send notif to user to party created
-            var wss_sess = session.GetWSLobby(token.UserId, token.Namespace);
+            var wss_sess = LobbyControl.GetLobbyUser(token.UserId, token.Namespace);
             OnPartyCreated pld = new()
             {
                 Code = rsp.Code,
@@ -54,21 +58,22 @@ namespace PayCheckServerLib.Responses
                 }
             };
 
-            ChatControl.SendToChat(JsonConvert.SerializeObject(topic), session.GetWSChat(token.UserId, token.Namespace));
+            ChatControl.SendToChat(JsonConvert.SerializeObject(topic), ChatControl.GetChatUser(token.UserId, token.Namespace));
 
             return true;
         }
 
         [HTTP("PATCH", "/session/v1/public/namespaces/{namespace}/parties/{partyid}")]
-        public static bool PATCH_Parties(HttpRequest request, PC3Server.PC3Session session)
+        public static bool PATCH_Parties(HttpRequest request, ServerStruct serverStruct)
         {
-            var auth = session.Headers["authorization"].Replace("Bearer ", "");
+            var auth = serverStruct.Headers["authorization"].Replace("Bearer ", "");
             var token = TokenHelper.ReadToken(auth);
             var body = JsonConvert.DeserializeObject<PartyPatch>(request.Body);
-            PartyPost.Response rsp = PartyController.UpdateParty(session.HttpParam["partyid"], body);
+            PartyPost.Response rsp = PartyController.UpdateParty(serverStruct.Parameters["partyid"], body);
             ResponseCreator response = new();
-            response.SetBody(JsonConvert.SerializeObject(rsp));
-            session.SendResponse(response.GetResponse());
+            response.SetBody(JsonConvert.SerializeObject(rsp, Formatting.Indented));
+            serverStruct.Response = response.GetResponse();
+            serverStruct.SendResponse();
             OnPartyUpdated pld = new()
             {
                 Code = rsp.Code,
@@ -92,7 +97,7 @@ namespace PayCheckServerLib.Responses
                 IsFull = rsp.IsFull,
                 LeaderId = rsp.LeaderId,
                 Members = new(),
-                Namespace = session.HttpParam["namespace"],
+                Namespace = serverStruct.Parameters["namespace"],
                 UpdatedAt = rsp.UpdatedAt,
                 Version = rsp.Version
             };
@@ -120,12 +125,14 @@ namespace PayCheckServerLib.Responses
             List<string> ids = new();
             rsp.Members.ForEach(m => ids.Add(m.Id));
 
-            foreach (var id in session.WSSServer.WSUserIds)
+            foreach (var id in LobbyControl.LobbyUsers.Keys)
             {
-                if (ids.Contains(id))
+                var splitted = id.Split("_");
+
+                if (ids.Contains(splitted[1]))
                 {
-                    Debugger.PrintDebug(id);
-                    LobbyControl.SendToLobby(resp, session.GetWSLobby(id, token.Namespace));
+                    Debugger.PrintDebug(splitted[1]);
+                    LobbyControl.SendToLobby(resp, LobbyControl.GetLobbyUser(splitted[1], token.Namespace));
                 }
             }
 
@@ -134,16 +141,17 @@ namespace PayCheckServerLib.Responses
 
 
         [HTTP("DELETE", "/session/v1/public/namespaces/{namespace}/parties/{partyid}/users/me/leave")]
-        public static bool LeaveParties(HttpRequest request, PC3Server.PC3Session session)
+        public static bool LeaveParties(HttpRequest request, ServerStruct serverStruct)
         {
             //This response sadly KILLING THE GAME (Even without emu)
             //  SBZ PLEASE FIX!
-            var auth = session.Headers["authorization"].Replace("Bearer ", "");
+            var auth = serverStruct.Headers["authorization"].Replace("Bearer ", "");
             var token = TokenHelper.ReadToken(auth);
             ResponseCreator response = new(204);
-            session.SendResponse(response.GetResponse());
-            PartyController.LeftParty(session.HttpParam["partyid"], token.UserId, session);
-            var party = PartyController.PartySaves.Where(x => x.Value.Id == session.HttpParam["partyid"]).FirstOrDefault().Value;
+            serverStruct.Response = response.GetResponse();
+            serverStruct.SendResponse();
+            PartyController.LeftParty(serverStruct.Parameters["partyid"], token.UserId, serverStruct);
+            var party = PartyController.PartySaves.Where(x => x.Value.Id == serverStruct.Parameters["partyid"]).FirstOrDefault().Value;
             if (party == null)
             {
                 Debugger.PrintError("NO Code???? WHAT THE FUCK");
@@ -162,15 +170,15 @@ namespace PayCheckServerLib.Responses
                     UserId = token.UserId
                 }
             };
-            ChatControl.SendToChat(JsonConvert.SerializeObject(topic), session.GetWSChat(token.UserId, token.Namespace));
+            ChatControl.SendToChat(JsonConvert.SerializeObject(topic), ChatControl.GetChatUser(token.UserId, token.Namespace));
             return true;
         }
 
 
         [HTTP("POST", "/session/v1/public/namespaces/{namespace}/parties/{partyid}/users/me/join")]
-        public static bool JoinParties(HttpRequest request, PC3Server.PC3Session session)
+        public static bool JoinParties(HttpRequest request, ServerStruct serverStruct)
         {
-            var party = PartyController.PartySaves.Where(x => x.Value.Id == session.HttpParam["partyid"]).FirstOrDefault().Value;
+            var party = PartyController.PartySaves.Where(x => x.Value.Id == serverStruct.Parameters["partyid"]).FirstOrDefault().Value;
             if (party == null)
             {
                 Debugger.PrintError("NO Code???? WHAT THE FUCK");
@@ -179,12 +187,13 @@ namespace PayCheckServerLib.Responses
             var rsp = PartyController.ParsePartyToRSP(party);
             ResponseCreator response = new();
             response.SetBody(JsonConvert.SerializeObject(rsp));
-            session.SendResponse(response.GetResponse());
+            serverStruct.Response = response.GetResponse();
+            serverStruct.SendResponse();
             return true;
         }
 
         [HTTP("POST", "/session/v1/public/namespaces/{namespace}/parties/{partyid}/users/me/reject")]
-        public static bool RejectParties(HttpRequest request, PC3Server.PC3Session session)
+        public static bool RejectParties(HttpRequest request, ServerStruct serverStruct)
         {
             /*
             var body = JsonConvert.DeserializeObject<object>(request.Body);
@@ -202,7 +211,7 @@ namespace PayCheckServerLib.Responses
         }
 
         [HTTP("POST", "/session/v1/public/namespaces/{namespace}/parties/users/me/join/code")]
-        public static bool JoinPartyByCode(HttpRequest request, PC3Server.PC3Session session)
+        public static bool JoinPartyByCode(HttpRequest request, ServerStruct serverStruct)
         {
 
             var body = JsonConvert.DeserializeObject<UsersMeJoinCode>(request.Body);
@@ -211,7 +220,8 @@ namespace PayCheckServerLib.Responses
                 var rsp = PartyController.ParsePartyToRSP(saved);
                 ResponseCreator response = new();
                 response.SetBody(JsonConvert.SerializeObject(rsp));
-                session.SendResponse(response.GetResponse());
+                serverStruct.Response = response.GetResponse();
+                serverStruct.SendResponse();
             }
             else
             {
@@ -220,29 +230,31 @@ namespace PayCheckServerLib.Responses
                     Attributes = new Dictionary<string, string>()
                     {
                         { "id", body.Code },
-                        { "namespace", session.HttpParam["namespace"] }
+                        { "namespace", serverStruct.Parameters["namespace"] }
                     },
                     ErrorCode = 20041,
-                    ErrorMessage = $"No party with ID [{body.Code}] exists in namespace [{session.HttpParam["namespace"]}]",
-                    Message = $"No party with ID [{body.Code}] exists in namespace [{session.HttpParam["namespace"]}]",
+                    ErrorMessage = $"No party with ID [{body.Code}] exists in namespace [{serverStruct.Parameters["namespace"]}]",
+                    Message = $"No party with ID [{body.Code}] exists in namespace [{serverStruct.Parameters["namespace"]}]",
                     Name = "PartyNotFound"
                 };
                 ResponseCreator response = new(404);
                 response.SetBody(JsonConvert.SerializeObject(error));
-                session.SendResponse(response.GetResponse());
+                serverStruct.Response = response.GetResponse();
+                serverStruct.SendResponse();
             }
 
             return true;
         }
 
         [HTTP("POST", "/session/v1/public/namespaces/{namespace}/parties/{partyid}/invite")]
-        public static bool InviteOtherPlayer(HttpRequest request, PC3Server.PC3Session session)
+        public static bool InviteOtherPlayer(HttpRequest request, ServerStruct serverStruct)
         {
             /*
             var body = JsonConvert.DeserializeObject<object>(request.Body);
             ResponseCreator response = new();
             response.SetBody(JsonConvert.SerializeObject(""));
-            session.SendResponse(response.GetResponse());
+            serverStruct.Response = response.GetResponse();
+            serverStruct.SendResponse();
             */
             return false;
         }

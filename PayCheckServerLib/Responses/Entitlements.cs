@@ -1,4 +1,7 @@
-﻿using NetCoreServer;
+﻿using ModdableWebServer;
+using ModdableWebServer.Attributes;
+using ModdableWebServer.Helper;
+using NetCoreServer;
 using Newtonsoft.Json;
 using PayCheckServerLib.Jsons;
 using PayCheckServerLib.Jsons.Basic;
@@ -8,7 +11,7 @@ namespace PayCheckServerLib.Responses
     public class Entitlements
     {
         [HTTP("GET", "/platform/public/namespaces/{namespace}/users/{userId}/entitlements?limit={limit}")]
-        public static bool GetUserEntitlements(HttpRequest _, PC3Server.PC3Session session)
+        public static bool GetUserEntitlements(HttpRequest _, ServerStruct serverStruct)
         {
             try
             {
@@ -17,7 +20,7 @@ namespace PayCheckServerLib.Responses
                 var newentitlements = new List<EntitlementsData>();
                 foreach (var entitlement in entitlements.Data)
                 {
-                    entitlement.UserId = session.HttpParam["userId"];
+                    entitlement.UserId = serverStruct.Parameters["userId"];
                     newentitlements.Add(entitlement);
                 }
                 DataPaging<EntitlementsData> payload = new()
@@ -32,7 +35,8 @@ namespace PayCheckServerLib.Responses
                     }
                 };
                 responsecreator.SetBody(JsonConvert.SerializeObject(payload));
-                session.SendResponse(responsecreator.GetResponse());
+                serverStruct.Response = responsecreator.GetResponse();
+                serverStruct.SendResponse();
                 return true;
             }
             catch (Exception ex)
@@ -43,7 +47,7 @@ namespace PayCheckServerLib.Responses
         }
 
         [HTTP("GET", "/platform/public/namespaces/{namespace}/users/{userId}/entitlements?itemId={itemid}&limit={limit}")]
-        public static bool GetUserEntitlementsByItemId(HttpRequest _, PC3Server.PC3Session session)
+        public static bool GetUserEntitlementsByItemId(HttpRequest _, ServerStruct serverStruct)
         {
             try
             {
@@ -52,9 +56,9 @@ namespace PayCheckServerLib.Responses
                 var newentitlements = new List<EntitlementsData>();
                 foreach (var entitlement in entitlements.Data)
                 {
-                    if (entitlement.ItemId == session.HttpParam["itemid"])
+                    if (entitlement.ItemId == serverStruct.Parameters["itemid"])
                     {
-                        entitlement.UserId = session.HttpParam["userId"];
+                        entitlement.UserId = serverStruct.Parameters["userId"];
                         newentitlements.Add(entitlement);
                     }
 
@@ -71,7 +75,8 @@ namespace PayCheckServerLib.Responses
                     }
                 };
                 responsecreator.SetBody(JsonConvert.SerializeObject(payload));
-                session.SendResponse(responsecreator.GetResponse());
+                serverStruct.Response = responsecreator.GetResponse();
+                serverStruct.SendResponse();
                 return true;
             }
             catch (Exception ex)

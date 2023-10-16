@@ -1,4 +1,7 @@
-﻿using NetCoreServer;
+﻿using ModdableWebServer;
+using ModdableWebServer.Attributes;
+using ModdableWebServer.Helper;
+using NetCoreServer;
 using Newtonsoft.Json;
 using PayCheckServerLib.Jsons;
 using PayCheckServerLib.Jsons.Basic;
@@ -33,7 +36,7 @@ namespace PayCheckServerLib.Responses
         }
 
         [HTTP("POST", "/platform/public/namespaces/{namespace}/users/{userid}/orders")]
-        public static bool UserOrders(HttpRequest request, PC3Server.PC3Session session)
+        public static bool UserOrders(HttpRequest request, ServerStruct serverStruct)
         {
             //ResponseCreator response = new ResponseCreator();
             //OrdersJsonPayload payload = new() {
@@ -45,7 +48,7 @@ namespace PayCheckServerLib.Responses
 
             var body = JsonConvert.DeserializeObject<OrderPostBody>(request.Body) ?? throw new Exception("UserOrders -> body is null!");
             if (!Directory.Exists("Orders")) { Directory.CreateDirectory("Orders"); }
-            File.WriteAllText($"Orders/{session.HttpParam["namespace"]}_{session.HttpParam["userid"]}_{body.ItemId}", request.Body);
+            File.WriteAllText($"Orders/{serverStruct.Parameters["namespace"]}_{serverStruct.Parameters["userid"]}_{body.ItemId}", request.Body);
 
             ResponseCreator response = new();
             var ordernumber = GenOrderNumber();
@@ -53,8 +56,8 @@ namespace PayCheckServerLib.Responses
             Order order = new()
             {
                 OrderNo = ordernumber,
-                Namespace = session.HttpParam["namespace"],
-                UserId = session.HttpParam["userid"],
+                Namespace = serverStruct.Parameters["namespace"],
+                UserId = serverStruct.Parameters["userid"],
                 ItemId = item.ItemId,
                 Sandbox = false,
                 Quantity = body.Quantity,
@@ -71,7 +74,7 @@ namespace PayCheckServerLib.Responses
                     CurrencySymbol = body.CurrencyCode,
                     // CASH = Cash, GOLD = CStacks
                     CurrencyType = (body.CurrencyCode == "CASH" || body.CurrencyCode == "GOLD") ? "VIRTUAL" : "REAL",
-                    Namespace = session.HttpParam["namespace"],
+                    Namespace = serverStruct.Parameters["namespace"],
                     Decimals = 0
                 },
                 // will be like this until i can confirm they are the same type ~HW12Dev
@@ -94,7 +97,8 @@ namespace PayCheckServerLib.Responses
                 PaymentProvider = "WALLET"
             };
             response.SetBody(JsonConvert.SerializeObject(order));
-            session.SendResponse(response.GetResponse());
+            serverStruct.Response = response.GetResponse();
+            serverStruct.SendResponse();
             return true;
         }
     }

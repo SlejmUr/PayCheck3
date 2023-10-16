@@ -1,4 +1,7 @@
-﻿using NetCoreServer;
+﻿using ModdableWebServer;
+using ModdableWebServer.Attributes;
+using ModdableWebServer.Helper;
+using NetCoreServer;
 using Newtonsoft.Json;
 using PayCheckServerLib.Jsons;
 using System.Text.RegularExpressions;
@@ -7,7 +10,7 @@ namespace PayCheckServerLib.Responses
 {
     public class VersionResponse
     {
-        static bool GenericVersionResponse(HttpRequest request, PC3Server.PC3Session session)
+        static bool GenericVersionResponse(HttpRequest request, ServerStruct serverStruct)
         {
             ResponseCreator response = new ResponseCreator();
 
@@ -44,50 +47,51 @@ namespace PayCheckServerLib.Responses
             };
 
             response.SetBody(JsonConvert.SerializeObject(version));
-            session.SendResponse(response.GetResponse());
+            serverStruct.Response = response.GetResponse();
+            serverStruct.SendResponse();
             return true;
         }
 
         [HTTP("GET", "/iam/version")]
-        public static bool IamVersion(HttpRequest request, PC3Server.PC3Session session) { return GenericVersionResponse(request, session); }
+        public static bool IamVersion(HttpRequest request, ServerStruct serverStruct) { return GenericVersionResponse(request, serverStruct); }
 
         [HTTP("GET", "/agreement/version")]
-        public static bool AgreementVersion(HttpRequest request, PC3Server.PC3Session session) { return GenericVersionResponse(request, session); }
+        public static bool AgreementVersion(HttpRequest request, ServerStruct serverStruct) { return GenericVersionResponse(request, serverStruct); }
 
         [HTTP("GET", "/basic/version")]
-        public static bool BasicVersion(HttpRequest request, PC3Server.PC3Session session) { return GenericVersionResponse(request, session); }
+        public static bool BasicVersion(HttpRequest request, ServerStruct serverStruct) { return GenericVersionResponse(request, serverStruct); }
 
         [HTTP("GET", "/platform/version")]
-        public static bool PlatformVersion(HttpRequest request, PC3Server.PC3Session session) { return GenericVersionResponse(request, session); }
+        public static bool PlatformVersion(HttpRequest request, ServerStruct serverStruct) { return GenericVersionResponse(request, serverStruct); }
 
         [HTTP("GET", "/social/version")]
-        public static bool SocialVersion(HttpRequest request, PC3Server.PC3Session session) { return GenericVersionResponse(request, session); }
+        public static bool SocialVersion(HttpRequest request, ServerStruct serverStruct) { return GenericVersionResponse(request, serverStruct); }
 
         [HTTP("GET", "/leaderboard/version")]
-        public static bool LeaderboardVersion(HttpRequest request, PC3Server.PC3Session session) { return GenericVersionResponse(request, session); }
+        public static bool LeaderboardVersion(HttpRequest request, ServerStruct serverStruct) { return GenericVersionResponse(request, serverStruct); }
 
         [HTTP("GET", "/achievement/version")]
-        public static bool AchievementVersion(HttpRequest request, PC3Server.PC3Session session) { return GenericVersionResponse(request, session); }
+        public static bool AchievementVersion(HttpRequest request, ServerStruct serverStruct) { return GenericVersionResponse(request, serverStruct); }
 
         [HTTP("GET", "/cloudsave/version")]
-        public static bool CloudSaveVersion(HttpRequest request, PC3Server.PC3Session session) { return GenericVersionResponse(request, session); }
+        public static bool CloudSaveVersion(HttpRequest request, ServerStruct serverStruct) { return GenericVersionResponse(request, serverStruct); }
 
         [HTTP("GET", "/ugc/version")]
-        public static bool UGCVersion(HttpRequest request, PC3Server.PC3Session session) { return GenericVersionResponse(request, session); }
+        public static bool UGCVersion(HttpRequest request, ServerStruct serverStruct) { return GenericVersionResponse(request, serverStruct); }
 
         [HTTP("GET", "/lobby/version")]
-        public static bool LobbyVersion(HttpRequest request, PC3Server.PC3Session session) { return GenericVersionResponse(request, session); }
+        public static bool LobbyVersion(HttpRequest request, ServerStruct serverStruct) { return GenericVersionResponse(request, serverStruct); }
 
         [HTTP("GET", "/group/version")]
-        public static bool GroupVersion(HttpRequest request, PC3Server.PC3Session session) { return GenericVersionResponse(request, session); }
+        public static bool GroupVersion(HttpRequest request, ServerStruct serverStruct) { return GenericVersionResponse(request, serverStruct); }
 
         [HTTP("GET", "/qosm/version")]
-        public static bool QOSMVersion(HttpRequest request, PC3Server.PC3Session session) { return GenericVersionResponse(request, session); }
+        public static bool QOSMVersion(HttpRequest request, ServerStruct serverStruct) { return GenericVersionResponse(request, serverStruct); }
 
         [HTTP("GET", "/dsmcontroller/version")]
-        public static bool DSMControllerVersion(HttpRequest request, PC3Server.PC3Session session) { return GenericVersionResponse(request, session); }
+        public static bool DSMControllerVersion(HttpRequest request, ServerStruct serverStruct) { return GenericVersionResponse(request, serverStruct); }
 
         [HTTP("GET", "/game-telemetry/version")]
-        public static bool GameTelemetryVerion(HttpRequest request, PC3Server.PC3Session session) { return GenericVersionResponse(request, session); }
+        public static bool GameTelemetryVerion(HttpRequest request, ServerStruct serverStruct) { return GenericVersionResponse(request, serverStruct); }
     }
 }

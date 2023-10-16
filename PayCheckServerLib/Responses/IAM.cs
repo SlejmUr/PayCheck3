@@ -4,13 +4,16 @@ using PayCheckServerLib.Helpers;
 using PayCheckServerLib.Jsons;
 using PayCheckServerLib.Jsons.Basic;
 using System.Web;
+using ModdableWebServer;
+using ModdableWebServer.Attributes;
+using ModdableWebServer.Helper;
 
 namespace PayCheckServerLib.Responses
 {
     public class IAM
     {
         [HTTP("POST", "/iam/v3/oauth/platforms/steam/token")]
-        public static bool SteamToken(HttpRequest request, PC3Server.PC3Session session)
+        public static bool SteamToken(HttpRequest request, ServerStruct serverStruct)
         {
             ResponseCreator response = new();
             if (ConfigHelper.ServerConfig.InDevFeatures.UsePWInsteadSteamToken)
@@ -27,7 +30,8 @@ namespace PayCheckServerLib.Responses
                  to get game to allow email + password auth
                  */
                 response.SetBody(JsonConvert.SerializeObject(new IAM_SteamError()));
-                session.SendResponse(response.GetResponse());
+                serverStruct.Response = response.GetResponse();
+                serverStruct.SendResponse();
                 return true;
             }
             Debugger.PrintDebug(request.Body);
@@ -50,7 +54,7 @@ namespace PayCheckServerLib.Responses
             var steamId = UserIdHelper.GetSteamIDFromAUTH(platform_token);
             Debugger.PrintInfo("User with SteamID try to log in: " + steamId);
 
-            var (access_token, refresh_token) = UserController.LoginUser(steamId, TokenHelper.TokenPlatform.Steam, session.Headers["namespace"]);
+            var (access_token, refresh_token) = UserController.LoginUser(steamId, TokenHelper.TokenPlatform.Steam, serverStruct.Headers["namespace"]);
 
             response.SetHeader("Content-Type", "application/json");
             response.SetHeader("Connection", "keep-alive");
@@ -69,7 +73,7 @@ namespace PayCheckServerLib.Responses
                 ExpiresIn = 360000,
                 IsComply = true,
                 Jflgs = 1,
-                Namespace = session.Headers["namespace"],
+                Namespace = serverStruct.Headers["namespace"],
                 NamespaceRoles = new()
                 {
                     new NamespaceRole()
@@ -89,16 +93,17 @@ namespace PayCheckServerLib.Responses
                 UserId = access_token.UserId
             };
             response.SetBody(JsonConvert.SerializeObject(LoginToken));
-            session.SendResponse(response.GetResponse());
+            serverStruct.Response = response.GetResponse();
+            serverStruct.SendResponse();
             return true;
         }
 
         [HTTP("POST", "/iam/v3/oauth/platforms/device/token")]
-        public static bool DeviceToken(HttpRequest request, PC3Server.PC3Session session)
+        public static bool DeviceToken(HttpRequest request, ServerStruct serverStruct)
         {
             var deviceid = request.Body.Split('=')[1];
             Debugger.PrintDebug(deviceid);
-            var (access_token, refresh_token) = UserController.LoginUser(deviceid, TokenHelper.TokenPlatform.Device, session.Headers["namespace"]);
+            var (access_token, refresh_token) = UserController.LoginUser(deviceid, TokenHelper.TokenPlatform.Device, serverStruct.Headers["namespace"]);
 
             ResponseCreator response = new();
             response.SetHeader("Content-Type", "application/json");
@@ -114,7 +119,7 @@ namespace PayCheckServerLib.Responses
                 ExpiresIn = 360000,
                 IsComply = true,
                 Jflgs = 4,
-                Namespace = session.Headers["namespace"],
+                Namespace = serverStruct.Headers["namespace"],
                 NamespaceRoles = new()
                 {
                     new NamespaceRole()
@@ -133,13 +138,14 @@ namespace PayCheckServerLib.Responses
                 UserId = access_token.UserId
             };
             response.SetBody(JsonConvert.SerializeObject(token));
-            session.SendResponse(response.GetResponse());
+            serverStruct.Response = response.GetResponse();
+            serverStruct.SendResponse();
             return true;
         }
 
 
         [HTTP("POST", "/iam/v3/oauth/platforms/live/token")]
-        public static bool LiveToken(HttpRequest request, PC3Server.PC3Session session)
+        public static bool LiveToken(HttpRequest request, ServerStruct serverStruct)
         {
             var splitted = request.Body.Split("&");
             Dictionary<string, string> bodyTokens = new();
@@ -153,7 +159,7 @@ namespace PayCheckServerLib.Responses
             Debugger.PrintDebug(platform_token);
             platform_token = platform_token.Replace("XBL3.0%20x%3D", "");
             platform_token = platform_token.Split(";")[0];
-            var (access_token, refresh_token) = UserController.LoginUser(platform_token, TokenHelper.TokenPlatform.Live, session.Headers["namespace"]);
+            var (access_token, refresh_token) = UserController.LoginUser(platform_token, TokenHelper.TokenPlatform.Live, serverStruct.Headers["namespace"]);
 
             ResponseCreator response = new();
             response.SetHeader("Content-Type", "application/json");
@@ -169,7 +175,7 @@ namespace PayCheckServerLib.Responses
                 ExpiresIn = 360000,
                 IsComply = true,
                 Jflgs = 4,
-                Namespace = session.Headers["namespace"],
+                Namespace = serverStruct.Headers["namespace"],
                 NamespaceRoles = new()
                 {
                     new NamespaceRole()
@@ -188,13 +194,14 @@ namespace PayCheckServerLib.Responses
                 UserId = access_token.UserId
             };
             response.SetBody(JsonConvert.SerializeObject(token));
-            session.SendResponse(response.GetResponse());
+            serverStruct.Response = response.GetResponse();
+            serverStruct.SendResponse();
             return true;
         }
 
         // Logging in with email + password, also links steam to nebula account on official servers
         [HTTP("POST", "/iam/v3/authenticateWithLink")]
-        public static bool AuthenticateWithLink(HttpRequest request, PC3Server.PC3Session session)
+        public static bool AuthenticateWithLink(HttpRequest request, ServerStruct serverStruct)
         {
             var param = HttpUtility.ParseQueryString(request.Body);
             // either username or email entered
@@ -205,7 +212,7 @@ namespace PayCheckServerLib.Responses
             var client_id = param["client_id"];
 
             // request does not have a device id, client_id will do for now
-            var (access_token, refresh_token) = UserController.LoginUser(client_id!, TokenHelper.TokenPlatform.Device, session.Headers["namespace"]);
+            var (access_token, refresh_token) = UserController.LoginUser(client_id!, TokenHelper.TokenPlatform.Device, serverStruct.Headers["namespace"]);
 
             ResponseCreator response = new();
             response.SetHeader("Content-Type", "application/json");
@@ -241,15 +248,16 @@ namespace PayCheckServerLib.Responses
                 UserId = access_token.UserId
             };
             response.SetBody(JsonConvert.SerializeObject(token));
-            session.SendResponse(response.GetResponse());
+            serverStruct.Response = response.GetResponse();
+            serverStruct.SendResponse();
             return true;
         }
 
 
         [HTTP("GET", "/iam/v3/public/users/me")]
-        public static bool UsersMe(HttpRequest _, PC3Server.PC3Session session)
+        public static bool UsersMe(HttpRequest _, ServerStruct serverStruct)
         {
-            var auth = session.Headers["authorization"].Replace("Bearer ", "");
+            var auth = serverStruct.Headers["authorization"].Replace("Bearer ", "");
             var token = TokenHelper.ReadToken(auth);
             ResponseCreator response = new();
             response.SetHeader("Content-Type", "application/json");
@@ -264,7 +272,7 @@ namespace PayCheckServerLib.Responses
                 EmailAddress = $"{token.Name}@pd3_emu.com",
                 EmailVerified = true,
                 Enabled = true,
-                Namespace = session.Headers["namespace"],
+                Namespace = serverStruct.Headers["namespace"],
                 OldEmailAddress = $"{token.Name}@pd3_emu.com",
                 PhoneVerified = true,
                 Permissions = new(),
@@ -281,12 +289,13 @@ namespace PayCheckServerLib.Responses
                 Roles = new() { "2251438839e948d783ec0e5281daf05" }
             };
             response.SetBody(JsonConvert.SerializeObject(me));
-            session.SendResponse(response.GetResponse());
+            serverStruct.Response = response.GetResponse();
+            serverStruct.SendResponse();
             return true;
         }
 
         [HTTP("POST", "/iam/v3/public/namespaces/{namespace}/users/bulk/basic")]
-        public static bool BulkBasic(HttpRequest request, PC3Server.PC3Session session)
+        public static bool BulkBasic(HttpRequest request, ServerStruct serverStruct)
         {
             var req = JsonConvert.DeserializeObject<BulkReq>(request.Body) ?? throw new Exception("BulkBasic is null!");
             ResponseCreator response = new();
@@ -309,21 +318,22 @@ namespace PayCheckServerLib.Responses
                 }
                 else
                 {
-                    if (user.Namespace == session.Headers["namespace"])
+                    if (user.Namespace == serverStruct.Headers["namespace"])
                         bulk.Data.Add(user.UserData);
                 }
             }
 
             response.SetBody(JsonConvert.SerializeObject(bulk));
-            session.SendResponse(response.GetResponse());
+            serverStruct.Response = response.GetResponse();
+            serverStruct.SendResponse();
             return true;
         }
 
         [HTTP("GET", "/iam/v3/public/namespaces/{namespace}/users?query={uname}&by=displayName&limit=100&offset=0")]
-        public static bool UsersQuery(HttpRequest _, PC3Server.PC3Session session)
+        public static bool UsersQuery(HttpRequest _, ServerStruct serverStruct)
         {
             //Idk what is this but works
-            var username = session.HttpParam["uname"];
+            var username = serverStruct.Parameters["uname"];
             username = username.Split("&")[0].Split("=")[1];
             //magix shit end
             Debugger.PrintDebug("UserName to search: " + username);
@@ -344,7 +354,7 @@ namespace PayCheckServerLib.Responses
 
             foreach (var item in UserController.GetUsers())
             {
-                if (item.Namespace != session.HttpParam["namespace"])
+                if (item.Namespace != serverStruct.Parameters["namespace"])
                     continue;
 
                 if (item.UserData.DisplayName.Contains(username))
@@ -363,12 +373,13 @@ namespace PayCheckServerLib.Responses
             }
 
             response.SetBody(JsonConvert.SerializeObject(dataSearch));
-            session.SendResponse(response.GetResponse());
+            serverStruct.Response = response.GetResponse();
+            serverStruct.SendResponse();
             return true;
         }
 
         [HTTP("POST", "/iam/v3/public/namespaces/{namespace}/platforms/steam/users?rawPUID=true")]
-        public static bool GetSteamUsersWithPID(HttpRequest request, PC3Server.PC3Session session)
+        public static bool GetSteamUsersWithPID(HttpRequest request, ServerStruct serverStruct)
         {
             var req = JsonConvert.DeserializeObject<SteamUsersReq>(request.Body);
             ResponseCreator response = new();
@@ -383,10 +394,10 @@ namespace PayCheckServerLib.Responses
 
             foreach (var id in req.platformUserIds)
             {
-                //can replace the headers to session.HttpParam["namespace"] and will works too
-                if (UserController.CheckUser(id, TokenHelper.TokenPlatform.Steam, session.Headers["namespace"]))
+                //can replace the headers to serverStruct.Parameters["namespace"] and will works too
+                if (UserController.CheckUser(id, TokenHelper.TokenPlatform.Steam, serverStruct.Headers["namespace"]))
                 {
-                    var user = UserController.GetUser(id, TokenHelper.TokenPlatform.Steam, session.Headers["namespace"]);
+                    var user = UserController.GetUser(id, TokenHelper.TokenPlatform.Steam, serverStruct.Headers["namespace"]);
                     steamUsers.userIdPlatforms.Add(new()
                     {
                         platformId = "steam",
@@ -399,7 +410,8 @@ namespace PayCheckServerLib.Responses
             }
 
             response.SetBody(JsonConvert.SerializeObject(steamUsers));
-            session.SendResponse(response.GetResponse());
+            serverStruct.Response = response.GetResponse();
+            serverStruct.SendResponse();
             return true;
         }
     }

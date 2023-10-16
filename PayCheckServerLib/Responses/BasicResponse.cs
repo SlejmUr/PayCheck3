@@ -1,4 +1,7 @@
-﻿using NetCoreServer;
+﻿using ModdableWebServer;
+using ModdableWebServer.Attributes;
+using ModdableWebServer.Helper;
+using NetCoreServer;
 using Newtonsoft.Json;
 using PayCheckServerLib.Helpers;
 using PayCheckServerLib.Jsons;
@@ -7,8 +10,17 @@ namespace PayCheckServerLib.Responses
 {
     public class BasicResponse
     {
+        [HTTP("HEAD", "/generate_204")]
+        public static bool Generate204(HttpRequest _, ServerStruct serverStruct)
+        {
+            serverStruct.Response.MakeOkResponse(204);
+            serverStruct.SendResponse();
+            return true;
+        }
+
+
         [HTTP("GET", "/qosm/public/qos")]
-        public static bool QOSM_Public_QOS(HttpRequest request, PC3Server.PC3Session session)
+        public static bool QOSM_Public_QOS(HttpRequest _, ServerStruct serverStruct)
         {
             ResponseCreator response = new ResponseCreator();
             response.SetHeader("Content-Type", "application/json");
@@ -31,16 +43,17 @@ namespace PayCheckServerLib.Responses
             }
 
             response.SetBody(JsonConvert.SerializeObject(rsp, Formatting.Indented));
-            session.SendResponse(response.GetResponse());
+            serverStruct.Response = response.GetResponse();
+            serverStruct.SendResponse();
             return true;
         }
 
         [HTTP("GET", "/basic/v1/public/misc/time")]
-        public static bool Time(HttpRequest request, PC3Server.PC3Session session)
+        public static bool Time(HttpRequest _, ServerStruct serverStruct)
         {
-            if (session.Headers.ContainsKey("cookie"))
+            if (serverStruct.Headers.ContainsKey("cookie"))
             {
-                var tokens = TokenHelper.ReadFromHeader(session.Headers);
+                var tokens = TokenHelper.ReadFromHeader(serverStruct.Headers);
                 Debugger.PrintDebug($"{tokens.AccessToken.UserId}({tokens.AccessToken.Name}) Is still in the server!");
             }
 
@@ -52,29 +65,32 @@ namespace PayCheckServerLib.Responses
                 CurrentTime = DateTime.UtcNow.ToString("o")
             };
             response.SetBody(JsonConvert.SerializeObject(rsp));
-            session.SendResponse(response.GetResponse());
+            serverStruct.Response = response.GetResponse();
+            serverStruct.SendResponse();
             return true;
         }
 
 
 
         [HTTP("GET", "/lobby/v1/messages")]
-        public static bool LobbyMessages(HttpRequest request, PC3Server.PC3Session session)
+        public static bool LobbyMessages(HttpRequest _, ServerStruct serverStruct)
         {
             ResponseCreator response = new ResponseCreator();
             response.SetHeader("Content-Type", "application/json");
             response.SetBody(File.ReadAllBytes("Files/messages.json"));
-            session.SendResponse(response.GetResponse());
+            serverStruct.Response = response.GetResponse();
+            serverStruct.SendResponse();
             return true;
         }
 
         [HTTP("GET", "/iam/v3/location/country")]
-        public static bool Country(HttpRequest request, PC3Server.PC3Session session)
+        public static bool Country(HttpRequest _, ServerStruct serverStruct)
         {
             ResponseCreator response = new ResponseCreator();
             response.SetHeader("Content-Type", "application/json");
             response.SetBody(File.ReadAllBytes("Files/Country.json"));
-            session.SendResponse(response.GetResponse());
+            serverStruct.Response = response.GetResponse();
+            serverStruct.SendResponse();
             return true;
         }
     }
