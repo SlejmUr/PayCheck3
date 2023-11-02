@@ -68,9 +68,9 @@
         }
       ],
       "tags": [
-        "PreplanningAsset",
-        "InitialItem"
+        "PreplanningAsset"
       ],
+      "features": [],
       "maxCountPerUser": -1,
       "maxCount": -1,
       "region": "SE",
@@ -416,6 +416,7 @@
       "title": "Attachment Price Low",
       "itemId": "f6b210dd100748238ab6b54706277a2b",
       "baseAppId": "",
+      "sku": "pd3_attachment_price_low",
       "namespace": "pd3",
       "name": "Attachment Price Low",
       "entitlementType": "DURABLE",
@@ -438,6 +439,7 @@
       "tags": [
         "WeaponPart"
       ],
+      "features": [],
       "maxCountPerUser": -1,
       "maxCount": -1,
       "region": "SE",
@@ -1356,11 +1358,15 @@
       ],
       "itemQty": {
         "6612d166d3c14863a756848ba6acd11d": 1,
-        "38b1118da4c84f009aca89c23d3f8376": 1,
-        "cb21551e8a4d4380b18ff2a13ade292c": 1,
         "6f756438841e49bca982e456afda3460": 1,
+        "cb21551e8a4d4380b18ff2a13ade292c": 1,
         "ef8117da082c4c7691b27ed9ebb1a223": 1
       },
+      "tags": [
+        "Platform",
+        "PlayStation",
+        "Premium"
+      ],
       "features": [],
       "maxCountPerUser": 1,
       "maxCount": -1,
@@ -1404,6 +1410,9 @@
         "652b7f3783f04f2f8ce8593f718eb7ce": 1,
         "a4bceb2be47a4608a8fee6a167e7653f": 1
       },
+      "tags": [
+        "Premium"
+      ],
       "features": [],
       "maxCountPerUser": 1,
       "maxCount": -1,
@@ -1442,11 +1451,16 @@
         "4a46260108cb45d787e2bc6fefce743b"
       ],
       "itemQty": {
-        "297c7c11e15c4ca3847e4494cff2352a": 1,
         "0ec654017e2c4b32868bf05f40578872": 1,
-        "da3312f650154587bb5aa8a69a14d02e": 1,
-        "4a46260108cb45d787e2bc6fefce743b": 1
+        "297c7c11e15c4ca3847e4494cff2352a": 1,
+        "4a46260108cb45d787e2bc6fefce743b": 1,
+        "da3312f650154587bb5aa8a69a14d02e": 1
       },
+      "tags": [
+        "Platform",
+        "Premium",
+        "XBox"
+      ],
       "features": [],
       "maxCountPerUser": 1,
       "maxCount": -1,
@@ -2101,6 +2115,9 @@
       "boundItemIds": [
         "5f0e2f433fe44a6ca51445bbd4d670f7"
       ],
+      "tags": [
+        "Premium"
+      ],
       "features": [],
       "maxCountPerUser": 1,
       "maxCount": -1,
@@ -2140,7 +2157,8 @@
       ],
       "tags": [
         "PlatformOnly",
-        "Epic"
+        "Epic",
+        "Premium"
       ],
       "features": [],
       "maxCountPerUser": 1,
@@ -2181,7 +2199,8 @@
       ],
       "tags": [
         "PlatformOnly",
-        "PlayStation"
+        "PlayStation",
+        "Premium"
       ],
       "features": [],
       "maxCountPerUser": 1,
@@ -2219,7 +2238,8 @@
       ],
       "tags": [
         "PlatformOnly",
-        "Steam"
+        "Steam",
+        "Premium"
       ],
       "features": [],
       "maxCountPerUser": 1,
@@ -2260,7 +2280,8 @@
       ],
       "tags": [
         "PlatformOnly",
-        "XBox"
+        "XBox",
+        "Premium"
       ],
       "features": [],
       "maxCountPerUser": 1,
@@ -2299,6 +2320,7 @@
       "boundItemIds": [
         "ce54b97b24184553ae56f1ffc3d54363"
       ],
+      "tags": [],
       "features": [],
       "maxCountPerUser": 1,
       "maxCount": -1,
@@ -2338,7 +2360,8 @@
       ],
       "tags": [
         "PlatformOnly",
-        "Epic"
+        "Epic",
+        "Premium"
       ],
       "features": [],
       "maxCountPerUser": 1,
@@ -2379,7 +2402,8 @@
       ],
       "tags": [
         "PlatformOnly",
-        "PlayStation"
+        "PlayStation",
+        "Premium"
       ],
       "features": [],
       "maxCountPerUser": 1,
@@ -2420,7 +2444,8 @@
       ],
       "tags": [
         "PlatformOnly",
-        "Steam"
+        "Steam",
+        "Premium"
       ],
       "features": [],
       "maxCountPerUser": 1,
@@ -2461,7 +2486,8 @@
       ],
       "tags": [
         "PlatformOnly",
-        "XBox"
+        "XBox",
+        "Premium"
       ],
       "features": [],
       "maxCountPerUser": 1,
@@ -2741,7 +2767,9 @@
         }
       ],
       "tags": [
-        "RarityUncommon"
+        "RarityUncommon",
+        "TailorVendor",
+        "InfamyLevel12"
       ],
       "features": [],
       "maxCountPerUser": 1,
@@ -16347,7 +16375,8 @@
       "tags": [
         "PlatformOnly",
         "Epic",
-        "RarityRare"
+        "RarityRare",
+        "Premium"
       ],
       "features": [],
       "maxCountPerUser": 1,
@@ -16385,8 +16414,9 @@
       ],
       "tags": [
         "PlatformOnly",
+        "Epic",
         "RarityEpic",
-        "Epic"
+        "Premium"
       ],
       "features": [],
       "maxCountPerUser": 1,
@@ -16425,7 +16455,8 @@
       "tags": [
         "PlatformOnly",
         "Epic",
-        "RarityRare"
+        "RarityRare",
+        "Premium"
       ],
       "features": [],
       "maxCountPerUser": 1,
@@ -16708,7 +16739,8 @@
       "tags": [
         "PlatformOnly",
         "PlayStation",
-        "RarityRare"
+        "RarityRare",
+        "Premium"
       ],
       "features": [],
       "maxCountPerUser": 1,
@@ -16746,8 +16778,9 @@
       ],
       "tags": [
         "PlatformOnly",
+        "PlayStation",
         "RarityEpic",
-        "PlayStation"
+        "Premium"
       ],
       "features": [],
       "maxCountPerUser": 1,
@@ -16786,7 +16819,8 @@
       "tags": [
         "PlatformOnly",
         "PlayStation",
-        "RarityRare"
+        "RarityRare",
+        "Premium"
       ],
       "features": [],
       "maxCountPerUser": 1,
@@ -16832,7 +16866,9 @@
           "discountPurchaseAt": "2023-02-22T14:18:12.522Z"
         }
       ],
-      "tags": [],
+      "tags": [
+        "PlatformOnly"
+      ],
       "features": [],
       "maxCountPerUser": 1,
       "maxCount": -1,
@@ -16925,7 +16961,8 @@
         }
       ],
       "tags": [
-        "RarityRare"
+        "RarityRare",
+        "Premium"
       ],
       "features": [],
       "maxCountPerUser": 1,
@@ -16972,7 +17009,8 @@
         }
       ],
       "tags": [
-        "RarityRare"
+        "RarityRare",
+        "Premium"
       ],
       "features": [],
       "maxCountPerUser": 1,
@@ -17019,7 +17057,8 @@
         }
       ],
       "tags": [
-        "RarityEpic"
+        "RarityEpic",
+        "Premium"
       ],
       "features": [],
       "maxCountPerUser": 1,
@@ -17066,7 +17105,8 @@
         }
       ],
       "tags": [
-        "RarityEpic"
+        "RarityEpic",
+        "Premium"
       ],
       "features": [],
       "maxCountPerUser": 1,
@@ -17113,7 +17153,8 @@
         }
       ],
       "tags": [
-        "RarityRare"
+        "RarityRare",
+        "Premium"
       ],
       "features": [],
       "maxCountPerUser": -1,
@@ -17160,7 +17201,8 @@
         }
       ],
       "tags": [
-        "RarityEpic"
+        "RarityEpic",
+        "Premium"
       ],
       "features": [],
       "maxCountPerUser": -1,
@@ -17207,7 +17249,8 @@
         }
       ],
       "tags": [
-        "RarityRare"
+        "RarityRare",
+        "Premium"
       ],
       "features": [],
       "maxCountPerUser": -1,
@@ -17480,7 +17523,8 @@
       "tags": [
         "PlatformOnly",
         "RarityRare",
-        "Steam"
+        "Steam",
+        "Premium"
       ],
       "features": [],
       "maxCountPerUser": 1,
@@ -17519,7 +17563,8 @@
       "tags": [
         "PlatformOnly",
         "RarityEpic",
-        "Steam"
+        "Steam",
+        "Premium"
       ],
       "features": [],
       "maxCountPerUser": 1,
@@ -17558,7 +17603,8 @@
       "tags": [
         "PlatformOnly",
         "RarityRare",
-        "Steam"
+        "Steam",
+        "Premium"
       ],
       "features": [],
       "maxCountPerUser": 1,
@@ -17841,7 +17887,8 @@
       "tags": [
         "PlatformOnly",
         "RarityRare",
-        "XBox"
+        "XBox",
+        "Premium"
       ],
       "features": [],
       "maxCountPerUser": 1,
@@ -17880,6 +17927,7 @@
       "tags": [
         "PlatformOnly",
         "RarityEpic",
+        "Premium",
         "XBox"
       ],
       "features": [],
@@ -17919,7 +17967,8 @@
       "tags": [
         "PlatformOnly",
         "RarityRare",
-        "XBox"
+        "XBox",
+        "Premium"
       ],
       "features": [],
       "maxCountPerUser": 1,
@@ -18705,7 +18754,8 @@
       ],
       "tags": [
         "PlatformOnly",
-        "Epic"
+        "Epic",
+        "Premium"
       ],
       "features": [],
       "maxCountPerUser": 1,
@@ -18744,6 +18794,9 @@
       "boundItemIds": [
         "cf30d4935678462fa197ad55bf5045cd"
       ],
+      "tags": [
+        "Premium"
+      ],
       "features": [],
       "maxCountPerUser": 1,
       "maxCount": -1,
@@ -18780,7 +18833,8 @@
       ],
       "tags": [
         "PlatformOnly",
-        "Epic"
+        "Epic",
+        "Premium"
       ],
       "features": [],
       "maxCountPerUser": 1,
@@ -18820,7 +18874,9 @@
         "ae3b3f0551a0487595e3b702d1107960"
       ],
       "tags": [
-        "PlatformOnly"
+        "PlatformOnly",
+        "PlayStation",
+        "Premium"
       ],
       "features": [],
       "maxCountPerUser": 1,
@@ -18861,7 +18917,8 @@
       ],
       "tags": [
         "PlatformOnly",
-        "Steam"
+        "Steam",
+        "Premium"
       ],
       "features": [],
       "maxCountPerUser": 1,
@@ -18902,7 +18959,8 @@
       ],
       "tags": [
         "PlatformOnly",
-        "XBox"
+        "XBox",
+        "Premium"
       ],
       "features": [],
       "maxCountPerUser": 1,
@@ -18940,6 +18998,9 @@
       ],
       "boundItemIds": [
         "ce54b97b24184553ae56f1ffc3d54363"
+      ],
+      "tags": [
+        "Premium"
       ],
       "features": [],
       "maxCountPerUser": 1,
@@ -18980,7 +19041,8 @@
       ],
       "tags": [
         "PlatformOnly",
-        "Epic"
+        "Epic",
+        "Premium"
       ],
       "features": [],
       "maxCountPerUser": 1,
@@ -19021,7 +19083,8 @@
       ],
       "tags": [
         "PlatformOnly",
-        "PlayStation"
+        "PlayStation",
+        "Premium"
       ],
       "features": [],
       "maxCountPerUser": 1,
@@ -19062,7 +19125,8 @@
       ],
       "tags": [
         "PlatformOnly",
-        "Steam"
+        "Steam",
+        "Premium"
       ],
       "features": [],
       "maxCountPerUser": 1,
@@ -19103,7 +19167,8 @@
       ],
       "tags": [
         "PlatformOnly",
-        "XBox"
+        "XBox",
+        "Premium"
       ],
       "features": [],
       "maxCountPerUser": 1,
@@ -19143,6 +19208,9 @@
       "boundItemIds": [
         "37b4dc234ae4491e8b22230a743b31b6"
       ],
+      "tags": [
+        "Premium"
+      ],
       "features": [],
       "maxCountPerUser": 1,
       "maxCount": -1,
@@ -19180,7 +19248,8 @@
       "boundItemIds": [],
       "tags": [
         "PlatformOnly",
-        "Epic"
+        "Epic",
+        "Premium"
       ],
       "features": [],
       "maxCountPerUser": 1,
@@ -19219,7 +19288,8 @@
       "boundItemIds": [],
       "tags": [
         "PlatformOnly",
-        "PlayStation"
+        "PlayStation",
+        "Premium"
       ],
       "features": [],
       "maxCountPerUser": 1,
@@ -19258,7 +19328,8 @@
       "boundItemIds": [],
       "tags": [
         "PlatformOnly",
-        "Steam"
+        "Steam",
+        "Premium"
       ],
       "features": [],
       "maxCountPerUser": 1,
@@ -19297,7 +19368,8 @@
       "boundItemIds": [],
       "tags": [
         "PlatformOnly",
-        "XBox"
+        "XBox",
+        "Premium"
       ],
       "features": [],
       "maxCountPerUser": 1,
@@ -19337,6 +19409,7 @@
         "5f0e2f433fe44a6ca51445bbd4d670f7"
       ],
       "tags": [
+        "Premium",
         "RarityLegendary"
       ],
       "features": [],
@@ -19376,6 +19449,7 @@
         }
       ],
       "tags": [
+        "Premium",
         "RarityLegendary"
       ],
       "features": [],
@@ -19415,7 +19489,8 @@
         }
       ],
       "tags": [
-        "RarityEpic"
+        "RarityEpic",
+        "Premium"
       ],
       "features": [],
       "maxCountPerUser": 1,
@@ -19456,7 +19531,8 @@
       ],
       "tags": [
         "PlatformOnly",
-        "PlayStation"
+        "PlayStation",
+        "Premium"
       ],
       "features": [],
       "maxCountPerUser": 1,
@@ -19495,7 +19571,8 @@
       "boundItemIds": [],
       "tags": [
         "PlatformOnly",
-        "Steam"
+        "Steam",
+        "Premium"
       ],
       "features": [],
       "maxCountPerUser": 1,
@@ -19534,7 +19611,9 @@
       "boundItemIds": [
         "ce54b97b24184553ae56f1ffc3d54363"
       ],
-      "tags": [],
+      "tags": [
+        "Premium"
+      ],
       "features": [],
       "maxCountPerUser": 1,
       "maxCount": -1,
@@ -19574,7 +19653,8 @@
       ],
       "tags": [
         "PlatformOnly",
-        "Steam"
+        "Steam",
+        "Premium"
       ],
       "features": [],
       "maxCountPerUser": 1,
@@ -19615,7 +19695,8 @@
       ],
       "tags": [
         "PlatformOnly",
-        "Epic"
+        "Epic",
+        "Premium"
       ],
       "features": [],
       "maxCountPerUser": 1,
@@ -19656,7 +19737,8 @@
       ],
       "tags": [
         "PlatformOnly",
-        "PlayStation"
+        "PlayStation",
+        "Premium"
       ],
       "features": [],
       "maxCountPerUser": 1,
@@ -19697,7 +19779,8 @@
       ],
       "tags": [
         "PlatformOnly",
-        "XBox"
+        "XBox",
+        "Premium"
       ],
       "features": [],
       "maxCountPerUser": 1,
@@ -19736,7 +19819,8 @@
         }
       ],
       "tags": [
-        "RarityEpic"
+        "RarityEpic",
+        "Premium"
       ],
       "features": [],
       "maxCountPerUser": 1,
@@ -19775,7 +19859,8 @@
         }
       ],
       "tags": [
-        "RarityEpic"
+        "RarityEpic",
+        "Premium"
       ],
       "features": [],
       "maxCountPerUser": 1,
@@ -19813,6 +19898,7 @@
         }
       ],
       "tags": [
+        "Premium",
         "RarityLegendary"
       ],
       "features": [],
@@ -19851,6 +19937,7 @@
         }
       ],
       "tags": [
+        "Premium",
         "RarityLegendary"
       ],
       "features": [],
@@ -19889,7 +19976,8 @@
         }
       ],
       "tags": [
-        "RarityEpic"
+        "RarityEpic",
+        "Premium"
       ],
       "features": [],
       "maxCountPerUser": 1,
@@ -19927,7 +20015,8 @@
         }
       ],
       "tags": [
-        "RarityEpic"
+        "RarityEpic",
+        "Premium"
       ],
       "features": [],
       "maxCountPerUser": 1,
@@ -19968,7 +20057,8 @@
       ],
       "tags": [
         "PlatformOnly",
-        "XBox"
+        "XBox",
+        "Premium"
       ],
       "features": [],
       "maxCountPerUser": 1,
@@ -20013,7 +20103,9 @@
           "purchaseAt": "2023-01-17T15:29:30.399Z"
         }
       ],
-      "tags": [],
+      "tags": [
+        "Premium"
+      ],
       "features": [],
       "maxCountPerUser": -1,
       "maxCount": -1,
@@ -20050,7 +20142,8 @@
       ],
       "tags": [
         "PlatformOnly",
-        "Epic"
+        "Epic",
+        "Premium"
       ],
       "features": [],
       "maxCountPerUser": 1,
@@ -20088,7 +20181,8 @@
       ],
       "tags": [
         "PlatformOnly",
-        "PlayStation"
+        "PlayStation",
+        "Premium"
       ],
       "features": [],
       "maxCountPerUser": 1,
@@ -20126,6 +20220,7 @@
       ],
       "tags": [
         "PlatformOnly",
+        "Premium",
         "XBox"
       ],
       "features": [],
@@ -23687,7 +23782,8 @@
       ],
       "tags": [
         "PlatformOnly",
-        "Steam"
+        "Steam",
+        "Premium"
       ],
       "features": [],
       "maxCountPerUser": 1,
@@ -25545,11 +25641,10 @@
           "discountPercentage": 0,
           "discountAmount": 0,
           "discountedPrice": 0,
-          "currencyCode": "USD",
-          "currencyType": "REAL",
+          "currencyCode": "CASH",
+          "currencyType": "VIRTUAL",
           "currencyNamespace": "pd3",
-          "purchaseAt": "2023-09-06T12:51:33.227Z",
-          "discountPurchaseAt": "2023-09-06T12:51:33.227Z"
+          "purchaseAt": "2023-09-06T12:51:33.227Z"
         }
       ],
       "itemIds": [
@@ -25563,6 +25658,7 @@
         "b968640f272e4858aac2a2363445fa94": 1,
         "c8cb556b24834c7da9dd6247aa43fecb": 1
       },
+      "tags": [],
       "features": [],
       "maxCountPerUser": 1,
       "maxCount": -1,
@@ -25710,6 +25806,7 @@
           "discountPurchaseAt": "2023-03-17T15:08:06.046Z"
         }
       ],
+      "tags": [],
       "features": [],
       "maxCountPerUser": 1,
       "maxCount": -1,
@@ -26506,6 +26603,7 @@
           "discountPurchaseAt": "2023-03-17T15:17:51.443Z"
         }
       ],
+      "tags": [],
       "features": [],
       "maxCountPerUser": 1,
       "maxCount": -1,
@@ -26542,6 +26640,7 @@
           "discountPurchaseAt": "2023-03-17T15:18:32.429Z"
         }
       ],
+      "tags": [],
       "features": [],
       "maxCountPerUser": 1,
       "maxCount": -1,

@@ -31,7 +31,7 @@ namespace PayCheckServerLib.Responses
             var auth = serverStruct.Headers["authorization"].Replace("Bearer ", "");
             var token = TokenHelper.ReadToken(auth);
 
-            var stat = UserStatController.GetStat(token.UserId, token.Namespace);
+            var stat = JsonConvert.DeserializeObject<List<UserStatItemsData>>(SaveFileHandler.ReadUserSTR(token.UserId, token.Namespace, SaveFileHandler.SaveType.statitems));
 
             ResponseCreator response = new ResponseCreator();
             DataPaging<UserStatItemsData> responsedata = new()
@@ -60,7 +60,7 @@ namespace PayCheckServerLib.Responses
                 Paging = { }
             };
 
-            var stat = UserStatController.GetStat(token.UserId, token.Namespace);
+            var stat = JsonConvert.DeserializeObject<List<UserStatItemsData>>(SaveFileHandler.ReadUserSTR(token.UserId, token.Namespace, SaveFileHandler.SaveType.statitems));
             foreach (var item in stat)
             {
                 if (item.StatCode == statcode)
