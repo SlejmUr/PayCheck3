@@ -1,0 +1,250 @@
+[
+  {
+    "ScreenName": "MainMenuRoot",
+    "SlotArray": [
+      {
+        "CheckInfamyLevel": true,
+        "MandatoryTags": [
+          "Map"
+        ],
+        "challengeRecommandationsPriorityType": "CloseToCompletion"
+      },
+      {
+        "CheckInfamyLevel": true,
+        "MandatoryTags": [
+          "Heist"
+        ],
+        "challengeRecommandationsPriorityType": "AnyProgress"
+      },
+      {
+        "CheckInfamyLevel": true,
+        "MandatoryTags": [
+          "Combat"
+        ],
+        "challengeRecommandationsPriorityType": "LowProgress"
+      }
+    ]
+  },
+  {
+    "ScreenName": "branchbank",
+    "SlotArray": [
+      {
+        "CheckInfamyLevel": true,
+        "MandatoryTags": [
+          "Branch",
+          "Bank"
+        ],
+        "challengeRecommandationsPriorityType": "CloseToCompletion"
+      },
+      {
+        "CheckInfamyLevel": true,
+        "MandatoryTags": [
+          "Branch",
+          "Bank"
+        ],
+        "challengeRecommandationsPriorityType": "AnyProgress"
+      },
+      {
+        "CheckInfamyLevel": true,
+        "MandatoryTags": [
+          "Combat"
+        ],
+        "challengeRecommandationsPriorityType": "LowProgress"
+      }
+    ]
+  },
+  {
+    "ScreenName": "armoredtransport",
+    "SlotArray": [
+      {
+        "CheckInfamyLevel": true,
+        "MandatoryTags": [
+          "Armored",
+          "Transport"
+        ],
+        "challengeRecommandationsPriorityType": "CloseToCompletion"
+      },
+      {
+        "CheckInfamyLevel": true,
+        "MandatoryTags": [
+          "Armored",
+          "Transport"
+        ],
+        "challengeRecommandationsPriorityType": "AnyProgress"
+      },
+      {
+        "CheckInfamyLevel": true,
+        "MandatoryTags": [
+          "Combat"
+        ],
+        "challengeRecommandationsPriorityType": "LowProgress"
+      }
+    ]
+  },
+  {
+    "ScreenName": "jewelrystore",
+    "SlotArray": [
+      {
+        "CheckInfamyLevel": true,
+        "MandatoryTags": [
+          "Jewelry",
+          "Store"
+        ],
+        "challengeRecommandationsPriorityType": "CloseToCompletion"
+      },
+      {
+        "CheckInfamyLevel": true,
+        "MandatoryTags": [
+          "Jewelry",
+          "Store"
+        ],
+        "challengeRecommandationsPriorityType": "AnyProgress"
+      },
+      {
+        "CheckInfamyLevel": true,
+        "MandatoryTags": [
+          "Combat"
+        ],
+        "challengeRecommandationsPriorityType": "LowProgress"
+      }
+    ]
+  },
+  {
+    "ScreenName": "nightclub",
+    "SlotArray": [
+      {
+        "CheckInfamyLevel": true,
+        "MandatoryTags": [
+          "Night",
+          "Club"
+        ],
+        "challengeRecommandationsPriorityType": "CloseToCompletion"
+      },
+      {
+        "CheckInfamyLevel": true,
+        "MandatoryTags": [
+          "Night",
+          "Club"
+        ],
+        "challengeRecommandationsPriorityType": "AnyProgress"
+      },
+      {
+        "CheckInfamyLevel": true,
+        "MandatoryTags": [
+          "Combat"
+        ],
+        "challengeRecommandationsPriorityType": "LowProgress"
+      }
+    ]
+  },
+  {
+    "ScreenName": "artgallery",
+    "SlotArray": [
+      {
+        "CheckInfamyLevel": true,
+        "MandatoryTags": [
+          "Art",
+          "Gallery"
+        ],
+        "challengeRecommandationsPriorityType": "CloseToCompletion"
+      },
+      {
+        "CheckInfamyLevel": true,
+        "MandatoryTags": [
+          "Art",
+          "Gallery"
+        ],
+        "challengeRecommandationsPriorityType": "AnyProgress"
+      },
+      {
+        "CheckInfamyLevel": true,
+        "MandatoryTags": [
+          "Combat"
+        ],
+        "challengeRecommandationsPriorityType": "LowProgress"
+      }
+    ]
+  },
+  {
+    "ScreenName": "firstplayable",
+    "SlotArray": [
+      {
+        "CheckInfamyLevel": true,
+        "MandatoryTags": [
+          "Sharke",
+          "Bank"
+        ],
+        "challengeRecommandationsPriorityType": "CloseToCompletion"
+      },
+      {
+        "CheckInfamyLevel": true,
+        "MandatoryTags": [
+          "Sharke",
+          "Bank"
+        ],
+        "challengeRecommandationsPriorityType": "AnyProgress"
+      },
+      {
+        "CheckInfamyLevel": true,
+        "MandatoryTags": [
+          "Combat"
+        ],
+        "challengeRecommandationsPriorityType": "LowProgress"
+      }
+    ]
+  },
+  {
+    "ScreenName": "cargodock",
+    "SlotArray": [
+      {
+        "CheckInfamyLevel": true,
+        "MandatoryTags": [
+          "Cargo",
+          "Dock"
+        ],
+        "challengeRecommandationsPriorityType": "CloseToCompletion"
+      },
+      {
+        "CheckInfamyLevel": true,
+        "MandatoryTags": [
+          "Cargo",
+          "Dock"
+        ],
+        "challengeRecommandationsPriorityType": "AnyProgress"
+      },
+      {
+        "CheckInfamyLevel": true,
+        "MandatoryTags": [
+          "Combat"
+        ],
+        "challengeRecommandationsPriorityType": "LowProgress"
+      }
+    ]
+  },
+  {
+    "ScreenName": "penthouse",
+    "SlotArray": [
+      {
+        "CheckInfamyLevel": true,
+        "MandatoryTags": [
+          "Penthouse"
+        ],
+        "challengeRecommandationsPriorityType": "CloseToCompletion"
+      },
+      {
+        "CheckInfamyLevel": true,
+        "MandatoryTags": [
+          "Penthouse"
+        ],
+        "challengeRecommandationsPriorityType": "AnyProgress"
+      },
+      {
+        "CheckInfamyLevel": true,
+        "MandatoryTags": [
+          "Combat"
+        ],
+        "challengeRecommandationsPriorityType": "LowProgress"
+      }
+    ]
+  }
+]

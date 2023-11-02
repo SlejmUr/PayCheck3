@@ -43,7 +43,7 @@ namespace PayCheckServerLib
             if (ConfigHelper.ServerConfig.Hosting.WSS)
             {
                 var context = CertHelper.GetContext( System.Security.Authentication.SslProtocols.Tls12 , "cert.pfx", "cert");
-                server = new(context, ConfigHelper.ServerConfig.Hosting.IP, 443);
+                server = new(context, ConfigHelper.ServerConfig.Hosting.IP, ConfigHelper.ServerConfig.Hosting.Port);
                 server.ReceivedFailed += ReceivedFailed;
                 server.Started += Server_Started;
                 server.Stopped += Server_Stopped;

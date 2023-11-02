@@ -72,6 +72,33 @@ namespace PayCheckServerLib.Responses
             return true;
         }
 
+        [HTTP("GET", "/cloudsave/v1/namespaces/{namespace}/records/challenge-recommendations")]
+        public static bool challengerecommendations(HttpRequest _, ServerStruct serverStruct)
+        {
+            ResponseCreator response = new();
+            //InfamyTranslationTable.Basic;
+            TopLevel<ChallengeRecommendations> table = new()
+            {
+                CreatedAt = "2023-06-27T12:18:00.00Z",
+                UpdatedAt = "2023-06-27T12:18:00.00Z",
+                Key = "challenge-recommendations",
+                Namespace = serverStruct.Parameters["namespace"],
+                SetBy = "SERVER",
+                Value = new()
+                {
+                    BlockArray = new()
+                    {
+                    }
+                }
+            };
+            var blockarry = JsonConvert.DeserializeObject<List<ChallengeRecommendations.CBlockArray>>(File.ReadAllText("Files/ChallengeRecommendations.json")) ?? throw new Exception("ChallengeRecommendations is null!");
+            table.Value.BlockArray = blockarry;
+            response.SetBody(JsonConvert.SerializeObject(table));
+            serverStruct.Response = response.GetResponse();
+            serverStruct.SendResponse();
+            return true;
+        }
+
         [HTTP("POST", "/cloudsave/v1/namespaces/{namespace}/records/bulk")]
         public static bool RecordsBulk(HttpRequest request, ServerStruct serverStruct)
         {
@@ -158,18 +185,98 @@ namespace PayCheckServerLib.Responses
             return true;
         }
 
+        [HTTP("GET", "/cloudsave/v1/namespaces/{namespace}/users/{userId}/records/PlatformBackendSettingsData")]
+        public static bool RecordsPlatformBackendSettingsData(HttpRequest _, ServerStruct serverStruct)
+        {
+            var userID = serverStruct.Parameters["userId"];
+            var response = new ResponseCreator();
+            if (SaveFileHandler.IsUserExist(userID, serverStruct.Parameters["namespace"], SaveFileHandler.SaveType.PlatformBackendSettingsData))
+            {
+                PlatformBackendSettingsData.PlatformBackendSettingsDataValue? save = null;
+                try
+                {
+                    save = JsonConvert.DeserializeObject<PlatformBackendSettingsData.PlatformBackendSettingsDataValue>(SaveFileHandler.ReadUserSTR(userID, serverStruct.Parameters["namespace"], SaveFileHandler.SaveType.PlatformBackendSettingsData));
+                }
+                catch
+                {
+                    Debugger.PrintError("JSON cannot be serialized!");
+                }
+                var now = DateTime.UtcNow.ToString("o");
+                PlatformBackendSettingsData saveRSP = new()
+                {
+                    CreatedAt = DateTime.UtcNow.AddDays(-1).ToString("o"),
+                    UpdatedAt = now,
+                    UserId = userID,
+                    Value = save,
+                    IsPublic = false,
+                    Key = "PlatformBackendSettingsData",
+                    Namespace = serverStruct.Parameters["namespace"],
+                    SetBy = "CLIENT"
+                };
+                response.SetBody(JsonConvert.SerializeObject(saveRSP, Formatting.Indented));
+                serverStruct.Response = response.GetResponse();
+                serverStruct.SendResponse();
+                return true;
+            }
+            response = new ResponseCreator(404);
+            ErrorMSG error = new()
+            {
+                ErrorCode = 18022,
+                ErrorMessage = $"unable to get_player_record: player record not found, user ID: {userID}, key: PlatformBackendSettingsData"
+            };
+            response.SetBody(JsonConvert.SerializeObject(error));
+            serverStruct.Response = response.GetResponse();
+            serverStruct.SendResponse();
+            return true;
+        }
+
+        [HTTP("PUT", "/cloudsave/v1/namespaces/{namespace}/users/{userId}/records/PlatformBackendSettingsData")]
+        public static bool PlatformBackendSettingsDataPUT(HttpRequest request, ServerStruct serverStruct)
+        {
+            var userID = serverStruct.Parameters["userId"];
+            SaveFileHandler.SaveUser(userID, serverStruct.Parameters["namespace"], request.BodyBytes, SaveFileHandler.SaveType.PlatformBackendSettingsData);
+            if (ConfigHelper.ServerConfig.Saves.SaveRequest)
+                SaveFileHandler.SaveUser_Request(userID, serverStruct.Parameters["namespace"], request.Body, SaveFileHandler.SaveType.PlatformBackendSettingsData);
+
+            PlatformBackendSettingsData.PlatformBackendSettingsDataValue? save = null;
+            try
+            {
+                save = JsonConvert.DeserializeObject<PlatformBackendSettingsData.PlatformBackendSettingsDataValue>(SaveFileHandler.ReadUserSTR(userID, serverStruct.Parameters["namespace"], SaveFileHandler.SaveType.PlatformBackendSettingsData));
+            }
+            catch
+            {
+                Debugger.PrintError("JSON cannot be serialized!");
+            }
+            var now = DateTime.UtcNow.ToString("o");
+            PlatformBackendSettingsData saveRSP = new()
+            {
+                CreatedAt = DateTime.UtcNow.AddDays(-1).ToString("o"),
+                UpdatedAt = now,
+                UserId = userID,
+                Value = save,
+                IsPublic = false,
+                Key = "PlatformBackendSettingsData",
+                Namespace = serverStruct.Parameters["namespace"],
+                SetBy = "CLIENT"
+            };
+            ResponseCreator response = new();
+            response.SetBody(JsonConvert.SerializeObject(saveRSP, Formatting.Indented));
+            serverStruct.Response = response.GetResponse();
+            serverStruct.SendResponse();
+            return true;
+        }
 
         [HTTP("GET", "/cloudsave/v1/namespaces/{namespace}/users/{userId}/records/progressionsavegame")]
         public static bool ProgressionsavegameGET(HttpRequest _, ServerStruct serverStruct)
         {
             var userID = serverStruct.Parameters["userId"];
             var response = new ResponseCreator();
-            if (SaveHandler.IsUserExist(userID, serverStruct.Parameters["namespace"]))
+            if (SaveFileHandler.IsUserExist(userID, serverStruct.Parameters["namespace"], SaveFileHandler.SaveType.progressionsavegame))
             {
                 Progression.Basic? save = null;
                 try
                 {
-                    save = Progression.Basic.FromJson(SaveHandler.ReadUserSTR(userID, serverStruct.Parameters["namespace"]));
+                    save = Progression.Basic.FromJson(SaveFileHandler.ReadUserSTR(userID, serverStruct.Parameters["namespace"], SaveFileHandler.SaveType.progressionsavegame));
                     save.ProgressionSaveGame.LastTimeEventCheck = TimeHelper.GetEpochTime();
                 }
                 catch
@@ -205,13 +312,14 @@ namespace PayCheckServerLib.Responses
             return true;
         }
 
+
         [HTTP("POST", "/cloudsave/v1/namespaces/{namespace}/users/{userId}/records/progressionsavegame")]
         public static bool ProgressionsavegamePOST(HttpRequest request, ServerStruct serverStruct)
         {
             var userID = serverStruct.Parameters["userId"];
-            SaveHandler.SaveUser(userID, serverStruct.Parameters["namespace"], request.BodyBytes);
+            SaveFileHandler.SaveUser(userID, serverStruct.Parameters["namespace"], request.BodyBytes, SaveFileHandler.SaveType.progressionsavegame);
             if (ConfigHelper.ServerConfig.Saves.SaveRequest)
-                SaveHandler.SaveUser_Request(userID, serverStruct.Parameters["namespace"], request.Body);
+                SaveFileHandler.SaveUser_Request(userID, serverStruct.Parameters["namespace"], request.Body, SaveFileHandler.SaveType.progressionsavegame);
 
             Progression.Basic? save = null;
             try

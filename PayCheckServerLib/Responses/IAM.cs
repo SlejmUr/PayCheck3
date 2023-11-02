@@ -329,6 +329,41 @@ namespace PayCheckServerLib.Responses
             return true;
         }
 
+        [HTTP("POST", "/iam/v3/public/namespaces/{namespace}/users/bulk/platforms")]
+        public static bool BulkPlatforms(HttpRequest request, ServerStruct serverStruct)
+        {
+            var req = JsonConvert.DeserializeObject<BulkReq>(request.Body) ?? throw new Exception("BulkPlatforms is null!");
+            ResponseCreator response = new();
+            response.SetHeader("Content-Type", "application/json");
+            response.SetHeader("Connection", "keep-alive");
+            UserBulk bulk = new()
+            {
+                Data = new()
+                {
+                }
+            };
+
+            foreach (var item in req.UserIds)
+            {
+                //  using UserController here to populate BulkData
+                var user = UserController.GetUser(item);
+                if (user == null)
+                {
+                    Debugger.PrintWarn($"User ({item}) not exist in UserController!");
+                }
+                else
+                {
+                    if (user.Namespace == serverStruct.Headers["namespace"])
+                        bulk.Data.Add(user.UserData);
+                }
+            }
+
+            response.SetBody(JsonConvert.SerializeObject(bulk));
+            serverStruct.Response = response.GetResponse();
+            serverStruct.SendResponse();
+            return true;
+        }
+
         [HTTP("GET", "/iam/v3/public/namespaces/{namespace}/users?query={uname}&by=displayName&limit=100&offset=0")]
         public static bool UsersQuery(HttpRequest _, ServerStruct serverStruct)
         {
@@ -410,6 +445,46 @@ namespace PayCheckServerLib.Responses
             }
 
             response.SetBody(JsonConvert.SerializeObject(steamUsers));
+            serverStruct.Response = response.GetResponse();
+            serverStruct.SendResponse();
+            return true;
+        }
+
+        [HTTP("POST", "/iam/v3/oauth/token")]
+        public static bool OauthToken(HttpRequest request, ServerStruct serverStruct)
+        {
+            var grant_type = request.Body.Split('=')[1];
+            Debugger.PrintDebug(grant_type);
+            //grant_type=client_credentials
+            //grant_type=password&username=test&password=testj&device_id=ID
+
+            ResponseCreator response = new(404);
+            /*
+            response.SetHeader("Content-Type", "application/json");
+            response.SetHeader("Connection", "keep-alive");
+            oathToken token = new()
+            {
+                AccessToken = "randomtoken",
+                Scope = "account commerce social publishing analytics",
+                Bans = new() { },
+                DisplayName = "",
+                ExpiresIn = 3600,
+                IsComply = true,
+                Jflgs = 0,
+                Namespace = serverStruct.Headers["namespace"],
+                NamespaceRoles = null,
+                Permissions = new() { },
+                PlatformId = "",
+                PlatformUserId = "",
+                Roles = null,
+                TokenType = "Bearer",
+                UserId = ""
+            };
+
+            var ds_perms = JsonConvert.DeserializeObject<List<oathToken.Permission>>(File.ReadAllText("Files/DS_Permissions.json"));
+            token.Permissions = ds_perms;
+            response.SetBody(JsonConvert.SerializeObject(token));
+            */
             serverStruct.Response = response.GetResponse();
             serverStruct.SendResponse();
             return true;

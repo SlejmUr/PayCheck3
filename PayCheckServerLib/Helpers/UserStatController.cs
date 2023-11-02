@@ -36,11 +36,15 @@ namespace PayCheckServerLib.Helpers
 
         public static List<StatItemsBulkRsp> AddStat(List<StatItemsBulkReq> req, TokenHelper.Token token)
         {
-            var stat = GetStat(token.UserId, token.Namespace);
-            if (stat == null)
+            var stat_file = SaveFileHandler.ReadUserSTR(token.UserId, token.Namespace, SaveFileHandler.SaveType.statitems);
+            var stat = new List<UserStatItemsData>();
+            if (stat_file == string.Empty)
             {
                 stat = new List<UserStatItemsData>();
             }
+            else
+                stat = JsonConvert.DeserializeObject<List<UserStatItemsData>>(stat_file);
+
             List<StatItemsBulkRsp> resp = new();
             foreach (var item in req)
             {
@@ -90,27 +94,8 @@ namespace PayCheckServerLib.Helpers
                     Success = true
                 });
             }
-            SaveStat(stat, token.UserId, token.Namespace);
+            SaveFileHandler.SaveUser(token.UserId, token.Namespace, JsonConvert.SerializeObject(stat), SaveFileHandler.SaveType.statitems);
             return resp;
-        }
-
-
-
-        public static void SaveStat(List<UserStatItemsData> stat, string UserId, string NameSpace)
-        {
-            if (!Directory.Exists("UsersStat")) { Directory.CreateDirectory("UsersStat"); }
-            File.WriteAllText($"UsersStat/{NameSpace}_{UserId}.json", JsonConvert.SerializeObject(stat));
-        }
-
-
-        public static List<UserStatItemsData>? GetStat(string UserId, string NameSpace)
-        {
-            if (!Directory.Exists("UsersStat")) { Directory.CreateDirectory("UsersStat"); }
-            if (File.Exists($"UsersStat/{NameSpace}_{UserId}.json"))
-            {
-                return JsonConvert.DeserializeObject<List<UserStatItemsData>>(File.ReadAllText($"UsersStat/{NameSpace}_{UserId}.json"));
-            }
-            return null;
         }
     }
 }

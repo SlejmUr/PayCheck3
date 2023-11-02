@@ -147,9 +147,6 @@ namespace PayCheckServerLib.Responses
             //  SBZ PLEASE FIX!
             var auth = serverStruct.Headers["authorization"].Replace("Bearer ", "");
             var token = TokenHelper.ReadToken(auth);
-            ResponseCreator response = new(204);
-            serverStruct.Response = response.GetResponse();
-            serverStruct.SendResponse();
             PartyController.LeftParty(serverStruct.Parameters["partyid"], token.UserId, serverStruct);
             var party = PartyController.PartySaves.Where(x => x.Value.Id == serverStruct.Parameters["partyid"]).FirstOrDefault().Value;
             if (party == null)
@@ -171,6 +168,9 @@ namespace PayCheckServerLib.Responses
                 }
             };
             ChatControl.SendToChat(JsonConvert.SerializeObject(topic), ChatControl.GetChatUser(token.UserId, token.Namespace));
+            ResponseCreator response = new(204);
+            serverStruct.Response = response.GetResponse();
+            serverStruct.SendResponse();
             return true;
         }
 
