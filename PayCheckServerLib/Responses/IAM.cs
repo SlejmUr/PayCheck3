@@ -326,6 +326,7 @@ namespace PayCheckServerLib.Responses
             response.SetBody(JsonConvert.SerializeObject(bulk));
             serverStruct.Response = response.GetResponse();
             serverStruct.SendResponse();
+            return true;
         }
 
         [HTTP("POST", "/iam/v3/public/namespaces/{namespace}/users/bulk/platforms")]
