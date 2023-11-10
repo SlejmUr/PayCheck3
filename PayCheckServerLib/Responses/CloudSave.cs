@@ -11,7 +11,52 @@ namespace PayCheckServerLib.Responses
 {
     public class CloudSave
     {
-        [HTTP("GET", "/cloudsave/v1/namespaces/{namespace}/records/title-data")]
+
+        [HTTP("GET", "/cloudsave/v1/namespaces/{namespace}/records/{recordtype}")]
+        public static bool MainRecordsSplitter(HttpRequest request, ServerStruct serverStruct)
+        {
+            if (serverStruct.Parameters["recordtype"].Contains("weapon-translation-table-"))
+            {
+                serverStruct.Parameters.Add("weapon", serverStruct.Parameters["recordtype"].Replace("weapon-translation-table-",""));
+                return GetWeaponGameRecord(request, serverStruct);
+            }
+
+            switch (serverStruct.Parameters["recordtype"])
+            {
+                case "security-firm-rotation":
+                    return SecurityFirmRotation(request, serverStruct);
+                case "meta-events":
+                    return MetaEvents(request, serverStruct);
+                case "news-feed":
+                    return NewsFeed(request, serverStruct);
+                case "title-data":
+                    return TitleData(request, serverStruct);
+                case "dlc-entitlements":
+                    return DLCs.GETdlcentitlements(request, serverStruct);
+                case "challenge-recommendations":
+                    return challengerecommendations(request, serverStruct);
+                case "infamy-translation-table":
+                    return InfamyTranslationTable(request, serverStruct);
+            }
+            return false;
+        }
+
+        public static bool GetWeaponGameRecord(HttpRequest _, ServerStruct serverStruct)
+        {
+            ResponseCreator response = new();
+            IndividualCloudsaveRecord res = new()
+            {
+                Namespace = serverStruct.Parameters["namespace"],
+                Key = "weapon-translation-table-" + serverStruct.Parameters["weapon"],
+                SetBy = "SERVER",
+                Value = JsonConvert.DeserializeObject(File.ReadAllText("Files/BasicWeaponsTable.json"))
+            };
+            response.SetBody(JsonConvert.SerializeObject(res));
+            serverStruct.Response = response.GetResponse();
+            serverStruct.SendResponse();
+            return true;
+        }
+
         public static bool TitleData(HttpRequest _, ServerStruct serverStruct)
         {
             ResponseCreator response = new();
@@ -33,7 +78,6 @@ namespace PayCheckServerLib.Responses
             return true;
         }
 
-        [HTTP("GET", "/cloudsave/v1/namespaces/{namespace}/records/news-feed")]
         public static bool NewsFeed(HttpRequest _, ServerStruct serverStruct)
         {
             ResponseCreator response = new();
@@ -45,7 +89,6 @@ namespace PayCheckServerLib.Responses
             return true;
         }
 
-        [HTTP("GET", "/cloudsave/v1/namespaces/{namespace}/records/infamy-translation-table")]
         public static bool InfamyTranslationTable(HttpRequest _, ServerStruct serverStruct)
         {
             ResponseCreator response = new();
@@ -72,7 +115,6 @@ namespace PayCheckServerLib.Responses
             return true;
         }
 
-        [HTTP("GET", "/cloudsave/v1/namespaces/{namespace}/records/challenge-recommendations")]
         public static bool challengerecommendations(HttpRequest _, ServerStruct serverStruct)
         {
             ResponseCreator response = new();
@@ -145,7 +187,6 @@ namespace PayCheckServerLib.Responses
             return true;
         }
 
-        [HTTP("GET", "/cloudsave/v1/namespaces/{namespace}/records/meta-events")]
         public static bool MetaEvents(HttpRequest _, ServerStruct serverStruct)
         {
             ResponseCreator response = new();
@@ -157,7 +198,6 @@ namespace PayCheckServerLib.Responses
             return true;
         }
 
-        [HTTP("GET", "/cloudsave/v1/namespaces/{namespace}/records/security-firm-rotation")]
         public static bool SecurityFirmRotation(HttpRequest _, ServerStruct serverStruct)
         {
             ResponseCreator response = new();

@@ -5,7 +5,6 @@ using PayCheckServerLib.Jsons.GS;
 using PayCheckServerLib.Jsons.PartyStuff;
 using PayCheckServerLib.Responses;
 using PayCheckServerLib.WSController;
-using static PayCheckServerLib.Jsons.GS.OnMatchFound;
 
 namespace PayCheckServerLib.Helpers
 {
@@ -113,6 +112,70 @@ namespace PayCheckServerLib.Helpers
                     }
                 }
             }
+        }
+
+
+
+        public static GameSession MakeP2P(CreateGaneSession createGaneSession, ServerStruct serverStruct, TokenHelper.Token token)
+        {
+            var partyId = PartyController.GetPartyWhereUserID(token.UserId, token.Namespace);
+            var id = UserIdHelper.CreateNewID();
+            var gs = new GameSession()
+            {
+                DSInformation = new()
+                {
+                    RequestedAt = "0001-01-01T01:01:01.001Z00:00",
+                    Server = null,
+                    Status = "NEED_TO_REQUEST",
+                    StatusV2 = "NEED_TO_REQUEST"
+                },
+                BackfillTicketID = null,
+                Attributes = createGaneSession.Attributes,
+                Code = UserIdHelper.CreateCode(),
+                Configuration = JsonConvert.DeserializeObject<PartyPost.Configuration>(File.ReadAllText($"Files/{createGaneSession.ConfigurationName}Configuration.json")),
+                CreatedAt = DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ"),
+                CreatedBy = "client-db" + UserIdHelper.CreateNewID(),
+                Id = id,
+                IsActive = true,
+                IsFull = false,
+                TicketIDs = null,
+                LeaderID = token.UserId,
+                MatchPool = "pveheist",
+                Members = new()
+                { 
+                    new()
+                    { 
+                        Id = token.UserId,
+                        Status = "INVITED",
+                        StatusV2 = "INVITED",
+                        PlatformId = token.PlatformType.ToString(),
+                        PlatformUserId = token.PlatformId,
+                        UpdatedAt = DateTime.UtcNow.ToString("o")
+                    }
+                },
+                Namespace = serverStruct.Parameters["namespace"],
+                Teams = new()
+                { 
+                    new()
+                    {
+                        Parties = new()
+                        { 
+                            new()
+                            { 
+                                PartyID = partyId,
+                                UserIDs = new() { token.UserId }
+                            }
+                        },
+                        UserIDs = new() { token.UserId }
+                    }
+                },
+                UpdatedAt = DateTime.UtcNow.ToString("o"),
+                Version = 1,
+    
+            };
+            Sessions.Add(gs.Namespace + "_" + id, gs);
+            return gs;
+        
         }
 
         public static GameSession GetGameSession(string id, string NameSpace)

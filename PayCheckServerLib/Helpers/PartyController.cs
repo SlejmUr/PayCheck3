@@ -159,5 +159,11 @@ namespace PayCheckServerLib.Helpers
             //todo send other users update that we left!
             //or if we are the leader send this one dead and sent to leave everybody
         }
+
+        public static string GetPartyWhereUserID(string UserId, string NameSpace)
+        {
+            var resp = PartySaves.Where(x => x.Value.NameSpace == NameSpace && x.Value.Members.Any(y => y.Id == UserId)).FirstOrDefault();
+            return resp.Key;
+        }
     }
 }

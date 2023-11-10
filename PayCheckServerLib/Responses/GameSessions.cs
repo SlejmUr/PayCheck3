@@ -179,5 +179,22 @@ namespace PayCheckServerLib.Responses
         {
             return false;
         }
+
+        [HTTP("POST", "/session/v1/public/namespaces/{namespace}/gamesession")]
+        public static bool CreateGameSession(HttpRequest _, ServerStruct serverStruct)
+        {
+            var auth = serverStruct.Headers["authorization"].Replace("Bearer ", "");
+            var token = TokenHelper.ReadToken(auth);
+            var GSRequest = JsonConvert.DeserializeObject<CreateGaneSession>(_.Body);
+
+            var rsp = GSController.MakeP2P(GSRequest,serverStruct, token);
+
+            ResponseCreator response = new(201);
+            response.SetHeader("Content-Type", "application/json");
+            response.SetBody(JsonConvert.SerializeObject(rsp));
+            serverStruct.Response = response.GetResponse();
+            serverStruct.SendResponse();
+            return true;
+        }
     }
 }
