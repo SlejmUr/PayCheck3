@@ -251,9 +251,61 @@
             "challengeRecommandationsPriorityType": "LowProgress"
           }
         ]
+      },
+      {
+        "ScreenName": "station",
+        "SlotArray": [
+          {
+            "CheckInfamyLevel": true,
+            "MandatoryTags": [
+              "Station"
+            ],
+            "challengeRecommandationsPriorityType": "CloseToCompletion"
+          },
+          {
+            "CheckInfamyLevel": true,
+            "MandatoryTags": [
+              "Station"
+            ],
+            "challengeRecommandationsPriorityType": "AnyProgress"
+          },
+          {
+            "CheckInfamyLevel": true,
+            "MandatoryTags": [
+              "Combat"
+            ],
+            "challengeRecommandationsPriorityType": "LowProgress"
+          }
+        ]
+      },
+      {
+        "ScreenName": "villa",
+        "SlotArray": [
+          {
+            "CheckInfamyLevel": true,
+            "MandatoryTags": [
+              "Villa"
+            ],
+            "challengeRecommandationsPriorityType": "CloseToCompletion"
+          },
+          {
+            "CheckInfamyLevel": true,
+            "MandatoryTags": [
+              "Villa"
+            ],
+            "challengeRecommandationsPriorityType": "AnyProgress"
+          },
+          {
+            "CheckInfamyLevel": true,
+            "MandatoryTags": [
+              "Combat"
+            ],
+            "challengeRecommandationsPriorityType": "LowProgress"
+          }
+        ]
       }
     ]
   },
   "created_at": "2023-10-19T05:57:01.306Z",
-  "updated_at": "2023-10-19T05:57:01.306Z"
+  "updated_at": "2023-11-30T11:08:44.171Z"
 }

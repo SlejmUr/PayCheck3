@@ -44,11 +44,14 @@ namespace PayCheckServerLib.Responses
             }
 
             var platform_token = bodyTokens["platform_token"];
+            if (platform_token.Contains("pd3"))
+                platform_token = platform_token.Replace("pd3%3A","");
+
             var sai = UserIdHelper.getsai(platform_token);
             Debugger.PrintInfo(sai);
             if (!(sai == "1272080" || sai == "2478210"))
             {
-                Debugger.PrintError("Unable to auth incorrectly");
+                Debugger.PrintError("Auth is incorrect!");
                 return true;
             }
             var steamId = UserIdHelper.GetSteamIDFromAUTH(platform_token);

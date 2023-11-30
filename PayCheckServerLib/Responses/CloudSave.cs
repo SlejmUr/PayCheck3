@@ -119,6 +119,7 @@ namespace PayCheckServerLib.Responses
         {
             ResponseCreator response = new();
             //InfamyTranslationTable.Basic;
+            /*
             TopLevel<ChallengeRecommendations> table = new()
             {
                 CreatedAt = "2023-06-27T12:18:00.00Z",
@@ -132,9 +133,8 @@ namespace PayCheckServerLib.Responses
                     {
                     }
                 }
-            };
-            var blockarry = JsonConvert.DeserializeObject<List<ChallengeRecommendations.CBlockArray>>(File.ReadAllText("Files/ChallengeRecommendations.json")) ?? throw new Exception("ChallengeRecommendations is null!");
-            table.Value.BlockArray = blockarry;
+            };*/
+            var table = JsonConvert.DeserializeObject<TopLevel<ChallengeRecommendations>>(File.ReadAllText("Files/ChallengeRecommendations.json")) ?? throw new Exception("ChallengeRecommendations is null!");
             response.SetBody(JsonConvert.SerializeObject(table));
             serverStruct.Response = response.GetResponse();
             serverStruct.SendResponse();

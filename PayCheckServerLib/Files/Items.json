@@ -1,6 +1,326 @@
 {
   "data": [
     {
+      "title": "1 Station Preplanning Asset",
+      "itemId": "9ef4512c63e04a1d8f4f447db1dd0117",
+      "sku": "pd3_preplanning_station_1",
+      "namespace": "pd3",
+      "name": "1 Station Preplanning Asset",
+      "entitlementType": "CONSUMABLE",
+      "useCount": 1,
+      "stackable": true,
+      "categoryPath": "/PreplanningAssets",
+      "status": "ACTIVE",
+      "listable": true,
+      "purchasable": true,
+      "itemType": "INGAMEITEM",
+      "regionData": [
+        {
+          "price": 1000,
+          "discountPercentage": 0,
+          "discountAmount": 0,
+          "discountedPrice": 1000,
+          "currencyCode": "CASH",
+          "currencyType": "VIRTUAL",
+          "currencyNamespace": "pd3",
+          "purchaseAt": "2023-10-04T13:18:26.219Z",
+          "discountPurchaseAt": "2023-10-04T13:18:26.219Z"
+        }
+      ],
+      "itemQty": {},
+      "tags": [
+        "PreplanningAsset",
+        "InitialItem"
+      ],
+      "features": [],
+      "maxCountPerUser": -1,
+      "maxCount": -1,
+      "region": "SE",
+      "language": "en-US",
+      "createdAt": "2023-11-10T05:51:53.781Z",
+      "updatedAt": "updatedattomakegitdiffseasiertoread"
+    },
+    {
+      "title": "1 Villa Preplanning Asset",
+      "itemId": "04dfe4043b9449549e6c897ad413929b",
+      "sku": "pd3_preplanning_villa_1",
+      "namespace": "pd3",
+      "name": "1 Villa Preplanning Asset",
+      "entitlementType": "CONSUMABLE",
+      "useCount": 1,
+      "stackable": true,
+      "categoryPath": "/PreplanningAssets",
+      "status": "ACTIVE",
+      "listable": true,
+      "purchasable": true,
+      "itemType": "INGAMEITEM",
+      "regionData": [
+        {
+          "price": 1000,
+          "discountPercentage": 0,
+          "discountAmount": 0,
+          "discountedPrice": 1000,
+          "currencyCode": "CASH",
+          "currencyType": "VIRTUAL",
+          "currencyNamespace": "pd3",
+          "purchaseAt": "2023-10-04T13:12:42.864Z",
+          "discountPurchaseAt": "2023-10-04T13:12:42.864Z"
+        }
+      ],
+      "itemQty": {},
+      "tags": [
+        "PreplanningAsset",
+        "InitialItem"
+      ],
+      "features": [],
+      "maxCountPerUser": -1,
+      "maxCount": -1,
+      "region": "SE",
+      "language": "en-US",
+      "createdAt": "2023-11-10T05:51:53.773Z",
+      "updatedAt": "updatedattomakegitdiffseasiertoread"
+    },
+    {
+      "title": "2 Station Preplanning Asset",
+      "itemId": "1543ccb3ff5146f4b713911839d493d0",
+      "sku": "pd3_preplanning_station_2",
+      "namespace": "pd3",
+      "name": "2 Station Preplanning Asset",
+      "entitlementType": "CONSUMABLE",
+      "useCount": 1,
+      "stackable": true,
+      "categoryPath": "/PreplanningAssets",
+      "status": "ACTIVE",
+      "listable": true,
+      "purchasable": true,
+      "itemType": "INGAMEITEM",
+      "regionData": [
+        {
+          "price": 1000,
+          "discountPercentage": 0,
+          "discountAmount": 0,
+          "discountedPrice": 1000,
+          "currencyCode": "CASH",
+          "currencyType": "VIRTUAL",
+          "currencyNamespace": "pd3",
+          "purchaseAt": "2023-10-04T13:19:25.549Z",
+          "discountPurchaseAt": "2023-10-04T13:19:25.549Z"
+        }
+      ],
+      "itemQty": {},
+      "tags": [
+        "PreplanningAsset",
+        "InitialItem"
+      ],
+      "features": [],
+      "maxCountPerUser": -1,
+      "maxCount": -1,
+      "region": "SE",
+      "language": "en-US",
+      "createdAt": "2023-11-10T05:51:53.794Z",
+      "updatedAt": "updatedattomakegitdiffseasiertoread"
+    },
+    {
+      "title": "2 Villa Preplanning Asset",
+      "itemId": "84eff09190304f8ca6d4b964fbe99a2c",
+      "sku": "pd3_preplanning_villa_2",
+      "namespace": "pd3",
+      "name": "2 Villa Preplanning Asset",
+      "entitlementType": "CONSUMABLE",
+      "useCount": 1,
+      "stackable": true,
+      "categoryPath": "/PreplanningAssets",
+      "status": "ACTIVE",
+      "listable": true,
+      "purchasable": true,
+      "itemType": "INGAMEITEM",
+      "regionData": [
+        {
+          "price": 1000,
+          "discountPercentage": 0,
+          "discountAmount": 0,
+          "discountedPrice": 1000,
+          "currencyCode": "CASH",
+          "currencyType": "VIRTUAL",
+          "currencyNamespace": "pd3",
+          "purchaseAt": "2023-10-04T13:14:56.000Z",
+          "discountPurchaseAt": "2023-10-04T13:14:56.000Z"
+        }
+      ],
+      "itemQty": {},
+      "tags": [
+        "PreplanningAsset",
+        "InitialItem"
+      ],
+      "features": [],
+      "maxCountPerUser": -1,
+      "maxCount": -1,
+      "region": "SE",
+      "language": "en-US",
+      "createdAt": "2023-11-10T05:51:53.800Z",
+      "updatedAt": "updatedattomakegitdiffseasiertoread"
+    },
+    {
+      "title": "3 Station Preplanning Asset",
+      "itemId": "bdba4c27cfad4225ad1faa263a1d5f4a",
+      "sku": "pd3_preplanning_station_3",
+      "namespace": "pd3",
+      "name": "3 Station Preplanning Asset",
+      "entitlementType": "CONSUMABLE",
+      "useCount": 1,
+      "stackable": true,
+      "categoryPath": "/PreplanningAssets",
+      "status": "ACTIVE",
+      "listable": true,
+      "purchasable": true,
+      "itemType": "INGAMEITEM",
+      "regionData": [
+        {
+          "price": 1000,
+          "discountPercentage": 0,
+          "discountAmount": 0,
+          "discountedPrice": 1000,
+          "currencyCode": "CASH",
+          "currencyType": "VIRTUAL",
+          "currencyNamespace": "pd3",
+          "purchaseAt": "2023-10-04T13:20:58.091Z",
+          "discountPurchaseAt": "2023-10-04T13:20:58.091Z"
+        }
+      ],
+      "itemQty": {},
+      "tags": [
+        "PreplanningAsset",
+        "InitialItem"
+      ],
+      "features": [],
+      "maxCountPerUser": -1,
+      "maxCount": -1,
+      "region": "SE",
+      "language": "en-US",
+      "createdAt": "2023-11-10T05:51:53.780Z",
+      "updatedAt": "updatedattomakegitdiffseasiertoread"
+    },
+    {
+      "title": "3 Villa Preplanning Asset",
+      "itemId": "a96c77c1d5d54e5180e0486c78e95998",
+      "sku": "pd3_preplanning_villa_3",
+      "namespace": "pd3",
+      "name": "3 Villa Preplanning Asset",
+      "entitlementType": "CONSUMABLE",
+      "useCount": 1,
+      "stackable": true,
+      "categoryPath": "/PreplanningAssets",
+      "status": "ACTIVE",
+      "listable": true,
+      "purchasable": true,
+      "itemType": "INGAMEITEM",
+      "regionData": [
+        {
+          "price": 1000,
+          "discountPercentage": 0,
+          "discountAmount": 0,
+          "discountedPrice": 1000,
+          "currencyCode": "CASH",
+          "currencyType": "VIRTUAL",
+          "currencyNamespace": "pd3",
+          "purchaseAt": "2023-10-04T13:16:13.125Z",
+          "discountPurchaseAt": "2023-10-04T13:16:13.125Z"
+        }
+      ],
+      "itemQty": {},
+      "tags": [
+        "PreplanningAsset",
+        "InitialItem"
+      ],
+      "features": [],
+      "maxCountPerUser": -1,
+      "maxCount": -1,
+      "region": "SE",
+      "language": "en-US",
+      "createdAt": "2023-11-10T05:51:54.083Z",
+      "updatedAt": "updatedattomakegitdiffseasiertoread"
+    },
+    {
+      "title": "4 Station Preplanning Asset",
+      "itemId": "b8e2a0ce38444458bc50d1a3e5bb075d",
+      "sku": "pd3_preplanning_station_4",
+      "namespace": "pd3",
+      "name": "4 Station Preplanning Asset",
+      "entitlementType": "CONSUMABLE",
+      "useCount": 1,
+      "stackable": true,
+      "categoryPath": "/PreplanningAssets",
+      "status": "ACTIVE",
+      "listable": true,
+      "purchasable": true,
+      "itemType": "INGAMEITEM",
+      "regionData": [
+        {
+          "price": 1000,
+          "discountPercentage": 0,
+          "discountAmount": 0,
+          "discountedPrice": 1000,
+          "currencyCode": "CASH",
+          "currencyType": "VIRTUAL",
+          "currencyNamespace": "pd3",
+          "purchaseAt": "2023-10-04T13:21:50.011Z",
+          "discountPurchaseAt": "2023-10-04T13:21:50.011Z"
+        }
+      ],
+      "itemQty": {},
+      "tags": [
+        "PreplanningAsset",
+        "InitialItem"
+      ],
+      "features": [],
+      "maxCountPerUser": -1,
+      "maxCount": -1,
+      "region": "SE",
+      "language": "en-US",
+      "createdAt": "2023-11-10T05:51:54.088Z",
+      "updatedAt": "updatedattomakegitdiffseasiertoread"
+    },
+    {
+      "title": "4 Villa Preplanning Asset",
+      "itemId": "24feafdb91504f458670a133d86ea37e",
+      "sku": "pd3_preplanning_villa_4",
+      "namespace": "pd3",
+      "name": "4 Villa Preplanning Asset",
+      "entitlementType": "CONSUMABLE",
+      "useCount": 1,
+      "stackable": true,
+      "categoryPath": "/PreplanningAssets",
+      "status": "ACTIVE",
+      "listable": true,
+      "purchasable": true,
+      "itemType": "INGAMEITEM",
+      "regionData": [
+        {
+          "price": 1000,
+          "discountPercentage": 0,
+          "discountAmount": 0,
+          "discountedPrice": 1000,
+          "currencyCode": "CASH",
+          "currencyType": "VIRTUAL",
+          "currencyNamespace": "pd3",
+          "purchaseAt": "2023-10-04T13:17:13.413Z",
+          "discountPurchaseAt": "2023-10-04T13:17:13.413Z"
+        }
+      ],
+      "itemQty": {},
+      "tags": [
+        "PreplanningAsset",
+        "InitialItem"
+      ],
+      "features": [],
+      "maxCountPerUser": -1,
+      "maxCount": -1,
+      "region": "SE",
+      "language": "en-US",
+      "createdAt": "2023-11-10T05:51:54.115Z",
+      "updatedAt": "updatedattomakegitdiffseasiertoread"
+    },
+    {
       "title": "50 PayDay Credits",
       "itemId": "5cbcc3bb6e7741e6bc37883a5d219a4d",
       "sku": "pd3_coin_credits_50",
@@ -28,6 +348,7 @@
           "discountPurchaseAt": "2023-03-06T10:23:49.610Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "GoldExchangeVendor"
       ],
@@ -67,6 +388,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PreplanningAsset"
       ],
@@ -104,6 +426,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PreplanningAsset",
         "InitialItem"
@@ -141,6 +464,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [],
       "maxCountPerUser": -1,
       "maxCount": -1,
@@ -175,6 +499,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PreplanningAsset",
         "CombatEquipmentVendor",
@@ -213,6 +538,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [],
       "maxCountPerUser": -1,
       "maxCount": -1,
@@ -247,6 +573,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PreplanningAsset",
         "CombatEquipmentVendor",
@@ -286,6 +613,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "boundItemIds": [
         "d7867b7039ed475282644cf31f47be0f"
       ],
@@ -326,6 +654,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CombatEquipmentVendor",
         "InfamyLevel35"
@@ -363,6 +692,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "boundItemIds": [],
       "tags": [
         "InfamyLevel21",
@@ -401,6 +731,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CombatEquipmentVendor",
         "InfamyLevel77"
@@ -436,6 +767,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -471,6 +803,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "InitialItem"
       ],
@@ -508,6 +841,7 @@
           "purchaseAt": "2023-01-17T15:14:54.466Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CombatEquipmentVendor",
         "InfamyLevel100"
@@ -547,6 +881,7 @@
           "purchaseAt": "2023-01-17T15:25:23.239Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CombatEquipmentVendor",
         "InfamyLevel93"
@@ -586,6 +921,7 @@
           "purchaseAt": "2023-01-17T15:26:03.274Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CombatEquipmentVendor",
         "InfamyLevel125"
@@ -625,6 +961,7 @@
           "purchaseAt": "2023-01-17T15:26:37.650Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "InfamyLevel86",
         "CombatEquipmentVendor"
@@ -664,6 +1001,7 @@
           "purchaseAt": "2023-01-17T15:27:18.141Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CombatEquipmentVendor",
         "InfamyLevel60"
@@ -703,6 +1041,7 @@
           "purchaseAt": "2023-01-17T15:16:24.501Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CombatEquipmentVendor",
         "InfamyLevel26"
@@ -742,6 +1081,7 @@
           "purchaseAt": "2023-01-17T15:17:04.707Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CombatEquipmentVendor",
         "InfamyLevel136"
@@ -781,6 +1121,7 @@
           "purchaseAt": "2023-01-17T15:17:55.818Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CombatEquipmentVendor",
         "InfamyLevel110"
@@ -820,6 +1161,7 @@
           "purchaseAt": "2023-01-17T15:19:48.456Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CombatEquipmentVendor",
         "InfamyLevel49"
@@ -859,6 +1201,7 @@
           "purchaseAt": "2023-01-17T15:22:17.594Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "InfamyLevel150",
         "CombatEquipmentVendor"
@@ -898,6 +1241,7 @@
           "purchaseAt": "2023-01-17T15:23:11.773Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CombatEquipmentVendor",
         "InfamyLevel67"
@@ -937,6 +1281,7 @@
           "purchaseAt": "2023-01-17T15:23:49.255Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CombatEquipmentVendor",
         "InfamyLevel7"
@@ -976,6 +1321,7 @@
           "purchaseAt": "2023-01-17T15:24:19.604Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CombatEquipmentVendor",
         "InfamyLevel40"
@@ -1014,6 +1360,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PreplanningAsset",
         "InitialItem"
@@ -1052,6 +1399,7 @@
           "currencyNamespace": "starbreeze"
         }
       ],
+      "itemQty": {},
       "maxCountPerUser": -1,
       "maxCount": -1,
       "region": "SE",
@@ -1087,6 +1435,7 @@
           "discountPurchaseAt": "2023-02-10T14:57:33.870Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityUncommon",
         "CharacterVendor",
@@ -1126,6 +1475,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [],
       "maxCountPerUser": -1,
       "maxCount": -1,
@@ -1158,6 +1508,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "maxCountPerUser": 1,
       "maxCount": -1,
       "region": "SE",
@@ -1189,6 +1540,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [],
       "maxCountPerUser": 1,
       "maxCount": -1,
@@ -1221,6 +1573,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "maxCountPerUser": 1,
       "maxCount": -1,
       "region": "SE",
@@ -1254,6 +1607,7 @@
           "discountPurchaseAt": "2022-11-29T16:20:52.413Z"
         }
       ],
+      "itemQty": {},
       "features": [],
       "maxCountPerUser": 1,
       "maxCount": -1,
@@ -1288,6 +1642,7 @@
           "discountPurchaseAt": "2023-03-27T14:23:15.018Z"
         }
       ],
+      "itemQty": {},
       "features": [],
       "maxCountPerUser": 1,
       "maxCount": -1,
@@ -1320,6 +1675,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "maxCountPerUser": 1,
       "maxCount": -1,
       "region": "SE",
@@ -1349,18 +1705,15 @@
           "currencyCode": "CASH",
           "currencyType": "VIRTUAL",
           "currencyNamespace": "pd3",
-          "purchaseAt": "2023-09-07T06:32:50.994Z",
-          "discountPurchaseAt": "2023-09-07T06:32:50.994Z"
+          "purchaseAt": "2023-09-19T12:22:54.988Z",
+          "discountPurchaseAt": "2023-09-19T12:22:54.988Z"
         }
       ],
       "itemIds": [
         "6f756438841e49bca982e456afda3460"
       ],
       "itemQty": {
-        "6612d166d3c14863a756848ba6acd11d": 1,
-        "6f756438841e49bca982e456afda3460": 1,
-        "cb21551e8a4d4380b18ff2a13ade292c": 1,
-        "ef8117da082c4c7691b27ed9ebb1a223": 1
+        "6f756438841e49bca982e456afda3460": 1
       },
       "tags": [
         "Platform",
@@ -1398,16 +1751,14 @@
           "currencyCode": "CASH",
           "currencyType": "VIRTUAL",
           "currencyNamespace": "pd3",
-          "purchaseAt": "2023-09-07T07:11:59.415Z",
-          "discountPurchaseAt": "2023-09-07T07:11:59.415Z"
+          "purchaseAt": "2023-09-19T12:24:37.839Z",
+          "discountPurchaseAt": "2023-09-19T12:24:37.839Z"
         }
       ],
       "itemIds": [
         "a4bceb2be47a4608a8fee6a167e7653f"
       ],
       "itemQty": {
-        "6221840f6dc94ac18ca54e4a2962a4b3": 1,
-        "652b7f3783f04f2f8ce8593f718eb7ce": 1,
         "a4bceb2be47a4608a8fee6a167e7653f": 1
       },
       "tags": [
@@ -1422,7 +1773,7 @@
       "updatedAt": "updatedattomakegitdiffseasiertoread"
     },
     {
-      "title": "Collectors Edition Masks",
+      "title": "Collectors Edition Masks XBox",
       "itemId": "a5c8d73ba9a4450a820673b31de0ffae",
       "baseAppId": "",
       "sku": "PD3_xbox_collectors_edition_masks",
@@ -1443,18 +1794,15 @@
           "currencyCode": "CASH",
           "currencyType": "VIRTUAL",
           "currencyNamespace": "pd3",
-          "purchaseAt": "2023-09-06T14:14:29.071Z",
-          "discountPurchaseAt": "2023-09-06T14:14:29.071Z"
+          "purchaseAt": "2023-09-19T12:21:14.441Z",
+          "discountPurchaseAt": "2023-09-19T12:21:14.441Z"
         }
       ],
       "itemIds": [
         "4a46260108cb45d787e2bc6fefce743b"
       ],
       "itemQty": {
-        "0ec654017e2c4b32868bf05f40578872": 1,
-        "297c7c11e15c4ca3847e4494cff2352a": 1,
-        "4a46260108cb45d787e2bc6fefce743b": 1,
-        "da3312f650154587bb5aa8a69a14d02e": 1
+        "4a46260108cb45d787e2bc6fefce743b": 1
       },
       "tags": [
         "Platform",
@@ -1493,6 +1841,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "InitialItem"
       ],
@@ -1529,6 +1878,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PreplanningAsset",
         "InitialItem"
@@ -1568,6 +1918,7 @@
           "discountPurchaseAt": "2023-01-13T09:00:09.782Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "TailorVendor"
       ],
@@ -1607,6 +1958,7 @@
           "discountPurchaseAt": "2023-02-10T14:55:54.516Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityUncommon",
         "CharacterVendor",
@@ -1646,6 +1998,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [],
       "maxCountPerUser": -1,
       "maxCount": -1,
@@ -1680,6 +2033,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PreplanningAsset",
         "InitialItem"
@@ -1717,6 +2071,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PreplanningAsset",
         "InitialItem"
@@ -1754,6 +2109,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PreplanningAsset",
         "InitialItem"
@@ -1791,6 +2147,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PreplanningAsset",
         "InitialItem"
@@ -1828,6 +2185,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PreplanningAsset",
         "InitialItem"
@@ -1865,6 +2223,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "InitialItem"
       ],
@@ -1901,6 +2260,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "InitialItem"
       ],
@@ -1935,6 +2295,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "InitialItem"
       ],
@@ -1969,6 +2330,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "InitialItem"
       ],
@@ -2003,6 +2365,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "InitialItem"
       ],
@@ -2039,6 +2402,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [],
       "maxCountPerUser": -1,
       "maxCount": -1,
@@ -2073,6 +2437,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PreplanningAsset",
         "InitialItem"
@@ -2112,6 +2477,7 @@
           "discountPurchaseAt": "2023-05-31T11:13:22.321Z"
         }
       ],
+      "itemQty": {},
       "boundItemIds": [
         "5f0e2f433fe44a6ca51445bbd4d670f7"
       ],
@@ -2152,6 +2518,7 @@
           "discountPurchaseAt": "2023-09-06T13:29:36.875Z"
         }
       ],
+      "itemQty": {},
       "boundItemIds": [
         "957560277d0f484390817596cb6f6792"
       ],
@@ -2194,6 +2561,7 @@
           "discountPurchaseAt": "2023-09-06T13:28:45.640Z"
         }
       ],
+      "itemQty": {},
       "boundItemIds": [
         "3c49d557e1b0440fa75e11bcede06d94"
       ],
@@ -2236,6 +2604,7 @@
           "discountPurchaseAt": "2023-09-07T16:52:16.942Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PlatformOnly",
         "Steam",
@@ -2275,6 +2644,7 @@
           "discountPurchaseAt": "2023-09-06T13:27:50.942Z"
         }
       ],
+      "itemQty": {},
       "boundItemIds": [
         "0863f6d764a249649ef49545e3b9e4bb"
       ],
@@ -2317,6 +2687,7 @@
           "discountPurchaseAt": "2023-03-17T15:39:30.468Z"
         }
       ],
+      "itemQty": {},
       "boundItemIds": [
         "ce54b97b24184553ae56f1ffc3d54363"
       ],
@@ -2355,6 +2726,7 @@
           "discountPurchaseAt": "2023-09-06T13:07:32.829Z"
         }
       ],
+      "itemQty": {},
       "boundItemIds": [
         "6cce475cf54b4d0090df7e6df40170aa"
       ],
@@ -2397,6 +2769,7 @@
           "discountPurchaseAt": "2023-09-06T13:06:46.073Z"
         }
       ],
+      "itemQty": {},
       "boundItemIds": [
         "ec4e47fbeb9243a0b965f447ec6e10d5"
       ],
@@ -2439,6 +2812,7 @@
           "discountPurchaseAt": "2023-09-06T13:04:53.634Z"
         }
       ],
+      "itemQty": {},
       "boundItemIds": [
         "e29db70296e14583a91a9126d363d780"
       ],
@@ -2481,6 +2855,7 @@
           "discountPurchaseAt": "2023-09-06T13:05:47.040Z"
         }
       ],
+      "itemQty": {},
       "boundItemIds": [
         "6f46ee17db244f36bc6cc977609d8274"
       ],
@@ -2523,6 +2898,7 @@
           "purchaseAt": "2022-11-26T16:15:58.028Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityUncommon",
         "TailorVendor",
@@ -2563,6 +2939,7 @@
           "purchaseAt": "2023-05-29T11:26:57.617Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityUncommon",
         "InfamyLevel9",
@@ -2604,6 +2981,7 @@
           "discountPurchaseAt": "2023-05-29T11:34:40.200Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityUncommon",
         "TailorVendor",
@@ -2645,6 +3023,7 @@
           "discountPurchaseAt": "2023-05-29T11:41:08.105Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "InfamyLevel43",
         "RarityUncommon",
@@ -2686,6 +3065,7 @@
           "discountPurchaseAt": "2023-05-29T11:42:52.580Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityUncommon",
         "TailorVendor",
@@ -2725,6 +3105,7 @@
           "purchaseAt": "2022-11-26T16:16:42.655Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityUncommon",
         "TailorVendor",
@@ -2766,6 +3147,7 @@
           "discountPurchaseAt": "2023-05-29T11:44:08.617Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityUncommon",
         "TailorVendor",
@@ -2807,6 +3189,7 @@
           "discountPurchaseAt": "2023-05-29T11:45:21.566Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "InfamyLevel30",
         "RarityUncommon",
@@ -2848,6 +3231,7 @@
           "discountPurchaseAt": "2023-05-29T11:51:11.992Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityUncommon",
         "TailorVendor",
@@ -2889,6 +3273,7 @@
           "discountPurchaseAt": "2023-05-29T11:52:12.541Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "InfamyLevel85",
         "RarityUncommon",
@@ -2928,6 +3313,7 @@
           "purchaseAt": "2022-11-26T16:17:42.167Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "TailorVendor",
         "RarityRare",
@@ -2969,6 +3355,7 @@
           "discountPurchaseAt": "2023-05-29T11:55:26.104Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityRare",
         "TailorVendor",
@@ -3010,6 +3397,7 @@
           "discountPurchaseAt": "2023-05-29T11:56:43.316Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "InfamyLevel61",
         "RarityRare",
@@ -3051,6 +3439,7 @@
           "discountPurchaseAt": "2023-05-29T11:58:11.474Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "InfamyLevel95",
         "RarityRare",
@@ -3092,6 +3481,7 @@
           "discountPurchaseAt": "2023-05-29T12:00:09.125Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityRare",
         "TailorVendor",
@@ -3131,6 +3521,7 @@
           "purchaseAt": "2022-11-26T16:18:27.139Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "TailorVendor",
         "RarityRare",
@@ -3172,6 +3563,7 @@
           "discountPurchaseAt": "2023-05-29T12:03:31.913Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "InfamyLevel96",
         "RarityRare",
@@ -3213,6 +3605,7 @@
           "discountPurchaseAt": "2023-05-29T12:04:56.357Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityRare",
         "TailorVendor",
@@ -3254,6 +3647,7 @@
           "discountPurchaseAt": "2023-05-29T12:06:16.814Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityRare",
         "TailorVendor",
@@ -3295,6 +3689,7 @@
           "discountPurchaseAt": "2023-05-29T12:07:16.305Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityRare",
         "TailorVendor",
@@ -3334,6 +3729,7 @@
           "purchaseAt": "2022-11-26T16:19:25.079Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityEpic",
         "TailorVendor",
@@ -3375,6 +3771,7 @@
           "discountPurchaseAt": "2023-05-29T12:09:10.827Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityEpic",
         "TailorVendor",
@@ -3416,6 +3813,7 @@
           "discountPurchaseAt": "2023-05-29T12:11:22.606Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityEpic",
         "InfamyLevel107",
@@ -3457,6 +3855,7 @@
           "discountPurchaseAt": "2023-05-29T12:12:31.784Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityEpic",
         "TailorVendor",
@@ -3498,6 +3897,7 @@
           "discountPurchaseAt": "2023-05-29T12:13:42.268Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityEpic",
         "TailorVendor",
@@ -3537,6 +3937,7 @@
           "purchaseAt": "2022-11-26T16:20:17.522Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "InfamyLevel73",
         "RarityEpic",
@@ -3578,6 +3979,7 @@
           "discountPurchaseAt": "2023-05-29T12:15:18.631Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "InfamyLevel98",
         "RarityEpic",
@@ -3619,6 +4021,7 @@
           "discountPurchaseAt": "2023-05-29T12:16:44.620Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityEpic",
         "TailorVendor",
@@ -3660,6 +4063,7 @@
           "discountPurchaseAt": "2023-05-29T12:18:56.095Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityEpic",
         "InfamyLevel129",
@@ -3701,6 +4105,7 @@
           "discountPurchaseAt": "2023-05-29T12:22:13.147Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityEpic",
         "TailorVendor",
@@ -3740,6 +4145,7 @@
           "purchaseAt": "2022-11-26T16:20:55.010Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityEpic",
         "TailorVendor",
@@ -3781,6 +4187,7 @@
           "discountPurchaseAt": "2023-05-29T12:25:11.549Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityEpic",
         "TailorVendor",
@@ -3822,6 +4229,7 @@
           "discountPurchaseAt": "2023-05-29T12:26:31.212Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityEpic",
         "TailorVendor",
@@ -3863,6 +4271,7 @@
           "discountPurchaseAt": "2023-05-29T12:27:25.349Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityEpic",
         "TailorVendor",
@@ -3904,6 +4313,7 @@
           "discountPurchaseAt": "2023-05-29T12:29:22.890Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityEpic",
         "TailorVendor",
@@ -3942,6 +4352,7 @@
           "purchaseAt": "2023-02-07T09:20:10.693Z"
         }
       ],
+      "itemQty": {},
       "tags": [],
       "features": [],
       "maxCountPerUser": -1,
@@ -3977,6 +4388,7 @@
           "discountPurchaseAt": "2023-02-07T09:24:15.889Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "TailorVendor",
         "PriceProgression0",
@@ -4016,6 +4428,7 @@
           "discountPurchaseAt": "2023-02-07T09:26:20.655Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PriceProgression1",
         "TailorVendor",
@@ -4054,6 +4467,7 @@
           "purchaseAt": "2023-02-07T09:37:52.191Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PriceProgression10",
         "TailorVendor",
@@ -4093,6 +4507,7 @@
           "discountPurchaseAt": "2023-02-07T09:28:09.734Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "TailorVendor",
         "PriceProgression2",
@@ -4132,6 +4547,7 @@
           "discountPurchaseAt": "2023-02-07T09:29:29.176Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "TailorVendor",
         "PriceProgression3",
@@ -4171,6 +4587,7 @@
           "discountPurchaseAt": "2023-02-07T09:30:41.588Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "TailorVendor",
         "PriceProgression4",
@@ -4210,6 +4627,7 @@
           "discountPurchaseAt": "2023-02-07T09:32:34.157Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "TailorVendor",
         "PriceProgression5",
@@ -4249,6 +4667,7 @@
           "discountPurchaseAt": "2023-02-07T09:33:50.385Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "TailorVendor",
         "PriceProgression6",
@@ -4288,6 +4707,7 @@
           "discountPurchaseAt": "2023-02-07T09:34:48.369Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "TailorVendor",
         "PriceProgression7",
@@ -4327,6 +4747,7 @@
           "discountPurchaseAt": "2023-02-07T09:35:41.944Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "TailorVendor",
         "PriceProgression8",
@@ -4366,6 +4787,7 @@
           "discountPurchaseAt": "2023-02-07T09:36:53.048Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "TailorVendor",
         "PriceProgression9",
@@ -4406,6 +4828,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "boundItemIds": [
         "d7867b7039ed475282644cf31f47be0f"
       ],
@@ -4439,8 +4862,8 @@
           "currencyCode": "CASH",
           "currencyType": "VIRTUAL",
           "currencyNamespace": "pd3",
-          "purchaseAt": "2023-09-07T05:42:52.183Z",
-          "discountPurchaseAt": "2023-09-07T05:42:52.183Z"
+          "purchaseAt": "2023-09-19T12:18:12.655Z",
+          "discountPurchaseAt": "2023-09-19T12:18:12.655Z"
         }
       ],
       "itemIds": [
@@ -4449,9 +4872,9 @@
       ],
       "itemQty": {
         "c0298decd571485a924f8441b38feb0a": 1,
-        "ceb3f7910b254e21a29dc85f19fe3716": 1,
-        "33463ee41d3c4805b475d6ea841c094a": 1
+        "ceb3f7910b254e21a29dc85f19fe3716": 1
       },
+      "tags": [],
       "features": [],
       "maxCountPerUser": 1,
       "maxCount": -1,
@@ -4482,8 +4905,8 @@
           "currencyCode": "CASH",
           "currencyType": "VIRTUAL",
           "currencyNamespace": "pd3",
-          "purchaseAt": "2023-09-07T06:25:54.557Z",
-          "discountPurchaseAt": "2023-09-07T06:25:54.557Z"
+          "purchaseAt": "2023-09-19T12:19:51.715Z",
+          "discountPurchaseAt": "2023-09-19T12:19:51.715Z"
         }
       ],
       "itemIds": [
@@ -4491,11 +4914,10 @@
         "ef8117da082c4c7691b27ed9ebb1a223"
       ],
       "itemQty": {
-        "6612d166d3c14863a756848ba6acd11d": 1,
-        "38b1118da4c84f009aca89c23d3f8376": 1,
-        "cb21551e8a4d4380b18ff2a13ade292c": 1,
-        "ef8117da082c4c7691b27ed9ebb1a223": 1
+        "ef8117da082c4c7691b27ed9ebb1a223": 1,
+        "6612d166d3c14863a756848ba6acd11d": 1
       },
+      "tags": [],
       "features": [],
       "maxCountPerUser": 1,
       "maxCount": -1,
@@ -4526,8 +4948,8 @@
           "currencyCode": "CASH",
           "currencyType": "VIRTUAL",
           "currencyNamespace": "pd3",
-          "purchaseAt": "2023-09-06T14:04:38.633Z",
-          "discountPurchaseAt": "2023-09-06T14:04:38.633Z"
+          "purchaseAt": "2023-09-19T12:14:14.235Z",
+          "discountPurchaseAt": "2023-09-19T12:14:14.235Z"
         }
       ],
       "itemIds": [
@@ -4535,10 +4957,10 @@
         "0ec654017e2c4b32868bf05f40578872"
       ],
       "itemQty": {
-        "297c7c11e15c4ca3847e4494cff2352a": 1,
         "0ec654017e2c4b32868bf05f40578872": 1,
-        "da3312f650154587bb5aa8a69a14d02e": 1
+        "297c7c11e15c4ca3847e4494cff2352a": 1
       },
+      "tags": [],
       "features": [],
       "maxCountPerUser": 1,
       "maxCount": -1,
@@ -4574,6 +4996,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PriceProgression0",
         "GoldExchangeVendor"
@@ -4612,6 +5035,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PriceProgression1",
         "GoldExchangeVendor"
@@ -4650,6 +5074,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PriceProgression10",
         "GoldExchangeVendor"
@@ -4688,6 +5113,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PriceProgression2",
         "GoldExchangeVendor"
@@ -4726,6 +5152,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PriceProgression3",
         "GoldExchangeVendor"
@@ -4764,6 +5191,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PriceProgression4",
         "GoldExchangeVendor"
@@ -4802,6 +5230,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PriceProgression5",
         "GoldExchangeVendor"
@@ -4840,6 +5269,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "GoldExchangeVendor",
         "PriceProgression6"
@@ -4878,6 +5308,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "GoldExchangeVendor",
         "PriceProgression7"
@@ -4916,6 +5347,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "GoldExchangeVendor",
         "PriceProgression8"
@@ -4954,6 +5386,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "GoldExchangeVendor",
         "PriceProgression9"
@@ -4992,6 +5425,7 @@
           "purchaseAt": "2022-12-20T13:49:59.257Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PriceProgression0",
         "GoldExchangeVendor"
@@ -5031,6 +5465,7 @@
           "purchaseAt": "2022-12-20T13:51:12.631Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PriceProgression1",
         "GoldExchangeVendor"
@@ -5070,6 +5505,7 @@
           "purchaseAt": "2022-12-20T14:07:50.631Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PriceProgression10",
         "GoldExchangeVendor"
@@ -5109,6 +5545,7 @@
           "purchaseAt": "2022-12-20T13:52:40.941Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PriceProgression2",
         "GoldExchangeVendor"
@@ -5148,6 +5585,7 @@
           "purchaseAt": "2022-12-20T13:58:14.122Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PriceProgression3",
         "GoldExchangeVendor"
@@ -5187,6 +5625,7 @@
           "purchaseAt": "2022-12-20T13:59:26.959Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PriceProgression4",
         "GoldExchangeVendor"
@@ -5226,6 +5665,7 @@
           "purchaseAt": "2022-12-20T14:00:46.397Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PriceProgression5",
         "GoldExchangeVendor"
@@ -5265,6 +5705,7 @@
           "purchaseAt": "2022-12-20T14:02:04.965Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "GoldExchangeVendor",
         "PriceProgression6"
@@ -5304,6 +5745,7 @@
           "purchaseAt": "2022-12-20T14:03:26.979Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PriceProgression7",
         "GoldExchangeVendor"
@@ -5343,6 +5785,7 @@
           "purchaseAt": "2022-12-20T14:05:25.657Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "GoldExchangeVendor",
         "PriceProgression8"
@@ -5382,6 +5825,7 @@
           "purchaseAt": "2022-12-20T14:06:34.880Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "GoldExchangeVendor",
         "PriceProgression9"
@@ -5421,6 +5865,7 @@
           "purchaseAt": "2022-12-20T09:51:15.072Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PriceProgression0",
         "GoldExchangeVendor"
@@ -5460,6 +5905,7 @@
           "purchaseAt": "2022-12-20T09:54:14.909Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PriceProgression1",
         "GoldExchangeVendor"
@@ -5499,6 +5945,7 @@
           "purchaseAt": "2022-12-20T12:58:41.915Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PriceProgression10",
         "GoldExchangeVendor"
@@ -5538,6 +5985,7 @@
           "purchaseAt": "2022-12-20T12:42:36.490Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PriceProgression2",
         "GoldExchangeVendor"
@@ -5577,6 +6025,7 @@
           "purchaseAt": "2022-12-20T12:44:41.084Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PriceProgression3",
         "GoldExchangeVendor"
@@ -5616,6 +6065,7 @@
           "purchaseAt": "2022-12-20T12:47:14.816Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PriceProgression4",
         "GoldExchangeVendor"
@@ -5655,6 +6105,7 @@
           "purchaseAt": "2022-12-20T12:48:46.252Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PriceProgression5",
         "GoldExchangeVendor"
@@ -5694,6 +6145,7 @@
           "purchaseAt": "2022-12-20T12:50:39.259Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "GoldExchangeVendor",
         "PriceProgression6"
@@ -5733,6 +6185,7 @@
           "purchaseAt": "2022-12-20T12:55:07.448Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PriceProgression7",
         "GoldExchangeVendor"
@@ -5772,6 +6225,7 @@
           "purchaseAt": "2022-12-20T12:56:14.367Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "GoldExchangeVendor",
         "PriceProgression8"
@@ -5811,6 +6265,7 @@
           "purchaseAt": "2022-12-20T12:57:09.893Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "GoldExchangeVendor",
         "PriceProgression9"
@@ -5821,6 +6276,83 @@
       "region": "SE",
       "language": "en-US",
       "createdAt": "2022-12-20T12:57:09.884Z",
+      "updatedAt": "updatedattomakegitdiffseasiertoread"
+    },
+    {
+      "title": "Halloween 23 Preset ",
+      "itemId": "05564d6351b54a519486567a1ca0bf22",
+      "sku": "pd3_wpn_preset_halloween23",
+      "namespace": "pd3",
+      "name": "Halloween 23 Preset",
+      "entitlementType": "CONSUMABLE",
+      "useCount": 1,
+      "stackable": false,
+      "categoryPath": "/WeaponPreset",
+      "status": "ACTIVE",
+      "listable": true,
+      "purchasable": true,
+      "itemType": "INGAMEITEM",
+      "regionData": [
+        {
+          "price": 25,
+          "discountPercentage": 0,
+          "discountAmount": 0,
+          "discountedPrice": 25,
+          "currencyCode": "GOLD",
+          "currencyType": "VIRTUAL",
+          "currencyNamespace": "pd3",
+          "purchaseAt": "2023-09-27T13:33:12.249Z"
+        }
+      ],
+      "itemQty": {},
+      "tags": [
+        "CombatEquipmentVendor"
+      ],
+      "features": [],
+      "maxCountPerUser": 1,
+      "maxCount": -1,
+      "region": "SE",
+      "language": "en-US",
+      "createdAt": "2023-11-10T05:51:54.104Z",
+      "updatedAt": "updatedattomakegitdiffseasiertoread"
+    },
+    {
+      "title": "Halloween Mask 2023",
+      "itemId": "ebeb87ff303e4c65be770c6c0b51a528",
+      "baseAppId": "",
+      "sku": "pd3_cosmetic_mask_halloween23",
+      "namespace": "pd3",
+      "name": "Halloween Mask 2023",
+      "entitlementType": "CONSUMABLE",
+      "useCount": 1,
+      "stackable": false,
+      "categoryPath": "/PremiumMask",
+      "status": "ACTIVE",
+      "listable": true,
+      "purchasable": true,
+      "itemType": "INGAMEITEM",
+      "regionData": [
+        {
+          "price": 10,
+          "discountPercentage": 0,
+          "discountAmount": 0,
+          "discountedPrice": 10,
+          "currencyCode": "GOLD",
+          "currencyType": "VIRTUAL",
+          "currencyNamespace": "pd3",
+          "purchaseAt": "2023-10-17T13:44:27.633Z"
+        }
+      ],
+      "itemQty": {},
+      "tags": [
+        "CharacterVendor"
+      ],
+      "features": [],
+      "maxCountPerUser": 1,
+      "maxCount": -1,
+      "region": "SE",
+      "language": "en-US",
+      "createdAt": "2023-10-17T13:47:27.321Z",
       "updatedAt": "updatedattomakegitdiffseasiertoread"
     },
     {
@@ -5847,6 +6379,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "InitialItem"
       ],
@@ -5883,6 +6416,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PreplanningAsset",
         "InitialItem"
@@ -5922,6 +6456,7 @@
           "discountPurchaseAt": "2023-02-10T15:00:51.543Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityUncommon",
         "CharacterVendor",
@@ -5962,6 +6497,7 @@
           "purchaseAt": "2022-11-29T14:47:48.290Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityCommon"
       ],
@@ -5999,6 +6535,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PreplanningAsset",
         "InitialItem"
@@ -6038,6 +6575,7 @@
           "discountPurchaseAt": "2023-02-10T15:03:36.327Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityUncommon",
         "CharacterVendor",
@@ -6077,6 +6615,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PreplanningAsset",
         "InitialItem"
@@ -6114,6 +6653,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PreplanningAsset",
         "InitialItem"
@@ -6151,6 +6691,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PreplanningAsset",
         "InitialItem"
@@ -6187,6 +6728,7 @@
           "purchaseAt": "2022-11-17T09:02:44.263Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -6224,6 +6766,7 @@
           "purchaseAt": "2022-11-17T09:08:08.936Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -6261,6 +6804,7 @@
           "purchaseAt": "2022-11-17T13:08:27.635Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -6298,6 +6842,7 @@
           "purchaseAt": "2022-11-17T13:09:54.486Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -6335,6 +6880,7 @@
           "purchaseAt": "2022-11-16T15:10:18.661Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -6372,6 +6918,7 @@
           "purchaseAt": "2023-01-25T14:29:44.774Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -6409,6 +6956,7 @@
           "purchaseAt": "2023-01-25T13:23:33.476Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -6446,6 +6994,7 @@
           "purchaseAt": "2022-11-16T16:50:49.177Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -6483,6 +7032,7 @@
           "purchaseAt": "2023-01-25T14:34:47.745Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -6520,6 +7070,7 @@
           "purchaseAt": "2023-01-25T13:34:19.916Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -6557,6 +7108,7 @@
           "purchaseAt": "2022-11-16T16:44:13.647Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -6594,6 +7146,7 @@
           "purchaseAt": "2023-01-25T14:34:17.123Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -6630,6 +7183,7 @@
           "purchaseAt": "2023-01-25T13:33:15.235Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -6667,6 +7221,7 @@
           "purchaseAt": "2022-11-16T15:27:48.644Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -6704,6 +7259,7 @@
           "purchaseAt": "2023-01-25T14:31:33.079Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -6741,6 +7297,7 @@
           "purchaseAt": "2023-01-25T13:28:44.180Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -6778,6 +7335,7 @@
           "purchaseAt": "2022-11-16T14:46:23.623Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -6815,6 +7373,7 @@
           "purchaseAt": "2023-01-25T14:26:38.722Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -6851,6 +7410,7 @@
           "purchaseAt": "2023-01-25T13:15:58.898Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -6888,6 +7448,7 @@
           "purchaseAt": "2022-11-18T12:21:55.191Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -6925,6 +7486,7 @@
           "purchaseAt": "2023-01-25T14:33:47.946Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -6962,6 +7524,7 @@
           "purchaseAt": "2023-01-25T13:32:15.674Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -6998,6 +7561,7 @@
           "purchaseAt": "2022-11-16T14:06:24.345Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -7035,6 +7599,7 @@
           "purchaseAt": "2023-01-25T14:25:31.440Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -7072,6 +7637,7 @@
           "purchaseAt": "2023-01-25T13:11:21.131Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -7108,6 +7674,7 @@
           "purchaseAt": "2022-11-16T14:12:41.337Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -7145,6 +7712,7 @@
           "purchaseAt": "2023-01-25T14:26:09.120Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -7182,6 +7750,7 @@
           "purchaseAt": "2023-01-25T13:12:42.205Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -7218,6 +7787,7 @@
           "purchaseAt": "2022-11-16T15:06:19.701Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -7255,6 +7825,7 @@
           "purchaseAt": "2023-01-25T14:28:26.775Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -7292,6 +7863,7 @@
           "purchaseAt": "2023-01-25T13:21:09.765Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -7329,6 +7901,7 @@
           "purchaseAt": "2022-11-16T16:14:56.313Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -7366,6 +7939,7 @@
           "purchaseAt": "2023-01-25T14:33:16.605Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -7402,6 +7976,7 @@
           "purchaseAt": "2023-01-25T13:31:36.881Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -7440,6 +8015,7 @@
           "discountPurchaseAt": "2023-02-14T10:16:53.128Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -7477,6 +8053,7 @@
           "purchaseAt": "2022-11-16T16:09:23.874Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -7513,6 +8090,7 @@
           "purchaseAt": "2023-01-25T14:32:45.209Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -7550,6 +8128,7 @@
           "purchaseAt": "2023-01-25T13:30:48.548Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -7587,6 +8166,7 @@
           "purchaseAt": "2022-11-16T14:51:25.277Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -7624,6 +8204,7 @@
           "purchaseAt": "2023-01-25T14:27:02.664Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -7660,6 +8241,7 @@
           "purchaseAt": "2023-01-25T13:17:06.670Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -7696,6 +8278,7 @@
           "purchaseAt": "2022-11-16T15:19:10.371Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -7732,6 +8315,7 @@
           "purchaseAt": "2023-01-25T14:31:02.822Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -7769,6 +8353,7 @@
           "purchaseAt": "2023-01-25T13:27:55.524Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -7806,6 +8391,7 @@
           "purchaseAt": "2022-11-16T14:57:09.462Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -7843,6 +8429,7 @@
           "purchaseAt": "2023-01-25T14:27:54.820Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -7880,6 +8467,7 @@
           "purchaseAt": "2023-01-25T13:19:44.603Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -7917,6 +8505,7 @@
           "purchaseAt": "2022-11-16T15:33:13.653Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -7954,6 +8543,7 @@
           "purchaseAt": "2023-01-25T14:32:05.851Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -7991,6 +8581,7 @@
           "purchaseAt": "2023-01-25T13:29:28.559Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -8028,6 +8619,7 @@
           "purchaseAt": "2022-11-16T15:08:55.906Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -8065,6 +8657,7 @@
           "purchaseAt": "2023-01-25T14:28:56.912Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -8101,6 +8694,7 @@
           "purchaseAt": "2023-01-25T13:22:54.888Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -8138,6 +8732,7 @@
           "purchaseAt": "2022-11-16T15:15:25.619Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -8174,6 +8769,7 @@
           "purchaseAt": "2023-01-25T14:30:15.755Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -8210,6 +8806,7 @@
           "purchaseAt": "2023-01-25T13:25:46.443Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -8247,6 +8844,7 @@
           "purchaseAt": "2022-11-17T09:20:32.583Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -8284,6 +8882,7 @@
           "purchaseAt": "2022-11-17T09:19:14.397Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -8321,6 +8920,7 @@
           "purchaseAt": "2022-11-17T12:04:51.225Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -8358,6 +8958,7 @@
           "purchaseAt": "2022-11-17T12:02:47.776Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -8395,6 +8996,7 @@
           "purchaseAt": "2022-11-17T11:59:12.274Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -8432,6 +9034,7 @@
           "purchaseAt": "2022-11-17T08:29:15.668Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -8469,6 +9072,7 @@
           "purchaseAt": "2022-11-17T08:33:46.192Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -8506,6 +9110,7 @@
           "purchaseAt": "2022-11-17T12:56:16.210Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -8543,6 +9148,7 @@
           "purchaseAt": "2022-11-17T12:54:26.262Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -8580,6 +9186,7 @@
           "purchaseAt": "2022-11-17T12:47:44.705Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -8617,6 +9224,7 @@
           "purchaseAt": "2022-11-17T09:15:50.710Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -8654,6 +9262,7 @@
           "purchaseAt": "2022-11-17T09:14:18.089Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -8691,6 +9300,7 @@
           "purchaseAt": "2022-11-17T09:17:21.622Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -8728,6 +9338,7 @@
           "purchaseAt": "2022-11-17T11:51:49.115Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -8765,6 +9376,7 @@
           "purchaseAt": "2022-11-17T11:56:10.487Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -8802,6 +9414,7 @@
           "purchaseAt": "2022-11-17T11:54:02.285Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -8839,6 +9452,7 @@
           "purchaseAt": "2022-11-17T13:01:51.211Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -8876,6 +9490,7 @@
           "purchaseAt": "2022-11-17T12:57:59.507Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -8913,6 +9528,7 @@
           "purchaseAt": "2022-11-17T13:00:09.437Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -8950,6 +9566,7 @@
           "purchaseAt": "2022-11-17T12:38:34.908Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -8987,6 +9604,7 @@
           "purchaseAt": "2022-11-17T12:35:20.650Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -9024,6 +9642,7 @@
           "purchaseAt": "2022-11-17T12:36:54.902Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -9061,6 +9680,7 @@
           "purchaseAt": "2022-11-17T09:38:23.190Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -9098,6 +9718,7 @@
           "purchaseAt": "2023-01-25T14:48:36.750Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -9135,6 +9756,7 @@
           "purchaseAt": "2023-01-25T13:57:57.808Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -9172,6 +9794,7 @@
           "purchaseAt": "2022-11-17T09:40:58.829Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -9208,6 +9831,7 @@
           "purchaseAt": "2023-01-25T14:50:30.007Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -9245,6 +9869,7 @@
           "purchaseAt": "2023-01-25T13:59:40.885Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -9282,6 +9907,7 @@
           "purchaseAt": "2022-11-17T09:39:46.960Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -9319,6 +9945,7 @@
           "purchaseAt": "2023-01-25T14:49:43.405Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -9356,6 +9983,7 @@
           "purchaseAt": "2023-01-25T13:59:03.633Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -9393,6 +10021,7 @@
           "purchaseAt": "2022-11-17T08:42:57.319Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -9430,6 +10059,7 @@
           "purchaseAt": "2022-11-17T08:45:27.456Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -9468,6 +10098,7 @@
           "discountPurchaseAt": "2022-11-17T12:10:46.460Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -9505,6 +10136,7 @@
           "purchaseAt": "2022-11-17T12:14:25.727Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -9542,6 +10174,7 @@
           "purchaseAt": "2022-11-17T12:12:32.912Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -9579,6 +10212,7 @@
           "purchaseAt": "2022-11-17T12:33:36.709Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -9616,6 +10250,7 @@
           "purchaseAt": "2022-11-17T12:31:51.129Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -9653,6 +10288,7 @@
           "purchaseAt": "2022-11-17T12:26:35.561Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -9690,6 +10326,7 @@
           "purchaseAt": "2022-11-17T08:58:06.310Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart",
         "InitialItem"
@@ -9728,6 +10365,7 @@
           "purchaseAt": "2022-11-17T08:59:36.210Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -9765,6 +10403,7 @@
           "purchaseAt": "2022-11-17T13:19:02.983Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -9802,6 +10441,7 @@
           "purchaseAt": "2022-11-17T13:20:56.943Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -9839,6 +10479,7 @@
           "purchaseAt": "2022-11-17T13:20:05.762Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -9877,6 +10518,7 @@
           "discountPurchaseAt": "2022-11-17T12:46:03.775Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -9914,6 +10556,7 @@
           "purchaseAt": "2022-11-17T12:44:31.639Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -9951,6 +10594,7 @@
           "purchaseAt": "2022-11-17T12:41:03.405Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -9988,6 +10632,7 @@
           "purchaseAt": "2022-11-17T13:06:43.482Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -10025,6 +10670,7 @@
           "purchaseAt": "2022-11-17T13:03:38.337Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -10062,6 +10708,7 @@
           "purchaseAt": "2022-11-17T13:05:17.299Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -10099,6 +10746,7 @@
           "purchaseAt": "2022-11-17T08:49:03.540Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -10136,6 +10784,7 @@
           "purchaseAt": "2022-11-17T08:52:40.795Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -10173,6 +10822,7 @@
           "purchaseAt": "2022-11-17T08:51:17.092Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -10210,6 +10860,7 @@
           "purchaseAt": "2022-11-17T09:21:55.410Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -10247,6 +10898,7 @@
           "purchaseAt": "2022-11-17T09:24:53.766Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -10285,6 +10937,7 @@
           "discountPurchaseAt": "2022-11-17T13:14:02.919Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -10322,6 +10975,7 @@
           "purchaseAt": "2022-11-17T13:15:18.763Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -10359,6 +11013,7 @@
           "purchaseAt": "2022-11-17T13:12:58.403Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -10396,6 +11051,7 @@
           "purchaseAt": "2022-11-17T09:10:36.941Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -10433,6 +11089,7 @@
           "purchaseAt": "2022-11-17T09:12:09.813Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -10470,6 +11127,7 @@
           "purchaseAt": "2022-11-17T13:12:26.657Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -10507,6 +11165,7 @@
           "purchaseAt": "2022-11-17T13:23:40.478Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -10545,6 +11204,7 @@
           "discountPurchaseAt": "2022-11-17T13:24:43.621Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -10583,6 +11243,7 @@
           "discountPurchaseAt": "2023-05-24T09:21:57.155Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -10619,6 +11280,7 @@
           "purchaseAt": "2022-11-17T10:31:53.265Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -10657,6 +11319,7 @@
           "discountPurchaseAt": "2022-11-17T10:28:17.864Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -10694,6 +11357,7 @@
           "purchaseAt": "2022-11-17T10:30:07.219Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -10731,6 +11395,7 @@
           "purchaseAt": "2022-11-17T13:22:11.782Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -10768,6 +11433,7 @@
           "purchaseAt": "2022-11-17T13:23:44.664Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -10806,6 +11472,7 @@
           "discountPurchaseAt": "2022-11-17T10:14:12.542Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -10842,6 +11509,7 @@
           "purchaseAt": "2022-11-17T10:20:26.353Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -10879,6 +11547,7 @@
           "purchaseAt": "2022-11-17T10:17:39.430Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -10916,6 +11585,7 @@
           "purchaseAt": "2022-11-17T13:19:15.851Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -10953,6 +11623,7 @@
           "purchaseAt": "2022-11-17T13:20:46.026Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -10990,6 +11661,7 @@
           "purchaseAt": "2022-11-17T11:44:29.931Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -11027,6 +11699,7 @@
           "purchaseAt": "2022-11-17T11:48:03.709Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -11065,6 +11738,7 @@
           "discountPurchaseAt": "2022-11-17T11:45:55.351Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -11102,6 +11776,7 @@
           "purchaseAt": "2022-11-17T13:25:24.547Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -11139,6 +11814,7 @@
           "purchaseAt": "2022-11-17T13:26:50.478Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -11176,6 +11852,7 @@
           "purchaseAt": "2022-11-16T15:00:55.566Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -11213,6 +11890,7 @@
           "purchaseAt": "2023-01-25T14:40:27.898Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -11250,6 +11928,7 @@
           "purchaseAt": "2023-01-25T13:43:05.203Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -11287,6 +11966,7 @@
           "purchaseAt": "2022-11-16T15:03:29.394Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -11324,6 +12004,7 @@
           "purchaseAt": "2023-01-25T14:40:58.495Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -11361,6 +12042,7 @@
           "purchaseAt": "2023-01-25T13:43:40.059Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -11397,6 +12079,7 @@
           "purchaseAt": "2022-11-16T15:07:10.091Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -11434,6 +12117,7 @@
           "purchaseAt": "2023-01-25T14:41:26.732Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -11471,6 +12155,7 @@
           "purchaseAt": "2023-01-25T13:44:18.088Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -11508,6 +12193,7 @@
           "purchaseAt": "2022-11-16T16:31:58.565Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -11545,6 +12231,7 @@
           "purchaseAt": "2023-01-25T14:45:16.308Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -11582,6 +12269,7 @@
           "purchaseAt": "2023-01-25T13:49:51.763Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -11619,6 +12307,7 @@
           "purchaseAt": "2022-11-16T16:28:47.217Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -11656,6 +12345,7 @@
           "purchaseAt": "2023-01-25T14:44:05.613Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -11693,6 +12383,7 @@
           "purchaseAt": "2023-01-25T13:47:45.274Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -11730,6 +12421,7 @@
           "purchaseAt": "2022-11-16T14:56:53.757Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -11767,6 +12459,7 @@
           "purchaseAt": "2023-01-25T14:39:55.323Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -11804,6 +12497,7 @@
           "purchaseAt": "2023-01-25T13:42:16.830Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -11841,6 +12535,7 @@
           "purchaseAt": "2022-11-16T16:33:33.709Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -11878,6 +12573,7 @@
           "purchaseAt": "2023-01-25T14:45:50.411Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -11915,6 +12611,7 @@
           "purchaseAt": "2023-01-25T13:50:25.015Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -11952,6 +12649,7 @@
           "purchaseAt": "2022-11-16T15:09:09.814Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -11989,6 +12687,7 @@
           "purchaseAt": "2023-01-25T14:41:57.242Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -12026,6 +12725,7 @@
           "purchaseAt": "2023-01-25T13:44:58.037Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -12063,6 +12763,7 @@
           "purchaseAt": "2022-11-16T15:15:07.880Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -12100,6 +12801,7 @@
           "purchaseAt": "2023-01-25T14:43:02.491Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -12137,6 +12839,7 @@
           "purchaseAt": "2023-01-25T13:46:23.970Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -12174,6 +12877,7 @@
           "purchaseAt": "2022-11-16T16:27:06.691Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -12211,6 +12915,7 @@
           "purchaseAt": "2023-01-25T14:43:30.023Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -12248,6 +12953,7 @@
           "purchaseAt": "2023-01-25T13:47:05.655Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -12285,6 +12991,7 @@
           "purchaseAt": "2022-11-16T15:11:59.274Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -12322,6 +13029,7 @@
           "purchaseAt": "2023-01-25T14:42:26.120Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -12359,6 +13067,7 @@
           "purchaseAt": "2023-01-25T13:45:29.740Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -12396,6 +13105,7 @@
           "purchaseAt": "2022-11-16T16:30:06.580Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -12433,6 +13143,7 @@
           "purchaseAt": "2023-01-25T14:44:37.149Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -12470,6 +13181,7 @@
           "purchaseAt": "2023-01-25T13:48:42.608Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -12506,6 +13218,7 @@
           "purchaseAt": "2022-11-16T14:47:45.890Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -12543,6 +13256,7 @@
           "purchaseAt": "2023-01-25T14:39:15.813Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -12580,6 +13294,7 @@
           "purchaseAt": "2023-01-25T13:41:44.739Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -12617,6 +13332,7 @@
           "purchaseAt": "2022-11-17T13:08:56.841Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -12654,6 +13370,7 @@
           "purchaseAt": "2023-01-25T14:53:30.558Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -12691,6 +13408,7 @@
           "purchaseAt": "2023-01-25T14:03:52.219Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -12728,6 +13446,7 @@
           "purchaseAt": "2022-11-17T13:07:34.585Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -12765,6 +13484,7 @@
           "purchaseAt": "2023-01-25T14:52:56.461Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -12802,6 +13522,7 @@
           "purchaseAt": "2023-01-25T14:03:25.239Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -12839,6 +13560,7 @@
           "purchaseAt": "2022-11-17T13:09:14.959Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -12876,6 +13598,7 @@
           "purchaseAt": "2023-01-25T14:55:04.576Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -12913,6 +13636,7 @@
           "purchaseAt": "2023-01-25T14:04:19.053Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -12950,6 +13674,7 @@
           "purchaseAt": "2022-11-17T13:06:49.238Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -12987,6 +13712,7 @@
           "purchaseAt": "2023-01-25T14:52:29.485Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -13024,6 +13750,7 @@
           "purchaseAt": "2023-01-25T14:02:52.598Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -13062,6 +13789,7 @@
           "discountPurchaseAt": "2022-11-17T10:02:50.887Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -13099,6 +13827,7 @@
           "purchaseAt": "2022-11-17T10:08:23.866Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -13136,6 +13865,7 @@
           "purchaseAt": "2022-11-17T10:05:53.874Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -13173,6 +13903,7 @@
           "purchaseAt": "2022-11-17T13:14:22.491Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -13210,6 +13941,7 @@
           "purchaseAt": "2022-11-17T13:15:51.880Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -13247,6 +13979,7 @@
           "purchaseAt": "2022-11-17T08:37:58.414Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -13284,6 +14017,7 @@
           "purchaseAt": "2022-11-17T08:40:08.218Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -13322,6 +14056,7 @@
           "discountPurchaseAt": "2022-11-17T13:30:10.086Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -13359,6 +14094,7 @@
           "purchaseAt": "2022-11-17T13:28:32.966Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -13396,6 +14132,7 @@
           "purchaseAt": "2022-11-17T12:24:28.995Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -13433,6 +14170,7 @@
           "purchaseAt": "2022-11-17T09:38:25.057Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -13470,6 +14208,7 @@
           "purchaseAt": "2023-01-25T14:56:40.668Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -13507,6 +14246,7 @@
           "purchaseAt": "2023-01-25T14:05:36.364Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -13543,6 +14283,7 @@
           "purchaseAt": "2022-11-17T09:36:02.537Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -13580,6 +14321,7 @@
           "purchaseAt": "2023-01-25T14:55:54.414Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -13617,6 +14359,7 @@
           "purchaseAt": "2023-01-25T14:05:08.517Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -13654,6 +14397,7 @@
           "purchaseAt": "2022-11-17T09:41:15.897Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -13691,6 +14435,7 @@
           "purchaseAt": "2023-01-25T14:58:33.659Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -13728,6 +14473,7 @@
           "purchaseAt": "2023-01-25T14:06:34.456Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -13765,6 +14511,7 @@
           "purchaseAt": "2022-11-17T09:39:41.709Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -13802,6 +14549,7 @@
           "purchaseAt": "2023-01-25T14:57:54.367Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -13839,6 +14587,7 @@
           "purchaseAt": "2023-01-25T14:06:06.229Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "WeaponPart"
       ],
@@ -13876,6 +14625,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PreplanningAsset",
         "InitialItem"
@@ -13913,6 +14663,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CombatEquipmentVendor",
         "InfamyLevel15"
@@ -13949,6 +14700,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "boundItemIds": [],
       "tags": [
         "InfamyLevel53",
@@ -13985,6 +14737,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [],
       "maxCountPerUser": -1,
       "maxCount": -1,
@@ -14018,6 +14771,7 @@
           "purchaseAt": "2022-11-14T09:46:15.321Z"
         }
       ],
+      "itemQty": {},
       "boundItemIds": [
         "e005bc343c254adb9855ef1b7effc751"
       ],
@@ -14059,6 +14813,7 @@
           "purchaseAt": "2022-11-14T09:52:39.740Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PriceProgression1",
         "CharacterVendor",
@@ -14097,6 +14852,7 @@
           "purchaseAt": "2022-11-14T10:17:52.958Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PriceProgression10",
         "CharacterVendor",
@@ -14135,6 +14891,7 @@
           "purchaseAt": "2022-11-14T09:55:21.787Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CharacterVendor",
         "PriceProgression2",
@@ -14173,6 +14930,7 @@
           "purchaseAt": "2022-11-14T10:00:23.249Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CharacterVendor",
         "PriceProgression3",
@@ -14211,6 +14969,7 @@
           "purchaseAt": "2022-11-14T10:02:39.719Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CharacterVendor",
         "PriceProgression4",
@@ -14249,6 +15008,7 @@
           "purchaseAt": "2022-11-14T10:04:19.478Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CharacterVendor",
         "PriceProgression5",
@@ -14287,6 +15047,7 @@
           "purchaseAt": "2022-11-14T10:06:16.236Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CharacterVendor",
         "PriceProgression6",
@@ -14325,6 +15086,7 @@
           "purchaseAt": "2022-11-14T10:09:42.018Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CharacterVendor",
         "PriceProgression7",
@@ -14363,6 +15125,7 @@
           "purchaseAt": "2022-11-14T10:12:01.129Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CharacterVendor",
         "PriceProgression8",
@@ -14401,6 +15164,7 @@
           "purchaseAt": "2022-11-14T10:13:46.641Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CharacterVendor",
         "PriceProgression9",
@@ -14441,6 +15205,7 @@
           "purchaseAt": "2022-11-24T16:17:19.610Z"
         }
       ],
+      "itemQty": {},
       "boundItemIds": [
         "e005bc343c254adb9855ef1b7effc751"
       ],
@@ -14484,6 +15249,7 @@
           "purchaseAt": "2022-11-24T16:23:04.994Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityRare",
         "CharacterVendor",
@@ -14524,6 +15290,7 @@
           "purchaseAt": "2022-11-24T16:23:50.858Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityRare",
         "CharacterVendor",
@@ -14564,6 +15331,7 @@
           "purchaseAt": "2022-11-24T16:24:41.186Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityRare",
         "CharacterVendor",
@@ -14604,6 +15372,7 @@
           "purchaseAt": "2022-11-24T16:25:16.658Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "InfamyLevel50",
         "RarityRare",
@@ -14644,6 +15413,7 @@
           "purchaseAt": "2022-11-24T16:25:51.130Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityEpic",
         "CharacterVendor",
@@ -14685,6 +15455,7 @@
           "discountPurchaseAt": "2023-05-29T08:13:29.421Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityEpic",
         "CharacterVendor",
@@ -14726,6 +15497,7 @@
           "discountPurchaseAt": "2023-05-29T08:16:23.034Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "InfamyLevel75",
         "RarityEpic",
@@ -14767,6 +15539,7 @@
           "discountPurchaseAt": "2023-05-29T08:19:09.715Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityEpic",
         "InfamyLevel82",
@@ -14808,6 +15581,7 @@
           "discountPurchaseAt": "2023-05-29T08:23:35.784Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityEpic",
         "InfamyLevel92",
@@ -14849,6 +15623,7 @@
           "discountPurchaseAt": "2023-05-29T08:24:45.268Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityEpic",
         "CharacterVendor",
@@ -14889,6 +15664,7 @@
           "purchaseAt": "2022-11-24T16:18:10.114Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityCommon",
         "CharacterVendor",
@@ -14929,6 +15705,7 @@
           "purchaseAt": "2022-11-24T16:18:47.377Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityCommon",
         "CharacterVendor",
@@ -14969,6 +15746,7 @@
           "purchaseAt": "2022-11-24T16:19:16.939Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityCommon",
         "CharacterVendor",
@@ -15009,6 +15787,7 @@
           "purchaseAt": "2022-11-24T16:19:57.754Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityCommon",
         "CharacterVendor",
@@ -15049,6 +15828,7 @@
           "purchaseAt": "2022-11-24T16:20:40.418Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityUncommon",
         "CharacterVendor",
@@ -15089,6 +15869,7 @@
           "purchaseAt": "2022-11-24T16:21:18.915Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityUncommon",
         "InfamyLevel8",
@@ -15129,6 +15910,7 @@
           "purchaseAt": "2022-11-24T16:21:54.098Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityUncommon",
         "CharacterVendor",
@@ -15169,6 +15951,7 @@
           "purchaseAt": "2022-11-24T16:22:33.714Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityUncommon",
         "InfamyLevel19",
@@ -15180,6 +15963,413 @@
       "region": "SE",
       "language": "en-US",
       "createdAt": "2022-11-24T16:22:33.194Z",
+      "updatedAt": "updatedattomakegitdiffseasiertoread"
+    },
+    {
+      "title": "Mask Mould Remake 1",
+      "itemId": "8ee5ea28195b416abb49f31b94382f5f",
+      "sku": "pd3_cosmetic_mask_mould_remake_1",
+      "namespace": "pd3",
+      "name": "Mask Mould Remake 1",
+      "entitlementType": "CONSUMABLE",
+      "useCount": 1,
+      "stackable": false,
+      "categoryPath": "/MaskMould",
+      "status": "ACTIVE",
+      "listable": true,
+      "purchasable": true,
+      "itemType": "INGAMEITEM",
+      "regionData": [
+        {
+          "price": 999,
+          "discountPercentage": 0,
+          "discountAmount": 0,
+          "discountedPrice": 999,
+          "currencyCode": "CASH",
+          "currencyType": "VIRTUAL",
+          "currencyNamespace": "pd3",
+          "purchaseAt": "2023-10-30T15:00:59.283Z",
+          "discountPurchaseAt": "2023-10-30T15:00:59.283Z"
+        }
+      ],
+      "itemQty": {},
+      "tags": [],
+      "features": [],
+      "maxCountPerUser": -1,
+      "maxCount": -1,
+      "region": "SE",
+      "language": "en-US",
+      "createdAt": "2023-11-10T05:51:54.432Z",
+      "updatedAt": "updatedattomakegitdiffseasiertoread"
+    },
+    {
+      "title": "Mask Mould Remake 10",
+      "itemId": "b06e3ac0bc4d425dbb8f32d59f6d92a0",
+      "sku": "pd3_cosmetic_mask_mould_remake_10",
+      "namespace": "pd3",
+      "name": "Mask Mould Remake 10",
+      "entitlementType": "CONSUMABLE",
+      "useCount": 1,
+      "stackable": false,
+      "categoryPath": "/MaskMould",
+      "status": "ACTIVE",
+      "listable": true,
+      "purchasable": true,
+      "itemType": "INGAMEITEM",
+      "regionData": [
+        {
+          "price": 999,
+          "discountPercentage": 0,
+          "discountAmount": 0,
+          "discountedPrice": 999,
+          "currencyCode": "CASH",
+          "currencyType": "VIRTUAL",
+          "currencyNamespace": "pd3",
+          "purchaseAt": "2023-10-31T15:14:11.217Z",
+          "discountPurchaseAt": "2023-10-31T15:14:11.217Z"
+        }
+      ],
+      "itemQty": {},
+      "tags": [],
+      "features": [],
+      "maxCountPerUser": -1,
+      "maxCount": -1,
+      "region": "SE",
+      "language": "en-US",
+      "createdAt": "2023-11-10T05:51:54.356Z",
+      "updatedAt": "updatedattomakegitdiffseasiertoread"
+    },
+    {
+      "title": "Mask Mould Remake 11",
+      "itemId": "56703b0ad17c4b3b937a0f8a719ec78d",
+      "sku": "pd3_cosmetic_mask_mould_remake_11",
+      "namespace": "pd3",
+      "name": "Mask Mould Remake 11",
+      "entitlementType": "CONSUMABLE",
+      "useCount": 1,
+      "stackable": false,
+      "categoryPath": "/MaskMould",
+      "status": "ACTIVE",
+      "listable": true,
+      "purchasable": true,
+      "itemType": "INGAMEITEM",
+      "regionData": [
+        {
+          "price": 999,
+          "discountPercentage": 0,
+          "discountAmount": 0,
+          "discountedPrice": 999,
+          "currencyCode": "CASH",
+          "currencyType": "VIRTUAL",
+          "currencyNamespace": "pd3",
+          "purchaseAt": "2023-10-31T15:15:06.693Z",
+          "discountPurchaseAt": "2023-10-31T15:15:06.693Z"
+        }
+      ],
+      "itemQty": {},
+      "tags": [],
+      "features": [],
+      "maxCountPerUser": -1,
+      "maxCount": -1,
+      "region": "SE",
+      "language": "en-US",
+      "createdAt": "2023-11-10T05:51:54.372Z",
+      "updatedAt": "updatedattomakegitdiffseasiertoread"
+    },
+    {
+      "title": "Mask Mould Remake 2",
+      "itemId": "6666d42c3dd24edf8cc08affb36636c1",
+      "sku": "pd3_cosmetic_mask_mould_remake_2",
+      "namespace": "pd3",
+      "name": "Mask Mould Remake 2",
+      "entitlementType": "CONSUMABLE",
+      "useCount": 1,
+      "stackable": false,
+      "categoryPath": "/MaskMould",
+      "status": "ACTIVE",
+      "listable": true,
+      "purchasable": true,
+      "itemType": "INGAMEITEM",
+      "regionData": [
+        {
+          "price": 999,
+          "discountPercentage": 0,
+          "discountAmount": 0,
+          "discountedPrice": 999,
+          "currencyCode": "CASH",
+          "currencyType": "VIRTUAL",
+          "currencyNamespace": "pd3",
+          "purchaseAt": "2023-10-31T08:48:36.468Z",
+          "discountPurchaseAt": "2023-10-31T08:48:36.468Z"
+        }
+      ],
+      "itemQty": {},
+      "tags": [],
+      "features": [],
+      "maxCountPerUser": -1,
+      "maxCount": -1,
+      "region": "SE",
+      "language": "en-US",
+      "createdAt": "2023-11-10T05:51:54.393Z",
+      "updatedAt": "updatedattomakegitdiffseasiertoread"
+    },
+    {
+      "title": "Mask Mould Remake 3",
+      "itemId": "81b67d89240f48048c9b08dcc33f9c36",
+      "sku": "pd3_cosmetic_mask_mould_remake_3",
+      "namespace": "pd3",
+      "name": "Mask Mould Remake 3",
+      "entitlementType": "CONSUMABLE",
+      "useCount": 1,
+      "stackable": false,
+      "categoryPath": "/MaskMould",
+      "status": "ACTIVE",
+      "listable": true,
+      "purchasable": true,
+      "itemType": "INGAMEITEM",
+      "regionData": [
+        {
+          "price": 999,
+          "discountPercentage": 0,
+          "discountAmount": 0,
+          "discountedPrice": 999,
+          "currencyCode": "CASH",
+          "currencyType": "VIRTUAL",
+          "currencyNamespace": "pd3",
+          "purchaseAt": "2023-10-31T15:06:16.877Z",
+          "discountPurchaseAt": "2023-10-31T15:06:16.877Z"
+        }
+      ],
+      "itemQty": {},
+      "tags": [],
+      "features": [],
+      "maxCountPerUser": -1,
+      "maxCount": -1,
+      "region": "SE",
+      "language": "en-US",
+      "createdAt": "2023-11-10T05:51:54.380Z",
+      "updatedAt": "updatedattomakegitdiffseasiertoread"
+    },
+    {
+      "title": "Mask Mould Remake 4",
+      "itemId": "9cee185cc53e441992aa590c682c6e1b",
+      "sku": "pd3_cosmetic_mask_mould_remake_4",
+      "namespace": "pd3",
+      "name": "Mask Mould Remake 4",
+      "entitlementType": "CONSUMABLE",
+      "useCount": 1,
+      "stackable": false,
+      "categoryPath": "/MaskMould",
+      "status": "ACTIVE",
+      "listable": true,
+      "purchasable": true,
+      "itemType": "INGAMEITEM",
+      "regionData": [
+        {
+          "price": 999,
+          "discountPercentage": 0,
+          "discountAmount": 0,
+          "discountedPrice": 999,
+          "currencyCode": "CASH",
+          "currencyType": "VIRTUAL",
+          "currencyNamespace": "pd3",
+          "purchaseAt": "2023-10-31T15:07:18.921Z",
+          "discountPurchaseAt": "2023-10-31T15:07:18.921Z"
+        }
+      ],
+      "itemQty": {},
+      "tags": [],
+      "features": [],
+      "maxCountPerUser": -1,
+      "maxCount": -1,
+      "region": "SE",
+      "language": "en-US",
+      "createdAt": "2023-11-10T05:51:54.659Z",
+      "updatedAt": "updatedattomakegitdiffseasiertoread"
+    },
+    {
+      "title": "Mask Mould Remake 5",
+      "itemId": "37887cbd98d44e23b9ba4f71e3596d75",
+      "sku": "pd3_cosmetic_mask_mould_remake_5",
+      "namespace": "pd3",
+      "name": "Mask Mould Remake 5",
+      "entitlementType": "CONSUMABLE",
+      "useCount": 1,
+      "stackable": false,
+      "categoryPath": "/MaskMould",
+      "status": "ACTIVE",
+      "listable": true,
+      "purchasable": true,
+      "itemType": "INGAMEITEM",
+      "regionData": [
+        {
+          "price": 999,
+          "discountPercentage": 0,
+          "discountAmount": 0,
+          "discountedPrice": 999,
+          "currencyCode": "CASH",
+          "currencyType": "VIRTUAL",
+          "currencyNamespace": "pd3",
+          "purchaseAt": "2023-10-31T15:08:11.571Z",
+          "discountPurchaseAt": "2023-10-31T15:08:11.571Z"
+        }
+      ],
+      "itemQty": {},
+      "tags": [],
+      "features": [],
+      "maxCountPerUser": -1,
+      "maxCount": -1,
+      "region": "SE",
+      "language": "en-US",
+      "createdAt": "2023-11-10T05:51:54.659Z",
+      "updatedAt": "updatedattomakegitdiffseasiertoread"
+    },
+    {
+      "title": "Mask Mould Remake 6",
+      "itemId": "6b5e62ea9201468c856975385cd5f34c",
+      "sku": "pd3_cosmetic_mask_mould_remake_6",
+      "namespace": "pd3",
+      "name": "Mask Mould Remake 6",
+      "entitlementType": "CONSUMABLE",
+      "useCount": 1,
+      "stackable": false,
+      "categoryPath": "/MaskMould",
+      "status": "ACTIVE",
+      "listable": true,
+      "purchasable": true,
+      "itemType": "INGAMEITEM",
+      "regionData": [
+        {
+          "price": 999,
+          "discountPercentage": 0,
+          "discountAmount": 0,
+          "discountedPrice": 999,
+          "currencyCode": "CASH",
+          "currencyType": "VIRTUAL",
+          "currencyNamespace": "pd3",
+          "purchaseAt": "2023-10-31T15:11:18.201Z",
+          "discountPurchaseAt": "2023-10-31T15:11:18.201Z"
+        }
+      ],
+      "itemQty": {},
+      "tags": [],
+      "features": [],
+      "maxCountPerUser": -1,
+      "maxCount": -1,
+      "region": "SE",
+      "language": "en-US",
+      "createdAt": "2023-11-10T05:51:54.671Z",
+      "updatedAt": "updatedattomakegitdiffseasiertoread"
+    },
+    {
+      "title": "Mask Mould Remake 7",
+      "itemId": "2fc6953d920a4718b76e9b3c0a3acf11",
+      "sku": "pd3_cosmetic_mask_mould_remake_7",
+      "namespace": "pd3",
+      "name": "Mask Mould Remake 7",
+      "entitlementType": "CONSUMABLE",
+      "useCount": 1,
+      "stackable": false,
+      "categoryPath": "/MaskMould",
+      "status": "ACTIVE",
+      "listable": true,
+      "purchasable": true,
+      "itemType": "INGAMEITEM",
+      "regionData": [
+        {
+          "price": 999,
+          "discountPercentage": 0,
+          "discountAmount": 0,
+          "discountedPrice": 999,
+          "currencyCode": "CASH",
+          "currencyType": "VIRTUAL",
+          "currencyNamespace": "pd3",
+          "purchaseAt": "2023-10-31T15:12:04.039Z",
+          "discountPurchaseAt": "2023-10-31T15:12:04.039Z"
+        }
+      ],
+      "itemQty": {},
+      "tags": [],
+      "features": [],
+      "maxCountPerUser": -1,
+      "maxCount": -1,
+      "region": "SE",
+      "language": "en-US",
+      "createdAt": "2023-11-10T05:51:54.676Z",
+      "updatedAt": "updatedattomakegitdiffseasiertoread"
+    },
+    {
+      "title": "Mask Mould Remake 8",
+      "itemId": "61bd236692cb42459bd31c651e3d8389",
+      "sku": "pd3_cosmetic_mask_mould_remake_8",
+      "namespace": "pd3",
+      "name": "Mask Mould Remake 8",
+      "entitlementType": "CONSUMABLE",
+      "useCount": 1,
+      "stackable": false,
+      "categoryPath": "/MaskMould",
+      "status": "ACTIVE",
+      "listable": true,
+      "purchasable": true,
+      "itemType": "INGAMEITEM",
+      "regionData": [
+        {
+          "price": 999,
+          "discountPercentage": 0,
+          "discountAmount": 0,
+          "discountedPrice": 999,
+          "currencyCode": "CASH",
+          "currencyType": "VIRTUAL",
+          "currencyNamespace": "pd3",
+          "purchaseAt": "2023-10-31T15:12:56.825Z",
+          "discountPurchaseAt": "2023-10-31T15:12:56.825Z"
+        }
+      ],
+      "itemQty": {},
+      "tags": [],
+      "features": [],
+      "maxCountPerUser": -1,
+      "maxCount": -1,
+      "region": "SE",
+      "language": "en-US",
+      "createdAt": "2023-11-10T05:51:54.718Z",
+      "updatedAt": "updatedattomakegitdiffseasiertoread"
+    },
+    {
+      "title": "Mask Mould Remake 9",
+      "itemId": "14f0b55e00b040bc91a52c057e975599",
+      "sku": "pd3_cosmetic_mask_mould_remake_9",
+      "namespace": "pd3",
+      "name": "Mask Mould Remake 9",
+      "entitlementType": "CONSUMABLE",
+      "useCount": 1,
+      "stackable": false,
+      "categoryPath": "/MaskMould",
+      "status": "ACTIVE",
+      "listable": true,
+      "purchasable": true,
+      "itemType": "INGAMEITEM",
+      "regionData": [
+        {
+          "price": 999,
+          "discountPercentage": 0,
+          "discountAmount": 0,
+          "discountedPrice": 999,
+          "currencyCode": "CASH",
+          "currencyType": "VIRTUAL",
+          "currencyNamespace": "pd3",
+          "purchaseAt": "2023-10-31T15:13:40.968Z",
+          "discountPurchaseAt": "2023-10-31T15:13:40.968Z"
+        }
+      ],
+      "itemQty": {},
+      "tags": [],
+      "features": [],
+      "maxCountPerUser": -1,
+      "maxCount": -1,
+      "region": "SE",
+      "language": "en-US",
+      "createdAt": "2023-11-10T05:51:54.966Z",
       "updatedAt": "updatedattomakegitdiffseasiertoread"
     },
     {
@@ -15210,6 +16400,7 @@
           "discountPurchaseAt": "2023-03-17T15:23:16.431Z"
         }
       ],
+      "itemQty": {},
       "features": [],
       "maxCountPerUser": 1,
       "maxCount": -1,
@@ -15245,6 +16436,7 @@
           "purchaseAt": "2022-11-24T17:47:25.750Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityCommon",
         "CharacterVendor",
@@ -15285,6 +16477,7 @@
           "purchaseAt": "2022-11-24T17:54:55.746Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "InfamyLevel96",
         "RarityRare",
@@ -15325,6 +16518,7 @@
           "purchaseAt": "2022-11-24T17:55:42.050Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "InfamyLevel108",
         "RarityRare",
@@ -15365,6 +16559,7 @@
           "purchaseAt": "2022-11-24T17:57:24.001Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "InfamyLevel118",
         "RarityEpic",
@@ -15405,6 +16600,7 @@
           "purchaseAt": "2022-11-24T17:58:04.096Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "InfamyLevel129",
         "RarityEpic",
@@ -15445,6 +16641,7 @@
           "purchaseAt": "2022-11-24T17:58:42.216Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "InfamyLevel140",
         "RarityEpic",
@@ -15485,6 +16682,7 @@
           "purchaseAt": "2022-11-24T17:49:20.140Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityCommon",
         "CharacterVendor",
@@ -15525,6 +16723,7 @@
           "purchaseAt": "2022-11-24T17:50:03.868Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityCommon",
         "CharacterVendor",
@@ -15565,6 +16764,7 @@
           "purchaseAt": "2022-11-24T17:50:59.219Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityCommon",
         "CharacterVendor",
@@ -15605,6 +16805,7 @@
           "purchaseAt": "2022-11-24T17:51:37.806Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityUncommon",
         "CharacterVendor",
@@ -15645,6 +16846,7 @@
           "purchaseAt": "2022-11-24T17:52:12.731Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityUncommon",
         "CharacterVendor",
@@ -15685,6 +16887,7 @@
           "purchaseAt": "2022-11-24T17:52:44.763Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityUncommon",
         "CharacterVendor",
@@ -15725,6 +16928,7 @@
           "purchaseAt": "2022-11-24T17:53:24.403Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "InfamyLevel63",
         "RarityUncommon",
@@ -15765,6 +16969,7 @@
           "purchaseAt": "2022-11-24T17:54:02.203Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "InfamyLevel83",
         "RarityRare",
@@ -15804,6 +17009,7 @@
           "discountPurchaseAt": "2023-01-19T13:37:40.999Z"
         }
       ],
+      "itemQty": {},
       "tags": [],
       "features": [],
       "maxCountPerUser": -1,
@@ -15839,6 +17045,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [],
       "maxCountPerUser": -1,
       "maxCount": -1,
@@ -15873,6 +17080,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PreplanningAsset",
         "CombatEquipmentVendor",
@@ -15911,6 +17119,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PreplanningAsset",
         "InitialItem"
@@ -15948,6 +17157,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PreplanningAsset",
         "InitialItem"
@@ -15985,6 +17195,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PreplanningAsset",
         "InitialItem"
@@ -16022,6 +17233,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PreplanningAsset",
         "InitialItem"
@@ -16059,6 +17271,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [],
       "maxCountPerUser": -1,
       "maxCount": -1,
@@ -16092,6 +17305,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "InitialItem"
       ],
@@ -16109,7 +17323,8 @@
       "sku": "pd3_epic_cosmetic_weapon_charm_pd2promo1",
       "namespace": "pd3",
       "name": "PD2 Epic Promo Charm 1",
-      "entitlementType": "DURABLE",
+      "entitlementType": "CONSUMABLE",
+      "useCount": 1,
       "categoryPath": "/WeaponCharm",
       "status": "ACTIVE",
       "listable": true,
@@ -16138,6 +17353,7 @@
           "discountPurchaseAt": "2023-09-05T18:43:41.367Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PlatformOnly",
         "Epic",
@@ -16158,7 +17374,8 @@
       "sku": "pd3_epic_cosmetic_weapon_charm_pd2promo2",
       "namespace": "pd3",
       "name": "PD2 Epic Promo Charm 2",
-      "entitlementType": "DURABLE",
+      "entitlementType": "CONSUMABLE",
+      "useCount": 1,
       "categoryPath": "/WeaponCharm",
       "status": "ACTIVE",
       "listable": true,
@@ -16177,6 +17394,7 @@
           "discountPurchaseAt": "2023-09-06T05:25:08.170Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PlatformOnly",
         "Epic",
@@ -16197,7 +17415,8 @@
       "sku": "pd3_epic_cosmetic_weapon_charm_pd2promo3",
       "namespace": "pd3",
       "name": "PD2 Epic Promo Charm 3",
-      "entitlementType": "DURABLE",
+      "entitlementType": "CONSUMABLE",
+      "useCount": 1,
       "categoryPath": "/WeaponCharm",
       "status": "ACTIVE",
       "listable": true,
@@ -16216,6 +17435,7 @@
           "discountPurchaseAt": "2023-09-06T05:29:48.929Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PlatformOnly",
         "Epic",
@@ -16236,7 +17456,8 @@
       "sku": "pd3_epic_cosmetic_weapon_charm_pd2promo4",
       "namespace": "pd3",
       "name": "PD2 Epic Promo Charm 4",
-      "entitlementType": "DURABLE",
+      "entitlementType": "CONSUMABLE",
+      "useCount": 1,
       "categoryPath": "/WeaponCharm",
       "status": "ACTIVE",
       "listable": true,
@@ -16255,6 +17476,7 @@
           "discountPurchaseAt": "2023-09-06T05:36:48.445Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PlatformOnly",
         "Epic",
@@ -16275,7 +17497,8 @@
       "sku": "pd3_epic_cosmetic_weapon_charm_pd2promo5",
       "namespace": "pd3",
       "name": "PD2 Epic Promo Charm 5",
-      "entitlementType": "DURABLE",
+      "entitlementType": "CONSUMABLE",
+      "useCount": 1,
       "categoryPath": "/WeaponCharm",
       "status": "ACTIVE",
       "listable": true,
@@ -16294,6 +17517,7 @@
           "discountPurchaseAt": "2023-09-06T05:40:43.268Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PlatformOnly",
         "Epic",
@@ -16314,7 +17538,8 @@
       "sku": "pd3_epic_cosmetic_weapon_charm_pd2promo6",
       "namespace": "pd3",
       "name": "PD2 Epic Promo Charm 6",
-      "entitlementType": "DURABLE",
+      "entitlementType": "CONSUMABLE",
+      "useCount": 1,
       "categoryPath": "/WeaponCharm",
       "status": "ACTIVE",
       "listable": true,
@@ -16333,6 +17558,7 @@
           "discountPurchaseAt": "2023-09-06T05:44:53.495Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PlatformOnly",
         "Epic",
@@ -16372,6 +17598,7 @@
           "discountPurchaseAt": "2023-09-06T06:19:16.160Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PlatformOnly",
         "Epic",
@@ -16412,6 +17639,7 @@
           "discountPurchaseAt": "2023-09-06T06:44:51.124Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PlatformOnly",
         "Epic",
@@ -16452,6 +17680,7 @@
           "discountPurchaseAt": "2023-09-06T06:33:46.642Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PlatformOnly",
         "Epic",
@@ -16473,7 +17702,8 @@
       "sku": "pd3_playstation_cosmetic_weapon_charm_pd2promo1",
       "namespace": "pd3",
       "name": "PD2 PlayStation Promo Charm 1",
-      "entitlementType": "DURABLE",
+      "entitlementType": "CONSUMABLE",
+      "useCount": 1,
       "categoryPath": "/WeaponCharm",
       "status": "ACTIVE",
       "listable": true,
@@ -16502,6 +17732,7 @@
           "discountPurchaseAt": "2023-09-05T18:42:38.602Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PlatformOnly",
         "PlayStation",
@@ -16522,7 +17753,8 @@
       "sku": "pd3_playstation_cosmetic_weapon_charm_pd2promo2",
       "namespace": "pd3",
       "name": "PD2 PlayStation Promo Charm 2",
-      "entitlementType": "DURABLE",
+      "entitlementType": "CONSUMABLE",
+      "useCount": 1,
       "categoryPath": "/WeaponCharm",
       "status": "ACTIVE",
       "listable": true,
@@ -16541,6 +17773,7 @@
           "discountPurchaseAt": "2023-09-06T05:24:12.826Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PlatformOnly",
         "PlayStation",
@@ -16561,7 +17794,8 @@
       "sku": "pd3_playstation_cosmetic_weapon_charm_pd2promo3",
       "namespace": "pd3",
       "name": "PD2 PlayStation Promo Charm 3",
-      "entitlementType": "DURABLE",
+      "entitlementType": "CONSUMABLE",
+      "useCount": 1,
       "categoryPath": "/WeaponCharm",
       "status": "ACTIVE",
       "listable": true,
@@ -16580,6 +17814,7 @@
           "discountPurchaseAt": "2023-09-06T05:28:53.940Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PlatformOnly",
         "PlayStation",
@@ -16600,7 +17835,8 @@
       "sku": "pd3_playstation_cosmetic_weapon_charm_pd2promo4",
       "namespace": "pd3",
       "name": "PD2 PlayStation Promo Charm 4",
-      "entitlementType": "DURABLE",
+      "entitlementType": "CONSUMABLE",
+      "useCount": 1,
       "categoryPath": "/WeaponCharm",
       "status": "ACTIVE",
       "listable": true,
@@ -16619,6 +17855,7 @@
           "discountPurchaseAt": "2023-09-06T05:35:36.336Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PlatformOnly",
         "PlayStation",
@@ -16639,7 +17876,8 @@
       "sku": "pd3_playstation_cosmetic_weapon_charm_pd2promo5",
       "namespace": "pd3",
       "name": "PD2 PlayStation Promo Charm 5",
-      "entitlementType": "DURABLE",
+      "entitlementType": "CONSUMABLE",
+      "useCount": 1,
       "categoryPath": "/WeaponCharm",
       "status": "ACTIVE",
       "listable": true,
@@ -16658,6 +17896,7 @@
           "discountPurchaseAt": "2023-09-06T05:39:42.504Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PlatformOnly",
         "PlayStation",
@@ -16678,7 +17917,8 @@
       "sku": "pd3_playstation_cosmetic_weapon_charm_pd2promo6",
       "namespace": "pd3",
       "name": "PD2 PlayStation Promo Charm 6",
-      "entitlementType": "DURABLE",
+      "entitlementType": "CONSUMABLE",
+      "useCount": 1,
       "categoryPath": "/WeaponCharm",
       "status": "ACTIVE",
       "listable": true,
@@ -16697,6 +17937,7 @@
           "discountPurchaseAt": "2023-09-06T05:44:00.763Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PlatformOnly",
         "PlayStation",
@@ -16736,6 +17977,7 @@
           "discountPurchaseAt": "2023-09-06T06:18:22.360Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PlatformOnly",
         "PlayStation",
@@ -16776,6 +18018,7 @@
           "discountPurchaseAt": "2023-09-06T06:44:07.212Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PlatformOnly",
         "PlayStation",
@@ -16816,6 +18059,7 @@
           "discountPurchaseAt": "2023-09-06T06:32:59.669Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PlatformOnly",
         "PlayStation",
@@ -16866,6 +18110,7 @@
           "discountPurchaseAt": "2023-02-22T14:18:12.522Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PlatformOnly"
       ],
@@ -16884,7 +18129,8 @@
       "sku": "pd3_cosmetic_weapon_charm_pd2promo2",
       "namespace": "pd3",
       "name": "PD2 Promo Charm 2",
-      "entitlementType": "DURABLE",
+      "entitlementType": "CONSUMABLE",
+      "useCount": 1,
       "categoryPath": "/WeaponCharm",
       "status": "ACTIVE",
       "listable": true,
@@ -16913,6 +18159,7 @@
           "discountPurchaseAt": "2023-02-22T14:31:40.734Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityRare"
       ],
@@ -16931,7 +18178,8 @@
       "sku": "pd3_cosmetic_weapon_charm_pd2promo3",
       "namespace": "pd3",
       "name": "PD2 Promo Charm 3",
-      "entitlementType": "DURABLE",
+      "entitlementType": "CONSUMABLE",
+      "useCount": 1,
       "categoryPath": "/WeaponCharm",
       "status": "ACTIVE",
       "listable": true,
@@ -16960,6 +18208,7 @@
           "discountPurchaseAt": "2023-02-22T14:33:01.891Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityRare",
         "Premium"
@@ -16979,7 +18228,8 @@
       "sku": "pd3_cosmetic_weapon_charm_pd2promo4",
       "namespace": "pd3",
       "name": "PD2 Promo Charm 4",
-      "entitlementType": "DURABLE",
+      "entitlementType": "CONSUMABLE",
+      "useCount": 1,
       "categoryPath": "/WeaponCharm",
       "status": "ACTIVE",
       "listable": true,
@@ -17008,6 +18258,7 @@
           "discountPurchaseAt": "2023-02-22T14:34:29.163Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityRare",
         "Premium"
@@ -17027,7 +18278,8 @@
       "sku": "pd3_cosmetic_weapon_charm_pd2promo5",
       "namespace": "pd3",
       "name": "PD2 Promo Charm 5",
-      "entitlementType": "DURABLE",
+      "entitlementType": "CONSUMABLE",
+      "useCount": 1,
       "categoryPath": "/WeaponCharm",
       "status": "ACTIVE",
       "listable": true,
@@ -17056,6 +18308,7 @@
           "discountPurchaseAt": "2023-02-22T14:36:45.312Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityEpic",
         "Premium"
@@ -17075,7 +18328,8 @@
       "sku": "pd3_cosmetic_weapon_charm_pd2promo6",
       "namespace": "pd3",
       "name": "PD2 Promo Charm 6",
-      "entitlementType": "DURABLE",
+      "entitlementType": "CONSUMABLE",
+      "useCount": 1,
       "categoryPath": "/WeaponCharm",
       "status": "ACTIVE",
       "listable": true,
@@ -17104,6 +18358,7 @@
           "discountPurchaseAt": "2023-02-22T14:37:28.832Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityEpic",
         "Premium"
@@ -17152,6 +18407,7 @@
           "discountPurchaseAt": "2023-02-22T15:12:39.722Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityRare",
         "Premium"
@@ -17200,6 +18456,7 @@
           "discountPurchaseAt": "2023-02-22T15:10:36.725Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityEpic",
         "Premium"
@@ -17248,6 +18505,7 @@
           "discountPurchaseAt": "2023-02-22T15:15:09.497Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityRare",
         "Premium"
@@ -17267,7 +18525,8 @@
       "sku": "pd3_steam_cosmetic_weapon_charm_pd2promo1",
       "namespace": "pd3",
       "name": "PD2 Steam Promo Charm 1",
-      "entitlementType": "DURABLE",
+      "entitlementType": "CONSUMABLE",
+      "useCount": 1,
       "categoryPath": "/WeaponCharm",
       "status": "ACTIVE",
       "listable": true,
@@ -17286,6 +18545,7 @@
           "discountPurchaseAt": "2023-09-05T18:39:30.263Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PlatformOnly",
         "Steam",
@@ -17306,7 +18566,8 @@
       "sku": "pd3_steam_cosmetic_weapon_charm_pd2promo2",
       "namespace": "pd3",
       "name": "PD2 Steam Promo Charm 2",
-      "entitlementType": "DURABLE",
+      "entitlementType": "CONSUMABLE",
+      "useCount": 1,
       "categoryPath": "/WeaponCharm",
       "status": "ACTIVE",
       "listable": true,
@@ -17325,6 +18586,7 @@
           "discountPurchaseAt": "2023-09-06T05:21:35.841Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PlatformOnly",
         "Steam",
@@ -17345,7 +18607,8 @@
       "sku": "pd3_steam_cosmetic_weapon_charm_pd2promo3",
       "namespace": "pd3",
       "name": "PD2 Steam Promo Charm 3",
-      "entitlementType": "DURABLE",
+      "entitlementType": "CONSUMABLE",
+      "useCount": 1,
       "categoryPath": "/WeaponCharm",
       "status": "ACTIVE",
       "listable": true,
@@ -17364,6 +18627,7 @@
           "discountPurchaseAt": "2023-09-06T05:26:36.780Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PlatformOnly",
         "Steam",
@@ -17384,7 +18648,8 @@
       "sku": "pd3_steam_cosmetic_weapon_charm_pd2promo4",
       "namespace": "pd3",
       "name": "PD2 Steam Promo Charm 4",
-      "entitlementType": "DURABLE",
+      "entitlementType": "CONSUMABLE",
+      "useCount": 1,
       "categoryPath": "/WeaponCharm",
       "status": "ACTIVE",
       "listable": true,
@@ -17403,6 +18668,7 @@
           "discountPurchaseAt": "2023-09-06T05:32:59.917Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PlatformOnly",
         "Steam",
@@ -17423,7 +18689,8 @@
       "sku": "pd3_steam_cosmetic_weapon_charm_pd2promo5",
       "namespace": "pd3",
       "name": "PD2 Steam Promo Charm 5",
-      "entitlementType": "DURABLE",
+      "entitlementType": "CONSUMABLE",
+      "useCount": 1,
       "categoryPath": "/WeaponCharm",
       "status": "ACTIVE",
       "listable": true,
@@ -17442,6 +18709,7 @@
           "discountPurchaseAt": "2023-09-06T05:37:54.097Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PlatformOnly",
         "RarityEpic",
@@ -17462,7 +18730,8 @@
       "sku": "pd3_steam_cosmetic_weapon_charm_pd2promo6",
       "namespace": "pd3",
       "name": "PD2 Steam Promo Charm 6",
-      "entitlementType": "DURABLE",
+      "entitlementType": "CONSUMABLE",
+      "useCount": 1,
       "categoryPath": "/WeaponCharm",
       "status": "ACTIVE",
       "listable": true,
@@ -17481,6 +18750,7 @@
           "discountPurchaseAt": "2023-09-06T05:41:58.473Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PlatformOnly",
         "RarityEpic",
@@ -17520,6 +18790,7 @@
           "discountPurchaseAt": "2023-09-06T06:14:41.424Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PlatformOnly",
         "RarityRare",
@@ -17560,6 +18831,7 @@
           "discountPurchaseAt": "2023-09-06T06:42:21.061Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PlatformOnly",
         "RarityEpic",
@@ -17600,6 +18872,7 @@
           "discountPurchaseAt": "2023-09-06T06:31:03.519Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PlatformOnly",
         "RarityRare",
@@ -17621,7 +18894,8 @@
       "sku": "pd3_xbox_cosmetic_weapon_charm_pd2promo1",
       "namespace": "pd3",
       "name": "PD2 XBox Promo Charm 1 ",
-      "entitlementType": "DURABLE",
+      "entitlementType": "CONSUMABLE",
+      "useCount": 1,
       "categoryPath": "/WeaponCharm",
       "status": "ACTIVE",
       "listable": true,
@@ -17650,6 +18924,7 @@
           "discountPurchaseAt": "2023-09-05T18:41:29.205Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PlatformOnly",
         "RarityRare",
@@ -17670,7 +18945,8 @@
       "sku": "pd3_xbox_cosmetic_weapon_charm_pd2promo2",
       "namespace": "pd3",
       "name": "PD2 XBox Promo Charm 2",
-      "entitlementType": "DURABLE",
+      "entitlementType": "CONSUMABLE",
+      "useCount": 1,
       "categoryPath": "/WeaponCharm",
       "status": "ACTIVE",
       "listable": true,
@@ -17689,6 +18965,7 @@
           "discountPurchaseAt": "2023-09-06T05:22:50.612Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PlatformOnly",
         "RarityRare",
@@ -17709,7 +18986,8 @@
       "sku": "pd3_xbox_cosmetic_weapon_charm_pd2promo3",
       "namespace": "pd3",
       "name": "PD2 XBox Promo Charm 3",
-      "entitlementType": "DURABLE",
+      "entitlementType": "CONSUMABLE",
+      "useCount": 1,
       "categoryPath": "/WeaponCharm",
       "status": "ACTIVE",
       "listable": true,
@@ -17728,6 +19006,7 @@
           "discountPurchaseAt": "2023-09-06T05:27:24.631Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PlatformOnly",
         "RarityRare",
@@ -17748,7 +19027,8 @@
       "sku": "pd3_xbox_cosmetic_weapon_charm_pd2promo4",
       "namespace": "pd3",
       "name": "PD2 XBox Promo Charm 4",
-      "entitlementType": "DURABLE",
+      "entitlementType": "CONSUMABLE",
+      "useCount": 1,
       "categoryPath": "/WeaponCharm",
       "status": "ACTIVE",
       "listable": true,
@@ -17767,6 +19047,7 @@
           "discountPurchaseAt": "2023-09-06T05:34:10.999Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PlatformOnly",
         "RarityRare",
@@ -17787,7 +19068,8 @@
       "sku": "pd3_xbox_cosmetic_weapon_charm_pd2promo5",
       "namespace": "pd3",
       "name": "PD2 XBox Promo Charm 5",
-      "entitlementType": "DURABLE",
+      "entitlementType": "CONSUMABLE",
+      "useCount": 1,
       "categoryPath": "/WeaponCharm",
       "status": "ACTIVE",
       "listable": true,
@@ -17806,6 +19088,7 @@
           "discountPurchaseAt": "2023-09-06T05:38:44.582Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PlatformOnly",
         "RarityEpic",
@@ -17826,7 +19109,8 @@
       "sku": "pd3_xbox_cosmetic_weapon_charm_pd2promo6",
       "namespace": "pd3",
       "name": "PD2 XBox Promo Charm 6",
-      "entitlementType": "DURABLE",
+      "entitlementType": "CONSUMABLE",
+      "useCount": 1,
       "categoryPath": "/WeaponCharm",
       "status": "ACTIVE",
       "listable": true,
@@ -17845,6 +19129,7 @@
           "discountPurchaseAt": "2023-09-06T05:43:02.428Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PlatformOnly",
         "RarityEpic",
@@ -17884,6 +19169,7 @@
           "discountPurchaseAt": "2023-09-06T06:17:29.636Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PlatformOnly",
         "RarityRare",
@@ -17924,6 +19210,7 @@
           "discountPurchaseAt": "2023-09-06T06:43:19.371Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PlatformOnly",
         "RarityEpic",
@@ -17964,6 +19251,7 @@
           "discountPurchaseAt": "2023-09-06T06:32:03.010Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PlatformOnly",
         "RarityRare",
@@ -18005,6 +19293,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "boundItemIds": [],
       "tags": [
         "GoldExchangeVendor",
@@ -18048,6 +19337,7 @@
           "discountPurchaseAt": "2023-02-10T15:04:43.863Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityUncommon",
         "CharacterVendor",
@@ -18087,6 +19377,7 @@
           "purchaseAt": "2023-01-13T18:00:00.000Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CombatEquipmentVendor",
         "InitialItem"
@@ -18124,6 +19415,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CombatEquipmentVendor",
         "InfamyLevel59"
@@ -18161,6 +19453,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CombatEquipmentVendor",
         "InfamyLevel38"
@@ -18198,6 +19491,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "boundItemIds": [],
       "tags": [
         "CombatEquipmentVendor",
@@ -18236,6 +19530,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PreplanningAsset",
         "InitialItem"
@@ -18275,6 +19570,7 @@
           "discountPurchaseAt": "2023-03-17T15:28:15.941Z"
         }
       ],
+      "itemQty": {},
       "features": [],
       "maxCountPerUser": 1,
       "maxCount": -1,
@@ -18310,6 +19606,7 @@
           "purchaseAt": "2023-02-07T13:36:50.276Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "InfamyLevel131",
         "RarityUncommon",
@@ -18347,9 +19644,11 @@
           "currencyCode": "GOLD",
           "currencyType": "VIRTUAL",
           "currencyNamespace": "pd3",
-          "purchaseAt": "2023-05-29T08:44:32.331Z"
+          "purchaseAt": "2023-05-29T08:44:32.331Z",
+          "discountPurchaseAt": "2023-05-29T08:44:32.331Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityEpic",
         "CharacterVendor",
@@ -18387,9 +19686,11 @@
           "currencyCode": "GOLD",
           "currencyType": "VIRTUAL",
           "currencyNamespace": "pd3",
-          "purchaseAt": "2023-05-29T08:46:15.936Z"
+          "purchaseAt": "2023-05-29T08:46:15.936Z",
+          "discountPurchaseAt": "2023-05-29T08:46:15.936Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "InfamyLevel150",
         "RarityEpic",
@@ -18430,6 +19731,7 @@
           "purchaseAt": "2023-02-07T13:38:58.195Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityUncommon",
         "CharacterVendor",
@@ -18470,6 +19772,7 @@
           "purchaseAt": "2023-02-07T13:40:23.305Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityRare",
         "CharacterVendor",
@@ -18510,6 +19813,7 @@
           "purchaseAt": "2023-02-07T13:41:49.009Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityRare",
         "CharacterVendor",
@@ -18547,9 +19851,11 @@
           "currencyCode": "GOLD",
           "currencyType": "VIRTUAL",
           "currencyNamespace": "pd3",
-          "purchaseAt": "2023-02-07T13:43:00.880Z"
+          "purchaseAt": "2023-02-07T13:43:00.880Z",
+          "discountPurchaseAt": "2023-02-07T13:43:00.880Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityEpic",
         "CharacterVendor",
@@ -18587,9 +19893,11 @@
           "currencyCode": "GOLD",
           "currencyType": "VIRTUAL",
           "currencyNamespace": "pd3",
-          "purchaseAt": "2023-02-07T13:43:57.366Z"
+          "purchaseAt": "2023-02-07T13:43:57.366Z",
+          "discountPurchaseAt": "2023-02-07T13:43:57.367Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityEpic",
         "CharacterVendor",
@@ -18627,9 +19935,11 @@
           "currencyCode": "GOLD",
           "currencyType": "VIRTUAL",
           "currencyNamespace": "pd3",
-          "purchaseAt": "2023-05-29T08:34:17.381Z"
+          "purchaseAt": "2023-05-29T08:34:17.381Z",
+          "discountPurchaseAt": "2023-05-29T08:34:17.381Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityEpic",
         "CharacterVendor",
@@ -18667,9 +19977,11 @@
           "currencyCode": "GOLD",
           "currencyType": "VIRTUAL",
           "currencyNamespace": "pd3",
-          "purchaseAt": "2023-05-29T08:36:07.950Z"
+          "purchaseAt": "2023-05-29T08:36:07.950Z",
+          "discountPurchaseAt": "2023-05-29T08:36:07.950Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityEpic",
         "CharacterVendor",
@@ -18707,9 +20019,11 @@
           "currencyCode": "GOLD",
           "currencyType": "VIRTUAL",
           "currencyNamespace": "pd3",
-          "purchaseAt": "2023-05-29T08:43:14.138Z"
+          "purchaseAt": "2023-05-29T08:43:14.138Z",
+          "discountPurchaseAt": "2023-05-29T08:43:14.138Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityEpic",
         "CharacterVendor",
@@ -18745,10 +20059,11 @@
           "currencyCode": "CRED",
           "currencyType": "VIRTUAL",
           "currencyNamespace": "pd3",
-          "purchaseAt": "2023-09-05T18:33:59.323Z",
-          "discountPurchaseAt": "2023-09-05T18:33:59.323Z"
+          "purchaseAt": "2023-09-03T11:47:15.874Z",
+          "discountPurchaseAt": "2023-09-03T11:47:15.874Z"
         }
       ],
+      "itemQty": {},
       "boundItemIds": [
         "957560277d0f484390817596cb6f6792"
       ],
@@ -18791,6 +20106,7 @@
           "discountPurchaseAt": "2023-03-17T15:31:21.813Z"
         }
       ],
+      "itemQty": {},
       "boundItemIds": [
         "cf30d4935678462fa197ad55bf5045cd"
       ],
@@ -18831,6 +20147,7 @@
           "discountPurchaseAt": "2023-09-06T13:42:54.042Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PlatformOnly",
         "Epic",
@@ -18846,6 +20163,8 @@
     },
     {
       "title": "Premium Mask - Collector's Edition PlayStation",
+      "description": "-",
+      "longDescription": "-",
       "itemId": "6f756438841e49bca982e456afda3460",
       "baseAppId": "",
       "sku": "pd3_playstation_cosmetic_mask_premium_collectoredition",
@@ -18870,6 +20189,7 @@
           "discountPurchaseAt": "2023-09-06T13:42:02.927Z"
         }
       ],
+      "itemQty": {},
       "boundItemIds": [
         "ae3b3f0551a0487595e3b702d1107960"
       ],
@@ -18912,6 +20232,7 @@
           "discountPurchaseAt": "2023-09-06T13:40:00.996Z"
         }
       ],
+      "itemQty": {},
       "boundItemIds": [
         "d02054037d174688ab9b27514e6e3548"
       ],
@@ -18954,6 +20275,7 @@
           "discountPurchaseAt": "2023-09-06T13:41:13.958Z"
         }
       ],
+      "itemQty": {},
       "boundItemIds": [
         "a5c8d73ba9a4450a820673b31de0ffae"
       ],
@@ -18996,6 +20318,7 @@
           "discountPurchaseAt": "2023-03-17T15:34:00.971Z"
         }
       ],
+      "itemQty": {},
       "boundItemIds": [
         "ce54b97b24184553ae56f1ffc3d54363"
       ],
@@ -19036,6 +20359,7 @@
           "discountPurchaseAt": "2023-09-06T13:03:00.253Z"
         }
       ],
+      "itemQty": {},
       "boundItemIds": [
         "6cce475cf54b4d0090df7e6df40170aa"
       ],
@@ -19078,6 +20402,7 @@
           "discountPurchaseAt": "2023-09-06T13:02:06.762Z"
         }
       ],
+      "itemQty": {},
       "boundItemIds": [
         "ec4e47fbeb9243a0b965f447ec6e10d5"
       ],
@@ -19120,6 +20445,7 @@
           "discountPurchaseAt": "2023-09-06T13:00:07.816Z"
         }
       ],
+      "itemQty": {},
       "boundItemIds": [
         "e29db70296e14583a91a9126d363d780"
       ],
@@ -19162,6 +20488,7 @@
           "discountPurchaseAt": "2023-09-07T16:36:46.883Z"
         }
       ],
+      "itemQty": {},
       "boundItemIds": [
         "6f46ee17db244f36bc6cc977609d8274"
       ],
@@ -19205,6 +20532,7 @@
           "discountPurchaseAt": "2023-05-31T11:35:42.046Z"
         }
       ],
+      "itemQty": {},
       "boundItemIds": [
         "37b4dc234ae4491e8b22230a743b31b6"
       ],
@@ -19245,6 +20573,7 @@
           "discountPurchaseAt": "2023-09-06T13:25:25.236Z"
         }
       ],
+      "itemQty": {},
       "boundItemIds": [],
       "tags": [
         "PlatformOnly",
@@ -19285,6 +20614,7 @@
           "discountPurchaseAt": "2023-09-06T13:24:28.508Z"
         }
       ],
+      "itemQty": {},
       "boundItemIds": [],
       "tags": [
         "PlatformOnly",
@@ -19325,6 +20655,7 @@
           "discountPurchaseAt": "2023-09-06T13:22:43.627Z"
         }
       ],
+      "itemQty": {},
       "boundItemIds": [],
       "tags": [
         "PlatformOnly",
@@ -19365,6 +20696,7 @@
           "discountPurchaseAt": "2023-09-06T13:23:33.173Z"
         }
       ],
+      "itemQty": {},
       "boundItemIds": [],
       "tags": [
         "PlatformOnly",
@@ -19405,6 +20737,7 @@
           "discountPurchaseAt": "2023-02-07T12:39:19.237Z"
         }
       ],
+      "itemQty": {},
       "boundItemIds": [
         "5f0e2f433fe44a6ca51445bbd4d670f7"
       ],
@@ -19448,6 +20781,7 @@
           "discountPurchaseAt": "2023-02-07T12:40:04.284Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "Premium",
         "RarityLegendary"
@@ -19488,6 +20822,7 @@
           "discountPurchaseAt": "2023-02-07T12:41:48.427Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityEpic",
         "Premium"
@@ -19522,10 +20857,11 @@
           "currencyCode": "CRED",
           "currencyType": "VIRTUAL",
           "currencyNamespace": "pd3",
-          "purchaseAt": "2023-09-14T22:53:24.737Z",
-          "discountPurchaseAt": "2023-09-14T22:53:24.737Z"
+          "purchaseAt": "2023-10-24T11:52:53.320Z",
+          "discountPurchaseAt": "2023-10-24T11:52:53.320Z"
         }
       ],
+      "itemQty": {},
       "boundItemIds": [
         "3c49d557e1b0440fa75e11bcede06d94"
       ],
@@ -19564,10 +20900,11 @@
           "currencyCode": "CRED",
           "currencyType": "VIRTUAL",
           "currencyNamespace": "pd3",
-          "purchaseAt": "2023-09-05T18:29:17.186Z",
-          "discountPurchaseAt": "2023-09-05T18:29:17.186Z"
+          "purchaseAt": "2023-09-03T11:42:33.200Z",
+          "discountPurchaseAt": "2023-09-03T11:42:33.200Z"
         }
       ],
+      "itemQty": {},
       "boundItemIds": [],
       "tags": [
         "PlatformOnly",
@@ -19608,6 +20945,7 @@
           "discountPurchaseAt": "2023-03-17T15:37:17.674Z"
         }
       ],
+      "itemQty": {},
       "boundItemIds": [
         "ce54b97b24184553ae56f1ffc3d54363"
       ],
@@ -19648,6 +20986,7 @@
           "discountPurchaseAt": "2023-09-06T12:55:34.624Z"
         }
       ],
+      "itemQty": {},
       "boundItemIds": [
         "e29db70296e14583a91a9126d363d780"
       ],
@@ -19690,6 +21029,7 @@
           "discountPurchaseAt": "2023-09-06T12:58:52.131Z"
         }
       ],
+      "itemQty": {},
       "boundItemIds": [
         "6cce475cf54b4d0090df7e6df40170aa"
       ],
@@ -19732,6 +21072,7 @@
           "discountPurchaseAt": "2023-09-06T12:58:01.478Z"
         }
       ],
+      "itemQty": {},
       "boundItemIds": [
         "ec4e47fbeb9243a0b965f447ec6e10d5"
       ],
@@ -19774,6 +21115,7 @@
           "discountPurchaseAt": "2023-09-06T12:56:42.410Z"
         }
       ],
+      "itemQty": {},
       "boundItemIds": [
         "6f46ee17db244f36bc6cc977609d8274"
       ],
@@ -19818,6 +21160,7 @@
           "discountPurchaseAt": "2023-02-07T16:51:44.752Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityEpic",
         "Premium"
@@ -19858,6 +21201,7 @@
           "discountPurchaseAt": "2023-02-07T16:52:36.463Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityEpic",
         "Premium"
@@ -19897,6 +21241,7 @@
           "purchaseAt": "2023-02-07T16:53:29.773Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "Premium",
         "RarityLegendary"
@@ -19936,6 +21281,7 @@
           "purchaseAt": "2023-02-07T16:54:35.515Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "Premium",
         "RarityLegendary"
@@ -19975,6 +21321,7 @@
           "purchaseAt": "2023-02-07T16:55:22.984Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityEpic",
         "Premium"
@@ -20014,6 +21361,7 @@
           "purchaseAt": "2023-02-07T16:56:17.614Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityEpic",
         "Premium"
@@ -20048,17 +21396,18 @@
           "currencyCode": "CRED",
           "currencyType": "VIRTUAL",
           "currencyNamespace": "pd3",
-          "purchaseAt": "2023-09-05T18:31:21.273Z",
-          "discountPurchaseAt": "2023-09-05T18:31:21.273Z"
+          "purchaseAt": "2023-09-03T11:44:47.636Z",
+          "discountPurchaseAt": "2023-09-03T11:44:47.636Z"
         }
       ],
+      "itemQty": {},
       "boundItemIds": [
         "0863f6d764a249649ef49545e3b9e4bb"
       ],
       "tags": [
         "PlatformOnly",
-        "XBox",
-        "Premium"
+        "Premium",
+        "XBox"
       ],
       "features": [],
       "maxCountPerUser": 1,
@@ -20103,6 +21452,7 @@
           "purchaseAt": "2023-01-17T15:29:30.399Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "Premium"
       ],
@@ -20140,6 +21490,7 @@
           "discountPurchaseAt": "2023-09-06T07:08:03.957Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PlatformOnly",
         "Epic",
@@ -20179,6 +21530,7 @@
           "discountPurchaseAt": "2023-09-06T07:07:05.193Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PlatformOnly",
         "PlayStation",
@@ -20218,6 +21570,7 @@
           "discountPurchaseAt": "2023-09-06T06:53:11.526Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PlatformOnly",
         "Premium",
@@ -20256,6 +21609,7 @@
           "purchaseAt": "2023-01-02T12:37:22.842Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CombatEquipmentVendor",
         "PriceProgression0",
@@ -20294,6 +21648,7 @@
           "purchaseAt": "2023-01-02T12:55:03.040Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CombatEquipmentVendor",
         "PriceProgression1",
@@ -20332,6 +21687,7 @@
           "purchaseAt": "2023-01-02T13:19:32.838Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PriceProgression10",
         "CombatEquipmentVendor",
@@ -20370,6 +21726,7 @@
           "purchaseAt": "2023-01-02T13:02:20.280Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CombatEquipmentVendor",
         "PriceProgression2",
@@ -20408,6 +21765,7 @@
           "purchaseAt": "2023-01-02T13:04:01.431Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CombatEquipmentVendor",
         "PriceProgression3",
@@ -20446,6 +21804,7 @@
           "purchaseAt": "2023-01-02T13:05:23.919Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CombatEquipmentVendor",
         "PriceProgression4",
@@ -20484,6 +21843,7 @@
           "purchaseAt": "2023-01-02T13:06:45.319Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CombatEquipmentVendor",
         "PriceProgression5",
@@ -20522,6 +21882,7 @@
           "purchaseAt": "2023-01-02T13:08:20.374Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CombatEquipmentVendor",
         "PriceProgression6",
@@ -20560,6 +21921,7 @@
           "purchaseAt": "2023-01-02T13:12:33.046Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CombatEquipmentVendor",
         "PriceProgression7",
@@ -20598,6 +21960,7 @@
           "purchaseAt": "2023-01-02T13:14:55.942Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CombatEquipmentVendor",
         "PriceProgression8",
@@ -20636,6 +21999,7 @@
           "purchaseAt": "2023-01-02T13:18:14.254Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CombatEquipmentVendor",
         "PriceProgression9",
@@ -20675,6 +22039,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PreplanningAsset",
         "InitialItem"
@@ -20712,6 +22077,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "boundItemIds": [],
       "tags": [
         "CombatEquipmentVendor",
@@ -20749,6 +22115,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "boundItemIds": [],
       "tags": [
         "InfamyLevel10",
@@ -20787,6 +22154,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CombatEquipmentVendor",
         "InfamyLevel29"
@@ -20823,6 +22191,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "InfamyLevel65",
         "CombatEquipmentVendor"
@@ -20860,6 +22229,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CombatEquipmentVendor",
         "InfamyLevel18"
@@ -20896,6 +22266,7 @@
           "purchaseAt": "2023-01-02T13:22:42.285Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CombatEquipmentVendor",
         "PriceProgression0",
@@ -20934,6 +22305,7 @@
           "purchaseAt": "2023-01-02T13:23:53.886Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CombatEquipmentVendor",
         "PriceProgression1",
@@ -20972,6 +22344,7 @@
           "purchaseAt": "2023-01-02T13:40:17.820Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PriceProgression10",
         "CombatEquipmentVendor",
@@ -21010,6 +22383,7 @@
           "purchaseAt": "2023-01-02T13:27:51.629Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CombatEquipmentVendor",
         "PriceProgression2",
@@ -21048,6 +22422,7 @@
           "purchaseAt": "2023-01-02T13:28:57.749Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CombatEquipmentVendor",
         "PriceProgression3",
@@ -21086,6 +22461,7 @@
           "purchaseAt": "2023-01-02T13:32:55.213Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CombatEquipmentVendor",
         "PriceProgression4",
@@ -21124,6 +22500,7 @@
           "purchaseAt": "2023-01-02T13:34:22.397Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CombatEquipmentVendor",
         "PriceProgression5",
@@ -21162,6 +22539,7 @@
           "purchaseAt": "2023-01-02T13:35:44.460Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CombatEquipmentVendor",
         "PriceProgression6",
@@ -21200,6 +22578,7 @@
           "purchaseAt": "2023-01-02T13:36:44.437Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CombatEquipmentVendor",
         "PriceProgression7",
@@ -21238,6 +22617,7 @@
           "purchaseAt": "2023-01-02T13:38:13.860Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CombatEquipmentVendor",
         "PriceProgression8",
@@ -21276,6 +22656,7 @@
           "purchaseAt": "2023-01-02T13:39:17.292Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CombatEquipmentVendor",
         "PriceProgression9",
@@ -21315,6 +22696,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PreplanningAsset",
         "InitialItem"
@@ -21352,6 +22734,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [],
       "maxCountPerUser": -1,
       "maxCount": -1,
@@ -21386,6 +22769,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "InfamyLevel43",
         "CombatEquipmentVendor"
@@ -21422,6 +22806,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CombatEquipmentVendor",
         "InfamyLevel2"
@@ -21459,6 +22844,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "InitialItem"
       ],
@@ -21495,6 +22881,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PreplanningAsset",
         "InitialItem"
@@ -21533,6 +22920,7 @@
           "purchaseAt": "2022-11-24T13:52:37.909Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityCommon",
         "CharacterVendor",
@@ -21573,6 +22961,7 @@
           "purchaseAt": "2022-11-24T14:05:18.673Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityUncommon",
         "CharacterVendor",
@@ -21613,6 +23002,7 @@
           "purchaseAt": "2022-11-24T14:06:34.296Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityUncommon",
         "CharacterVendor",
@@ -21653,6 +23043,7 @@
           "purchaseAt": "2022-11-24T14:07:24.500Z"
         }
       ],
+      "itemQty": {},
       "boundItemIds": [
         "e005bc343c254adb9855ef1b7effc751"
       ],
@@ -21696,6 +23087,7 @@
           "purchaseAt": "2022-11-24T14:08:16.185Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityUncommon",
         "CharacterVendor",
@@ -21736,6 +23128,7 @@
           "purchaseAt": "2022-11-24T14:09:03.200Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityUncommon",
         "CharacterVendor",
@@ -21776,6 +23169,7 @@
           "purchaseAt": "2022-11-24T14:09:59.224Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityUncommon",
         "CharacterVendor",
@@ -21816,6 +23210,7 @@
           "purchaseAt": "2022-11-24T14:16:43.921Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "InfamyLevel8",
         "RarityRare",
@@ -21856,6 +23251,7 @@
           "purchaseAt": "2022-11-24T14:18:09.601Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityRare",
         "CharacterVendor",
@@ -21896,6 +23292,7 @@
           "purchaseAt": "2022-11-24T14:19:25.417Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityRare",
         "CharacterVendor",
@@ -21936,6 +23333,7 @@
           "purchaseAt": "2022-11-24T14:20:11.321Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityRare",
         "CharacterVendor",
@@ -21976,6 +23374,7 @@
           "purchaseAt": "2022-11-24T13:55:49.288Z"
         }
       ],
+      "itemQty": {},
       "boundItemIds": [
         "e005bc343c254adb9855ef1b7effc751"
       ],
@@ -22019,6 +23418,7 @@
           "purchaseAt": "2022-11-24T14:21:07.097Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "InfamyLevel20",
         "RarityRare",
@@ -22059,6 +23459,7 @@
           "purchaseAt": "2022-11-24T14:21:45.808Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityRare",
         "CharacterVendor",
@@ -22099,6 +23500,7 @@
           "purchaseAt": "2022-11-24T14:22:17.560Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityRare",
         "CharacterVendor",
@@ -22139,6 +23541,7 @@
           "purchaseAt": "2022-11-24T14:23:09.521Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityRare",
         "CharacterVendor",
@@ -22179,6 +23582,7 @@
           "purchaseAt": "2022-11-24T14:23:44.064Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "InfamyLevel120",
         "RarityEpic",
@@ -22219,6 +23623,7 @@
           "purchaseAt": "2022-11-24T14:24:39.992Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "InfamyLevel72",
         "RarityEpic",
@@ -22258,6 +23663,7 @@
           "purchaseAt": "2022-11-24T14:25:21.601Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "InfamyLevel74",
         "RarityEpic",
@@ -22298,6 +23704,7 @@
           "purchaseAt": "2022-11-24T14:25:59.825Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityEpic",
         "InfamyLevel81",
@@ -22338,6 +23745,7 @@
           "purchaseAt": "2022-11-24T14:26:34.121Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityEpic",
         "CharacterVendor",
@@ -22378,6 +23786,7 @@
           "purchaseAt": "2022-11-24T14:27:09.729Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "InfamyLevel87",
         "RarityEpic",
@@ -22418,6 +23827,7 @@
           "purchaseAt": "2022-11-24T13:57:55.880Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityCommon",
         "CharacterVendor",
@@ -22458,6 +23868,7 @@
           "purchaseAt": "2022-11-24T14:27:40.137Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityEpic",
         "InfamyLevel93",
@@ -22498,6 +23909,7 @@
           "purchaseAt": "2022-11-24T14:28:13.329Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "InfamyLevel95",
         "RarityEpic",
@@ -22538,6 +23950,7 @@
           "purchaseAt": "2022-11-24T14:29:54.692Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityUncommon",
         "CharacterVendor",
@@ -22578,6 +23991,7 @@
           "purchaseAt": "2023-02-17T14:13:26.090Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "InfamyLevel30",
         "RarityRare",
@@ -22618,6 +24032,7 @@
           "purchaseAt": "2023-02-17T14:14:37.063Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "InfamyLevel32",
         "RarityRare",
@@ -22658,6 +24073,7 @@
           "purchaseAt": "2023-02-17T14:15:22.975Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityRare",
         "CharacterVendor",
@@ -22698,6 +24114,7 @@
           "purchaseAt": "2023-02-17T14:16:10.358Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityRare",
         "CharacterVendor",
@@ -22738,6 +24155,7 @@
           "purchaseAt": "2023-02-17T14:17:14.076Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "InfamyLevel42",
         "RarityRare",
@@ -22778,6 +24196,7 @@
           "purchaseAt": "2022-11-24T13:59:00.440Z"
         }
       ],
+      "itemQty": {},
       "boundItemIds": [
         "e005bc343c254adb9855ef1b7effc751"
       ],
@@ -22821,6 +24240,7 @@
           "purchaseAt": "2023-02-17T14:18:31.520Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityRare",
         "CharacterVendor",
@@ -22861,6 +24281,7 @@
           "purchaseAt": "2023-02-17T14:19:36.552Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityRare",
         "CharacterVendor",
@@ -22901,6 +24322,7 @@
           "purchaseAt": "2023-02-17T14:20:33.942Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "InfamyLevel51",
         "RarityRare",
@@ -22941,6 +24363,7 @@
           "purchaseAt": "2023-02-17T14:21:20.318Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityRare",
         "CharacterVendor",
@@ -22981,6 +24404,7 @@
           "purchaseAt": "2023-02-17T14:22:19.509Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "InfamyLevel60",
         "RarityRare",
@@ -23021,6 +24445,7 @@
           "purchaseAt": "2023-02-17T14:23:26.119Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "InfamyLevel61",
         "RarityRare",
@@ -23061,6 +24486,7 @@
           "purchaseAt": "2023-02-17T14:24:33.152Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "InfamyLevel64",
         "RarityRare",
@@ -23101,6 +24527,7 @@
           "purchaseAt": "2023-02-17T14:25:52.975Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "InfamyLevel98",
         "RarityEpic",
@@ -23141,6 +24568,7 @@
           "purchaseAt": "2023-02-17T14:26:54.117Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityEpic",
         "CharacterVendor",
@@ -23181,6 +24609,7 @@
           "purchaseAt": "2023-02-17T14:28:00.459Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityEpic",
         "CharacterVendor",
@@ -23221,6 +24650,7 @@
           "purchaseAt": "2022-11-24T13:59:52.000Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityCommon",
         "CharacterVendor",
@@ -23261,6 +24691,7 @@
           "purchaseAt": "2023-02-17T14:28:56.266Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityEpic",
         "InfamyLevel109",
@@ -23301,6 +24732,7 @@
           "purchaseAt": "2023-02-17T14:29:58.448Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityEpic",
         "CharacterVendor",
@@ -23341,6 +24773,7 @@
           "purchaseAt": "2023-02-17T14:31:05.279Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityEpic",
         "CharacterVendor",
@@ -23381,6 +24814,7 @@
           "purchaseAt": "2023-02-17T14:32:22.278Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityEpic",
         "CharacterVendor",
@@ -23421,6 +24855,7 @@
           "purchaseAt": "2023-02-17T14:33:54.810Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityEpic",
         "CharacterVendor",
@@ -23461,6 +24896,7 @@
           "purchaseAt": "2023-02-17T14:35:09.705Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityEpic",
         "CharacterVendor",
@@ -23501,6 +24937,7 @@
           "purchaseAt": "2023-02-17T14:35:50.088Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityEpic",
         "CharacterVendor",
@@ -23541,6 +24978,7 @@
           "purchaseAt": "2023-02-17T14:36:37.598Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityEpic",
         "CharacterVendor",
@@ -23581,6 +25019,7 @@
           "purchaseAt": "2023-02-17T14:48:12.231Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "InfamyLevel141",
         "RarityEpic",
@@ -23621,6 +25060,7 @@
           "purchaseAt": "2022-11-24T14:00:57.553Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityCommon",
         "CharacterVendor",
@@ -23661,6 +25101,7 @@
           "purchaseAt": "2022-11-24T14:01:39.300Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityCommon",
         "CharacterVendor",
@@ -23701,6 +25142,7 @@
           "purchaseAt": "2022-11-24T14:02:21.272Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityCommon",
         "CharacterVendor",
@@ -23741,6 +25183,7 @@
           "purchaseAt": "2022-11-24T14:04:32.833Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityUncommon",
         "CharacterVendor",
@@ -23780,6 +25223,7 @@
           "discountPurchaseAt": "2023-09-06T06:52:14.293Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PlatformOnly",
         "Steam",
@@ -23821,6 +25265,7 @@
           "discountPurchaseAt": "2023-02-08T08:49:28.538Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityCommon",
         "TailorVendor",
@@ -23862,6 +25307,7 @@
           "discountPurchaseAt": "2023-02-08T09:26:10.677Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityCommon",
         "TailorVendor",
@@ -23903,6 +25349,7 @@
           "discountPurchaseAt": "2023-02-08T10:13:53.915Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityCommon",
         "TailorVendor",
@@ -23944,6 +25391,7 @@
           "discountPurchaseAt": "2023-02-08T10:15:15.896Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "InfamyLevel73",
         "RarityCommon",
@@ -23985,6 +25433,7 @@
           "discountPurchaseAt": "2023-05-29T08:56:55.854Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityEpic",
         "TailorVendor",
@@ -24026,6 +25475,7 @@
           "discountPurchaseAt": "2023-02-08T08:54:36.911Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityUncommon",
         "TailorVendor",
@@ -24067,6 +25517,7 @@
           "discountPurchaseAt": "2023-02-08T10:19:16.759Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityUncommon",
         "TailorVendor",
@@ -24108,6 +25559,7 @@
           "discountPurchaseAt": "2023-02-08T10:20:29.438Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "InfamyLevel40",
         "RarityUncommon",
@@ -24149,6 +25601,7 @@
           "discountPurchaseAt": "2023-02-08T10:24:13.395Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityUncommon",
         "TailorVendor",
@@ -24190,6 +25643,7 @@
           "discountPurchaseAt": "2023-05-29T09:01:35.846Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityEpic",
         "InfamyLevel91",
@@ -24231,6 +25685,7 @@
           "discountPurchaseAt": "2023-02-08T08:56:31.429Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityUncommon",
         "TailorVendor",
@@ -24272,6 +25727,7 @@
           "discountPurchaseAt": "2023-02-08T10:26:34.886Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityUncommon",
         "TailorVendor",
@@ -24313,6 +25769,7 @@
           "discountPurchaseAt": "2023-02-08T10:28:01.001Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityUncommon",
         "TailorVendor",
@@ -24354,6 +25811,7 @@
           "discountPurchaseAt": "2023-02-08T10:30:13.752Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityUncommon",
         "TailorVendor",
@@ -24395,6 +25853,7 @@
           "discountPurchaseAt": "2023-05-29T09:04:13.890Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityEpic",
         "TailorVendor",
@@ -24436,6 +25895,7 @@
           "discountPurchaseAt": "2023-02-08T09:00:24.564Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "InfamyLevel31",
         "RarityUncommon",
@@ -24477,6 +25937,7 @@
           "discountPurchaseAt": "2023-02-08T10:33:57.249Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityUncommon",
         "TailorVendor",
@@ -24518,6 +25979,7 @@
           "discountPurchaseAt": "2023-02-08T10:35:37.804Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityUncommon",
         "TailorVendor",
@@ -24559,6 +26021,7 @@
           "discountPurchaseAt": "2023-02-08T10:38:07.449Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityUncommon",
         "TailorVendor",
@@ -24600,6 +26063,7 @@
           "discountPurchaseAt": "2023-05-29T09:05:16.707Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityEpic",
         "TailorVendor",
@@ -24641,6 +26105,7 @@
           "discountPurchaseAt": "2023-02-08T09:02:02.618Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "InfamyLevel50",
         "TailorVendor",
@@ -24682,6 +26147,7 @@
           "discountPurchaseAt": "2023-02-08T10:44:20.789Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "InfamyLevel64",
         "TailorVendor",
@@ -24723,6 +26189,7 @@
           "discountPurchaseAt": "2023-02-08T12:02:52.947Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "InfamyLevel85",
         "TailorVendor",
@@ -24764,6 +26231,7 @@
           "discountPurchaseAt": "2023-02-08T12:05:07.318Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "TailorVendor",
         "RarityRare",
@@ -24805,6 +26273,7 @@
           "discountPurchaseAt": "2023-05-29T09:06:33.902Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityEpic",
         "TailorVendor",
@@ -24842,6 +26311,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "InitialItem"
       ],
@@ -24877,6 +26347,7 @@
           "purchaseAt": "2022-11-14T12:07:45.336Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "TailorVendor",
         "PriceProgression0",
@@ -24915,6 +26386,7 @@
           "purchaseAt": "2022-11-14T12:10:11.477Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PriceProgression1",
         "TailorVendor",
@@ -24953,6 +26425,7 @@
           "purchaseAt": "2022-11-14T12:31:12.970Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PriceProgression10",
         "TailorVendor",
@@ -24992,6 +26465,7 @@
           "discountPurchaseAt": "2022-11-14T12:11:36.061Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "TailorVendor",
         "PriceProgression2",
@@ -25031,6 +26505,7 @@
           "discountPurchaseAt": "2022-11-14T12:13:53.828Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "TailorVendor",
         "PriceProgression3",
@@ -25069,6 +26544,7 @@
           "purchaseAt": "2022-11-14T12:16:53.954Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "TailorVendor",
         "PriceProgression4",
@@ -25107,6 +26583,7 @@
           "purchaseAt": "2022-11-14T12:19:41.952Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "TailorVendor",
         "PriceProgression5",
@@ -25145,6 +26622,7 @@
           "purchaseAt": "2022-11-14T12:22:11.695Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "TailorVendor",
         "PriceProgression6",
@@ -25183,6 +26661,7 @@
           "purchaseAt": "2022-11-14T12:24:09.038Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "TailorVendor",
         "PriceProgression7",
@@ -25221,6 +26700,7 @@
           "purchaseAt": "2022-11-14T12:25:46.613Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "TailorVendor",
         "PriceProgression8",
@@ -25259,6 +26739,7 @@
           "purchaseAt": "2022-11-14T12:27:12.780Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "TailorVendor",
         "PriceProgression9",
@@ -25296,6 +26777,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "InitialItem"
       ],
@@ -25332,6 +26814,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PreplanningAsset",
         "InitialItem"
@@ -25369,6 +26852,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PreplanningAsset",
         "InitialItem"
@@ -25406,6 +26890,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PreplanningAsset",
         "InitialItem"
@@ -25443,6 +26928,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PreplanningAsset",
         "InitialItem"
@@ -25480,6 +26966,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "InitialItem"
       ],
@@ -25512,8 +26999,8 @@
           "currencyCode": "CASH",
           "currencyType": "VIRTUAL",
           "currencyNamespace": "pd3",
-          "purchaseAt": "2023-09-06T16:03:39.134Z",
-          "discountPurchaseAt": "2023-09-06T16:03:39.134Z"
+          "purchaseAt": "2023-09-19T12:31:43.495Z",
+          "discountPurchaseAt": "2023-09-19T12:31:43.495Z"
         }
       ],
       "itemIds": [
@@ -25522,10 +27009,11 @@
         "e13829fbefee483593cae042dd9dc456"
       ],
       "itemQty": {
-        "9e909ec0959d46d4b38d4a16f1114cb3": 1,
         "317e6b8ca180445bab3b6e95e81f75c6": 1,
+        "9e909ec0959d46d4b38d4a16f1114cb3": 1,
         "e13829fbefee483593cae042dd9dc456": 1
       },
+      "tags": [],
       "features": [],
       "maxCountPerUser": 1,
       "maxCount": -1,
@@ -25556,8 +27044,8 @@
           "currencyCode": "CASH",
           "currencyType": "VIRTUAL",
           "currencyNamespace": "pd3",
-          "purchaseAt": "2023-09-07T05:54:07.254Z",
-          "discountPurchaseAt": "2023-09-07T05:54:07.254Z"
+          "purchaseAt": "2023-09-19T12:30:00.935Z",
+          "discountPurchaseAt": "2023-09-19T12:30:00.935Z"
         }
       ],
       "itemIds": [
@@ -25567,9 +27055,10 @@
       ],
       "itemQty": {
         "5708e1c1c12a4b0b8331dbc390bfa4e7": 1,
-        "66714e9cf5bc4130bd1e23a4b012073d": 1,
-        "8816cc16a74740f3aff7819ee37e1751": 1
+        "8816cc16a74740f3aff7819ee37e1751": 1,
+        "66714e9cf5bc4130bd1e23a4b012073d": 1
       },
+      "tags": [],
       "features": [],
       "maxCountPerUser": 1,
       "maxCount": -1,
@@ -25600,8 +27089,8 @@
           "currencyCode": "CASH",
           "currencyType": "VIRTUAL",
           "currencyNamespace": "pd3",
-          "purchaseAt": "2023-09-07T06:51:53.821Z",
-          "discountPurchaseAt": "2023-09-07T06:51:53.821Z"
+          "purchaseAt": "2023-09-19T12:28:15.387Z",
+          "discountPurchaseAt": "2023-09-19T12:28:15.387Z"
         }
       ],
       "itemIds": [
@@ -25610,10 +27099,11 @@
         "dea43e9c1ef842c781cce84de3792004"
       ],
       "itemQty": {
-        "db78293dfc5046d9a6426da3afaee65d": 1,
         "075eebd2242b4684b447cf3678a914a9": 1,
-        "dea43e9c1ef842c781cce84de3792004": 1
+        "dea43e9c1ef842c781cce84de3792004": 1,
+        "db78293dfc5046d9a6426da3afaee65d": 1
       },
+      "tags": [],
       "features": [],
       "maxCountPerUser": 1,
       "maxCount": -1,
@@ -25644,7 +27134,8 @@
           "currencyCode": "CASH",
           "currencyType": "VIRTUAL",
           "currencyNamespace": "pd3",
-          "purchaseAt": "2023-09-06T12:51:33.227Z"
+          "purchaseAt": "2023-09-19T12:26:29.502Z",
+          "discountPurchaseAt": "2023-09-19T12:26:29.502Z"
         }
       ],
       "itemIds": [
@@ -25653,9 +27144,8 @@
         "c8cb556b24834c7da9dd6247aa43fecb"
       ],
       "itemQty": {
-        "5b65aab6f6354c66aea0da248e9452d6": 1,
-        "6ba35287ddf8432793570bc35af13323": 1,
         "b968640f272e4858aac2a2363445fa94": 1,
+        "6ba35287ddf8432793570bc35af13323": 1,
         "c8cb556b24834c7da9dd6247aa43fecb": 1
       },
       "tags": [],
@@ -25693,6 +27183,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PreplanningAsset",
         "InitialItem"
@@ -25730,6 +27221,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PreplanningAsset",
         "InitialItem"
@@ -25767,6 +27259,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PreplanningAsset",
         "InitialItem"
@@ -25806,6 +27299,7 @@
           "discountPurchaseAt": "2023-03-17T15:08:06.046Z"
         }
       ],
+      "itemQty": {},
       "tags": [],
       "features": [],
       "maxCountPerUser": 1,
@@ -25842,6 +27336,7 @@
           "purchaseAt": "2022-11-24T19:37:47.419Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CombatEquipmentVendor",
         "RarityCommon",
@@ -25882,6 +27377,7 @@
           "purchaseAt": "2022-11-24T19:38:23.475Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CombatEquipmentVendor",
         "RarityUncommon",
@@ -25922,6 +27418,7 @@
           "purchaseAt": "2022-11-24T19:38:57.319Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "InfamyLevel20",
         "CombatEquipmentVendor",
@@ -25962,6 +27459,7 @@
           "purchaseAt": "2022-11-24T19:39:36.586Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CombatEquipmentVendor",
         "RarityRare",
@@ -26002,6 +27500,7 @@
           "purchaseAt": "2022-11-24T19:40:07.282Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "InfamyLevel54",
         "CombatEquipmentVendor",
@@ -26042,6 +27541,7 @@
           "purchaseAt": "2022-11-24T19:40:41.258Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CombatEquipmentVendor",
         "RarityEpic",
@@ -26053,6 +27553,42 @@
       "region": "SE",
       "language": "en-US",
       "createdAt": "2022-11-24T19:40:40.607Z",
+      "updatedAt": "updatedattomakegitdiffseasiertoread"
+    },
+    {
+      "title": "Weapon Charm Villa 1",
+      "itemId": "667246b3d92345e591c906be9c593c8a",
+      "sku": "pd3_cosmetic_weapon_charm_villa1",
+      "namespace": "pd3",
+      "name": "Weapon Charm Villa 1",
+      "entitlementType": "CONSUMABLE",
+      "useCount": 1,
+      "categoryPath": "/WeaponCharm",
+      "status": "ACTIVE",
+      "listable": true,
+      "purchasable": true,
+      "itemType": "INGAMEITEM",
+      "regionData": [
+        {
+          "price": 0,
+          "discountPercentage": 0,
+          "discountAmount": 0,
+          "discountedPrice": 0,
+          "currencyCode": "GOLD",
+          "currencyType": "VIRTUAL",
+          "currencyNamespace": "pd3",
+          "purchaseAt": "2023-10-30T15:19:53.565Z",
+          "discountPurchaseAt": "2023-10-30T15:19:53.565Z"
+        }
+      ],
+      "itemQty": {},
+      "tags": [],
+      "features": [],
+      "maxCountPerUser": 1,
+      "maxCount": -1,
+      "region": "SE",
+      "language": "en-US",
+      "createdAt": "2023-11-10T05:51:54.989Z",
       "updatedAt": "updatedattomakegitdiffseasiertoread"
     },
     {
@@ -26082,6 +27618,7 @@
           "purchaseAt": "2022-11-24T19:05:07.720Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CombatEquipmentVendor",
         "RarityCommon",
@@ -26122,6 +27659,7 @@
           "purchaseAt": "2022-11-24T19:10:57.742Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CombatEquipmentVendor",
         "InfamyLevel94",
@@ -26162,6 +27700,7 @@
           "purchaseAt": "2022-11-24T19:11:34.989Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CombatEquipmentVendor",
         "RarityEpic",
@@ -26202,6 +27741,7 @@
           "purchaseAt": "2022-11-24T19:12:22.069Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CombatEquipmentVendor",
         "RarityEpic",
@@ -26242,6 +27782,7 @@
           "purchaseAt": "2022-11-24T19:12:58.356Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CombatEquipmentVendor",
         "RarityEpic",
@@ -26282,6 +27823,7 @@
           "purchaseAt": "2022-11-24T19:05:42.747Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CombatEquipmentVendor",
         "RarityCommon",
@@ -26322,6 +27864,7 @@
           "purchaseAt": "2022-11-24T19:06:14.416Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CombatEquipmentVendor",
         "RarityCommon",
@@ -26362,6 +27905,7 @@
           "purchaseAt": "2022-11-24T19:07:04.703Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CombatEquipmentVendor",
         "RarityCommon",
@@ -26402,6 +27946,7 @@
           "purchaseAt": "2022-11-24T19:07:43.543Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CombatEquipmentVendor",
         "RarityCommon",
@@ -26442,6 +27987,7 @@
           "purchaseAt": "2022-11-24T19:08:22.199Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CombatEquipmentVendor",
         "RarityUncommon",
@@ -26482,6 +28028,7 @@
           "purchaseAt": "2022-11-24T19:08:57.526Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CombatEquipmentVendor",
         "RarityUncommon",
@@ -26522,6 +28069,7 @@
           "purchaseAt": "2022-11-24T19:09:32.326Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CombatEquipmentVendor",
         "RarityUncommon",
@@ -26562,6 +28110,7 @@
           "purchaseAt": "2022-11-24T19:10:18.902Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "InfamyLevel76",
         "CombatEquipmentVendor",
@@ -26603,6 +28152,7 @@
           "discountPurchaseAt": "2023-03-17T15:17:51.443Z"
         }
       ],
+      "itemQty": {},
       "tags": [],
       "features": [],
       "maxCountPerUser": 1,
@@ -26640,6 +28190,7 @@
           "discountPurchaseAt": "2023-03-17T15:18:32.429Z"
         }
       ],
+      "itemQty": {},
       "tags": [],
       "features": [],
       "maxCountPerUser": 1,
@@ -26676,6 +28227,7 @@
           "purchaseAt": "2022-11-25T10:08:29.857Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CombatEquipmentVendor",
         "RarityCommon",
@@ -26716,6 +28268,7 @@
           "purchaseAt": "2022-11-25T10:14:25.352Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CombatEquipmentVendor",
         "RarityRare",
@@ -26756,6 +28309,7 @@
           "purchaseAt": "2022-11-25T10:15:03.505Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CombatEquipmentVendor",
         "RarityRare",
@@ -26796,6 +28350,7 @@
           "purchaseAt": "2022-11-25T10:15:41.225Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CombatEquipmentVendor",
         "RarityRare",
@@ -26836,6 +28391,7 @@
           "purchaseAt": "2022-11-25T10:16:53.904Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "InfamyLevel97",
         "CombatEquipmentVendor",
@@ -26876,6 +28432,7 @@
           "purchaseAt": "2022-11-25T10:09:09.713Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CombatEquipmentVendor",
         "RarityCommon",
@@ -26916,6 +28473,7 @@
           "purchaseAt": "2022-11-25T10:09:45.273Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CombatEquipmentVendor",
         "RarityCommon",
@@ -26956,6 +28514,7 @@
           "purchaseAt": "2022-11-25T10:10:14.144Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CombatEquipmentVendor",
         "RarityUncommon",
@@ -26996,6 +28555,7 @@
           "purchaseAt": "2022-11-25T10:11:16.449Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CombatEquipmentVendor",
         "RarityUncommon",
@@ -27036,6 +28596,7 @@
           "purchaseAt": "2022-11-25T10:11:59.504Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CombatEquipmentVendor",
         "RarityUncommon",
@@ -27076,6 +28637,7 @@
           "purchaseAt": "2022-11-25T10:12:36.456Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "CombatEquipmentVendor",
         "RarityUncommon",
@@ -27116,6 +28678,7 @@
           "purchaseAt": "2022-11-25T10:13:09.884Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "InfamyLevel41",
         "CombatEquipmentVendor",
@@ -27156,6 +28719,7 @@
           "purchaseAt": "2022-11-25T10:13:47.857Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "InfamyLevel10",
         "CombatEquipmentVendor",
@@ -27167,6 +28731,228 @@
       "region": "SE",
       "language": "en-US",
       "createdAt": "2022-11-25T10:13:47.455Z",
+      "updatedAt": "updatedattomakegitdiffseasiertoread"
+    },
+    {
+      "title": "Weapon Sticker Remake 1 ",
+      "itemId": "08817173f5794f698ac43aa2e4d19e03",
+      "sku": "pd3_cosmetic_weapon_sticker_remake_1",
+      "namespace": "pd3",
+      "name": "Weapon Sticker Remake 1",
+      "entitlementType": "CONSUMABLE",
+      "useCount": 1,
+      "stackable": true,
+      "categoryPath": "/WeaponSticker",
+      "status": "ACTIVE",
+      "listable": true,
+      "purchasable": true,
+      "itemType": "INGAMEITEM",
+      "regionData": [
+        {
+          "price": 999,
+          "discountPercentage": 0,
+          "discountAmount": 0,
+          "discountedPrice": 999,
+          "currencyCode": "CASH",
+          "currencyType": "VIRTUAL",
+          "currencyNamespace": "pd3",
+          "purchaseAt": "2023-10-31T15:20:17.573Z",
+          "discountPurchaseAt": "2023-10-31T15:20:17.573Z"
+        }
+      ],
+      "itemQty": {},
+      "tags": [],
+      "features": [],
+      "maxCountPerUser": -1,
+      "maxCount": -1,
+      "region": "SE",
+      "language": "en-US",
+      "createdAt": "2023-11-10T05:51:55.069Z",
+      "updatedAt": "updatedattomakegitdiffseasiertoread"
+    },
+    {
+      "title": "Weapon Sticker Remake 2",
+      "itemId": "7ef052489333478d8669645c5b1944c9",
+      "sku": "pd3_cosmetic_weapon_sticker_remake_2",
+      "namespace": "pd3",
+      "name": "Weapon Sticker Remake 2",
+      "entitlementType": "CONSUMABLE",
+      "useCount": 1,
+      "stackable": true,
+      "categoryPath": "/WeaponSticker",
+      "status": "ACTIVE",
+      "listable": true,
+      "purchasable": true,
+      "itemType": "INGAMEITEM",
+      "regionData": [
+        {
+          "price": 999,
+          "discountPercentage": 0,
+          "discountAmount": 0,
+          "discountedPrice": 999,
+          "currencyCode": "CASH",
+          "currencyType": "VIRTUAL",
+          "currencyNamespace": "pd3",
+          "purchaseAt": "2023-10-31T15:23:17.703Z",
+          "discountPurchaseAt": "2023-10-31T15:23:17.703Z"
+        }
+      ],
+      "itemQty": {},
+      "tags": [],
+      "features": [],
+      "maxCountPerUser": -1,
+      "maxCount": -1,
+      "region": "SE",
+      "language": "en-US",
+      "createdAt": "2023-11-10T05:51:55.090Z",
+      "updatedAt": "updatedattomakegitdiffseasiertoread"
+    },
+    {
+      "title": "Weapon Sticker Remake 3",
+      "itemId": "c517e034613b4991914c2af0758ec906",
+      "sku": "pd3_cosmetic_weapon_sticker_remake_3",
+      "namespace": "pd3",
+      "name": "Weapon Sticker Remake 3",
+      "entitlementType": "CONSUMABLE",
+      "useCount": 1,
+      "stackable": true,
+      "categoryPath": "/WeaponSticker",
+      "status": "ACTIVE",
+      "listable": true,
+      "purchasable": true,
+      "itemType": "INGAMEITEM",
+      "regionData": [
+        {
+          "price": 999,
+          "discountPercentage": 0,
+          "discountAmount": 0,
+          "discountedPrice": 999,
+          "currencyCode": "CASH",
+          "currencyType": "VIRTUAL",
+          "currencyNamespace": "pd3",
+          "purchaseAt": "2023-10-31T15:23:58.667Z",
+          "discountPurchaseAt": "2023-10-31T15:23:58.667Z"
+        }
+      ],
+      "itemQty": {},
+      "tags": [],
+      "features": [],
+      "maxCountPerUser": -1,
+      "maxCount": -1,
+      "region": "SE",
+      "language": "en-US",
+      "createdAt": "2023-11-10T05:51:55.134Z",
+      "updatedAt": "updatedattomakegitdiffseasiertoread"
+    },
+    {
+      "title": "Weapon Sticker Remake 4",
+      "itemId": "5bb039e640634377b92e985beadefd7e",
+      "sku": "pd3_cosmetic_weapon_sticker_remake_4",
+      "namespace": "pd3",
+      "name": "Weapon Sticker Remake 4",
+      "entitlementType": "CONSUMABLE",
+      "useCount": 1,
+      "stackable": true,
+      "categoryPath": "/WeaponSticker",
+      "status": "ACTIVE",
+      "listable": true,
+      "purchasable": true,
+      "itemType": "INGAMEITEM",
+      "regionData": [
+        {
+          "price": 999,
+          "discountPercentage": 0,
+          "discountAmount": 0,
+          "discountedPrice": 999,
+          "currencyCode": "CASH",
+          "currencyType": "VIRTUAL",
+          "currencyNamespace": "pd3",
+          "purchaseAt": "2023-10-31T15:24:36.229Z",
+          "discountPurchaseAt": "2023-10-31T15:24:36.229Z"
+        }
+      ],
+      "itemQty": {},
+      "tags": [],
+      "features": [],
+      "maxCountPerUser": -1,
+      "maxCount": -1,
+      "region": "SE",
+      "language": "en-US",
+      "createdAt": "2023-11-10T05:51:55.275Z",
+      "updatedAt": "updatedattomakegitdiffseasiertoread"
+    },
+    {
+      "title": "Weapon Sticker Remake 5",
+      "itemId": "f9fd5052483c4218a7b037db7e4836c4",
+      "sku": "pd3_cosmetic_weapon_sticker_remake_5",
+      "namespace": "pd3",
+      "name": "Weapon Sticker Remake 5",
+      "entitlementType": "CONSUMABLE",
+      "useCount": 1,
+      "stackable": true,
+      "categoryPath": "/WeaponSticker",
+      "status": "ACTIVE",
+      "listable": true,
+      "purchasable": true,
+      "itemType": "INGAMEITEM",
+      "regionData": [
+        {
+          "price": 999,
+          "discountPercentage": 0,
+          "discountAmount": 0,
+          "discountedPrice": 999,
+          "currencyCode": "CASH",
+          "currencyType": "VIRTUAL",
+          "currencyNamespace": "pd3",
+          "purchaseAt": "2023-10-31T15:25:17.343Z",
+          "discountPurchaseAt": "2023-10-31T15:25:17.343Z"
+        }
+      ],
+      "itemQty": {},
+      "tags": [],
+      "features": [],
+      "maxCountPerUser": -1,
+      "maxCount": -1,
+      "region": "SE",
+      "language": "en-US",
+      "createdAt": "2023-11-10T05:51:55.280Z",
+      "updatedAt": "updatedattomakegitdiffseasiertoread"
+    },
+    {
+      "title": "Weapon Sticker Remake 6",
+      "itemId": "07483dabfcb74a9e8735fce080d104ae",
+      "sku": "pd3_cosmetic_weapon_sticker_remake_6",
+      "namespace": "pd3",
+      "name": "Weapon Sticker Remake 6",
+      "entitlementType": "CONSUMABLE",
+      "useCount": 1,
+      "stackable": true,
+      "categoryPath": "/WeaponSticker",
+      "status": "ACTIVE",
+      "listable": true,
+      "purchasable": true,
+      "itemType": "INGAMEITEM",
+      "regionData": [
+        {
+          "price": 999,
+          "discountPercentage": 0,
+          "discountAmount": 0,
+          "discountedPrice": 999,
+          "currencyCode": "CASH",
+          "currencyType": "VIRTUAL",
+          "currencyNamespace": "pd3",
+          "purchaseAt": "2023-10-31T15:26:06.294Z",
+          "discountPurchaseAt": "2023-10-31T15:26:06.294Z"
+        }
+      ],
+      "itemQty": {},
+      "tags": [],
+      "features": [],
+      "maxCountPerUser": -1,
+      "maxCount": -1,
+      "region": "SE",
+      "language": "en-US",
+      "createdAt": "2023-11-10T05:51:55.356Z",
       "updatedAt": "updatedattomakegitdiffseasiertoread"
     },
     {
@@ -27195,6 +28981,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PreplanningAsset",
         "InitialItem"
@@ -27234,6 +29021,7 @@
           "discountPurchaseAt": "2023-02-10T14:59:11.297Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityUncommon",
         "CharacterVendor",
@@ -27274,6 +29062,7 @@
           "purchaseAt": "2022-11-22T09:45:34.328Z"
         }
       ],
+      "itemQty": {},
       "tags": [
         "RarityCommon"
       ],
@@ -27311,6 +29100,7 @@
           "currencyNamespace": "pd3"
         }
       ],
+      "itemQty": {},
       "tags": [
         "PreplanningAsset",
         "CombatEquipmentVendor",

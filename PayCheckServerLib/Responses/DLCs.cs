@@ -51,7 +51,7 @@ namespace PayCheckServerLib.Responses
                 Value = new()
                 {
                     Data = new(),
-                    DlcType = "PSN"
+                    DlcType = "STEAM"
                 }
             };
             var data = JsonConvert.DeserializeObject<Dictionary<string, string[]>>(File.ReadAllText("Files/DLC_Entiltements.json"));
