@@ -66,7 +66,4 @@
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
 	  <Exec Command="git branch --show-current &gt; &quot;$(ProjectDir)/Properties/BuildDate.txt&quot;&#xD;&#xA;echo $([System.DateTime]::UtcNow.ToString(&quot;s&quot;))&gt;&gt; &quot;$(ProjectDir)/Properties/BuildDate.txt&quot;&#xD;&#xA;git rev-parse --short HEAD &gt;&gt; &quot;$(ProjectDir)/Properties/BuildDate.txt&quot;" />
   </Target>
-	
-  <ProjectExtensions><VisualStudio><UserProperties config_1json__JsonSchema="" files_4basicinfamytable_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
-
 </Project>
