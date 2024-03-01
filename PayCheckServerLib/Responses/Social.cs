@@ -25,6 +25,11 @@ namespace PayCheckServerLib.Responses
             return true;
         }
 
+        [HTTP("GET", "/social/v1/public/namespaces/{namespace}/users/{userId}/statitems?limit={limit}&sortBy={sortby}")]
+        public static bool GetUserStatItemsSort(HttpRequest _, ServerStruct serverStruct)
+        {
+            return GetUserStatItems(_, serverStruct);
+        }
         [HTTP("GET", "/social/v1/public/namespaces/{namespace}/users/{userId}/statitems?limit={limit}&offset=0")]
         public static bool GetUserStatItems(HttpRequest _, ServerStruct serverStruct)
         {

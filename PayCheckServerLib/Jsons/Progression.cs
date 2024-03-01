@@ -12,7 +12,8 @@ namespace PayCheckServerLib.Jsons
             public long CurrentVersion { get; set; }
 
             [JsonProperty("ProgressionSaveGame")]
-            public ProgressionSaveGame ProgressionSaveGame { get; set; }
+            public object ProgressionSaveGame { get; set; }
+            //public ProgressionSaveGame ProgressionSaveGame { get; set; } - To prevent serialisation issues in future save versions
         }
 
         public partial class ProgressionSaveGame

@@ -11,7 +11,10 @@ namespace PayCheckServerLib
 
         public static void SaveUser(string UserId, string NameSpace, byte[] data, SaveType saveType)
         {
-            File.WriteAllBytes($"Save/{NameSpace}_{UserId}_{saveType}.{ConfigHelper.ServerConfig.Saves.Extension}", data);
+            try
+            {
+                File.WriteAllBytes($"Save/{NameSpace}_{UserId}_{saveType}.{ConfigHelper.ServerConfig.Saves.Extension}", data);
+            } catch (IOException e) { }
         }
         public static void SaveUser(string UserId, string NameSpace, string data, SaveType saveType)
         {

@@ -18,16 +18,16 @@
         ]
       },
       {
-        "Description": "First Playable security modifiers",
+        "Description": "Branch Bank security modifiers",
         "Hard": [],
-        "LevelShortName": "FirstPlayable",
+        "LevelShortName": "BranchBank",
         "Normal": [],
         "Overkill": [
-          "Senturian",
-          "GenSec"
+          "AmGuard",
+          "Senturian"
         ],
         "VeryHard": [
-          "Senturian"
+          "AmGuard"
         ]
       },
       {
@@ -37,10 +37,75 @@
         "Normal": [],
         "Overkill": [
           "GenSec",
-          "AmGuard"
+          "Senturian"
+        ],
+        "VeryHard": [
+          "GenSec"
+        ]
+      },
+      {
+        "Description": "Night Club security modifiers",
+        "Hard": [],
+        "LevelShortName": "NightClub",
+        "Normal": [],
+        "Overkill": [
+          "AmGuard",
+          "Senturian"
         ],
         "VeryHard": [
           "AmGuard"
+        ]
+      },
+      {
+        "Description": "Art Gallery security modifiers",
+        "Hard": [],
+        "LevelShortName": "ArtGallery",
+        "Normal": [],
+        "Overkill": [
+          "AmGuard",
+          "GenSec"
+        ],
+        "VeryHard": [
+          "AmGuard"
+        ]
+      },
+      {
+        "Description": "First Playable security modifiers",
+        "Hard": [],
+        "LevelShortName": "FirstPlayable",
+        "Normal": [],
+        "Overkill": [
+          "Senturian",
+          "AmGuard"
+        ],
+        "VeryHard": [
+          "Senturian"
+        ]
+      },
+      {
+        "Description": "Cargo dock security modifiers",
+        "Hard": [],
+        "LevelShortName": "CargoDock",
+        "Normal": [],
+        "Overkill": [
+          "GenSec",
+          "Senturian"
+        ],
+        "VeryHard": [
+          "GenSec"
+        ]
+      },
+      {
+        "Description": "Penthouse security modifiers",
+        "Hard": [],
+        "LevelShortName": "Penthouse",
+        "Normal": [],
+        "Overkill": [
+          "Senturian",
+          "AmGuard"
+        ],
+        "VeryHard": [
+          "Senturian"
         ]
       },
       {
@@ -49,15 +114,28 @@
         "LevelShortName": "Station",
         "Normal": [],
         "Overkill": [
-          "Senturian",
-          "GenSec"
+          "GenSec",
+          "Senturian"
         ],
         "VeryHard": [
           "GenSec"
+        ]
+      },
+      {
+        "Description": "Data Center security modifiers",
+        "Hard": [],
+        "LevelShortName": "Datacenter",
+        "Normal": [],
+        "Overkill": [
+          "AmGuard",
+          "GenSec"
+        ],
+        "VeryHard": [
+          "AmGuard"
         ]
       }
     ]
   },
   "created_at": "2023-03-03T09:47:36.276Z",
-  "updated_at": "2023-11-30T11:08:44.428Z"
+  "updated_at": "2024-02-29T10:03:03.563Z"
 }

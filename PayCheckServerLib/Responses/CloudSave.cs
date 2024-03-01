@@ -317,7 +317,7 @@ namespace PayCheckServerLib.Responses
                 try
                 {
                     save = Progression.Basic.FromJson(SaveFileHandler.ReadUserSTR(userID, serverStruct.Parameters["namespace"], SaveFileHandler.SaveType.progressionsavegame));
-                    save.ProgressionSaveGame.LastTimeEventCheck = TimeHelper.GetEpochTime();
+                    //save.ProgressionSaveGame.LastTimeEventCheck = TimeHelper.GetEpochTime();
                 }
                 catch
                 {
@@ -365,7 +365,7 @@ namespace PayCheckServerLib.Responses
             try
             {
                 save = Progression.Basic.FromJson(request.Body);
-                save.ProgressionSaveGame.LastTimeEventCheck = TimeHelper.GetEpochTime();
+                //save.ProgressionSaveGame.LastTimeEventCheck = TimeHelper.GetEpochTime();
             }
             catch
             {

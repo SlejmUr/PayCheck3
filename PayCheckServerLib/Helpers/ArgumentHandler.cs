@@ -19,11 +19,19 @@ namespace PayCheckServerLib.Helpers
 
         public static void MainArg(string[] args)
         {
+#if DEBUG
+            Debug = true;
+#else
             Debug = HasParameter(args, "-debug");
+#endif
             AskHelp = HasParameter(args, "-help");
             UseBetaFiles = HasParameter(args, "-beta");
             ForceUpdate = HasParameter(args, "-forceupdate");
+#if DEBUG
+            NoUpdate = true;
+#else
             NoUpdate = HasParameter(args, "-noupdate");
+#endif
 
             if (UseBetaFiles && ForceUpdate)
             {

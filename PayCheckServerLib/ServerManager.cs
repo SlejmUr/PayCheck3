@@ -83,9 +83,13 @@ namespace PayCheckServerLib
 
         private static void ReceivedFailed(object? sender, HttpRequest request)
         {
+            try
+            {
             File.AppendAllText("REQUESTED.txt", request.Url + "\n" + request.Method + "\n" + request.Body + "\n");
+            } catch (IOException e) { }
             Debugger.logger.Debug(request.Url + "\n" + request);
-            Console.WriteLine("something isnt good");
+            Console.Write("something isnt good: ");
+            Console.WriteLine(request.Url);
         }
         private static void WSError(object? sender, string error)
         {
