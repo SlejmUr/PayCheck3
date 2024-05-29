@@ -9,6 +9,16 @@ namespace PayCheckServerLib.Responses
 {
     public class Session
     {
+    [HTTP("GET", "/session/v1/public/namespaces/pd3/recent-player?limit=200")]
+    public static bool GetRecentPlayersLimit(HttpRequest _, ServerStruct serverStruct)
+    {
+      ResponseCreator response = new ResponseCreator();
+      response.SetHeader("Content-Type", "application/json");
+      response.SetBody("{\"data\":[]}");
+      serverStruct.Response = response.GetResponse();
+      serverStruct.SendResponse();
+      return true;
+    }
         [HTTP("GET", "/session/v1/public/namespaces/{namespace}/users/me/attributes")]
         public static bool GETSessionAttributes(HttpRequest _, ServerStruct serverStruct)
         {

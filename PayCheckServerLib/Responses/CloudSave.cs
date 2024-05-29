@@ -11,8 +11,37 @@ namespace PayCheckServerLib.Responses
 {
     public class CloudSave
     {
+		public static bool TimeBasedPlayerContent(HttpRequest _, ServerStruct serverStruct)
+		{
+			var response = new ResponseCreator();
+			response.SetBody(
+			JsonConvert.SerializeObject(JsonConvert.DeserializeObject(File.ReadAllText("Files/TimeBasedPlayerContent.json"))));
+			serverStruct.Response = response.GetResponse();
+			serverStruct.SendResponse();
+			return true;
+		}
+		public static bool FeatureToggle(HttpRequest _, ServerStruct serverStruct)
+		{
+			var response = new ResponseCreator();
+			response.SetBody(
+			JsonConvert.SerializeObject(JsonConvert.DeserializeObject(File.ReadAllText("Files/FeatureToggle.json"))));
+			serverStruct.Response = response.GetResponse();
+			serverStruct.SendResponse();
+			return true;
+		}
 
-        [HTTP("GET", "/cloudsave/v1/namespaces/{namespace}/records/{recordtype}")]
+
+		public static bool ClientConfiguration(HttpRequest _, ServerStruct serverStruct)
+		{
+			var response = new ResponseCreator();
+			response.SetBody(
+			JsonConvert.SerializeObject(JsonConvert.DeserializeObject(File.ReadAllText("Files/ClientConfiguration.json"))));
+			serverStruct.Response = response.GetResponse();
+			serverStruct.SendResponse();
+			return true;
+		}
+
+		[HTTP("GET", "/cloudsave/v1/namespaces/{namespace}/records/{recordtype}")]
         public static bool MainRecordsSplitter(HttpRequest request, ServerStruct serverStruct)
         {
             if (serverStruct.Parameters["recordtype"].Contains("weapon-translation-table-"))
@@ -37,7 +66,14 @@ namespace PayCheckServerLib.Responses
                     return challengerecommendations(request, serverStruct);
                 case "infamy-translation-table":
                     return InfamyTranslationTable(request, serverStruct);
-            }
+                case "time-based-player-content":
+                    return TimeBasedPlayerContent(request, serverStruct);
+        case "client-configuration":
+          return ClientConfiguration(request, serverStruct);
+        case "feature-toggle":
+          return FeatureToggle(request, serverStruct);
+						}
+      Debugger.PrintError(String.Format("Unknown cloudsave item: {0}", serverStruct.Parameters["recordtype"]));
             return false;
         }
 

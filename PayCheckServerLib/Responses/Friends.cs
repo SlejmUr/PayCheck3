@@ -28,6 +28,12 @@ namespace PayCheckServerLib.Responses
             return true;
         }
 
+    [HTTP("GET", "/friends/namespaces/pd3/me/platforms?limit=50&offset=0")]
+    public static bool MePlatformsLimitOffset(HttpRequest _, ServerStruct serverStruct)
+    {
+      return MePlatforms(_, serverStruct);
+    }
+
         [HTTP("POST", "/friends/namespaces/{namespace}/users/{userId}/add/bulk")]
         public static bool FriendAddBulk(HttpRequest request, ServerStruct serverStruct)
         {

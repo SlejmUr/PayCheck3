@@ -12,6 +12,8 @@ namespace PayCheckServerLib.Responses
 {
     public class IAM
     {
+        [HTTP("POST", "/iam/v3/oauth/platforms/steam/token")]
+        public static bool SteamTokenNoParam(HttpRequest request, ServerStruct serverStruct) { return SteamToken(request, serverStruct); }
         [HTTP("POST", "/iam/v3/oauth/platforms/steam/token?createHeadless=false")]
         public static bool SteamToken(HttpRequest request, ServerStruct serverStruct)
         {

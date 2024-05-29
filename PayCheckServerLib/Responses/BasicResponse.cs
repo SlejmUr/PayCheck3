@@ -9,8 +9,51 @@ using PayCheckServerLib.Jsons;
 namespace PayCheckServerLib.Responses
 {
     public class BasicResponse
+	{
+		[HTTP("GET", "/basic/v1/public/namespaces/{namespace}/profiles/public?userIds={userId}")]
+		public static bool GetUserProfile(HttpRequest _, ServerStruct serverStruct)
+		{
+			ResponseCreator response = new ResponseCreator();
+			response.SetHeader("Content-Type", "application/json");
+
+			var resp = new Profile.ProfileResp()
+			{
+				UserId = serverStruct.Parameters["userId"],
+				Namespace = serverStruct.Parameters["namespace"],
+				PublicId = "AAAAAAAA"
+			};
+
+			response.SetBody(JsonConvert.SerializeObject(resp));
+			serverStruct.Response = response.GetResponse();
+			serverStruct.SendResponse();
+			return true;
+		}
+		[HTTP("POST", "/basic/v1/public/namespaces/{namespace}/users/me/profiles")]
+		public static bool PostCurrentUserProfile(HttpRequest _, ServerStruct serverStruct)
     {
-        [HTTP("HEAD", "/generate_204")]
+      // take no action
+      return GetCurrentUserProfile(_, serverStruct);
+    }
+		[HTTP("GET", "/basic/v1/public/namespaces/{namespace}/users/me/profiles")]
+		public static bool GetCurrentUserProfile(HttpRequest _, ServerStruct serverStruct)
+		{
+			ResponseCreator response = new ResponseCreator();
+			response.SetHeader("Content-Type", "application/json");
+
+			var resp = new Profile.ProfileResp()
+			{
+				UserId = TokenHelper.ReadToken(serverStruct.Headers["authorization"].Split(" ")[1]).UserId,
+        Namespace = serverStruct.Parameters["namespace"],
+        PublicId = "AAAAAAAA"
+			};
+
+			response.SetBody(JsonConvert.SerializeObject(resp));
+			serverStruct.Response = response.GetResponse();
+			serverStruct.SendResponse();
+			return true;
+		}
+
+		[HTTP("HEAD", "/generate_204")]
         public static bool Generate204(HttpRequest _, ServerStruct serverStruct)
         {
             serverStruct.Response.MakeOkResponse(204);
@@ -19,6 +62,11 @@ namespace PayCheckServerLib.Responses
         }
 
 
+    [HTTP("GET", "/qosm/public/namespaces/pd3/qos?status=ACTIVE")]
+    public static bool GetActiveQOS(HttpRequest _, ServerStruct serverStruct)
+    {
+      return QOSM_Public_QOS(_, serverStruct);
+    }
         [HTTP("GET", "/qosm/public/qos")]
         public static bool QOSM_Public_QOS(HttpRequest _, ServerStruct serverStruct)
         {

@@ -89,6 +89,7 @@ namespace PayCheckServerLib
             } catch (IOException e) { }
             Debugger.logger.Debug(request.Url + "\n" + request);
             Console.Write("something isnt good: ");
+            Console.Write(request.Method + "  ");
             Console.WriteLine(request.Url);
         }
         private static void WSError(object? sender, string error)
