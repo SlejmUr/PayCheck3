@@ -7,75 +7,72 @@ using ModdableWebServer;
 using ModdableWebServer.Attributes;
 using ModdableWebServer.Helper;
 
-namespace PayCheckServerLib.Responses
+namespace PayCheckServerLib.Responses;
+
+public class Social
 {
-    public class Social
+    [HTTP("PUT", "/social/v1/public/namespaces/{namespace}/users/{userId}/statitems/value/bulk")]
+    public static bool PutStatItemsBulk(HttpRequest request, ServerStruct serverStruct)
     {
-        [HTTP("PUT", "/social/v1/public/namespaces/{namespace}/users/{userId}/statitems/value/bulk")]
-        public static bool PutStatItemsBulk(HttpRequest request, ServerStruct serverStruct)
-        {
-            var auth = serverStruct.Headers["authorization"].Replace("Bearer ", "");
-            var token = TokenHelper.ReadToken(auth);
-            var statReq = JsonConvert.DeserializeObject<List<StatItemsBulkReq>>(request.Body);
-            var rsp = UserStatController.AddStat(statReq, token);
-            ResponseCreator responsecreator = new ResponseCreator();
-            responsecreator.SetBody(JsonConvert.SerializeObject(rsp));
-            serverStruct.Response = responsecreator.GetResponse();
-            serverStruct.SendResponse();
-            return true;
-        }
+        var auth = serverStruct.Headers["authorization"].Replace("Bearer ", "");
+        var token = TokenHelper.ReadToken(auth);
+        var statReq = JsonConvert.DeserializeObject<List<StatItemsBulkReq>>(request.Body);
+        var rsp = UserStatController.AddStat(statReq, token);
+        ResponseCreator responsecreator = new ResponseCreator();
+        responsecreator.SetBody(JsonConvert.SerializeObject(rsp));
+        serverStruct.Response = responsecreator.GetResponse();
+        serverStruct.SendResponse();
+        return true;
+    }
 
-        [HTTP("GET", "/social/v1/public/namespaces/{namespace}/users/{userId}/statitems?limit={limit}&sortBy={sortby}")]
-        public static bool GetUserStatItemsSort(HttpRequest _, ServerStruct serverStruct)
-        {
-            return GetUserStatItems(_, serverStruct);
-        }
-        [HTTP("GET", "/social/v1/public/namespaces/{namespace}/users/{userId}/statitems?limit={limit}&offset=0")]
-        public static bool GetUserStatItems(HttpRequest _, ServerStruct serverStruct)
-        {
-            var auth = serverStruct.Headers["authorization"].Replace("Bearer ", "");
-            var token = TokenHelper.ReadToken(auth);
+    [HTTP("GET", "/social/v1/public/namespaces/{namespace}/users/{userId}/statitems?limit={limit}&sortBy={sortby}")]
+    public static bool GetUserStatItemsSort(HttpRequest _, ServerStruct serverStruct) => GetUserStatItems(_, serverStruct);
 
-            var stat = JsonConvert.DeserializeObject<List<UserStatItemsData>>(SaveFileHandler.ReadUserSTR(token.UserId, token.Namespace, SaveFileHandler.SaveType.statitems));
+    [HTTP("GET", "/social/v1/public/namespaces/{namespace}/users/{userId}/statitems?limit={limit}&offset=0")]
+    public static bool GetUserStatItems(HttpRequest _, ServerStruct serverStruct)
+    {
+        var auth = serverStruct.Headers["authorization"].Replace("Bearer ", "");
+        var token = TokenHelper.ReadToken(auth);
 
-            ResponseCreator response = new ResponseCreator();
-            DataPaging<UserStatItemsData> responsedata = new()
+        var stat = JsonConvert.DeserializeObject<List<UserStatItemsData>>(SaveFileHandler.ReadUserSTR(token.UserId, token.Namespace, SaveFileHandler.SaveType.statitems));
+
+        ResponseCreator response = new ResponseCreator();
+        DataPaging<UserStatItemsData> responsedata = new()
+        {
+            Data = stat,
+            Paging = { }
+        };
+        response.SetBody(JsonConvert.SerializeObject(responsedata));
+        serverStruct.Response = response.GetResponse();
+        serverStruct.SendResponse();
+        return true;
+    }
+
+    [HTTP("GET", "/social/v1/public/namespaces/{namespace}/users/{userId}/statitems?statCodes={statcode}&limit=20&offset=0")]
+    public static bool GetUserStatItemsInfamy(HttpRequest _, ServerStruct serverStruct)
+    {
+        var auth = serverStruct.Headers["authorization"].Replace("Bearer ", "");
+        var token = TokenHelper.ReadToken(auth);
+        var statcode = serverStruct.Parameters["statcode"];
+        ResponseCreator response = new ResponseCreator();
+        DataPaging<UserStatItemsData> responsedata = new()
+        {
+            Data = new()
             {
-                Data = stat,
-                Paging = { }
-            };
-            response.SetBody(JsonConvert.SerializeObject(responsedata));
-            serverStruct.Response = response.GetResponse();
-            serverStruct.SendResponse();
-            return true;
-        }
+            },
+            Paging = { }
+        };
 
-        [HTTP("GET", "/social/v1/public/namespaces/{namespace}/users/{userId}/statitems?statCodes={statcode}&limit=20&offset=0")]
-        public static bool GetUserStatItemsInfamy(HttpRequest _, ServerStruct serverStruct)
+        var stat = JsonConvert.DeserializeObject<List<UserStatItemsData>>(SaveFileHandler.ReadUserSTR(token.UserId, token.Namespace, SaveFileHandler.SaveType.statitems));
+        foreach (var item in stat)
         {
-            var auth = serverStruct.Headers["authorization"].Replace("Bearer ", "");
-            var token = TokenHelper.ReadToken(auth);
-            var statcode = serverStruct.Parameters["statcode"];
-            ResponseCreator response = new ResponseCreator();
-            DataPaging<UserStatItemsData> responsedata = new()
-            {
-                Data = new()
-                {
-                },
-                Paging = { }
-            };
-
-            var stat = JsonConvert.DeserializeObject<List<UserStatItemsData>>(SaveFileHandler.ReadUserSTR(token.UserId, token.Namespace, SaveFileHandler.SaveType.statitems));
-            foreach (var item in stat)
-            {
-                if (item.StatCode == statcode)
-                    responsedata.Data.Add(item);
-            }
-
-            response.SetBody(JsonConvert.SerializeObject(responsedata));
-            serverStruct.Response = response.GetResponse();
-            serverStruct.SendResponse();
-            return true;
+            if (item.StatCode == statcode)
+                responsedata.Data.Add(item);
         }
+
+        response.SetBody(JsonConvert.SerializeObject(responsedata));
+        serverStruct.Response = response.GetResponse();
+        serverStruct.SendResponse();
+        return true;
     }
 }

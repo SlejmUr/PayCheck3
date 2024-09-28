@@ -10,11 +10,11 @@
         "LevelShortName": "",
         "Normal": [],
         "Overkill": [
-          "AmGuard",
-          "GenSec"
+          "",
+          ""
         ],
         "VeryHard": [
-          "GenSec"
+          ""
         ]
       },
       {
@@ -23,11 +23,27 @@
         "LevelShortName": "BranchBank",
         "Normal": [],
         "Overkill": [
+          "Senturian",
           "AmGuard",
-          "Senturian"
+          "ReflectorShields",
+          "BuddySystem"
         ],
         "VeryHard": [
-          "AmGuard"
+          "Senturian",
+          "ReflectorShields"
+        ]
+      },
+      {
+        "Description": "Armored Transport security modifiers",
+        "Hard": [],
+        "LevelShortName": "ArmoredTransport",
+        "Normal": [],
+        "Overkill": [
+          "ReflectorShields",
+          "BuddySystem"
+        ],
+        "VeryHard": [
+          "ReflectorShields"
         ]
       },
       {
@@ -36,11 +52,14 @@
         "LevelShortName": "JewelryStore",
         "Normal": [],
         "Overkill": [
+          "AmGuard",
           "GenSec",
-          "Senturian"
+          "ReflectorShields",
+          "BuddySystem"
         ],
         "VeryHard": [
-          "GenSec"
+          "AmGuard",
+          "ReflectorShields"
         ]
       },
       {
@@ -49,11 +68,14 @@
         "LevelShortName": "NightClub",
         "Normal": [],
         "Overkill": [
-          "AmGuard",
-          "Senturian"
+          "Senturian",
+          "GenSec",
+          "ReflectorShields",
+          "BuddySystem"
         ],
         "VeryHard": [
-          "AmGuard"
+          "Senturian",
+          "ReflectorShields"
         ]
       },
       {
@@ -62,11 +84,14 @@
         "LevelShortName": "ArtGallery",
         "Normal": [],
         "Overkill": [
+          "GenSec",
           "AmGuard",
-          "GenSec"
+          "ReflectorShields",
+          "BuddySystem"
         ],
         "VeryHard": [
-          "AmGuard"
+          "GenSec",
+          "ReflectorShields"
         ]
       },
       {
@@ -75,11 +100,14 @@
         "LevelShortName": "FirstPlayable",
         "Normal": [],
         "Overkill": [
+          "GenSec",
           "Senturian",
-          "AmGuard"
+          "ReflectorShields",
+          "BuddySystem"
         ],
         "VeryHard": [
-          "Senturian"
+          "GenSec",
+          "ReflectorShields"
         ]
       },
       {
@@ -88,11 +116,14 @@
         "LevelShortName": "CargoDock",
         "Normal": [],
         "Overkill": [
+          "Senturian",
           "GenSec",
-          "Senturian"
+          "ReflectorShields",
+          "BuddySystem"
         ],
         "VeryHard": [
-          "GenSec"
+          "Senturian",
+          "ReflectorShields"
         ]
       },
       {
@@ -101,11 +132,14 @@
         "LevelShortName": "Penthouse",
         "Normal": [],
         "Overkill": [
+          "AmGuard",
           "Senturian",
-          "AmGuard"
+          "ReflectorShields",
+          "BuddySystem"
         ],
         "VeryHard": [
-          "Senturian"
+          "AmGuard",
+          "ReflectorShields"
         ]
       },
       {
@@ -114,11 +148,24 @@
         "LevelShortName": "Station",
         "Normal": [],
         "Overkill": [
-          "GenSec",
-          "Senturian"
+          "AmGuard",
+          "GenSec"
         ],
         "VeryHard": [
-          "GenSec"
+          "AmGuard"
+        ]
+      },
+      {
+        "Description": "Cook off security modifiers",
+        "Hard": [],
+        "LevelShortName": "Villa",
+        "Normal": [],
+        "Overkill": [
+          "ReflectorShields",
+          "BuddySystem"
+        ],
+        "VeryHard": [
+          "ReflectorShields"
         ]
       },
       {
@@ -127,15 +174,82 @@
         "LevelShortName": "Datacenter",
         "Normal": [],
         "Overkill": [
-          "AmGuard",
-          "GenSec"
+          "GenSec",
+          "Senturian",
+          "ReflectorShields",
+          "BuddySystem"
         ],
         "VeryHard": [
-          "AmGuard"
+          "GenSec",
+          "ReflectorShields"
+        ]
+      },
+      {
+        "Description": "FORT security modifiers",
+        "Hard": [],
+        "LevelShortName": "Fort",
+        "Normal": [],
+        "Overkill": [
+          "Senturian",
+          "GenSec",
+          "ReflectorShields",
+          "BuddySystem"
+        ],
+        "VeryHard": [
+          "Senturian",
+          "ReflectorShields"
+        ]
+      },
+      {
+        "Description": "CHUS security modifiers",
+        "Hard": [],
+        "LevelShortName": "Chus",
+        "Normal": [],
+        "Overkill": [
+          "GenSec",
+          "Senturian",
+          "ReflectorShields",
+          "BuddySystem"
+        ],
+        "VeryHard": [
+          "GenSec",
+          "ReflectorShields"
+        ]
+      },
+      {
+        "Description": "Didi security modifiers",
+        "Hard": [],
+        "LevelShortName": "DiamondDistrict",
+        "Normal": [],
+        "Overkill": [
+          "Senturian",
+          "GenSec",
+          "ReflectorShields",
+          "BuddySystem"
+        ],
+        "VeryHard": [
+          "Senturian",
+          "ReflectorShields"
+        ]
+      },
+      {
+        "Description": "Stonk security modifiers",
+        "Hard": [],
+        "LevelShortName": "Stonk",
+        "Normal": [],
+        "Overkill": [
+          "AmGuard",
+          "GenSec",
+          "ReflectorShields",
+          "BuddySystem"
+        ],
+        "VeryHard": [
+          "AmGuard",
+          "ReflectorShields"
         ]
       }
     ]
   },
   "created_at": "2023-03-03T09:47:36.276Z",
-  "updated_at": "2024-02-29T10:03:03.563Z"
+  "updated_at": "2024-09-16T10:13:04.59Z"
 }

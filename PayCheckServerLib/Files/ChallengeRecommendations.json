@@ -303,9 +303,37 @@
             "challengeRecommandationsPriorityType": "LowProgress"
           }
         ]
+      },
+      {
+        "ScreenName": "datacenter",
+        "SlotArray": [
+          {
+            "CheckInfamyLevel": true,
+            "MandatoryTags": [
+              "Data",
+              "Center"
+            ],
+            "challengeRecommandationsPriorityType": "CloseToCompletion"
+          },
+          {
+            "CheckInfamyLevel": true,
+            "MandatoryTags": [
+              "Data",
+              "Center"
+            ],
+            "challengeRecommandationsPriorityType": "AnyProgress"
+          },
+          {
+            "CheckInfamyLevel": true,
+            "MandatoryTags": [
+              "Combat"
+            ],
+            "challengeRecommandationsPriorityType": "LowProgress"
+          }
+        ]
       }
     ]
   },
   "created_at": "2023-10-19T05:57:01.306Z",
-  "updated_at": "2023-11-30T11:08:44.171Z"
+  "updated_at": "2023-12-12T10:44:04.717Z"
 }

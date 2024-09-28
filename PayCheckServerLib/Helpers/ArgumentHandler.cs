@@ -11,6 +11,8 @@ namespace PayCheckServerLib.Helpers
 #else
         public static bool Debug { get; internal set; } = false;
 #endif
+
+        public static bool DebugAll { get; internal set; } = false;
         public static bool AskHelp { get; internal set; } = false;
         public static bool UseBetaFiles { get; internal set; } = false;
         public static bool ForceUpdate { get; internal set; } = false;
@@ -24,6 +26,7 @@ namespace PayCheckServerLib.Helpers
 #else
             Debug = HasParameter(args, "-debug");
 #endif
+            DebugAll = HasParameter(args, "-debugall");
             AskHelp = HasParameter(args, "-help");
             UseBetaFiles = HasParameter(args, "-beta");
             ForceUpdate = HasParameter(args, "-forceupdate");

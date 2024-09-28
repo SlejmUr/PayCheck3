@@ -1,0 +1,22 @@
+{
+  "namespace": "pd3",
+  "key": "challenge-dailies",
+  "set_by": "SERVER",
+  "value": {
+    "BlockArray": {
+      "SlotArray": [
+        {
+          "ChallengeDailyCompletionTimeType": "Medium"
+        },
+        {
+          "ChallengeDailyCompletionTimeType": "Medium"
+        },
+        {
+          "ChallengeDailyCompletionTimeType": "Long"
+        }
+      ]
+    }
+  },
+  "created_at": "2024-08-19T08:58:30.118Z",
+  "updated_at": "updatedattomakegitdiffseasiertoread"
+}

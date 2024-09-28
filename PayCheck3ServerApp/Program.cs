@@ -30,7 +30,7 @@ namespace PayCheck3ServerApp
             string stop = "";
             while (stop != "q")
             {
-                stop = Console.ReadLine();
+                stop = Console.ReadLine()!;
             };
             ServerManager.Stop();
         }

@@ -20,7 +20,7 @@ namespace PayCheckServerLib
             {
                 Debugger.PrintDebug("GiveMeMoney Cheat Activated");
             }
-            if (ArgumentHandler.Debug)
+            if (ArgumentHandler.DebugAll)
                 DebugPrinter.PrintToConsole = true;
             else
                 DebugPrinter.PrintToConsole = false;
@@ -42,7 +42,7 @@ namespace PayCheckServerLib
         {
             if (ConfigHelper.ServerConfig.Hosting.WSS)
             {
-                var context = CertHelper.GetContext( System.Security.Authentication.SslProtocols.Tls12 , "cert.pfx", "cert");
+                var context = CertHelper.GetContextNoValidate( System.Security.Authentication.SslProtocols.Tls12 , "cert.pfx", "cert");
                 server = new(context, ConfigHelper.ServerConfig.Hosting.IP, ConfigHelper.ServerConfig.Hosting.Port);
                 server.ReceivedFailed += ReceivedFailed;
                 server.Started += Server_Started;

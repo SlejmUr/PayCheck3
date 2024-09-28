@@ -9,16 +9,18 @@ namespace PayCheckServerLib.Responses
 {
     public class Session
     {
-    [HTTP("GET", "/session/v1/public/namespaces/pd3/recent-player?limit=200")]
-    public static bool GetRecentPlayersLimit(HttpRequest _, ServerStruct serverStruct)
-    {
-      ResponseCreator response = new ResponseCreator();
-      response.SetHeader("Content-Type", "application/json");
-      response.SetBody("{\"data\":[]}");
-      serverStruct.Response = response.GetResponse();
-      serverStruct.SendResponse();
-      return true;
-    }
+
+        [HTTP("GET", "/session/v1/public/namespaces/pd3/recent-player?limit=200")]
+        public static bool GetRecentPlayersLimit(HttpRequest _, ServerStruct serverStruct)
+        {
+          ResponseCreator response = new ResponseCreator();
+          response.SetHeader("Content-Type", "application/json");
+          response.SetBody("{\"data\":[]}");
+          serverStruct.Response = response.GetResponse();
+          serverStruct.SendResponse();
+          return true;
+        }
+
         [HTTP("GET", "/session/v1/public/namespaces/{namespace}/users/me/attributes")]
         public static bool GETSessionAttributes(HttpRequest _, ServerStruct serverStruct)
         {
@@ -91,6 +93,29 @@ namespace PayCheckServerLib.Responses
         }
 
         [HTTP("GET", "/session/v1/public/namespaces/{namespace}/users/me/gamesessions")]
+        public static bool SessionsUsersMeGamesessions(HttpRequest _, ServerStruct serverStruct)
+        {
+            ResponseCreator response = new();
+            response.SetHeader("Content-Type", "application/json");
+            DataPaging<object> gamesessions = new()
+            {
+                Paging = new()
+                {
+                    First = "",
+                    Last = "",
+                    Previous = "",
+                    Next = ""
+                },
+                Data = new()
+            };
+            response.SetBody(JsonConvert.SerializeObject(gamesessions));
+            serverStruct.Response = response.GetResponse();
+            serverStruct.SendResponse();
+            return true;
+        }
+
+
+        [HTTP("GET", "/session/v1/public/namespaces/{namespace}/gamesessions")]
         public static bool Sessionsgamesessions(HttpRequest _, ServerStruct serverStruct)
         {
             ResponseCreator response = new();

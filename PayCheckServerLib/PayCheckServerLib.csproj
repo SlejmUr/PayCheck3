@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <PackageProjectUrl>https://github.com/SlejmUr/PayCheck3</PackageProjectUrl>
@@ -36,8 +36,8 @@
   <ItemGroup>
     <PackageReference Include="JWT" Version="10.1.1" />
     <PackageReference Include="L" Version="5.0.0" />
-    <PackageReference Include="ModdableWebServer" Version="1.1.0.1" />
-    <PackageReference Include="NetCoreServer" Version="7.0.0" />
+    <PackageReference Include="ModdableWebServer" Version="1.5.0" />
+    <PackageReference Include="NetCoreServer" Version="8.0.7" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 

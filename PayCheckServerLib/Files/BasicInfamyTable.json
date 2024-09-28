@@ -5,7 +5,7 @@
     "Infamy Rewards": [
       {
         "Content Given Type": "Skill Point",
-        "Content Given Value": 1
+        "Content Given Value": 2
       }
     ]
   },
@@ -252,7 +252,12 @@
   {
     "Infamy Level": 40,
     "Infamy Points": 10400,
-    "Infamy Rewards": []
+    "Infamy Rewards": [
+      {
+        "Content Given Type": "Skill Point",
+        "Content Given Value": 1
+      }
+    ]
   },
   {
     "Infamy Level": 41,
@@ -342,7 +347,12 @@
   {
     "Infamy Level": 55,
     "Infamy Points": 17800,
-    "Infamy Rewards": []
+    "Infamy Rewards": [
+      {
+        "Content Given Type": "Skill Point",
+        "Content Given Value": 1
+      }
+    ]
   },
   {
     "Infamy Level": 56,
@@ -377,7 +387,12 @@
   {
     "Infamy Level": 61,
     "Infamy Points": 21400,
-    "Infamy Rewards": []
+    "Infamy Rewards": [
+      {
+        "Content Given Type": "Skill Point",
+        "Content Given Value": 1
+      }
+    ]
   },
   {
     "Infamy Level": 62,
@@ -392,12 +407,7 @@
   {
     "Infamy Level": 64,
     "Infamy Points": 23200,
-    "Infamy Rewards": [
-      {
-        "Content Given Type": "Skill Point",
-        "Content Given Value": 1
-      }
-    ]
+    "Infamy Rewards": []
   },
   {
     "Infamy Level": 65,
@@ -407,7 +417,12 @@
   {
     "Infamy Level": 66,
     "Infamy Points": 24400,
-    "Infamy Rewards": []
+    "Infamy Rewards": [
+      {
+        "Content Given Type": "Skill Point",
+        "Content Given Value": 1
+      }
+    ]
   },
   {
     "Infamy Level": 67,
@@ -522,7 +537,12 @@
   {
     "Infamy Level": 86,
     "Infamy Points": 38900,
-    "Infamy Rewards": []
+    "Infamy Rewards": [
+      {
+        "Content Given Type": "Skill Point",
+        "Content Given Value": 1
+      }
+    ]
   },
   {
     "Infamy Level": 87,
@@ -562,7 +582,12 @@
   {
     "Infamy Level": 93,
     "Infamy Points": 44500,
-    "Infamy Rewards": []
+    "Infamy Rewards": [
+      {
+        "Content Given Type": "Skill Point",
+        "Content Given Value": 1
+      }
+    ]
   },
   {
     "Infamy Level": 94,
@@ -577,7 +602,12 @@
   {
     "Infamy Level": 96,
     "Infamy Points": 46900,
-    "Infamy Rewards": []
+    "Infamy Rewards": [
+      {
+        "Content Given Type": "Skill Point",
+        "Content Given Value": 1
+      }
+    ]
   },
   {
     "Infamy Level": 97,

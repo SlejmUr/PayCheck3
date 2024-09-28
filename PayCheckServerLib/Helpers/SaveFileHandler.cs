@@ -48,7 +48,8 @@ namespace PayCheckServerLib
             progressionsavegame,
             PlatformBackendSettingsData,
             statitems,
-            currency
+            currency,
+            challenges
         };
     }
 }

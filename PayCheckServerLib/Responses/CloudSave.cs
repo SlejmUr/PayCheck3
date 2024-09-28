@@ -14,34 +14,58 @@ namespace PayCheckServerLib.Responses
 		public static bool TimeBasedPlayerContent(HttpRequest _, ServerStruct serverStruct)
 		{
 			var response = new ResponseCreator();
-			response.SetBody(
-			JsonConvert.SerializeObject(JsonConvert.DeserializeObject(File.ReadAllText("Files/TimeBasedPlayerContent.json"))));
-			serverStruct.Response = response.GetResponse();
-			serverStruct.SendResponse();
-			return true;
-		}
-		public static bool FeatureToggle(HttpRequest _, ServerStruct serverStruct)
-		{
-			var response = new ResponseCreator();
-			response.SetBody(
-			JsonConvert.SerializeObject(JsonConvert.DeserializeObject(File.ReadAllText("Files/FeatureToggle.json"))));
+			response.SetBody(File.ReadAllText("Files/TimeBasedPlayerContent.json"));
 			serverStruct.Response = response.GetResponse();
 			serverStruct.SendResponse();
 			return true;
 		}
 
+		public static bool FeatureToggle(HttpRequest _, ServerStruct serverStruct)
+		{
+			var response = new ResponseCreator();
+            response.SetBody(File.ReadAllText("Files/FeatureToggle.json"));
+			serverStruct.Response = response.GetResponse();
+			serverStruct.SendResponse();
+			return true;
+		}
 
 		public static bool ClientConfiguration(HttpRequest _, ServerStruct serverStruct)
 		{
 			var response = new ResponseCreator();
-			response.SetBody(
-			JsonConvert.SerializeObject(JsonConvert.DeserializeObject(File.ReadAllText("Files/ClientConfiguration.json"))));
+            response.SetBody(File.ReadAllText("Files/ClientConfiguration.json"));
 			serverStruct.Response = response.GetResponse();
 			serverStruct.SendResponse();
 			return true;
 		}
 
-		[HTTP("GET", "/cloudsave/v1/namespaces/{namespace}/records/{recordtype}")]
+        public static bool ChallengeDailies(HttpRequest _, ServerStruct serverStruct)
+        {
+            var response = new ResponseCreator();
+            response.SetBody(File.ReadAllText("Files/ChallengeDailies.json"));
+            serverStruct.Response = response.GetResponse();
+            serverStruct.SendResponse();
+            return true;
+        }
+
+        public static bool BackEndProxyConfig(HttpRequest _, ServerStruct serverStruct)
+        {
+            var response = new ResponseCreator();
+            response.SetBody(File.ReadAllText("Files/BackendProxyConfig.json"));
+            serverStruct.Response = response.GetResponse();
+            serverStruct.SendResponse();
+            return true;
+        }
+
+        public static bool MatchMaking(HttpRequest _, ServerStruct serverStruct)
+        {
+            var response = new ResponseCreator();
+            response.SetBody(File.ReadAllText("Files/BackendProxyConfig.json"));
+            serverStruct.Response = response.GetResponse();
+            serverStruct.SendResponse();
+            return true;
+        }
+
+        [HTTP("GET", "/cloudsave/v1/namespaces/{namespace}/records/{recordtype}")]
         public static bool MainRecordsSplitter(HttpRequest request, ServerStruct serverStruct)
         {
             if (serverStruct.Parameters["recordtype"].Contains("weapon-translation-table-"))
@@ -68,12 +92,22 @@ namespace PayCheckServerLib.Responses
                     return InfamyTranslationTable(request, serverStruct);
                 case "time-based-player-content":
                     return TimeBasedPlayerContent(request, serverStruct);
-        case "client-configuration":
-          return ClientConfiguration(request, serverStruct);
-        case "feature-toggle":
-          return FeatureToggle(request, serverStruct);
-						}
-      Debugger.PrintError(String.Format("Unknown cloudsave item: {0}", serverStruct.Parameters["recordtype"]));
+                case "client-configuration":
+                    return ClientConfiguration(request, serverStruct);
+                case "feature-toggle":
+                    return FeatureToggle(request, serverStruct);
+                case "challenge-dailies":
+                    return ChallengeDailies(request, serverStruct);
+                case "edgegap_beacons":
+                    return EdgeGapBeacons(request, serverStruct);
+                case "backend-proxy-config":
+                    return BackEndProxyConfig(request, serverStruct);
+                case "matchmaking":
+                    return MatchMaking(request, serverStruct);
+                case "challenges":
+                    return Records_Challenges(request, serverStruct); 
+            }
+            Debugger.PrintError(string.Format("Unknown cloudsave item: {0}", serverStruct.Parameters["recordtype"]));
             return false;
         }
 
@@ -125,6 +159,36 @@ namespace PayCheckServerLib.Responses
             return true;
         }
 
+        public static bool EdgeGapBeacons(HttpRequest _, ServerStruct serverStruct)
+        {
+            ResponseCreator response = new();
+            string time = TimeHelper.GetZTime();
+            TopLevel<EdgeGapBeacons> edgegap_beacons = new()
+            {
+                CreatedAt = "2024-07-02T12:00:49.27Z",
+                UpdatedAt = time,
+                Key = "edgegap_beacons",
+                Namespace = serverStruct.Parameters["namespace"],
+                SetBy = "SERVER",
+                Value = new()
+                {
+                    servers = new()
+                    { 
+                        new()
+                        {
+                            last_update = time,
+                        }
+                    
+                    }
+                }
+            };
+            response.SetBody(JsonConvert.SerializeObject(edgegap_beacons));
+            serverStruct.Response = response.GetResponse();
+            serverStruct.SendResponse();
+            return true;
+        }
+
+
         public static bool InfamyTranslationTable(HttpRequest _, ServerStruct serverStruct)
         {
             ResponseCreator response = new();
@@ -154,22 +218,6 @@ namespace PayCheckServerLib.Responses
         public static bool challengerecommendations(HttpRequest _, ServerStruct serverStruct)
         {
             ResponseCreator response = new();
-            //InfamyTranslationTable.Basic;
-            /*
-            TopLevel<ChallengeRecommendations> table = new()
-            {
-                CreatedAt = "2023-06-27T12:18:00.00Z",
-                UpdatedAt = "2023-06-27T12:18:00.00Z",
-                Key = "challenge-recommendations",
-                Namespace = serverStruct.Parameters["namespace"],
-                SetBy = "SERVER",
-                Value = new()
-                {
-                    BlockArray = new()
-                    {
-                    }
-                }
-            };*/
             var table = JsonConvert.DeserializeObject<TopLevel<ChallengeRecommendations>>(File.ReadAllText("Files/ChallengeRecommendations.json")) ?? throw new Exception("ChallengeRecommendations is null!");
             response.SetBody(JsonConvert.SerializeObject(table));
             serverStruct.Response = response.GetResponse();
@@ -421,6 +469,73 @@ namespace PayCheckServerLib.Responses
             };
             ResponseCreator response = new();
             response.SetBody(JsonConvert.SerializeObject(saveRSP, Progression.Converter.Settings));
+            serverStruct.Response = response.GetResponse();
+            serverStruct.SendResponse();
+            return true;
+        }
+
+        [HTTP("GET", "/cloudsave/v1/namespaces/{namespace}/users/{userId}/records/challenges")]
+        public static bool GETChallengesRecord(HttpRequest _, ServerStruct serverStruct)
+        {
+            var userID = serverStruct.Parameters["userId"];
+            ChallengeCloudSaveRecord_RSP topLevel = new()
+            {
+                CreatedAt = TimeHelper.GetZTime(),
+                Key = "challenges",
+                Namespace = serverStruct.Parameters["namespace"],
+                SetBy = "CLIENT",
+                UpdatedAt = TimeHelper.GetZTime(),
+                IsPublic = false,
+                UserId = userID,
+                Value = new()
+            };
+            
+            if (SaveFileHandler.IsUserExist(userID, serverStruct.Parameters["namespace"], SaveFileHandler.SaveType.challenges))
+            {
+                topLevel.Value = JsonConvert.DeserializeObject<ChallengeCloudSaveRecord>(SaveFileHandler.ReadUserSTR(userID, serverStruct.Parameters["namespace"], SaveFileHandler.SaveType.challenges));
+            }
+
+            ResponseCreator response = new();
+            response.SetBody(JsonConvert.SerializeObject(topLevel));
+            serverStruct.Response = response.GetResponse();
+            serverStruct.SendResponse();
+            return true;
+        }
+
+        [HTTP("POST", "/cloudsave/v1/namespaces/{namespace}/users/{userId}/records/challenges")]
+        public static bool POSTChallengesRecord(HttpRequest req, ServerStruct serverStruct)
+        {
+            var userID = serverStruct.Parameters["userId"];
+            SaveFileHandler.SaveUser(userID, serverStruct.Parameters["namespace"], req.BodyBytes, SaveFileHandler.SaveType.challenges);
+            ChallengeCloudSaveRecord_RSP topLevel = new()
+            {
+                CreatedAt = TimeHelper.GetZTime(),
+                Key = "challenges",
+                Namespace = serverStruct.Parameters["namespace"],
+                SetBy = "CLIENT",
+                UpdatedAt = TimeHelper.GetZTime(),
+                IsPublic = false,
+                UserId = userID,
+                Value = new()
+            };
+
+            if (SaveFileHandler.IsUserExist(userID, serverStruct.Parameters["namespace"], SaveFileHandler.SaveType.challenges))
+            {
+                topLevel.Value = JsonConvert.DeserializeObject<ChallengeCloudSaveRecord>(SaveFileHandler.ReadUserSTR(userID, serverStruct.Parameters["namespace"], SaveFileHandler.SaveType.challenges));
+            }
+
+            ResponseCreator response = new();
+            response.SetBody(JsonConvert.SerializeObject(topLevel));
+            serverStruct.Response = response.GetResponse();
+            serverStruct.SendResponse();
+            return true;
+        }
+
+        [HTTP("GET", "/cloudsave/v1/namespaces/pd3/records/challenges")]
+        public static bool Records_Challenges(HttpRequest _, ServerStruct serverStruct)
+        {
+            ResponseCreator response = new();
+            response.SetBody(File.ReadAllText("Files/ChallengeRecords.json"));
             serverStruct.Response = response.GetResponse();
             serverStruct.SendResponse();
             return true;
