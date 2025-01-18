@@ -1,0 +1,10 @@
+{
+  "BeaconsKey": "edgegap_beacons",
+  "HostingProvider": "edgegap",
+  "MatchmakingProvider": "accelbyte",
+  "edgegap": {
+    "token": "ABCDEF12345",
+    "url": "https://slejmur.ddns.net"
+  },
+  "provider": "accelbyte"
+}

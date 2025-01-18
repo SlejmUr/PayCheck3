@@ -8,11 +8,24 @@ namespace PayCheckServerLib
     /// </summary>
     public class UserIdHelper
     {
-        /// <summary>
-        /// Generate New UserId
-        /// </summary>
-        /// <returns>New UserId</returns>
-        public static string CreateNewID()
+		/// <summary>
+		/// Check if a given id does not contain any characters for path traversal, and can be interpreted as a valid UUID
+		/// </summary>
+		/// <param name="userId"></param>
+		/// <returns></returns>
+		public static bool IsValidUserId(string userId)
+		{
+			if (userId.Contains("/") || userId.Contains("\\") || userId.Contains("."))
+				return false;
+
+			return true;
+		}
+
+		/// <summary>
+		/// Generate New UserId
+		/// </summary>
+		/// <returns>New UserId</returns>
+		public static string CreateNewID()
         {
             Random rand = new();
             int stringlen = 32;

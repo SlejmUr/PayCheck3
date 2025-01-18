@@ -1,9 +1,10 @@
 ﻿using Newtonsoft.Json;
 using PayCheckServerLib.Jsons.Basic;
+using PayCheckServerLib.Jsons.CloudSave;
 
 namespace PayCheckServerLib.Jsons
 {
-    public class ChallengeCloudSaveRecord_RSP : TopLevel<ChallengeCloudSaveRecord>
+    public class ChallengeCloudSaveRecord_RSP : CloudSaveDataWrapper<ChallengeCloudSaveRecord>
     {
         [JsonProperty("user_id")]
         public string UserId { get; set; }

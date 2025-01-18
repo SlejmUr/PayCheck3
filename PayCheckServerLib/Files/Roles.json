@@ -1,0 +1,333 @@
+[
+  {
+    "RoleId": "2251438839e948d783ec0e5281daf05b",
+    "RoleName": "User",
+    "Permissions": [
+      {
+        "Resource": "NAMESPACE:{namespace}:USER:{userId}",
+        "Action": 7
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:USER:*",
+        "Action": 2
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT:*",
+        "Action": 7
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:USER:{userId}:FILEUPLOAD",
+        "Action": 1
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:USER:{userId}:ORDER:*",
+        "Action": 7
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:PAYMENT:USER:{userId}",
+        "Action": 7
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:USER:{userId}:WALLET",
+        "Action": 2
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:PASSWORD:USER:{userId}",
+        "Action": 4
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:USER:{userId}:*",
+        "Action": 6
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:USER:{userId}:FULFILLMENT:*",
+        "Action": 7
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:USER:{userId}:PROFILE",
+        "Action": 7
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:WALLET",
+        "Action": 2
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:PROFILE",
+        "Action": 7
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:CATEGORY",
+        "Action": 2
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:CURRENCY",
+        "Action": 2
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:ITEM",
+        "Action": 2
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:DISTRIBUTION",
+        "Action": 6
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:NAMESPACE",
+        "Action": 2
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:HISTORY:LOGIN:USER:{userId}",
+        "Action": 2
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:INFORMATION:USER:{userId}",
+        "Action": 2
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:SESSION:USER:{userId}",
+        "Action": 10
+      },
+      {
+        "Resource": "DISTRIBUTION",
+        "Action": 2
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:USER:{userId}:PAYMENT:*",
+        "Action": 15
+      },
+      {
+        "Resource": "NAMESPACE:*:EVENT",
+        "Action": 2
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:USER:{userId}:GAMEPROFILE",
+        "Action": 15
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:GAMEPROFILE",
+        "Action": 2
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:TOPIC",
+        "Action": 15
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:USER:*:SLOTDATA",
+        "Action": 15
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:USER:{userId}:SLOTDATA",
+        "Action": 15
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:USER:{userId}:FRIENDS",
+        "Action": 7
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:BUILDINFO",
+        "Action": 2
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:USER:{userId}:STATITEM",
+        "Action": 15
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:ENTITLEMENT",
+        "Action": 2
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:USER:{userId}:SUBSCRIPTION",
+        "Action": 3
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:SESSIONBROWSER:SESSION",
+        "Action": 15
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:USER:{userId}:CLOUDSAVE:RECORD",
+        "Action": 15
+      },
+      {
+        "Resource": "NAMESPACE:*:USER:*:ENTITLEMENT",
+        "Action": 2
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:FILEUPLOAD",
+        "Action": 1
+      },
+      {
+        "Resource": "NAMESPACE:*:USER:{userId}:ORDER",
+        "Action": 15
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:USER:{userId}:FULFILLMENT",
+        "Action": 1
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:SESSION",
+        "Action": 7
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:USER:*:GAMEPROFILE",
+        "Action": 2
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:CLOUDSAVE:RECORD",
+        "Action": 2
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:PUBLIC:CLOUDSAVE:RECORD",
+        "Action": 2
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:USER:*:PUBLIC:CLOUDSAVE:RECORD",
+        "Action": 2
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:USER:{userId}:PUBLIC:CLOUDSAVE:RECORD",
+        "Action": 7
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:USER:{userId}:CONTENTGROUP",
+        "Action": 15
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:USER:{userId}:CHANNEL",
+        "Action": 15
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:USER:*:CHANNEL",
+        "Action": 2
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:USER:{userId}:CONTENT",
+        "Action": 15
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:LEGAL",
+        "Action": 1
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:USER:{userId}:IAP",
+        "Action": 4
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:USER:{userId}:DLC",
+        "Action": 4
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:USER:{userId}:SEASONPASS",
+        "Action": 6
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:REWARD",
+        "Action": 6
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:ACHIEVEMENT",
+        "Action": 2
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:USER:{userId}:ACHIEVEMENT",
+        "Action": 6
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:USER:*:NOTIFICATION",
+        "Action": 1
+      },
+      {
+        "Resource": "TURN:SERVER",
+        "Action": 2
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:MATCHRESULT",
+        "Action": 1
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:USER:{userId}:ACTION",
+        "Action": 1
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:USER:{userId}:NFT",
+        "Action": 14
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:SESSION:PARTY",
+        "Action": 7
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:SESSION:PARTY:PLAYER",
+        "Action": 9
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:SESSION:GAME",
+        "Action": 15
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:SESSION:GAME:PLAYER",
+        "Action": 9
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:MATCHMAKING:TICKET",
+        "Action": 15
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:SESSIONBROWSER:RECENTPLAYER",
+        "Action": 2
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:USER:{userId}:PUBLISHER",
+        "Action": 2
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:USER:{userId}:STORE",
+        "Action": 2
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:TURN:METRIC",
+        "Action": 1
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:SESSION:PLAYER",
+        "Action": 15
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:MATCHMAKING:POOL:METRICS",
+        "Action": 2
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:USER:*:ACHIEVEMENT",
+        "Action": 2
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:MATCHMAKING:CHANNEL:METRICS",
+        "Action": 2
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:GLOBALSTATITEM",
+        "Action": 2
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:USER:*:PROFILE",
+        "Action": 2
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:USER:{userId}:CHAT",
+        "Action": 2
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:INFORMATION:USER:*",
+        "Action": 2
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:IAP",
+        "Action": 6
+      },
+      {
+        "Resource": "NAMESPACE:{namespace}:SESSION:STORAGE",
+        "Action": 7
+      }
+    ],
+    "IsWildcard": false
+  }
+]

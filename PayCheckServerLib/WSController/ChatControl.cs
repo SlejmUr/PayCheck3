@@ -13,7 +13,7 @@ namespace PayCheckServerLib.WSController
         [WS("/chat/")]
         public static void Chat(WebSocketStruct socketStruct)
         {
-            Debugger.PrintDebug("Chat");
+            //Debugger.PrintDebug("Chat");
             var auth_token = socketStruct.Request.Headers["authorization"].Replace("Bearer ", "");
             var token = TokenHelper.ReadToken(auth_token);
             var key = $"{token.Namespace}_{token.UserId}";
@@ -74,7 +74,7 @@ namespace PayCheckServerLib.WSController
                             }
                         };
                         var resp = "CaSr" + JsonConvert.SerializeObject(rsp) + "CaEd";
-                        Console.WriteLine("Sending back: " + resp);
+                        //Console.WriteLine("Sending back: " + resp);
                         socketStruct.SendWebSocketByteArray(Encoding.UTF8.GetBytes(resp));
                     }
                     return;
@@ -85,7 +85,7 @@ namespace PayCheckServerLib.WSController
                         var party = PartyController.PartySaves.Where(x => x.Value.Id == idk.Params.TopicId.Replace("p.", "")).FirstOrDefault().Value;
                         if (party == null)
                         {
-                            Debugger.PrintError("NO Code???? WHAT THE FUCK");
+                            //Debugger.PrintError("NO Code???? WHAT THE FUCK");
                             throw new Exception("Code is not exist in saved parties????");
                         }
                         Chats.actionQueryTopicByIdRSP rsp = new()
@@ -113,7 +113,7 @@ namespace PayCheckServerLib.WSController
                             rsp.Result.Data.Members.Add(item.Id);
                         }
                         var resp = "CaSr" + JsonConvert.SerializeObject(rsp) + "CaEd";
-                        Console.WriteLine("Sending back: " + resp);
+                        //Console.WriteLine("Sending back: " + resp);
                         socketStruct.SendWebSocketByteArray(Encoding.UTF8.GetBytes(resp));
                     }
                     return;

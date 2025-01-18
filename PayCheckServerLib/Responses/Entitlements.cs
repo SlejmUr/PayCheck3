@@ -1,81 +1,83 @@
 ﻿using ModdableWebServer;
 using ModdableWebServer.Attributes;
-using ModdableWebServer.Helper;
 using NetCoreServer;
 using Newtonsoft.Json;
 using PayCheckServerLib.Helpers;
 using PayCheckServerLib.Jsons;
 using PayCheckServerLib.Jsons.Basic;
+using PayCheckServerLib.ModdableWebServerExtensions;
 
 namespace PayCheckServerLib.Responses;
 
 public class Entitlements
 {
     [HTTP("GET", "/platform/public/namespaces/{namespace}/users/{userId}/entitlements?limit={limit}")]
+	[AuthenticationRequired("NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", AuthenticationRequiredAttribute.Access.READ)]
     public static bool GetUserEntitlements(HttpRequest _, ServerStruct serverStruct)
     {
-        try
-        {
-            var time = TimeHelper.GetZTime();
-            var responsecreator = new ResponseCreator();
-            var entitlements = JsonConvert.DeserializeObject<DataPaging<EntitlementsData>>(File.ReadAllText("./Files/Entitlements.json")) ?? throw new Exception("Entitlements is null!");
-            var newentitlements = new List<EntitlementsData>();
-            foreach (var entitlement in entitlements.Data)
-            {
-                entitlement.UserId = serverStruct.Parameters["userId"];
-                entitlement.UpdatedAt = time;
-                newentitlements.Add(entitlement);
-            }
-            DataPaging<EntitlementsData> payload = new()
-            {
-                Data = newentitlements,
-                Paging = new()
-            };
-            responsecreator.SetBody(JsonConvert.SerializeObject(payload));
-            serverStruct.Response = responsecreator.GetResponse();
-            serverStruct.SendResponse();
-            return true;
-        }
-        catch (Exception ex)
-        {
-            Debugger.PrintError(ex.ToString());
-        }
-        return false;
+		var responsecreator = new ResponseCreator();
+		DataPaging<EntitlementsData> payload = new()
+		{
+			Data = UserEntitlementHelper.GetEntitlementDataForUser(serverStruct.Parameters["userId"]),
+			Paging = new()
+		};
+
+		responsecreator.SetBody(JsonConvert.SerializeObject(payload));
+		
+		serverStruct.Response = responsecreator.GetResponse();
+		serverStruct.SendResponse();
+		return true;
     }
 
-    [HTTP("GET", "/platform/public/namespaces/{namespace}/users/{userId}/entitlements?itemId={itemid}&limit={limit}")]
+    [HTTP("GET", "/platform/public/namespaces/{namespace}/users/{userId}/entitlements?itemId={itemId}&limit={limit}")]
+	[AuthenticationRequired("NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", AuthenticationRequiredAttribute.Access.READ)]
     public static bool GetUserEntitlementsByItemId(HttpRequest _, ServerStruct serverStruct)
     {
-        try
-        {
-            var time = TimeHelper.GetZTime();
-            var responsecreator = new ResponseCreator();
-            var entitlements = JsonConvert.DeserializeObject<DataPaging<EntitlementsData>>(File.ReadAllText("./Files/Entitlements.json")) ?? throw new Exception("Entitlements is null!");
-            var newentitlements = new List<EntitlementsData>();
-            foreach (var entitlement in entitlements.Data)
-            {
-                if (entitlement.ItemId == serverStruct.Parameters["itemid"])
-                {
-                    entitlement.UserId = serverStruct.Parameters["userId"];
-                    entitlement.UpdatedAt = time;
-                    newentitlements.Add(entitlement);
-                }
+		var filteredEntitlements = new List<EntitlementsData>();
+		var userEntitlements = UserEntitlementHelper.GetEntitlementDataForUser(serverStruct.Parameters["userId"]);
 
-            }
-            DataPaging<EntitlementsData> payload = new()
-            {
-                Data = newentitlements,
-                Paging = new()
-            };
-            responsecreator.SetBody(JsonConvert.SerializeObject(payload));
-            serverStruct.Response = responsecreator.GetResponse();
-            serverStruct.SendResponse();
-            return true;
-        }
-        catch (Exception ex)
-        {
-            Debugger.PrintError(ex.ToString());
-        }
-        return false;
+		foreach (var entitlement in userEntitlements)
+		{
+			if(entitlement.ItemId == serverStruct.Parameters["itemId"])
+				filteredEntitlements.Add(entitlement);
+		}
+
+		DataPaging<EntitlementsData> payload = new()
+		{
+			Data = filteredEntitlements,
+			Paging = new()
+		};
+
+		var response = new ResponseCreator();
+		response.SetBody(JsonConvert.SerializeObject(payload));
+		serverStruct.Response = response.GetResponse();
+		serverStruct.SendResponse();
+
+        return true;
     }
+
+	[HTTP("PUT", "/platform/public/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}/decrement")]
+	[AuthenticationRequired("NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", AuthenticationRequiredAttribute.Access.UPDATE)]
+	public static bool DecrementUserEntitlementByEntitlementId(HttpRequest _, ServerStruct serverStruct)
+	{
+		var responsecreator = new ResponseCreator();
+
+		var entitlements = UserEntitlementHelper.GetEntitlementDataForUser(serverStruct.Parameters["userId"]);
+
+		var entitlementToDecrement = entitlements.Find(data => data.Id == serverStruct.Parameters["entitlementId"]);
+		if (entitlementToDecrement == null)
+		{
+			Debugger.PrintError("Unable to find entitlement with id {0}", serverStruct.Parameters["entitlementId"]);
+			return false;
+		}
+
+		Debugger.PrintDebug(String.Format("Game is attempted to decrement entitlement with the sku {0}, not gonna do anything though :)", entitlementToDecrement.Sku));
+
+		responsecreator.SetBody(JsonConvert.SerializeObject(entitlementToDecrement));
+		responsecreator.SetHeader("Content-Type", "application/json");
+		serverStruct.Response = responsecreator.GetResponse();
+		serverStruct.SendResponse();
+
+		return true;
+	}
 }

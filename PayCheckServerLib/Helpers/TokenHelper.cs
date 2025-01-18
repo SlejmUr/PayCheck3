@@ -1,4 +1,5 @@
 ﻿using PayCheckServerLib.Jsons;
+using static PayCheckServerLib.Helpers.UserController;
 
 namespace PayCheckServerLib
 {
@@ -26,7 +27,7 @@ namespace PayCheckServerLib
             Live
         }
 
-        public static Token GenerateNewTokenFromUser(User User, TokenPlatform platform = TokenPlatform.Steam, bool IsAccessToken = true)
+        public static Token GenerateNewTokenFromUser(PayCheck3UserData User, TokenPlatform platform = TokenPlatform.Steam, bool IsAccessToken = true)
         {
             return new()
             {

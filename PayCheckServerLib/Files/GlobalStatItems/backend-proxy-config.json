@@ -1,0 +1,10 @@
+{
+  "base_url": "https://127.0.0.1:80/",
+  "retry_limit_count": 3,
+  "retry_response_codes": [
+    429,
+    503,
+    504
+  ],
+  "retry_timeout_seconds": 25
+}

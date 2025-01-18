@@ -1,6 +1,5 @@
 ﻿using ModdableWebServer;
 using ModdableWebServer.Attributes;
-using ModdableWebServer.Helper;
 using NetCoreServer;
 using Newtonsoft.Json;
 using PayCheckServerLib.Jsons.Basic;
@@ -32,13 +31,14 @@ public class DLCs
         //var body = JsonConvert.DeserializeObject<PutDLC>(request.Body);
         ResponseCreator response = new ResponseCreator(204);
         response.SetHeader("Content-Type", "application/json");
-        serverStruct.Response = response.GetResponse();
+		response.SetBody("{\"data\":[]}");
+		serverStruct.Response = response.GetResponse();
         serverStruct.SendResponse();
         return true;
     }
 
 
-    [HTTP("GET", "/cloudsave/v1/namespaces/{namespace}/records/dlc-entitlements")]
+    /*[HTTP("GET", "/cloudsave/v1/namespaces/{namespace}/records/dlc-entitlements")]
     public static bool GETdlcentitlements(HttpRequest _, ServerStruct serverStruct)
     {
         TopLevel<DLC_Value> dlc = new()
@@ -61,5 +61,5 @@ public class DLCs
         serverStruct.Response = response.GetResponse();
         serverStruct.SendResponse();
         return true;
-    }
+    }*/
 }
