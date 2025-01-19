@@ -15,10 +15,5 @@
     <ProjectReference Include="..\PayCheckServerLib\PayCheckServerLib.csproj" />
   </ItemGroup>
 	
-
-	<ItemGroup>
-		<Content Include="..\Cert\**" LinkBase="Cert\" CopyToOutputDirectory="Always" />
-	</ItemGroup>
-	
 	
 </Project>

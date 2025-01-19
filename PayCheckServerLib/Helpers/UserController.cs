@@ -186,7 +186,7 @@ namespace PayCheckServerLib.Helpers
 			if (!Directory.Exists(String.Format("./UserData/{0}", user.UserData.UserId)))
 				Directory.CreateDirectory(String.Format("./UserData/{0}", user.UserData.UserId));
 
-            File.WriteAllText(GetDataJsonPathForUserId(user.UserData.UserId), JsonConvert.SerializeObject(user));
+			FileReadWriteHelper.WriteAllText(GetDataJsonPathForUserId(user.UserData.UserId), JsonConvert.SerializeObject(user));
         }
 
         /// <summary>
@@ -202,9 +202,9 @@ namespace PayCheckServerLib.Helpers
 			string path = GetDataJsonPathForUserId(UserId);
 
 
-			if (File.Exists(path))
+			if (FileReadWriteHelper.Exists(path))
             {
-                return JsonConvert.DeserializeObject<PayCheck3UserData>(File.ReadAllText(path));
+                return JsonConvert.DeserializeObject<PayCheck3UserData>(FileReadWriteHelper.ReadAllText(path));
             }
             return null;
         }
@@ -220,7 +220,7 @@ namespace PayCheckServerLib.Helpers
             foreach (var item in Directory.GetFiles("UserData"))
             {
 
-				var userData = JsonConvert.DeserializeObject(File.ReadAllText(item));
+				var userData = JsonConvert.DeserializeObject(FileReadWriteHelper.ReadAllText(item));
 
 				if (userData != null) { // validation to ensure that any json file checked for user data is actual user data.
 					if (userData.GetType() == typeof(JObject)) {

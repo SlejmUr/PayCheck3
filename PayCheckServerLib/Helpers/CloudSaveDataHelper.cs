@@ -20,6 +20,8 @@ namespace PayCheckServerLib.Helpers
 				return true;
 			return false;
 		}
+
+		#region Global CloudSave Data And Static Data
 		public static object? GetGlobalCloudSaveData(string key)
 		{
 			return GetStaticData<object>(String.Format("GlobalStatItems/{0}.json", key));
@@ -41,7 +43,9 @@ namespace PayCheckServerLib.Helpers
 
 			return null;
 		}
+		#endregion
 
+		#region User CloudSave Data
 		private static string GetUserCloudSaveFolderForUserId(string userId)
 		{
 			return String.Format("./UserData/{0}/CloudSave", userId);
@@ -61,7 +65,7 @@ namespace PayCheckServerLib.Helpers
 
 			string path = GetUserCloudSavePathForUserIdAndKey(userId, key);
 
-			if (!File.Exists(path))
+			if (!FileReadWriteHelper.Exists(path))
 				return null;
 
 
@@ -76,18 +80,13 @@ namespace PayCheckServerLib.Helpers
 				return;
 
 
-			string directory = GetUserCloudSaveFolderForUserId(userId);
-			if (!Directory.Exists(directory))
-				Directory.CreateDirectory(directory);
-
 			string path = GetUserCloudSavePathForUserIdAndKey(userId, key);
-			if (!File.Exists(path))
-				File.Create(path);
 
 			FileReadWriteHelper.WriteAllText(path, JsonConvert.SerializeObject(data));
 		}
+		#endregion
 
-
+		#region User StatItems
 		private static string GetStatItemsFolderForUserId(string userId)
 		{
 			return String.Format("./UserData/{0}/StatItems", userId);
@@ -108,7 +107,7 @@ namespace PayCheckServerLib.Helpers
 
 			string path = GetUserStatItemsPathForUserIdAndStatCode(userId, statCode);
 
-			if(!File.Exists(path))
+			if(!FileReadWriteHelper.Exists(path))
 				return null;
 
 			return JsonConvert.DeserializeObject<UserStatItemsData>(FileReadWriteHelper.ReadAllText(path));
@@ -168,9 +167,6 @@ namespace PayCheckServerLib.Helpers
 					Value = inc,
 				};
 
-				if(!Directory.Exists(GetStatItemsFolderForUserId(userId)))
-					Directory.CreateDirectory(GetStatItemsFolderForUserId(userId));
-
 				FileReadWriteHelper.WriteAllText(path, JsonConvert.SerializeObject(updatedStatItemData));
 
 				return;
@@ -185,5 +181,6 @@ namespace PayCheckServerLib.Helpers
 
 			return;
 		}
+		#endregion
 	}
 }

@@ -2,6 +2,7 @@
 using Newtonsoft.Json.Linq;
 using PayCheckServerLib.Jsons;
 using PayCheckServerLib.Jsons.Basic;
+using PayCheckServerLib.Responses;
 using System;
 using System.Collections.Generic;
 using System.Dynamic;
@@ -20,7 +21,12 @@ namespace PayCheckServerLib.Helpers
 		{
 			return String.Format("./UserData/{0}/Entitlements.json", userId);
 		}
+		private static string GetAwardedRewardsPathForUserId(string userId)
+		{
+			return String.Format("./UserData/{0}/AwardedRewards.json", userId);
+		}
 
+		#region Loading Static Data
 		private static List<ItemDefinitionJson> ItemDefinitions { get; set; } = new List<ItemDefinitionJson>();
 		private static List<RewardItem> Rewards { get; set; } = new List<RewardItem>();
 		private static void TryLoadItemDefinitions()
@@ -43,6 +49,7 @@ namespace PayCheckServerLib.Helpers
 			if (loadedData != null)
 				Rewards = loadedData.Data;
 		}
+		#endregion
 
 		public static List<ItemDefinitionJson> GetItemDefinitions()
 		{
@@ -50,6 +57,7 @@ namespace PayCheckServerLib.Helpers
 			return ItemDefinitions;
 		}
 
+		#region Raw Entitlement Data Access
 		public static List<EntitlementsData> GetEntitlementDataForUser(string userId)
 		{
 			if(!UserIdHelper.IsValidUserId(userId))
@@ -58,10 +66,11 @@ namespace PayCheckServerLib.Helpers
 			}
 
 			string path = GetEntitlementsPathForUserId(userId);
-			if (!File.Exists(path))
+
+			if (!FileReadWriteHelper.Exists(path))
 				return new();
 
-			var data = JsonConvert.DeserializeObject<List<EntitlementsData>>(File.ReadAllText(path));
+			var data = JsonConvert.DeserializeObject<List<EntitlementsData>>(FileReadWriteHelper.ReadAllText(path));
 
 			if (data == null)
 				return new();
@@ -75,40 +84,37 @@ namespace PayCheckServerLib.Helpers
 				return;
 
 			string path = GetEntitlementsPathForUserId(userId);
-			if(!File.Exists(path))
-				File.Create(path);
 
 			
-			File.WriteAllText(path, JsonConvert.SerializeObject(data, Formatting.Indented));
+			FileReadWriteHelper.WriteAllText(path, JsonConvert.SerializeObject(data, Formatting.Indented));
 		}
+		#endregion
 
+		#region Granting Entitlements
 		/// <summary>
 		/// Adds items with the provided Item IDs and quantities to the user
 		/// </summary>
 		/// <param name="userId">The user to grant the item to</param>
 		/// <param name="namespace_">The namespace that the item should be granted in</param>
-		/// <param name="itemIds">The id of items to be added, must have the same number of entries as the quantities list</param>
-		/// <param name="quantities">The quantity of items to be added, must have the same number of entries as the item id list</param>
+		/// <param name="items">A list of key/value pairs of item ids and quantities</param>
 		/// <param name="source">Can be "PURCHASE" or "REWARD"</param>
-		public static void AddBulkEntitlementToUserViaItemId(string userId, string namespace_, List<string> itemIds, List<int> quantities, out List<EntitlementsData> addedEntitlements, string source = "PURCHASE")
+		public static void AddBulkEntitlementToUserViaItemId(string userId, string namespace_, List<KeyValuePair<string, int>> items, out List<EntitlementsData> addedEntitlements, string source = "PURCHASE")
 		{
+			TryLoadItemDefinitions();
+
 			addedEntitlements = new List<EntitlementsData>();
 			if (!UserIdHelper.IsValidUserId(userId))
 			{
 				return;
 			}
 
-			if (itemIds.Count != quantities.Count)
-			{
-				return;
-			}
 
 			var userEntitlements = GetEntitlementDataForUser(userId);
 
-			for (int i = 0; i < itemIds.Count; i++)
+			foreach (var item in items)
 			{
-				var itemId = itemIds[i];
-				var quantity = quantities[i];
+				var itemId = item.Key;
+				var quantity = item.Value;
 
 				var itemInUserEntitlements = userEntitlements.FindIndex(entitlement => entitlement.ItemId == itemId);
 				if (itemInUserEntitlements != -1)
@@ -150,7 +156,7 @@ namespace PayCheckServerLib.Helpers
 		public static void AddEntitlementToUserViaItemId(string userId, string namespace_, string itemId, int quantity, out EntitlementsData? addedEntitlement, string source = "PURCHASE")
 		{
 			List<EntitlementsData>? addedEntitlements = null;
-			AddBulkEntitlementToUserViaItemId(userId, namespace_, [itemId], [quantity], out addedEntitlements, source);
+			AddBulkEntitlementToUserViaItemId(userId, namespace_, [new(itemId, quantity)], out addedEntitlements, source);
 
 			if (addedEntitlements.Count > 0)
 			{
@@ -167,28 +173,24 @@ namespace PayCheckServerLib.Helpers
 		/// </summary>
 		/// <param name="userId">The user to grant the item to</param>
 		/// <param name="namespace_">The namespace that the item should be granted in</param>
-		/// <param name="skus">The sku of items to be added, must have the same number of entries as the quantities list</param>
-		/// <param name="quantities">The quantity of items to be added, must have the same number of entries as the sku list</param>
+		/// <param name="items">A list of key/value pairs of item skus and quantities</param>
 		/// <param name="source">Can be "PURCHASE" or "REWARD"</param>
-		public static void AddBulkEntitlementToUserViaSKU(string userId, string namespace_, List<string> skus, List<int> quantities, out List<EntitlementsData> addedEntitlements, string source = "PURCHASE")
+		public static void AddBulkEntitlementToUserViaSKU(string userId, string namespace_, List<KeyValuePair<string, int>> items, out List<EntitlementsData> addedEntitlements, string source = "PURCHASE")
 		{
+			TryLoadItemDefinitions();
+
 			addedEntitlements = new List<EntitlementsData>();
 			if (!UserIdHelper.IsValidUserId(userId))
 			{
 				return;
 			}
 
-			if (skus.Count != quantities.Count)
-			{
-				return;
-			}
-
 			var userEntitlements = GetEntitlementDataForUser(userId);
 
-			for (int i = 0; i < skus.Count; i++)
+			foreach(var item in items)
 			{
-				var sku = skus[i];
-				var quantity = quantities[i];
+				var sku = item.Key;
+				var quantity = item.Value;
 
 				var itemInUserEntitlements = userEntitlements.FindIndex(entitlement => entitlement.Sku == sku);
 				if (itemInUserEntitlements != -1)
@@ -253,7 +255,7 @@ namespace PayCheckServerLib.Helpers
 		public static void AddEntitlementToUserViaSKU(string userId, string namespace_, string sku, int quantity, out EntitlementsData? addedEntitlement, string source = "PURCHASE")
 		{
 			List<EntitlementsData>? addedEntitlements = null;
-			AddBulkEntitlementToUserViaSKU(userId, namespace_, [sku], [quantity], out addedEntitlements, source);
+			AddBulkEntitlementToUserViaSKU(userId, namespace_, [new(sku, quantity)], out addedEntitlements, source);
 
 			if (addedEntitlements.Count > 0)
 			{
@@ -264,8 +266,46 @@ namespace PayCheckServerLib.Helpers
 			}
 			return;
 		}
+		#endregion
 
-		public static void CheckForRewardsOnStatItemUpdate(string userId, List<UserStatItemsData> statItems)
+		#region Rewards
+		private static List<string> GetAwardedRewardIdsForUser(string userId)
+		{
+			if (!UserIdHelper.IsValidUserId(userId))
+				return [];
+
+			string path = GetAwardedRewardsPathForUserId(userId);
+
+			if (!File.Exists(path))
+				return [];
+
+			return JsonConvert.DeserializeObject<List<string>>(FileReadWriteHelper.ReadAllText(path));
+		}
+
+		private static void AddAwardedRewardIdsToUser(string userId, List<string> awardedRewardIds)
+		{
+			if (!UserIdHelper.IsValidUserId(userId))
+				return;
+
+			string path = GetAwardedRewardsPathForUserId(userId);
+
+			var newAwardedList = new List<string>();
+
+			if (File.Exists(path))
+				newAwardedList = JsonConvert.DeserializeObject<List<string>>(FileReadWriteHelper.ReadAllText(path));
+
+			if(newAwardedList == null)
+			{
+				newAwardedList = awardedRewardIds;
+			} else
+			{
+				newAwardedList = newAwardedList.Concat(awardedRewardIds).ToList();
+			}
+
+			FileReadWriteHelper.WriteAllText(path, JsonConvert.SerializeObject(newAwardedList));
+		}
+
+		public static void CheckForRewardsOnStatItemUpdate(string namespace_, string userId, List<UserStatItemsData> statItems)
 		{
 			TryLoadRewards();
 
@@ -284,6 +324,67 @@ namespace PayCheckServerLib.Helpers
 			 *	JToken? selected = testobj.SelectToken("$.[?(@.namespace == 'pd3' && @.challengeId == '63e505437f4d322dc61d2dd8')]");
 			 */
 
+			// dictionary of item ids to item quantities
+			var itemsToAward = new Dictionary<string, int>();
+
+			var alreadyAwardedRewards = GetAwardedRewardIdsForUser(userId);
+
+			var newAwardedRewards = new List<string>();
+			foreach (var reward in statisticRewards)
+			{
+				if (alreadyAwardedRewards.Contains(reward.RewardId))
+					continue; // User already has reward, skip checking if they should have it awarded
+
+				foreach(var rewardCondition in reward.RewardConditions) // None of the rewards that Starbreeze have added have more than one reward condition
+				{
+					if (rewardCondition.EventName != "statItemUpdated")
+						continue;
+
+
+					bool passedCondition = false;
+
+					/// Lazy solution, just checking if the condition string even contains the stat code
+					foreach(var updatedStatCode in statItems)
+					{
+						if (rewardCondition.Condition.Contains(updatedStatCode.StatCode))
+						{
+							passedCondition = true;
+						}
+					}
+
+					/// Proper JSONPath based solution
+					//JToken? conditionToken = jsonPathTestArray.SelectToken(rewardCondition.Condition);
+					/*if (conditionToken != null)
+					{
+						var conditionTokenArray = conditionToken as JArray;
+						if (conditionTokenArray != null)
+						{
+							if (conditionTokenArray.Count > 0) // JSONPath condition was successful, user has passed the reward condition
+							{
+								passedCondition = true;
+							}
+						}
+					}*/
+
+					if (passedCondition)
+					{
+						newAwardedRewards.Add(reward.RewardId);
+
+						foreach(var awardedItem in rewardCondition.RewardItems)
+						{
+							if (!itemsToAward.ContainsKey(awardedItem.ItemId))
+								itemsToAward.Add(awardedItem.ItemId, 0);
+							itemsToAward[awardedItem.ItemId] += awardedItem.Quantity;
+						}
+					}
+				}
+			}
+
+
+			AddBulkEntitlementToUserViaItemId(userId, namespace_, itemsToAward.ToList(), out List<EntitlementsData> newEntitlements, "REWARD");
+			AddAwardedRewardIdsToUser(userId, newAwardedRewards);
 		}
+
+		#endregion
 	}
 }

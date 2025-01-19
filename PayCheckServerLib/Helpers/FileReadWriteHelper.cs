@@ -23,6 +23,15 @@ namespace PayCheckServerLib.Helpers
 			return File.ReadAllText(path);
 		}
 
+		public static bool Exists(string path)
+		{
+			while (CachedFileContentsBeingModified) { }
+			if (CachedFileContents.ContainsKey(path))
+				return true;
+
+			return File.Exists(path);
+		}
+
 		public static void WriteAllText(string path, string contents)
 		{
 			CachedFileContentsBeingModified = true;
@@ -37,11 +46,15 @@ namespace PayCheckServerLib.Helpers
 			{
 				try
 				{
+					if(!Directory.Exists(Path.GetDirectoryName(file.Key)))
+						Directory.CreateDirectory(Path.GetDirectoryName(file.Key));
 					File.WriteAllText(file.Key, file.Value);
 				}
 				catch
 				{
 					System.Threading.Thread.Sleep(100);
+					if (!Directory.Exists(Path.GetDirectoryName(file.Key)))
+						Directory.CreateDirectory(Path.GetDirectoryName(file.Key));
 					File.WriteAllText(file.Key, file.Value);
 				}
 			}

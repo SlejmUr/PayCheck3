@@ -129,7 +129,7 @@ namespace PayCheckServerLib.Responses
 				responseData.Add(respData);
 
 			}
-			UserEntitlementHelper.CheckForRewardsOnStatItemUpdate(serverStruct.Parameters["userId"], userStatsForRewardChecking);
+			UserEntitlementHelper.CheckForRewardsOnStatItemUpdate(serverStruct.Parameters["namespace"], serverStruct.Parameters["userId"], userStatsForRewardChecking);
 
 			var response = new ResponseCreator();
 			response.SetHeader("Content-Type", "application/json");
