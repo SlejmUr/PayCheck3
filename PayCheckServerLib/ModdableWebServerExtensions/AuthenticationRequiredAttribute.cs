@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PayCheckServerLib.ModdableWebServerExtensions
 {
-	[AttributeUsage(AttributeTargets.Method)]
+	[AttributeUsage(AttributeTargets.Method, AllowMultiple = true)]
 	public class AuthenticationRequiredAttribute : Attribute
 	{
 		[Flags]

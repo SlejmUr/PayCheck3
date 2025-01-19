@@ -7,7 +7,7 @@ namespace PayCheckServerLib.Jsons.Basic
         [JsonProperty("data")]
         public List<T> Data { get; set; }
 
-        [JsonProperty("paging")]
+        [JsonProperty("paging", NullValueHandling = NullValueHandling.Ignore)]
         public PagingClass Paging { get; set; }
     }
 

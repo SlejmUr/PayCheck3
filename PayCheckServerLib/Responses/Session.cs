@@ -31,7 +31,7 @@ namespace PayCheckServerLib.Responses
 		}
 
 
-		[HTTP("GET", "/session/v1/public/namespaces/pd3/recent-player?limit=200")]
+		[HTTP("GET", "/session/v1/public/namespaces/pd3/recent-player?limit={limit}")]
         public static bool GetRecentPlayersLimit(HttpRequest _, ServerStruct serverStruct)
         {
           ResponseCreator response = new ResponseCreator();

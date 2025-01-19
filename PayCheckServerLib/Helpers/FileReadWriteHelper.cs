@@ -11,8 +11,10 @@ namespace PayCheckServerLib.Helpers
 		// TODO: Remove file caching, and switch everything over to an "atomic" file read write (writes will wait for active reads to finish, and reads will wait for active writes to finish)
 		public static Dictionary<string, string> CachedFileContents = new Dictionary<string, string>();
 
+		private static bool CachedFileContentsBeingModified = false;
 		public static string ReadAllText(string path)
 		{
+			while (CachedFileContentsBeingModified) { }
 			if (CachedFileContents.ContainsKey(path))
 			{
 				return CachedFileContents[path];
@@ -23,11 +25,14 @@ namespace PayCheckServerLib.Helpers
 
 		public static void WriteAllText(string path, string contents)
 		{
+			CachedFileContentsBeingModified = true;
 			CachedFileContents[path] = contents;
+			CachedFileContentsBeingModified = false;
 		}
 
 		public static void SaveCachedFiles()
 		{
+			while (CachedFileContentsBeingModified) { }
 			foreach (var file in CachedFileContents)
 			{
 				try
@@ -40,7 +45,9 @@ namespace PayCheckServerLib.Helpers
 					File.WriteAllText(file.Key, file.Value);
 				}
 			}
+			CachedFileContentsBeingModified = true;
 			CachedFileContents.Clear();
+			CachedFileContentsBeingModified = false;
 		}
 
 		public static bool ShouldRunCachedFilesThread { get; set; }
@@ -49,7 +56,7 @@ namespace PayCheckServerLib.Helpers
 			while(ShouldRunCachedFilesThread)
 			{
 				SaveCachedFiles();
-				System.Threading.Thread.Sleep(1000);
+				System.Threading.Thread.Sleep(500);
 			}
 			SaveCachedFiles(); // save everything one last time on exit
 		}

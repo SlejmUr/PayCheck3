@@ -1,4 +1,5 @@
-﻿using NetCoreServer;
+﻿using ModdableWebServer;
+using NetCoreServer;
 
 
 namespace PayCheckServerLib
@@ -30,7 +31,8 @@ namespace PayCheckServerLib
             response = new();
             response.Clear();
             response.SetBegin(status);
-        }
+			response.SetHeader("server", "PayCheck3"); // AccelByte sets the server header to "istio-envoy", this is just to add the ability for clients to know they are using PayCheck3
+		}
 
         public void SetHeaders(Dictionary<string, string> kv)
         {

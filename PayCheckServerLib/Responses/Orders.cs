@@ -34,11 +34,7 @@ public class Orders
 
 		if(body == null)
 		{
-			response.New(404);
-			response.SetBody(ErrorHelper.GetResponseBodyForErrorCode(ErrorHelper.Errors.ValidationError));
-			serverStruct.Response = response.GetResponse();
-			serverStruct.SendResponse();
-			return true;
+			return serverStruct.ReturnErrorHelper(ErrorHelper.Errors.ValidationError);
 		}
 
         var ordernumber = GenOrderNumber();
@@ -46,11 +42,7 @@ public class Orders
 
 		if(item == null)
 		{
-			response.New(404);
-			response.SetBody(ErrorHelper.GetResponseBodyForErrorCode(ErrorHelper.Errors.ItemDoesNotExistInNamespace));
-			serverStruct.Response = response.GetResponse();
-			serverStruct.SendResponse();
-			return true;
+			return serverStruct.ReturnErrorHelper(ErrorHelper.Errors.ItemDoesNotExistInNamespace);
 		}
 
         Order order = new()

@@ -18,6 +18,7 @@ namespace PayCheckServerLib.ModdableWebServerExtensions
 					Debugger.PrintError($"Zero sized response body!");
 				}
 			}
+
 			switch (serverStruct.Enum)
 			{
 				case ServerEnum.HTTP:

@@ -3,6 +3,7 @@ using ModdableWebServer.Attributes;
 using ModdableWebServer.Helper;
 using ModdableWebServer.Servers;
 using NetCoreServer;
+using Newtonsoft.Json.Linq;
 using PayCheckServerLib.Helpers;
 using System.Diagnostics;
 using System.Reflection;
@@ -111,7 +112,9 @@ namespace PayCheckServerLib
 		private static void ReceivedFailed(object? sender, HttpRequest request)
 		{
 			Debugger.PrintError(String.Format("Url not handled! {0} : {1}", request.Method, request.Url));
+#if DEBUG
 			throw new PayCheck3UrlNotHandledException(request.Method, request.Url);
+#endif
 		}
 		private static void WSError(object? sender, string error)
 		{

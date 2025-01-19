@@ -1,9 +1,12 @@
-﻿using Newtonsoft.Json;
+﻿using ModdableWebServer;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static PayCheckServerLib.Helpers.ErrorHelper;
+using static PayCheckServerLib.Jsons.PartyStuff.PartyPost;
 
 namespace PayCheckServerLib.Helpers
 {
@@ -55,6 +58,17 @@ namespace PayCheckServerLib.Helpers
 					break;
 			}
 			return JsonConvert.SerializeObject(errorEntity);
+		}
+	}
+	public static class ServerStructErrorHelper
+	{
+		public static bool ReturnErrorHelper(this ServerStruct serverStruct, Errors error)
+		{
+			var response = new ResponseCreator(404);
+			response.SetBody(ErrorHelper.GetResponseBodyForErrorCode(error));
+			serverStruct.Response = response.GetResponse();
+			serverStruct.SendResponse();
+			return true;
 		}
 	}
 }

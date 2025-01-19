@@ -17,6 +17,7 @@ namespace PayCheckServerLib
 
         public enum TokenPlatform
         {
+			InvalidToken,
             Unknow,
             Steam,
             Device,
@@ -107,10 +108,22 @@ namespace PayCheckServerLib
             return (new Token(), new Token());
         }
 
+		static bool IsValidBase64(string base64)
+		{
+			Span<byte> buffer = new Span<byte>(new byte[base64.Length]);
+			return Convert.TryFromBase64String(base64, buffer, out int bytesParsed);
+		}
+
 
         public static Token ReadToken(string base64)
         {
-            var b64 = Convert.FromBase64String(base64);
+			if (!IsValidBase64(base64))
+				return new Token()
+				{
+					PlatformType = TokenPlatform.InvalidToken,
+				};
+
+			var b64 = Convert.FromBase64String(base64);
 
             var bname_l = BitConverter.ToInt32(b64[0..4]);
 

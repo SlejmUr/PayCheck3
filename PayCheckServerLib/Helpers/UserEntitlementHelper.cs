@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using PayCheckServerLib.Jsons;
 using PayCheckServerLib.Jsons.Basic;
 using System;
@@ -82,74 +83,58 @@ namespace PayCheckServerLib.Helpers
 		}
 
 		/// <summary>
-		/// Adds an item with a provided sku to the user
+		/// Adds items with the provided Item IDs and quantities to the user
 		/// </summary>
 		/// <param name="userId">The user to grant the item to</param>
 		/// <param name="namespace_">The namespace that the item should be granted in</param>
-		/// <param name="sku">The SKU of the item, if the provided sku does not exist in the item list, a fake entitlement will be created</param>
-		/// <param name="quantity">The number of items to grant</param>
+		/// <param name="itemIds">The id of items to be added, must have the same number of entries as the quantities list</param>
+		/// <param name="quantities">The quantity of items to be added, must have the same number of entries as the item id list</param>
 		/// <param name="source">Can be "PURCHASE" or "REWARD"</param>
-		public static void AddEntitlementToUserViaSKU(string userId, string namespace_, string sku, int quantity, out EntitlementsData? addedEntitlement, string source = "PURCHASE")
+		public static void AddBulkEntitlementToUserViaItemId(string userId, string namespace_, List<string> itemIds, List<int> quantities, out List<EntitlementsData> addedEntitlements, string source = "PURCHASE")
 		{
+			addedEntitlements = new List<EntitlementsData>();
 			if (!UserIdHelper.IsValidUserId(userId))
 			{
-				addedEntitlement = null;
 				return;
 			}
-			TryLoadItemDefinitions();
+
+			if (itemIds.Count != quantities.Count)
+			{
+				return;
+			}
 
 			var userEntitlements = GetEntitlementDataForUser(userId);
 
-			var itemInUserEntitlements = userEntitlements.Find(entitlement => entitlement.Sku == sku);
-			if(itemInUserEntitlements != null)
+			for (int i = 0; i < itemIds.Count; i++)
 			{
-				var index = userEntitlements.IndexOf(itemInUserEntitlements);
-				userEntitlements[index].UseCount += quantity;
-				SetEntitlementDataForUser(userId, userEntitlements);
-				addedEntitlement = userEntitlements[index];
-				return;
-			}
+				var itemId = itemIds[i];
+				var quantity = quantities[i];
 
-			var itemData = ItemDefinitions.Find(item => item.Sku == sku);
-			if(itemData == null)
-			{
-				// sku is not present in the items list, adding it anyway with a random item id
+				var itemInUserEntitlements = userEntitlements.FindIndex(entitlement => entitlement.ItemId == itemId);
+				if (itemInUserEntitlements != -1)
+				{
+					userEntitlements[itemInUserEntitlements].UseCount += quantity;
+					addedEntitlements.Add(userEntitlements[itemInUserEntitlements]);
+					continue;
+				}
+
+				var itemData = ItemDefinitions.Find(item => item.ItemId == itemId);
+
+				if (itemData == null)
+					continue;
 
 				var entitlement = new EntitlementsData()
 				{
-					Id = UserIdHelper.CreateNewID(), // uuidv4
+					Id = itemData.ItemId,
 					Namespace = namespace_,
 					Clazz = "ENTITLEMENT",
-					Type = "CONSUMABLE",
+					Type = itemData.EntitlementType,
 					Status = "ACTIVE",
-					Sku = sku,
-					UserId = userId,
-					ItemId = UserIdHelper.CreateNewID(),
-					ItemNamespace = namespace_,
-					Name = sku,
-					Source = source,
-					GrantedAt = TimeHelper.GetZTime(),
-					CreatedAt = TimeHelper.GetZTime(),
-					UpdatedAt = TimeHelper.GetZTime(),
-					UseCount = quantity,
-					Stackable = true
-				};
-				addedEntitlement = entitlement;
-				userEntitlements.Add(entitlement);
-			} else
-			{
-				var entitlement = new EntitlementsData()
-				{
-					Id = UserIdHelper.CreateNewID(), // uuidv4
-					Namespace = namespace_,
-					Clazz = "ENTITLEMENT",
-					Type = "CONSUMABLE",
-					Status = "ACTIVE",
-					Sku = sku,
+					Sku = itemData.Sku,
 					UserId = userId,
 					ItemId = itemData.ItemId,
 					ItemNamespace = namespace_,
-					Name = sku,
+					Name = itemData.Name,
 					Source = source,
 					GrantedAt = TimeHelper.GetZTime(),
 					CreatedAt = TimeHelper.GetZTime(),
@@ -157,16 +142,148 @@ namespace PayCheckServerLib.Helpers
 					UseCount = quantity,
 					Stackable = true
 				};
-
-				addedEntitlement = entitlement;
 				userEntitlements.Add(entitlement);
+				addedEntitlements.Add(entitlement);
 			}
 			SetEntitlementDataForUser(userId, userEntitlements);
 		}
+		public static void AddEntitlementToUserViaItemId(string userId, string namespace_, string itemId, int quantity, out EntitlementsData? addedEntitlement, string source = "PURCHASE")
+		{
+			List<EntitlementsData>? addedEntitlements = null;
+			AddBulkEntitlementToUserViaItemId(userId, namespace_, [itemId], [quantity], out addedEntitlements, source);
 
-		public static void CheckForRewardsOnStatItemUpdate(string userId, string statItem)
+			if (addedEntitlements.Count > 0)
+			{
+				addedEntitlement = addedEntitlements[0];
+			}
+			else
+			{
+				addedEntitlement = null;
+			}
+			return;
+		}
+		/// <summary>
+		/// Adds items with the provided SKUs and quantities to the user
+		/// </summary>
+		/// <param name="userId">The user to grant the item to</param>
+		/// <param name="namespace_">The namespace that the item should be granted in</param>
+		/// <param name="skus">The sku of items to be added, must have the same number of entries as the quantities list</param>
+		/// <param name="quantities">The quantity of items to be added, must have the same number of entries as the sku list</param>
+		/// <param name="source">Can be "PURCHASE" or "REWARD"</param>
+		public static void AddBulkEntitlementToUserViaSKU(string userId, string namespace_, List<string> skus, List<int> quantities, out List<EntitlementsData> addedEntitlements, string source = "PURCHASE")
+		{
+			addedEntitlements = new List<EntitlementsData>();
+			if (!UserIdHelper.IsValidUserId(userId))
+			{
+				return;
+			}
+
+			if (skus.Count != quantities.Count)
+			{
+				return;
+			}
+
+			var userEntitlements = GetEntitlementDataForUser(userId);
+
+			for (int i = 0; i < skus.Count; i++)
+			{
+				var sku = skus[i];
+				var quantity = quantities[i];
+
+				var itemInUserEntitlements = userEntitlements.FindIndex(entitlement => entitlement.Sku == sku);
+				if (itemInUserEntitlements != -1)
+				{
+					userEntitlements[itemInUserEntitlements].UseCount += quantity;
+					addedEntitlements.Add(userEntitlements[itemInUserEntitlements]);
+					continue;
+				}
+
+				var itemData = ItemDefinitions.Find(item => item.Sku == sku);
+				if (itemData == null)
+				{
+					var entitlement = new EntitlementsData()
+					{
+						Id = UserIdHelper.CreateNewID(), // uuidv4
+						Namespace = namespace_,
+						Clazz = "ENTITLEMENT",
+						Type = "CONSUMABLE",
+						Status = "ACTIVE",
+						Sku = sku,
+						UserId = userId,
+						ItemId = UserIdHelper.CreateNewID(),
+						ItemNamespace = namespace_,
+						Name = sku,
+						Source = source,
+						GrantedAt = TimeHelper.GetZTime(),
+						CreatedAt = TimeHelper.GetZTime(),
+						UpdatedAt = TimeHelper.GetZTime(),
+						UseCount = quantity,
+						Stackable = true
+					};
+					userEntitlements.Add(entitlement);
+					addedEntitlements.Add(entitlement);
+				} else
+				{
+
+					var entitlement = new EntitlementsData()
+					{
+						Id = UserIdHelper.CreateNewID(), // uuidv4
+						Namespace = namespace_,
+						Clazz = "ENTITLEMENT",
+						Type = itemData.EntitlementType,
+						Status = "ACTIVE",
+						Sku = sku,
+						UserId = userId,
+						ItemId = itemData.ItemId,
+						ItemNamespace = namespace_,
+						Name = sku,
+						Source = source,
+						GrantedAt = TimeHelper.GetZTime(),
+						CreatedAt = TimeHelper.GetZTime(),
+						UpdatedAt = TimeHelper.GetZTime(),
+						UseCount = quantity,
+						Stackable = true
+					};
+					userEntitlements.Add(entitlement);
+					addedEntitlements.Add(entitlement);
+				}
+			}
+			SetEntitlementDataForUser(userId, userEntitlements);
+		}
+		public static void AddEntitlementToUserViaSKU(string userId, string namespace_, string sku, int quantity, out EntitlementsData? addedEntitlement, string source = "PURCHASE")
+		{
+			List<EntitlementsData>? addedEntitlements = null;
+			AddBulkEntitlementToUserViaSKU(userId, namespace_, [sku], [quantity], out addedEntitlements, source);
+
+			if (addedEntitlements.Count > 0)
+			{
+				addedEntitlement = addedEntitlements[0];
+			} else
+			{
+				addedEntitlement = null;
+			}
+			return;
+		}
+
+		public static void CheckForRewardsOnStatItemUpdate(string userId, List<UserStatItemsData> statItems)
 		{
 			TryLoadRewards();
+
+			if (!UserIdHelper.IsValidUserId(userId))
+				return;
+
+			if (statItems.Count == 0)
+				return; // Don't try to reward stat items if there's none
+
+			var jsonPathTestArray = JArray.Parse(JsonConvert.SerializeObject(statItems));
+
+			var statisticRewards = Rewards.FindAll(reward => reward.EventTopic == "statistic");
+
+			/*
+			 *	var testobj = JArray.Parse("[{'namespace': 'pd3','challengeId': '63e505437f4d322dc61d2dd8'}]");
+			 *	JToken? selected = testobj.SelectToken("$.[?(@.namespace == 'pd3' && @.challengeId == '63e505437f4d322dc61d2dd8')]");
+			 */
+
 		}
 	}
 }

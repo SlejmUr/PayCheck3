@@ -14,16 +14,12 @@ public class Friends
     {
         var auth = serverStruct.Headers["authorization"].Replace("Bearer ", "");
         var token = TokenHelper.ReadToken(auth);
-        var MainUser = UserController.GetUser(token.UserId, token.Namespace);
+		var MainUser = UserController.GetUser(token.UserId, token.Namespace);
 
         ResponseCreator response = new();
 		if (MainUser == null)
 		{
-			response.New(404);
-			response.SetBody(ErrorHelper.GetResponseBodyForErrorCode(ErrorHelper.Errors.ValidationError));
-			serverStruct.Response = response.GetResponse();
-			serverStruct.SendResponse();
-			return true;
+			return serverStruct.ReturnErrorHelper(ErrorHelper.Errors.ValidationError);
 		}
 
         response.SetHeader("Content-Type", "application/json");
@@ -50,11 +46,7 @@ public class Friends
 		var response = new ResponseCreator(204);
 		if (MainUser == null)
 		{
-			response.New(404);
-			response.SetBody(ErrorHelper.GetResponseBodyForErrorCode(ErrorHelper.Errors.ValidationError));
-			serverStruct.Response = response.GetResponse();
-			serverStruct.SendResponse();
-			return true;
+			return serverStruct.ReturnErrorHelper(ErrorHelper.Errors.ValidationError);
 		}
 
         var friends = JsonConvert.DeserializeObject<FriendAdd>(request.Body)!.FriendIds;
