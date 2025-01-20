@@ -5,6 +5,7 @@ using ModdableWebServer.Servers;
 using NetCoreServer;
 using Newtonsoft.Json.Linq;
 using PayCheckServerLib.Helpers;
+using PayCheckServerLib.Jsons;
 using System.Diagnostics;
 using System.Reflection;
 
@@ -56,17 +57,23 @@ namespace PayCheckServerLib
 		{
 			if (ConfigHelper.ServerConfig.Hosting.WSS)
 			{
-				var context = CertHelper.GetContextNoValidate( System.Security.Authentication.SslProtocols.Tls12 , "cert.pfx", "cert");
-				server = new(context, ConfigHelper.ServerConfig.Hosting.IP, ConfigHelper.ServerConfig.Hosting.Port);
-				server.ReceivedFailed += ReceivedFailed;
-				server.Started += Server_Started;
-				server.Stopped += Server_Stopped;
+				if (!File.Exists("cert.pfx"))
+				{
+					Debugger.PrintError("Fatal Error: cert.pfx is not present, PayCheck3 is unable to serve HTTPS traffic, please generate a SSL certificate or place one in the install folder");
+					Debugger.PrintInfo("As no certificate file is present, PayCheck3 will not start.");
+				} else {
+					var context = CertHelper.GetContextNoValidate(System.Security.Authentication.SslProtocols.Tls12, "cert.pfx", ConfigHelper.ServerConfig.Hosting.CertificatePassword);
+					server = new(context, ConfigHelper.ServerConfig.Hosting.IP, ConfigHelper.ServerConfig.Hosting.Port);
+					server.ReceivedFailed += ReceivedFailed;
+					server.Started += Server_Started;
+					server.Stopped += Server_Stopped;
 
-				//server.HTTP_AttributeToMethods.Merge(Assembly.GetAssembly(typeof(ConfigHelper)));
-				//server.WS_AttributeToMethods = AttributeMethodHelper.UrlWSLoader(Assembly.GetAssembly(typeof(ConfigHelper)));
+					//server.HTTP_AttributeToMethods.Merge(Assembly.GetAssembly(typeof(ConfigHelper)));
+					//server.WS_AttributeToMethods = AttributeMethodHelper.UrlWSLoader(Assembly.GetAssembly(typeof(ConfigHelper)));
 
-				server.WSError += WSError;
-				server.Start();
+					server.WSError += WSError;
+					server.Start();
+				}
 			}
 			if (ConfigHelper.ServerConfig.Hosting.Gstatic)
 			{

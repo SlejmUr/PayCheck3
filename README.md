@@ -9,54 +9,32 @@ does not work with an illegitimate copy. We're sorry to have caused any confusio
 this could be used for piracy.
  - This project is in no way affiliated or endorsed by Starbreeze Entertainment.
 
-## CURRENTLY MATCHMAKING IS NOT WORKING!
-Thank you for understanding! I working on a solution, no ETA yet.
+# How to use the server
 
-## Current State
-Left to do (& Working on it):
-- WSS Response
-- Party and GameSessions
-- New Responses
+## Hosting PayCheck3 locally
+**The certificates created by `PayCheck3CertificateGenerator.exe` expire exactly 1 year after being generated.
+If you use this software, and it stops working 1 year after you made the certificates, you need to regenerate them and reinstall them.**
 
-Need more Interogation:\
-UDP Connection
+1. Download the latest release of PayCheck3.
+2. Unpack the latest release and run `PayCheck3CertificateGenerator.exe` to generate the required **self-signed** SSL certificates.
+3. On Windows: Double-click on the `cert.crt` file and click the "Install Certificate..." button. In the dialog that appears
+select "Current User" and click "Next". In the new dialog, select "Place all certificates in the following store" and click "Browse".
+In the "Select Certificate Store" dialog, choose "Trusted Root Certification Authorities" and click "OK".
+After choosing the certificate store, client "Next" and "Finish".
+If a dialog appears asking if you want to install the certificate, click "Yes".
+4. Once the certificate is installed, add ```127.0.0.1 nebula.starbreeze.com``` to your `C:\Windows\System32\Drivers\etc\hosts` file. **To stop the game from using PayCheck3, remove this line from your `hosts` file**.
+5. Run `PayCheck3ServerApp.exe` and PayCheck3 will start.
 
-How to run:
-1. Go To Cert folder and follow readme.txt
-2. Copy crt & pfx files and paste next to PayCheck3ServerApp.exe
-3. Start the server.
-4. Go to your c:\Windows\System32\Drivers\etc\hosts and open it.
-5. Copy all stuff from hosts_edit.txt
-6. Run your Client & Have fun.
+## Hosting PayCheck3 on a public facing server 
 
-If you want your friends to join you, they need to edit the 127.0.0.1 to your IP (Can be Lan or your External)
+1. Download the latest release of PayCheck3.
+2. Edit `config.json` and change the `SSLCertificatePassword` value to the password of your server's SSL certificate.
+   (If `config.json` does not exist, run `PayCheck3ServerApp.exe` at least once).
+3. Put your server's SSL certificate, in PFX format, in PayCheck3's install folder and name it "cert.pfx".
+4. Run `PayCheck3ServerApp.exe` and PayCheck3 will start.
 
-# Where can I get the built server?
-In [Github Actions](https://github.com/SlejmUr/PayCheck3/actions) you find most recent pushes/request Build version.
+### How can players connect to my server?
 
-# Configurate your server.
-You see a config.json where you can edit some things that can edit server stuff.
+For players to be able to connect to your public-facing PayCheck3 server, they will need to make the following edits to their PAYDAY 3 `Engine.ini` config file.
 
-### Saves
-SaveRequest: In here you can save each request when client send any change in the inventory. (Usefull for debug)\
-Extension: It basicly a json but with a funny extension
-
-### Hosting
-IP: Currently is its 127.0.0.1 but can be changed to your IP or anything as IP (IT HOST GSTATIC,WSS too!!!)\
-Port: Hosting on that port (Default 443), Please if you change that, use caddy or reverse-proxy for this. 
-WSS: Can enable/disable to run the HTTPS/WSS Server\
-GSTATIC: Can enable/disable to run the GSTATIC server (Enable you to play without internet)\
-
-### InDevFeatures
-Can enable/disable certain features that could land you something now work perfectly.
-
-# Soon stuff's
-Aka just ideas
-
-### How to add your server
-Open config.json\
-Duplicate the first server in DS_Servers\
-Edit the Status, Region, Port, IP to your UDP one
-
-
- 
+**TODO**

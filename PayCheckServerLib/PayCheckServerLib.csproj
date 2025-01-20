@@ -20,18 +20,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="config.json" />
     <None Remove="files\globalstatitems\edgegap_beacons.json" />
     <None Remove="files\globalstatitems\title-data.json" />
     <None Remove="files\PartySessionNoSyncConfiguration.json" />
     <None Remove="files\Rewards.json" />
     <None Remove="files\Roles.json" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="config.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
 
   <ItemGroup>
