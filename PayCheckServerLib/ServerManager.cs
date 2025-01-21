@@ -61,7 +61,8 @@ namespace PayCheckServerLib
 				{
 					Debugger.PrintError("Fatal Error: cert.pfx is not present, PayCheck3 is unable to serve HTTPS traffic, please generate a SSL certificate or place one in the install folder");
 					Debugger.PrintInfo("As no certificate file is present, PayCheck3 will not start.");
-				} else {
+				} else
+				{
 					var context = CertHelper.GetContextNoValidate(System.Security.Authentication.SslProtocols.Tls12, "cert.pfx", ConfigHelper.ServerConfig.Hosting.CertificatePassword);
 					server = new(context, ConfigHelper.ServerConfig.Hosting.IP, ConfigHelper.ServerConfig.Hosting.Port);
 					server.ReceivedFailed += ReceivedFailed;
