@@ -1,6 +1,5 @@
 ﻿using ModdableWebServer;
 using ModdableWebServer.Attributes;
-using ModdableWebServer.Helper;
 using NetCoreServer;
 using Newtonsoft.Json;
 using PayCheckServerLib.Helpers;
@@ -15,12 +14,18 @@ public class Friends
     {
         var auth = serverStruct.Headers["authorization"].Replace("Bearer ", "");
         var token = TokenHelper.ReadToken(auth);
-        var MainUser = UserController.GetUser(token.UserId, token.Namespace) ?? throw new Exception("MainUser is null!");
+		var MainUser = UserController.GetUser(token.UserId, token.Namespace);
+
         ResponseCreator response = new();
+		if (MainUser == null)
+		{
+			return serverStruct.ReturnErrorHelper(ErrorHelper.Errors.ValidationError);
+		}
+
         response.SetHeader("Content-Type", "application/json");
         FriendsPlatfrom friends = new FriendsPlatfrom()
         {
-            Data = MainUser.Friends
+            Data = MainUser.Friends,
         };
         response.SetBody(JsonConvert.SerializeObject(friends));
         serverStruct.Response = response.GetResponse();
@@ -28,7 +33,7 @@ public class Friends
         return true;
     }
 
-    [HTTP("GET", "/friends/namespaces/pd3/me/platforms?limit=50&offset=0")]
+    [HTTP("GET", "/friends/namespaces/{namespace}/me/platforms?limit={limit}&offset={offset}")]
     public static bool MePlatformsLimitOffset(HttpRequest _, ServerStruct serverStruct) => MePlatforms(_, serverStruct);
 
     [HTTP("POST", "/friends/namespaces/{namespace}/users/{userId}/add/bulk")]
@@ -36,7 +41,14 @@ public class Friends
     {
         var auth = serverStruct.Headers["authorization"].Replace("Bearer ", "");
         var token = TokenHelper.ReadToken(auth);
-        var MainUser = UserController.GetUser(token.UserId, token.Namespace) ?? throw new Exception("MainUser is null!");
+        var MainUser = UserController.GetUser(token.UserId, token.Namespace);
+
+		var response = new ResponseCreator(204);
+		if (MainUser == null)
+		{
+			return serverStruct.ReturnErrorHelper(ErrorHelper.Errors.ValidationError);
+		}
+
         var friends = JsonConvert.DeserializeObject<FriendAdd>(request.Body)!.FriendIds;
 
         //  Add func to UserC. for adding and checking friends infomation.
@@ -70,7 +82,7 @@ public class Friends
             MainUser.Friends.Add(data);
         }
 
-        serverStruct.Response = new ResponseCreator(204).GetResponse();
+        serverStruct.Response = response.GetResponse();
         serverStruct.SendResponse();
         return true;
     }

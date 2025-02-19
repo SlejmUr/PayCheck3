@@ -5,74 +5,140 @@ using PayCheckServerLib.Jsons;
 using PayCheckServerLib.Jsons.Basic;
 using ModdableWebServer;
 using ModdableWebServer.Attributes;
-using ModdableWebServer.Helper;
 
-namespace PayCheckServerLib.Responses;
-
-public class Social
+namespace PayCheckServerLib.Responses
 {
-    [HTTP("PUT", "/social/v1/public/namespaces/{namespace}/users/{userId}/statitems/value/bulk")]
-    public static bool PutStatItemsBulk(HttpRequest request, ServerStruct serverStruct)
-    {
-        var auth = serverStruct.Headers["authorization"].Replace("Bearer ", "");
-        var token = TokenHelper.ReadToken(auth);
-        var statReq = JsonConvert.DeserializeObject<List<StatItemsBulkReq>>(request.Body);
-        var rsp = UserStatController.AddStat(statReq, token);
-        ResponseCreator responsecreator = new ResponseCreator();
-        responsecreator.SetBody(JsonConvert.SerializeObject(rsp));
-        serverStruct.Response = responsecreator.GetResponse();
-        serverStruct.SendResponse();
-        return true;
-    }
+	public class Social
+	{
 
-    [HTTP("GET", "/social/v1/public/namespaces/{namespace}/users/{userId}/statitems?limit={limit}&sortBy={sortby}")]
-    public static bool GetUserStatItemsSort(HttpRequest _, ServerStruct serverStruct) => GetUserStatItems(_, serverStruct);
+		[HTTP("GET", "/social/v1/public/namespaces/{namespace}/users/{userId}/statitems?limit={limit}&sortBy={sortBy}")]
+		[AuthenticationRequired("NAMESPACE:{namespace}:USER:{userId}:STATITEM", AuthenticationRequiredAttribute.Access.READ)]
+		public static bool ListAllStatItemsByPagination(HttpRequest _, ServerStruct serverStruct)
+		{
+			var userId = serverStruct.Parameters["userId"];
 
-    [HTTP("GET", "/social/v1/public/namespaces/{namespace}/users/{userId}/statitems?limit={limit}&offset=0")]
-    public static bool GetUserStatItems(HttpRequest _, ServerStruct serverStruct)
-    {
-        var auth = serverStruct.Headers["authorization"].Replace("Bearer ", "");
-        var token = TokenHelper.ReadToken(auth);
+			var sort = serverStruct.Parameters["sortBy"];
 
-        var stat = JsonConvert.DeserializeObject<List<UserStatItemsData>>(SaveFileHandler.ReadUserSTR(token.UserId, token.Namespace, SaveFileHandler.SaveType.statitems));
+			var limit = -1;
+			if (!int.TryParse(serverStruct.Parameters["limit"], out limit))
+			{
+				return serverStruct.ReturnErrorHelper(ErrorHelper.Errors.ValidationError);
+			}
 
-        ResponseCreator response = new ResponseCreator();
-        DataPaging<UserStatItemsData> responsedata = new()
-        {
-            Data = stat,
-            Paging = { }
-        };
-        response.SetBody(JsonConvert.SerializeObject(responsedata));
-        serverStruct.Response = response.GetResponse();
-        serverStruct.SendResponse();
-        return true;
-    }
+			var sortBy = "";
+			var descending = false;
+			if (sort.Contains(":"))
+			{
+				var split = sort.Split(':');
+				if (split.Length > 1)
+				{
+					sortBy = split[0];
+					descending = split[1] == "desc";
+				}
+			}
+			else
+			{
+				sortBy = sort;
+			}
 
-    [HTTP("GET", "/social/v1/public/namespaces/{namespace}/users/{userId}/statitems?statCodes={statcode}&limit=20&offset=0")]
-    public static bool GetUserStatItemsInfamy(HttpRequest _, ServerStruct serverStruct)
-    {
-        var auth = serverStruct.Headers["authorization"].Replace("Bearer ", "");
-        var token = TokenHelper.ReadToken(auth);
-        var statcode = serverStruct.Parameters["statcode"];
-        ResponseCreator response = new ResponseCreator();
-        DataPaging<UserStatItemsData> responsedata = new()
-        {
-            Data = new()
-            {
-            },
-            Paging = { }
-        };
+			var allStatItems = CloudSaveDataHelper.GetAllStatItemsForUser(userId);
 
-        var stat = JsonConvert.DeserializeObject<List<UserStatItemsData>>(SaveFileHandler.ReadUserSTR(token.UserId, token.Namespace, SaveFileHandler.SaveType.statitems));
-        foreach (var item in stat)
-        {
-            if (item.StatCode == statcode)
-                responsedata.Data.Add(item);
-        }
+			if (descending)
+			{
+				switch (sortBy)
+				{
+					case "statCode":
+						allStatItems.Sort((statItemA, statItemB) => statItemA.StatCode.CompareTo(statItemB.StatCode));
+						break;
+					case "createdAt":
+						allStatItems.Sort((statItemA, statItemB) => statItemA.CreatedAt.CompareTo(statItemB.CreatedAt));
+						break;
+					case "updatedAt":
+						allStatItems.Sort((statItemA, statItemB) => statItemA.UpdatedAt.CompareTo(statItemB.UpdatedAt));
+						break;
+					default:
+						break;
+				}
+			}
+			else
+			{
+				switch (sortBy)
+				{
+					case "statCode":
+						allStatItems.Sort((statItemA, statItemB) => statItemB.StatCode.CompareTo(statItemA.StatCode));
+						break;
+					case "createdAt":
+						allStatItems.Sort((statItemA, statItemB) => statItemB.CreatedAt.CompareTo(statItemA.CreatedAt));
+						break;
+					case "updatedAt":
+						allStatItems.Sort((statItemA, statItemB) => statItemB.UpdatedAt.CompareTo(statItemA.UpdatedAt));
+						break;
+					default:
+						break;
+				}
+			}
 
-        response.SetBody(JsonConvert.SerializeObject(responsedata));
-        serverStruct.Response = response.GetResponse();
-        serverStruct.SendResponse();
-        return true;
-    }
+
+			var response = new ResponseCreator();
+			DataPaging<UserStatItemsData> responseData = new()
+			{
+				Data = allStatItems,
+			};
+			response.SetHeader("Content-Type", "application/json");
+			response.SetBody(JsonConvert.SerializeObject(responseData));
+			serverStruct.Response = response.GetResponse();
+			serverStruct.SendResponse();
+			return true;
+		}
+
+		[HTTP("PUT", "/social/v1/public/namespaces/{namespace}/users/{userId}/statitems/value/bulk")]
+		[AuthenticationRequired("NAMESPACE:{namespace}:USER:{userId}:STATITEM", AuthenticationRequiredAttribute.Access.UPDATE)]
+		public static bool BulkUpdateUserStatItems(HttpRequest _, ServerStruct serverStruct)
+		{
+			var updateRequests = JsonConvert.DeserializeObject<List<BulkStatItemUpdateRequestData>>(_.Body);
+
+			if (updateRequests == null)
+				return serverStruct.ReturnErrorHelper(ErrorHelper.Errors.ValidationError);
+
+			List<BulkStatItemUpdateResponseData> responseData = new();
+
+			List<UserStatItemsData> userStatsForRewardChecking = new();
+			foreach (var request in updateRequests)
+			{
+				if (request.Inc == null)
+					continue;
+				if (request.StatCode == null)
+					continue;
+
+				CloudSaveDataHelper.IncrementStatItemValueForUser(serverStruct.Parameters["namespace"], serverStruct.Parameters["userId"], request.StatCode, request.Inc.Value, out UserStatItemsData? updatedData);
+
+
+				var respData = new BulkStatItemUpdateResponseData();
+
+				respData.StatCode = request.StatCode;
+				respData.Success = updatedData != null;
+
+				if (updatedData != null)
+				{
+					respData.Details = new BulkStatItemUpdateResponseData.BulkStatItemUpdateResponseDataDetails();
+					respData.Details.CurrentValue = updatedData.Value;
+
+					userStatsForRewardChecking.Add(updatedData);
+				}
+
+				responseData.Add(respData);
+
+			}
+			UserEntitlementHelper.CheckForRewardsOnStatItemUpdate(serverStruct.Parameters["namespace"], serverStruct.Parameters["userId"], userStatsForRewardChecking);
+
+			var response = new ResponseCreator();
+			response.SetHeader("Content-Type", "application/json");
+			response.SetBody(JsonConvert.SerializeObject(responseData));
+
+			serverStruct.Response = response.GetResponse();
+			serverStruct.SendResponse();
+
+			return true;
+		}
+	}
 }

@@ -1,10 +1,11 @@
 ﻿using ModdableWebServer;
 using ModdableWebServer.Attributes;
-using ModdableWebServer.Helper;
 using NetCoreServer;
 using Newtonsoft.Json;
+using PayCheckServerLib.Helpers;
 using PayCheckServerLib.Jsons;
 using PayCheckServerLib.Jsons.Basic;
+using PayCheckServerLib.ModdableWebServerExtensions;
 
 namespace PayCheckServerLib.Responses;
 
@@ -21,38 +22,29 @@ public class Orders
         return "O" + ret;
     }
 
-    public static ItemDefinitionJson? GetItemFromId(string id)
-    {
-        var items = JsonConvert.DeserializeObject<DataPaging<ItemDefinitionJson>>(File.ReadAllText("Files/Items.json"))!.Data;
-        foreach (var item in items)
-        {
-            if (item.ItemId == id)
-            {
-                item.UpdatedAt = DateTime.UtcNow.AddDays(-10).ToString("o");
-                return item;
-            }
-        }
-        return null;
-    }
-
     [HTTP("POST", "/platform/public/namespaces/{namespace}/users/{userid}/orders")]
-    public static bool UserOrders(HttpRequest request, ServerStruct serverStruct)
+	[AuthenticationRequired("NAMESPACE:{namespace}:USER:{userId}:ORDER", AuthenticationRequiredAttribute.Access.CREATE)]
+    public static bool CreateOrder(HttpRequest request, ServerStruct serverStruct)
     {
-        //ResponseCreator response = new ResponseCreator();
-        //OrdersJsonPayload payload = new() {
-        //	Data = { },
-        //	Paging = { }
-        //};
-        //response.SetBody(JsonConvert.SerializeObject(payload));
-        //session.SendResponse(response.GetResponse());
-
-        var body = JsonConvert.DeserializeObject<OrderPostBody>(request.Body) ?? throw new Exception("UserOrders -> body is null!");
-        if (!Directory.Exists("Orders")) { Directory.CreateDirectory("Orders"); }
-        File.WriteAllText($"Orders/{serverStruct.Parameters["namespace"]}_{serverStruct.Parameters["userid"]}_{body.ItemId}", request.Body);
+        var body = JsonConvert.DeserializeObject<OrderPostBody>(request.Body);
+        //if (!Directory.Exists("Orders")) { Directory.CreateDirectory("Orders"); }
+        //File.WriteAllText($"Orders/{serverStruct.Parameters["namespace"]}_{serverStruct.Parameters["userid"]}_{body.ItemId}", request.Body);
 
         ResponseCreator response = new();
+
+		if(body == null)
+		{
+			return serverStruct.ReturnErrorHelper(ErrorHelper.Errors.ValidationError);
+		}
+
         var ordernumber = GenOrderNumber();
-        ItemDefinitionJson? item = GetItemFromId(body.ItemId) ?? throw new Exception("GetItemFromId -> Item is null!");
+		ItemDefinitionJson? item = UserEntitlementHelper.GetItemDefinitions().Find(item => item.ItemId == body.ItemId);
+
+		if(item == null)
+		{
+			return serverStruct.ReturnErrorHelper(ErrorHelper.Errors.ItemDoesNotExistInNamespace);
+		}
+
         Order order = new()
         {
             OrderNo = ordernumber,
@@ -78,6 +70,7 @@ public class Orders
                 Decimals = 0
             },
             // will be like this until i can confirm they are the same type ~HW12Dev
+			// ItemSnapshot is not a required parameter ~HW12Dev 18/01/2025
             ItemSnapshot = JsonConvert.DeserializeObject<Order.ItemSnapshotJson>(JsonConvert.SerializeObject(item))!,
             Region = body.Region,
             Language = body.Language,

@@ -40,7 +40,7 @@ namespace PayCheckServerLib.Jsons.Basic
         [JsonProperty("platforms")]
         public List<Platform> Platforms { get; set; }
 
-        [JsonProperty("userID")]
+        [JsonProperty("userId")]
         public string UserId { get; set; }
     }
 
@@ -49,7 +49,7 @@ namespace PayCheckServerLib.Jsons.Basic
         [JsonProperty("name")]
         public string Name { get; set; }
 
-        [JsonProperty("userID")]
+        [JsonProperty("userId")]
         public string UserId { get; set; }
     }
 

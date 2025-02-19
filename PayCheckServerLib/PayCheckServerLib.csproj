@@ -20,13 +20,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="config.json" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="config.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <None Remove="files\globalstatitems\edgegap_beacons.json" />
+    <None Remove="files\globalstatitems\title-data.json" />
+    <None Remove="files\PartySessionNoSyncConfiguration.json" />
+    <None Remove="files\Rewards.json" />
+    <None Remove="files\Roles.json" />
   </ItemGroup>
 
   <ItemGroup>
@@ -39,6 +37,7 @@
     <PackageReference Include="ModdableWebServer" Version="1.5.0" />
     <PackageReference Include="NetCoreServer" Version="8.0.7" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="System.Text.Json" Version="6.0.10" />
   </ItemGroup>
 
 

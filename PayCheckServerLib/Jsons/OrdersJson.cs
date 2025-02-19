@@ -148,7 +148,7 @@ namespace PayCheckServerLib.Jsons
         [JsonProperty("itemId")]
         public string ItemId { get; set; }
 
-        [JsonProperty("itemSnapshot")]
+        [JsonProperty("itemSnapshot", NullValueHandling = NullValueHandling.Ignore)]
         public ItemSnapshotJson ItemSnapshot { get; set; }
 
         [JsonProperty("language")]

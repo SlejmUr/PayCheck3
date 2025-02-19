@@ -19,7 +19,7 @@ namespace PayCheckServerLib.WSController
         [WS("/lobby/")]
         public static void Lobby(WebSocketStruct socketStruct)
         {
-            Debugger.PrintDebug("LOBBY");
+            //Debugger.PrintDebug("LOBBY");
             string auth_token;
             if (socketStruct.Request.Headers.ContainsKey("x-ab-lobbysessionid") && socketStruct.Request.Headers["x-ab-lobbysessionid"].Contains("Bearer"))
             {
@@ -104,7 +104,7 @@ namespace PayCheckServerLib.WSController
             var str = Encoding.UTF8.GetString(buffer);
             Dictionary<string, string> kv = new();
             var strArray = str.Split("\n");
-            Debugger.PrintWebsocket(strArray.Count().ToString());
+            //Debugger.PrintWebsocket(strArray.Count().ToString());
             foreach (var item in strArray)
             {
                 if (string.IsNullOrEmpty(item) || item == "\n")
@@ -112,7 +112,7 @@ namespace PayCheckServerLib.WSController
                 var kv2 = item.Split(": ");
                 kv.Add(kv2[0], kv2[1]);
             }
-            Debugger.PrintWebsocket("KVs done!");
+            //Debugger.PrintWebsocket("KVs done!");
             SwitchingType(kv, socketStruct, token);
             //Now doing some magic here for stuff.
         }
@@ -121,9 +121,9 @@ namespace PayCheckServerLib.WSController
         {
             try
             {
-                User? user;
+                UserController.PayCheck3UserData? user;
                 Dictionary<string, string> rsp = new();
-                Debugger.PrintDebug("[" + kv["type"] + "]");
+                //Debugger.PrintDebug("[" + kv["type"] + "]");
                 switch (kv["type"])
                 {
                     case "setUserStatusRequest":
@@ -248,7 +248,7 @@ namespace PayCheckServerLib.WSController
 
         public static void SendToLobby(Dictionary<string, string> kv, WebSocketStruct? socketStruct)
         {
-            Debugger.PrintDebug("SendToLobby Called!");
+            //Debugger.PrintDebug("SendToLobby Called!");
             var str = "";
             foreach (var item in kv)
             {
@@ -256,7 +256,7 @@ namespace PayCheckServerLib.WSController
             }
 
             str = str.Remove(str.Length - 1);
-            Debugger.PrintDebug(str);
+            //Debugger.PrintDebug(str);
             socketStruct?.SendWebSocketByteArray(Encoding.UTF8.GetBytes(str));
         }
     }

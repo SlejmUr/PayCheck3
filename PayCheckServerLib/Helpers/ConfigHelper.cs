@@ -27,7 +27,8 @@ namespace PayCheckServerLib.Helpers
                         WSS = true,
                         Gstatic = true,
                         IP = "127.0.0.1",
-                        Port = 443
+                        Port = 443,
+						CertificatePassword = "cert"
                     },
                     DS_Servers = new()
                     {

@@ -31,7 +31,7 @@ namespace PayCheckServerLib.Helpers
             PartyPost.Response rsp = new();
             rsp.Code = stuff.Code;
             rsp.Attributes = stuff.Attributes;
-            rsp.Configuration = JsonConvert.DeserializeObject<PartyPost.Configuration>(File.ReadAllText($"Files/{stuff.SessionType}Configuration.json"));
+            rsp.Configuration = CloudSaveDataHelper.GetStaticData<PartyPost.Configuration>($"PartyConfigurations/{stuff.SessionType}Configuration.json");
             rsp.Id = stuff.Id;
             rsp.IsActive = stuff.IsActive;
             rsp.IsFull = stuff.IsFull;
@@ -53,7 +53,7 @@ namespace PayCheckServerLib.Helpers
             PartyPost.Response rsp = new();
             rsp.Code = code;
             rsp.Attributes = partyPost.Attributes;
-            rsp.Configuration = JsonConvert.DeserializeObject<PartyPost.Configuration>(File.ReadAllText($"Files/{partyPost.ConfigurationName}Configuration.json"));
+            rsp.Configuration = CloudSaveDataHelper.GetStaticData<PartyPost.Configuration>($"PartyConfigurations/{partyPost.ConfigurationName}Configuration.json");
             rsp.Id = UserIdHelper.CreateNewID();
             rsp.IsActive = true;
             rsp.IsFull = false;

@@ -32,6 +32,9 @@ namespace PayCheckServerLib.Jsons
 
             [JsonProperty("GSTATIC")]
             public bool Gstatic { get; set; }
+
+			[JsonProperty("SSLCertificatePassword")]
+			public string CertificatePassword { get; set; }
         }
 
         public partial class CDS_Server

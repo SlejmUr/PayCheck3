@@ -1,0 +1,15 @@
+{
+  "BlockArray": {
+    "SlotArray": [
+      {
+        "ChallengeDailyCompletionTimeType": "Medium"
+      },
+      {
+        "ChallengeDailyCompletionTimeType": "Medium"
+      },
+      {
+        "ChallengeDailyCompletionTimeType": "Long"
+      }
+    ]
+  }
+}

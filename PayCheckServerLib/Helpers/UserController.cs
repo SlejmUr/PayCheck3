@@ -1,5 +1,7 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using PayCheckServerLib.Jsons;
+using static PayCheckServerLib.Jsons.User;
 
 namespace PayCheckServerLib.Helpers
 {
@@ -8,6 +10,39 @@ namespace PayCheckServerLib.Helpers
     /// </summary>
     public class UserController
     {
+		private static string GetDataJsonPathForUserId(string userId)
+		{
+			return String.Format("./UserData/{0}.json", userId);
+		}
+		private static string GetDefaultUserRoleId()
+		{
+			return "2251438839e948d783ec0e5281daf05b"; // Identical on every AccelByte instance for some reason.
+		}
+		public class PayCheck3UserData
+		{
+
+			public class PayCheck3UserRoleAssignmentData
+			{
+				[JsonProperty("RoleId")]
+				public string RoleId { get; set; }
+				[JsonProperty("Namespace")]
+				public string Namespace { get; set; }
+			}
+
+			[JsonProperty("UserData")]
+			public UserBulk.UserBulkData UserData { get; set; }
+			[JsonProperty("Friends")]
+			public List<FriendsPlatfrom.FriendsPlatfromData> Friends { get; set; }
+			[JsonProperty("Namespace")]
+			public string Namespace { get; set; }
+			[JsonProperty("Roles")]
+			public List<PayCheck3UserRoleAssignmentData> Roles { get; set; }
+			[JsonProperty("Status")]
+			public FStatus Status { get; set; }
+		}
+
+
+
         /// <summary>
         /// Register a user based on Parameters
         /// </summary>
@@ -15,30 +50,36 @@ namespace PayCheckServerLib.Helpers
         /// <param name="platform">Steam or Device</param>
         /// <param name="UserName">Unique username</param>
         /// <returns>The new User</returns>
-        public static User RegisterUser(string PlatformId, TokenHelper.TokenPlatform platform, string UserName, string NameSpace)
+        public static PayCheck3UserData RegisterUser(string PlatformId, TokenHelper.TokenPlatform platform, string UserName, string NameSpace)
         {
-            User user = new()
-            {
-                Friends = new(),
-                UserData = new()
-                {
-                    AvatarUrl = "",
-                    DisplayName = UserName,
-                    UserId = UserIdHelper.CreateNewID(),
-                    PlatformUserIds = new()
-                    {
-                        {  platform.ToString().ToLower(), PlatformId }
-                    }
-                },
-                Status = new()
+			PayCheck3UserData user = new()
+			{
+				Roles = [
+					new() {
+						Namespace = NameSpace,
+						RoleId = GetDefaultUserRoleId()
+					}
+				],
+				Friends = new(),
+				UserData = new()
+				{
+					AvatarUrl = "",
+					DisplayName = UserName,
+					UserId = UserIdHelper.CreateNewID(),
+					PlatformUserIds = new()
+					{
+						{  platform.ToString().ToLower(), PlatformId }
+					}
+				},
+				Status = new()
                 {
                     availability = "offline",
                     activity = "nil",
                     platform = "nil",
                     lastSeenAt = "2023-09-08T12:00:00Z"
                 },
-                Namespace = NameSpace
-            };
+				Namespace = NameSpace
+			};
             SaveUser(user);
             Debugger.PrintInfo("User has been registered!");
             return user;
@@ -52,7 +93,7 @@ namespace PayCheckServerLib.Helpers
         /// <returns>True or False</returns>
         public static bool CheckUser(string PlaformId, TokenHelper.TokenPlatform platform, string NameSpace)
         {
-            foreach (User item in GetUsers())
+            foreach (PayCheck3UserData item in GetUsers())
             {
                 if (item.Namespace != NameSpace)
                     continue;
@@ -73,9 +114,9 @@ namespace PayCheckServerLib.Helpers
         /// <param name="PlaformId">SteamId or DeviceId</param>
         /// <param name="platform">Steam or Device</param>
         /// <returns>User object or null</returns>
-        public static User? GetUser(string PlaformId, TokenHelper.TokenPlatform platform, string NameSpace)
+        public static PayCheck3UserData? GetUser(string PlaformId, TokenHelper.TokenPlatform platform, string NameSpace)
         {
-            foreach (User item in GetUsers())
+            foreach (PayCheck3UserData item in GetUsers())
             {
                 if (item.Namespace != NameSpace)
                     continue;
@@ -90,9 +131,12 @@ namespace PayCheckServerLib.Helpers
             return null;
         }
 
-        public static User? GetUser(string UserId, string NameSpace)
+        public static PayCheck3UserData? GetUser(string UserId, string NameSpace)
         {
-            foreach (User item in GetUsers())
+			if (!UserIdHelper.IsValidUserId(UserId))
+				return null;
+
+            foreach (PayCheck3UserData item in GetUsers())
             {
                 if (item.Namespace != NameSpace)
                     continue;
@@ -132,10 +176,17 @@ namespace PayCheckServerLib.Helpers
         /// Save the user to disk
         /// </summary>
         /// <param name="user">User Object</param>
-        public static void SaveUser(User user)
+        public static void SaveUser(PayCheck3UserData user)
         {
-            if (!Directory.Exists("Users")) { Directory.CreateDirectory("Users"); }
-            File.WriteAllText($"Users/{user.UserData.UserId}.json", JsonConvert.SerializeObject(user));
+            if (!Directory.Exists("UserData")) { Directory.CreateDirectory("UserData"); }
+
+			if (!UserIdHelper.IsValidUserId(user.UserData.UserId))
+				return;
+
+			if (!Directory.Exists(String.Format("./UserData/{0}", user.UserData.UserId)))
+				Directory.CreateDirectory(String.Format("./UserData/{0}", user.UserData.UserId));
+
+			FileReadWriteHelper.WriteAllText(GetDataJsonPathForUserId(user.UserData.UserId), JsonConvert.SerializeObject(user));
         }
 
         /// <summary>
@@ -143,11 +194,17 @@ namespace PayCheckServerLib.Helpers
         /// </summary>
         /// <param name="UserId">UserId</param>
         /// <returns>User object if Exist or null</returns>
-        public static User? GetUser(string UserId)
+        public static PayCheck3UserData? GetUser(string UserId)
         {
-            if (File.Exists($"Users/{UserId}.json"))
+			if (!UserIdHelper.IsValidUserId(UserId))
+				return null;
+
+			string path = GetDataJsonPathForUserId(UserId);
+
+
+			if (FileReadWriteHelper.Exists(path))
             {
-                return JsonConvert.DeserializeObject<User>(File.ReadAllText($"Users/{UserId}.json"));
+                return JsonConvert.DeserializeObject<PayCheck3UserData>(FileReadWriteHelper.ReadAllText(path));
             }
             return null;
         }
@@ -156,13 +213,25 @@ namespace PayCheckServerLib.Helpers
         /// Get All Users from the disk
         /// </summary>
         /// <returns>List of Users</returns>
-        public static List<User> GetUsers()
+        public static List<PayCheck3UserData> GetUsers()
         {
-            List<User> users = new();
-            if (!Directory.Exists("Users")) { Directory.CreateDirectory("Users"); }
-            foreach (var item in Directory.GetFiles("Users"))
+            List<PayCheck3UserData> users = new();
+            if (!Directory.Exists("UserData")) { Directory.CreateDirectory("UserData"); }
+            foreach (var item in Directory.GetFiles("UserData"))
             {
-                users.Add(JsonConvert.DeserializeObject<User>(File.ReadAllText(item))!);
+
+				var userData = JsonConvert.DeserializeObject(FileReadWriteHelper.ReadAllText(item));
+
+				if (userData != null) { // validation to ensure that any json file checked for user data is actual user data.
+					if (userData.GetType() == typeof(JObject)) {
+						var userDataObj = ((JObject)userData).ToObject<PayCheck3UserData>();
+
+						if (userDataObj != null)
+						{
+							users.Add(userDataObj);
+						}
+					}
+				}
             }
             return users;
         }

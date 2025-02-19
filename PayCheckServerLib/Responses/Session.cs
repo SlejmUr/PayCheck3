@@ -1,6 +1,5 @@
 ﻿using ModdableWebServer;
 using ModdableWebServer.Attributes;
-using ModdableWebServer.Helper;
 using NetCoreServer;
 using Newtonsoft.Json;
 using PayCheckServerLib.Jsons.Basic;
@@ -10,7 +9,29 @@ namespace PayCheckServerLib.Responses
     public class Session
     {
 
-        [HTTP("GET", "/session/v1/public/namespaces/pd3/recent-player?limit=200")]
+		[HTTP("GET", "/session/v1/public/namespaces/pd3/gamesessions")]
+		public static bool GetGameSessions(HttpRequest _, ServerStruct serverStruct)
+		{
+			ResponseCreator response = new ResponseCreator();
+			response.SetHeader("Content-Type", "application/json");
+			response.SetBody("{\"data\":[]}");
+			serverStruct.Response = response.GetResponse();
+			serverStruct.SendResponse();
+			return true;
+		}
+		[HTTP("POST", "/session/v1/public/namespaces/pd3/gamesessions")]
+		public static bool PostGameSession(HttpRequest _, ServerStruct serverStruct)
+		{
+			ResponseCreator response = new ResponseCreator();
+			response.SetHeader("Content-Type", "application/json");
+			response.SetBody("{\"data\":[]}");
+			serverStruct.Response = response.GetResponse();
+			serverStruct.SendResponse();
+			return true;
+		}
+
+
+		[HTTP("GET", "/session/v1/public/namespaces/pd3/recent-player?limit={limit}")]
         public static bool GetRecentPlayersLimit(HttpRequest _, ServerStruct serverStruct)
         {
           ResponseCreator response = new ResponseCreator();
@@ -136,5 +157,50 @@ namespace PayCheckServerLib.Responses
             serverStruct.SendResponse();
             return true;
         }
-    }
+
+
+		// https://docs.accelbyte.io/api-explorer/#Session/publicGetBulkPlayerCurrentPlatform
+		class GetPlayersCurrentPlatformInBulkRequestBody
+		{
+			[JsonProperty("userIDs")]
+			public List<string> UserIds { get; set; }
+		}
+		class GetPlayersCurrentPlatformInBulkResponseBody
+		{
+			public class UserPlatformData
+			{
+				[JsonProperty("crossplayEnabled")]
+				public bool CrossplayEnabled { get; set; }
+				[JsonProperty("currentPlatform")]
+				public string CurrentPlatform { get; set; }
+				[JsonProperty("userID")]
+				public string UserId { get; set; }
+			}
+		}
+		[HTTP("POST", "/session/v1/public/namespaces/{namespace}/users/bulk/platform")]
+		public static bool GetPlayersCurrentPlatformInBulk(HttpRequest _, ServerStruct serverStruct)
+		{
+			var playersToRequest = JsonConvert.DeserializeObject<GetPlayersCurrentPlatformInBulkRequestBody>(_.Body);
+
+			var responseData = new DataPaging<GetPlayersCurrentPlatformInBulkResponseBody.UserPlatformData>();
+
+			responseData.Data = new();
+			foreach (var userId in playersToRequest.UserIds)
+			{
+				responseData.Data.Add(new()
+				{
+					CrossplayEnabled = true,
+					CurrentPlatform = "STEAM",
+					UserId = userId
+				});
+			}
+
+			var response = new ResponseCreator();
+
+			response.SetBody(JsonConvert.SerializeObject(responseData));
+			serverStruct.Response = response.GetResponse();
+			serverStruct.SendResponse();
+			return true;
+		}
+	}
 }

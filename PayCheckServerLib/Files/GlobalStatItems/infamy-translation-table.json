@@ -1,0 +1,1315 @@
+{
+  "InfamyRewardConfiguration": {
+    "RewardCategoryArray": [
+      {
+        "CategoryName": "SprayCans Graffiti",
+        "CategorySkuItems": [
+          {
+            "ItemSku": "pd3_cosmetic_levelup_reward_spct_graffiti_01",
+            "Probability": 0.1
+          },
+          {
+            "ItemSku": "pd3_cosmetic_levelup_reward_spct_graffiti_02",
+            "Probability": 0.1
+          },
+          {
+            "ItemSku": "pd3_cosmetic_levelup_reward_spct_graffiti_03",
+            "Probability": 0.1
+          },
+          {
+            "ItemSku": "pd3_cosmetic_levelup_reward_spct_graffiti_04",
+            "Probability": 0.1
+          },
+          {
+            "ItemSku": "pd3_cosmetic_levelup_reward_spct_graffiti_05",
+            "Probability": 0.1
+          },
+          {
+            "ItemSku": "pd3_cosmetic_levelup_reward_spct_graffiti_06",
+            "Probability": 0.1
+          },
+          {
+            "ItemSku": "pd3_cosmetic_levelup_reward_spct_graffiti_07",
+            "Probability": 0.1
+          },
+          {
+            "ItemSku": "pd3_cosmetic_levelup_reward_spct_graffiti_08",
+            "Probability": 0.1
+          },
+          {
+            "ItemSku": "pd3_cosmetic_levelup_reward_spct_graffiti_09",
+            "Probability": 0.1
+          },
+          {
+            "ItemSku": "pd3_cosmetic_levelup_reward_spct_graffiti_10",
+            "Probability": 0.1
+          }
+        ],
+        "Probability": 0.2
+      },
+      {
+        "CategoryName": "SprayCans Bills",
+        "CategorySkuItems": [
+          {
+            "ItemSku": "pd3_cosmetic_levelup_reward_spct_bills_01",
+            "Probability": 0.1
+          },
+          {
+            "ItemSku": "pd3_cosmetic_levelup_reward_spct_bills_02",
+            "Probability": 0.1
+          },
+          {
+            "ItemSku": "pd3_cosmetic_levelup_reward_spct_bills_03",
+            "Probability": 0.1
+          },
+          {
+            "ItemSku": "pd3_cosmetic_levelup_reward_spct_bills_04",
+            "Probability": 0.1
+          },
+          {
+            "ItemSku": "pd3_cosmetic_levelup_reward_spct_bills_05",
+            "Probability": 0.1
+          },
+          {
+            "ItemSku": "pd3_cosmetic_levelup_reward_spct_bills_06",
+            "Probability": 0.1
+          },
+          {
+            "ItemSku": "pd3_cosmetic_levelup_reward_spct_bills_07",
+            "Probability": 0.1
+          },
+          {
+            "ItemSku": "pd3_cosmetic_levelup_reward_spct_bills_08",
+            "Probability": 0.1
+          },
+          {
+            "ItemSku": "pd3_cosmetic_levelup_reward_spct_bills_09",
+            "Probability": 0.1
+          },
+          {
+            "ItemSku": "pd3_cosmetic_levelup_reward_spct_bills_10",
+            "Probability": 0.1
+          }
+        ],
+        "Probability": 0.2
+      },
+      {
+        "CategoryName": "SprayCans Camo",
+        "CategorySkuItems": [
+          {
+            "ItemSku": "pd3_cosmetic_levelup_reward_spct_camo_01",
+            "Probability": 0.01
+          },
+          {
+            "ItemSku": "pd3_cosmetic_levelup_reward_spct_camo_02",
+            "Probability": 0.01
+          },
+          {
+            "ItemSku": "pd3_cosmetic_levelup_reward_spct_camo_03",
+            "Probability": 0.01
+          },
+          {
+            "ItemSku": "pd3_cosmetic_levelup_reward_spct_camo_04",
+            "Probability": 0.01
+          },
+          {
+            "ItemSku": "pd3_cosmetic_levelup_reward_spct_camo_05",
+            "Probability": 0.01
+          },
+          {
+            "ItemSku": "pd3_cosmetic_levelup_reward_spct_camo_06",
+            "Probability": 0.01
+          },
+          {
+            "ItemSku": "pd3_cosmetic_levelup_reward_spct_camo_07",
+            "Probability": 0.01
+          },
+          {
+            "ItemSku": "pd3_cosmetic_levelup_reward_spct_camo_08",
+            "Probability": 0.01
+          },
+          {
+            "ItemSku": "pd3_cosmetic_levelup_reward_spct_camo_09",
+            "Probability": 0.01
+          },
+          {
+            "ItemSku": "pd3_cosmetic_levelup_reward_spct_camo_10",
+            "Probability": 0.01
+          }
+        ],
+        "Probability": 0.2
+      },
+      {
+        "CategoryName": "SprayCans Cloud Pattern",
+        "CategorySkuItems": [
+          {
+            "ItemSku": "pd3_cosmetic_spct_levelup_cloud_pattern_01",
+            "Probability": 0.1
+          },
+          {
+            "ItemSku": "pd3_cosmetic_spct_levelup_cloud_pattern_02",
+            "Probability": 0.1
+          },
+          {
+            "ItemSku": "pd3_cosmetic_spct_levelup_cloud_pattern_03",
+            "Probability": 0.1
+          },
+          {
+            "ItemSku": "pd3_cosmetic_spct_levelup_cloud_pattern_04",
+            "Probability": 0.1
+          },
+          {
+            "ItemSku": "pd3_cosmetic_spct_levelup_cloud_pattern_05",
+            "Probability": 0.1
+          },
+          {
+            "ItemSku": "pd3_cosmetic_spct_levelup_cloud_pattern_06",
+            "Probability": 0.1
+          },
+          {
+            "ItemSku": "pd3_cosmetic_spct_levelup_cloud_pattern_07",
+            "Probability": 0.1
+          },
+          {
+            "ItemSku": "pd3_cosmetic_spct_levelup_cloud_pattern_08",
+            "Probability": 0.1
+          },
+          {
+            "ItemSku": "pd3_cosmetic_spct_levelup_cloud_pattern_09",
+            "Probability": 0.1
+          },
+          {
+            "ItemSku": "pd3_cosmetic_spct_levelup_cloud_pattern_10",
+            "Probability": 0.1
+          }
+        ],
+        "Probability": 0.2
+      },
+      {
+        "CategoryName": "SprayCans Dragon Pattern",
+        "CategorySkuItems": [
+          {
+            "ItemSku": "pd3_cosmetic_spct_levelup_dragon_pattern_01",
+            "Probability": 0.1
+          },
+          {
+            "ItemSku": "pd3_cosmetic_spct_levelup_dragon_pattern_02",
+            "Probability": 0.1
+          },
+          {
+            "ItemSku": "pd3_cosmetic_spct_levelup_dragon_pattern_03",
+            "Probability": 0.1
+          },
+          {
+            "ItemSku": "pd3_cosmetic_spct_levelup_dragon_pattern_04",
+            "Probability": 0.1
+          },
+          {
+            "ItemSku": "pd3_cosmetic_spct_levelup_dragon_pattern_05",
+            "Probability": 0.1
+          },
+          {
+            "ItemSku": "pd3_cosmetic_spct_levelup_dragon_pattern_06",
+            "Probability": 0.1
+          },
+          {
+            "ItemSku": "pd3_cosmetic_spct_levelup_dragon_pattern_07",
+            "Probability": 0.1
+          },
+          {
+            "ItemSku": "pd3_cosmetic_spct_levelup_dragon_pattern_08",
+            "Probability": 0.1
+          },
+          {
+            "ItemSku": "pd3_cosmetic_spct_levelup_dragon_pattern_09",
+            "Probability": 0.1
+          },
+          {
+            "ItemSku": "pd3_cosmetic_spct_levelup_dragon_pattern_10",
+            "Probability": 0.1
+          }
+        ],
+        "Probability": 0.2
+      }
+    ]
+  },
+  "RenownRewardConfiguration": {
+    "InfamyPointsForReward": 2000,
+    "MaxRenownLevel": 1600,
+    "RewardCategoryArray": [
+      {
+        "CategoryName": "SprayPaint",
+        "CategorySkuItems": [
+          {
+            "ItemSku": "pd3_cosmetic_renown_spct_camo_01",
+            "Probability": 0.1
+          },
+          {
+            "ItemSku": "pd3_cosmetic_renown_spct_camo_02",
+            "Probability": 0.1
+          },
+          {
+            "ItemSku": "pd3_cosmetic_renown_spct_camo_03",
+            "Probability": 0.1
+          },
+          {
+            "ItemSku": "pd3_cosmetic_renown_spct_camo_04",
+            "Probability": 0.1
+          },
+          {
+            "ItemSku": "pd3_cosmetic_renown_spct_camo_05",
+            "Probability": 0.1
+          },
+          {
+            "ItemSku": "pd3_cosmetic_renown_spct_camo_06",
+            "Probability": 0.1
+          },
+          {
+            "ItemSku": "pd3_cosmetic_renown_spct_camo_07",
+            "Probability": 0.1
+          },
+          {
+            "ItemSku": "pd3_cosmetic_renown_spct_camo_08",
+            "Probability": 0.1
+          },
+          {
+            "ItemSku": "pd3_cosmetic_renown_spct_camo_09",
+            "Probability": 0.1
+          },
+          {
+            "ItemSku": "pd3_cosmetic_renown_spct_camo_10",
+            "Probability": 0.1
+          }
+        ],
+        "Probability": 0.34
+      },
+      {
+        "CategoryName": "Mask",
+        "CategorySkuItems": [
+          {
+            "ItemSku": "pd3_cosmetic_mask_mould_remake_1",
+            "Probability": 0.03
+          },
+          {
+            "ItemSku": "pd3_cosmetic_mask_mould_remake_2",
+            "Probability": 0.03
+          },
+          {
+            "ItemSku": "pd3_cosmetic_mask_mould_remake_3",
+            "Probability": 0.03
+          },
+          {
+            "ItemSku": "pd3_cosmetic_mask_mould_remake_4",
+            "Probability": 0.03
+          },
+          {
+            "ItemSku": "pd3_cosmetic_mask_mould_remake_5",
+            "Probability": 0.04
+          },
+          {
+            "ItemSku": "pd3_cosmetic_mask_mould_remake_6",
+            "Probability": 0.04
+          },
+          {
+            "ItemSku": "pd3_cosmetic_mask_mould_remake_7",
+            "Probability": 0.04
+          },
+          {
+            "ItemSku": "pd3_cosmetic_mask_mould_remake_8",
+            "Probability": 0.04
+          },
+          {
+            "ItemSku": "pd3_cosmetic_mask_mould_remake_9",
+            "Probability": 0.04
+          },
+          {
+            "ItemSku": "pd3_cosmetic_mask_mould_remake_10",
+            "Probability": 0.04
+          },
+          {
+            "ItemSku": "pd3_cosmetic_mask_pattern_renown_tough_guy_01",
+            "Probability": 0.04
+          },
+          {
+            "ItemSku": "pd3_cosmetic_mask_pattern_renown_yakuza_friend_01",
+            "Probability": 0.04
+          },
+          {
+            "ItemSku": "pd3_cosmetic_mask_pattern_renown_mustachio_01",
+            "Probability": 0.04
+          },
+          {
+            "ItemSku": "pd3_cosmetic_mask_pattern_renown_leopard_01",
+            "Probability": 0.04
+          },
+          {
+            "ItemSku": "pd3_cosmetic_mask_pattern_renown_tiger_01",
+            "Probability": 0.04
+          },
+          {
+            "ItemSku": "pd3_cosmetic_mask_pattern_renown_inkbot_01",
+            "Probability": 0.04
+          },
+          {
+            "ItemSku": "pd3_cosmetic_mask_pattern_renown_future_shock_01",
+            "Probability": 0.04
+          },
+          {
+            "ItemSku": "pd3_cosmetic_mask_pattern_renown_ghoulish_01",
+            "Probability": 0.04
+          },
+          {
+            "ItemSku": "pd3_cosmetic_mask_pattern_renown_bloodsplat_01",
+            "Probability": 0.04
+          },
+          {
+            "ItemSku": "pd3_cosmetic_mask_pattern_renown_phantasm_01",
+            "Probability": 0.04
+          },
+          {
+            "ItemSku": "pd3_cosmetic_mask_pattern_renown_bones_01",
+            "Probability": 0.04
+          },
+          {
+            "ItemSku": "pd3_cosmetic_mask_pattern_renown_samhain_mayhem_01",
+            "Probability": 0.04
+          },
+          {
+            "ItemSku": "pd3_cosmetic_mask_pattern_renown_exsanguinator_01",
+            "Probability": 0.04
+          },
+          {
+            "ItemSku": "pd3_cosmetic_mask_pattern_renown_spatter_01",
+            "Probability": 0.04
+          },
+          {
+            "ItemSku": "pd3_cosmetic_mask_pattern_renown_dead_01",
+            "Probability": 0.04
+          },
+          {
+            "ItemSku": "pd3_cosmetic_mask_mould_remake_11",
+            "Probability": 0.04
+          }
+        ],
+        "Probability": 0.33
+      },
+      {
+        "CategoryName": "Sticker",
+        "CategorySkuItems": [
+          {
+            "ItemSku": "pd3_cosmetic_weapon_sticker_remake_1",
+            "Probability": 0.16
+          },
+          {
+            "ItemSku": "pd3_cosmetic_weapon_sticker_remake_2",
+            "Probability": 0.16
+          },
+          {
+            "ItemSku": "pd3_cosmetic_weapon_sticker_remake_3",
+            "Probability": 0.16
+          },
+          {
+            "ItemSku": "pd3_cosmetic_weapon_sticker_remake_4",
+            "Probability": 0.16
+          },
+          {
+            "ItemSku": "pd3_cosmetic_weapon_sticker_remake_5",
+            "Probability": 0.16
+          },
+          {
+            "ItemSku": "pd3_cosmetic_weapon_sticker_remake_6",
+            "Probability": 0.2
+          }
+        ],
+        "Probability": 0.33
+      }
+    ]
+  },
+  "infamy-translation-table": [
+    {
+      "Infamy Level": 1,
+      "Infamy Points": 0,
+      "Infamy Rewards": [
+        {
+          "Content Given Type": "Skill Point",
+          "Content Given Value": 2
+        }
+      ]
+    },
+    {
+      "Infamy Level": 2,
+      "Infamy Points": 100,
+      "Infamy Rewards": [
+        {
+          "Content Given Type": "Skill Point",
+          "Content Given Value": 1
+        }
+      ]
+    },
+    {
+      "Infamy Level": 3,
+      "Infamy Points": 200,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 4,
+      "Infamy Points": 300,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 5,
+      "Infamy Points": 450,
+      "Infamy Rewards": [
+        {
+          "Content Given Type": "Skill Point",
+          "Content Given Value": 1
+        }
+      ]
+    },
+    {
+      "Infamy Level": 6,
+      "Infamy Points": 600,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 7,
+      "Infamy Points": 800,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 8,
+      "Infamy Points": 1000,
+      "Infamy Rewards": [
+        {
+          "Content Given Type": "Skill Point",
+          "Content Given Value": 1
+        }
+      ]
+    },
+    {
+      "Infamy Level": 9,
+      "Infamy Points": 1200,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 10,
+      "Infamy Points": 1400,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 11,
+      "Infamy Points": 1700,
+      "Infamy Rewards": [
+        {
+          "Content Given Type": "Skill Point",
+          "Content Given Value": 1
+        }
+      ]
+    },
+    {
+      "Infamy Level": 12,
+      "Infamy Points": 2000,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 13,
+      "Infamy Points": 2300,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 14,
+      "Infamy Points": 2600,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 15,
+      "Infamy Points": 2900,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 16,
+      "Infamy Points": 3200,
+      "Infamy Rewards": [
+        {
+          "Content Given Type": "Skill Point",
+          "Content Given Value": 1
+        }
+      ]
+    },
+    {
+      "Infamy Level": 17,
+      "Infamy Points": 3500,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 18,
+      "Infamy Points": 3800,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 19,
+      "Infamy Points": 4100,
+      "Infamy Rewards": [
+        {
+          "Content Given Type": "Skill Point",
+          "Content Given Value": 1
+        }
+      ]
+    },
+    {
+      "Infamy Level": 20,
+      "Infamy Points": 4400,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 21,
+      "Infamy Points": 4700,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 22,
+      "Infamy Points": 5000,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 23,
+      "Infamy Points": 5300,
+      "Infamy Rewards": [
+        {
+          "Content Given Type": "Skill Point",
+          "Content Given Value": 1
+        }
+      ]
+    },
+    {
+      "Infamy Level": 24,
+      "Infamy Points": 5600,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 25,
+      "Infamy Points": 5900,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 26,
+      "Infamy Points": 6200,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 27,
+      "Infamy Points": 6500,
+      "Infamy Rewards": [
+        {
+          "Content Given Type": "Skill Point",
+          "Content Given Value": 1
+        }
+      ]
+    },
+    {
+      "Infamy Level": 28,
+      "Infamy Points": 6800,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 29,
+      "Infamy Points": 7100,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 30,
+      "Infamy Points": 7400,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 31,
+      "Infamy Points": 7700,
+      "Infamy Rewards": [
+        {
+          "Content Given Type": "Skill Point",
+          "Content Given Value": 1
+        }
+      ]
+    },
+    {
+      "Infamy Level": 32,
+      "Infamy Points": 8000,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 33,
+      "Infamy Points": 8300,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 34,
+      "Infamy Points": 8600,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 35,
+      "Infamy Points": 8900,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 36,
+      "Infamy Points": 9200,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 37,
+      "Infamy Points": 9500,
+      "Infamy Rewards": [
+        {
+          "Content Given Type": "Skill Point",
+          "Content Given Value": 1
+        }
+      ]
+    },
+    {
+      "Infamy Level": 38,
+      "Infamy Points": 9800,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 39,
+      "Infamy Points": 10100,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 40,
+      "Infamy Points": 10400,
+      "Infamy Rewards": [
+        {
+          "Content Given Type": "Skill Point",
+          "Content Given Value": 1
+        }
+      ]
+    },
+    {
+      "Infamy Level": 41,
+      "Infamy Points": 10800,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 42,
+      "Infamy Points": 11200,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 43,
+      "Infamy Points": 11600,
+      "Infamy Rewards": [
+        {
+          "Content Given Type": "Skill Point",
+          "Content Given Value": 1
+        }
+      ]
+    },
+    {
+      "Infamy Level": 44,
+      "Infamy Points": 12000,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 45,
+      "Infamy Points": 12500,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 46,
+      "Infamy Points": 13000,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 47,
+      "Infamy Points": 13500,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 48,
+      "Infamy Points": 14000,
+      "Infamy Rewards": [
+        {
+          "Content Given Type": "Skill Point",
+          "Content Given Value": 1
+        }
+      ]
+    },
+    {
+      "Infamy Level": 49,
+      "Infamy Points": 14500,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 50,
+      "Infamy Points": 15000,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 51,
+      "Infamy Points": 15500,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 52,
+      "Infamy Points": 16000,
+      "Infamy Rewards": [
+        {
+          "Content Given Type": "Skill Point",
+          "Content Given Value": 1
+        }
+      ]
+    },
+    {
+      "Infamy Level": 53,
+      "Infamy Points": 16600,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 54,
+      "Infamy Points": 17200,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 55,
+      "Infamy Points": 17800,
+      "Infamy Rewards": [
+        {
+          "Content Given Type": "Skill Point",
+          "Content Given Value": 1
+        }
+      ]
+    },
+    {
+      "Infamy Level": 56,
+      "Infamy Points": 18400,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 57,
+      "Infamy Points": 19000,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 58,
+      "Infamy Points": 19600,
+      "Infamy Rewards": [
+        {
+          "Content Given Type": "Skill Point",
+          "Content Given Value": 1
+        }
+      ]
+    },
+    {
+      "Infamy Level": 59,
+      "Infamy Points": 20200,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 60,
+      "Infamy Points": 20800,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 61,
+      "Infamy Points": 21400,
+      "Infamy Rewards": [
+        {
+          "Content Given Type": "Skill Point",
+          "Content Given Value": 1
+        }
+      ]
+    },
+    {
+      "Infamy Level": 62,
+      "Infamy Points": 22000,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 63,
+      "Infamy Points": 22600,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 64,
+      "Infamy Points": 23200,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 65,
+      "Infamy Points": 23800,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 66,
+      "Infamy Points": 24400,
+      "Infamy Rewards": [
+        {
+          "Content Given Type": "Skill Point",
+          "Content Given Value": 1
+        }
+      ]
+    },
+    {
+      "Infamy Level": 67,
+      "Infamy Points": 25000,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 68,
+      "Infamy Points": 25700,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 69,
+      "Infamy Points": 26400,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 70,
+      "Infamy Points": 27100,
+      "Infamy Rewards": [
+        {
+          "Content Given Type": "Skill Point",
+          "Content Given Value": 1
+        }
+      ]
+    },
+    {
+      "Infamy Level": 71,
+      "Infamy Points": 27800,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 72,
+      "Infamy Points": 28500,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 73,
+      "Infamy Points": 29200,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 74,
+      "Infamy Points": 29900,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 75,
+      "Infamy Points": 30600,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 76,
+      "Infamy Points": 31300,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 77,
+      "Infamy Points": 32000,
+      "Infamy Rewards": [
+        {
+          "Content Given Type": "Skill Point",
+          "Content Given Value": 1
+        }
+      ]
+    },
+    {
+      "Infamy Level": 78,
+      "Infamy Points": 32700,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 79,
+      "Infamy Points": 33400,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 80,
+      "Infamy Points": 34100,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 81,
+      "Infamy Points": 34900,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 82,
+      "Infamy Points": 35700,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 83,
+      "Infamy Points": 36500,
+      "Infamy Rewards": [
+        {
+          "Content Given Type": "Skill Point",
+          "Content Given Value": 1
+        }
+      ]
+    },
+    {
+      "Infamy Level": 84,
+      "Infamy Points": 37300,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 85,
+      "Infamy Points": 38100,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 86,
+      "Infamy Points": 38900,
+      "Infamy Rewards": [
+        {
+          "Content Given Type": "Skill Point",
+          "Content Given Value": 1
+        }
+      ]
+    },
+    {
+      "Infamy Level": 87,
+      "Infamy Points": 39700,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 88,
+      "Infamy Points": 40500,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 89,
+      "Infamy Points": 41300,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 90,
+      "Infamy Points": 42100,
+      "Infamy Rewards": [
+        {
+          "Content Given Type": "Skill Point",
+          "Content Given Value": 1
+        }
+      ]
+    },
+    {
+      "Infamy Level": 91,
+      "Infamy Points": 42900,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 92,
+      "Infamy Points": 43700,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 93,
+      "Infamy Points": 44500,
+      "Infamy Rewards": [
+        {
+          "Content Given Type": "Skill Point",
+          "Content Given Value": 1
+        }
+      ]
+    },
+    {
+      "Infamy Level": 94,
+      "Infamy Points": 45300,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 95,
+      "Infamy Points": 46100,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 96,
+      "Infamy Points": 46900,
+      "Infamy Rewards": [
+        {
+          "Content Given Type": "Skill Point",
+          "Content Given Value": 1
+        }
+      ]
+    },
+    {
+      "Infamy Level": 97,
+      "Infamy Points": 47700,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 98,
+      "Infamy Points": 48500,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 99,
+      "Infamy Points": 49300,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 100,
+      "Infamy Points": 50100,
+      "Infamy Rewards": [
+        {
+          "Content Given Type": "Skill Point",
+          "Content Given Value": 1
+        }
+      ]
+    },
+    {
+      "Infamy Level": 101,
+      "Infamy Points": 50900,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 102,
+      "Infamy Points": 51750,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 103,
+      "Infamy Points": 52650,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 104,
+      "Infamy Points": 53600,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 105,
+      "Infamy Points": 54600,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 106,
+      "Infamy Points": 55650,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 107,
+      "Infamy Points": 56750,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 108,
+      "Infamy Points": 57900,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 109,
+      "Infamy Points": 59100,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 110,
+      "Infamy Points": 60350,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 111,
+      "Infamy Points": 61650,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 112,
+      "Infamy Points": 63000,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 113,
+      "Infamy Points": 64400,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 114,
+      "Infamy Points": 65850,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 115,
+      "Infamy Points": 67350,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 116,
+      "Infamy Points": 68900,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 117,
+      "Infamy Points": 70500,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 118,
+      "Infamy Points": 72150,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 119,
+      "Infamy Points": 73850,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 120,
+      "Infamy Points": 75600,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 121,
+      "Infamy Points": 77400,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 122,
+      "Infamy Points": 79250,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 123,
+      "Infamy Points": 81150,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 124,
+      "Infamy Points": 83100,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 125,
+      "Infamy Points": 85100,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 126,
+      "Infamy Points": 87100,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 127,
+      "Infamy Points": 89100,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 128,
+      "Infamy Points": 91100,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 129,
+      "Infamy Points": 93100,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 130,
+      "Infamy Points": 95100,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 131,
+      "Infamy Points": 97100,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 132,
+      "Infamy Points": 99100,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 133,
+      "Infamy Points": 101100,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 134,
+      "Infamy Points": 103100,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 135,
+      "Infamy Points": 105100,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 136,
+      "Infamy Points": 107100,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 137,
+      "Infamy Points": 109100,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 138,
+      "Infamy Points": 111100,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 139,
+      "Infamy Points": 113100,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 140,
+      "Infamy Points": 116100,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 141,
+      "Infamy Points": 119100,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 142,
+      "Infamy Points": 122100,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 143,
+      "Infamy Points": 125100,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 144,
+      "Infamy Points": 128100,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 145,
+      "Infamy Points": 131100,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 146,
+      "Infamy Points": 134100,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 147,
+      "Infamy Points": 137100,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 148,
+      "Infamy Points": 141100,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 149,
+      "Infamy Points": 145100,
+      "Infamy Rewards": []
+    },
+    {
+      "Infamy Level": 150,
+      "Infamy Points": 149100,
+      "Infamy Rewards": []
+    }
+  ]
+}

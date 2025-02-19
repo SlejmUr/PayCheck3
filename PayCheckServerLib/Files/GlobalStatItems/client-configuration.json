@@ -1,0 +1,35 @@
+{
+  "ItemRewardConfigurationArray": [],
+  "LoadProgressionValueMap": [
+    {
+      "AsyncLoadAssetDatabaseDone": 5,
+      "ClientFetchChallengeRecommendationsDone": 2,
+      "ClientFetchChallengesDone": 8,
+      "ClientRetrieveDLCRewardsDone": 2,
+      "ClientRetrieveFeatureToggleDataDone": 1,
+      "ClientRetrieveMatchmakingDataDone": 1,
+      "ClientRetrieveMetaEventsDataDone": 1,
+      "ClientRetrieveTimeBasedPlayerContentDone": 2,
+      "ClientRetrieveTitleDataDone": 1,
+      "FetchChallengeDailiesDone": 2,
+      "GetItemsDone": 3,
+      "GetOwningIdsForAllItemsDone": 5,
+      "GetPlayerStatisticsDone": 5,
+      "GetRealMoneyItemsDone": 1,
+      "GetUserEntitlementsDone": 5,
+      "GetWalletBalanceDone": 1,
+      "GetWeaponPartAttachmentsDone": 3,
+      "IncPlayerItemRewardLoginDone": 1,
+      "IncPlayerLoginDone": 1,
+      "LoadCharacterDone": 3,
+      "LoadProgressionSaveChallengesDone": 5,
+      "ProgressionSaveGameLoaded": 3,
+      "QueryAchivementsDone": 2,
+      "ReceivingInfamyTranslationTableDone": 2,
+      "RetrieveClientGameRecordDone": 2,
+      "RetrieveSecurityFirmRotationDataReceivedDone": 1,
+      "SetCurrentServerTimeDone": 1,
+      "SyncDLCsDone": 2
+    }
+  ]
+}

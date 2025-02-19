@@ -1,6 +1,5 @@
 ﻿using ModdableWebServer;
 using ModdableWebServer.Attributes;
-using ModdableWebServer.Helper;
 using NetCoreServer;
 using Newtonsoft.Json;
 using PayCheckServerLib.Helpers;
@@ -20,7 +19,11 @@ public class BasicResponse
 		{
 			UserId = serverStruct.Parameters["userId"],
 			Namespace = serverStruct.Parameters["namespace"],
-			PublicId = "AAAAAAAA"
+			PublicId = "AAAAAAAA",
+			AvatarLargeUrl = "",
+			AvatarSmallUrl = "",
+			AvatarUrl = "",
+			CustomAttributes = ""
 		};
 
 		response.SetBody(JsonConvert.SerializeObject(resp));

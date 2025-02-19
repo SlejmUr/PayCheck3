@@ -23,7 +23,7 @@ namespace PayCheckServerLib.Jsons
         public string UserId { get; set; }
 
         [JsonProperty("value")]
-        public float Value { get; set; }
+        public float Value { get; set; } // AccelByte documentation actually declares this as a double
 
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Tags { get; set; }

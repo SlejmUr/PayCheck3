@@ -6,7 +6,7 @@ using PayCheckServerLib.Jsons.Basic;
 using System.Web;
 using ModdableWebServer;
 using ModdableWebServer.Attributes;
-using ModdableWebServer.Helper;
+using PayCheckServerLib.ModdableWebServerExtensions;
 
 namespace PayCheckServerLib.Responses;
 
@@ -14,6 +14,7 @@ public class IAM
 {
     // args here represent any argument
     [HTTP("POST", "/iam/v3/oauth/platforms/steam/token?{args}")]
+	[AuthenticationRequired("", AuthenticationRequiredAttribute.Access.None, false)]
     public static bool SteamToken(HttpRequest request, ServerStruct serverStruct)
     {
         ResponseCreator response = new();
@@ -104,7 +105,8 @@ public class IAM
     }
 
     [HTTP("POST", "/iam/v3/oauth/platforms/device/token")]
-    public static bool DeviceToken(HttpRequest request, ServerStruct serverStruct)
+	[AuthenticationRequired("", AuthenticationRequiredAttribute.Access.None, false)]
+	public static bool DeviceToken(HttpRequest request, ServerStruct serverStruct)
     {
         var deviceid = request.Body.Split('=')[1];
         Debugger.PrintDebug(deviceid);
@@ -150,7 +152,8 @@ public class IAM
 
 
     [HTTP("POST", "/iam/v3/oauth/platforms/live/token")]
-    public static bool LiveToken(HttpRequest request, ServerStruct serverStruct)
+	[AuthenticationRequired("", AuthenticationRequiredAttribute.Access.None, false)]
+	public static bool LiveToken(HttpRequest request, ServerStruct serverStruct)
     {
         var splitted = request.Body.Split("&");
         Dictionary<string, string> bodyTokens = new();
@@ -206,7 +209,8 @@ public class IAM
 
     // Logging in with email + password, also links steam to nebula account on official servers
     [HTTP("POST", "/iam/v3/authenticateWithLink")]
-    public static bool AuthenticateWithLink(HttpRequest request, ServerStruct serverStruct)
+	[AuthenticationRequired("", AuthenticationRequiredAttribute.Access.None, false)]
+	public static bool AuthenticateWithLink(HttpRequest request, ServerStruct serverStruct)
     {
         var param = HttpUtility.ParseQueryString(request.Body);
         // either username or email entered
@@ -260,7 +264,8 @@ public class IAM
 
 
     [HTTP("GET", "/iam/v3/public/users/me")]
-    public static bool UsersMe(HttpRequest _, ServerStruct serverStruct)
+	[AuthenticationRequired("", AuthenticationRequiredAttribute.Access.None, true)]
+	public static bool UsersMe(HttpRequest _, ServerStruct serverStruct)
     {
         var auth = serverStruct.Headers["authorization"].Replace("Bearer ", "");
         var token = TokenHelper.ReadToken(auth);

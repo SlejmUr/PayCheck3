@@ -1,4 +1,5 @@
 ﻿using PayCheckServerLib.Jsons;
+using static PayCheckServerLib.Helpers.UserController;
 
 namespace PayCheckServerLib
 {
@@ -16,6 +17,7 @@ namespace PayCheckServerLib
 
         public enum TokenPlatform
         {
+			InvalidToken,
             Unknow,
             Steam,
             Device,
@@ -26,7 +28,7 @@ namespace PayCheckServerLib
             Live
         }
 
-        public static Token GenerateNewTokenFromUser(User User, TokenPlatform platform = TokenPlatform.Steam, bool IsAccessToken = true)
+        public static Token GenerateNewTokenFromUser(PayCheck3UserData User, TokenPlatform platform = TokenPlatform.Steam, bool IsAccessToken = true)
         {
             return new()
             {
@@ -106,10 +108,22 @@ namespace PayCheckServerLib
             return (new Token(), new Token());
         }
 
+		static bool IsValidBase64(string base64)
+		{
+			Span<byte> buffer = new Span<byte>(new byte[base64.Length]);
+			return Convert.TryFromBase64String(base64, buffer, out int bytesParsed);
+		}
+
 
         public static Token ReadToken(string base64)
         {
-            var b64 = Convert.FromBase64String(base64);
+			if (!IsValidBase64(base64))
+				return new Token()
+				{
+					PlatformType = TokenPlatform.InvalidToken,
+				};
+
+			var b64 = Convert.FromBase64String(base64);
 
             var bname_l = BitConverter.ToInt32(b64[0..4]);
 

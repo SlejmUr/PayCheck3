@@ -26,7 +26,7 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: 7.0.x
+        dotnet-version: 8.0.x
     - name: Restore dependencies
       run: dotnet restore
 
@@ -34,7 +34,7 @@ jobs:
       run: dotnet publish -c ${{ matrix.configuration }} --property:PublishDir=../artifacts-${{ matrix.runs-on }}
 
     - name: Upload artifact (Lin)
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       if: matrix.runs-on == 'ubuntu-latest'
       with:
         name: PayCheck3-Linux
@@ -42,7 +42,7 @@ jobs:
         if-no-files-found: error
 
     - name: Upload artifact (Win)
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       if: matrix.runs-on == 'windows-latest'
       with:
         name: PayCheck3-Windows
@@ -58,7 +58,7 @@ jobs:
       - name: Variables
         id: vars
         run: echo sha_short=${GITHUB_SHA::7} >> $GITHUB_OUTPUT
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           path: artifacts
       - run: for a in *; do zip -r "$a.zip" "$a"; done

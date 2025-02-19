@@ -1,9 +1,10 @@
 ﻿using Newtonsoft.Json;
 using PayCheckServerLib.Jsons.Basic;
+using PayCheckServerLib.Jsons.CloudSave;
 
 namespace PayCheckServerLib.Jsons
 {
-    public class PlatformBackendSettingsData : TopLevel<PlatformBackendSettingsData.PlatformBackendSettingsDataValue>
+    public class PlatformBackendSettingsData : CloudSaveDataWrapper<PlatformBackendSettingsData.PlatformBackendSettingsDataValue>
     {
         [JsonProperty("user_id")]
         public string UserId { get; set; }
