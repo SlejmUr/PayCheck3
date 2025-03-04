@@ -1,6 +1,5 @@
 ﻿using Newtonsoft.Json;
 using System.Security.Cryptography;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace PayCheckServerLib
 {
