@@ -47,9 +47,9 @@ namespace PayCheckServerLib
             {
                 try
                 {
-					if (!File.Exists("./Files/" + KeyPair.Key))
+					string filePath = Path.Combine("./Files", KeyPair.Key);
+					if (!File.Exists(filePath))
 					{
-						string filePath = Path.Combine("./Files", KeyPair.Key);
 						Debugger.PrintInfo(filePath + " does not exist creating");
 						using (File.Create(filePath)) { }
 						string hash = BitConverter.ToString(SHA256.HashData(File.ReadAllBytes(filePath))).Replace("-", "").ToLower();
@@ -106,8 +106,8 @@ namespace PayCheckServerLib
 							}
                             else
                             {
-								int size = File.ReadAllLines("./Files/" + KeyPair.Key).Length;
-								if (size == 0) { File.Delete("./Files/" + KeyPair.Key); }
+								int size = File.ReadAllLines(filePath).Length;
+								if (size == 0) { File.Delete(filePath); }
                                 //Debugger.PrintInfo("Not want to update, Skipping");
                                 continue;
                             }
@@ -120,10 +120,11 @@ namespace PayCheckServerLib
                 {
                     Debugger.PrintWarn(ex.ToString());
                     Debugger.PrintWarn("Unable to fetch get file to update", "Updater");
-					if (File.Exists("./Files/" + KeyPair.Key))
+					string filePath = Path.Combine("./Files", KeyPair.Key);
+					if (File.Exists(filePath))
 					{
-						int size = File.ReadAllLines("./Files/" + KeyPair.Key).Length;
-						if (size == 0) { File.Delete("./Files/" + KeyPair.Key); }
+						int size = File.ReadAllLines(filePath).Length;
+						if (size == 0) { File.Delete(filePath); }
 					}
 				}
             }
