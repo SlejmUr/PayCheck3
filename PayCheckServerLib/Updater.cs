@@ -50,7 +50,6 @@ namespace PayCheckServerLib
 					string filePath = Path.Combine("./Files", KeyPair.Key);
 					if (!File.Exists(filePath))
 					{
-					//	Debugger.PrintInfo(filePath + " does not exist creating");
 						LocalFiles.Add(KeyPair.Key, "0");
 					}
 
@@ -69,9 +68,6 @@ namespace PayCheckServerLib
 							{
 								Debugger.PrintInfo("Updating started on file " + KeyPair.Key);
 								UpdateFile(FilesUrl, KeyPair.Key);
-								//HttpClient client = new();
-								//var FilesData = client.GetStringAsync(FilesUrl + KeyPair.Key).Result;
-								//File.WriteAllText("Files/" + KeyPair.Key, FilesData);
 								continue;
 							}	
                             Console.WriteLine("You want to update?\n Y/y = Yes , N/n = No, A/a = Update all");
@@ -89,18 +85,12 @@ namespace PayCheckServerLib
                             {
                                 Debugger.PrintInfo("Updating started!");
 								UpdateFile(FilesUrl, KeyPair.Key);
-								//HttpClient client = new();
-								//var FilesData = client.GetStringAsync(FilesUrl + KeyPair.Key).Result;
-								//File.WriteAllText("Files/" + KeyPair.Key, FilesData);
 							}
 							else if (inp == "a")
 							{
 								updateall = true;
 								Debugger.PrintInfo("Updating started!");
 								UpdateFile(FilesUrl, KeyPair.Key);
-								//HttpClient client = new();
-								//var FilesData = client.GetStringAsync(FilesUrl + KeyPair.Key).Result;
-								//File.WriteAllText("Files/" + KeyPair.Key, FilesData);
 							}
                             else
                             {
