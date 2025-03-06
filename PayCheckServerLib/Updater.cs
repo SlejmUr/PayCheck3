@@ -50,7 +50,7 @@ namespace PayCheckServerLib
 					string filePath = Path.Combine("./Files", KeyPair.Key);
 					if (!File.Exists(filePath))
 					{
-						Debugger.PrintInfo(filePath + " does not exist creating");
+					//	Debugger.PrintInfo(filePath + " does not exist creating");
 						LocalFiles.Add(KeyPair.Key, "0");
 					}
 
