@@ -51,9 +51,7 @@ namespace PayCheckServerLib
 					if (!File.Exists(filePath))
 					{
 						Debugger.PrintInfo(filePath + " does not exist creating");
-						using (File.Create(filePath)) { }
-						string hash = BitConverter.ToString(SHA256.HashData(File.ReadAllBytes(filePath))).Replace("-", "").ToLower();
-						LocalFiles.Add(KeyPair.Key, hash);
+						LocalFiles.Add(KeyPair.Key, "0");
 					}
 
 					if (LocalFiles[KeyPair.Key] != Files[KeyPair.Key])
@@ -70,7 +68,7 @@ namespace PayCheckServerLib
 							if (updateall == true)
 							{
 								Debugger.PrintInfo("Updating started on file " + KeyPair.Key);
-								updatefile(FilesUrl, KeyPair.Key);
+								UpdateFile(FilesUrl, KeyPair.Key);
 								//HttpClient client = new();
 								//var FilesData = client.GetStringAsync(FilesUrl + KeyPair.Key).Result;
 								//File.WriteAllText("Files/" + KeyPair.Key, FilesData);
@@ -90,7 +88,7 @@ namespace PayCheckServerLib
                             if (inp == "y")
                             {
                                 Debugger.PrintInfo("Updating started!");
-								updatefile(FilesUrl, KeyPair.Key);
+								UpdateFile(FilesUrl, KeyPair.Key);
 								//HttpClient client = new();
 								//var FilesData = client.GetStringAsync(FilesUrl + KeyPair.Key).Result;
 								//File.WriteAllText("Files/" + KeyPair.Key, FilesData);
@@ -99,15 +97,13 @@ namespace PayCheckServerLib
 							{
 								updateall = true;
 								Debugger.PrintInfo("Updating started!");
-								updatefile(FilesUrl, KeyPair.Key);
+								UpdateFile(FilesUrl, KeyPair.Key);
 								//HttpClient client = new();
 								//var FilesData = client.GetStringAsync(FilesUrl + KeyPair.Key).Result;
 								//File.WriteAllText("Files/" + KeyPair.Key, FilesData);
 							}
                             else
                             {
-								int size = File.ReadAllLines(filePath).Length;
-								if (size == 0) { File.Delete(filePath); }
                                 //Debugger.PrintInfo("Not want to update, Skipping");
                                 continue;
                             }
@@ -120,18 +116,12 @@ namespace PayCheckServerLib
                 {
                     Debugger.PrintWarn(ex.ToString());
                     Debugger.PrintWarn("Unable to fetch get file to update", "Updater");
-					string filePath = Path.Combine("./Files", KeyPair.Key);
-					if (File.Exists(filePath))
-					{
-						int size = File.ReadAllLines(filePath).Length;
-						if (size == 0) { File.Delete(filePath); }
-					}
 				}
             }
             Debugger.PrintInfo("Update Finished!");
         }
 
-		public static void updatefile(string filesUrl, string key)
+		public static void UpdateFile(string filesUrl, string key)
 		{
 			HttpClient client = new();
 			var filesData = client.GetStringAsync(filesUrl + key).Result;
