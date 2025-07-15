@@ -18,7 +18,6 @@ namespace PayCheckServerLib
 				Debugger.PrintWarn("Files directory does not exist creating");
 				Directory.CreateDirectory("./Files");
 			}
-			Dictionary<string, string> LocalFiles = new();
             foreach (var file in Directory.GetFiles("./Files"))
             {
                 string hash = BitConverter.ToString(SHA256.HashData(File.ReadAllBytes(file))).Replace("-", "").ToLower();
