@@ -12,6 +12,13 @@ namespace PayCheckServerLib
         {
 			return;
             Dictionary<string, string> LocalFiles = new();
+			bool updateall = false;
+			if (!Directory.Exists("./Files"))
+			{
+				Debugger.PrintWarn("Files directory does not exist creating");
+				Directory.CreateDirectory("./Files");
+			}
+			Dictionary<string, string> LocalFiles = new();
             foreach (var file in Directory.GetFiles("./Files"))
             {
                 string hash = BitConverter.ToString(SHA256.HashData(File.ReadAllBytes(file))).Replace("-", "").ToLower();
@@ -42,7 +49,13 @@ namespace PayCheckServerLib
             {
                 try
                 {
-                    if (LocalFiles[KeyPair.Key] != Files[KeyPair.Key])
+					string filePath = Path.Combine("./Files", KeyPair.Key);
+					if (!File.Exists(filePath))
+					{
+						LocalFiles.Add(KeyPair.Key, "0");
+					}
+
+					if (LocalFiles[KeyPair.Key] != Files[KeyPair.Key])
                     {
                         Debugger.PrintInfo(LocalFiles[KeyPair.Key] + " " + Files[KeyPair.Key]);
                         Debugger.PrintInfo(KeyPair.Key + " is out of date", "Updater");
@@ -53,7 +66,13 @@ namespace PayCheckServerLib
                         }
                         else
                         {
-                            Console.WriteLine("You want to update?\n Y/y = Yes , N/n = No");
+							if (updateall == true)
+							{
+								Debugger.PrintInfo("Updating started on file " + KeyPair.Key);
+								UpdateFile(FilesUrl, KeyPair.Key);
+								continue;
+							}	
+                            Console.WriteLine("You want to update?\n Y/y = Yes , N/n = No, A/a = Update all");
 
                             var inp = Console.ReadLine();
 
@@ -67,10 +86,14 @@ namespace PayCheckServerLib
                             if (inp == "y")
                             {
                                 Debugger.PrintInfo("Updating started!");
-                                HttpClient client = new();
-                                var FilesData = client.GetStringAsync(FilesUrl + KeyPair.Key).Result;
-                                File.WriteAllText("Files/" + KeyPair.Key, FilesData);
-                            }
+								UpdateFile(FilesUrl, KeyPair.Key);
+							}
+							else if (inp == "a")
+							{
+								updateall = true;
+								Debugger.PrintInfo("Updating started!");
+								UpdateFile(FilesUrl, KeyPair.Key);
+							}
                             else
                             {
                                 //Debugger.PrintInfo("Not want to update, Skipping");
@@ -85,13 +108,19 @@ namespace PayCheckServerLib
                 {
                     Debugger.PrintWarn(ex.ToString());
                     Debugger.PrintWarn("Unable to fetch get file to update", "Updater");
-                }
+				}
             }
             Debugger.PrintInfo("Update Finished!");
         }
 
+		public static void UpdateFile(string filesUrl, string key)
+		{
+			HttpClient client = new();
+			var filesData = client.GetStringAsync(filesUrl + key).Result;
+			File.WriteAllText("Files/" + key, filesData);
+		}
 
-        public static void DownloadBetaFiles()
+		public static void DownloadBetaFiles()
         {
 			return;
             Dictionary<string, string> LocalFiles = new();
