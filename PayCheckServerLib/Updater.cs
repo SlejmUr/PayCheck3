@@ -10,6 +10,7 @@ namespace PayCheckServerLib
 
         public static void CheckForJsonUpdates(bool UIHandleUpdate = false)
         {
+			return;
             Dictionary<string, string> LocalFiles = new();
             foreach (var file in Directory.GetFiles("./Files"))
             {
@@ -92,6 +93,7 @@ namespace PayCheckServerLib
 
         public static void DownloadBetaFiles()
         {
+			return;
             Dictionary<string, string> LocalFiles = new();
             foreach (var file in Directory.GetFiles("./Files"))
             {
