@@ -171,8 +171,8 @@ namespace PayCheckServerLib.Responses
 				Namespace = serverStruct.Parameters["namespace"],
 				Key = serverStruct.Parameters["key"],
 				SetBy = "CLIENT",
-				//IsPublic = false,
-				//UserId = serverStruct.Parameters["userId"],
+				IsPublic = false,
+				UserId = serverStruct.Parameters["userId"],
 				CreatedAt = "0001-01-01T01:01:01.001Z00:00",
 				UpdatedAt = "0001-01-01T01:01:01.001Z00:00"
 			};
