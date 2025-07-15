@@ -19,9 +19,7 @@ public class Currency
         // return fake data for now
         
         ResponseCreator response = new ResponseCreator();
-        int balance = 0;
-        if (ConfigHelper.ServerConfig.InDevFeatures.GiveMeMoney > 0)
-            balance = ConfigHelper.ServerConfig.InDevFeatures.GiveMeMoney;
+		int balance = 0;
         CurrencyJson currencyReponse = new()
         {
             Balance = balance,

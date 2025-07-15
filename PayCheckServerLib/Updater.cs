@@ -10,13 +10,14 @@ namespace PayCheckServerLib
 
         public static void CheckForJsonUpdates(bool UIHandleUpdate = false)
         {
+			return;
+            Dictionary<string, string> LocalFiles = new();
 			bool updateall = false;
 			if (!Directory.Exists("./Files"))
 			{
 				Debugger.PrintWarn("Files directory does not exist creating");
 				Directory.CreateDirectory("./Files");
 			}
-			Dictionary<string, string> LocalFiles = new();
             foreach (var file in Directory.GetFiles("./Files"))
             {
                 string hash = BitConverter.ToString(SHA256.HashData(File.ReadAllBytes(file))).Replace("-", "").ToLower();
@@ -120,6 +121,7 @@ namespace PayCheckServerLib
 
 		public static void DownloadBetaFiles()
         {
+			return;
             Dictionary<string, string> LocalFiles = new();
             foreach (var file in Directory.GetFiles("./Files"))
             {

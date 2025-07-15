@@ -29,10 +29,6 @@ namespace PayCheckServerLib
 		public static void Pre()
 		{
 			Debugger.logger.Info("Lib Info: " + BranchHelper.GetBranch() + " - " + BranchHelper.GetBuildDate() + " " + BranchHelper.GetCommitId());
-			if (ConfigHelper.ServerConfig.InDevFeatures.GiveMeMoney > 0)
-			{
-				Debugger.PrintDebug("GiveMeMoney Cheat Activated");
-			}
 			if (ArgumentHandler.DebugAll)
 				DebugPrinter.PrintToConsole = true;
 			else

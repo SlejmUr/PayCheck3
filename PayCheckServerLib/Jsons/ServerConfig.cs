@@ -63,9 +63,6 @@ namespace PayCheckServerLib.Jsons
             [JsonProperty("UsePWInsteadSteamToken")]
             public bool UsePWInsteadSteamToken { get; set; }
 
-            [JsonProperty("GiveMeMoneyCheat", DefaultValueHandling = DefaultValueHandling.Ignore, NullValueHandling = NullValueHandling.Ignore)]
-            public int GiveMeMoney { get; set; } = 0;
-
             [JsonProperty("UseBasicWeaponTable")]
             public bool UseBasicWeaponTable { get; set; }
         }
