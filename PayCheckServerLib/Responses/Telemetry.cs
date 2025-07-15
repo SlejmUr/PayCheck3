@@ -10,19 +10,18 @@ public class Telemetry
     public static bool ProtectedEvents(HttpRequest request, ServerStruct serverStruct)
     {
 		// Saving telemetry is useless in PayCheck3
-
-        //if (!Directory.Exists("Telemetry")) { Directory.CreateDirectory("Telemetry"); }
-        //try
-        //{
-        //    File.WriteAllText("Telemetry/" + DateTime.Now.ToString("s").Replace(":", "-") + ".json", request.Body);
-        //}
-        //catch (IOException e)
-        //{
-        //    Debugger.PrintError(String.Format("Exception occurred while writing telemetry: {0}", e.ToString()));
-        //}
         serverStruct.Response.MakeOkResponse();
 		serverStruct.Response.SetBody("{}");
         serverStruct.SendResponse();
         return true;
     }
+	// https://analytics.starbreeze.com/payday3/v1/events/batch
+	[HTTP("POST", "/{telemetryNamespace}/v1/events/batch")]
+	public static bool PostBatchTelemetryEvents(HttpRequest request, ServerStruct serverStruct)
+	{
+		serverStruct.Response.MakeOkResponse();
+		serverStruct.Response.SetBody("{}");
+		serverStruct.SendResponse();
+		return true;
+	}
 }

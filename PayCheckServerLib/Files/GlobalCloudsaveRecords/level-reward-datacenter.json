@@ -1,0 +1,423 @@
+{
+  "Level-Reward-Setup": {
+    "DifficultyExperienceModifierArray": [
+      1,
+      1.2,
+      1.5,
+      1.7
+    ],
+    "DifficultyInfamyPointsOnFailModifierArray": [
+      1,
+      1.2,
+      1.5,
+      1.7
+    ],
+    "InfamyPointPayoutArray": [
+      {
+        "AllBagsBonus": 400,
+        "Completion": 20,
+        "StealthBonus": 150
+      },
+      {
+        "AllBagsBonus": 400,
+        "Completion": 25,
+        "StealthBonus": 150
+      },
+      {
+        "AllBagsBonus": 650,
+        "Completion": 50,
+        "StealthBonus": 250
+      },
+      {
+        "AllBagsBonus": 800,
+        "Completion": 60,
+        "StealthBonus": 300
+      }
+    ],
+    "InstantLootValues": {
+      "LoudMaxPayoutArray": [
+        2600,
+        3120,
+        3900,
+        4420
+      ],
+      "NameToPointMap": [
+        {
+          "BP_InstantLoot_Money_01": 2,
+          "BP_InstantLoot_Money_04": 1
+        }
+      ],
+      "StealthMaxPayoutArray": [
+        3400,
+        4080,
+        5100,
+        5780
+      ],
+      "TotalPoints": 10
+    },
+    "ItemIdRewardMap": [
+      {
+        "1-one-preplanning-asset": 0.08,
+        "2-one-preplanning-asset": 0.07,
+        "3-one-preplanning-asset": 0.07,
+        "5-one-preplanning-asset": 0.07,
+        "6-one-preplanning-asset": 0.07,
+        "additional-thermite-branch-bank-preplanning-asset": 0.08,
+        "celebration-sharke-bank-preplanning-asset": 0.08,
+        "elevator-sharke-bank-preplanning-asset": 0.08,
+        "keycard-location-branch-bank-preplanning-asset": 0.08,
+        "secure-point-branch-bank-preplanning-asset": 0.08,
+        "teller-door-sharke-bank-preplanning-asset": 0.08,
+        "thermal-lance-sharke-bank-preplanning-asset": 0.08,
+        "van-branch-bank-preplanning-asset": 0.08
+      }
+    ],
+    "LoudBaseExperience": 650,
+    "LoudBaseInfamyPointsOnFail": 200,
+    "LoudInfamyPointsOnSurvivingFinalAssultDifficultyArray": [
+      200,
+      250,
+      500,
+      600
+    ],
+    "LoudInfamyPointsOnSurvivingOneAssultDifficultyArray": [
+      200,
+      250,
+      500,
+      600
+    ],
+    "LoudLevelCompletedStatistics": {
+      "Hard": {
+        "PlayerStatisticEntryArray": [
+          "datacenter-loud-hard"
+        ]
+      },
+      "Normal": {
+        "PlayerStatisticEntryArray": [
+          "datacenter-loud-normal"
+        ]
+      },
+      "Overkill": {
+        "PlayerStatisticEntryArray": [
+          "datacenter-loud-overkill"
+        ]
+      },
+      "VeryHard": {
+        "PlayerStatisticEntryArray": [
+          "datacenter-loud-veryhard"
+        ]
+      }
+    },
+    "LoudLootValuesArray": [
+      {
+        "LootName": "DA_ServerBag",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 20,
+            "LootValue": 35000,
+            "MaxInfamyPointsForLootType": 140,
+            "MaxValueForLootType": 245000
+          },
+          {
+            "InfamyPointValue": 25,
+            "LootValue": 42000,
+            "MaxInfamyPointsForLootType": 175,
+            "MaxValueForLootType": 294000
+          },
+          {
+            "InfamyPointValue": 50,
+            "LootValue": 52500,
+            "MaxInfamyPointsForLootType": 350,
+            "MaxValueForLootType": 367500
+          },
+          {
+            "InfamyPointValue": 60,
+            "LootValue": 59500,
+            "MaxInfamyPointsForLootType": 420,
+            "MaxValueForLootType": 416500
+          }
+        ]
+      },
+      {
+        "LootName": "DA_ServerBagCleaned",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 25,
+            "LootValue": 65000,
+            "MaxInfamyPointsForLootType": 175,
+            "MaxValueForLootType": 455000
+          },
+          {
+            "InfamyPointValue": 31.25,
+            "LootValue": 78000,
+            "MaxInfamyPointsForLootType": 218.75,
+            "MaxValueForLootType": 546000
+          },
+          {
+            "InfamyPointValue": 62.5,
+            "LootValue": 97500,
+            "MaxInfamyPointsForLootType": 437.5,
+            "MaxValueForLootType": 682500
+          },
+          {
+            "InfamyPointValue": 75,
+            "LootValue": 110500,
+            "MaxInfamyPointsForLootType": 525,
+            "MaxValueForLootType": 773500
+          }
+        ]
+      },
+      {
+        "LootName": "DA_ServerBagCombined",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 30,
+            "LootValue": 320000,
+            "MaxInfamyPointsForLootType": 30,
+            "MaxValueForLootType": 320000
+          },
+          {
+            "InfamyPointValue": 37.5,
+            "LootValue": 384000,
+            "MaxInfamyPointsForLootType": 37.5,
+            "MaxValueForLootType": 384000
+          },
+          {
+            "InfamyPointValue": 75,
+            "LootValue": 480000,
+            "MaxInfamyPointsForLootType": 75,
+            "MaxValueForLootType": 480000
+          },
+          {
+            "InfamyPointValue": 90,
+            "LootValue": 544000,
+            "MaxInfamyPointsForLootType": 90,
+            "MaxValueForLootType": 544000
+          }
+        ]
+      },
+      {
+        "LootName": "DA_AIBag",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 45,
+            "LootValue": 100000,
+            "MaxInfamyPointsForLootType": 45,
+            "MaxValueForLootType": 100000
+          },
+          {
+            "InfamyPointValue": 56.25,
+            "LootValue": 120000,
+            "MaxInfamyPointsForLootType": 56.25,
+            "MaxValueForLootType": 120000
+          },
+          {
+            "InfamyPointValue": 112.5,
+            "LootValue": 150000,
+            "MaxInfamyPointsForLootType": 112.5,
+            "MaxValueForLootType": 150000
+          },
+          {
+            "InfamyPointValue": 135,
+            "LootValue": 170000,
+            "MaxInfamyPointsForLootType": 135,
+            "MaxValueForLootType": 170000
+          }
+        ]
+      }
+    ],
+    "LoudMilestoneToExperienceRewardMap": [
+      {
+        "Loud Completion": 0.3,
+        "Loud Milestone 1": 0.15,
+        "Loud Milestone 2": 0.15,
+        "Loud Milestone 3": 0.15,
+        "Loud Milestone 4": 0.25
+      }
+    ],
+    "LoudMilestoneToInfamyPointsOnFailRewardMap": [
+      {
+        "Loud Completion": 0.01,
+        "Loud Milestone 1": 0.02,
+        "Loud Milestone 2": 0.05,
+        "Loud Milestone 3": 0.06,
+        "Loud Milestone 4": 0.07
+      }
+    ],
+    "ObjectivesToExperienceRewardMap": [
+      {
+        "Steal_AI_Core": 1.3,
+        "Steal_All_Bags": 1.5
+      }
+    ],
+    "PerformanceBonusMap": {
+      "BeenKilledCount": {
+        "PerformanceBonusEntryArray": [
+          {
+            "Max": 0,
+            "Min": 0,
+            "Modifier": 1.15
+          }
+        ]
+      }
+    },
+    "StealthBaseExperience": 600,
+    "StealthBaseInfamyPointsOnFail": 200,
+    "StealthLevelCompletedStatistics": {
+      "Hard": {
+        "PlayerStatisticEntryArray": [
+          "datacenter-stealth-hard"
+        ]
+      },
+      "Normal": {
+        "PlayerStatisticEntryArray": [
+          "datacenter-stealth-normal"
+        ]
+      },
+      "Overkill": {
+        "PlayerStatisticEntryArray": [
+          "datacenter-stealth-overkill"
+        ]
+      },
+      "VeryHard": {
+        "PlayerStatisticEntryArray": [
+          "datacenter-stealth-veryhard"
+        ]
+      }
+    },
+    "StealthLootValuesArray": [
+      {
+        "LootName": "DA_ServerBag",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 20,
+            "LootValue": 25000,
+            "MaxInfamyPointsForLootType": 140,
+            "MaxValueForLootType": 175000
+          },
+          {
+            "InfamyPointValue": 25,
+            "LootValue": 30000,
+            "MaxInfamyPointsForLootType": 175,
+            "MaxValueForLootType": 210000
+          },
+          {
+            "InfamyPointValue": 50,
+            "LootValue": 37500,
+            "MaxInfamyPointsForLootType": 350,
+            "MaxValueForLootType": 262500
+          },
+          {
+            "InfamyPointValue": 60,
+            "LootValue": 42500,
+            "MaxInfamyPointsForLootType": 420,
+            "MaxValueForLootType": 297500
+          }
+        ]
+      },
+      {
+        "LootName": "DA_ServerBagCleaned",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 25,
+            "LootValue": 55000,
+            "MaxInfamyPointsForLootType": 175,
+            "MaxValueForLootType": 385000
+          },
+          {
+            "InfamyPointValue": 31.25,
+            "LootValue": 66000,
+            "MaxInfamyPointsForLootType": 218.75,
+            "MaxValueForLootType": 462000
+          },
+          {
+            "InfamyPointValue": 62.5,
+            "LootValue": 82500,
+            "MaxInfamyPointsForLootType": 437.5,
+            "MaxValueForLootType": 577500
+          },
+          {
+            "InfamyPointValue": 75,
+            "LootValue": 93500,
+            "MaxInfamyPointsForLootType": 525,
+            "MaxValueForLootType": 654500
+          }
+        ]
+      },
+      {
+        "LootName": "DA_ServerBagCombined",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 30,
+            "LootValue": 300000,
+            "MaxInfamyPointsForLootType": 30,
+            "MaxValueForLootType": 300000
+          },
+          {
+            "InfamyPointValue": 37.5,
+            "LootValue": 360000,
+            "MaxInfamyPointsForLootType": 37.5,
+            "MaxValueForLootType": 360000
+          },
+          {
+            "InfamyPointValue": 75,
+            "LootValue": 450000,
+            "MaxInfamyPointsForLootType": 75,
+            "MaxValueForLootType": 450000
+          },
+          {
+            "InfamyPointValue": 90,
+            "LootValue": 510000,
+            "MaxInfamyPointsForLootType": 90,
+            "MaxValueForLootType": 510000
+          }
+        ]
+      },
+      {
+        "LootName": "DA_AIBag",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 45,
+            "LootValue": 100000,
+            "MaxInfamyPointsForLootType": 45,
+            "MaxValueForLootType": 100000
+          },
+          {
+            "InfamyPointValue": 56.25,
+            "LootValue": 120000,
+            "MaxInfamyPointsForLootType": 56.25,
+            "MaxValueForLootType": 120000
+          },
+          {
+            "InfamyPointValue": 112.5,
+            "LootValue": 150000,
+            "MaxInfamyPointsForLootType": 112.5,
+            "MaxValueForLootType": 150000
+          },
+          {
+            "InfamyPointValue": 135,
+            "LootValue": 170000,
+            "MaxInfamyPointsForLootType": 135,
+            "MaxValueForLootType": 170000
+          }
+        ]
+      }
+    ],
+    "StealthMilestoneToExperienceRewardMap": [
+      {
+        "Stealth Completion": 0.3,
+        "Stealth Milestone 1": 0.2,
+        "Stealth Milestone 2": 0.25,
+        "Stealth Milestone 3": 0.25
+      }
+    ],
+    "StealthMilestoneToInfamyPointsOnFailRewardMap": [
+      {
+        "Stealth Completion": 0.01,
+        "Stealth Milestone 1": 0.04,
+        "Stealth Milestone 2": 0.07,
+        "Stealth Milestone 3": 0.09
+      }
+    ]
+  }
+}

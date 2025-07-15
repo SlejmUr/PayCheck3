@@ -1,1 +1,0 @@
-{"ActiveEventType": "IncreasedCash", "MetaEvents": [{"Description": "50% cash increase", "EventId": "double_cash", "EventType": "IncreasedCash", "Modifiers": [{"ModifierType": "Cash", "Multiplier": 1.5}], "StartDate": "2024.09.26-12.00.00", "StopDate": "2024.10.01-12.01.00"}]}

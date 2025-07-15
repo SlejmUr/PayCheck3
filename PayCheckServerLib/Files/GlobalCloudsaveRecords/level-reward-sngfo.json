@@ -1,0 +1,372 @@
+{
+  "Level-Reward-Setup": {
+    "DifficultyExperienceModifierArray": [
+      1,
+      1.2,
+      1.5,
+      1.7
+    ],
+    "DifficultyInfamyPointsOnFailModifierArray": [
+      1,
+      1.2,
+      1.5,
+      1.7
+    ],
+    "InfamyPointPayoutArray": [
+      {
+        "AllBagsBonus": 25,
+        "Completion": 45,
+        "StealthBonus": 175
+      },
+      {
+        "AllBagsBonus": 50,
+        "Completion": 60,
+        "StealthBonus": 200
+      },
+      {
+        "AllBagsBonus": 250,
+        "Completion": 70,
+        "StealthBonus": 250
+      },
+      {
+        "AllBagsBonus": 300,
+        "Completion": 110,
+        "StealthBonus": 300
+      }
+    ],
+    "InstantLootValues": {
+      "LoudMaxPayoutArray": [
+        2650,
+        3180,
+        3975,
+        4505
+      ],
+      "NameToPointMap": [
+        {
+          "BP_InstantLoot_Money_01": 1,
+          "BP_InstantLoot_Money_02": 1,
+          "BP_InstantLoot_Money_03": 2
+        }
+      ],
+      "StealthMaxPayoutArray": [
+        2650,
+        3180,
+        3975,
+        4505
+      ],
+      "TotalPoints": 190
+    },
+    "ItemIdRewardMap": [
+      {
+        "1-bust-preplanning-asset": 0.07,
+        "1-fort-preplanning-asset": 0.07,
+        "1-villa-preplanning-asset": 0.07,
+        "2-bust-preplanning-asset": 0.06,
+        "2-fort-preplanning-asset": 0.06,
+        "2-villa-preplanning-asset": 0.06,
+        "3-bust-preplanning-asset": 0.06,
+        "3-fort-preplanning-asset": 0.06,
+        "3-villa-preplanning-asset": 0.06,
+        "4-bust-preplanning-asset": 0.06,
+        "4-fort-preplanning-asset": 0.06,
+        "4-villa-preplanning-asset": 0.06,
+        "garbage-chute-armored-transport-preplanning-asset": 0.07,
+        "more-planks-armored-transport-preplanning-asset": 0.06,
+        "rc-signal-armored-transport-preplanning-asset": 0.06,
+        "sniper-tower-armored-transport-preplanning-asset": 0.06
+      }
+    ],
+    "LoudBaseExperience": 200,
+    "LoudBaseInfamyPointsOnFail": 200,
+    "LoudInfamyPointsOnSurvivingFinalAssultDifficultyArray": [
+      175,
+      200,
+      250,
+      300
+    ],
+    "LoudInfamyPointsOnSurvivingOneAssultDifficultyArray": [
+      175,
+      200,
+      250,
+      300
+    ],
+    "LoudLevelCompletedStatistics": {
+      "Hard": {
+        "PlayerStatisticEntryArray": [
+          "sngfo-loud-hard"
+        ]
+      },
+      "Normal": {
+        "PlayerStatisticEntryArray": [
+          "sngfo-loud-normal"
+        ]
+      },
+      "Overkill": {
+        "PlayerStatisticEntryArray": [
+          "sngfo-loud-overkill"
+        ]
+      },
+      "VeryHard": {
+        "PlayerStatisticEntryArray": [
+          "sngfo-loud-veryhard"
+        ]
+      }
+    },
+    "LoudLootValuesArray": [
+      {
+        "LootName": "DA_CocaineBagType",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 5,
+            "LootValue": 6500,
+            "MaxInfamyPointsForLootType": 80,
+            "MaxValueForLootType": 104000
+          },
+          {
+            "InfamyPointValue": 10,
+            "LootValue": 7800,
+            "MaxInfamyPointsForLootType": 160,
+            "MaxValueForLootType": 124800
+          },
+          {
+            "InfamyPointValue": 18,
+            "LootValue": 16575,
+            "MaxInfamyPointsForLootType": 288,
+            "MaxValueForLootType": 265200
+          },
+          {
+            "InfamyPointValue": 36,
+            "LootValue": 33150,
+            "MaxInfamyPointsForLootType": 576,
+            "MaxValueForLootType": 530400
+          }
+        ]
+      },
+      {
+        "LootName": "BP_InstantLoot_Money_01",
+        "LootValueDifficultyArray": [
+          {
+            "LootValue": 100,
+            "MaxValueForLootType": 800
+          },
+          {
+            "LootValue": 120,
+            "MaxValueForLootType": 960
+          },
+          {
+            "LootValue": 150,
+            "MaxValueForLootType": 1200
+          },
+          {
+            "LootValue": 170,
+            "MaxValueForLootType": 1360
+          }
+        ]
+      },
+      {
+        "LootName": "BP_InstantLoot_Money_02",
+        "LootValueDifficultyArray": [
+          {
+            "LootValue": 100,
+            "MaxValueForLootType": 800
+          },
+          {
+            "LootValue": 120,
+            "MaxValueForLootType": 960
+          },
+          {
+            "LootValue": 150,
+            "MaxValueForLootType": 1200
+          },
+          {
+            "LootValue": 170,
+            "MaxValueForLootType": 1360
+          }
+        ]
+      },
+      {
+        "LootName": "BP_InstantLoot_Money_03",
+        "LootValueDifficultyArray": [
+          {
+            "LootValue": 150,
+            "MaxValueForLootType": 1050
+          },
+          {
+            "LootValue": 180,
+            "MaxValueForLootType": 1260
+          },
+          {
+            "LootValue": 225,
+            "MaxValueForLootType": 1575
+          },
+          {
+            "LootValue": 255,
+            "MaxValueForLootType": 1785
+          }
+        ]
+      }
+    ],
+    "LoudMilestoneToExperienceRewardMap": [
+      {
+        "Loud Completion": 0.4,
+        "Loud Milestone 1": 0.1,
+        "Loud Milestone 2": 0.2,
+        "Loud Milestone 3": 0.3
+      }
+    ],
+    "LoudMilestoneToInfamyPointsOnFailRewardMap": [
+      {
+        "Loud Milestone 1": 0.03,
+        "Loud Milestone 2": 0.07,
+        "Loud Milestone 3": 0.1
+      }
+    ],
+    "ObjectivesToExperienceRewardMap": [
+      {}
+    ],
+    "PerformanceBonusMap": {
+      "BeenKilledCount": {
+        "PerformanceBonusEntryArray": [
+          {
+            "Max": 0,
+            "Min": 0,
+            "Modifier": 1.15
+          }
+        ]
+      }
+    },
+    "StealthBaseExperience": 200,
+    "StealthBaseInfamyPointsOnFail": 200,
+    "StealthLevelCompletedStatistics": {
+      "Hard": {
+        "PlayerStatisticEntryArray": [
+          "sngfo-stealth-hard"
+        ]
+      },
+      "Normal": {
+        "PlayerStatisticEntryArray": [
+          "sngfo-stealth-normal"
+        ]
+      },
+      "Overkill": {
+        "PlayerStatisticEntryArray": [
+          "sngfo-stealth-overkill"
+        ]
+      },
+      "VeryHard": {
+        "PlayerStatisticEntryArray": [
+          "sngfo-stealth-veryhard"
+        ]
+      }
+    },
+    "StealthLootValuesArray": [
+      {
+        "LootName": "DA_CocaineBagType",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 5,
+            "LootValue": 6500,
+            "MaxInfamyPointsForLootType": 80,
+            "MaxValueForLootType": 104000
+          },
+          {
+            "InfamyPointValue": 10,
+            "LootValue": 7800,
+            "MaxInfamyPointsForLootType": 160,
+            "MaxValueForLootType": 124800
+          },
+          {
+            "InfamyPointValue": 18,
+            "LootValue": 16575,
+            "MaxInfamyPointsForLootType": 288,
+            "MaxValueForLootType": 265200
+          },
+          {
+            "InfamyPointValue": 36,
+            "LootValue": 33150,
+            "MaxInfamyPointsForLootType": 576,
+            "MaxValueForLootType": 530400
+          }
+        ]
+      },
+      {
+        "LootName": "BP_InstantLoot_Money_01",
+        "LootValueDifficultyArray": [
+          {
+            "LootValue": 100,
+            "MaxValueForLootType": 800
+          },
+          {
+            "LootValue": 120,
+            "MaxValueForLootType": 960
+          },
+          {
+            "LootValue": 150,
+            "MaxValueForLootType": 1200
+          },
+          {
+            "LootValue": 170,
+            "MaxValueForLootType": 1360
+          }
+        ]
+      },
+      {
+        "LootName": "BP_InstantLoot_Money_02",
+        "LootValueDifficultyArray": [
+          {
+            "LootValue": 100,
+            "MaxValueForLootType": 800
+          },
+          {
+            "LootValue": 120,
+            "MaxValueForLootType": 960
+          },
+          {
+            "LootValue": 150,
+            "MaxValueForLootType": 1200
+          },
+          {
+            "LootValue": 170,
+            "MaxValueForLootType": 1360
+          }
+        ]
+      },
+      {
+        "LootName": "BP_InstantLoot_Money_03",
+        "LootValueDifficultyArray": [
+          {
+            "LootValue": 150,
+            "MaxValueForLootType": 1050
+          },
+          {
+            "LootValue": 180,
+            "MaxValueForLootType": 1260
+          },
+          {
+            "LootValue": 225,
+            "MaxValueForLootType": 1575
+          },
+          {
+            "LootValue": 255,
+            "MaxValueForLootType": 1785
+          }
+        ]
+      }
+    ],
+    "StealthMilestoneToExperienceRewardMap": [
+      {
+        "Stealth Completion": 0.6,
+        "Stealth Milestone 1": 0.1,
+        "Stealth Milestone 2": 0.1,
+        "Stealth Milestone 3": 0.2
+      }
+    ],
+    "StealthMilestoneToInfamyPointsOnFailRewardMap": [
+      {
+        "Stealth Milestone 1": 0.03,
+        "Stealth Milestone 2": 0.07,
+        "Stealth Milestone 3": 0.1
+      }
+    ]
+  }
+}

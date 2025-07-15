@@ -1,0 +1,330 @@
+{
+  "Level-Reward-Setup": {
+    "DifficultyExperienceModifierArray": [
+      1,
+      1.2,
+      1.5,
+      1.7
+    ],
+    "DifficultyInfamyPointsOnFailModifierArray": [
+      1,
+      1.2,
+      1.5,
+      1.7
+    ],
+    "InfamyPointPayoutArray": [
+      {
+        "AllBagsBonus": 250,
+        "Completion": 35,
+        "StealthBonus": 0
+      },
+      {
+        "AllBagsBonus": 250,
+        "Completion": 40,
+        "StealthBonus": 0
+      },
+      {
+        "AllBagsBonus": 300,
+        "Completion": 50,
+        "StealthBonus": 0
+      },
+      {
+        "AllBagsBonus": 300,
+        "Completion": 70,
+        "StealthBonus": 0
+      }
+    ],
+    "InstantLootValues": {
+      "LoudMaxPayoutArray": [
+        13400,
+        16080,
+        20100,
+        22780
+      ],
+      "NameToPointMap": [
+        {
+          "BP_InstantLoot_Money_02": 1,
+          "BP_InstantLoot_Money_03": 3,
+          "BP_InstantLoot_Money_04": 2
+        }
+      ],
+      "StealthMaxPayoutArray": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "TotalPoints": 16
+    },
+    "ItemIdRewardMap": [
+      {
+        "1-bust-preplanning-asset": 0.07,
+        "1-fort-preplanning-asset": 0.07,
+        "1-villa-preplanning-asset": 0.07,
+        "2-bust-preplanning-asset": 0.06,
+        "2-fort-preplanning-asset": 0.06,
+        "2-villa-preplanning-asset": 0.06,
+        "3-bust-preplanning-asset": 0.06,
+        "3-fort-preplanning-asset": 0.06,
+        "3-villa-preplanning-asset": 0.06,
+        "4-bust-preplanning-asset": 0.06,
+        "4-fort-preplanning-asset": 0.06,
+        "4-villa-preplanning-asset": 0.06,
+        "bag-degradation-cargo-dock-preplanning-asset": 0.07,
+        "more-explosives-cargo-dock-preplanning-asset": 0.06,
+        "potential-containers-cargo-dock-preplanning-asset": 0.06,
+        "thermite-drop-cargo-dock-preplanning-asset": 0.06
+      }
+    ],
+    "LoudBaseExperience": 300,
+    "LoudBaseInfamyPointsOnFail": 350,
+    "LoudInfamyPointsOnSurvivingFinalAssultDifficultyArray": [
+      300,
+      350,
+      450,
+      550
+    ],
+    "LoudInfamyPointsOnSurvivingOneAssultDifficultyArray": [
+      300,
+      350,
+      450,
+      550
+    ],
+    "LoudLevelCompletedStatistics": {
+      "Hard": {
+        "PlayerStatisticEntryArray": [
+          "armoredtransport-loud-hard"
+        ]
+      },
+      "Normal": {
+        "PlayerStatisticEntryArray": [
+          "armoredtransport-loud-normal"
+        ]
+      },
+      "Overkill": {
+        "PlayerStatisticEntryArray": [
+          "armoredtransport-loud-overkill"
+        ]
+      },
+      "VeryHard": {
+        "PlayerStatisticEntryArray": [
+          "armoredtransport-loud-veryhard"
+        ]
+      }
+    },
+    "LoudLootValuesArray": [
+      {
+        "LootName": "DA_MoneyBagType_LowValue",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 35,
+            "LootValue": 26500,
+            "MaxInfamyPointsForLootType": 140,
+            "MaxValueForLootType": 106000
+          },
+          {
+            "InfamyPointValue": 40,
+            "LootValue": 31800,
+            "MaxInfamyPointsForLootType": 160,
+            "MaxValueForLootType": 127200
+          },
+          {
+            "InfamyPointValue": 50,
+            "LootValue": 39750,
+            "MaxInfamyPointsForLootType": 200,
+            "MaxValueForLootType": 159000
+          },
+          {
+            "InfamyPointValue": 70,
+            "LootValue": 45050,
+            "MaxInfamyPointsForLootType": 280,
+            "MaxValueForLootType": 180200
+          }
+        ]
+      },
+      {
+        "LootName": "DA_RareMinerals",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 35,
+            "LootValue": 80000,
+            "MaxInfamyPointsForLootType": 210,
+            "MaxValueForLootType": 480000
+          },
+          {
+            "InfamyPointValue": 40,
+            "LootValue": 96000,
+            "MaxInfamyPointsForLootType": 240,
+            "MaxValueForLootType": 576000
+          },
+          {
+            "InfamyPointValue": 50,
+            "LootValue": 120000,
+            "MaxInfamyPointsForLootType": 300,
+            "MaxValueForLootType": 720000
+          },
+          {
+            "InfamyPointValue": 70,
+            "LootValue": 136000,
+            "MaxInfamyPointsForLootType": 420,
+            "MaxValueForLootType": 816000
+          }
+        ]
+      }
+    ],
+    "LoudMilestoneToExperienceRewardMap": [
+      {
+        "Loud Completion": 0.1,
+        "Loud Milestone 1": 0.1,
+        "Loud Milestone 2": 0.05,
+        "Loud Milestone 3": 0.1,
+        "Loud Milestone 4": 0.35,
+        "Loud Milestone 5": 0.1,
+        "Loud Milestone 6": 0.05,
+        "Loud Milestone 7": 0.15
+      }
+    ],
+    "LoudMilestoneToInfamyPointsOnFailRewardMap": [
+      {
+        "Loud Completion": 0.01,
+        "Loud Milestone 1": 0.01,
+        "Loud Milestone 2": 0.01,
+        "Loud Milestone 3": 0.02,
+        "Loud Milestone 4": 0.03,
+        "Loud Milestone 5": 0.03,
+        "Loud Milestone 6": 0.05,
+        "Loud Milestone 7": 0.05
+      }
+    ],
+    "ObjectivesToExperienceRewardMap": [
+      {
+        "secure_all_loot": 1.2
+      }
+    ],
+    "PerformanceBonusMap": {
+      "BeenKilledCount": {
+        "PerformanceBonusEntryArray": [
+          {
+            "Max": 0,
+            "Min": 0,
+            "Modifier": 1.15
+          }
+        ]
+      }
+    },
+    "StealthBaseExperience": 450,
+    "StealthBaseInfamyPointsOnFail": 350,
+    "StealthLevelCompletedStatistics": {
+      "Hard": {
+        "PlayerStatisticEntryArray": [
+          "armoredtransport-stealth-hard"
+        ]
+      },
+      "Normal": {
+        "PlayerStatisticEntryArray": [
+          "armoredtransport-stealth-normal"
+        ]
+      },
+      "Overkill": {
+        "PlayerStatisticEntryArray": [
+          "armoredtransport-stealth-overkill"
+        ]
+      },
+      "VeryHard": {
+        "PlayerStatisticEntryArray": [
+          "armoredtransport-stealth-veryhard"
+        ]
+      }
+    },
+    "StealthLootValuesArray": [
+      {
+        "LootName": "DA_MoneyBagType_LowValue",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 26,
+            "LootValue": 26500,
+            "MaxInfamyPointsForLootType": 130,
+            "MaxValueForLootType": 106000
+          },
+          {
+            "InfamyPointValue": 26,
+            "LootValue": 31800,
+            "MaxInfamyPointsForLootType": 130,
+            "MaxValueForLootType": 127200
+          },
+          {
+            "InfamyPointValue": 26,
+            "LootValue": 39750,
+            "MaxInfamyPointsForLootType": 130,
+            "MaxValueForLootType": 159000
+          },
+          {
+            "InfamyPointValue": 26,
+            "LootValue": 45050,
+            "MaxInfamyPointsForLootType": 130,
+            "MaxValueForLootType": 180200
+          }
+        ]
+      },
+      {
+        "LootName": "DA_RareMinerals",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 26,
+            "LootValue": 80000,
+            "MaxInfamyPointsForLootType": 130,
+            "MaxValueForLootType": 480000
+          },
+          {
+            "InfamyPointValue": 26,
+            "LootValue": 96000,
+            "MaxInfamyPointsForLootType": 130,
+            "MaxValueForLootType": 576000
+          },
+          {
+            "InfamyPointValue": 26,
+            "LootValue": 120000,
+            "MaxInfamyPointsForLootType": 130,
+            "MaxValueForLootType": 720000
+          },
+          {
+            "InfamyPointValue": 26,
+            "LootValue": 136000,
+            "MaxInfamyPointsForLootType": 130,
+            "MaxValueForLootType": 816000
+          }
+        ]
+      }
+    ],
+    "StealthMilestoneToExperienceRewardMap": [
+      {
+        "Stealth Completion": 0,
+        "Stealth Milestone 1": 0,
+        "Stealth Milestone 10": 0,
+        "Stealth Milestone 2": 0,
+        "Stealth Milestone 3": 0,
+        "Stealth Milestone 4": 0,
+        "Stealth Milestone 5": 0,
+        "Stealth Milestone 6": 0,
+        "Stealth Milestone 7": 0,
+        "Stealth Milestone 8": 0,
+        "Stealth Milestone 9": 0
+      }
+    ],
+    "StealthMilestoneToInfamyPointsOnFailRewardMap": [
+      {
+        "Stealth Completion": 0,
+        "Stealth Milestone 1": 0,
+        "Stealth Milestone 10": 0,
+        "Stealth Milestone 2": 0,
+        "Stealth Milestone 3": 0,
+        "Stealth Milestone 4": 0,
+        "Stealth Milestone 5": 0,
+        "Stealth Milestone 6": 0,
+        "Stealth Milestone 7": 0,
+        "Stealth Milestone 8": 0,
+        "Stealth Milestone 9": 0
+      }
+    ]
+  }
+}

@@ -1,0 +1,537 @@
+{
+  "Level-Reward-Setup": {
+    "DifficultyExperienceModifierArray": [
+      1,
+      1.2,
+      1.5,
+      1.7
+    ],
+    "DifficultyInfamyPointsOnFailModifierArray": [
+      1,
+      1.2,
+      1.5,
+      1.7
+    ],
+    "InfamyPointPayoutArray": [
+      {
+        "AllBagsBonus": 550,
+        "Completion": 25,
+        "StealthBonus": 250
+      },
+      {
+        "AllBagsBonus": 550,
+        "Completion": 30,
+        "StealthBonus": 300
+      },
+      {
+        "AllBagsBonus": 750,
+        "Completion": 45,
+        "StealthBonus": 500
+      },
+      {
+        "AllBagsBonus": 1000,
+        "Completion": 65,
+        "StealthBonus": 750
+      }
+    ],
+    "InstantLootValues": {
+      "LoudMaxPayoutArray": [
+        2900,
+        3480,
+        4350,
+        4930
+      ],
+      "NameToPointMap": [
+        {
+          "BP_InstantLoot_Money_02": 2,
+          "BP_InstantLoot_Money_03": 4,
+          "BP_InstantLoot_Money_04": 1
+        }
+      ],
+      "StealthMaxPayoutArray": [
+        2900,
+        3480,
+        4350,
+        4930
+      ],
+      "TotalPoints": 37
+    },
+    "ItemIdRewardMap": [
+      {
+        "1-stonk-preplanning-asset": 0.09,
+        "2-stonk-preplanning-asset": 0.08,
+        "3-stonk-preplanning-asset": 0.08,
+        "4-stonk-preplanning-asset": 0.08,
+        "additional-keycard-night-club-preplanning-asset": 0.09,
+        "bitcoin-wallet-night-club-preplanning-asset": 0.09,
+        "cleaning-platform-penthouse-preplanning-asset": 0.09,
+        "hidden-thermite-penthouse-preplanning-asset": 0.08,
+        "poison-penthouse-preplanning-asset": 0.08,
+        "secure-point-night-club-preplanning-asset": 0.08,
+        "secure-point-penthouse-preplanning-asset": 0.08,
+        "vault-code-night-club-preplanning-asset": 0.08
+      }
+    ],
+    "LoudBaseExperience": 600,
+    "LoudBaseInfamyPointsOnFail": 250,
+    "LoudInfamyPointsOnSurvivingFinalAssultDifficultyArray": [
+      250,
+      300,
+      450,
+      550
+    ],
+    "LoudInfamyPointsOnSurvivingOneAssultDifficultyArray": [
+      250,
+      300,
+      450,
+      550
+    ],
+    "LoudLevelCompletedStatistics": {
+      "Hard": {
+        "PlayerStatisticEntryArray": [
+          "artgallery-loud-hard"
+        ]
+      },
+      "Normal": {
+        "PlayerStatisticEntryArray": [
+          "artgallery-loud-normal"
+        ]
+      },
+      "Overkill": {
+        "PlayerStatisticEntryArray": [
+          "artgallery-loud-overkill"
+        ]
+      },
+      "VeryHard": {
+        "PlayerStatisticEntryArray": [
+          "artgallery-loud-veryhard"
+        ]
+      }
+    },
+    "LoudLootValuesArray": [
+      {
+        "LootName": "DA_PaintingBagType_Greg",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 10,
+            "LootValue": 150000,
+            "MaxInfamyPointsForLootType": 10,
+            "MaxValueForLootType": 150000
+          },
+          {
+            "InfamyPointValue": 12,
+            "LootValue": 180000,
+            "MaxInfamyPointsForLootType": 12,
+            "MaxValueForLootType": 180000
+          },
+          {
+            "InfamyPointValue": 18,
+            "LootValue": 225000,
+            "MaxInfamyPointsForLootType": 18,
+            "MaxValueForLootType": 225000
+          },
+          {
+            "InfamyPointValue": 26,
+            "LootValue": 255000,
+            "MaxInfamyPointsForLootType": 26,
+            "MaxValueForLootType": 255000
+          }
+        ]
+      },
+      {
+        "LootName": "DA_PaintingBagType_Pedro",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 20,
+            "LootValue": 50000,
+            "MaxInfamyPointsForLootType": 40,
+            "MaxValueForLootType": 100000
+          },
+          {
+            "InfamyPointValue": 24,
+            "LootValue": 60000,
+            "MaxInfamyPointsForLootType": 48,
+            "MaxValueForLootType": 120000
+          },
+          {
+            "InfamyPointValue": 36,
+            "LootValue": 75000,
+            "MaxInfamyPointsForLootType": 72,
+            "MaxValueForLootType": 150000
+          },
+          {
+            "InfamyPointValue": 52,
+            "LootValue": 85000,
+            "MaxInfamyPointsForLootType": 104,
+            "MaxValueForLootType": 170000
+          }
+        ]
+      },
+      {
+        "LootName": "DA_PaintingBagType_Uma",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 75,
+            "LootValue": 150000,
+            "MaxInfamyPointsForLootType": 75,
+            "MaxValueForLootType": 150000
+          },
+          {
+            "InfamyPointValue": 90,
+            "LootValue": 180000,
+            "MaxInfamyPointsForLootType": 90,
+            "MaxValueForLootType": 180000
+          },
+          {
+            "InfamyPointValue": 135,
+            "LootValue": 225000,
+            "MaxInfamyPointsForLootType": 135,
+            "MaxValueForLootType": 225000
+          },
+          {
+            "InfamyPointValue": 195,
+            "LootValue": 255000,
+            "MaxInfamyPointsForLootType": 195,
+            "MaxValueForLootType": 255000
+          }
+        ]
+      },
+      {
+        "LootName": "DA_PaintingBagType_FakeUma",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 25,
+            "LootValue": 100000,
+            "MaxInfamyPointsForLootType": 25,
+            "MaxValueForLootType": 100000
+          },
+          {
+            "InfamyPointValue": 30,
+            "LootValue": 120000,
+            "MaxInfamyPointsForLootType": 30,
+            "MaxValueForLootType": 120000
+          },
+          {
+            "InfamyPointValue": 45,
+            "LootValue": 150000,
+            "MaxInfamyPointsForLootType": 45,
+            "MaxValueForLootType": 150000
+          },
+          {
+            "InfamyPointValue": 65,
+            "LootValue": 170000,
+            "MaxInfamyPointsForLootType": 65,
+            "MaxValueForLootType": 170000
+          }
+        ]
+      },
+      {
+        "LootName": "DA_PaintingBagType_Special",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 5,
+            "LootValue": 10000,
+            "MaxInfamyPointsForLootType": 5,
+            "MaxValueForLootType": 10000
+          },
+          {
+            "InfamyPointValue": 6,
+            "LootValue": 12000,
+            "MaxInfamyPointsForLootType": 6,
+            "MaxValueForLootType": 12000
+          },
+          {
+            "InfamyPointValue": 9,
+            "LootValue": 15000,
+            "MaxInfamyPointsForLootType": 9,
+            "MaxValueForLootType": 15000
+          },
+          {
+            "InfamyPointValue": 13,
+            "LootValue": 17000,
+            "MaxInfamyPointsForLootType": 13,
+            "MaxValueForLootType": 17000
+          }
+        ]
+      },
+      {
+        "LootName": "DA_PaintingBagType_Generic",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 6,
+            "LootValue": 15500,
+            "MaxInfamyPointsForLootType": 96,
+            "MaxValueForLootType": 248000
+          },
+          {
+            "InfamyPointValue": 7.2,
+            "LootValue": 18600,
+            "MaxInfamyPointsForLootType": 115.2,
+            "MaxValueForLootType": 297600
+          },
+          {
+            "InfamyPointValue": 10.8,
+            "LootValue": 23250,
+            "MaxInfamyPointsForLootType": 182.8,
+            "MaxValueForLootType": 372000
+          },
+          {
+            "InfamyPointValue": 15.6,
+            "LootValue": 26350,
+            "MaxInfamyPointsForLootType": 249.6,
+            "MaxValueForLootType": 421600
+          }
+        ]
+      }
+    ],
+    "LoudMilestoneToExperienceRewardMap": [
+      {
+        "Loud Completion": 0.4,
+        "Loud Milestone 1": 0.1,
+        "Loud Milestone 2": 0.2,
+        "Loud Milestone 3": 0.3
+      }
+    ],
+    "LoudMilestoneToInfamyPointsOnFailRewardMap": [
+      {
+        "Loud Completion": 0.01,
+        "Loud Milestone 1": 0.05,
+        "Loud Milestone 2": 0.07,
+        "Loud Milestone 3": 0.08
+      }
+    ],
+    "ObjectivesToExperienceRewardMap": [
+      {
+        "search_manifest": 1.4,
+        "steal_remainder": 1.2
+      }
+    ],
+    "PerformanceBonusMap": {
+      "BeenKilledCount": {
+        "PerformanceBonusEntryArray": [
+          {
+            "Max": 0,
+            "Min": 0,
+            "Modifier": 1.15
+          }
+        ]
+      }
+    },
+    "StealthBaseExperience": 750,
+    "StealthBaseInfamyPointsOnFail": 250,
+    "StealthLevelCompletedStatistics": {
+      "Hard": {
+        "PlayerStatisticEntryArray": [
+          "artgallery-stealth-hard"
+        ]
+      },
+      "Normal": {
+        "PlayerStatisticEntryArray": [
+          "artgallery-stealth-normal"
+        ]
+      },
+      "Overkill": {
+        "PlayerStatisticEntryArray": [
+          "artgallery-stealth-overkill"
+        ]
+      },
+      "VeryHard": {
+        "PlayerStatisticEntryArray": [
+          "artgallery-stealth-veryhard"
+        ]
+      }
+    },
+    "StealthLootValuesArray": [
+      {
+        "LootName": "DA_PaintingBagType_Greg",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 10,
+            "LootValue": 200000,
+            "MaxInfamyPointsForLootType": 10,
+            "MaxValueForLootType": 200000
+          },
+          {
+            "InfamyPointValue": 12,
+            "LootValue": 240000,
+            "MaxInfamyPointsForLootType": 12,
+            "MaxValueForLootType": 240000
+          },
+          {
+            "InfamyPointValue": 18,
+            "LootValue": 300000,
+            "MaxInfamyPointsForLootType": 18,
+            "MaxValueForLootType": 300000
+          },
+          {
+            "InfamyPointValue": 26,
+            "LootValue": 340000,
+            "MaxInfamyPointsForLootType": 26,
+            "MaxValueForLootType": 340000
+          }
+        ]
+      },
+      {
+        "LootName": "DA_PaintingBagType_Pedro",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 20,
+            "LootValue": 100000,
+            "MaxInfamyPointsForLootType": 40,
+            "MaxValueForLootType": 200000
+          },
+          {
+            "InfamyPointValue": 24,
+            "LootValue": 120000,
+            "MaxInfamyPointsForLootType": 48,
+            "MaxValueForLootType": 240000
+          },
+          {
+            "InfamyPointValue": 36,
+            "LootValue": 150000,
+            "MaxInfamyPointsForLootType": 72,
+            "MaxValueForLootType": 300000
+          },
+          {
+            "InfamyPointValue": 52,
+            "LootValue": 170000,
+            "MaxInfamyPointsForLootType": 104,
+            "MaxValueForLootType": 340000
+          }
+        ]
+      },
+      {
+        "LootName": "DA_PaintingBagType_Uma",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 75,
+            "LootValue": 200000,
+            "MaxInfamyPointsForLootType": 75,
+            "MaxValueForLootType": 200000
+          },
+          {
+            "InfamyPointValue": 90,
+            "LootValue": 240000,
+            "MaxInfamyPointsForLootType": 90,
+            "MaxValueForLootType": 240000
+          },
+          {
+            "InfamyPointValue": 135,
+            "LootValue": 300000,
+            "MaxInfamyPointsForLootType": 135,
+            "MaxValueForLootType": 300000
+          },
+          {
+            "InfamyPointValue": 195,
+            "LootValue": 340000,
+            "MaxInfamyPointsForLootType": 195,
+            "MaxValueForLootType": 340000
+          }
+        ]
+      },
+      {
+        "LootName": "DA_PaintingBagType_FakeUma",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 25,
+            "LootValue": 150000,
+            "MaxInfamyPointsForLootType": 25,
+            "MaxValueForLootType": 150000
+          },
+          {
+            "InfamyPointValue": 30,
+            "LootValue": 180000,
+            "MaxInfamyPointsForLootType": 30,
+            "MaxValueForLootType": 180000
+          },
+          {
+            "InfamyPointValue": 45,
+            "LootValue": 225000,
+            "MaxInfamyPointsForLootType": 45,
+            "MaxValueForLootType": 225000
+          },
+          {
+            "InfamyPointValue": 65,
+            "LootValue": 255000,
+            "MaxInfamyPointsForLootType": 65,
+            "MaxValueForLootType": 255000
+          }
+        ]
+      },
+      {
+        "LootName": "DA_PaintingBagType_Special",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 5,
+            "LootValue": 10000,
+            "MaxInfamyPointsForLootType": 5,
+            "MaxValueForLootType": 10000
+          },
+          {
+            "InfamyPointValue": 6,
+            "LootValue": 12000,
+            "MaxInfamyPointsForLootType": 6,
+            "MaxValueForLootType": 12000
+          },
+          {
+            "InfamyPointValue": 9,
+            "LootValue": 15000,
+            "MaxInfamyPointsForLootType": 9,
+            "MaxValueForLootType": 15000
+          },
+          {
+            "InfamyPointValue": 13,
+            "LootValue": 17000,
+            "MaxInfamyPointsForLootType": 13,
+            "MaxValueForLootType": 17000
+          }
+        ]
+      },
+      {
+        "LootName": "DA_PaintingBagType_Generic",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 6,
+            "LootValue": 15500,
+            "MaxInfamyPointsForLootType": 96,
+            "MaxValueForLootType": 248000
+          },
+          {
+            "InfamyPointValue": 7.2,
+            "LootValue": 18600,
+            "MaxInfamyPointsForLootType": 115.2,
+            "MaxValueForLootType": 297600
+          },
+          {
+            "InfamyPointValue": 10.8,
+            "LootValue": 23250,
+            "MaxInfamyPointsForLootType": 172.8,
+            "MaxValueForLootType": 372000
+          },
+          {
+            "InfamyPointValue": 15.6,
+            "LootValue": 26350,
+            "MaxInfamyPointsForLootType": 249.6,
+            "MaxValueForLootType": 421600
+          }
+        ]
+      }
+    ],
+    "StealthMilestoneToExperienceRewardMap": [
+      {
+        "Stealth Completion": 0.4,
+        "Stealth Milestone 1": 0.1,
+        "Stealth Milestone 2": 0.2,
+        "Stealth Milestone 3": 0.3
+      }
+    ],
+    "StealthMilestoneToInfamyPointsOnFailRewardMap": [
+      {
+        "Stealth Completion": 0.01,
+        "Stealth Milestone 1": 0.05,
+        "Stealth Milestone 2": 0.07,
+        "Stealth Milestone 3": 0.08
+      }
+    ]
+  }
+}

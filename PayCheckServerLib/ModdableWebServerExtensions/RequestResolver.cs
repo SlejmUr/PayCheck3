@@ -13,7 +13,7 @@ namespace PayCheckServerLib.ModdableWebServerExtensions
 		{
 			if (serverStruct.Response != null)
 			{
-				if(serverStruct.Response.Body.Length == 0)
+				if(serverStruct.Response.Body.Length == 0 && serverStruct.Response.Status != 204)
 				{
 					Debugger.PrintError($"Zero sized response body!");
 				}
@@ -22,20 +22,22 @@ namespace PayCheckServerLib.ModdableWebServerExtensions
 			switch (serverStruct.Enum)
 			{
 				case ServerEnum.HTTP:
-					serverStruct.HTTP_Session?.SendResponse(serverStruct.Response);
+					serverStruct.HTTP_Session?.GetType().GetRuntimeMethod("SendResponse", [typeof(HttpResponse)])?.Invoke(serverStruct.HTTP_Session, [serverStruct.Response]);
 					DebugPrinter.Debug("[SendResponse] HTTP Response Sent!");
 					break;
 				case ServerEnum.HTTPS:
-					serverStruct.HTTPS_Session?.SendResponse(serverStruct.Response);
+					serverStruct.HTTPS_Session?.GetType().GetRuntimeMethod("SendResponse", [typeof(HttpResponse)])?.Invoke(serverStruct.HTTPS_Session, [serverStruct.Response]);
 					DebugPrinter.Debug("[SendResponse] HTTPS Response Sent!");
 					break;
 				case ServerEnum.WS:
-					serverStruct.WS_Session?.SendResponse(serverStruct.Response);
+					serverStruct.WS_Session?.GetType().GetRuntimeMethod("SendResponse", [typeof(HttpResponse)])?.Invoke(serverStruct.WS_Session, [serverStruct.Response]);
 					DebugPrinter.Debug("[SendResponse] WS Response Sent!");
 					break;
 				case ServerEnum.WSS:
-					serverStruct.WSS_Session?.SendResponse(serverStruct.Response);
+					serverStruct.WSS_Session?.GetType().GetRuntimeMethod("SendResponse", [typeof(HttpResponse)])?.Invoke(serverStruct.WSS_Session, [serverStruct.Response]);
 					DebugPrinter.Debug("[SendResponse] WSS Response Sent!");
+					break;
+				default:
 					break;
 			}
 		}
@@ -66,9 +68,17 @@ namespace PayCheckServerLib.ModdableWebServerExtensions
 					server.Headers = request.GetHeaders();
 					server.Parameters = Parameters;
 
-					Sent = (bool)item.Value.Invoke(server, new object[] { request, server })!;
+					try
+					{
+						Sent = (bool)item.Value.Invoke(server, new object[] { request, server })!;
+					}
+					catch (Exception ex)
+					{
+						Debugger.PrintError(ex.Message);
+					}
 
-					Debugger.PrintInfo($"{item.Key.method} : {url}");
+					if(!(url.Contains("telemetry") || url.Contains("time"))) // reduce terminal clutter by stopping time and telemetry from being logged
+						Debugger.PrintInfo($"{item.Key.method} : {url}");
 
 					//DebugPrinter.Debug("[SendRequestHTTP] Invoked!");
 					break;

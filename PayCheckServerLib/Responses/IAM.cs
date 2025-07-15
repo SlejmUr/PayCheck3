@@ -78,7 +78,7 @@ public class IAM
             DisplayName = access_token.Name,
             ExpiresIn = 360000,
             IsComply = true,
-            Jflgs = 1,
+            Jflgs = LoginToken.LoginJflgs.EmailAddressVerified,
             Namespace = serverStruct.Headers["namespace"],
             NamespaceRoles = new()
             {
@@ -125,7 +125,7 @@ public class IAM
             DisplayName = access_token.Name,
             ExpiresIn = 360000,
             IsComply = true,
-            Jflgs = 4,
+            Jflgs = LoginToken.LoginJflgs.EmailAddressVerified,
             Namespace = serverStruct.Headers["namespace"],
             NamespaceRoles = new()
             {
@@ -182,7 +182,7 @@ public class IAM
             DisplayName = access_token.Name,
             ExpiresIn = 360000,
             IsComply = true,
-            Jflgs = 4,
+            Jflgs = LoginToken.LoginJflgs.EmailAddressVerified,
             Namespace = serverStruct.Headers["namespace"],
             NamespaceRoles = new()
             {
@@ -236,8 +236,7 @@ public class IAM
             DisplayName = access_token.Name,
             ExpiresIn = 360000,
             IsComply = true,
-            // Jflgs is 1 for this request
-            Jflgs = 1,
+            Jflgs = LoginToken.LoginJflgs.EmailAddressVerified,
             Namespace = "pd3",
             NamespaceRoles = new()
             {

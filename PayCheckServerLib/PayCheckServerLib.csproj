@@ -20,8 +20,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="files\globalstatitems\edgegap_beacons.json" />
-    <None Remove="files\globalstatitems\title-data.json" />
+    <None Remove="Files\GlobalCloudsaveRecords\edgegap_beacons.json" />
+    <None Remove="Files\GlobalCloudsaveRecords\title-data.json" />
     <None Remove="files\PartySessionNoSyncConfiguration.json" />
     <None Remove="files\Rewards.json" />
     <None Remove="files\Roles.json" />
@@ -34,7 +34,7 @@
   <ItemGroup>
     <PackageReference Include="JWT" Version="10.1.1" />
     <PackageReference Include="L" Version="5.0.0" />
-    <PackageReference Include="ModdableWebServer" Version="1.5.0" />
+    <PackageReference Include="ModdableWebServer" Version="1.7.1" />
     <PackageReference Include="NetCoreServer" Version="8.0.7" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="System.Text.Json" Version="6.0.10" />

@@ -34,6 +34,7 @@ namespace PayCheck3CertificateGenerator
 			subjectAlternativeNameBuilder.AddDnsName("nebula.starbreeze.com");
 			subjectAlternativeNameBuilder.AddDnsName("development.starbreeze.accelbyte.io");
 			subjectAlternativeNameBuilder.AddDnsName("connectivitycheck.gstatic.com"); // Added in case the user truly has no internet connection, they can reroute the check that PAYDAY 3 uses to connect to the internet in the first place.
+			subjectAlternativeNameBuilder.AddDnsName("analytics.starbreeze.com");
 
 			// https://stackoverflow.com/a/52535184
 			var keyPair = RSA.Create(2048);

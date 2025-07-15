@@ -1,9 +1,9 @@
 ﻿using ModdableWebServer;
 using ModdableWebServer.Attributes;
-using ModdableWebServer.Helper;
 using Newtonsoft.Json;
 using PayCheckServerLib.Helpers;
 using PayCheckServerLib.Jsons.WSS;
+using PayCheckServerLib.ModdableWebServerExtensions;
 using System.Text;
 
 namespace PayCheckServerLib.WSController
@@ -55,8 +55,8 @@ namespace PayCheckServerLib.WSController
             if (size == 0)
                 return;
             buffer = buffer.Skip((int)offset).Take((int)size).ToArray();
-            if (!Directory.Exists("Chat")) { Directory.CreateDirectory("Chat"); }
-            File.WriteAllBytes("Chat/" + DateTime.Now.ToString("s").Replace(":", "-") + ".bytes", buffer);
+            //if (!Directory.Exists("Chat")) { Directory.CreateDirectory("Chat"); }
+            //File.WriteAllBytes("Chat/" + DateTime.Now.ToString("s").Replace(":", "-") + ".bytes", buffer);
             var str = Encoding.UTF8.GetString(buffer);
             var chatbase = JsonConvert.DeserializeObject<Chats.ChatBase>(str) ?? throw new Exception("chatbase is null!");
             switch (chatbase.Method)
@@ -114,7 +114,7 @@ namespace PayCheckServerLib.WSController
                         }
                         var resp = "CaSr" + JsonConvert.SerializeObject(rsp) + "CaEd";
                         //Console.WriteLine("Sending back: " + resp);
-                        socketStruct.SendWebSocketByteArray(Encoding.UTF8.GetBytes(resp));
+                        socketStruct.SendWebSocketText(resp);
                     }
                     return;
                 default:
@@ -126,7 +126,7 @@ namespace PayCheckServerLib.WSController
         public static void SendToChat(string Json, WebSocketStruct? socketStruct)
         {
             var resp = "CaSr" + Json + "CaEd";
-            socketStruct?.SendWebSocketByteArray(Encoding.UTF8.GetBytes(resp));
+            socketStruct?.SendWebSocketText(resp);
         }
     }
 }

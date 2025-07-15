@@ -21,7 +21,8 @@ public class Parties
         var rsp = PartyController.CreateParty(body, token.Namespace);
         ResponseCreator response = new();
         response.SetBody(JsonConvert.SerializeObject(rsp));
-        serverStruct.Response = response.GetResponse();
+		response.SetHeader("Content-Type", "application/json");
+		serverStruct.Response = response.GetResponse();
         serverStruct.SendResponse();
 
         //send notif to user to party created
@@ -68,11 +69,37 @@ public class Parties
         var auth = serverStruct.Headers["authorization"].Replace("Bearer ", "");
         var token = TokenHelper.ReadToken(auth);
         var body = JsonConvert.DeserializeObject<PartyPatch>(request.Body);
+
         PartyPost.Response rsp = PartyController.UpdateParty(serverStruct.Parameters["partyid"], body);
+
+		if(rsp == null || true)
+		{
+			AttribError error = new()
+			{
+				Attributes = new Dictionary<string, string>()
+				{
+					{ "id", serverStruct.Parameters["partyid"] },
+					{ "namespace", serverStruct.Parameters["namespace"] }
+				},
+				ErrorCode = 20041,
+				ErrorMessage = $"No party with ID [{serverStruct.Parameters["partyid"]}] exists in namespace [{serverStruct.Parameters["namespace"]}]",
+				Message = $"No party with ID [{serverStruct.Parameters["partyid"]}] exists in namespace [{serverStruct.Parameters["namespace"]}]",
+				Name = "PartyNotFound"
+			};
+			ResponseCreator response2 = new(404);
+			response2.SetBody(JsonConvert.SerializeObject(error));
+			response2.SetHeader("Content-Type", "application/json");
+			serverStruct.Response = response2.GetResponse();
+			serverStruct.SendResponse();
+			return true;
+		}
+
         ResponseCreator response = new();
         response.SetBody(JsonConvert.SerializeObject(rsp, Formatting.Indented));
-        serverStruct.Response = response.GetResponse();
+		response.SetHeader("Content-Type", "application/json");
+		serverStruct.Response = response.GetResponse();
         serverStruct.SendResponse();
+
         OnPartyUpdated pld = new()
         {
             Code = rsp.Code,
@@ -142,17 +169,20 @@ public class Parties
     [HTTP("DELETE", "/session/v1/public/namespaces/{namespace}/parties/{partyid}/users/me/leave")]
     public static bool LeaveParties(HttpRequest request, ServerStruct serverStruct)
     {
-        //This response sadly KILLING THE GAME (Even without emu)
-        //  SBZ PLEASE FIX!
-        var auth = serverStruct.Headers["authorization"].Replace("Bearer ", "");
-        var token = TokenHelper.ReadToken(auth);
-        PartyController.LeftParty(serverStruct.Parameters["partyid"], token.UserId, serverStruct);
         var party = PartyController.PartySaves.Where(x => x.Value.Id == serverStruct.Parameters["partyid"]).FirstOrDefault().Value;
         if (party == null)
         {
-            Debugger.PrintError("NO Code???? WHAT THE FUCK");
-            throw new Exception("Code is not exist in saved parties????");
-        }
+			serverStruct.Response.MakeOkResponse(404);
+			serverStruct.SendResponse();
+			return true;
+		}
+		serverStruct.Response.MakeOkResponse(204);
+		serverStruct.SendResponse();
+
+		var auth = serverStruct.Headers["authorization"].Replace("Bearer ", "");
+        var token = TokenHelper.ReadToken(auth);
+
+        PartyController.LeftParty(serverStruct.Parameters["partyid"], token.UserId, serverStruct);
         Chats.eventAddedToTopic topic = new()
         {
             Jsonrpc = "2.0",
@@ -166,10 +196,8 @@ public class Parties
                 UserId = token.UserId
             }
         };
-        ChatControl.SendToChat(JsonConvert.SerializeObject(topic), ChatControl.GetChatUser(token.UserId, token.Namespace));
-        ResponseCreator response = new(204);
-        serverStruct.Response = response.GetResponse();
-        serverStruct.SendResponse();
+
+		ChatControl.SendToChat(JsonConvert.SerializeObject(topic), ChatControl.GetChatUser(token.UserId, token.Namespace));
         return true;
     }
 
@@ -179,14 +207,17 @@ public class Parties
     {
         var party = PartyController.PartySaves.Where(x => x.Value.Id == serverStruct.Parameters["partyid"]).FirstOrDefault().Value;
         if (party == null)
-        {
-            Debugger.PrintError("NO Code???? WHAT THE FUCK");
-            throw new Exception("Code is not exist in saved parties????");
-        }
+		{
+			ResponseCreator errorResponse = new(404);
+			serverStruct.Response = errorResponse.GetResponse();
+			serverStruct.SendResponse();
+			return true;
+		}
         var rsp = PartyController.ParsePartyToRSP(party);
         ResponseCreator response = new();
         response.SetBody(JsonConvert.SerializeObject(rsp));
-        serverStruct.Response = response.GetResponse();
+		response.SetHeader("Content-Type", "application/json");
+		serverStruct.Response = response.GetResponse();
         serverStruct.SendResponse();
         return true;
     }
@@ -219,7 +250,8 @@ public class Parties
             var rsp = PartyController.ParsePartyToRSP(saved);
             ResponseCreator response = new();
             response.SetBody(JsonConvert.SerializeObject(rsp));
-            serverStruct.Response = response.GetResponse();
+			response.SetHeader("Content-Type", "application/json");
+			serverStruct.Response = response.GetResponse();
             serverStruct.SendResponse();
         }
         else
@@ -238,8 +270,9 @@ public class Parties
             };
             ResponseCreator response = new(404);
             response.SetBody(JsonConvert.SerializeObject(error));
+			response.SetHeader("Content-Type", "application/json");
             serverStruct.Response = response.GetResponse();
-            serverStruct.SendResponse();
+			serverStruct.SendResponse();
         }
 
         return true;

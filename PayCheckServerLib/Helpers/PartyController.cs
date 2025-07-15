@@ -103,8 +103,7 @@ namespace PayCheckServerLib.Helpers
         {
             if (!PartySaves.ContainsKey(Code))
             {
-                Debugger.PrintError("NO Code???? WHAT THE FUCK");
-                throw new Exception("Code is not exist in saved parties????");
+				return null;
             }
             var stuff = PartySaves[Code];
             stuff.UpdatedAt = DateTime.UtcNow.ToString("o");
@@ -126,8 +125,7 @@ namespace PayCheckServerLib.Helpers
             var party = PartySaves.Where(x => x.Value.Id == PartyId).FirstOrDefault().Value;
             if (party == null)
             {
-                Debugger.PrintError("NO Code???? WHAT THE FUCK");
-                throw new Exception("Code is not exist in saved parties????");
+				return null;
             }
 
             party.UpdatedAt = DateTime.UtcNow.ToString("o");
@@ -142,8 +140,7 @@ namespace PayCheckServerLib.Helpers
             var party = PartySaves.Where(x => x.Value.Id == PartyId).FirstOrDefault().Value;
             if (party == null)
             {
-                Debugger.PrintError("NO Code???? WHAT THE FUCK");
-                throw new Exception("Code is not exist in saved parties????");
+				return;
             }
 
             party.UpdatedAt = DateTime.UtcNow.ToString("o");
@@ -156,6 +153,19 @@ namespace PayCheckServerLib.Helpers
                     m.StatusV2 = "LEFT";
                 }
             }
+
+			bool allMembersLeft = true;
+			foreach(var m in party.Members)
+			{
+				if (m.StatusV2 == "LEFT")
+					continue;
+				allMembersLeft = false;
+				break;
+			}
+			if(allMembersLeft)
+			{
+				PartySaves.Remove(party.Code);
+			}
             //todo send other users update that we left!
             //or if we are the leader send this one dead and sent to leave everybody
         }

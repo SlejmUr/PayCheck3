@@ -45,6 +45,8 @@ public class Orders
 			return serverStruct.ReturnErrorHelper(ErrorHelper.Errors.ItemDoesNotExistInNamespace);
 		}
 
+		UserEntitlementHelper.AddEntitlementToUserViaSKU(serverStruct.Parameters["userid"], serverStruct.Parameters["namespace"], item.Sku, body.Quantity, out _, "PURCHASE");
+
         Order order = new()
         {
             OrderNo = ordernumber,

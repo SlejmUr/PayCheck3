@@ -101,7 +101,7 @@ public class BasicResponse
         if (serverStruct.Headers.ContainsKey("cookie"))
         {
             var tokens = TokenHelper.ReadFromHeader(serverStruct.Headers);
-            Debugger.PrintDebug($"{tokens.AccessToken.UserId}({tokens.AccessToken.Name}) Is still in the server!");
+            //Debugger.PrintDebug($"{tokens.AccessToken.UserId}({tokens.AccessToken.Name}) Is still in the server!");
         }
 
         ResponseCreator response = new ResponseCreator();

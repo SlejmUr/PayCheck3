@@ -86,7 +86,7 @@ namespace PayCheckServerLib.Jsons
         public List<string> ItemIds { get; set; }
 
         [JsonProperty("itemQty", NullValueHandling = NullValueHandling.Ignore)]
-        public Dictionary<string, long> ItemQty { get; set; }
+        public Dictionary<string, int> ItemQty { get; set; }
 
         [JsonProperty("displayOrder", NullValueHandling = NullValueHandling.Ignore)]
         public long? DisplayOrder { get; set; }

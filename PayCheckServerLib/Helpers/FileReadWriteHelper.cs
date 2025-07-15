@@ -34,6 +34,7 @@ namespace PayCheckServerLib.Helpers
 
 		public static void WriteAllText(string path, string contents)
 		{
+			while (CachedFileContentsBeingModified) { }
 			CachedFileContentsBeingModified = true;
 			CachedFileContents[path] = contents;
 			CachedFileContentsBeingModified = false;

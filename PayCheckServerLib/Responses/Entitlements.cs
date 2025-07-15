@@ -18,7 +18,7 @@ public class Entitlements
 		var responsecreator = new ResponseCreator();
 		DataPaging<EntitlementsData> payload = new()
 		{
-			Data = UserEntitlementHelper.GetEntitlementDataForUser(serverStruct.Parameters["userId"]),
+			Data = UserEntitlementHelper.GetEntitlementDataForUser(serverStruct.Parameters["userId"], false),
 			Paging = new()
 		};
 
@@ -34,7 +34,7 @@ public class Entitlements
     public static bool GetUserEntitlementsByItemId(HttpRequest _, ServerStruct serverStruct)
     {
 		var filteredEntitlements = new List<EntitlementsData>();
-		var userEntitlements = UserEntitlementHelper.GetEntitlementDataForUser(serverStruct.Parameters["userId"]);
+		var userEntitlements = UserEntitlementHelper.GetEntitlementDataForUser(serverStruct.Parameters["userId"], false);
 
 		foreach (var entitlement in userEntitlements)
 		{
@@ -62,7 +62,7 @@ public class Entitlements
 	{
 		var responsecreator = new ResponseCreator();
 
-		var entitlements = UserEntitlementHelper.GetEntitlementDataForUser(serverStruct.Parameters["userId"]);
+		var entitlements = UserEntitlementHelper.GetEntitlementDataForUser(serverStruct.Parameters["userId"], false);
 
 		var entitlementToDecrement = entitlements.Find(data => data.Id == serverStruct.Parameters["entitlementId"]);
 		if (entitlementToDecrement == null)
