@@ -17,7 +17,7 @@ public class Currency
         var nspace = serverStruct.Parameters["namespace"];
         var currencySymbol = currencyType == "CRED" ? "CREDITS" : currencyType;
         // return fake data for now
-        Debugger.PrintDebug(String.Format("{0}_{1}_{2}", nspace, userID, currencyType));
+        
         ResponseCreator response = new ResponseCreator();
         int balance = 0;
         if (ConfigHelper.ServerConfig.InDevFeatures.GiveMeMoney > 0)

@@ -1,0 +1,188 @@
+{
+  "Level-Reward-Setup": {
+    "DifficultyExperienceModifierArray": [
+      1.6,
+      2
+    ],
+    "ItemIdRewardMap": [
+      {
+        "chopper-jewelry-store-preplanning-asset": 0.2,
+        "employee-backdoor-jewelry-store-preplanning-asset": 0.2,
+        "escape-van-jewelry-store-preplanning-asset": 0.2,
+        "manager-cake-jewelry-store-preplanning-asset": 0.2
+      }
+    ],
+    "LoudBaseExperience": 100,
+    "LoudDifficultyCashRewardModifierArray": [
+      {
+        "BaseReward": 200000,
+        "MaxReward": 2000000
+      }
+    ],
+    "LoudLevelCompletedStatistics": {
+      "Hard": {
+        "PlayerStatisticEntryArray": [
+          "jewelry-store-loud-hard"
+        ]
+      },
+      "Normal": {
+        "PlayerStatisticEntryArray": [
+          "jewelry-store-loud-normal"
+        ]
+      },
+      "Overkill": {
+        "PlayerStatisticEntryArray": [
+          "jewelry-store-loud-overkill"
+        ]
+      },
+      "VeryHard": {
+        "PlayerStatisticEntryArray": [
+          "jewelry-store-loud-veryhard"
+        ]
+      }
+    },
+    "LoudLootValuesArray": [
+      {
+        "LootName": "DA_MoneyBagType",
+        "LootValueDifficultyArray": [
+          {
+            "LootValue": 10000,
+            "MaxValueForLootType": 50000
+          },
+          {
+            "LootValue": 15000,
+            "MaxValueForLootType": 75000
+          },
+          {
+            "LootValue": 20000,
+            "MaxValueForLootType": 100000
+          },
+          {
+            "LootValue": 25000,
+            "MaxValueForLootType": 125000
+          }
+        ]
+      },
+      {
+        "LootValue": "DA_JewelryBagType",
+        "LootValueDifficultyArray": [
+          {
+            "LootValue": 50000,
+            "MaxValueForLootType": 250000
+          },
+          {
+            "LootValue": 100000,
+            "MaxValueForLootType": 500000
+          },
+          {
+            "LootValue": 150000,
+            "MaxValueForLootType": 150000
+          },
+          {
+            "LootValue": 200000,
+            "MaxValueForLootType": 200000
+          }
+        ]
+      }
+    ],
+    "LoudMilestoneToExperienceRewardMap": [
+      {
+        "Loud Milestone 1": 0.4
+      }
+    ],
+    "ObjectivesToExperienceRewardMap": [
+      {
+        "Objective 1": 1.2
+      }
+    ],
+    "PerformanceBonusMap": {
+      "BeenKilledCount": {
+        "PerformanceBonusEntryArray": [
+          {
+            "Max": 0,
+            "Min": 0,
+            "Modifier": 1.15
+          }
+        ]
+      }
+    },
+    "StealthBaseExperience": 200,
+    "StealthDifficultyCashRewardModifierArray": [
+      {
+        "BaseReward": 200000,
+        "MaxReward": 2000000
+      }
+    ],
+    "StealthLevelCompletedStatistics": {
+      "Hard": {
+        "PlayerStatisticEntryArray": [
+          "jewelry-store-stealth-hard"
+        ]
+      },
+      "Normal": {
+        "PlayerStatisticEntryArray": [
+          "jewelry-store-stealth-normal"
+        ]
+      },
+      "Overkill": {
+        "PlayerStatisticEntryArray": [
+          "jewelry-store-stealth-overkill"
+        ]
+      },
+      "VeryHard": {
+        "PlayerStatisticEntryArray": [
+          "jewelry-store-stealth-veryhard"
+        ]
+      }
+    },
+    "StealthLootValuesArray": [
+      {
+        "LootName": "DA_MoneyBagType",
+        "LootValueDifficultyArray": [
+          {
+            "LootValue": 70000,
+            "MaxValueForLootType": 350000
+          },
+          {
+            "LootValue": 120000,
+            "MaxValueForLootType": 600000
+          },
+          {
+            "LootValue": 170000,
+            "MaxValueForLootType": 750000
+          },
+          {
+            "LootValue": 220000,
+            "MaxValueForLootType": 1100000
+          }
+        ]
+      },
+      {
+        "LootName": "Gold Bag",
+        "LootValueDifficultyArray": [
+          {
+            "LootValue": 80000,
+            "MaxValueForLootType": 400000
+          },
+          {
+            "LootValue": 130000,
+            "MaxValueForLootType": 650000
+          },
+          {
+            "LootValue": 180000,
+            "MaxValueForLootType": 800000
+          },
+          {
+            "LootValue": 230000,
+            "MaxValueForLootType": 1200000
+          }
+        ]
+      }
+    ],
+    "StealthMilestoneToExperienceRewardMap": [
+      {
+        "Stealth Milestone 1": 0.3
+      }
+    ]
+  }
+}

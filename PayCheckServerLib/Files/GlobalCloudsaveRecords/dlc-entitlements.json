@@ -1,0 +1,385 @@
+{
+  "platforms": [
+    {
+      "data": {
+        "CEMASK0000000000": [
+          "pd3_playstation_cosmetic_mask_premium_collectoredition"
+        ],
+        "CEMASKASI0000000": [
+          "pd3_playstation_cosmetic_mask_premium_collectoredition"
+        ],
+        "CEMASKJAP0000000": [
+          "pd3_playstation_cosmetic_mask_premium_collectoredition"
+        ],
+        "CEMASKSIE0000000": [
+          "pd3_playstation_cosmetic_mask_premium_collectoredition"
+        ],
+        "GOLDEDITIONITEM1": [
+          "pd3_playstation_cosmetic_accessory_gloves_goldedition",
+          "pd3_playstation_cosmetic_mask_premium7"
+        ],
+        "GOLDEDITIONITEM2": [
+          "pd3_playstation_cosmetic_accessory_gloves_goldedition",
+          "pd3_playstation_cosmetic_mask_premium7"
+        ],
+        "GOLDEDITIONITEM3": [
+          "pd3_playstation_cosmetic_accessory_gloves_goldedition",
+          "pd3_playstation_cosmetic_mask_premium7"
+        ],
+        "GOLDEDITIONITEMS": [
+          "pd3_playstation_cosmetic_accessory_gloves_goldedition",
+          "pd3_playstation_cosmetic_mask_premium7"
+        ],
+        "PAYDAY3DLCI00000": [
+          "pd3_playstation_dlc01_heist_pack"
+        ],
+        "PAYDAY3DLCIASI00": [
+          "pd3_playstation_dlc01_heist_pack"
+        ],
+        "PAYDAY3DLCII0000": [
+          "pd3_playstation_dlc01_weapon_pack"
+        ],
+        "PAYDAY3DLCIIASI0": [
+          "pd3_playstation_dlc01_weapon_pack"
+        ],
+        "PAYDAY3DLCIII000": [
+          "pd3_playstation_dlc01_tailor_pack"
+        ],
+        "PAYDAY3DLCIIIASI": [
+          "pd3_playstation_dlc01_tailor_pack"
+        ],
+        "PAYDAY3DLCIIIJAP": [
+          "pd3_playstation_dlc01_tailor_pack"
+        ],
+        "PAYDAY3DLCIIISIE": [
+          "pd3_playstation_dlc01_tailor_pack"
+        ],
+        "PAYDAY3DLCIIJAP0": [
+          "pd3_playstation_dlc01_weapon_pack"
+        ],
+        "PAYDAY3DLCIISIE0": [
+          "pd3_playstation_dlc01_weapon_pack"
+        ],
+        "PAYDAY3DLCIJAP00": [
+          "pd3_playstation_dlc01_heist_pack"
+        ],
+        "PAYDAY3DLCISIE00": [
+          "pd3_playstation_dlc01_heist_pack"
+        ],
+        "PD3ASDLC1EXTRAS1": [
+          "pd3_playstation_dlc01_edition_compensation_bundle"
+        ],
+        "PD3ASGOLDEXTRAS1": [
+          "pd3_playstation_gold_edition_compensation_bundle"
+        ],
+        "PD3CHARPACKCH4AS": [
+          "pd3_playstation_character_bundle_star"
+        ],
+        "PD3CHARPACKCH4EU": [
+          "pd3_playstation_character_bundle_star"
+        ],
+        "PD3CHARPACKCH4JP": [
+          "pd3_playstation_character_bundle_star"
+        ],
+        "PD3CHARPACKCH4US": [
+          "pd3_playstation_character_bundle_star"
+        ],
+        "PD3CHARPACKCH5AS": [
+          "pd3_playstation_bundle_fool_01"
+        ],
+        "PD3CHARPACKCH5EU": [
+          "pd3_playstation_bundle_fool_01"
+        ],
+        "PD3CHARPACKCH5JP": [
+          "pd3_playstation_bundle_fool_01"
+        ],
+        "PD3CHARPACKCH5US": [
+          "pd3_playstation_bundle_fool_01"
+        ],
+        "PD3EUDLC1EXTRAS1": [
+          "pd3_playstation_dlc01_edition_compensation_bundle"
+        ],
+        "PD3EUGOLDEXTRAS1": [
+          "pd3_playstation_gold_edition_compensation_bundle"
+        ],
+        "PD3HEAVYHITTERAS": [
+          "pd3_playstation_silver_edition_compensation_bundle"
+        ],
+        "PD3HEAVYHITTEREU": [
+          "pd3_playstation_silver_edition_compensation_bundle"
+        ],
+        "PD3HEAVYHITTERJP": [
+          "pd3_playstation_silver_edition_compensation_bundle"
+        ],
+        "PD3HEAVYHITTERNA": [
+          "pd3_playstation_silver_edition_compensation_bundle"
+        ],
+        "PD3HEISTCHAPT2AS": [
+          "pd3_playstation_dlc02_heist_pack"
+        ],
+        "PD3HEISTCHAPT2EU": [
+          "pd3_playstation_dlc02_heist_pack"
+        ],
+        "PD3HEISTCHAPT2JP": [
+          "pd3_playstation_dlc02_heist_pack"
+        ],
+        "PD3HEISTCHAPT2US": [
+          "pd3_playstation_dlc02_heist_pack"
+        ],
+        "PD3HEISTCHAPT3AS": [
+          "pd3_playstation_dlc03_heist_pack"
+        ],
+        "PD3HEISTCHAPT3EU": [
+          "pd3_playstation_dlc03_heist_pack"
+        ],
+        "PD3HEISTCHAPT3JP": [
+          "pd3_playstation_dlc03_heist_pack"
+        ],
+        "PD3HEISTCHAPT3US": [
+          "pd3_playstation_dlc03_heist_pack"
+        ],
+        "PD3HEISTCHAPT4AS": [
+          "pd3_playstation_dlc04_heist_pack"
+        ],
+        "PD3HEISTCHAPT4EU": [
+          "pd3_playstation_dlc04_heist_pack"
+        ],
+        "PD3HEISTCHAPT4JP": [
+          "pd3_playstation_dlc04_heist_pack"
+        ],
+        "PD3HEISTCHAPT4US": [
+          "pd3_playstation_dlc04_heist_pack"
+        ],
+        "PD3JPDLC1EXTRAS1": [
+          "pd3_playstation_dlc01_edition_compensation_bundle"
+        ],
+        "PD3JPGOLDEXTRAS1": [
+          "pd3_playstation_gold_edition_compensation_bundle"
+        ],
+        "PD3NADLC1EXTRAS1": [
+          "pd3_playstation_dlc01_edition_compensation_bundle"
+        ],
+        "PD3NAGOLDEXTRAS1": [
+          "pd3_playstation_gold_edition_compensation_bundle"
+        ],
+        "PD3PARTYPOWDERAS": [
+          "pd3_playstation_dlcbust_heist_pack"
+        ],
+        "PD3PARTYPOWDEREU": [
+          "pd3_playstation_dlcbust_heist_pack"
+        ],
+        "PD3PARTYPOWDERJP": [
+          "pd3_playstation_dlcbust_heist_pack"
+        ],
+        "PD3PARTYPOWDERUS": [
+          "pd3_playstation_dlcbust_heist_pack"
+        ],
+        "PD3TAILORCHAP2AS": [
+          "pd3_playstation_dlc02_tailor_pack"
+        ],
+        "PD3TAILORCHAP2EU": [
+          "pd3_playstation_dlc02_tailor_pack"
+        ],
+        "PD3TAILORCHAP2JP": [
+          "pd3_playstation_dlc02_tailor_pack"
+        ],
+        "PD3TAILORCHAP2US": [
+          "pd3_playstation_dlc02_tailor_pack"
+        ],
+        "PD3TAILORCHAP3AS": [
+          "pd3_playstation_dlc03_tailor_pack"
+        ],
+        "PD3TAILORCHAP3EU": [
+          "pd3_playstation_dlc03_tailor_pack"
+        ],
+        "PD3TAILORCHAP3JP": [
+          "pd3_playstation_dlc03_tailor_pack"
+        ],
+        "PD3TAILORCHAP3US": [
+          "pd3_playstation_dlc03_tailor_pack"
+        ],
+        "PD3TAILORCHAP4AS": [
+          "pd3_playstation_dlc04_tailor_pack"
+        ],
+        "PD3TAILORCHAP4EU": [
+          "pd3_playstation_dlc04_tailor_pack"
+        ],
+        "PD3TAILORCHAP4JP": [
+          "pd3_playstation_dlc04_tailor_pack"
+        ],
+        "PD3TAILORCHAP4US": [
+          "pd3_playstation_dlc04_tailor_pack"
+        ],
+        "PD3WEAPONCHAP2AS": [
+          "pd3_playstation_dlc02_weapon_pack"
+        ],
+        "PD3WEAPONCHAP2EU": [
+          "pd3_playstation_dlc02_weapon_pack"
+        ],
+        "PD3WEAPONCHAP2JP": [
+          "pd3_playstation_dlc02_weapon_pack"
+        ],
+        "PD3WEAPONCHAP2US": [
+          "pd3_playstation_dlc02_weapon_pack"
+        ],
+        "PD3WEAPONCHAP3AS": [
+          "pd3_playstation_dlc03_weapon_pack"
+        ],
+        "PD3WEAPONCHAP3EU": [
+          "pd3_playstation_dlc03_weapon_pack"
+        ],
+        "PD3WEAPONCHAP3JP": [
+          "pd3_playstation_dlc03_weapon_pack"
+        ],
+        "PD3WEAPONCHAP3US": [
+          "pd3_playstation_dlc03_weapon_pack"
+        ],
+        "PD3WEAPONCHAP4AS": [
+          "pd3_playstation_dlc04_weapon_pack"
+        ],
+        "PD3WEAPONCHAP4EU": [
+          "pd3_playstation_dlc04_weapon_pack"
+        ],
+        "PD3WEAPONCHAP4JP": [
+          "pd3_playstation_dlc04_weapon_pack"
+        ],
+        "PD3WEAPONCHAP4US": [
+          "pd3_playstation_dlc04_weapon_pack"
+        ],
+        "SEASONPASS12MON1": [
+          "PD3_playstation_gold_edition",
+          "pd3_playstation_dlc01_heist_pack",
+          "pd3_playstation_dlc01_tailor_pack",
+          "pd3_playstation_dlc01_weapon_pack",
+          "pd3_playstation_dlc02_heist_pack",
+          "pd3_playstation_dlc02_tailor_pack",
+          "pd3_playstation_dlc02_weapon_pack",
+          "pd3_playstation_dlc03_heist_pack",
+          "pd3_playstation_dlc03_tailor_pack",
+          "pd3_playstation_dlc03_weapon_pack",
+          "pd3_playstation_dlc04_heist_pack",
+          "pd3_playstation_dlc04_tailor_pack",
+          "pd3_playstation_dlc04_weapon_pack"
+        ],
+        "SEASONPASS6MONT1": [
+          "PD3_playstation_gold_edition",
+          "pd3_playstation_dlc01_heist_pack",
+          "pd3_playstation_dlc01_tailor_pack",
+          "pd3_playstation_dlc01_weapon_pack",
+          "pd3_playstation_dlc02_heist_pack",
+          "pd3_playstation_dlc02_tailor_pack",
+          "pd3_playstation_dlc02_weapon_pack"
+        ],
+        "SILVERED0MASK000": [
+          "pd3_playstation_cosmetic_mask_premium_silveredition"
+        ],
+        "SILVERED0MASKASI": [
+          "pd3_playstation_cosmetic_mask_premium_silveredition"
+        ],
+        "SILVERED0MASKJAP": [
+          "pd3_playstation_cosmetic_mask_premium_silveredition"
+        ],
+        "SILVERED0MASKSIE": [
+          "pd3_playstation_cosmetic_mask_premium_silveredition"
+        ],
+        "TRIFECTALOOTBAG0": [
+          "pd3_playstation_cosmetic_mask_premium_preorder",
+          "pd3_playstation_cosmetic_suit_premiumsuit_preorder",
+          "pd3_playstation_cosmetic_accessory_gloves_preorder"
+        ],
+        "TRIFECTALOOTBAG1": [
+          "pd3_playstation_cosmetic_mask_premium_preorder",
+          "pd3_playstation_cosmetic_suit_premiumsuit_preorder",
+          "pd3_playstation_cosmetic_accessory_gloves_preorder"
+        ],
+        "TRIFECTALOOTBAG2": [
+          "pd3_playstation_cosmetic_mask_premium_preorder",
+          "pd3_playstation_cosmetic_suit_premiumsuit_preorder",
+          "pd3_playstation_cosmetic_accessory_gloves_preorder"
+        ],
+        "TRIFECTALOOTBAG3": [
+          "pd3_playstation_cosmetic_mask_premium_preorder",
+          "pd3_playstation_cosmetic_suit_premiumsuit_preorder",
+          "pd3_playstation_cosmetic_accessory_gloves_preorder"
+        ]
+      },
+      "dlcType": "PSN"
+    },
+    {
+      "data": {
+        "9MT4S0DSW2X9": [
+          "pd3_xbox_dlc03_tailor_pack"
+        ],
+        "9MW93MM6R6J8": [
+          "PD3_xbox_trifecta_lootbag"
+        ],
+        "9N0JVZ1NTQ9Z": [
+          "PD3_xbox_gold_edition",
+          "pd3_xbox_gold_edition_compensation_bundle",
+          "pd3_xbox_silver_edition_compensation_bundle",
+          "pd3_xbox_dlc01_edition_compensation_bundle"
+        ],
+        "9N84DQ2F5C0R": [
+          "pd3_xbox_cosmetic_mask_premium_silveredition",
+          "pd3_xbox_silver_edition_compensation_bundle",
+          "pd3_xbox_dlc01_edition_compensation_bundle"
+        ],
+        "9N98H2TW7DKV": [
+          "pd3_xbox_dlc01_edition_compensation_bundle"
+        ],
+        "9N9TQ428F8BG": [
+          "pd3_xbox_dlcbust_heist_pack"
+        ],
+        "9NDH8QMT5JS0": [
+          "PD3_xbox_collectors_edition_masks"
+        ],
+        "9NFR4T095H60": [
+          "pd3_xbox_dlc04_weapon_pack"
+        ],
+        "9NHJQC22FVB0": [
+          "pd3_xbox_gold_edition_compensation_bundle"
+        ],
+        "9NQW69HS2SN0": [
+          "pd3_xbox_bundle_fool_01"
+        ],
+        "9NSQVWZ9RP8F": [
+          "pd3_xbox_dlc03_weapon_pack"
+        ],
+        "9NWT03PQ7Z9F": [
+          "pd3_xbox_dlc01_weapon_pack"
+        ],
+        "9NXWKTD618BX": [
+          "pd3_xbox_silver_edition_compensation_bundle"
+        ],
+        "9NZ2VPWF4VZM": [
+          "pd3_xbox_dlc02_weapon_pack"
+        ],
+        "9P32QJB09RG0": [
+          "pd3_xbox_dlc04_heist_pack"
+        ],
+        "9P3SL33TM14P": [
+          "pd3_xbox_dlc02_heist_pack"
+        ],
+        "9P78D85HQ597": [
+          "pd3_xbox_dlc01_heist_pack"
+        ],
+        "9PCDV4QCJQ5R": [
+          "pd3_xbox_character_bundle_star"
+        ],
+        "9PDS6MP2NLP5": [
+          "pd3_xbox_dlc03_heist_pack"
+        ],
+        "9PF39XFBW4Z7": [
+          "pd3_xbox_dlc02_tailor_pack"
+        ],
+        "9PJ4G4MBM08W": [
+          "pd3_xbox_dlc01_tailor_pack"
+        ],
+        "9PPGT1W1DWKH": [
+          "pd3_xbox_dlc04_tailor_pack"
+        ]
+      },
+      "dlcType": "XBoxLive"
+    }
+  ]
+}

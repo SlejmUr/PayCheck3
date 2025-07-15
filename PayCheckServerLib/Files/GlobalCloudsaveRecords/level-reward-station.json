@@ -1,0 +1,360 @@
+{
+  "Level-Reward-Setup": {
+    "DifficultyExperienceModifierArray": [
+      1,
+      1.2,
+      1.5,
+      1.7
+    ],
+    "DifficultyInfamyPointsOnFailModifierArray": [
+      1,
+      1.2,
+      1.5,
+      1.7
+    ],
+    "InfamyPointPayoutArray": [
+      {
+        "AllBagsBonus": 400,
+        "Completion": 15,
+        "StealthBonus": 200
+      },
+      {
+        "AllBagsBonus": 450,
+        "Completion": 15,
+        "StealthBonus": 200
+      },
+      {
+        "AllBagsBonus": 700,
+        "Completion": 15,
+        "StealthBonus": 500
+      },
+      {
+        "AllBagsBonus": 1000,
+        "Completion": 15,
+        "StealthBonus": 750
+      }
+    ],
+    "ItemIdRewardMap": [
+      {
+        "1-chus-preplanning-asset": 0.09,
+        "1-didi-preplanning-asset": 0.09,
+        "2-chus-preplanning-asset": 0.08,
+        "2-didi-preplanning-asset": 0.09,
+        "3-chus-preplanning-asset": 0.08,
+        "3-didi-preplanning-asset": 0.08,
+        "4-chus-preplanning-asset": 0.08,
+        "4-didi-preplanning-asset": 0.08,
+        "chopper-jewelry-store-preplanning-asset": 0.09,
+        "employee-backdoor-jewelry-store-preplanning-asset": 0.08,
+        "escape-van-jewelry-store-preplanning-asset": 0.08,
+        "manager-cake-jewelry-store-preplanning-asset": 0.08
+      }
+    ],
+    "LoudBaseExperience": 500,
+    "LoudBaseInfamyPointsOnFail": 350,
+    "LoudInfamyPointsOnSurvivingFinalAssultDifficultyArray": [
+      200,
+      200,
+      450,
+      650
+    ],
+    "LoudInfamyPointsOnSurvivingOneAssultDifficultyArray": [
+      200,
+      200,
+      450,
+      650
+    ],
+    "LoudLevelCompletedStatistics": {
+      "Hard": {
+        "PlayerStatisticEntryArray": [
+          "station-loud-hard"
+        ]
+      },
+      "Normal": {
+        "PlayerStatisticEntryArray": [
+          "station-loud-normal"
+        ]
+      },
+      "Overkill": {
+        "PlayerStatisticEntryArray": [
+          "station-loud-overkill"
+        ]
+      },
+      "VeryHard": {
+        "PlayerStatisticEntryArray": [
+          "station-loud-veryhard"
+        ]
+      }
+    },
+    "LoudLootValuesArray": [
+      {
+        "LootName": "DA_SatellitePrototype",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 20,
+            "LootValue": 112000,
+            "MaxInfamyPointsForLootType": 40,
+            "MaxValueForLootType": 224000
+          },
+          {
+            "InfamyPointValue": 26.67,
+            "LootValue": 134400,
+            "MaxInfamyPointsForLootType": 53.3,
+            "MaxValueForLootType": 268800
+          },
+          {
+            "InfamyPointValue": 33.33,
+            "LootValue": 168000,
+            "MaxInfamyPointsForLootType": 66.66,
+            "MaxValueForLootType": 336000
+          },
+          {
+            "InfamyPointValue": 40,
+            "LootValue": 190400,
+            "MaxInfamyPointsForLootType": 80,
+            "MaxValueForLootType": 380800
+          }
+        ]
+      },
+      {
+        "LootName": "DA_SatellitePart",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 10,
+            "LootValue": 45000,
+            "MaxInfamyPointsForLootType": 60,
+            "MaxValueForLootType": 270000
+          },
+          {
+            "InfamyPointValue": 13.33,
+            "LootValue": 54000,
+            "MaxInfamyPointsForLootType": 80,
+            "MaxValueForLootType": 324000
+          },
+          {
+            "InfamyPointValue": 16.67,
+            "LootValue": 67500,
+            "MaxInfamyPointsForLootType": 100,
+            "MaxValueForLootType": 405000
+          },
+          {
+            "InfamyPointValue": 20,
+            "LootValue": 76500,
+            "MaxInfamyPointsForLootType": 120,
+            "MaxValueForLootType": 459000
+          }
+        ]
+      },
+      {
+        "LootName": "DA_SatellitePart_LowValue",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 7,
+            "LootValue": 30000,
+            "MaxInfamyPointsForLootType": 84,
+            "MaxValueForLootType": 360000
+          },
+          {
+            "InfamyPointValue": 9.33,
+            "LootValue": 36000,
+            "MaxInfamyPointsForLootType": 112,
+            "MaxValueForLootType": 432000
+          },
+          {
+            "InfamyPointValue": 11.67,
+            "LootValue": 45000,
+            "MaxInfamyPointsForLootType": 140,
+            "MaxValueForLootType": 540000
+          },
+          {
+            "InfamyPointValue": 14,
+            "LootValue": 51000,
+            "MaxInfamyPointsForLootType": 168,
+            "MaxValueForLootType": 612000
+          }
+        ]
+      }
+    ],
+    "LoudMilestoneToExperienceRewardMap": [
+      {
+        "Stealth Completion": 0.05,
+        "Stealth Milestone 1": 0.05,
+        "Stealth Milestone 2": 0.1,
+        "Stealth Milestone 3": 0.25,
+        "Stealth Milestone 4": 0.1,
+        "Stealth Milestone 5": 0.1,
+        "Stealth Milestone 6": 0.25,
+        "Stealth Milestone 7": 0.1
+      }
+    ],
+    "LoudMilestoneToInfamyPointsOnFailRewardMap": [
+      {
+        "Stealth Completion": 0.01,
+        "Stealth Milestone 1": 0.01,
+        "Stealth Milestone 2": 0.01,
+        "Stealth Milestone 3": 0.02,
+        "Stealth Milestone 4": 0.03,
+        "Stealth Milestone 5": 0.04,
+        "Stealth Milestone 6": 0.04,
+        "Stealth Milestone 7": 0.05
+      }
+    ],
+    "ObjectivesToExperienceRewardMap": [
+      {
+        "access_opt_car_1": 1.1,
+        "access_opt_car_2": 1.1,
+        "find_opt_car_1": 1.1,
+        "find_opt_car_2": 1.1,
+        "secure_all_loot": 1.1
+      }
+    ],
+    "PerformanceBonusMap": {
+      "BeenKilledCount": {
+        "PerformanceBonusEntryArray": [
+          {
+            "Max": 0,
+            "Min": 0,
+            "Modifier": 1.15
+          }
+        ]
+      }
+    },
+    "StealthBaseExperience": 500,
+    "StealthBaseInfamyPointsOnFail": 150,
+    "StealthLevelCompletedStatistics": {
+      "Hard": {
+        "PlayerStatisticEntryArray": [
+          "station-stealth-hard"
+        ]
+      },
+      "Normal": {
+        "PlayerStatisticEntryArray": [
+          "station-stealth-normal"
+        ]
+      },
+      "Overkill": {
+        "PlayerStatisticEntryArray": [
+          "station-stealth-overkill"
+        ]
+      },
+      "VeryHard": {
+        "PlayerStatisticEntryArray": [
+          "station-stealth-veryhard"
+        ]
+      }
+    },
+    "StealthLootValuesArray": [
+      {
+        "LootName": "DA_SatellitePrototype",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 20,
+            "LootValue": 112000,
+            "MaxInfamyPointsForLootType": 40,
+            "MaxValueForLootType": 224000
+          },
+          {
+            "InfamyPointValue": 26.67,
+            "LootValue": 134400,
+            "MaxInfamyPointsForLootType": 53.33,
+            "MaxValueForLootType": 268800
+          },
+          {
+            "InfamyPointValue": 33.33,
+            "LootValue": 168000,
+            "MaxInfamyPointsForLootType": 66.66,
+            "MaxValueForLootType": 336000
+          },
+          {
+            "InfamyPointValue": 40,
+            "LootValue": 190400,
+            "MaxInfamyPointsForLootType": 80,
+            "MaxValueForLootType": 380800
+          }
+        ]
+      },
+      {
+        "LootName": "DA_SatellitePart",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 10,
+            "LootValue": 45000,
+            "MaxInfamyPointsForLootType": 60,
+            "MaxValueForLootType": 270000
+          },
+          {
+            "InfamyPointValue": 13.33,
+            "LootValue": 54000,
+            "MaxInfamyPointsForLootType": 80,
+            "MaxValueForLootType": 324000
+          },
+          {
+            "InfamyPointValue": 16.67,
+            "LootValue": 67500,
+            "MaxInfamyPointsForLootType": 100,
+            "MaxValueForLootType": 405000
+          },
+          {
+            "InfamyPointValue": 20,
+            "LootValue": 76500,
+            "MaxInfamyPointsForLootType": 120,
+            "MaxValueForLootType": 459000
+          }
+        ]
+      },
+      {
+        "LootName": "DA_SatellitePart_LowValue",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 7,
+            "LootValue": 30000,
+            "MaxInfamyPointsForLootType": 84,
+            "MaxValueForLootType": 360000
+          },
+          {
+            "InfamyPointValue": 9.33,
+            "LootValue": 36000,
+            "MaxInfamyPointsForLootType": 112,
+            "MaxValueForLootType": 432000
+          },
+          {
+            "InfamyPointValue": 11.67,
+            "LootValue": 45000,
+            "MaxInfamyPointsForLootType": 140,
+            "MaxValueForLootType": 540000
+          },
+          {
+            "InfamyPointValue": 14,
+            "LootValue": 51000,
+            "MaxInfamyPointsForLootType": 168,
+            "MaxValueForLootType": 612000
+          }
+        ]
+      }
+    ],
+    "StealthMilestoneToExperienceRewardMap": [
+      {
+        "Stealth Completion": 0.05,
+        "Stealth Milestone 1": 0.05,
+        "Stealth Milestone 2": 0.1,
+        "Stealth Milestone 3": 0.25,
+        "Stealth Milestone 4": 0.1,
+        "Stealth Milestone 5": 0.1,
+        "Stealth Milestone 6": 0.25,
+        "Stealth Milestone 7": 0.1
+      }
+    ],
+    "StealthMilestoneToInfamyPointsOnFailRewardMap": [
+      {
+        "Stealth Completion": 0.01,
+        "Stealth Milestone 1": 0.01,
+        "Stealth Milestone 2": 0.01,
+        "Stealth Milestone 3": 0.02,
+        "Stealth Milestone 4": 0.03,
+        "Stealth Milestone 5": 0.04,
+        "Stealth Milestone 6": 0.04,
+        "Stealth Milestone 7": 0.05
+      }
+    ]
+  }
+}

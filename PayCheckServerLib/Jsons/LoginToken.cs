@@ -4,6 +4,14 @@ namespace PayCheckServerLib.Jsons
 {
     public class LoginToken
     {
+		[Flags]
+		public enum LoginJflgs : int
+		{
+			EmailAddressVerified = 1 << 0,
+			PhoneNumberVerified = 1 << 1,
+			Anonymous = 1 << 2,
+			SuspiciousLogin = 1 << 3,
+		}
         [JsonProperty("access_token")]
         public string AccessToken { get; set; }
 
@@ -20,7 +28,7 @@ namespace PayCheckServerLib.Jsons
         public bool IsComply { get; set; }
 
         [JsonProperty("jflgs")]
-        public long Jflgs { get; set; }
+        public LoginJflgs Jflgs { get; set; }
 
         [JsonProperty("namespace")]
         public string Namespace { get; set; }

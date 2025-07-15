@@ -1,0 +1,18 @@
+{
+  "ActiveEventType": "",
+  "MetaEvents": [
+    {
+      "Description": "Double weapon xp increase , increases xp in general",
+      "EventId": "double_weapon_xp",
+      "EventType": "IncreasedXP",
+      "Modifiers": [
+        {
+          "ModifierType": "XP",
+          "Multiplier": 2
+        }
+      ],
+      "StartDate": "2024.10.31-10.00.00",
+      "StopDate": "2024.11.03-10.00.00"
+    }
+  ]
+}

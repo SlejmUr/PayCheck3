@@ -4,7 +4,7 @@
   "MatchmakingProvider": "accelbyte",
   "edgegap": {
     "token": "ABCDEF12345",
-    "url": "https://slejmur.ddns.net"
+    "url": "https://127.0.0.1"
   },
   "provider": "accelbyte"
 }

@@ -1,0 +1,126 @@
+{
+  "Level-Reward-Setup": {
+    "DifficultyExperienceModifierArray": [
+      1.6,
+      2
+    ],
+    "InfamyPointPayoutArray": [
+      {
+        "AllBagsBonus": 35,
+        "Completion": 15,
+        "StealthBonus": 15
+      },
+      {
+        "AllBagsBonus": 35,
+        "Completion": 20,
+        "StealthBonus": 20
+      },
+      {
+        "AllBagsBonus": 55,
+        "Completion": 35,
+        "StealthBonus": 40
+      },
+      {
+        "AllBagsBonus": 80,
+        "Completion": 45,
+        "StealthBonus": 55
+      }
+    ],
+    "ItemIdRewardMap": [
+      {
+        "1-chus-preplanning-asset": 0.12,
+        "1-didi-preplanning-asset": 0.12,
+        "2-chus-preplanning-asset": 0.12,
+        "2-didi-preplanning-asset": 0.12,
+        "3-chus-preplanning-asset": 0.12,
+        "3-didi-preplanning-asset": 0.12,
+        "4-chus-preplanning-asset": 0.12,
+        "4-didi-preplanning-asset": 0.12
+      }
+    ],
+    "LoudBaseExperience": 10,
+    "LoudDifficultyCashRewardModifierArray": [
+      {
+        "BaseReward": 200000,
+        "MaxReward": 2000000
+      }
+    ],
+    "LoudLevelCompletedStatistics": {
+      "Hard": {
+        "PlayerStatisticEntryArray": [
+          "jewelry-store-loud-hard"
+        ]
+      },
+      "Normal": {
+        "PlayerStatisticEntryArray": [
+          "jewelry-store-loud-normal"
+        ]
+      },
+      "Overkill": {
+        "PlayerStatisticEntryArray": [
+          "jewelry-store-loud-overkill"
+        ]
+      },
+      "VeryHard": {
+        "PlayerStatisticEntryArray": [
+          "jewelry-store-loud-veryhard"
+        ]
+      }
+    },
+    "LoudMilestoneToExperienceRewardMap": [
+      {
+        "Loud Milestone 1": 0.4
+      }
+    ],
+    "ObjectivesToExperienceRewardMap": [
+      {
+        "Objective 1": 1.2
+      }
+    ],
+    "PerformanceBonusMap": {
+      "BeenKilledCount": {
+        "PerformanceBonusEntryArray": [
+          {
+            "Max": 0,
+            "Min": 0,
+            "Modifier": 1.15
+          }
+        ]
+      }
+    },
+    "StealthBaseExperience": 20,
+    "StealthDifficultyCashRewardModifierArray": [
+      {
+        "BaseReward": 200000,
+        "MaxReward": 2000000
+      }
+    ],
+    "StealthLevelCompletedStatistics": {
+      "Hard": {
+        "PlayerStatisticEntryArray": [
+          "jewelry-store-stealth-hard"
+        ]
+      },
+      "Normal": {
+        "PlayerStatisticEntryArray": [
+          "jewelry-store-stealth-normal"
+        ]
+      },
+      "Overkill": {
+        "PlayerStatisticEntryArray": [
+          "jewelry-store-stealth-overkill"
+        ]
+      },
+      "VeryHard": {
+        "PlayerStatisticEntryArray": [
+          "jewelry-store-stealth-veryhard"
+        ]
+      }
+    },
+    "StealthMilestoneToExperienceRewardMap": [
+      {
+        "Stealth Milestone 1": 0.3
+      }
+    ]
+  }
+}

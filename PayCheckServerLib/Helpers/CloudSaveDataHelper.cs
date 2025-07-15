@@ -24,7 +24,7 @@ namespace PayCheckServerLib.Helpers
 		#region Global CloudSave Data And Static Data
 		public static object? GetGlobalCloudSaveData(string key)
 		{
-			return GetStaticData<object>(String.Format("GlobalStatItems/{0}.json", key));
+			return GetStaticData<object>(String.Format("GlobalCloudsaveRecords/{0}.json", key));
 		}
 		public static T? GetStaticData<T>(string filename) where T : class
 		{

@@ -57,7 +57,10 @@ public class LobbyBlocked
 	{
 		var response = new ResponseCreator();
 
-		response.SetBody(JsonConvert.SerializeObject(new UserPresenceResponse()));
+		response.SetBody(JsonConvert.SerializeObject(new UserPresenceResponse()
+		{
+			Data = { }
+		}));
 
 		serverStruct.Response = response.GetResponse();
 		serverStruct.SendResponse();

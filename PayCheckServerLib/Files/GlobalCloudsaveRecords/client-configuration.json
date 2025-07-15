@@ -26,6 +26,7 @@
       "ProgressionSaveGameLoaded": 3,
       "QueryAchivementsDone": 2,
       "ReceivingInfamyTranslationTableDone": 2,
+      "RetrieveClientConfigurationDone": 2,
       "RetrieveClientGameRecordDone": 2,
       "RetrieveSecurityFirmRotationDataReceivedDone": 1,
       "SetCurrentServerTimeDone": 1,

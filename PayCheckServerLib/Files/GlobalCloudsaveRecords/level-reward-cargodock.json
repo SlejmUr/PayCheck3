@@ -1,0 +1,485 @@
+{
+  "Level-Reward-Setup": {
+    "DifficultyExperienceModifierArray": [
+      1,
+      1.2,
+      1.5,
+      1.7
+    ],
+    "DifficultyInfamyPointsOnFailModifierArray": [
+      1,
+      1.2,
+      1.5,
+      1.7
+    ],
+    "InfamyPointPayoutArray": [
+      {
+        "AllBagsBonus": 300,
+        "Completion": 30,
+        "StealthBonus": 150
+      },
+      {
+        "AllBagsBonus": 300,
+        "Completion": 35,
+        "StealthBonus": 150
+      },
+      {
+        "AllBagsBonus": 450,
+        "Completion": 60,
+        "StealthBonus": 250
+      },
+      {
+        "AllBagsBonus": 600,
+        "Completion": 90,
+        "StealthBonus": 300
+      }
+    ],
+    "ItemIdRewardMap": [
+      {
+        "1-bust-preplanning-asset": 0.07,
+        "1-fort-preplanning-asset": 0.07,
+        "1-villa-preplanning-asset": 0.07,
+        "2-bust-preplanning-asset": 0.06,
+        "2-fort-preplanning-asset": 0.06,
+        "2-villa-preplanning-asset": 0.06,
+        "3-bust-preplanning-asset": 0.06,
+        "3-fort-preplanning-asset": 0.06,
+        "3-villa-preplanning-asset": 0.06,
+        "4-bust-preplanning-asset": 0.06,
+        "4-fort-preplanning-asset": 0.06,
+        "4-villa-preplanning-asset": 0.06,
+        "garbage-chute-armored-transport-preplanning-asset": 0.07,
+        "more-planks-armored-transport-preplanning-asset": 0.06,
+        "rc-signal-armored-transport-preplanning-asset": 0.06,
+        "sniper-tower-armored-transport-preplanning-asset": 0.06
+      }
+    ],
+    "LoudBaseExperience": 500,
+    "LoudBaseInfamyPointsOnFail": 300,
+    "LoudInfamyPointsOnSurvivingFinalAssultDifficultyArray": [
+      300,
+      350,
+      500,
+      600
+    ],
+    "LoudInfamyPointsOnSurvivingOneAssultDifficultyArray": [
+      300,
+      350,
+      500,
+      600
+    ],
+    "LoudLevelCompletedStatistics": {
+      "Hard": {
+        "PlayerStatisticEntryArray": [
+          "cargodock-loud-hard"
+        ]
+      },
+      "Normal": {
+        "PlayerStatisticEntryArray": [
+          "cargodock-loud-normal"
+        ]
+      },
+      "Overkill": {
+        "PlayerStatisticEntryArray": [
+          "cargodock-loud-overkill"
+        ]
+      },
+      "VeryHard": {
+        "PlayerStatisticEntryArray": [
+          "cargodock-loud-veryhard"
+        ]
+      }
+    },
+    "LoudLootValuesArray": [
+      {
+        "LootName": "DA_DegradingTechBagPrePlanningType",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 120,
+            "LootValue": 245000,
+            "MaxInfamyPointsForLootType": 240,
+            "MaxValueForLootType": 490000
+          },
+          {
+            "InfamyPointValue": 140,
+            "LootValue": 294000,
+            "MaxInfamyPointsForLootType": 280,
+            "MaxValueForLootType": 588000
+          },
+          {
+            "InfamyPointValue": 240,
+            "LootValue": 367500,
+            "MaxInfamyPointsForLootType": 480,
+            "MaxValueForLootType": 735000
+          },
+          {
+            "InfamyPointValue": 360,
+            "LootValue": 416500,
+            "MaxInfamyPointsForLootType": 720,
+            "MaxValueForLootType": 833000
+          }
+        ]
+      },
+      {
+        "LootName": "DA_DegradingTechBagType",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 120,
+            "LootValue": 245000,
+            "MaxInfamyPointsForLootType": 240,
+            "MaxValueForLootType": 490000
+          },
+          {
+            "InfamyPointValue": 140,
+            "LootValue": 294000,
+            "MaxInfamyPointsForLootType": 280,
+            "MaxValueForLootType": 588000
+          },
+          {
+            "InfamyPointValue": 240,
+            "LootValue": 367500,
+            "MaxInfamyPointsForLootType": 480,
+            "MaxValueForLootType": 735000
+          },
+          {
+            "InfamyPointValue": 360,
+            "LootValue": 416500,
+            "MaxInfamyPointsForLootType": 720,
+            "MaxValueForLootType": 833000
+          }
+        ]
+      },
+      {
+        "LootName": "DA_DegradingTechBagType_MediumValue",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 100,
+            "LootValue": 200000,
+            "MaxInfamyPointsForLootType": 200,
+            "MaxValueForLootType": 400000
+          },
+          {
+            "InfamyPointValue": 116.67,
+            "LootValue": 240000,
+            "MaxInfamyPointsForLootType": 233.3,
+            "MaxValueForLootType": 480000
+          },
+          {
+            "InfamyPointValue": 200,
+            "LootValue": 300000,
+            "MaxInfamyPointsForLootType": 400,
+            "MaxValueForLootType": 600000
+          },
+          {
+            "InfamyPointValue": 300,
+            "LootValue": 340000,
+            "MaxInfamyPointsForLootType": 600,
+            "MaxValueForLootType": 680000
+          }
+        ]
+      },
+      {
+        "LootName": "DA_DegradingTechBagType_LowValue",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 80,
+            "LootValue": 150000,
+            "MaxInfamyPointsForLootType": 160,
+            "MaxValueForLootType": 300000
+          },
+          {
+            "InfamyPointValue": 93.33,
+            "LootValue": 180000,
+            "MaxInfamyPointsForLootType": 186.7,
+            "MaxValueForLootType": 360000
+          },
+          {
+            "InfamyPointValue": 160,
+            "LootValue": 225000,
+            "MaxInfamyPointsForLootType": 240,
+            "MaxValueForLootType": 450000
+          },
+          {
+            "InfamyPointValue": 240,
+            "LootValue": 255000,
+            "MaxInfamyPointsForLootType": 480,
+            "MaxValueForLootType": 510000
+          }
+        ]
+      },
+      {
+        "LootName": "DA_MoneyBagType",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 10,
+            "LootValue": 15000,
+            "MaxInfamyPointsForLootType": 60,
+            "MaxValueForLootType": 90000
+          },
+          {
+            "InfamyPointValue": 11.67,
+            "LootValue": 18000,
+            "MaxInfamyPointsForLootType": 70,
+            "MaxValueForLootType": 108000
+          },
+          {
+            "InfamyPointValue": 20,
+            "LootValue": 22500,
+            "MaxInfamyPointsForLootType": 120,
+            "MaxValueForLootType": 135000
+          },
+          {
+            "InfamyPointValue": 30,
+            "LootValue": 25500,
+            "MaxInfamyPointsForLootType": 180,
+            "MaxValueForLootType": 153000
+          }
+        ]
+      }
+    ],
+    "LoudMilestoneToExperienceRewardMap": [
+      {
+        "Loud Completion": 0.3,
+        "Loud Milestone 1": 0.05,
+        "Loud Milestone 10": 0.05,
+        "Loud Milestone 11": 0.1,
+        "Loud Milestone 2": 0.05,
+        "Loud Milestone 3": 0.1,
+        "Loud Milestone 4": 0.05,
+        "Loud Milestone 5": 0.05,
+        "Loud Milestone 6": 0.1,
+        "Loud Milestone 7": 0.05,
+        "Loud Milestone 8": 0.05,
+        "Loud Milestone 9": 0.05
+      }
+    ],
+    "LoudMilestoneToInfamyPointsOnFailRewardMap": [
+      {
+        "Loud Completion": 0.01,
+        "Loud Milestone 1": 0.05,
+        "Loud Milestone 10": 0.03,
+        "Loud Milestone 11": 0.03,
+        "Loud Milestone 2": 0.01,
+        "Loud Milestone 3": 0.01,
+        "Loud Milestone 4": 0.01,
+        "Loud Milestone 5": 0.02,
+        "Loud Milestone 6": 0.02,
+        "Loud Milestone 7": 0.02,
+        "Loud Milestone 8": 0.02,
+        "Loud Milestone 9": 0.03
+      }
+    ],
+    "PerformanceBonusMap": {
+      "BeenKilledCount": {
+        "PerformanceBonusEntryArray": [
+          {
+            "Max": 0,
+            "Min": 0,
+            "Modifier": 1.15
+          }
+        ]
+      }
+    },
+    "StealthBaseExperience": 650,
+    "StealthBaseInfamyPointsOnFail": 300,
+    "StealthLevelCompletedStatistics": {
+      "Hard": {
+        "PlayerStatisticEntryArray": [
+          "cargodock-stealth-hard"
+        ]
+      },
+      "Normal": {
+        "PlayerStatisticEntryArray": [
+          "cargodock-stealth-normal"
+        ]
+      },
+      "Overkill": {
+        "PlayerStatisticEntryArray": [
+          "cargodock-stealth-overkill"
+        ]
+      },
+      "VeryHard": {
+        "PlayerStatisticEntryArray": [
+          "cargodock-stealth-veryhard"
+        ]
+      }
+    },
+    "StealthLootValuesArray": [
+      {
+        "LootName": "DA_DegradingTechBagPrePlanningType",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 120,
+            "LootValue": 295000,
+            "MaxInfamyPointsForLootType": 240,
+            "MaxValueForLootType": 590000
+          },
+          {
+            "InfamyPointValue": 140,
+            "LootValue": 354000,
+            "MaxInfamyPointsForLootType": 280,
+            "MaxValueForLootType": 708000
+          },
+          {
+            "InfamyPointValue": 240,
+            "LootValue": 442500,
+            "MaxInfamyPointsForLootType": 480,
+            "MaxValueForLootType": 885000
+          },
+          {
+            "InfamyPointValue": 360,
+            "LootValue": 501500,
+            "MaxInfamyPointsForLootType": 720,
+            "MaxValueForLootType": 1003000
+          }
+        ]
+      },
+      {
+        "LootName": "DA_DegradingTechBagType",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 120,
+            "LootValue": 295000,
+            "MaxInfamyPointsForLootType": 240,
+            "MaxValueForLootType": 590000
+          },
+          {
+            "InfamyPointValue": 140,
+            "LootValue": 354000,
+            "MaxInfamyPointsForLootType": 280,
+            "MaxValueForLootType": 708000
+          },
+          {
+            "InfamyPointValue": 240,
+            "LootValue": 442500,
+            "MaxInfamyPointsForLootType": 480,
+            "MaxValueForLootType": 885000
+          },
+          {
+            "InfamyPointValue": 360,
+            "LootValue": 501500,
+            "MaxInfamyPointsForLootType": 720,
+            "MaxValueForLootType": 1003000
+          }
+        ]
+      },
+      {
+        "LootName": "DA_DegradingTechBagType_MediumValue",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 100,
+            "LootValue": 250000,
+            "MaxInfamyPointsForLootType": 200,
+            "MaxValueForLootType": 500000
+          },
+          {
+            "InfamyPointValue": 116.67,
+            "LootValue": 300000,
+            "MaxInfamyPointsForLootType": 233.3,
+            "MaxValueForLootType": 600000
+          },
+          {
+            "InfamyPointValue": 200,
+            "LootValue": 375000,
+            "MaxInfamyPointsForLootType": 400,
+            "MaxValueForLootType": 750000
+          },
+          {
+            "InfamyPointValue": 300,
+            "LootValue": 425000,
+            "MaxInfamyPointsForLootType": 600,
+            "MaxValueForLootType": 850000
+          }
+        ]
+      },
+      {
+        "LootName": "DA_DegradingTechBagType_LowValue",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 80,
+            "LootValue": 200000,
+            "MaxInfamyPointsForLootType": 160,
+            "MaxValueForLootType": 400000
+          },
+          {
+            "InfamyPointValue": 93.33,
+            "LootValue": 240000,
+            "MaxInfamyPointsForLootType": 186.7,
+            "MaxValueForLootType": 480000
+          },
+          {
+            "InfamyPointValue": 160,
+            "LootValue": 300000,
+            "MaxInfamyPointsForLootType": 320,
+            "MaxValueForLootType": 600000
+          },
+          {
+            "InfamyPointValue": 240,
+            "LootValue": 340000,
+            "MaxInfamyPointsForLootType": 480,
+            "MaxValueForLootType": 680000
+          }
+        ]
+      },
+      {
+        "LootName": "DA_MoneyBagType",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 10,
+            "LootValue": 15000,
+            "MaxInfamyPointsForLootType": 60,
+            "MaxValueForLootType": 90000
+          },
+          {
+            "InfamyPointValue": 11.67,
+            "LootValue": 18000,
+            "MaxInfamyPointsForLootType": 70,
+            "MaxValueForLootType": 108000
+          },
+          {
+            "InfamyPointValue": 20,
+            "LootValue": 22500,
+            "MaxInfamyPointsForLootType": 120,
+            "MaxValueForLootType": 135000
+          },
+          {
+            "InfamyPointValue": 30,
+            "LootValue": 25500,
+            "MaxInfamyPointsForLootType": 180,
+            "MaxValueForLootType": 153000
+          }
+        ]
+      }
+    ],
+    "StealthMilestoneToExperienceRewardMap": [
+      {
+        "Stealth Completion": 0.3,
+        "Stealth Milestone 1": 0.05,
+        "Stealth Milestone 10": 0.05,
+        "Stealth Milestone 2": 0.1,
+        "Stealth Milestone 3": 0.05,
+        "Stealth Milestone 4": 0.05,
+        "Stealth Milestone 5": 0.1,
+        "Stealth Milestone 6": 0.1,
+        "Stealth Milestone 7": 0.05,
+        "Stealth Milestone 8": 0.05,
+        "Stealth Milestone 9": 0.1
+      }
+    ],
+    "StealthMilestoneToInfamyPointsOnFailRewardMap": [
+      {
+        "Stealth Completion": 0.01,
+        "Stealth Milestone 1": 0.01,
+        "Stealth Milestone 10": 0.03,
+        "Stealth Milestone 2": 0.01,
+        "Stealth Milestone 3": 0.01,
+        "Stealth Milestone 4": 0.02,
+        "Stealth Milestone 5": 0,
+        "Stealth Milestone 6": 0.03,
+        "Stealth Milestone 7": 0.03,
+        "Stealth Milestone 8": 0.03,
+        "Stealth Milestone 9": 0.03
+      }
+    ]
+  }
+}

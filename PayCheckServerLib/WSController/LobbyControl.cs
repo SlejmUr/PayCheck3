@@ -1,10 +1,11 @@
 ﻿using ModdableWebServer;
 using ModdableWebServer.Attributes;
-using ModdableWebServer.Helper;
 using Newtonsoft.Json;
 using PayCheckServerLib.Helpers;
 using PayCheckServerLib.Jsons;
+using System.Reflection;
 using System.Text;
+using PayCheckServerLib.ModdableWebServerExtensions;
 
 namespace PayCheckServerLib.WSController
 {
@@ -19,7 +20,6 @@ namespace PayCheckServerLib.WSController
         [WS("/lobby/")]
         public static void Lobby(WebSocketStruct socketStruct)
         {
-            //Debugger.PrintDebug("LOBBY");
             string auth_token;
             if (socketStruct.Request.Headers.ContainsKey("x-ab-lobbysessionid") && socketStruct.Request.Headers["x-ab-lobbysessionid"].Contains("Bearer"))
             {
@@ -29,6 +29,7 @@ namespace PayCheckServerLib.WSController
             {
                 auth_token = socketStruct.Request.Headers["authorization"].Replace("Bearer ", "");
             }
+
             var token = TokenHelper.ReadToken(auth_token);
             var key = $"{token.Namespace}_{token.UserId}";
             if (socketStruct.IsConnected)
@@ -36,7 +37,7 @@ namespace PayCheckServerLib.WSController
                 if (!LobbyUsers.ContainsKey(key))
                 {
                     var x = "type: connectNotif\r\nloginType: NewRegister\r\nreconnectFromCode: 5000\r\nlobbySessionID: ee62822a8428424d9a408f6385484ae5";
-                    socketStruct.SendWebSocketByteArray(Encoding.UTF8.GetBytes(x));
+                    socketStruct.SendWebSocketText(x);
                     LobbyUsers.Add(key, socketStruct);
                 }
             }
@@ -110,7 +111,7 @@ namespace PayCheckServerLib.WSController
                 if (string.IsNullOrEmpty(item) || item == "\n")
                     continue;
                 var kv2 = item.Split(": ");
-                kv.Add(kv2[0], kv2[1]);
+                kv.Add(kv2[0].Trim(), kv2[1].Trim());
             }
             //Debugger.PrintWebsocket("KVs done!");
             SwitchingType(kv, socketStruct, token);
@@ -225,7 +226,7 @@ namespace PayCheckServerLib.WSController
                         SendToLobby(rsp, socketStruct);
                         break;
                     default:
-                        Debugger.PrintWebsocket("Not sending back anything: " + kv["type"]);
+                        Debugger.PrintWebsocket("Not sending back anything: \"" + kv["type"] + "\"");
                         break;
                 }
             }
@@ -256,8 +257,9 @@ namespace PayCheckServerLib.WSController
             }
 
             str = str.Remove(str.Length - 1);
-            //Debugger.PrintDebug(str);
-            socketStruct?.SendWebSocketByteArray(Encoding.UTF8.GetBytes(str));
-        }
+
+			socketStruct?.SendWebSocketText(str);
+			//socketStruct?.SendWebSocketByteArray(Encoding.UTF8.GetBytes(str));
+		}
     }
 }

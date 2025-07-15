@@ -1,0 +1,17 @@
+{
+  "NewsList": [
+    {
+      "DefaultLink": "https://igs.paydaythegame.com/patch-notes",
+      "EventId": "",
+      "NewsId": "patch_notes",
+      "ParameterValues": {
+        "Update": "2.1.4"
+      }
+    },
+    {
+      "DefaultLink": "https://igs.paydaythegame.com/game-stream",
+      "EventId": "",
+      "NewsId": "game_stream"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "FeatureToggleMapping": [
+    {
+      "DailyChallenges": true,
+      "EnableInstallationCheckOnWindowsStore": false,
+      "EnableReceiptOnPlayStation": true,
+      "EnableReceiptOnXBox": false,
+      "MaskOfTheWeek": true,
+      "Matchmaking_Quickplay": true,
+      "UseAccelByteBackend": true,
+      "enableTimingTelemetry": true
+    }
+  ]
+}

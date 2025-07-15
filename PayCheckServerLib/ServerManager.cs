@@ -65,6 +65,7 @@ namespace PayCheckServerLib
 				{
 					var context = CertHelper.GetContextNoValidate(System.Security.Authentication.SslProtocols.Tls12, "cert.pfx", ConfigHelper.ServerConfig.Hosting.CertificatePassword);
 					server = new(context, ConfigHelper.ServerConfig.Hosting.IP, ConfigHelper.ServerConfig.Hosting.Port);
+					server.OverrideAttributes(Assembly.GetAssembly(typeof(ConfigHelper))!);
 					server.ReceivedFailed += ReceivedFailed;
 					server.Started += Server_Started;
 					server.Stopped += Server_Stopped;

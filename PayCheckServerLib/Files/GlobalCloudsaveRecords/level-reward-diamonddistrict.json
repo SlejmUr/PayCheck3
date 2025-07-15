@@ -1,0 +1,525 @@
+{
+  "Level-Reward-Setup": {
+    "DifficultyExperienceModifierArray": [
+      1,
+      1.2,
+      1.5,
+      1.7
+    ],
+    "DifficultyInfamyPointsOnFailModifierArray": [
+      1,
+      1.2,
+      1.5,
+      1.7
+    ],
+    "InfamyPointPayoutArray": [
+      {
+        "AllBagsBonus": 350,
+        "Completion": 15,
+        "StealthBonus": 150
+      },
+      {
+        "AllBagsBonus": 350,
+        "Completion": 20,
+        "StealthBonus": 150
+      },
+      {
+        "AllBagsBonus": 500,
+        "Completion": 25,
+        "StealthBonus": 250
+      },
+      {
+        "AllBagsBonus": 650,
+        "Completion": 35,
+        "StealthBonus": 350
+      }
+    ],
+    "InstantLootValues": {
+      "LoudMaxPayoutArray": [
+        50000,
+        60000,
+        80000,
+        110000
+      ],
+      "NameToPointMap": [
+        {
+          "BP_Breakable_ATM_01": 30,
+          "BP_InstantLoot_BoxJewelry_01_Necklaces_D": 3,
+          "BP_InstantLoot_BoxJewelry_01_Necklaces_E": 3,
+          "BP_InstantLoot_BoxJewelry_01_Necklaces_F": 3,
+          "BP_InstantLoot_BoxJewelry_01_Necklaces_G": 3,
+          "BP_InstantLoot_BoxJewelry_01_Necklaces_H": 3,
+          "BP_InstantLoot_BoxJewelry_01_Necklaces_I": 3,
+          "BP_InstantLoot_BoxJewelry_01_Rings_D": 4,
+          "BP_InstantLoot_BoxJewelry_01_Rings_E": 4,
+          "BP_InstantLoot_BoxJewelry_01_Rings_F": 4,
+          "BP_InstantLoot_BraceletBox": 2,
+          "BP_InstantLoot_Diamond_01_A": 8,
+          "BP_InstantLoot_Diamond_01_B": 8,
+          "BP_InstantLoot_Diamond_01_C": 8,
+          "BP_InstantLoot_Money_01": 1,
+          "BP_InstantLoot_Money_02": 1,
+          "BP_InstantLoot_Money_03": 1,
+          "BP_InstantLoot_Money_04": 1,
+          "BP_InstantLoot_NecklaceBust": 2
+        }
+      ],
+      "StealthMaxPayoutArray": [
+        50000,
+        60000,
+        80000,
+        110000
+      ],
+      "TotalPoints": 803
+    },
+    "ItemIdRewardMap": [
+      {
+        "1-chus-preplanning-asset": 0.09,
+        "1-station-preplanning-asset": 0.09,
+        "2-chus-preplanning-asset": 0.08,
+        "2-station-preplanning-asset": 0.09,
+        "3-chus-preplanning-asset": 0.08,
+        "3-station-preplanning-asset": 0.08,
+        "4-chus-preplanning-asset": 0.08,
+        "4-station-preplanning-asset": 0.08,
+        "chopper-jewelry-store-preplanning-asset": 0.09,
+        "employee-backdoor-jewelry-store-preplanning-asset": 0.08,
+        "escape-van-jewelry-store-preplanning-asset": 0.08,
+        "manager-cake-jewelry-store-preplanning-asset": 0.08
+      }
+    ],
+    "LoudBaseExperience": 400,
+    "LoudBaseInfamyPointsOnFail": 150,
+    "LoudInfamyPointsOnSurvivingFinalAssultDifficultyArray": [
+      150,
+      150,
+      250,
+      350
+    ],
+    "LoudInfamyPointsOnSurvivingOneAssultDifficultyArray": [
+      150,
+      150,
+      250,
+      350
+    ],
+    "LoudLevelCompletedStatistics": {
+      "Hard": {
+        "PlayerStatisticEntryArray": [
+          "didi-loud-hard"
+        ]
+      },
+      "Normal": {
+        "PlayerStatisticEntryArray": [
+          "didi-loud-normal"
+        ]
+      },
+      "Overkill": {
+        "PlayerStatisticEntryArray": [
+          "didi-loud-overkill"
+        ]
+      },
+      "VeryHard": {
+        "PlayerStatisticEntryArray": [
+          "didi-loud-veryhard"
+        ]
+      }
+    },
+    "LoudLootValuesArray": [
+      {
+        "LootName": "DA_JewelryBagType_HighValue",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 11,
+            "LootValue": 12000,
+            "MaxInfamyPointsForLootType": 154,
+            "MaxValueForLootType": 168000
+          },
+          {
+            "InfamyPointValue": 14.67,
+            "LootValue": 14400,
+            "MaxInfamyPointsForLootType": 205.33,
+            "MaxValueForLootType": 201600
+          },
+          {
+            "InfamyPointValue": 18.33,
+            "LootValue": 18000,
+            "MaxInfamyPointsForLootType": 256.67,
+            "MaxValueForLootType": 252000
+          },
+          {
+            "InfamyPointValue": 25.67,
+            "LootValue": 20400,
+            "MaxInfamyPointsForLootType": 359.33,
+            "MaxValueForLootType": 285600
+          }
+        ]
+      },
+      {
+        "LootName": "DA_JewelryLowCleanBagType",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 18,
+            "LootValue": 30000,
+            "MaxInfamyPointsForLootType": 54,
+            "MaxValueForLootType": 90000
+          },
+          {
+            "InfamyPointValue": 24,
+            "LootValue": 36000,
+            "MaxInfamyPointsForLootType": 72,
+            "MaxValueForLootType": 108000
+          },
+          {
+            "InfamyPointValue": 30,
+            "LootValue": 45000,
+            "MaxInfamyPointsForLootType": 90,
+            "MaxValueForLootType": 135000
+          },
+          {
+            "InfamyPointValue": 42,
+            "LootValue": 51000,
+            "MaxInfamyPointsForLootType": 126,
+            "MaxValueForLootType": 153000
+          }
+        ]
+      },
+      {
+        "LootName": "DA_JewelryHighCleanBagType",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 22,
+            "LootValue": 30000,
+            "MaxInfamyPointsForLootType": 242,
+            "MaxValueForLootType": 330000
+          },
+          {
+            "InfamyPointValue": 29.33,
+            "LootValue": 36000,
+            "MaxInfamyPointsForLootType": 322.67,
+            "MaxValueForLootType": 396000
+          },
+          {
+            "InfamyPointValue": 36.67,
+            "LootValue": 45000,
+            "MaxInfamyPointsForLootType": 403.33,
+            "MaxValueForLootType": 495000
+          },
+          {
+            "InfamyPointValue": 51.33,
+            "LootValue": 51000,
+            "MaxInfamyPointsForLootType": 564.67,
+            "MaxValueForLootType": 561000
+          }
+        ]
+      },
+      {
+        "LootName": "DA_DIM_RareStone",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 22,
+            "LootValue": 40000,
+            "MaxInfamyPointsForLootType": 22,
+            "MaxValueForLootType": 40000
+          },
+          {
+            "InfamyPointValue": 29.33,
+            "LootValue": 48000,
+            "MaxInfamyPointsForLootType": 29.33,
+            "MaxValueForLootType": 48000
+          },
+          {
+            "InfamyPointValue": 36.67,
+            "LootValue": 60000,
+            "MaxInfamyPointsForLootType": 36.67,
+            "MaxValueForLootType": 60000
+          },
+          {
+            "InfamyPointValue": 51.33,
+            "LootValue": 68000,
+            "MaxInfamyPointsForLootType": 51.33,
+            "MaxValueForLootType": 68000
+          }
+        ]
+      },
+      {
+        "LootName": "BP_InstantLoot_NecklaceBust",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 0,
+            "LootValue": 150,
+            "MaxInfamyPointsForLootType": 0,
+            "MaxValueForLootType": 6900
+          },
+          {
+            "InfamyPointValue": 0,
+            "LootValue": 180,
+            "MaxInfamyPointsForLootType": 0,
+            "MaxValueForLootType": 8280
+          },
+          {
+            "InfamyPointValue": 0,
+            "LootValue": 225,
+            "MaxInfamyPointsForLootType": 0,
+            "MaxValueForLootType": 10350
+          },
+          {
+            "InfamyPointValue": 0,
+            "LootValue": 255,
+            "MaxInfamyPointsForLootType": 0,
+            "MaxValueForLootType": 11730
+          }
+        ]
+      },
+      {
+        "LootName": "BP_InstantLoot_BraceletBox",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 0,
+            "LootValue": 200,
+            "MaxInfamyPointsForLootType": 0,
+            "MaxValueForLootType": 7400
+          },
+          {
+            "InfamyPointValue": 0,
+            "LootValue": 240,
+            "MaxInfamyPointsForLootType": 0,
+            "MaxValueForLootType": 8880
+          },
+          {
+            "InfamyPointValue": 0,
+            "LootValue": 300,
+            "MaxInfamyPointsForLootType": 0,
+            "MaxValueForLootType": 11100
+          },
+          {
+            "InfamyPointValue": 0,
+            "LootValue": 340,
+            "MaxInfamyPointsForLootType": 0,
+            "MaxValueForLootType": 12580
+          }
+        ]
+      },
+      {
+        "LootName": "BP_InstantLoot_Diamond",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 0,
+            "LootValue": 100,
+            "MaxInfamyPointsForLootType": 0,
+            "MaxValueForLootType": 1100
+          },
+          {
+            "InfamyPointValue": 0,
+            "LootValue": 200,
+            "MaxInfamyPointsForLootType": 0,
+            "MaxValueForLootType": 2200
+          },
+          {
+            "InfamyPointValue": 0,
+            "LootValue": 300,
+            "MaxInfamyPointsForLootType": 0,
+            "MaxValueForLootType": 3300
+          },
+          {
+            "InfamyPointValue": 0,
+            "LootValue": 400,
+            "MaxInfamyPointsForLootType": 0,
+            "MaxValueForLootType": 4400
+          }
+        ]
+      }
+    ],
+    "LoudMilestoneToExperienceRewardMap": [
+      {
+        "Loud Completion": 0.3,
+        "Loud Milestone 1": 0.05,
+        "Loud Milestone 2": 0.1,
+        "Loud Milestone 3": 0.15,
+        "Loud Milestone 4": 0.2,
+        "Loud Milestone 5": 0.2
+      }
+    ],
+    "LoudMilestoneToInfamyPointsOnFailRewardMap": [
+      {
+        "Loud Completion": 0.01,
+        "Loud Milestone 1": 0.02,
+        "Loud Milestone 2": 0.03,
+        "Loud Milestone 3": 0.04,
+        "Loud Milestone 4": 0.05,
+        "Loud Milestone 5": 0.06
+      }
+    ],
+    "ObjectivesToExperienceRewardMap": [
+      {
+        "secure_all_loot": 1.2
+      }
+    ],
+    "PerformanceBonusMap": {
+      "BeenKilledCount": {
+        "PerformanceBonusEntryArray": [
+          {
+            "Max": 0,
+            "Min": 0,
+            "Modifier": 1.15
+          }
+        ]
+      }
+    },
+    "StealthBaseExperience": 500,
+    "StealthBaseInfamyPointsOnFail": 150,
+    "StealthLevelCompletedStatistics": {
+      "Hard": {
+        "PlayerStatisticEntryArray": [
+          "didi-stealth-hard"
+        ]
+      },
+      "Normal": {
+        "PlayerStatisticEntryArray": [
+          "didi-stealth-normal"
+        ]
+      },
+      "Overkill": {
+        "PlayerStatisticEntryArray": [
+          "didi-stealth-overkill"
+        ]
+      },
+      "VeryHard": {
+        "PlayerStatisticEntryArray": [
+          "didi-stealth-veryhard"
+        ]
+      }
+    },
+    "StealthLootValuesArray": [
+      {
+        "LootName": "DA_JewelryBagType_HighValue",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 11,
+            "LootValue": 12000,
+            "MaxInfamyPointsForLootType": 154,
+            "MaxValueForLootType": 168000
+          },
+          {
+            "InfamyPointValue": 14.67,
+            "LootValue": 14400,
+            "MaxInfamyPointsForLootType": 205.33,
+            "MaxValueForLootType": 201600
+          },
+          {
+            "InfamyPointValue": 18.33,
+            "LootValue": 18000,
+            "MaxInfamyPointsForLootType": 256.67,
+            "MaxValueForLootType": 252000
+          },
+          {
+            "InfamyPointValue": 25.67,
+            "LootValue": 20400,
+            "MaxInfamyPointsForLootType": 359.33,
+            "MaxValueForLootType": 285600
+          }
+        ]
+      },
+      {
+        "LootName": "DA_JewelryLowCleanBagType",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 18,
+            "LootValue": 30000,
+            "MaxInfamyPointsForLootType": 54,
+            "MaxValueForLootType": 90000
+          },
+          {
+            "InfamyPointValue": 24,
+            "LootValue": 36000,
+            "MaxInfamyPointsForLootType": 72,
+            "MaxValueForLootType": 108000
+          },
+          {
+            "InfamyPointValue": 30,
+            "LootValue": 45000,
+            "MaxInfamyPointsForLootType": 90,
+            "MaxValueForLootType": 135000
+          },
+          {
+            "InfamyPointValue": 42,
+            "LootValue": 51000,
+            "MaxInfamyPointsForLootType": 126,
+            "MaxValueForLootType": 153000
+          }
+        ]
+      },
+      {
+        "LootName": "DA_JewelryHighCleanBagType",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 22,
+            "LootValue": 30000,
+            "MaxInfamyPointsForLootType": 242,
+            "MaxValueForLootType": 330000
+          },
+          {
+            "InfamyPointValue": 29.33,
+            "LootValue": 36000,
+            "MaxInfamyPointsForLootType": 322.67,
+            "MaxValueForLootType": 396000
+          },
+          {
+            "InfamyPointValue": 36.67,
+            "LootValue": 45000,
+            "MaxInfamyPointsForLootType": 403.33,
+            "MaxValueForLootType": 495000
+          },
+          {
+            "InfamyPointValue": 51.33,
+            "LootValue": 51000,
+            "MaxInfamyPointsForLootType": 564.67,
+            "MaxValueForLootType": 561000
+          }
+        ]
+      },
+      {
+        "LootName": "DA_DIM_RareStone",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 22,
+            "LootValue": 40000,
+            "MaxInfamyPointsForLootType": 22,
+            "MaxValueForLootType": 40000
+          },
+          {
+            "InfamyPointValue": 29.33,
+            "LootValue": 48000,
+            "MaxInfamyPointsForLootType": 29.33,
+            "MaxValueForLootType": 48000
+          },
+          {
+            "InfamyPointValue": 36.67,
+            "LootValue": 60000,
+            "MaxInfamyPointsForLootType": 36.67,
+            "MaxValueForLootType": 60000
+          },
+          {
+            "InfamyPointValue": 51.33,
+            "LootValue": 68000,
+            "MaxInfamyPointsForLootType": 51.33,
+            "MaxValueForLootType": 68000
+          }
+        ]
+      }
+    ],
+    "StealthMilestoneToExperienceRewardMap": [
+      {
+        "Stealth Completion": 0.5,
+        "Stealth Milestone 1": 0.15,
+        "Stealth Milestone 2": 0.35
+      }
+    ],
+    "StealthMilestoneToInfamyPointsOnFailRewardMap": [
+      {
+        "Stealth Completion": 0.01,
+        "Stealth Milestone 1": 0.05,
+        "Stealth Milestone 2": 0.15
+      }
+    ]
+  }
+}

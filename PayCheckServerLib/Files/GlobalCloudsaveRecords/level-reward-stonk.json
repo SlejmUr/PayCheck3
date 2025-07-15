@@ -1,0 +1,225 @@
+{
+  "Level-Reward-Setup": {
+    "DifficultyExperienceModifierArray": [
+      1,
+      1.2,
+      1.5,
+      1.7
+    ],
+    "DifficultyInfamyPointsOnFailModifierArray": [
+      1,
+      1.2,
+      1.5,
+      1.7
+    ],
+    "InfamyPointPayoutArray": [
+      {
+        "AllBagsBonus": 0,
+        "Completion": 15,
+        "StealthBonus": 200
+      },
+      {
+        "AllBagsBonus": 0,
+        "Completion": 20,
+        "StealthBonus": 250
+      },
+      {
+        "AllBagsBonus": 0,
+        "Completion": 25,
+        "StealthBonus": 400
+      },
+      {
+        "AllBagsBonus": 0,
+        "Completion": 35,
+        "StealthBonus": 600
+      }
+    ],
+    "InstantLootValues": {
+      "LoudMaxPayoutArray": [
+        50000,
+        75000,
+        100000,
+        125000
+      ],
+      "NameToPointMap": [
+        {
+          "BP_InstantLoot_Money": 1,
+          "BP_STO_InstantLoot_HockeyStatue": 44
+        }
+      ],
+      "StealthMaxPayoutArray": [
+        50000,
+        75000,
+        100000,
+        125000
+      ],
+      "TotalPoints": 55
+    },
+    "ItemIdRewardMap": [
+      {
+        "additional-keycard-art-gallery-preplanning-asset": 0.09,
+        "additional-keycard-night-club-preplanning-asset": 0.09,
+        "bitcoin-wallet-night-club-preplanning-asset": 0.08,
+        "cleaning-platform-penthouse-preplanning-asset": 0.09,
+        "helicopter-art-gallery-preplanning-asset": 0.08,
+        "hidden-thermite-penthouse-preplanning-asset": 0.08,
+        "main-entrance-art-gallery-preplanning-asset": 0.08,
+        "poison-penthouse-preplanning-asset": 0.08,
+        "secure-point-art-gallery-preplanning-asset": 0.09,
+        "secure-point-night-club-preplanning-asset": 0.08,
+        "secure-point-penthouse-preplanning-asset": 0.08,
+        "vault-code-night-club-preplanning-asset": 0.08
+      }
+    ],
+    "LoudBaseExperience": 600,
+    "LoudBaseInfamyPointsOnFail": 150,
+    "LoudInfamyPointsOnSurvivingFinalAssultDifficultyArray": [
+      200,
+      250,
+      400,
+      600
+    ],
+    "LoudInfamyPointsOnSurvivingOneAssultDifficultyArray": [
+      200,
+      250,
+      400,
+      600
+    ],
+    "LoudLevelCompletedStatistics": {
+      "Hard": {
+        "PlayerStatisticEntryArray": [
+          "stonk-loud-hard"
+        ]
+      },
+      "Normal": {
+        "PlayerStatisticEntryArray": [
+          "stonk-loud-normal"
+        ]
+      },
+      "Overkill": {
+        "PlayerStatisticEntryArray": [
+          "stonk-loud-overkill"
+        ]
+      },
+      "VeryHard": {
+        "PlayerStatisticEntryArray": [
+          "stonk-loud-veryhard"
+        ]
+      }
+    },
+    "LoudLootValuesArray": [],
+    "LoudMilestoneToExperienceRewardMap": [
+      {
+        "Loud Completion": 0.2,
+        "Loud Milestone 1": 0.05,
+        "Loud Milestone 2": 0.1,
+        "Loud Milestone 3": 0.1,
+        "Loud Milestone 4": 0.1,
+        "Loud Milestone 5": 0.15,
+        "Loud Milestone 6": 0.15,
+        "Loud Milestone 7": 0.15
+      }
+    ],
+    "LoudMilestoneToInfamyPointsOnFailRewardMap": [
+      {
+        "Loud Completion": 0.01,
+        "Loud Milestone 1": 0.01,
+        "Loud Milestone 2": 0.02,
+        "Loud Milestone 3": 0.02,
+        "Loud Milestone 4": 0.03,
+        "Loud Milestone 5": 0.03,
+        "Loud Milestone 6": 0.04,
+        "Loud Milestone 7": 0.05
+      }
+    ],
+    "ObjectivesToExperienceRewardMap": [
+      {
+        "secure_all_loot": 1.2
+      }
+    ],
+    "PerformanceBonusMap": {
+      "BeenKilledCount": {
+        "PerformanceBonusEntryArray": [
+          {
+            "Max": 0,
+            "Min": 0,
+            "Modifier": 1.15
+          }
+        ]
+      }
+    },
+    "StealthBaseExperience": 550,
+    "StealthBaseInfamyPointsOnFail": 150,
+    "StealthLevelCompletedStatistics": {
+      "Hard": {
+        "PlayerStatisticEntryArray": [
+          "stonk-stealth-hard"
+        ]
+      },
+      "Normal": {
+        "PlayerStatisticEntryArray": [
+          "stonk-stealth-normal"
+        ]
+      },
+      "Overkill": {
+        "PlayerStatisticEntryArray": [
+          "stonk-stealth-overkill"
+        ]
+      },
+      "VeryHard": {
+        "PlayerStatisticEntryArray": [
+          "stonk-stealth-veryhard"
+        ]
+      }
+    },
+    "StealthLootValuesArray": [],
+    "StealthMilestoneToExperienceRewardMap": [
+      {
+        "Stealth Completion": 0.2,
+        "Stealth Milestone 1": 0.05,
+        "Stealth Milestone 2": 0.1,
+        "Stealth Milestone 3": 0.15,
+        "Stealth Milestone 4": 0.15,
+        "Stealth Milestone 5": 0.15,
+        "Stealth Milestone 6": 0.2
+      }
+    ],
+    "StealthMilestoneToInfamyPointsOnFailRewardMap": [
+      {
+        "Stealth Completion": 0.01,
+        "Stealth Milestone 1": 0.01,
+        "Stealth Milestone 2": 0.02,
+        "Stealth Milestone 3": 0.03,
+        "Stealth Milestone 4": 0.04,
+        "Stealth Milestone 5": 0.05,
+        "Stealth Milestone 6": 0.05
+      }
+    ],
+    "TickingLootValues": {
+      "LoudMaxInfamyArray": [
+        500,
+        600,
+        750,
+        900
+      ],
+      "LoudMaxPayoutArray": [
+        750000,
+        850000,
+        1000000,
+        1200000
+      ],
+      "StealthMaxInfamyArray": [
+        500,
+        600,
+        750,
+        900
+      ],
+      "StealthMaxPayoutArray": [
+        750000,
+        850000,
+        1000000,
+        1200000
+      ]
+    }
+  }
+}

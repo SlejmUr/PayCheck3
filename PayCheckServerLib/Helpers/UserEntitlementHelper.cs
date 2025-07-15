@@ -9,6 +9,7 @@ using System.Dynamic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace PayCheckServerLib.Helpers
 {
@@ -34,20 +35,20 @@ namespace PayCheckServerLib.Helpers
 			if (ItemDefinitions.Count != 0)
 				return; // already loaded
 
-			var loadedData = CloudSaveDataHelper.GetStaticData<DataPaging<ItemDefinitionJson>>("Items.json");
+			var loadedData = CloudSaveDataHelper.GetStaticData<List<ItemDefinitionJson>>("Items.json");
 
 			if (loadedData != null)
-				ItemDefinitions = loadedData.Data;
+				ItemDefinitions = loadedData;
 		}
 		private static void TryLoadRewards()
 		{
 			if (Rewards.Count != 0)
 				return;
 
-			var loadedData = CloudSaveDataHelper.GetStaticData<DataPaging<RewardItem>>("Rewards.json");
+			var loadedData = CloudSaveDataHelper.GetStaticData<List<RewardItem>>("Rewards.json");
 			
 			if (loadedData != null)
-				Rewards = loadedData.Data;
+				Rewards = loadedData;
 		}
 		#endregion
 
@@ -58,8 +59,19 @@ namespace PayCheckServerLib.Helpers
 		}
 
 		#region Raw Entitlement Data Access
-		public static List<EntitlementsData> GetEntitlementDataForUser(string userId)
+		private static int EntitlementAccessLocked { get; set; }
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="userId"></param>
+		/// <param name="lockAccess">Enter a locked state where other parts of the program must wait for you to finished what you are doing before getting entitlement info. A locked state is ended when SetEntitlementDataForUser is called.</param>
+		/// <returns></returns>
+		public static List<EntitlementsData> GetEntitlementDataForUser(string userId, bool lockAccess)
 		{
+			while (EntitlementAccessLocked > 0) { }
+			if(lockAccess)
+				EntitlementAccessLocked++;
+
 			if(!UserIdHelper.IsValidUserId(userId))
 			{
 				return new();
@@ -87,10 +99,95 @@ namespace PayCheckServerLib.Helpers
 
 			
 			FileReadWriteHelper.WriteAllText(path, JsonConvert.SerializeObject(data, Formatting.Indented));
+			if (EntitlementAccessLocked > 0)
+				EntitlementAccessLocked--;
 		}
 		#endregion
 
 		#region Granting Entitlements
+
+		private static List<EntitlementsData> AddItemToReferencedEntitlementListByItemDefinition(string userId, ref List<EntitlementsData> entitlements, ItemDefinitionJson itemDefinition, int quantity, string source)
+		{
+			TryLoadItemDefinitions();
+			var itemInUserEntitlements = entitlements.FindIndex(entitlement => entitlement.ItemId == itemDefinition.ItemId);
+			if (itemInUserEntitlements != -1)
+			{
+				entitlements[itemInUserEntitlements].UseCount += quantity;
+				return [entitlements[itemInUserEntitlements]];
+			}
+
+			List<EntitlementsData> addedItems = new List<EntitlementsData>();
+			if (itemDefinition.ItemType == "BUNDLE")
+			{
+				Dictionary<string, int> bundleContents = new Dictionary<string, int>();
+				foreach(var itemId in itemDefinition.ItemIds)
+				{
+					bundleContents.TryAdd(itemId, 0);
+				}
+				foreach(var itemQuantity in itemDefinition.ItemQty)
+				{
+					bundleContents[itemQuantity.Key] = itemQuantity.Value;
+				}
+
+				foreach(var bundleItem in bundleContents)
+				{
+					var bundleItemDefinition = ItemDefinitions.Find(itemData => itemData.ItemId == bundleItem.Key);
+
+					if(bundleItemDefinition != null)
+					{
+						addedItems = addedItems.Concat(AddItemToReferencedEntitlementListByItemDefinition(userId, ref entitlements, bundleItemDefinition, bundleItem.Value, source)).ToList();
+					}
+				}
+			}
+			else
+			{
+				var entitlement = new EntitlementsData()
+				{
+					Id = itemDefinition.ItemId,
+					Namespace = itemDefinition.Namespace,
+					Clazz = "ENTITLEMENT",
+					Type = itemDefinition.EntitlementType,
+					Status = "ACTIVE",
+					Sku = itemDefinition.Sku,
+					UserId = userId,
+					ItemId = itemDefinition.ItemId,
+					ItemNamespace = itemDefinition.Namespace,
+					Name = itemDefinition.Name,
+					Source = source,
+					GrantedAt = TimeHelper.GetZTime(),
+					CreatedAt = TimeHelper.GetZTime(),
+					UpdatedAt = TimeHelper.GetZTime(),
+					UseCount = quantity,
+					Stackable = true
+				};
+				entitlements.Add(entitlement);
+				addedItems.Add(entitlement);
+			}
+			return addedItems;
+		}
+		private static List<EntitlementsData> AddItemToReferencedEntitlementListByItemId(string userId, ref List<EntitlementsData> entitlements, string itemId, int quantity, string source)
+		{
+			TryLoadItemDefinitions();
+
+			var item = ItemDefinitions.Find(item => item.ItemId == itemId);
+
+			if (item == null)
+				return [];
+
+			return AddItemToReferencedEntitlementListByItemDefinition(userId, ref entitlements, item, quantity, source);
+		}
+		private static List<EntitlementsData> AddItemToReferencedEntitlementListBySKU(string userId, ref List<EntitlementsData> entitlements, string sku, int quantity, string source)
+		{
+			TryLoadItemDefinitions();
+
+			var item = ItemDefinitions.Find(item => item.Sku == sku);
+
+			if (item == null)
+				return [];
+
+			return AddItemToReferencedEntitlementListByItemDefinition(userId, ref entitlements, item, quantity, source);
+		}
+
 		/// <summary>
 		/// Adds items with the provided Item IDs and quantities to the user
 		/// </summary>
@@ -108,65 +205,21 @@ namespace PayCheckServerLib.Helpers
 				return;
 			}
 
-
-			var userEntitlements = GetEntitlementDataForUser(userId);
+			var userEntitlements = GetEntitlementDataForUser(userId, true);
 
 			foreach (var item in items)
 			{
 				var itemId = item.Key;
 				var quantity = item.Value;
 
-				var itemInUserEntitlements = userEntitlements.FindIndex(entitlement => entitlement.ItemId == itemId);
-				if (itemInUserEntitlements != -1)
-				{
-					userEntitlements[itemInUserEntitlements].UseCount += quantity;
-					addedEntitlements.Add(userEntitlements[itemInUserEntitlements]);
-					continue;
-				}
-
-				var itemData = ItemDefinitions.Find(item => item.ItemId == itemId);
-
-				if (itemData == null)
-					continue;
-
-				var entitlement = new EntitlementsData()
-				{
-					Id = itemData.ItemId,
-					Namespace = namespace_,
-					Clazz = "ENTITLEMENT",
-					Type = itemData.EntitlementType,
-					Status = "ACTIVE",
-					Sku = itemData.Sku,
-					UserId = userId,
-					ItemId = itemData.ItemId,
-					ItemNamespace = namespace_,
-					Name = itemData.Name,
-					Source = source,
-					GrantedAt = TimeHelper.GetZTime(),
-					CreatedAt = TimeHelper.GetZTime(),
-					UpdatedAt = TimeHelper.GetZTime(),
-					UseCount = quantity,
-					Stackable = true
-				};
-				userEntitlements.Add(entitlement);
-				addedEntitlements.Add(entitlement);
+				var entitlement = AddItemToReferencedEntitlementListByItemId(userId, ref userEntitlements, itemId, quantity, source);
+				addedEntitlements = addedEntitlements.Concat(entitlement).ToList();
 			}
 			SetEntitlementDataForUser(userId, userEntitlements);
 		}
-		public static void AddEntitlementToUserViaItemId(string userId, string namespace_, string itemId, int quantity, out EntitlementsData? addedEntitlement, string source = "PURCHASE")
+		public static void AddEntitlementToUserViaItemId(string userId, string namespace_, string itemId, int quantity, out List<EntitlementsData> addedEntitlement, string source = "PURCHASE")
 		{
-			List<EntitlementsData>? addedEntitlements = null;
-			AddBulkEntitlementToUserViaItemId(userId, namespace_, [new(itemId, quantity)], out addedEntitlements, source);
-
-			if (addedEntitlements.Count > 0)
-			{
-				addedEntitlement = addedEntitlements[0];
-			}
-			else
-			{
-				addedEntitlement = null;
-			}
-			return;
+			AddBulkEntitlementToUserViaItemId(userId, namespace_, [new(itemId, quantity)], out addedEntitlement, source);
 		}
 		/// <summary>
 		/// Adds items with the provided SKUs and quantities to the user
@@ -185,86 +238,21 @@ namespace PayCheckServerLib.Helpers
 				return;
 			}
 
-			var userEntitlements = GetEntitlementDataForUser(userId);
+			var userEntitlements = GetEntitlementDataForUser(userId, true);
 
 			foreach(var item in items)
 			{
 				var sku = item.Key;
 				var quantity = item.Value;
 
-				var itemInUserEntitlements = userEntitlements.FindIndex(entitlement => entitlement.Sku == sku);
-				if (itemInUserEntitlements != -1)
-				{
-					userEntitlements[itemInUserEntitlements].UseCount += quantity;
-					addedEntitlements.Add(userEntitlements[itemInUserEntitlements]);
-					continue;
-				}
-
-				var itemData = ItemDefinitions.Find(item => item.Sku == sku);
-				if (itemData == null)
-				{
-					var entitlement = new EntitlementsData()
-					{
-						Id = UserIdHelper.CreateNewID(), // uuidv4
-						Namespace = namespace_,
-						Clazz = "ENTITLEMENT",
-						Type = "CONSUMABLE",
-						Status = "ACTIVE",
-						Sku = sku,
-						UserId = userId,
-						ItemId = UserIdHelper.CreateNewID(),
-						ItemNamespace = namespace_,
-						Name = sku,
-						Source = source,
-						GrantedAt = TimeHelper.GetZTime(),
-						CreatedAt = TimeHelper.GetZTime(),
-						UpdatedAt = TimeHelper.GetZTime(),
-						UseCount = quantity,
-						Stackable = true
-					};
-					userEntitlements.Add(entitlement);
-					addedEntitlements.Add(entitlement);
-				} else
-				{
-
-					var entitlement = new EntitlementsData()
-					{
-						Id = UserIdHelper.CreateNewID(), // uuidv4
-						Namespace = namespace_,
-						Clazz = "ENTITLEMENT",
-						Type = itemData.EntitlementType,
-						Status = "ACTIVE",
-						Sku = sku,
-						UserId = userId,
-						ItemId = itemData.ItemId,
-						ItemNamespace = namespace_,
-						Name = sku,
-						Source = source,
-						GrantedAt = TimeHelper.GetZTime(),
-						CreatedAt = TimeHelper.GetZTime(),
-						UpdatedAt = TimeHelper.GetZTime(),
-						UseCount = quantity,
-						Stackable = true
-					};
-					userEntitlements.Add(entitlement);
-					addedEntitlements.Add(entitlement);
-				}
+				var entitlement = AddItemToReferencedEntitlementListBySKU(userId, ref userEntitlements, sku, quantity, source);
+				addedEntitlements = addedEntitlements.Concat(entitlement).ToList();
 			}
 			SetEntitlementDataForUser(userId, userEntitlements);
 		}
-		public static void AddEntitlementToUserViaSKU(string userId, string namespace_, string sku, int quantity, out EntitlementsData? addedEntitlement, string source = "PURCHASE")
+		public static void AddEntitlementToUserViaSKU(string userId, string namespace_, string sku, int quantity, out List<EntitlementsData> addedEntitlement, string source = "PURCHASE")
 		{
-			List<EntitlementsData>? addedEntitlements = null;
-			AddBulkEntitlementToUserViaSKU(userId, namespace_, [new(sku, quantity)], out addedEntitlements, source);
-
-			if (addedEntitlements.Count > 0)
-			{
-				addedEntitlement = addedEntitlements[0];
-			} else
-			{
-				addedEntitlement = null;
-			}
-			return;
+			AddBulkEntitlementToUserViaSKU(userId, namespace_, [new(sku, quantity)], out addedEntitlement, source);
 		}
 		#endregion
 

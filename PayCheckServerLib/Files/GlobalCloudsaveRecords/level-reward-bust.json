@@ -1,0 +1,481 @@
+{
+  "Level-Reward-Setup": {
+    "DifficultyExperienceModifierArray": [
+      1,
+      1.2,
+      1.5,
+      1.7
+    ],
+    "DifficultyInfamyPointsOnFailModifierArray": [
+      1,
+      1.2,
+      1.5,
+      1.7
+    ],
+    "InfamyPointPayoutArray": [
+      {
+        "AllBagsBonus": 200,
+        "Completion": 100,
+        "StealthBonus": 100
+      },
+      {
+        "AllBagsBonus": 300,
+        "Completion": 200,
+        "StealthBonus": 150
+      },
+      {
+        "AllBagsBonus": 550,
+        "Completion": 250,
+        "StealthBonus": 200
+      },
+      {
+        "AllBagsBonus": 750,
+        "Completion": 300,
+        "StealthBonus": 250
+      }
+    ],
+    "InstantLootValues": {
+      "LoudMaxPayoutArray": [
+        15600,
+        18720,
+        23400,
+        26520
+      ],
+      "NameToPointMap": [
+        {
+          "BP_InstantLoot_Cocaine_01": 5,
+          "BP_InstantLoot_Cocaine_02": 4,
+          "BP_InstantLoot_Money_02": 2,
+          "BP_InstantLoot_Money_03": 1
+        }
+      ],
+      "StealthMaxPayoutArray": [
+        15600,
+        18720,
+        23400,
+        26520
+      ],
+      "TotalPoints": 156
+    },
+    "ItemIdRewardMap": [
+      {
+        "1-fort-preplanning-asset": 0.07,
+        "1-villa-preplanning-asset": 0.07,
+        "2-fort-preplanning-asset": 0.06,
+        "2-villa-preplanning-asset": 0.06,
+        "3-fort-preplanning-asset": 0.06,
+        "3-villa-preplanning-asset": 0.06,
+        "4-fort-preplanning-asset": 0.06,
+        "4-villa-preplanning-asset": 0.06,
+        "bag-degradation-cargo-dock-preplanning-asset": 0.07,
+        "garbage-chute-armored-transport-preplanning-asset": 0.07,
+        "more-explosives-cargo-dock-preplanning-asset": 0.06,
+        "more-planks-armored-transport-preplanning-asset": 0.06,
+        "potential-containers-cargo-dock-preplanning-asset": 0.06,
+        "rc-signal-armored-transport-preplanning-asset": 0.06,
+        "sniper-tower-armored-transport-preplanning-asset": 0.06,
+        "thermite-drop-cargo-dock-preplanning-asset": 0.06
+      }
+    ],
+    "LoudBaseExperience": 300,
+    "LoudBaseInfamyPointsOnFail": 300,
+    "LoudInfamyPointsOnSurvivingFinalAssultDifficultyArray": [
+      100,
+      150,
+      200,
+      250
+    ],
+    "LoudInfamyPointsOnSurvivingOneAssultDifficultyArray": [
+      100,
+      150,
+      200,
+      250
+    ],
+    "LoudLevelCompletedStatistics": {
+      "Hard": {
+        "PlayerStatisticEntryArray": [
+          "bust-loud-hard"
+        ]
+      },
+      "Normal": {
+        "PlayerStatisticEntryArray": [
+          "bust-loud-normal"
+        ]
+      },
+      "Overkill": {
+        "PlayerStatisticEntryArray": [
+          "bust-loud-overkill"
+        ]
+      },
+      "VeryHard": {
+        "PlayerStatisticEntryArray": [
+          "bust-loud-veryhard"
+        ]
+      }
+    },
+    "LoudLootValuesArray": [
+      {
+        "LootName": "DA_CocaineBagType",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 10,
+            "LootValue": 42500,
+            "MaxInfamyPointsForLootType": 130,
+            "MaxValueForLootType": 552500
+          },
+          {
+            "InfamyPointValue": 20,
+            "LootValue": 51000,
+            "MaxInfamyPointsForLootType": 260,
+            "MaxValueForLootType": 663000
+          },
+          {
+            "InfamyPointValue": 30,
+            "LootValue": 63750,
+            "MaxInfamyPointsForLootType": 390,
+            "MaxValueForLootType": 828750
+          },
+          {
+            "InfamyPointValue": 40,
+            "LootValue": 72250,
+            "MaxInfamyPointsForLootType": 520,
+            "MaxValueForLootType": 939250
+          }
+        ]
+      },
+      {
+        "LootName": "DA_MoneyBagType_LowValue",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 5,
+            "LootValue": 30000,
+            "MaxInfamyPointsForLootType": 10,
+            "MaxValueForLootType": 60000
+          },
+          {
+            "InfamyPointValue": 10,
+            "LootValue": 36000,
+            "MaxInfamyPointsForLootType": 20,
+            "MaxValueForLootType": 72000
+          },
+          {
+            "InfamyPointValue": 15,
+            "LootValue": 45000,
+            "MaxInfamyPointsForLootType": 30,
+            "MaxValueForLootType": 90000
+          },
+          {
+            "InfamyPointValue": 20,
+            "LootValue": 51000,
+            "MaxInfamyPointsForLootType": 40,
+            "MaxValueForLootType": 102000
+          }
+        ]
+      },
+      {
+        "LootName": "DA_MethBag",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 10,
+            "LootValue": 42500,
+            "MaxInfamyPointsForLootType": 40,
+            "MaxValueForLootType": 170000
+          },
+          {
+            "InfamyPointValue": 20,
+            "LootValue": 51000,
+            "MaxInfamyPointsForLootType": 80,
+            "MaxValueForLootType": 204000
+          },
+          {
+            "InfamyPointValue": 30,
+            "LootValue": 63750,
+            "MaxInfamyPointsForLootType": 120,
+            "MaxValueForLootType": 255000
+          },
+          {
+            "InfamyPointValue": 40,
+            "LootValue": 72250,
+            "MaxInfamyPointsForLootType": 160,
+            "MaxValueForLootType": 289000
+          }
+        ]
+      },
+      {
+        "LootName": "DA_MethBag_Pure",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 15,
+            "LootValue": 50000,
+            "MaxInfamyPointsForLootType": 60,
+            "MaxValueForLootType": 200000
+          },
+          {
+            "InfamyPointValue": 30,
+            "LootValue": 60000,
+            "MaxInfamyPointsForLootType": 120,
+            "MaxValueForLootType": 240000
+          },
+          {
+            "InfamyPointValue": 60,
+            "LootValue": 75000,
+            "MaxInfamyPointsForLootType": 240,
+            "MaxValueForLootType": 300000
+          },
+          {
+            "InfamyPointValue": 80,
+            "LootValue": 85000,
+            "MaxInfamyPointsForLootType": 320,
+            "MaxValueForLootType": 340000
+          }
+        ]
+      },
+      {
+        "LootName": "DA_MethBag_Burnt",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 5,
+            "LootValue": 7500,
+            "MaxInfamyPointsForLootType": 20,
+            "MaxValueForLootType": 30000
+          },
+          {
+            "InfamyPointValue": 10,
+            "LootValue": 9000,
+            "MaxInfamyPointsForLootType": 40,
+            "MaxValueForLootType": 36000
+          },
+          {
+            "InfamyPointValue": 15,
+            "LootValue": 11250,
+            "MaxInfamyPointsForLootType": 60,
+            "MaxValueForLootType": 45000
+          },
+          {
+            "InfamyPointValue": 20,
+            "LootValue": 12750,
+            "MaxInfamyPointsForLootType": 80,
+            "MaxValueForLootType": 51000
+          }
+        ]
+      }
+    ],
+    "LoudMilestoneToExperienceRewardMap": [
+      {
+        "Loud Completion": 0.4,
+        "Loud Milestone 1": 0.1,
+        "Loud Milestone 2": 0.1,
+        "Loud Milestone 3": 0.2,
+        "Loud Milestone 4": 0.2
+      }
+    ],
+    "LoudMilestoneToInfamyPointsOnFailRewardMap": [
+      {
+        "Loud Milestone 1": 0.01,
+        "Loud Milestone 2": 0.03,
+        "Loud Milestone 3": 0.06,
+        "Loud Milestone 4": 0.1
+      }
+    ],
+    "ObjectivesToExperienceRewardMap": [
+      {
+        "secure_all_loot": 3
+      }
+    ],
+    "PerformanceBonusMap": {
+      "BeenKilledCount": {
+        "PerformanceBonusEntryArray": [
+          {
+            "Max": 0,
+            "Min": 0,
+            "Modifier": 1.15
+          }
+        ]
+      }
+    },
+    "StealthBaseExperience": 300,
+    "StealthBaseInfamyPointsOnFail": 300,
+    "StealthLevelCompletedStatistics": {
+      "Hard": {
+        "PlayerStatisticEntryArray": [
+          "bust-stealth-hard"
+        ]
+      },
+      "Normal": {
+        "PlayerStatisticEntryArray": [
+          "bust-stealth-normal"
+        ]
+      },
+      "Overkill": {
+        "PlayerStatisticEntryArray": [
+          "bust-stealth-overkill"
+        ]
+      },
+      "VeryHard": {
+        "PlayerStatisticEntryArray": [
+          "bust-stealth-veryhard"
+        ]
+      }
+    },
+    "StealthLootValuesArray": [
+      {
+        "LootName": "DA_CocaineBagType",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 10,
+            "LootValue": 42500,
+            "MaxInfamyPointsForLootType": 130,
+            "MaxValueForLootType": 552500
+          },
+          {
+            "InfamyPointValue": 20,
+            "LootValue": 51000,
+            "MaxInfamyPointsForLootType": 260,
+            "MaxValueForLootType": 663000
+          },
+          {
+            "InfamyPointValue": 30,
+            "LootValue": 63750,
+            "MaxInfamyPointsForLootType": 390,
+            "MaxValueForLootType": 828750
+          },
+          {
+            "InfamyPointValue": 40,
+            "LootValue": 72250,
+            "MaxInfamyPointsForLootType": 520,
+            "MaxValueForLootType": 939250
+          }
+        ]
+      },
+      {
+        "LootName": "DA_MoneyBagType_LowValue",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 5,
+            "LootValue": 30000,
+            "MaxInfamyPointsForLootType": 10,
+            "MaxValueForLootType": 60000
+          },
+          {
+            "InfamyPointValue": 10,
+            "LootValue": 36000,
+            "MaxInfamyPointsForLootType": 20,
+            "MaxValueForLootType": 72000
+          },
+          {
+            "InfamyPointValue": 15,
+            "LootValue": 45000,
+            "MaxInfamyPointsForLootType": 30,
+            "MaxValueForLootType": 90000
+          },
+          {
+            "InfamyPointValue": 20,
+            "LootValue": 51000,
+            "MaxInfamyPointsForLootType": 40,
+            "MaxValueForLootType": 102000
+          }
+        ]
+      },
+      {
+        "LootName": "DA_MethBag",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 10,
+            "LootValue": 42500,
+            "MaxInfamyPointsForLootType": 40,
+            "MaxValueForLootType": 170000
+          },
+          {
+            "InfamyPointValue": 20,
+            "LootValue": 51000,
+            "MaxInfamyPointsForLootType": 80,
+            "MaxValueForLootType": 204000
+          },
+          {
+            "InfamyPointValue": 30,
+            "LootValue": 63750,
+            "MaxInfamyPointsForLootType": 120,
+            "MaxValueForLootType": 255000
+          },
+          {
+            "InfamyPointValue": 40,
+            "LootValue": 72250,
+            "MaxInfamyPointsForLootType": 160,
+            "MaxValueForLootType": 289000
+          }
+        ]
+      },
+      {
+        "LootName": "DA_MethBag_Pure",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 15,
+            "LootValue": 50000,
+            "MaxInfamyPointsForLootType": 60,
+            "MaxValueForLootType": 200000
+          },
+          {
+            "InfamyPointValue": 30,
+            "LootValue": 60000,
+            "MaxInfamyPointsForLootType": 120,
+            "MaxValueForLootType": 240000
+          },
+          {
+            "InfamyPointValue": 60,
+            "LootValue": 75000,
+            "MaxInfamyPointsForLootType": 240,
+            "MaxValueForLootType": 300000
+          },
+          {
+            "InfamyPointValue": 80,
+            "LootValue": 85000,
+            "MaxInfamyPointsForLootType": 320,
+            "MaxValueForLootType": 340000
+          }
+        ]
+      },
+      {
+        "LootName": "DA_MethBag_Burnt",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 5,
+            "LootValue": 7500,
+            "MaxInfamyPointsForLootType": 20,
+            "MaxValueForLootType": 30000
+          },
+          {
+            "InfamyPointValue": 10,
+            "LootValue": 9000,
+            "MaxInfamyPointsForLootType": 40,
+            "MaxValueForLootType": 36000
+          },
+          {
+            "InfamyPointValue": 15,
+            "LootValue": 11250,
+            "MaxInfamyPointsForLootType": 60,
+            "MaxValueForLootType": 45000
+          },
+          {
+            "InfamyPointValue": 20,
+            "LootValue": 12750,
+            "MaxInfamyPointsForLootType": 80,
+            "MaxValueForLootType": 51000
+          }
+        ]
+      }
+    ],
+    "StealthMilestoneToExperienceRewardMap": [
+      {
+        "Stealth Completion": 0.5,
+        "Stealth Milestone 1": 0.15,
+        "Stealth Milestone 2": 0.35
+      }
+    ],
+    "StealthMilestoneToInfamyPointsOnFailRewardMap": [
+      {
+        "Stealth Milestone 1": 0.05,
+        "Stealth Milestone 2": 0.15
+      }
+    ]
+  }
+}

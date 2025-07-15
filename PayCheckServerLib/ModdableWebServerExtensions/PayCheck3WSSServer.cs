@@ -45,11 +45,36 @@ namespace PayCheckServerLib.ModdableWebServerExtensions
 				if (WSS_Server.DoReturn404IfFail && (!IsSent && !IsSentHeader))
 					SendResponse(Response.MakeErrorResponse(404));
 			}
+
+
+			internal WebSocketStruct ws_Struct;
+			public override bool OnWsConnecting(HttpRequest request, HttpResponse response)
+			{
+				ws_Struct = new()
+				{
+					IsConnecting = true,
+					IsConnected = false,
+					IsClosed = false,
+					Request = new()
+					{
+						Body = request.Body,
+						Url = request.Url,
+						Headers = request.GetHeaders()
+					},
+					WSRequest = null,
+					Enum = WSEnum.WSS,
+					WS_Session = null,
+					WSS_Session = this
+				};
+				ws_Struct.SendRequestWS(WSS_Server.WS_AttributeToMethods);
+				return true;//base.OnWsConnecting(request, response);
+			}
 		}
 		public PayCheck3WSSServer(SslContext context, DnsEndPoint endPoint) : base(context, endPoint)
 		{
 		}
 
+		//public PayCheck3WSSServer(SslContext context, IPEndPoint endPoint) : base(context, endPoint)
 		public PayCheck3WSSServer(SslContext context, IPEndPoint endPoint) : base(context, endPoint)
 		{
 		}
@@ -65,6 +90,7 @@ namespace PayCheckServerLib.ModdableWebServerExtensions
 		}
 
 		protected override SslSession CreateSession()
+		//protected override TcpSession CreateSession()
 		{
 			return new PayCheck3Session(this);
 		}

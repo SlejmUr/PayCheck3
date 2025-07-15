@@ -1,0 +1,425 @@
+{
+  "Level-Reward-Setup": {
+    "DifficultyExperienceModifierArray": [
+      1,
+      1.2,
+      1.5,
+      1.7
+    ],
+    "DifficultyInfamyPointsOnFailModifierArray": [
+      1,
+      1.2,
+      1.5,
+      1.7
+    ],
+    "InfamyPointPayoutArray": [
+      {
+        "AllBagsBonus": 300,
+        "Completion": 35,
+        "StealthBonus": 150
+      },
+      {
+        "AllBagsBonus": 350,
+        "Completion": 40,
+        "StealthBonus": 150
+      },
+      {
+        "AllBagsBonus": 500,
+        "Completion": 60,
+        "StealthBonus": 250
+      },
+      {
+        "AllBagsBonus": 600,
+        "Completion": 90,
+        "StealthBonus": 300
+      }
+    ],
+    "InstantLootValues": {
+      "LoudMaxPayoutArray": [
+        20000,
+        40000,
+        60000,
+        80000
+      ],
+      "NameToPointMap": [
+        {
+          "SecretHoustonStash": 1
+        }
+      ],
+      "StealthMaxPayoutArray": [
+        20000,
+        40000,
+        60000,
+        80000
+      ],
+      "TotalPoints": 1
+    },
+    "ItemIdRewardMap": [
+      {
+        "1-didi-preplanning-asset": 0.09,
+        "1-station-preplanning-asset": 0.09,
+        "2-didi-preplanning-asset": 0.09,
+        "2-station-preplanning-asset": 0.08,
+        "3-didi-preplanning-asset": 0.08,
+        "3-station-preplanning-asset": 0.08,
+        "4-didi-preplanning-asset": 0.08,
+        "4-station-preplanning-asset": 0.08,
+        "chopper-jewelry-store-preplanning-asset": 0.09,
+        "employee-backdoor-jewelry-store-preplanning-asset": 0.08,
+        "escape-van-jewelry-store-preplanning-asset": 0.08,
+        "manager-cake-jewelry-store-preplanning-asset": 0.08
+      }
+    ],
+    "LoudBaseExperience": 550,
+    "LoudBaseInfamyPointsOnFail": 350,
+    "LoudInfamyPointsOnSurvivingFinalAssultDifficultyArray": [
+      200,
+      250,
+      450,
+      600
+    ],
+    "LoudInfamyPointsOnSurvivingOneAssultDifficultyArray": [
+      200,
+      250,
+      450,
+      600
+    ],
+    "LoudLevelCompletedStatistics": {
+      "Hard": {
+        "PlayerStatisticEntryArray": [
+          "chus-loud-hard"
+        ]
+      },
+      "Normal": {
+        "PlayerStatisticEntryArray": [
+          "chus-loud-normal"
+        ]
+      },
+      "Overkill": {
+        "PlayerStatisticEntryArray": [
+          "chus-loud-overkill"
+        ]
+      },
+      "VeryHard": {
+        "PlayerStatisticEntryArray": [
+          "chus-loud-veryhard"
+        ]
+      }
+    },
+    "LoudLootValuesArray": [
+      {
+        "LootName": "DA_ServerBag",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 9,
+            "LootValue": 25000,
+            "MaxInfamyPointsForLootType": 36,
+            "MaxValueForLootType": 100000
+          },
+          {
+            "InfamyPointValue": 10.29,
+            "LootValue": 30000,
+            "MaxInfamyPointsForLootType": 41.14,
+            "MaxValueForLootType": 120000
+          },
+          {
+            "InfamyPointValue": 15.43,
+            "LootValue": 37500,
+            "MaxInfamyPointsForLootType": 61.71,
+            "MaxValueForLootType": 150000
+          },
+          {
+            "InfamyPointValue": 23.14,
+            "LootValue": 42500,
+            "MaxInfamyPointsForLootType": 92.57,
+            "MaxValueForLootType": 170000
+          }
+        ]
+      },
+      {
+        "LootName": "DA_EvidenceGenericBagType",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 8,
+            "LootValue": 20000,
+            "MaxInfamyPointsForLootType": 120,
+            "MaxValueForLootType": 300000
+          },
+          {
+            "InfamyPointValue": 9.14,
+            "LootValue": 24000,
+            "MaxInfamyPointsForLootType": 137.14,
+            "MaxValueForLootType": 360000
+          },
+          {
+            "InfamyPointValue": 13.71,
+            "LootValue": 30000,
+            "MaxInfamyPointsForLootType": 205.71,
+            "MaxValueForLootType": 450000
+          },
+          {
+            "InfamyPointValue": 20.57,
+            "LootValue": 34000,
+            "MaxInfamyPointsForLootType": 308.57,
+            "MaxValueForLootType": 510000
+          }
+        ]
+      },
+      {
+        "LootName": "DA_CleanedEvidenceBagType",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 20,
+            "LootValue": 50000,
+            "MaxInfamyPointsForLootType": 360,
+            "MaxValueForLootType": 900000
+          },
+          {
+            "InfamyPointValue": 22.86,
+            "LootValue": 60000,
+            "MaxInfamyPointsForLootType": 411.43,
+            "MaxValueForLootType": 1080000
+          },
+          {
+            "InfamyPointValue": 34.29,
+            "LootValue": 75000,
+            "MaxInfamyPointsForLootType": 617.14,
+            "MaxValueForLootType": 1350000
+          },
+          {
+            "InfamyPointValue": 51.43,
+            "LootValue": 85000,
+            "MaxInfamyPointsForLootType": 925.71,
+            "MaxValueForLootType": 1530000
+          }
+        ]
+      },
+      {
+        "LootName": "DA_EvidenceHoustonBagType",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 60,
+            "LootValue": 80000,
+            "MaxInfamyPointsForLootType": 60,
+            "MaxValueForLootType": 80000
+          },
+          {
+            "InfamyPointValue": 68.57,
+            "LootValue": 96000,
+            "MaxInfamyPointsForLootType": 68.57,
+            "MaxValueForLootType": 96000
+          },
+          {
+            "InfamyPointValue": 102.86,
+            "LootValue": 120000,
+            "MaxInfamyPointsForLootType": 102.86,
+            "MaxValueForLootType": 120000
+          },
+          {
+            "InfamyPointValue": 154.29,
+            "LootValue": 136000,
+            "MaxInfamyPointsForLootType": 154.29,
+            "MaxValueForLootType": 136000
+          }
+        ]
+      }
+    ],
+    "LoudMilestoneToExperienceRewardMap": [
+      {
+        "Loud Completion": 0.2,
+        "Loud Milestone 1": 0.05,
+        "Loud Milestone 2": 0.05,
+        "Loud Milestone 3": 0.1,
+        "Loud Milestone 4": 0.1,
+        "Loud Milestone 5": 0.15,
+        "Loud Milestone 6": 0.15,
+        "Loud Milestone 7": 0.2
+      }
+    ],
+    "LoudMilestoneToInfamyPointsOnFailRewardMap": [
+      {
+        "Loud Completion": 0.01,
+        "Loud Milestone 1": 0.01,
+        "Loud Milestone 2": 0.02,
+        "Loud Milestone 3": 0.02,
+        "Loud Milestone 4": 0.03,
+        "Loud Milestone 5": 0.03,
+        "Loud Milestone 6": 0.04,
+        "Loud Milestone 7": 0.05
+      }
+    ],
+    "PerformanceBonusMap": {
+      "BeenKilledCount": {
+        "PerformanceBonusEntryArray": [
+          {
+            "Max": 0,
+            "Min": 0,
+            "Modifier": 1.15
+          }
+        ]
+      }
+    },
+    "StealthBaseExperience": 500,
+    "StealthBaseInfamyPointsOnFail": 350,
+    "StealthLevelCompletedStatistics": {
+      "Hard": {
+        "PlayerStatisticEntryArray": [
+          "chus-stealth-hard"
+        ]
+      },
+      "Normal": {
+        "PlayerStatisticEntryArray": [
+          "chus-stealth-normal"
+        ]
+      },
+      "Overkill": {
+        "PlayerStatisticEntryArray": [
+          "chus-stealth-overkill"
+        ]
+      },
+      "VeryHard": {
+        "PlayerStatisticEntryArray": [
+          "chus-stealth-veryhard"
+        ]
+      }
+    },
+    "StealthLootValuesArray": [
+      {
+        "LootName": "DA_ServerBag",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 9,
+            "LootValue": 25000,
+            "MaxInfamyPointsForLootType": 36,
+            "MaxValueForLootType": 100000
+          },
+          {
+            "InfamyPointValue": 10.29,
+            "LootValue": 30000,
+            "MaxInfamyPointsForLootType": 41.14,
+            "MaxValueForLootType": 120000
+          },
+          {
+            "InfamyPointValue": 15.43,
+            "LootValue": 37500,
+            "MaxInfamyPointsForLootType": 61.71,
+            "MaxValueForLootType": 150000
+          },
+          {
+            "InfamyPointValue": 23.14,
+            "LootValue": 42500,
+            "MaxInfamyPointsForLootType": 92.57,
+            "MaxValueForLootType": 170000
+          }
+        ]
+      },
+      {
+        "LootName": "DA_EvidenceGenericBagType",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 8,
+            "LootValue": 20000,
+            "MaxInfamyPointsForLootType": 120,
+            "MaxValueForLootType": 300000
+          },
+          {
+            "InfamyPointValue": 9.14,
+            "LootValue": 24000,
+            "MaxInfamyPointsForLootType": 137.14,
+            "MaxValueForLootType": 360000
+          },
+          {
+            "InfamyPointValue": 13.71,
+            "LootValue": 30000,
+            "MaxInfamyPointsForLootType": 205.71,
+            "MaxValueForLootType": 450000
+          },
+          {
+            "InfamyPointValue": 20.57,
+            "LootValue": 34000,
+            "MaxInfamyPointsForLootType": 308.57,
+            "MaxValueForLootType": 510000
+          }
+        ]
+      },
+      {
+        "LootName": "DA_CleanedEvidenceBagType",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 20,
+            "LootValue": 50000,
+            "MaxInfamyPointsForLootType": 360,
+            "MaxValueForLootType": 900000
+          },
+          {
+            "InfamyPointValue": 22.86,
+            "LootValue": 60000,
+            "MaxInfamyPointsForLootType": 411.43,
+            "MaxValueForLootType": 1080000
+          },
+          {
+            "InfamyPointValue": 34.29,
+            "LootValue": 75000,
+            "MaxInfamyPointsForLootType": 617.14,
+            "MaxValueForLootType": 1350000
+          },
+          {
+            "InfamyPointValue": 51.43,
+            "LootValue": 85000,
+            "MaxInfamyPointsForLootType": 925.71,
+            "MaxValueForLootType": 1530000
+          }
+        ]
+      },
+      {
+        "LootName": "DA_EvidenceHoustonBagType",
+        "LootValueDifficultyArray": [
+          {
+            "InfamyPointValue": 60,
+            "LootValue": 80000,
+            "MaxInfamyPointsForLootType": 60,
+            "MaxValueForLootType": 80000
+          },
+          {
+            "InfamyPointValue": 68.57,
+            "LootValue": 96000,
+            "MaxInfamyPointsForLootType": 68.57,
+            "MaxValueForLootType": 96000
+          },
+          {
+            "InfamyPointValue": 102.86,
+            "LootValue": 120000,
+            "MaxInfamyPointsForLootType": 102.86,
+            "MaxValueForLootType": 120000
+          },
+          {
+            "InfamyPointValue": 154.29,
+            "LootValue": 136000,
+            "MaxInfamyPointsForLootType": 154.29,
+            "MaxValueForLootType": 136000
+          }
+        ]
+      }
+    ],
+    "StealthMilestoneToExperienceRewardMap": [
+      {
+        "Stealth Completion": 0.25,
+        "Stealth Milestone 1": 0.05,
+        "Stealth Milestone 2": 0.1,
+        "Stealth Milestone 3": 0.15,
+        "Stealth Milestone 4": 0.2,
+        "Stealth Milestone 5": 0.25
+      }
+    ],
+    "StealthMilestoneToInfamyPointsOnFailRewardMap": [
+      {
+        "Stealth Completion": 0.01,
+        "Stealth Milestone 1": 0.02,
+        "Stealth Milestone 2": 0.03,
+        "Stealth Milestone 3": 0.04,
+        "Stealth Milestone 4": 0.05,
+        "Stealth Milestone 5": 0.06
+      }
+    ]
+  }
+}

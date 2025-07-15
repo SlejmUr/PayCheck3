@@ -6,23 +6,35 @@ using ModdableWebServer;
 using ModdableWebServer.Attributes;
 using PayCheckServerLib.ModdableWebServerExtensions;
 using PayCheckServerLib.Jsons.CloudSave;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 using Newtonsoft.Json.Linq;
 
 namespace PayCheckServerLib.Responses
 {
 	public class CloudSave
-    {
+	{
 
-        [HTTP("GET", "/cloudsave/v1/namespaces/{namespace}/records/{recordtype}")]
+		private static object GetWeaponRecordValue(string recordKey)
+		{
+			var weaponTables = CloudSaveDataHelper.GetStaticData<List<CloudSaveDataWrapper<object>>>("WeaponTables.json");
+
+			var table = weaponTables.Find(obj => obj.Key == recordKey);
+
+			if (table == null)
+			{
+				table = weaponTables[0];
+			}
+			return table.Value;
+		}
+
+		[HTTP("GET", "/cloudsave/v1/namespaces/{namespace}/records/{recordtype}")]
 		[AuthenticationRequired("NAMESPACE:{namespace}:CLOUDSAVE:RECORD", AuthenticationRequiredAttribute.Access.READ)]
 		public static bool MainRecordsSplitter(HttpRequest request, ServerStruct serverStruct)
-        {
-            if (serverStruct.Parameters["recordtype"].Contains("weapon-translation-table-"))
-            {
-                serverStruct.Parameters.Add("weapon", serverStruct.Parameters["recordtype"].Replace("weapon-translation-table-",""));
-                return GetWeaponGameRecord(request, serverStruct);
-            }
+		{
+			if (serverStruct.Parameters["recordtype"].Contains("weapon-translation-table-"))
+			{
+				serverStruct.Parameters.Add("weapon", serverStruct.Parameters["recordtype"].Replace("weapon-translation-table-", ""));
+				return GetWeaponGameRecord(request, serverStruct);
+			}
 
 			object data = CloudSaveDataHelper.GetGlobalCloudSaveData(serverStruct.Parameters["recordtype"]);
 			if (data != null)
@@ -43,9 +55,9 @@ namespace PayCheckServerLib.Responses
 				serverStruct.SendResponse();
 				return true;
 			}
-            Debugger.PrintError(string.Format("Unknown cloudsave item: {0}", serverStruct.Parameters["recordtype"]));
-            return false;
-        }
+			Debugger.PrintError(string.Format("Unknown cloudsave item: {0}", serverStruct.Parameters["recordtype"]));
+			return false;
+		}
 
 
 		[HTTP("POST", "/cloudsave/v1/namespaces/{namespace}/records/bulk")]
@@ -57,12 +69,12 @@ namespace PayCheckServerLib.Responses
 			var responseData = new BulkCloudSaveRequestResponseData();
 			responseData.Data = new();
 
-			foreach(string key in req.Keys) {
+			foreach (string key in req.Keys) {
 				if (key.StartsWith("weapon-translation-table-"))
 				{
 					responseData.Data.Add(new()
 					{
-						Value = CloudSaveDataHelper.GetStaticData<object>("BasicWeaponsTable.json"),
+						Value = GetWeaponRecordValue(key),
 						Namespace = serverStruct.Parameters["namespace"],
 						Key = key,
 						SetBy = "SERVER",
@@ -97,23 +109,38 @@ namespace PayCheckServerLib.Responses
 			return true;
 		}
 		public static bool GetWeaponGameRecord(HttpRequest _, ServerStruct serverStruct)
-        {
-            ResponseCreator response = new();
+		{
+			ResponseCreator response = new();
+
 			CloudSaveDataWrapper<object> res = new()
-            {
-                Namespace = serverStruct.Parameters["namespace"],
-                Key = "weapon-translation-table-" + serverStruct.Parameters["weapon"],
-                SetBy = "SERVER",
-                Value = CloudSaveDataHelper.GetStaticData<object>("BasicWeaponsTable.json"),
+			{
+				Namespace = serverStruct.Parameters["namespace"],
+				Key = "weapon-translation-table-" + serverStruct.Parameters["weapon"],
+				SetBy = "SERVER",
+				Value = GetWeaponRecordValue("weapon-translation-table-" + serverStruct.Parameters["weapon"]),
 				CreatedAt = "0001-01-01T01:01:01.001Z00:00",
 				UpdatedAt = "0001-01-01T01:01:01.001Z00:00"
 			};
 			response.SetHeader("Content-Type", "application/json");
 			response.SetBody(JsonConvert.SerializeObject(res));
-            serverStruct.Response = response.GetResponse();
-            serverStruct.SendResponse();
-            return true;
-        }
+			serverStruct.Response = response.GetResponse();
+			serverStruct.SendResponse();
+			return true;
+		}
+
+		// TODO: implement public checking
+		[HTTP("GET", "/cloudsave/v1/namespaces/{namespace}/users/{userId}/records/{key}/public")]
+		[AuthenticationRequired("NAMESPACE:{namespace}:USER:{userId}:PUBLIC:CLOUDSAVE:RECORD", AuthenticationRequiredAttribute.Access.READ)]
+		public static bool GetPublicUserCloudSaveEntry(HttpRequest _, ServerStruct serverStruct) => GetUserCloudSaveEntry(_, serverStruct);
+
+		[HTTP("PUT", "/cloudsave/v1/namespaces/{namespace}/users/{userId}/records/{key}/public")]
+		[AuthenticationRequired("NAMESPACE:{namespace}:USER:{userId}:PUBLIC:CLOUDSAVE:RECORD", AuthenticationRequiredAttribute.Access.UPDATE)]
+		public static bool CreateOrReplacePublicUserCloudSaveEntry(HttpRequest _, ServerStruct serverStruct) => CreateOrReplaceUserCloudSaveEntry(_, serverStruct);
+
+		[HTTP("POST", "/cloudsave/v1/namespaces/{namespace}/users/{userId}/records/{key}/public")]
+		[AuthenticationRequired("NAMESPACE:{namespace}:USER:{userId}:PUBLIC:CLOUDSAVE:RECORD", AuthenticationRequiredAttribute.Access.CREATE)]
+		public static bool CreateOrAppendPublicUserCloudSaveEntry(HttpRequest _, ServerStruct serverStruct) => CreateOrAppendUserCloudSaveEntry(_, serverStruct);
+
 
 		[HTTP("GET", "/cloudsave/v1/namespaces/{namespace}/users/{userId}/records/{key}")]
 		[AuthenticationRequired("NAMESPACE:{namespace}:USER:{userId}:CLOUDSAVE:RECORD", AuthenticationRequiredAttribute.Access.READ)]
@@ -121,7 +148,7 @@ namespace PayCheckServerLib.Responses
 		{
 			var data = CloudSaveDataHelper.GetUserCloudSaveData(serverStruct.Parameters["userId"], serverStruct.Parameters["key"]);
 
-			if(data == null)
+			if (data == null)
 			{
 				var errorResponse = new ResponseCreator(404);
 				ErrorMSG errorMSG = new()
@@ -143,7 +170,9 @@ namespace PayCheckServerLib.Responses
 				Value = data,
 				Namespace = serverStruct.Parameters["namespace"],
 				Key = serverStruct.Parameters["key"],
-				SetBy = "SERVER",
+				SetBy = "CLIENT",
+				//IsPublic = false,
+				//UserId = serverStruct.Parameters["userId"],
 				CreatedAt = "0001-01-01T01:01:01.001Z00:00",
 				UpdatedAt = "0001-01-01T01:01:01.001Z00:00"
 			};
@@ -163,7 +192,7 @@ namespace PayCheckServerLib.Responses
 			object data = JsonConvert.DeserializeObject<object>(_.Body);
 
 			CloudSaveDataHelper.SetUserCloudSaveData(serverStruct.Parameters["userId"], serverStruct.Parameters["key"], data);
-			
+
 			var response = new ResponseCreator();
 
 			CloudSaveDataWrapper<object> responseData = new()
@@ -171,7 +200,9 @@ namespace PayCheckServerLib.Responses
 				Value = data,
 				Namespace = serverStruct.Parameters["namespace"],
 				Key = serverStruct.Parameters["key"],
-				SetBy = "SERVER",
+				SetBy = "CLIENT",
+				IsPublic = false,
+				UserId = serverStruct.Parameters["userId"],
 				CreatedAt = "0001-01-01T01:01:01.001Z00:00",
 				UpdatedAt = "0001-01-01T01:01:01.001Z00:00"
 			};
