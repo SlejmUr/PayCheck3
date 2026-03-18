@@ -12,8 +12,15 @@ namespace PayCheckServerLib.Responses;
 
 public class IAM
 {
-    // args here represent any argument
-    [HTTP("POST", "/iam/v3/oauth/platforms/steam/token?{args}")]
+	[HTTP("POST", "/iam/v3/oauth/platforms/steam/token")]
+	[AuthenticationRequired("", AuthenticationRequiredAttribute.Access.None, false)]
+	public static bool SteamTokenNoArgs(HttpRequest request, ServerStruct serverStruct) => SteamToken(request, serverStruct);
+	[HTTP("POST", "/iam/v3/oauth/platforms/device/token")]
+	[AuthenticationRequired("", AuthenticationRequiredAttribute.Access.None, false)]
+	public static bool DeviceTokenNoArgs(HttpRequest request, ServerStruct serverStruct) => DeviceToken(request, serverStruct);
+
+	// args here represent any argument
+	[HTTP("POST", "/iam/v3/oauth/platforms/steam/token?{args}")]
 	[AuthenticationRequired("", AuthenticationRequiredAttribute.Access.None, false)]
     public static bool SteamToken(HttpRequest request, ServerStruct serverStruct)
     {
@@ -104,7 +111,7 @@ public class IAM
         return true;
     }
 
-    [HTTP("POST", "/iam/v3/oauth/platforms/device/token")]
+    [HTTP("POST", "/iam/v3/oauth/platforms/device/token?{args}")]
 	[AuthenticationRequired("", AuthenticationRequiredAttribute.Access.None, false)]
 	public static bool DeviceToken(HttpRequest request, ServerStruct serverStruct)
     {
